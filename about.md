@@ -4,12 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Decent IT Archeologist+Gardener, bad Runner and exceptional story absorber that really wants to quit coffee. One of these things is a lie.
 
-### More Information
+I think that software is created by people. That makes me interested in topics that go beyond writing code and into the human domain. Since my knowledge in all these domains is limited I try to read a lot and build on community knowledge, which makes me an idea farmer. 
 
-A place to include any other types of information that you'd like to include about yourself.
+It turns out I only really learn when I write about something and have to find words for my thoughts. That is what twitter and blog are for. Incidentally I also always am wrong about stuff, at least initially, so please don't take the content unfiltered.
+
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[@arghrich](https://twitter.com/arghrich)
