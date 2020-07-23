@@ -44,5 +44,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - README.adoc
-  - CNAME
