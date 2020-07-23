@@ -1,0 +1,18 @@
+= The Source for my Blog
+
+This repository uses link:https://jekyllrb.com/[Jekyll] and the link:https://github.com/raghuveerdotnet/simply-jekyll[Simply Jekyll Theme].
+
+== Usage
+
+. Install all gems: `bundle`
+. Build the site and make it available on a local server: `bundle exec jekyll serve`
+. Now browse to http://localhost:4000
+
+=== Install Ruby
+
+Since Mac comes bundled with an old ruby version I recommend using [Rubyenv](https://github.com/rbenv/rbenv#installation)
+
+. `brew install rbenv`
+. Close and reopen terminal in this repo
+. `which ruby` should now point to _~/.rbenv/shims/ruby_
+. `ruby -v` should now be 2.6.3 for this directory
