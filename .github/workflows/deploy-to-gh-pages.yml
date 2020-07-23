@@ -1,0 +1,29 @@
+
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      ## The Personal Access Token (PAT) is created in your Personal Github Profile, and must be set in each repostiories settings->secrets
+
+      # Standard usage, because the docs are in the top-level folder
+      - uses: helaili/jekyll-action@2.0.3
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
