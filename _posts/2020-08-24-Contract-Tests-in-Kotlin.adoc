@@ -1,0 +1,81 @@
+---
+title: Contract Tests in Kotlin
+tags: test
+comments: false
+---
+
+In my current Kotlin project we often have two code elements that implement the same interface.
+We have `InMemoryXyzRepositories` that double `PostgresXyzRepositories` during tests.
+We also have a `GuavaEventBus` that we want to switch on when our environment does not provide a `KafkaEventBus`.
+
+How can we be sure that both pieces of code behave the same way and continue to do so?
+Thankfully we found an article on link:https://blog.thecodewhisperer.com/permalink/getting-started-with-contract-tests[Contract Tests] by J. B. Rainsberger.
+
+A contract test is a test were you document your *understanding of the behavior* of an interface.
+To do this, you need an interface, your favorite test framework and at least one interface implementation.
+
+I'll demonstrate the idea with some code.
+The complete code can be found on link:https://github.com/Richargh/contract-tests-krdl-kt-sandbox[Github].
+
+[source,kotlin]
+----
+abstract class DogsContract { // <1>
+    protected abstract fun dogs(): Dogs // <2>
+
+    @Test
+    fun `a dog in the repo should be findable by its id`() {
+        // arrange
+        val testling = dogs()
+        val adog = Dog(DogId("1"), "Spike")
+        testling.put(adog)
+
+        // act
+        val result = testling.findById(adog.id)
+
+        // assert
+        assertThat(result).isEqualTo(adog)
+    }
+}
+
+interface Dogs { // <3>
+    fun put(dog: Dog)
+    fun findById(id: DogId): Dog?
+}
+----
+<1> Create an abstract contact, where you document your understanding of the behavior
+<2> a way to get your interface implementation; the method might take parameters if you want to initialize your implementation with specific data
+<3> The interface for which you create the contract
+
+NOTE: `Dogs` is a repository which can be used to retrieve the domain object `Dog`.
+I like the convention where the name of the repository is the plural of the domain object for which it is responsible.
+This keeps my domain clear of technical terms like `Repository` or `Database`.
+
+After you have written your contract, you can write the implementation and the test for the implementation:
+
+[source,kotlin]
+----
+class InMemoryDogsTest: DogsContract() {
+    override fun dogs(): Dogs { return InMemoryDogs() }
+}
+
+class InMemoryDogs: Dogs {
+    private val dogs = ConcurrentHashMap<DogId, Dog>(16)
+
+    override fun put(dog: Dog) { dogs.put(dog.id, dog) }
+    override fun findById(id: DogId): Dog? { return dogs.get(id) }
+}
+----
+
+`Maven`, `Gradle` and IntelliJ will run all implementations of `DogsContract`.
+The link:https://www.jetbrains.com/help/idea/settings-gutter-icons.html[gutter icon] in IntelliJ will ask you if you want to run a specific implementation or all of them.
+
+I like to put the `XyzContract` in the same package as the interface and likewise for the `XyzTest`.
+If `Dogs` is in `src/main/de.richargh.application`, then `DogsContract` is in `src/test/de.richargh.application`.
+
+I also like to tag my `InMemoryDogsTest` differently than a `RemotePartnerServiceDogsTest`.
+The former gets no annotation because it's part of my fast test suite that I want to execute before every commit.
+The latter gets a `@Tag("remotepartner")` because I need infrastructure outside my JVM container to run it and I will for the most part let my build pipeline do the executing.
+
+*The awesome part* is that I can now have two or more implementations of the same interface and they *will stay in sync.*
+Writing these contract tests does not take much effort on my part
+and they allow me to express contract behavior the same way I express any other behavior.
