@@ -1,0 +1,220 @@
+---
+title: Naming
+tags: naming, code
+comments: false
+---
+
+Programming is a team sport where we use code to send messages of intent to our future selves.
+*The messages* are *the names* we have assigned to various `function`, `class` and other code elements.
+The assigned name can then help our future selves figure out the intent of an element and if a new piece of functionality goes here or over there.
+Thus naming is inseparable from design.
+A well-chosen name is the difference between one hour of _"I know exactly what to do"_ and days and weeks of rework because _"I thought I needed to do this but actually..."_.
+
+[quote, Leon Bambrick]
+____
+There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors.
+____
+
+True to the above quote I still find namings things very hard.
+Fortunately link:https://journal.stuffwithstuff.com/[Bob Nystrom] has written two great blog posts on the subject: link:https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/[Long Names are Long] and link:https://journal.stuffwithstuff.com/2009/06/05/naming-things-in-code/[Naming Things in Code].
+These two describe guidelines for naming which I want to reiterate, extend and sometimes even change.
+Most of the stuff I've added are ideas from the community (f.ex. link:https://printhelloworld.de/[Johannes Seitz]).
+I'm not making any orginality vows here :)
+
+In a future post I'd also like to take a look at link:https://arlobelshee.com/[Arlo Belshee's] "Naming is a Process" which describes the process of coming up with a good name.
+
+[NOTE]
+===============================
+If you know about even more great articles, books, etc. please consider contacting me using Twitter and the like.
+===============================
+
+== Good Names
+
+A name has one goal:
+
+* It needs to reveal the authors *intention* (see link:https://www.martinfowler.com/bliki/BeckDesignRules.html[Kent Beck's Four Rules of Simple Design]). Which means:
+** It needs to be *clear*: you need to know what the name refers to (link:https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/[Long Names are Long]).
+** It needs to be *precise*: you need to know what it does *not* refer to (link:https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/[Long Names are Long]).
+
+Once a name has accomplished its goal, any additional characters are redundant.
+
+The following guidelines will help us write terse code that communicates intention.
+
+=== Use one word per concept
+
+* [x] Use one word per concept.
++
+[source,kotlin]
+----
+// Bad (three variations for the same concept: fetching accounts):
+fun fetchActiveAccount(): List<Account>
+fun allActiveAccounts(): List<Account>
+fun retrieveActiveAccountInfo(): List<Account>
+// Better
+fun allActiveAccounts(): List<Account>
+----
+
+=== Omit words that are obvious given a variable’s or parameter’s type
+
+* [x] Don't put the type in the variable’s name
++
+[source,kotlin]
+----
+// Bad:
+val integerId: Int
+val nameString: String
+// Better
+val id: Int
+val name: String
+----
+* [x] Pair Numbers and their unit (5 meter, 20 seconds, 5 €) so you can never pass seconds to a method that expects milliseconds (length class in the appendix)
++
+[source,kotlin]
+----
+// Bad:
+val lengthInMillis: Int
+// Better
+val length: Length
+----
+* [x] Express concepts with types and avoid link:https://wiki.c2.com/?StringlyTyped[stringly typed] code.
++
+[source,kotlin]
+----
+// Bad:
+class Person constructor(val name: String, val street: String, val zipCode: String, val city: String){ /* */ }
+
+// Better:
+class Person constructor(val name: Name, val address: Address){ /* */ }
+class Address constructor(val street: Street, val zipCode: ZipCode, val city: City){ /* */ }
+----
+* [x] Name collections not by their type but what's in them using the (forced) plural form.
++
+[source,kotlin]
+----
+// Bad:
+val personList: List<Person>
+val furnitureList: List<Furniture>
+val dogPersonHashMap: Map<Dog, Person>
+// Better
+val people: List<Person>
+val furnitures: List<Furniture>
+val dogOwners: Map<Dog, Person>
+----
+* [x] Don’t add the argument name to function name. It's redundant since our type system and IDE tell us everything we need to know.
++
+[source,kotlin]
+----
+// Bad:
+fun mergeTableCells(cells: List<TableCell>)
+// Better
+fun merge(cells: List<TableCell>)
+----
+** This also makes the call easier to read: `merge(cells)` vs `mergeTableCells(tableCells)`
+* [x] Only describe the return in the name if there are identical functions that return different types.
++
+[source,kotlin]
+----
+// Bad:
+list.countInt()
+// Better:
+list.count()
+message.valueAsInt()
+message.valueAsFloat()
+----
+
+=== Omit words that don’t disambiguate the name
+* Take a look at `recentlyUpdatedAnnualSalesBid`
+** Are there updated annual sales bids that aren’t *recent*?
+** Are there recent annual sales bids that were not *updated*?
+** Are there recently updated sales bids that aren’t *annual*?
+* And so on. We can apply such questioning to all of our names to figure out which words are just fluff, don’t disambiguate the name and should be removed.
+
+=== Omit words that are known from the surrounding context
+* Class variables are in the context of their class. Class names are in the context of their component and so on.
++
+[source,kotlin]
+----
+// Bad:
+class AnnualHolidaySale constructor(val annualSaleRebate: Rebate){
+    fun promoteHolidaySale() { /* */ }
+}
+
+// Better:
+class AnnualHolidaySale constructor(val rebate: Rebate){
+    fun promote() { /* */ }
+}
+----
+
+=== Omit words that don’t mean much of anything
+
+* We're looking at you `manager`, `instance`, `amount`, `state` etc.
+* `Connection` provides exactly the same information as `ConnectionManager`.
+* If in doubt ask yourself _“Would this name mean the same thing if I removed the word?”_.
+* Never use _set-Methods_. The Merriam-Webster dictionary has more than 25 definitions of the verb set. It is one of the least-precise words you can use. Consider using names that express intent and give you the ability to protect invariants.
++
+[source,kotlin]
+----
+// Bad
+car.setEngineState(EngineState.On)
+car.setDestination(London)
+// Better
+car.start()
+car.plotCourseTo(London)
+----
+* Never use _get-Methods_. The Merriam-Webster dictionary has more than 15 definitions of the verb get. Name functions that just return a property and don’t change state using nouns. Using a get as prefix does not provide any meaningful additional information and is just fluff.
++
+[source,kotlin]
+----
+// Bad
+obj.getCount()
+// Better
+dogs.count()
+----
+
+== Summary
+
+* Use one word per concept
+* Omit words that are obvious given a variable’s or parameter’s type
+* Omit words that don’t disambiguate the name
+* Omit words that are known from the surrounding context
+* Omit words that don’t mean much of anything
+
+I hope these guidelines provide value to you.
+Most of them are from link:https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/[Long Names are Long] and I've only added little bits here and there.
+
+== Appendix: Length class
+
+It's not hard to write a class that pairs a number and a unit.
+I've included an example below with lots of useful methods.
+Depending on your domain a money object can be more challenging because you do have to remember your unit and can't convert everything to a default unit.
+Please also not that I used integer precision for my length.
+Depending on your domain you might want to use long or BigDecimal instead.
+
+[source,kotlin]
+----
+// (you can write this much shorter if you use Kotlin data classes or Java records)
+class Length private constructor(private val rawValueInMeter: Int): Comparable<Length>{
+    // so that Length(4) == Length(4)
+    override fun equals(other: Any?): Boolean {
+        if(other === this) return true
+        else if(other !is Length) return false
+        else return Objects.equals(rawValueInMeter, other.rawValueInMeter)
+    }
+    // so that you can use Length in a Set or Map
+    override fun hashCode(): Int { return Objects.hash(rawValueInMeter) }
+    // for nicer debugging
+    override fun toString(): String { return "$rawValueInMeter m" }
+
+    // so that Length(4) < Length(5)
+    override operator fun compareTo(other: Length): Int = this.rawValueInMeter.compareTo(other.rawValueInMeter)
+    // so that Length(4) + Length(5) = Length(9)
+    operator fun plus(other: Length) = Length(rawValueInMeter + other.rawValueInMeter)
+    // so that Length(8) - Length(5) = Length(3)
+    operator fun minus(other: Length) = Length(rawValueInMeter - other.rawValueInMeter)
+
+    companion object {
+        // so that you can write Length.fromMeter(4) and know the unit
+        fun fromMeter(meter: Int) = Length(meter)
+    }
+}
+----
