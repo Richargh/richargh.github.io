@@ -1,6 +1,6 @@
 ---
 title: Naming Guidelines
-tags: naming, code
+tags: naming code
 comments: false
 ---
 
@@ -19,7 +19,7 @@ True to the above quote I still find namings things very hard.
 Fortunately link:https://journal.stuffwithstuff.com/[Bob Nystrom] has written two great blog posts on the subject: link:https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/[Long Names are Long] and link:https://journal.stuffwithstuff.com/2009/06/05/naming-things-in-code/[Naming Things in Code].
 These two describe guidelines for naming which I want to reiterate, extend and sometimes even change.
 Most of the stuff I've added are ideas from the community (f.ex. link:https://printhelloworld.de/[Johannes Seitz]).
-I'm not making any orginality vows here :)
+I'm not making any originality vows here :)
 
 In a future post I'd also like to take a look at link:https://arlobelshee.com/[Arlo Belshee's] "Naming is a Process" which describes the process of coming up with a good name.
 
