@@ -368,7 +368,7 @@ hr {
     padding-left: 15px;
 }
 
-.home, .categories, .rss, .projects {
+.home, .talks, .categories, .rss, .projects {
     padding-left: 5px;
     padding-right: 10px;
     padding-top: 5px;
@@ -389,7 +389,7 @@ hr {
     padding-right: 14px;
 }
 
-.home-p, .categories-p, .rss-p, .projects-p {
+.home-p, .talks-p, .categories-p, .rss-p, .projects-p {
    margin-top: auto;
    margin-left: auto;
    text-align: center;
@@ -399,7 +399,7 @@ hr {
    color: #555555; 
 }
 
-.icon-home, .icon-category, .icon-projects, .icon-rss {
+.icon-home, .icon-talks, .icon-category, .icon-projects, .icon-rss {
     margin-top: 7px;
     justify-content: center;
     stroke: #555555;

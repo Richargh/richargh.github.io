@@ -1,0 +1,19 @@
+---
+layout: post
+title: Talks
+permalink: /talks/
+content-type: eg
+---
+
+Talks I have given:
+
+== Spring Boot: The Good Parts
+
+* link:https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner[Entwicklertag Frankfurt 2020 🇩🇪] | link:https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020[Slides]
+
+== Continuous Delivery for Legacy Code
+
+* link:https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code[Buld Stuff 2019 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code[Slides] | link:https://www.youtube.com/watch?v=AaexmSPQVpU[Video]
+* link:https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/[Software Architecture Gathering 2019 🇬🇧] | link:https://speakerdeck.com/richargh/cd-for-legacy-code[Slides]
+* link:https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme[Entwicklertag Frankfurt 2019 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218[Slides]
+* link:https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html[Xp Days 2018 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme[Slides]
