@@ -2,4 +2,4 @@
 tags: placeholder
 ---
 
-Without this placeholder not auto-complete is generated.
+Without this placeholder no auto-complete is generated.
