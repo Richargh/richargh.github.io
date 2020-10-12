@@ -322,11 +322,6 @@ hr {
     font-weight: 600;
 }
 
-.username:hover {
-    text-decoration: underline;
-    color: #555;
-}
-
 .userdesc {
     padding-left: 20px;
     margin-top: -13px;
