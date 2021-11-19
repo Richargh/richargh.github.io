@@ -7,6 +7,10 @@ content-type: eg
 
 Talks I have given:
 
+== Fixing the Billion Dollar Mistake
+
+* link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
+
 == Spring Boot: The Good Parts
 
 * link:https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner[Entwicklertag Frankfurt 2020 🇩🇪] | link:https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020[Slides]
