@@ -1,4 +1,3 @@
-
 name: Build and Deploy
 on:
   push:
@@ -14,7 +13,7 @@ jobs:
           persist-credentials: false
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -24,6 +23,6 @@ jobs:
       ## The Personal Access Token (PAT) is created in your Personal Github Profile, and must be set in each repostiories settings->secrets
 
       # Standard usage, because the docs are in the top-level folder
-      - uses: helaili/jekyll-action@2.0.3
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
