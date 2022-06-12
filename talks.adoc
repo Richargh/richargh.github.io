@@ -10,6 +10,7 @@ Talks I have given:
 == Fixing the Billion Dollar Mistake
 
 * link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
+* link:https://www.meetup.com/de-DE/jug-hamburg/events/past/[JUG Hamburg 2022 🇩🇪] | link:https://speakerdeck.com/richargh/de-fixing-the-billion-dollar-mistake-c-number-brille[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 
 == Spring Boot: The Good Parts
 
