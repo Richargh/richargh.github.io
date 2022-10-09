@@ -100,7 +100,28 @@ The following list tracks the stable (not incubating or in preview) feature chan
 ** +Enumerations
 ** +Varargs
 ** +`for each`
-** +`java.util.concurrent`
+** +`java.util.concurrent` (ConcurrentHasMap etc.)
+
+* 1.4 (2002)
+** +`assert` Keyword
+** +`java.util.regex`
+** +`java.nio` (Non-Blocking I/O)
+
+* 1.3 (2000)
+** +HotSpot JVM
+** Last Release for Microsoft Windows 95 :)
+
+* 1.2 (1998)
+** +Swing
+** +JIT-Compiler
+** +Collections-Framework
+** +Modify Objects via Reflection
+
+* 1.1 (1997)
+** +inner classes
+** +RMI
+** +Serialization
+** +Reflection
 
 * 1 (1996): Initial release
 
