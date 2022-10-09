@@ -1,0 +1,105 @@
+---
+title: Java Version History (Ongoing)
+tags: java
+comments: false
+---
+
+Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it's become a bit harder to keep up with the features they've implemented.
+//, especially the language updates that make it possible to write ever more concise Java code. See effective/concise Java for code examples that show how to write concise code
+The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy. A *+* marks an added feature, a *-* marks a removed feature.
+
+---
+
+* 23 (expected September 2024) *expected LTS*
+
+* link:https://openjdk.org/projects/jdk/19/[19] (September 2022)
+** Huge release feature-wise but all features are either in preview or incubating.
+** In Preview: Record patterns, pattern matching for switch, Virtual Threads, Foreign Function and Memory Api
+** Incubating: Vector API, Structured Concurrency
+
+* link:https://openjdk.org/projects/jdk/18/[18] (March 2022)
+** link:https://openjdk.org/jeps/400[UTF-8 by Default] (Specify UTF-8 as the default charset of the standard Java APIs)
+** link:https://openjdk.org/jeps/408[+Simple Web Server] (command-line tool to start a minimal web server that serves static files only)
+** link:https://openjdk.org/jeps/416[+Reimplement Core Reflection with Method Handles]
+
+---
+
+* link:https://openjdk.org/projects/jdk/17/[17] (September 2021) *LTS*
+** link:https://openjdk.org/jeps/382[+New macOS Rendering Pipeline] (Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api)
+** link:https://openjdk.org/jeps/391[+macOS/AArch64 Port] (Port for Apple Silicon)
+** link:https://openjdk.org/jeps/403[+Strongly Encapsulate JDK Internals by Default] (except `sun.misc.Unsafe`, can no longer be relaced via command-line option)
+** link:https://openjdk.org/jeps/407[-Remove RMI Activation] (only RMI Activation is removed after deprecation in 15)
+** link:https://openjdk.java.net/jeps/409[+Sealed Classes and interfaces]
+
+* link:https://openjdk.org/projects/jdk/16/[16] (March 2021)
+** link:https://openjdk.java.net/jeps/394[+Pattern Matching for instanceof] (Previews in 14 and 15)
+** link:https://openjdk.java.net/jeps/395[+Records] (Previews in 14 and 15)
+** link:https://openjdk.java.net/jeps/395[+Records] (`Stream.toList()`)
+
+* link:https://openjdk.org/projects/jdk/15/[15] (September 2020)
+** link:https://openjdk.org/jeps/372[-Remove Nashorn JavaScript Engine] (deprecated since 11))
+** link:https://openjdk.org/jeps/378[+Text Blocks] (multi-line string literals)
+
+* link:https://openjdk.org/projects/jdk/14/[14] (March 2020)
+** link:https://openjdk.org/jeps/349[+JFR Event Streaming] (for continuous monitoring)
+** link:https://openjdk.java.net/jeps/358[+Helpful Nullpointer exceptions] (pinpoint what caused the nullpointer, not just filename and line number)
+** link:https://openjdk.org/jeps/361[+Switch Expressions] (no changes to preview in 13)
+
+* link:https://openjdk.org/projects/jdk/13/[13] (September 2019): Smaller Release
+
+* link:https://openjdk.org/projects/jdk/12/[12] (March 2019): Smaller Release
+
+---
+
+* link:https://openjdk.org/projects/jdk/11/[11] (September 2018) *LTS*
+** link:https://openjdk.org/jeps/321[+Http Client]
+** link:https://openjdk.org/jeps/330[+Launch Single-File Source-Code Programs]
+** -JavaFx (JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. Now they've unbundled it and passed the torch to the link:https://openjfx.io/[OpenJFX project])
+
+* link:https://openjdk.org/projects/jdk/10/[10] (March 2018)
+** link:https://openjdk.org/jeps/286[+Local-Variable Type Inference] (aka `var num = 42;`)
+** link:https://www.docker.com/blog/improved-docker-container-integration-with-java-10/[+Recognizes constraints set by container control groups (cgroup)] (before Java didn’t recognize that it was running in a container and used the maximum available resource, not the one for the cgroup; backported to JDK8)
+
+* link:https://openjdk.org/projects/jdk9/[9] (September 2017)
+** link:https://openjdk.org/jeps/200[+Modularized JDK] (Project Jigsaw)
+** link:https://openjdk.org/jeps/261[+Module System]
+** link:https://openjdk.org/jeps/222[+JShell] (Read-Eval-Print Loop)
+** link:https://openjdk.org/jeps/248[+G1 is the Default Garbage Collector]
+** link:https://openjdk.org/jeps/260[+Encapsulate Most Internal APIs]
+** link:https://openjdk.org/jeps/266[+Interfaces supporting Reactive Streams] (for interoperability across a number of async systems running on JVMs)
+** link:https://openjdk.org/jeps/269[+Convenience Factory Methods for Collections] (`Set.of(a, b, c)`, `List.of(a, b, c)`, `Map.ofEntries(
+entry(k1, v1), entry(k2, v2))`)
+
+---
+
+* link:https://openjdk.java.net/projects/jdk8/features[8] (March 2014) *LTS*
+** link:https://openjdk.org/projects/jdk8/features#126[+Lambda-Expressions] (Project Lambda)
+** link:https://openjdk.org/projects/jdk8/features#174[+Nashorn JavaScript Engine] (supersedes Rhino JavaScript Engine)
+** link:https://openjdk.org/projects/jdk8/features#153[+Launch JavaFX Applications]
+** link:https://openjdk.org/projects/jdk8/features#150[+Date & Time API] (inspired by JodaTime, supersedes older API)
+** +Stream-Api
+** +Optional<T>
+
+---
+
+* link:https://openjdk.org/projects/jdk7/features/[7] (July 2011)
+** link:https://openjdk.org/projects/jdk7/features/#f618[+Strings in switch statements]
+** link:https://openjdk.org/projects/jdk7/features/#f618[+try-with-resources statements]
+** link:https://openjdk.org/projects/jdk7/features/#f618[+Improved type inference for generic instance creation ("diamond")]
+** link:https://openjdk.org/projects/jdk7/features/#f618[+Improved exception handling (multi-catch)]
+
+* 6 (2006)
+** +Rhino JavaScript Engine
+** +Dramatic performance improvements
+
+* 5 (2004)
+** +Generics
+** +Autoboxing
+** +Enumerations
+** +Varargs
+** +`for each`
+** +`java.util.concurrent`
+
+* 1 (1996): Initial release
+
+NOTE: The full Java version history can be found via link:https://openjdk.org/projects/jdk/[Open JDK], link:https://en.wikipedia.org/wiki/Java_version_history[at Wikipedia] or via the link:https://www.java.com/releases/[Java releases page].
