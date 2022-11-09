@@ -6,11 +6,16 @@ comments: false
 
 Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it has become a bit harder to keep up with the features they have implemented.
 //, especially the language updates that make it possible to write ever more concise Java code. See effective/concise Java for code examples that show how to write concise code
-The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy. The list is ongoing and will be updated with every new Java release. A *+* marks an added feature, a *-* marks a removed feature.
+The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
+The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes].
+
+The list is ongoing and will be updated with every new Java release.
+A *+* marks an added feature, a *-* marks a removed feature.
+
 
 ---
 
-* 23 (expected September 2024) *expected LTS*
+* 21 (expected September 2023) *LTS* until September 2028
 
 * link:https://openjdk.org/projects/jdk/19/[19] (September 2022)
 ** Huge release feature-wise but all features are either in preview or incubating.
@@ -24,7 +29,7 @@ The following list tracks the stable (not incubating or in preview) feature chan
 
 ---
 
-* link:https://openjdk.org/projects/jdk/17/[17] (September 2021) *LTS*
+* link:https://openjdk.org/projects/jdk/17/[17] (September 2021) *LTS* until September 2026
 ** link:https://openjdk.org/jeps/382[+New macOS Rendering Pipeline] (Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api)
 ** link:https://openjdk.org/jeps/391[+macOS/AArch64 Port] (Port for Apple Silicon)
 ** link:https://openjdk.org/jeps/403[+Strongly Encapsulate JDK Internals by Default] (except `sun.misc.Unsafe`, can no longer be relaced via command-line option)
@@ -51,7 +56,7 @@ The following list tracks the stable (not incubating or in preview) feature chan
 
 ---
 
-* link:https://openjdk.org/projects/jdk/11/[11] (September 2018) *LTS*
+* link:https://openjdk.org/projects/jdk/11/[11] (September 2018) *LTS* until September 2023
 ** link:https://openjdk.org/jeps/321[+Http Client]
 ** link:https://openjdk.org/jeps/330[+Launch Single-File Source-Code Programs]
 ** -JavaFx (JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. Now they've unbundled it and passed the torch to the link:https://openjfx.io/[OpenJFX project])
@@ -67,15 +72,17 @@ The following list tracks the stable (not incubating or in preview) feature chan
 ** link:https://openjdk.org/jeps/248[+G1 is the Default Garbage Collector]
 ** link:https://openjdk.org/jeps/260[+Encapsulate Most Internal APIs]
 ** link:https://openjdk.org/jeps/266[+Interfaces supporting Reactive Streams] (for interoperability across a number of async systems running on JVMs)
+** +Private Methods in Interfaces (can be called from default methods)
 ** link:https://openjdk.org/jeps/269[+Convenience Factory Methods for Collections]
-*** `Set.of(a, b, c)`
-*** `List.of(a, b, c)`
-*** `Map.ofEntries(entry(k1, v1), entry(k2, v2))`
+*** +`Set.of(a, b, c)`
+*** +`List.of(a, b, c)`
+*** +`Map.ofEntries(entry(k1, v1), entry(k2, v2))`
 
 ---
 
-* link:https://openjdk.java.net/projects/jdk8/features[8] (March 2014) *LTS*
+* link:https://openjdk.java.net/projects/jdk8/features[8] (March 2014) *LTS* until March 2022
 ** link:https://openjdk.org/projects/jdk8/features#126[+Lambda-Expressions] (Project Lambda)
+** +Default Methods for Interfaces
 ** link:https://openjdk.org/projects/jdk8/features#174[+Nashorn JavaScript Engine] (supersedes Rhino JavaScript Engine)
 ** link:https://openjdk.org/projects/jdk8/features#153[+Launch JavaFX Applications]
 ** link:https://openjdk.org/projects/jdk8/features#150[+Date & Time API] (`java.time`; inspired by link:https://www.joda.org/joda-time/index.html[Joda-Time]; supersedes `java.util.Date` and `java.util.Calendar`)
