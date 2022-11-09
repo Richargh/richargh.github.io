@@ -7,10 +7,15 @@ content-type: eg
 
 Talks I have given:
 
+== Remote Scaled Trunk-Based Development
+
+* link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides]
+* link:https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/[IPC 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development[Slides]
+
 == Fixing the Billion Dollar Mistake (C# Lens)
 
 * link:https://www.meetup.com/de-DE/jug-hamburg/events/past/[JUG Hamburg 2022 🇩🇪] | link:https://speakerdeck.com/richargh/de-fixing-the-billion-dollar-mistake-c-number-brille[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
-* link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
+* link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]  | link:https://www.youtube.com/watch?v=lCqdy6Qf-nM[Video]
 
 == Spring Boot: The Good Parts
 
