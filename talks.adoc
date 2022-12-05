@@ -5,23 +5,33 @@ permalink: /talks/
 content-type: eg
 ---
 
-Talks I have given:
+== Upcoming Talks
 
-== Remote Scaled Trunk-Based Development
+=== How to Build the Greatest and Best Pipeline in the World, a Tribute
+
+* link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | May 8th to 12th
+
+=== Fixing the Billion Dollar Mistake (Java Lens)
+
+* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧] | March 22rd
+
+== Past Talks
+
+=== Remote Scaled Trunk-Based Development
 
 * link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides]
 * link:https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/[IPC 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development[Slides]
 
-== Fixing the Billion Dollar Mistake (C# Lens)
+=== Fixing the Billion Dollar Mistake (C# Lens)
 
 * link:https://www.meetup.com/de-DE/jug-hamburg/events/past/[JUG Hamburg 2022 🇩🇪] | link:https://speakerdeck.com/richargh/de-fixing-the-billion-dollar-mistake-c-number-brille[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 * link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]  | link:https://www.youtube.com/watch?v=lCqdy6Qf-nM[Video]
 
-== Spring Boot: The Good Parts
+=== Spring Boot: The Good Parts
 
 * link:https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner[Entwicklertag Frankfurt 2020 🇩🇪] | link:https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020[Slides]
 
-== Continuous Delivery for Legacy Code
+=== Continuous Delivery for Legacy Code
 
 * link:https://devopscon.io/microservices-software-architecture/continuous-delivery-for-legacy-code/[DevOpsCon Munich 2022 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-devopscon-winter-2022[Slides]
 * link:https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code[Build Stuff 2019 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code[Slides] | link:https://www.youtube.com/watch?v=AaexmSPQVpU[Video]
