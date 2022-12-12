@@ -15,11 +15,19 @@ A *+* marks an added feature, a *-* marks a removed feature.
 
 ---
 
-* 21 (expected September 2023) *LTS* until September 2028
+* link:https://openjdk.org/projects/jdk/21/[21] (expected September 2023) *LTS* until September 2028
+** _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June.
+** This could be an amazing LTS release. After so many previews, record patterns and pattern matching for switch might just be finalized just for this release and make link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality. I won't hold my breath for Virtual Threads and Foreign Function and Memory Api though, which might go for another two previews before deemed ready. If we are lucky we might also get our link:https://openjdk.org/jeps/401[Primitive Classes Preview], link:https://openjdk.org/jeps/8277163[Value Objects Preview] and link:https://openjdk.org/jeps/430[String Templates Preview].
+
+* link:https://openjdk.org/projects/jdk/20/[20] (March 2023)
+** _Preliminary description_, but since the JDK ramp-down phase has started, the feature set won't dramatically change until release
+** Another huge release feature-wise but all features are either in preview (again) or incubating (again).
+** In (2nd or 4th) Preview: Record Patterns, Pattern Matching for switch, Virtual Threads, Foreign Function and Memory Api
+** Incubating: Structured Concurrency, Scoped Values
 
 * link:https://openjdk.org/projects/jdk/19/[19] (September 2022)
 ** Huge release feature-wise but all features are either in preview or incubating.
-** In Preview: Record patterns, pattern matching for switch, Virtual Threads, Foreign Function and Memory Api
+** In Preview: Record Patterns, Pattern Matching for switch, Virtual Threads, Foreign Function and Memory Api
 ** Incubating: Vector API, Structured Concurrency
 
 * link:https://openjdk.org/projects/jdk/18/[18] (March 2022)
@@ -133,3 +141,4 @@ A *+* marks an added feature, a *-* marks a removed feature.
 * 1 (1996): Initial release
 
 NOTE: The full Java version history can be found via link:https://openjdk.org/projects/jdk/[Open JDK], link:https://en.wikipedia.org/wiki/Java_version_history[at Wikipedia] or via the link:https://www.java.com/releases/[Java releases page].
+Another website that tracks java features but also gives upgrading advice is link:https://whichjdk.com/[whichjdk.com].
