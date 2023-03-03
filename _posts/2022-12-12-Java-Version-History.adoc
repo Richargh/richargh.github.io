@@ -72,6 +72,8 @@ A *+* marks an added feature, a *-* marks a removed feature.
 * link:https://openjdk.org/projects/jdk/10/[10] (March 2018)
 ** link:https://openjdk.org/jeps/286[+Local-Variable Type Inference] (aka `var num = 42;`)
 ** link:https://www.docker.com/blog/improved-docker-container-integration-with-java-10/[+Recognizes constraints set by container control groups (cgroup)] (before Java didn’t recognize that it was running in a container and used the maximum available resources, not the one for the cgroup; backported to JDK8)
+** +Optional API Additions
+*** `optional.orElseThrow()` clearer version of `optional.get()`. Also allows us to specify the exception being thrown.
 
 * link:https://openjdk.org/projects/jdk9/[9] (September 2017)
 ** link:https://openjdk.org/jeps/200[+Modularized JDK] (Project Jigsaw)
@@ -85,6 +87,10 @@ A *+* marks an added feature, a *-* marks a removed feature.
 *** +`Set.of(a, b, c)`
 *** +`List.of(a, b, c)`
 *** +`Map.ofEntries(entry(k1, v1), entry(k2, v2))`
+** +Optional API Additions
+*** `optional.or(() -> Optional.of("default"))`
+*** `optional.ifPresentOrElse(it -> doSth(it), ::otherwise)`
+*** `optional.stream()`
 
 ---
 
