@@ -13,7 +13,7 @@ content-type: eg
 
 === Fixing the Billion Dollar Mistake (Java Lens)
 
-* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧] | March 22rd
+* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | March 22rd
 
 ''''
 
