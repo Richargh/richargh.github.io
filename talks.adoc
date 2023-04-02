@@ -17,7 +17,7 @@ content-type: eg
 
 === Remote Scaled Trunk-Based Development
 
-* link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides]
+* link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides] | link:https://www.youtube.com/watch?v=NBjZ3wRXkxY[Video]
 * link:https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/[IPC 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development[Slides]
 
 === Fixing the Billion Dollar Mistake
