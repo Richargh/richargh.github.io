@@ -24,7 +24,7 @@ content-type: eg
 
 ==== Fixing the Billion Dollar Mistake (Java Lens)
 
-* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
+* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧 (incl. Video, if you have a ticket)] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 
 ==== Fixing the Billion Dollar Mistake (C# Lens)
 
