@@ -7,13 +7,15 @@ content-type: eg
 
 == Upcoming Talks
 
-=== How to Build the Greatest and Best Pipeline in the World, a Tribute
-
-* link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | May 8th to 12th
+None right now :)
 
 ''''
 
 == Past Talks
+
+=== How to Build the Greatest and Best Pipeline in the World, a Tribute
+
+* link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | link:https://jax.de/devops-continuous-delivery/building-pipelines[Slides]
 
 === Remote Scaled Trunk-Based Development
 
