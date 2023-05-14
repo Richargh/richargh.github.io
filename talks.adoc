@@ -15,7 +15,7 @@ None right now :)
 
 === How to Build the Greatest and Best Pipeline in the World, a Tribute
 
-* link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | link:https://jax.de/devops-continuous-delivery/building-pipelines[Slides]
+* link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | link:https://speakerdeck.com/richargh/how-to-build-the-greatest-and-best-pipeline-in-the-world-jax-2023[Slides]
 
 === Remote Scaled Trunk-Based Development
 
