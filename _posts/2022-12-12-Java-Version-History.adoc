@@ -2,6 +2,7 @@
 title: Java Version History (Ongoing)
 tags: java
 comments: false
+date: 2023-06-14
 ---
 
 Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it has become a bit harder to keep up with the features they have implemented.
@@ -15,12 +16,21 @@ A *+* marks an added feature, a *-* marks a removed feature.
 
 ---
 
+* link:https://openjdk.org/projects/jdk/22/[22] (expected March 2024) *LTS* until September 2028
+** _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before January.
+*** This could be the release that finally delivers link:https://openjdk.org/jeps/401[Primitive Classes Preview] and link:https://openjdk.org/jeps/8277163[Value Objects Preview]. It might also finalize String templates.
+
 * link:https://openjdk.org/projects/jdk/21/[21] (expected September 2023) *LTS* until September 2028
-** _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June.
-** This could be an amazing LTS release. After so many previews, record patterns and pattern matching for switch might just be finalized just for this release and make link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality. I won't hold my breath for Virtual Threads and Foreign Function and Memory Api though, which might go for another two previews before deemed ready. If we are lucky we might also get our link:https://openjdk.org/jeps/401[Primitive Classes Preview], link:https://openjdk.org/jeps/8277163[Value Objects Preview] and link:https://openjdk.org/jeps/430[String Templates Preview].
+** This is an amazing LTS release. We get virtual threads and we are very close at making link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality with these two features:
+*** link:https://openjdk.org/jeps/440[+Record patterns] (`if (r instanceof Rectangle(ColoredPoint(Point(var x, var y)))){...}`)
+*** link:https://openjdk.org/jeps/441[+Pattern matching for switch] (`switch (obj) { case Integer i -> ... }`)
+** link:https://openjdk.org/jeps/431[+Sequenced Collections] (`list.addLast(...); map.putFirst(...); set.reversed()` etc.)
+** link:https://openjdk.org/jeps/444[+Virtual Threads] (formerly Fibers)
+** link:https://openjdk.org/jeps/449[-Deprecate the Windows 32-bit x86 Port]
+** link:https://openjdk.org/jeps/451[+Warning if Agents are dynamically loaded]
+** link:https://openjdk.org/jeps/452[+Key Encapsulation Mechanism API]
 
 * link:https://openjdk.org/projects/jdk/20/[20] (March 2023)
-** _Preliminary description_, but since the JDK ramp-down phase has started, the feature set won't dramatically change until release
 ** Another huge release feature-wise but all features are either in preview (again) or incubating (again).
 ** In (2nd or 4th) Preview: Record Patterns, Pattern Matching for switch, Virtual Threads, Foreign Function and Memory Api
 ** Incubating: Structured Concurrency, Scoped Values
