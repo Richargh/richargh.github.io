@@ -7,11 +7,17 @@ content-type: eg
 
 == Upcoming Talks
 
-None right now :)
+//None right now :)
+
+* Continuous Delivery for Legacy Code at link:https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf[NDC London 01.02.2024 🇬🇧]
 
 ''''
 
 == Past Talks
+
+=== Beehive Architecture
+
+* link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides]
 
 === How to Build the Greatest and Best Pipeline in the World, a Tribute
 
