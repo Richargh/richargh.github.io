@@ -17,7 +17,7 @@ content-type: eg
 
 === Beehive Architecture
 
-* link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides]
+* link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides] | link:https://vimeo.com/875223690[Video]
 
 === How to Build the Greatest and Best Pipeline in the World, a Tribute
 
