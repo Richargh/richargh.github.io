@@ -4,6 +4,8 @@ tags: test
 comments: false
 ---
 
+NOTE: I now call these tests *port* contract tests to differentiate them from *api* contract tests that verify your understanding of an api. Api contract tests are the things you write when you do link:https://martinfowler.com/articles/consumerDrivenContracts.html[consumer-driven contract testing]. Before 2018 Martin Fowler used to call them link:https://martinfowler.com/bliki/ContractTest.html[integration contract tests].
+
 In my current Kotlin project we often have two code elements that implement the same interface.
 We have `InMemoryXyzRepositories` that double `PostgresXyzRepositories` during tests.
 We also have a `GuavaEventBus` that we want to switch on when our environment does not provide a `KafkaEventBus`.
