@@ -13,14 +13,23 @@ The releases that Oracle will provide Long-Term Support (LTS) for are marked as 
 The list is ongoing and will be updated with every new Java release.
 A *+* marks an added feature, a *-* marks a removed feature.
 
-
-* link:https://openjdk.org/projects/jdk/22/[22] (expected March 2024)
-** _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before January.
-*** This could be the release that finally delivers link:https://openjdk.org/jeps/401[Primitive Classes Preview] and link:https://openjdk.org/jeps/8277163[Value Objects Preview]. It might also finalize String templates.
+* 25 (expected September 2025) *LTS* until September 2030
+* ...
+* link:https://openjdk.org/projects/jdk/23/[23] (expected September 2024)
+** _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June.
+*** Could this be the release that finally delivers link:https://openjdk.org/jeps/401[Primitive Classes Preview] and link:https://openjdk.org/jeps/8277163[Value Objects Preview]? We are likely to get record _withers_, also called link:https://openjdk.org/jeps/468[Derived Record creation (Preview)] which makes working with records so much nicer. It might also finalize scoped values and structured concurrency, important pieces of the virtual thread puzzle. And we'll probably get String templates finalized. Awesome stuff.
 
 ---
 
-* link:https://openjdk.org/projects/jdk/21/[21] (expected September 2023) *LTS* until September 2028
+
+* link:https://openjdk.org/projects/jdk/22/[22] (expected March 2024)
+** +link:https://openjdk.org/jeps/454[Foreign Function & Memory API]. It provides native code access without the brittleness and danger of JNI. Previews in 19, 20 and 21.
+** +link:https://openjdk.org/jeps/456[Unnamed Variables & Patterns] which allows you to write `_` when you don't need a variable. `catch (Exception _)`, `case RedBall _` etc. Underscore as a variable name has been a warning since 8 and an error since 9.
+** +link:https://openjdk.org/jeps/458[Launch Multi-File Source-Code Programs]
+
+---
+
+* link:https://openjdk.org/projects/jdk/21/[21] (September 2023) *LTS* until September 2028
 ** This is an amazing LTS release. We get virtual threads and we are very close at making link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality with these two features:
 *** link:https://openjdk.org/jeps/440[+Record patterns] (`if (r instanceof Rectangle(ColoredPoint(Point(var x, var y)))){...}`)
 *** link:https://openjdk.org/jeps/441[+Pattern matching for switch] (`switch (obj) { case Integer i -> ... }`)
