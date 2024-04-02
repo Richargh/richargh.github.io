@@ -8,7 +8,7 @@ date: 2023-06-14
 Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it has become a bit harder to keep up with the features they have implemented.
 //, especially the language updates that make it possible to write ever more concise Java code. See effective/concise Java for code examples that show how to write concise code
 The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
-The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes].
+The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes]. This list does not cover all api changes and only seldom things outside of JEPs. Check the link:https://javaalmanac.io/[Java Almanac] to see api updates of the JDK. Use a current JDK to get all performance improvements that happen constantly.
 
 The list is ongoing and will be updated with every new Java release.
 A *+* marks an added feature, a *-* marks a removed feature.
