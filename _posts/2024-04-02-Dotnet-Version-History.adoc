@@ -117,7 +117,6 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 
 
 
-
 * link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-4[4] (2010)
 ** CLR 4.0
 ** Visual Studio 2010
@@ -131,6 +130,8 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 *** +Named/optional arguments: `ExampleMethod(3, optionalint: 4);` where `int optionalint = 10`
 *** +Generic covariant and contravariant: implicit or explicit covariant `out` and contravariant `in` keyword.
 *** +Embedded interop types: eases the deployment pain of creating COM interop assemblies
+
+
 
 * link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-35[3.5]
 ** CLR 2.0
@@ -162,7 +163,7 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 
 
 
-* .NET 2 (2005)
+* 2 (2005)
 ** CLR 2.0
 ** Visual Studio 2005
 ** Framework
@@ -182,6 +183,6 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 
 
 
-* .NET 1  (2002): Initial Release
+* 1  (2002): Initial Release
 ** CLR 1.0
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-10-1[C#1]
