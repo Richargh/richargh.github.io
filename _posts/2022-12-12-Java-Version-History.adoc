@@ -59,7 +59,7 @@ A *+* marks an added feature, a *-* marks a removed feature.
 * link:https://openjdk.org/projects/jdk/17/[17] (September 2021) *LTS* until September 2026
 ** link:https://openjdk.org/jeps/382[+New macOS Rendering Pipeline] (Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api)
 ** link:https://openjdk.org/jeps/391[+macOS/AArch64 Port] (Port for Apple Silicon)
-** link:https://openjdk.org/jeps/403[+Strongly Encapsulate JDK Internals by Default] (except `sun.misc.Unsafe`, can no longer be relaced via command-line option)
+** link:https://openjdk.org/jeps/403[+Strongly Encapsulate JDK Internals by Default] (except `sun.misc.Unsafe`, can no longer be opened via command-line option)
 ** link:https://openjdk.org/jeps/407[-Remove RMI Activation] (only RMI Activation is removed after deprecation in 15)
 ** link:https://openjdk.java.net/jeps/409[+Sealed Classes and interfaces] (`abstract sealed class Shape permits Circle, ... {}`)
 
