@@ -24,9 +24,21 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 
 * link:https://github.com/dotnet/core/blob/main/release-notes/8.0/8.0.0/8.0.0.md[8] (November 2023) *LTS* until November 2026
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12[C#12]
+*** +Primary constructors: `class BankAccount(string accountID, string owner)`
+*** +Collection expressions: `string[] names = ["Julia", "Anna", "Thomas"];` and `string[] allNames = [.. names, .. moreNames];`
+*** +Optional parameters in lambda expressions: `var IncrementBy = (int source, int increment = 1) => source + increment;`
+*** +Experimental attribute: `[Experimental("1234")]`
+*** +Interceptors: substitute a call to an interceptable method with a call to itself at compile time
 
 * link:https://github.com/dotnet/core/blob/main/release-notes/7.0/7.0.0/7.0.0.md[7]  (November 2022)
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11[C#11]
+*** +Pattern matching enhancements:
+**** +List patterns: `sequence is [1, 2, 3]`
+*** +`Required` members: must be initialized by an object initializer. Really important because now you can trust NRTs (nullable reference types) way more.
+*** +Raw string literals: `""" hello """;`
+*** +Newlines in string interpolation expressions
+*** +File-local types: `file` access modifier is scoped to the source
+
 
 ---
 
@@ -34,9 +46,37 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 ** .NET 6 unifies the SDK, base libraries, and runtime across mobile, desktop, IoT, and cloud apps.
 ** +link:https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-6/[Massive gains in performance]
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10[C#10]
+*** +Pattern matching enhancements:
+**** +Extended property patterns: nested properties `{ Prop1.Prop2: pattern }`
+*** +File-scoped namespace declaration: `namespace MyNamespace;` instead of nesting
+*** +Allow both assignment and declaration in the same deconstruction: `(x, int y) = point;`
+*** +Record structs
+*** +Improvements of structure types
+*** +Interpolated string handlers
+*** +Allow `const` interpolated strings
+*** +global using directives
+*** +Improvements on lambda expressions
+*** +Record types can `seal ToString()`
+*** +Improved definite assignment
+*** +Allow AsyncMethodBuilder attribute on methods
+*** +CallerArgumentExpression attribute
+*** +Warning wave 6
+
 
 * link:https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0.0/5.0.0.md[5] (November 2020) (skips "Core" and is now the main implementation of .NET going forward)
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-9[C#9]
+*** +Pattern matching enhancements:
+**** relational patterns: `<`, `>`, `<=`, or `>=`
+**** logical patterns: link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns[`and`, `or`, `not`]
+*** +link:https://github.com/dotnet/csharplang/blob/main/proposals/csharp-9.0/unconstrained-type-parameter-annotations.md[Unconstrained type parameter annotations] which makes NRTs (nullable-reference types) much nicer to use
+*** +`Init` only setters: `int YearOfBirth { get; init; }`
+*** +Records: `record Person(string FirstName);`
+*** +Top-level statements: programs without `Main` methods
+*** +`[ModuleInitializer]`
+*** +Target-typed new expressions: write just `new();` when the type is known
+*** +Target-typed conditional expressions: `M(b ? 1 : 2)`
+*** +Covariant return types
+*** +Lambda discard parameters: `(_, _) => 0`
 ** link:https://devblogs.microsoft.com/dotnet/announcing-f-5/[F#5]
 
 ---
@@ -46,6 +86,21 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 * link:https://github.com/dotnet/core/blob/main/release-notes/3.0/3.0.0/3.0.0.md[Core 3.0] (September 2019) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-1[.NET Standard 2.1] => 37,118 of the 37,118 APIs)
 ** +WinForms, WPF on Windows
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-78[C#8.0] (link:https://devblogs.microsoft.com/dotnet/building-c-8-0/[only part of core])
+*** +`readonly` members
+*** +Default interface methods: methods in interface can have an implementation now
+*** +link:https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/may/csharp-8-0-pattern-matching-in-csharp-8-0[Pattern matching enhancements]
+**** +link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression[`switch` expression]
+**** +Property patterns: `shape switch { { Point: { Y : 100 } } => "Y is 100"};`
+**** +Tuple patterns: `(animal, other) switch { (Animal.Bird, _} => "It's a Bird" };`
+**** +Positional patterns: `shape switch { Rectangle (100, 100) => "It's a square" };`
+*** +link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types]Nullable reference types]: aka non-nullable `Person` and nullable `Person?`
+*** +`using` declarations: don't require braces, variable is disposed at the end of the scope
+*** +Static local functions
+*** +`await foreach`
+*** +Indices and ranges: `..`, `start..`, `..end`, `^start..` etc.
+*** +Null-coalescing assignment: `??=`
+*** +Enhancement of interpolated verbatim strings
+
 ** link:https://devblogs.microsoft.com/dotnet/announcing-f-4-7/[F# 4.7]
 
 * link:https://github.com/microsoft/dotnet/blob/main/releases/net48/README.md[4.8] (August 2019) the final framework (still stuck at link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
@@ -73,7 +128,7 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 ** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70[C#7] (March 2017)
 *** +Out variables: `GetEmployeeDetails(out string EmployeeName);`
 *** +Tuples and deconstruction: `var t = ("post office", 3.6);` and `var (destination, distance) = t;`
-*** +Pattern matching: via link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is[`is` operator], link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression[`switch` expression] and the patterns link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns[`not`, `or`, `and`].
+*** +Pattern matching: via link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is[`is` operator] in `if` or `switch` statements.
 *** +Local functions: methods nested in other members
 *** +Expanded expression bodied members
 *** +Ref locals: `int a = 1;` and `ref int alias = ref a;`
