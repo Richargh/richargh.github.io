@@ -11,6 +11,7 @@ I think that software is created by people. That makes me interested in topics t
 
 It turns out I only really learn when I write about something and have to find words for my thoughts. That is what twitter and blog are for. Incidentally I also always am wrong about stuff, at least initially, so please don't take the content unfiltered.
 
-== Contact me
+== Find me
 
+link:https://github.com/richargh[richargh on Github]
 link:https://twitter.com/arghrich[@arghrich on Twitter]
