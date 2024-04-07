@@ -5,3 +5,12 @@ permalink: /published/
 content-type: eg
 ---
 
+== Articles
+
+* link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[Connascence: Regeln für gutes Software-Design 🇩🇪]
+* link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im JavaSPEKTRUM 1/2018
+
+== Interviews
+
+* link:https://chinchillasqueaks.substack.com/p/raytracing-llamas-in-the-metaverse-04c[Chinchilla Squeaks > Raytracing Llamas in the Metaverse - Interviews from Build Stuff 🇬🇧] around 19m17s is when Chris Chinchilla interviews me about my talk on _"Remote Scaled Trunk-Based Development"_ at Build Stuff 2022
+* link:https://podbay.fm/p/die-code-coroner-tech-podcast-fur-softwarequalitat/e/1539717389[Code Coroner > Software-Metrik 🇩🇪]
