@@ -5,3 +5,32 @@ permalink: /built/
 content-type: eg
 ---
 
+== Things I helped build
+
+=== Closed Source
+
+Various Customer projects. It's been 10+ years after all :)
+
+=== Open Source
+
+* link:https://maibornwolff.github.io/codecharta/[CodeCharta] Communicate software quality with the city visualization
+
+== Sandboxes
+
+Sandboxes are small code playgrounds where I play around with various tech. I usually publish them to link:https://github.com/search?q=owner%3ARichargh%20-sandbox&type=repositories[github with the `-sandbox` postfix]. The are not thoroughly documented but still very helpful as examples.
+
+Things of note are:
+
+=== Concurrency
+
+* link:https://github.com/Richargh/coroutines-tornadofx-krdl-kt-sandbox[Kotlin Coroutines + TornadoFx], even includes a small Cheatsheet
+
+=== Hypermedia
+
+* link:https://github.com/Richargh/hypermedia-spring-krdl-kt[Hypermedia with Spring Hateoas]
+
+=== Testing
+
+* link:https://github.com/Richargh/allure-junit5-krdl-kt-sandbox[Allure + JUnit5 Custom Reports]
+* link:https://github.com/Richargh/testsuite-plugin-krdl-kt-sandbox[Gradle Testsuite] to separate tests, before I used the link:https://github.com/Richargh/testsets-plugin-krdl-kt-sandbox[testsets community plugin]
+* link:https://github.com/Richargh/contract-tests-krdl-kt-sandbox[Port Contract Test example]
