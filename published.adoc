@@ -1,0 +1,7 @@
+---
+layout: post
+title: Published
+permalink: /published/
+content-type: eg
+---
+
