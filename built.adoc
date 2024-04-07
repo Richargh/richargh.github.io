@@ -15,22 +15,57 @@ Various Customer projects. It's been 10+ years after all :)
 
 * link:https://maibornwolff.github.io/codecharta/[CodeCharta] Communicate software quality with the city visualization
 
+''''
+
 == Sandboxes
 
-Sandboxes are small code playgrounds where I play around with various tech. I usually publish them to link:https://github.com/search?q=owner%3ARichargh%20-sandbox&type=repositories[github with the `-sandbox` postfix]. The are not thoroughly documented but still very helpful as examples.
+Sandboxes are small code playgrounds where I play around with various tech.
+I usually publish them to link:https://github.com/search?q=owner%3ARichargh%20-sandbox&type=repositories[github with the `-sandbox` postfix].
+They are not thoroughly documented but still very helpful as examples.
 
 Things of note are:
 
+=== Api-First
+
+* link:https://github.com/Richargh/api-first-openapi-pact-to-angular-fastify-ts-npm-sandbox[Api First Angular + Fastify App]
+* link:https://github.com/Richargh/api-first-types-to-swagger-via-fastify-npm-ts-sandbox[API First going from TypeScript Types to Swagger via Fastify]
+* link:https://github.com/Richargh/api-first-typebox-to-swagger-via-fastify-npm-ts-sandbox[API First going from Typebox to Swagger with Fastify]
+
+=== CodeGen
+
+* link:https://github.com/Richargh/xsd-jaxb-spring-boot-kt-kdrl-sandbox[Xsd to Java Generation]
+
 === Concurrency
 
-* link:https://github.com/Richargh/coroutines-tornadofx-krdl-kt-sandbox[Kotlin Coroutines + TornadoFx], even includes a small Cheatsheet
+* link:https://github.com/Richargh/coroutines-tornadofx-krdl-kt-sandbox[Kotlin Coroutines + TornadoFx], even includes a small link:https://github.com/Richargh/coroutines-tornadofx-krdl-kt-sandbox/blob/master/Scope-Context-Suspend.drawio.png[coroutine cheatsheet]
 
-=== Hypermedia
+=== HyperLands Architecture
+
+* link:https://github.com/Richargh/htmx-kotlinx-html-spring-boot-krdl-kt-sandbox[Htmx + Kotlinx.Html with Spring Boot]
+* link:https://github.com/Richargh/aggrid-webcomponent-kotlinxhtml-htmx-spring-boot-krdl-kt-sandbox[AgGrid Server-Side-Data Test with Spring Boot]
+
+=== Hypermedia API
 
 * link:https://github.com/Richargh/hypermedia-spring-krdl-kt[Hypermedia with Spring Hateoas]
 
+// === Modularization
+
+=== Spring
+
+* link:https://github.com/Richargh/spring-multimodule-krdl-kt-sandbox[Spring Functional Bean and Kofu]
+
+=== Strongly Typed not Stringly Typed
+
+* link:https://github.com/Richargh/flavoring-branding-npm-ts-sandbox[Flavoring and Branding in TypeScript]
+
 === Testing
 
-* link:https://github.com/Richargh/allure-junit5-krdl-kt-sandbox[Allure + JUnit5 Custom Reports]
+* link:https://github.com/Richargh/custom-test-report-junit5-krdl-kt-sandbox[Custom JUnit5 test reports], pairs very well with link:https://github.com/Richargh/allure-junit5-krdl-kt-sandbox[Allure JUnit5 test reports]
 * link:https://github.com/Richargh/testsuite-plugin-krdl-kt-sandbox[Gradle Testsuite] to separate tests, before I used the link:https://github.com/Richargh/testsets-plugin-krdl-kt-sandbox[testsets community plugin]
-* link:https://github.com/Richargh/contract-tests-krdl-kt-sandbox[Port Contract Test example]
+* link:https://github.com/Richargh/karate-javalin-krdl-kt-sandbox[Karate testing Javalin]
+* Port Contract Tests in link:https://github.com/Richargh/contract-tests-krdl-kt-sandbox[Kotlin] and link:https://github.com/Richargh/contract-tests-dn-cs-sandbox[C#]
+* link:https://github.com/Richargh/wiremock-external-service.krdl-kt-sandbox[Wiremock External Services]
+
+=== Web Components
+
+* link:https://github.com/Richargh/custom-elements-stencil-html-sandbox[Custom Elements from DbUi, GoatUi, KickstandUi and self-crafted]
