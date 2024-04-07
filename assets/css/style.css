@@ -368,7 +368,7 @@ hr {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    vertical-align: middle;
+    vertical-align: bottom;
     display: inline-block;
     justify-content: center;
     border-right: 1px solid #f7f7f7;
@@ -410,7 +410,8 @@ hr {
 }
 
 .icon-published {
-    margin-left: 21%;
+    margin: auto;
+    display: block;
 }
 
 .icon-built {
