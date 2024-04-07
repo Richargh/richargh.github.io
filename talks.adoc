@@ -32,11 +32,11 @@ This talk has gone through a changes through the years as I figured out what was
 
 === Fixing the Billion Dollar Mistake
 
-==== Fixing the Billion Dollar Mistake (Java Lens)
+*Java spotlight:*
 
 * link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧 (incl. Video, if you have a ticket)] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 
-==== Fixing the Billion Dollar Mistake (C# Lens)
+*C# spotlight:*
 
 * link:https://www.meetup.com/de-DE/jug-hamburg/events/past/[JUG Hamburg 2022 🇩🇪] | link:https://speakerdeck.com/richargh/de-fixing-the-billion-dollar-mistake-c-number-brille[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 * link:https://events.pinetool.ai/2275/#sessions/83071[Build Stuff 2021 🇬🇧] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code] | link:https://www.youtube.com/watch?v=lCqdy6Qf-nM[Video]
