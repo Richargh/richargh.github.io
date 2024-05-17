@@ -17,7 +17,7 @@ content-type: eg
 
 === Beehive Architecture
 
-* link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides] | link:https://vimeo.com/875223690[Video]
+* link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides] | link:https://vimeo.com/875223690[Video] | link:https://github.com/Richargh/testdsl[TestDsl Code]
 
 === Continuous Delivery for Legacy Code
 
@@ -30,7 +30,7 @@ This talk has gone through a changes through the years as I figured out what was
 * 1st Gen: link:https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme[Entwicklertag Frankfurt 2019 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218[Slides]
 * 1st Gen: link:https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html[Xp Days 2018 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme[Slides]
 
-=== Fixing the Billion Dollar Mistake
+=== Fixing the Billion-Dollar Mistake
 
 *Java spotlight:*
 
