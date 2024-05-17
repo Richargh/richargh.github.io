@@ -23,7 +23,7 @@ content-type: eg
 
 This talk has gone through a changes through the years as I figured out what was important and what not so much.
 
-* 3rd Gen: link:https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf[NDC London 2024 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-ndc-london[Slides] |
+* 3rd Gen: link:https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf[NDC London 2024 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-ndc-london[Slides] | link:https://www.youtube.com/watch?v=djl2hJkzmGQ[Video]
 * 3rd Gen: link:https://devopscon.io/microservices-software-architecture/continuous-delivery-for-legacy-code/[DevOpsCon Munich 2022 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-devopscon-winter-2022[Slides]
 * 2nd Gen: link:https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code[Build Stuff 2019 🇬🇧] | link:https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code[Slides] | link:https://www.youtube.com/watch?v=AaexmSPQVpU[Video]
 * 2nd Gen: link:https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/[Software Architecture Gathering 2019 🇬🇧] | link:https://speakerdeck.com/richargh/cd-for-legacy-code[Slides]
