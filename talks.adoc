@@ -7,9 +7,9 @@ content-type: eg
 
 == Upcoming Talks
 
-//None right now :)
+// None right now :)
 
-* Domain Re-discovery Patterns for Legacy Code at link:https://2024.dddeurope.com/program/domain-re-discovery-patterns-for-legacy-code/[DDD Europe 31.05.2024 🇬🇧]
+* Continuous delivery for legacy code at link:https://leanagile.scot/programme/continuous-delivery-legacy-code[Lean Agile Scotland 25.09.2024 🇬🇧]
 
 ''''
 
@@ -29,6 +29,10 @@ This talk has gone through a changes through the years as I figured out what was
 * 2nd Gen: link:https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/[Software Architecture Gathering 2019 🇬🇧] | link:https://speakerdeck.com/richargh/cd-for-legacy-code[Slides]
 * 1st Gen: link:https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme[Entwicklertag Frankfurt 2019 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218[Slides]
 * 1st Gen: link:https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html[Xp Days 2018 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme[Slides]
+
+=== Domain Re-discovery Patterns for Legacy Code
+
+* link:https://2024.dddeurope.com/program/domain-re-discovery-patterns-for-legacy-code/[DDD Europe 2024 🇬🇧] | link:https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-at-ddd-eu-2024[Slides]
 
 === Fixing the Billion-Dollar Mistake
 
