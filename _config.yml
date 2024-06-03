@@ -22,6 +22,7 @@ asciidoctor:
   attributes:
     - source-highlighter=rouge
     - rouge-css=style
+    - icons
 
 sass:
   style: compressed
