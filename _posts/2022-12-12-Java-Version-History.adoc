@@ -358,6 +358,7 @@ module my.module { // name the module
 Read-Eval-Print Loop
 
 ➕ link:https://openjdk.org/jeps/248[G1 is the Default Garbage Collector]::
+The premise is that limiting GC pause times is, in general, more important than maximizing throughput. The previous GC, Parallel GC, was throughput-oriented.
 
 ➕ link:https://openjdk.org/jeps/260[Encapsulate Most Internal APIs]::
 Things such as `sun.misc.Unsafe` are not encapsulated for now.
@@ -402,12 +403,28 @@ Project Lambda
 Supersedes Rhino JavaScript Engine
 
 ➕ link:https://openjdk.org/projects/jdk8/features#153[Launch JavaFX Applications]::
+Only added to Oracle JDK.
 
 ➕ link:https://openjdk.org/projects/jdk8/features#150[Date & Time API]::
 New `java.time`, inspired by link:https://www.joda.org/joda-time/index.html[Joda-Time]. Supersedes `java.util.Date` and `java.util.Calendar`.
 
-➕ link:https://openjdk.org/projects/jdk8/features#107[filter/map/reduce]::
+➕ link:https://openjdk.org/projects/jdk8/features#107[Bulk Data Operations for Collections]::
+Adds streams to java:
+[source, java]
+----
+list.stream()
+    .filter(it -> it > 0)
+    .map(it -> "it")
+    .collect(Collectors.toList());
+----
 ➕ `Optional<T>`::
+[source, java]
+----
+Optional.of(name);
+Optional.ofNullable(name);
+
+opt.orElse("john").ifPresent(name -> println(name));
+----
 
 
 [#jdk-7]
