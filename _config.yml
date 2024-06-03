@@ -20,8 +20,8 @@ plugins:
 asciidoc: {}
 asciidoctor:
   attributes:
-    - source-highlighter=rouge
-    - rouge-css=style
+#    - source-highlighter=rouge
+#    - rouge-css=style
     - icons
 
 sass:
