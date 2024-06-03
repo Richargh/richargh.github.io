@@ -5,187 +5,447 @@ comments: false
 date: 2024-06-03
 ---
 
+.An ongoing list of Java features per release
+[%collapsible]
+====
 Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it has become a bit harder to keep up with the features they have implemented.
 //, especially the language updates that make it possible to write ever more concise Java code. See effective/concise Java for code examples that show how to write concise code
 The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
 The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes]. This list does not cover all api changes and only seldom things outside of JEPs. Check the link:https://javaalmanac.io/[Java Almanac] to see api updates of the JDK. Use a current JDK to get all performance improvements that happen constantly.
 
 The list is ongoing and will be updated with every new Java release.
-A *+* marks an added feature, a *-* marks a removed feature.
+A ➕ marks an added feature, a ⚠ marks a deprecation that will likely lead to a ❌ breaking change when the feature is removed.
+
+The full Java version history can be found via link:https://openjdk.org/projects/jdk/[Open JDK], link:https://en.wikipedia.org/wiki/Java_version_history[at Wikipedia] or via the link:https://www.java.com/releases/[Java releases page].
+Another website that tracks java features but also gives upgrading advice is link:https://whichjdk.com/[whichjdk.com].
+====
 
 [#jdk-24]
-== 24 (expected March 2025)
+== 24
+[.text-right]
+expected March 2025
 
-INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before December.
+INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before December 2024.
 * It might finalize scoped values and structured concurrency, important pieces of the virtual thread puzzle. Hopefully we'll get the final String templates Preview.
 * We'll probably get record _withers_, also called link:https://openjdk.org/jeps/468[Derived Record creation (Preview)] which makes working with records so much nicer.
 * It could also be the release that finally delivers link:https://openjdk.org/jeps/401[Value Classes and Objects (Preview)] and link:https://openjdk.org/jeps/8316779[Null-Restricted Value Class Types (Preview)]?
 
 [#jdk-23]
-== link:https://openjdk.org/projects/jdk/23/[23] (expected September 2024)
+== link:https://openjdk.org/projects/jdk/23/[23]
+[.text-right]
+expected September 2024
+
 INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June 6th.
 
 ➕ link:https://openjdk.org/jeps/467[Markdown Documentation Comments]::
 Write markdown in Javadoc. Prefix every line with `///` and then write markdown.
 
-⊖ ➖ ❌ ⛔⚠ link:https://openjdk.org/jeps/471[Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal]::
+⚠ link:https://openjdk.org/jeps/471[Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal]::
 Most of its methods — 79 out of 87 — are for accessing memory. All these methods are used by performance-sensitive libraries and no longer needed since link:https://openjdk.org/jeps/454[Foreign Function & Memory API (JDK 22)] and link:https://openjdk.org/jeps/193[Variable Handles (JDK 9)], which is why the methods are now deprecated.
 
-(+) link:https://openjdk.org/jeps/474[ZGC: Generational Mode by Default]:: Which was introduced in <<jdk-22, JDK 22>>.
+➕ link:https://openjdk.org/jeps/474[ZGC: Generational Mode by Default]:: Which was introduced in <<jdk-22, JDK 22>>.
 
 [#jdk-22]
-== link:https://openjdk.org/projects/jdk/22/[22] (March 2024)
+== link:https://openjdk.org/projects/jdk/22/[22]
+[.text-right]
+released March 2024
 
-(+) link:https://openjdk.org/jeps/454[Foreign Function & Memory API]::
+➕ link:https://openjdk.org/jeps/454[Foreign Function & Memory API]::
 It provides native code access without the brittleness and danger of JNI. Previews in 19, 20 and 21.
 
-(+) link:https://openjdk.org/jeps/456[Unnamed Variables & Patterns]::
-Allows you to write `_` when you don't need a variable. `catch (Exception _)`, `case RedBall _` etc. Underscore as a variable name has been a warning since 8 and an error since 9.
+➕ link:https://openjdk.org/jeps/456[Unnamed Variables & Patterns]::
+Allows you to write `_` when you don't need a variable. Underscore as a variable name has been a warning since 8 and an error since 9.
+[source,java]
+----
+catch (Exception _){ }
+// or
+switch(ball){
+    case RedBall _ -> /* do sth*/
+}
+----
 
-(+) link:https://openjdk.org/jeps/458[Launch Multi-File Source-Code Programs]::
-Launch class that contains a `main`. Referenced classes will also be compiled. Simply use `java MyProg.java` and all will be well.
+➕ link:https://openjdk.org/jeps/458[Launch Multi-File Source-Code Programs]::
+Launch class that contains a `main()`. Referenced classes will also be compiled. Simply use `java MyProg.java` and all will be well.
 
-(+) link:https://openjdk.org/jeps/439[Generational ZGC]::
+➕ link:https://openjdk.org/jeps/439[Generational ZGC]::
 link:https://youtu.be/YBGVK5JuSJ8?feature=shared&t=1588[Fixes most of the ZGC (JDK 15) throughput drawbacks and requires 75% less memory].
 
----
 
-* link:https://openjdk.org/projects/jdk/21/[21] (September 2023) *LTS* until September 2028
-** This is an amazing LTS release. We get virtual threads and we are very close at making link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality with these two features:
-*** link:https://openjdk.org/jeps/440[+Record patterns] (`if (r instanceof Rectangle(ColoredPoint(Point(var x, var y)))){...}`)
-*** link:https://openjdk.org/jeps/441[+Pattern matching for switch] (`switch (obj) { case Integer i -> ... }`)
-** link:https://openjdk.org/jeps/431[+Sequenced Collections] (`list.addLast(...); map.putFirst(...); set.reversed()` etc.)
-** link:https://openjdk.org/jeps/444[+Virtual Threads] (formerly Fibers)
-** link:https://openjdk.org/jeps/449[-Deprecate the Windows 32-bit x86 Port]
-** link:https://openjdk.org/jeps/451[+Warning if Agents are dynamically loaded]
-** link:https://openjdk.org/jeps/452[+Key Encapsulation Mechanism API]
 
-* link:https://openjdk.org/projects/jdk/20/[20] (March 2023)
-** Another huge release feature-wise but all features are either in preview (again) or incubating (again).
-** In (2nd or 4th) Preview: Record Patterns, Pattern Matching for switch, Virtual Threads, Foreign Function and Memory Api
-** Incubating: Structured Concurrency, Scoped Values
+'''
+[#jdk-21]
+== link:https://openjdk.org/projects/jdk/21/[21] LTS
+[.text-right]
+released September 2023, *LTS until September 2028*
 
-* link:https://openjdk.org/projects/jdk/19/[19] (September 2022)
-** Huge release feature-wise but all features are either in preview or incubating.
-** In Preview: Record Patterns, Pattern Matching for switch, Virtual Threads, Foreign Function and Memory Api
-** Incubating: Vector API, Structured Concurrency
+TIP::
+This is an amazing LTS release. We get virtual threads and we are very close at making link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality with record patterns and pattern matching for switch
 
-* link:https://openjdk.org/projects/jdk/18/[18] (March 2022)
-** link:https://openjdk.org/jeps/400[UTF-8 by Default] (Specify UTF-8 as the default charset of the standard Java APIs)
-** link:https://openjdk.org/jeps/408[+Simple Web Server] (command-line tool to start a minimal web server that serves static files only)
-** link:https://openjdk.org/jeps/416[+Reimplement Core Reflection with Method Handles]
+➕ link:https://openjdk.org/jeps/440[Record patterns]::
+[source,java]
+----
+if (r instanceof Rectangle(ColoredPoint(Point(var x, var y)))){
+    // if all types match you can now use x and y
+}
+----
 
----
+➕ link:https://openjdk.org/jeps/441[Pattern matching for switch]::
+[source,java]
+----
+switch (obj) {
+    case Integer i -> // if obj is an Integer, you can now refer to it as i
+}
+----
 
-* link:https://openjdk.org/projects/jdk/17/[17] (September 2021) *LTS* until September 2026
-** link:https://openjdk.org/jeps/382[+New macOS Rendering Pipeline] (Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api)
-** link:https://openjdk.org/jeps/391[+macOS/AArch64 Port] (Port for Apple Silicon)
-** link:https://openjdk.org/jeps/403[+Strongly Encapsulate JDK Internals by Default] (except `sun.misc.Unsafe`, can no longer be opened via command-line option)
-** link:https://openjdk.org/jeps/407[-Remove RMI Activation] (only RMI Activation is removed after deprecation in 15)
-** link:https://openjdk.java.net/jeps/409[+Sealed Classes and interfaces] (`abstract sealed class Shape permits Circle, ... {}`)
+➕ link:https://openjdk.org/jeps/431[Sequenced Collections]::
+[source,java]
+----
+list.addLast(...);
+map.putFirst(...);
+set.reversed();
+// etc.
+----
 
-* link:https://openjdk.org/projects/jdk/16/[16] (March 2021)
-** link:https://openjdk.java.net/jeps/394[+Pattern Matching for instanceof] (Previews in 14 and 15)
-** link:https://openjdk.java.net/jeps/395[+Records] (Previews in 14 and 15)
-** `Stream.toList()`
+➕ link:https://openjdk.org/jeps/444[Virtual Threads] (formerly Fibers)::
+Improving scalability of IO-bound operations with virtual threads that you can create 10.000 of without penalty.
 
-* link:https://openjdk.org/projects/jdk/15/[15] (September 2020)
-** link:https://openjdk.org/jeps/372[-Remove Nashorn JavaScript Engine] (deprecated since 11))
-** link:https://openjdk.org/jeps/378[+Text Blocks] (multi-line string literals)
-** +link:https://openjdk.org/jeps/377[ZGC: A Scalable Low-Latency Garbage Collector]. Cost of near-pauseless operation is a ~2% throughput reduction and it uses more memory. G1 remains default garbage collector though.
+⚠ link:https://openjdk.org/jeps/449[Deprecate the Windows 32-bit x86 Port]::
 
-* link:https://openjdk.org/projects/jdk/14/[14] (March 2020)
-** link:https://openjdk.org/jeps/349[+JFR Event Streaming] (for continuous monitoring)
-** link:https://openjdk.java.net/jeps/358[+Helpful Nullpointer exceptions] (pinpoint what caused the nullpointer, not just filename and line number)
-** link:https://openjdk.org/jeps/361[+Switch Expressions] (no changes to preview in 13)
+⚠ link:https://openjdk.org/jeps/451[Warning if Agents are dynamically loaded]::
 
-* link:https://openjdk.org/projects/jdk/13/[13] (September 2019): Smaller Release
+➕ link:https://openjdk.org/jeps/452[Key Encapsulation Mechanism API]::
+Introduces an API for key encapsulation mechanisms (KEMs), an encryption technique for securing symmetric keys using public key cryptography.
 
-* link:https://openjdk.org/projects/jdk/12/[12] (March 2019): Smaller Release
+[#jdk-20]
+== link:https://openjdk.org/projects/jdk/20/[20]
+[.text-right]
+released March 2023
 
----
+INFO:: Another huge release feature-wise but all features are either in preview or incubating.
 
-* link:https://openjdk.org/projects/jdk/11/[11] (September 2018) *LTS* until September 2023
-** link:https://openjdk.org/jeps/321[+Http Client]
-** link:https://openjdk.org/jeps/330[+Launch Single-File Source-Code Programs]
-** -JavaFx (JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. Now they've unbundled it and passed the torch to the link:https://openjfx.io/[OpenJFX project])
+[#jdk-19]
+== link:https://openjdk.org/projects/jdk/19/[19]
+[.text-right]
+released September 2022
 
-* link:https://openjdk.org/projects/jdk/10/[10] (March 2018)
-** link:https://openjdk.org/jeps/286[+Local-Variable Type Inference] (aka `var num = 42;`)
-** link:https://www.docker.com/blog/improved-docker-container-integration-with-java-10/[+Recognizes constraints set by container control groups (cgroup)] (before Java didn’t recognize that it was running in a container and used the maximum available resources, not the one for the cgroup; backported to JDK8)
-** +Optional API Additions
-*** `optional.orElseThrow()` clearer version of `optional.get()`. Also allows us to specify the exception being thrown.
+INFO:: Another huge release feature-wise but all features are either in preview or incubating.
 
-* link:https://openjdk.org/projects/jdk9/[9] (September 2017)
-** link:https://openjdk.org/jeps/200[+Modularized JDK] (Project Jigsaw)
-** link:https://openjdk.org/jeps/261[+Module System]
-** link:https://openjdk.org/jeps/222[+JShell] (Read-Eval-Print Loop)
-** link:https://openjdk.org/jeps/248[+G1 is the Default Garbage Collector]
-** link:https://openjdk.org/jeps/260[+Encapsulate Most Internal APIs]
-** link:https://openjdk.org/jeps/266[+Interfaces supporting Reactive Streams] (for interoperability across a number of async systems running on JVMs)
-** +Private Methods in Interfaces (can be called from default methods)
-** link:https://openjdk.org/jeps/269[+Convenience Factory Methods for Collections]
-*** +`Set.of(a, b, c)`
-*** +`List.of(a, b, c)`
-*** +`Map.ofEntries(entry(k1, v1), entry(k2, v2))`
-** +Optional API Additions
-*** `optional.or(() -> Optional.of("default"))`
-*** `optional.ifPresentOrElse(it -> doSth(it), ::otherwise)`
-*** `optional.stream()`
+[#jdk-18]
+== link:https://openjdk.org/projects/jdk/18/[18]
+[.text-right]
+released March 2022
 
----
+⚠ link:https://openjdk.org/jeps/400[UTF-8 by Default]::
+Specify UTF-8 as the default charset of the standard Java APIs
 
-* link:https://openjdk.java.net/projects/jdk8/features[8] (March 2014) *LTS* until March 2022
-** link:https://openjdk.org/projects/jdk8/features#126[+Lambda-Expressions] (Project Lambda)
-** +Default Methods for Interfaces
-** link:https://openjdk.org/projects/jdk8/features#174[+Nashorn JavaScript Engine] (supersedes Rhino JavaScript Engine)
-** link:https://openjdk.org/projects/jdk8/features#153[+Launch JavaFX Applications]
-** link:https://openjdk.org/projects/jdk8/features#150[+Date & Time API] (`java.time`; inspired by link:https://www.joda.org/joda-time/index.html[Joda-Time]; supersedes `java.util.Date` and `java.util.Calendar`)
-** +link:https://openjdk.org/projects/jdk8/features#107[filter/map/reduce]
-** +`Optional<T>`
+➕ link:https://openjdk.org/jeps/408[Simple Web Server]::
+Command-line tool to start a minimal web server that serves static files only.
 
----
+➕ link:https://openjdk.org/jeps/416[Reimplement Core Reflection with Method Handles]::
 
-* link:https://openjdk.org/projects/jdk7/features/[7] (July 2011)
-** link:https://openjdk.org/projects/jdk7/features/#f618[+Strings in switch statements]
-** link:https://openjdk.org/projects/jdk7/features/#f618[+try-with-resources statements]
-** link:https://openjdk.org/projects/jdk7/features/#f618[+Improved type inference for generic instance creation ("diamond")]
-** link:https://openjdk.org/projects/jdk7/features/#f618[+Improved exception handling (multi-catch)]
 
-* 6 (2006)
-** +Rhino JavaScript Engine
-** +Dramatic performance improvements
 
-* 5 (2004)
-** +Generics
-** +Autoboxing
-** +Enumerations
-** +Varargs
-** +`for each`
-** +`java.util.concurrent` (ConcurrentHasMap etc.)
+'''
+[#jdk-17]
+== link:https://openjdk.org/projects/jdk/17/[17] LTS
+[.text-right]
+released September 2021, *LTS until September 2026*
 
-* 1.4 (2002)
-** +`assert` Keyword
-** +`java.util.regex`
-** +`java.nio` (Non-Blocking I/O)
+➕ link:https://openjdk.org/jeps/382[New macOS Rendering Pipeline]::
+Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api.
 
-* 1.3 (2000)
-** +HotSpot JVM
-** Last Release for Microsoft Windows 95 :)
+➕ link:https://openjdk.org/jeps/391[macOS/AArch64 Port]::
+Port for Apple Silicon
 
-* 1.2 (1998)
-** +Swing
-** +JIT-Compiler
-** +Collections-Framework
-** +Modify Objects via Reflection
+❌ link:https://openjdk.org/jeps/403[Strongly Encapsulate JDK Internals by Default]::
+JDK internals can no longer be opened via command-line option (except `sun.misc.Unsafe` for which this is still possible).
 
-* 1.1 (1997)
-** +inner classes
-** +RMI
-** +Serialization
-** +Reflection
+❌ link:https://openjdk.org/jeps/407[Remove RMI Activation]::
+Only RMI Activation is removed after deprecation in <<jdk-15, JDK 15>>.
 
-* 1 (1996): Initial release
+➕ link:https://openjdk.java.net/jeps/409[Sealed Classes and interfaces]::
+Enums on steroids. Create a class or interface for which you know *all* allowed subtypes. Combines great with `instanceof` (<<jdk-17, JDK 17>> or switch <<jdk-21, JDK 21>> pattern matching.
+[source,java]
+----
+abstract sealed class Shape permits Circle, Rectangle /*... */ {
+}
+----
 
-NOTE: The full Java version history can be found via link:https://openjdk.org/projects/jdk/[Open JDK], link:https://en.wikipedia.org/wiki/Java_version_history[at Wikipedia] or via the link:https://www.java.com/releases/[Java releases page].
-Another website that tracks java features but also gives upgrading advice is link:https://whichjdk.com/[whichjdk.com].
+[#jdk-16]
+== link:https://openjdk.org/projects/jdk/16/[16]
+[.text-right]
+released March 2021
+
+➕ link:https://openjdk.java.net/jeps/394[Pattern Matching for instanceof]::
+[source,java]
+----
+// the old way
+if (obj instanceof String) {
+    String s = (String) obj;    // grr...
+}
+// the new pattern-matching way
+if (obj instanceof String s) {
+    // Let pattern matching do the work!
+}
+----
+
+➕ link:https://openjdk.java.net/jeps/395[Records]
+Records are immutable carriers of data. Automatically implements data-driven methods such as equals and accessors.
+[source,java]
+----
+record Point(int x, int y) { }
+----
+
+➕ Stream toList Shortcut::
+[source,java]
+----
+stream.toList();
+// careful, the returned List is unmodifiable
+----
+
+[#jdk-15]
+== link:https://openjdk.org/projects/jdk/15/[15]
+[.text-right]
+released September 2020
+
+❌ link:https://openjdk.org/jeps/372[Remove Nashorn JavaScript Engine]:: Deprecated since <<jdk-11, JDK 11>>.
+
+➕ link:https://openjdk.org/jeps/378[Text Blocks]::
+(multi-line string literals)
+[source,java]
+----
+String html = """
+              <html>
+                  <body>
+                      <p>Hello, world</p>
+                  </body>
+              </html>
+              """;
+----
+
+➕ link:https://openjdk.org/jeps/377[ZGC: A Scalable Low-Latency Garbage Collector]::
+Cost of near-pauseless operation is a ~2% throughput reduction, and it uses more memory. G1 remains default garbage collector though.
+
+[#jdk-14]
+== link:https://openjdk.org/projects/jdk/14/[14]
+[.text-right]
+released March 2020 2020
+
+➕ link:https://openjdk.org/jeps/349[JFR Event Streaming]::
+Expose JDK Flight Recorder data for continuous monitoring.
+
+➕ link:https://openjdk.java.net/jeps/358[Helpful Nullpointer exceptions]::
+Thrown exceptions now pinpoint what caused the nullpointer, not just filename and line number.
+
+➕ link:https://openjdk.org/jeps/361[Switch Expressions]::
+[source,java]
+----
+return switch (day) {
+    case MONDAY, FRIDAY, SUNDAY -> System.out.println(6);
+    case TUESDAY                -> System.out.println(7);
+    case THURSDAY, SATURDAY     -> System.out.println(8);
+    case WEDNESDAY              -> System.out.println(9);
+}
+----
+
+[#jdk-13]
+== link:https://openjdk.org/projects/jdk/13/[13]
+[.text-right]
+released September 2019
+
+INFO::
+Smaller Release
+
+[#jdk-12]
+== link:https://openjdk.org/projects/jdk/12/[12]
+[.text-right]
+released March 2019
+
+INFO::
+Smaller Release
+
+'''
+[#jdk-11]
+== link:https://openjdk.org/projects/jdk/11/[11] LTS
+[.text-right]
+released September 2018, *LTS until September 2023*
+
+➕ link:https://openjdk.org/jeps/321[Http Client]::
+
+➕ link:https://openjdk.org/jeps/330[Launch Single-File Source-Code Programs]::
+Enhance the java launcher to run a program supplied as a single file of Java source code, including usage from within a script by means of "shebang" files and related techniques.
+
+❌ JavaFx::
+JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. Now they've unbundled it and passed the torch to the link:https://openjfx.io/[OpenJFX project]
+
+[#jdk-10]
+== link:https://openjdk.org/projects/jdk/10/[10]
+[.text-right]
+released March 2018
+
+➕ link:https://openjdk.org/jeps/286[Local-Variable Type Inference]::
+[source,java]
+----
+// now possible
+var num = 42;
+var user = new User("John");
+----
+
+➕ link:https://www.docker.com/blog/improved-docker-container-integration-with-java-10/[Recognizes constraints set by container control groups (cgroup)]::
+Before Java didn’t recognize that it was running in a container and used the maximum available resources, not the one for the cgroup. Was also backported to <<jdk-8, JDK 8>>.
+
+➕ Optional API Additions::
+[source,java]
+----
+optional.orElseThrow(); // clearer version of `optional.get()`
+// Also allows us to specify the exception being thrown.
+----
+
+[#jdk-9]
+== link:https://openjdk.org/projects/jdk9/[9]
+[.text-right]
+released September 2017
+
+➕ link:https://openjdk.org/jeps/200[Modularized JDK]::
+Project Jigsaw
+
+➕ link:https://openjdk.org/jeps/261[Module System]::
+Create a module (a jar that only exposes a defined set of types, not all of them) by adding `module-info.java` at the root:
+[source]
+----
+module my.module { // name the module
+    requires transitive other.module.name; // what modules it requires
+
+    exports my.module.myapi; // what api to expose
+}
+----
+
+➕ link:https://openjdk.org/jeps/222[JShell]::
+Read-Eval-Print Loop
+
+➕ link:https://openjdk.org/jeps/248[G1 is the Default Garbage Collector]::
+
+➕ link:https://openjdk.org/jeps/260[Encapsulate Most Internal APIs]::
+Things such as `sun.misc.Unsafe` are not encapsulated for now.
+
+➕ link:https://openjdk.org/jeps/266[Interfaces supporting Reactive Streams]::
+For interoperability across a number of async systems running on JVMs.
+
+➕ Private Methods in Interfaces::
+Can be called from default methods.
+
+➕ link:https://openjdk.org/jeps/269[Convenience Factory Methods for Collections]::
+[source, java]
+----
+Set.of(a, b, c);
+List.of(a, b, c)
+Map.ofEntries(entry(k1, v1), entry(k2, v2));
+----
+
+➕ Optional API Additions::
+[source, java]
+----
+optional.or(() -> Optional.of("default"));
+optional.ifPresentOrElse(it -> doSth(it), ::otherwise);
+optional.stream();
+----
+
+'''
+[#jdk-8]
+== link:https://openjdk.java.net/projects/jdk8/features[8] LTS
+[.text-right]
+released March 2014, *LTS until March 2022*
+
+➕ link:https://openjdk.org/projects/jdk8/features#126[Lambda-Expressions]::
+Project Lambda
+
+➕ Default Methods for Interfaces::
+
+➕ link:https://openjdk.org/projects/jdk8/features#174[Nashorn JavaScript Engine]::
+Supersedes Rhino JavaScript Engine
+
+➕ link:https://openjdk.org/projects/jdk8/features#153[Launch JavaFX Applications]::
+
+➕ link:https://openjdk.org/projects/jdk8/features#150[Date & Time API]::
+New `java.time`, inspired by link:https://www.joda.org/joda-time/index.html[Joda-Time]. Supersedes `java.util.Date` and `java.util.Calendar`.
+
+➕ link:https://openjdk.org/projects/jdk8/features#107[filter/map/reduce]::
+➕ `Optional<T>`::
+
+
+[#jdk-7]
+== link:https://openjdk.org/projects/jdk7/features/[7]
+[.text-right]
+released July 2011
+
+➕ link:https://openjdk.org/projects/jdk7/features/#f618[Strings in switch statements]::
+➕ link:https://openjdk.org/projects/jdk7/features/#f618[try-with-resources statements]::
+➕ link:https://openjdk.org/projects/jdk7/features/#f618[Improved type inference for generic instance creation ("diamond")]::
+➕ link:https://openjdk.org/projects/jdk7/features/#f618[Improved exception handling (multi-catch)]::
+
+[#jdk-6]
+== 6
+[.text-right]
+released 2006
+
+➕ Rhino JavaScript Engine::
+➕ Dramatic performance improvements::
+
+[#jdk-5]
+== 5
+[.text-right]
+released 2004
+
+➕ Generics::
+➕ Autoboxing::
+➕ Enumerations::
+➕ Varargs::
+➕ `for each`::
+➕ `java.util.concurrent`::
+ConcurrentHasMap etc.
+
+[#jdk-1-4]
+== 1.4
+[.text-right]
+released 2002
+
+➕ `assert` Keyword::
+➕ `java.util.regex`::
+➕ `java.nio`::
+Non-Blocking I/O
+
+[#jdk-1-3]
+== 1.3
+[.text-right]
+released 2000
+
+➕ HotSpot JVM::
+➕ Last Release for Microsoft Windows 95 :) ::
+
+[#jdk-1-2]
+== 1.2
+[.text-right]
+released 1998
+
+➕ Swing::
+➕ JIT-Compiler::
+➕ Collections-Framework::
+➕ Modify Objects via Reflection::
+
+[#jdk-1-1]
+== 1.1
+[.text-right]
+released 1997
+
+➕ +inner classes::
+➕ RMI::
+➕ Serialization::
+➕ Reflection::
+
+[#jdk-1-0]
+== 1
+[.text-right]
+released 1996
+
+INFO::
+Initial release
