@@ -5,6 +5,7 @@ comments: false
 date: 2024-06-03
 ---
 
+
 .An ongoing list of Java features per release
 [%collapsible]
 ====
@@ -22,8 +23,10 @@ Another website that tracks java features but also gives upgrading advice is lin
 
 [#jdk-24]
 == 24
-[.text-right]
-expected March 2025
+[cols="1,>1"]
+|===
+| expected | March 2025
+|===
 
 INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before December 2024.
 * It might finalize scoped values and structured concurrency, important pieces of the virtual thread puzzle. Hopefully we'll get the final String templates Preview.
@@ -32,8 +35,10 @@ INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't ha
 
 [#jdk-23]
 == link:https://openjdk.org/projects/jdk/23/[23]
-[.text-right]
-expected September 2024
+[cols="1,>1"]
+|===
+| expected | September 2024
+|===
 
 INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June 6th.
 
@@ -47,8 +52,10 @@ Most of its methods — 79 out of 87 — are for accessing memory. All these met
 
 [#jdk-22]
 == link:https://openjdk.org/projects/jdk/22/[22]
-[.text-right]
-released March 2024
+[cols="1,>1"]
+|===
+| released | March 2024
+|===
 
 ➕ link:https://openjdk.org/jeps/454[Foreign Function & Memory API]::
 It provides native code access without the brittleness and danger of JNI. Previews in 19, 20 and 21.
@@ -75,8 +82,11 @@ link:https://youtu.be/YBGVK5JuSJ8?feature=shared&t=1588[Fixes most of the ZGC (J
 '''
 [#jdk-21]
 == link:https://openjdk.org/projects/jdk/21/[21] LTS
-[.text-right]
-released September 2023, *LTS until September 2028*
+[cols="1,>1"]
+|===
+| LTS until | September 2028
+| released | September 2023
+|===
 
 TIP::
 This is an amazing LTS release. We get virtual threads and we are very close at making link:https://www.infoq.com/articles/data-oriented-programming-java/[Data Oriented Programming in Java] a reality with record patterns and pattern matching for switch
@@ -118,22 +128,28 @@ Introduces an API for key encapsulation mechanisms (KEMs), an encryption techniq
 
 [#jdk-20]
 == link:https://openjdk.org/projects/jdk/20/[20]
-[.text-right]
-released March 2023
+[cols="1,>1"]
+|===
+| released | March 2023
+|===
 
 INFO:: Another huge release feature-wise but all features are either in preview or incubating.
 
 [#jdk-19]
 == link:https://openjdk.org/projects/jdk/19/[19]
-[.text-right]
-released September 2022
+[cols="1,>1"]
+|===
+| released | September 2022
+|===
 
 INFO:: Another huge release feature-wise but all features are either in preview or incubating.
 
 [#jdk-18]
 == link:https://openjdk.org/projects/jdk/18/[18]
-[.text-right]
-released March 2022
+[cols="1,>1"]
+|===
+| released | March 2022
+|===
 
 ⚠ link:https://openjdk.org/jeps/400[UTF-8 by Default]::
 Specify UTF-8 as the default charset of the standard Java APIs
@@ -142,14 +158,17 @@ Specify UTF-8 as the default charset of the standard Java APIs
 Command-line tool to start a minimal web server that serves static files only.
 
 ➕ link:https://openjdk.org/jeps/416[Reimplement Core Reflection with Method Handles]::
-
+Reimplements `java.lang.reflect.Method`, Constructor, and Field on top of `java.lang.invoke` method handles. Before up to three different internal mechanisms for reflective operations were used.
 
 
 '''
 [#jdk-17]
 == link:https://openjdk.org/projects/jdk/17/[17] LTS
-[.text-right]
-released September 2021, *LTS until September 2026*
+[cols="1,>1"]
+|===
+| LTS until | September 2026
+| released | September 2021
+|===
 
 ➕ link:https://openjdk.org/jeps/382[New macOS Rendering Pipeline]::
 Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api.
@@ -173,8 +192,10 @@ abstract sealed class Shape permits Circle, Rectangle /*... */ {
 
 [#jdk-16]
 == link:https://openjdk.org/projects/jdk/16/[16]
-[.text-right]
-released March 2021
+[cols="1,>1"]
+|===
+| released | March 2021
+|===
 
 ➕ link:https://openjdk.java.net/jeps/394[Pattern Matching for instanceof]::
 [source,java]
@@ -205,8 +226,10 @@ stream.toList();
 
 [#jdk-15]
 == link:https://openjdk.org/projects/jdk/15/[15]
-[.text-right]
-released September 2020
+[cols="1,>1"]
+|===
+| released | September 2020
+|===
 
 ❌ link:https://openjdk.org/jeps/372[Remove Nashorn JavaScript Engine]:: Deprecated since <<jdk-11, JDK 11>>.
 
@@ -228,8 +251,10 @@ Cost of near-pauseless operation is a ~2% throughput reduction, and it uses more
 
 [#jdk-14]
 == link:https://openjdk.org/projects/jdk/14/[14]
-[.text-right]
-released March 2020 2020
+[cols="1,>1"]
+|===
+| released | March 2020
+|===
 
 ➕ link:https://openjdk.org/jeps/349[JFR Event Streaming]::
 Expose JDK Flight Recorder data for continuous monitoring.
@@ -250,8 +275,10 @@ return switch (day) {
 
 [#jdk-13]
 == link:https://openjdk.org/projects/jdk/13/[13]
-[.text-right]
-released September 2019
+[cols="1,>1"]
+|===
+| released | September 2019
+|===
 
 INFO::
 Smaller Release
@@ -267,8 +294,11 @@ Smaller Release
 '''
 [#jdk-11]
 == link:https://openjdk.org/projects/jdk/11/[11] LTS
-[.text-right]
-released September 2018, *LTS until September 2023*
+[cols="1,>1"]
+|===
+| LTS until | September 2023
+| released | September 2018
+|===
 
 ➕ link:https://openjdk.org/jeps/321[Http Client]::
 
@@ -280,8 +310,10 @@ JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. 
 
 [#jdk-10]
 == link:https://openjdk.org/projects/jdk/10/[10]
-[.text-right]
-released March 2018
+[cols="1,>1"]
+|===
+| released | March 2018
+|===
 
 ➕ link:https://openjdk.org/jeps/286[Local-Variable Type Inference]::
 [source,java]
@@ -303,8 +335,10 @@ optional.orElseThrow(); // clearer version of `optional.get()`
 
 [#jdk-9]
 == link:https://openjdk.org/projects/jdk9/[9]
-[.text-right]
-released September 2017
+[cols="1,>1"]
+|===
+| released | September 2017
+|===
 
 ➕ link:https://openjdk.org/jeps/200[Modularized JDK]::
 Project Jigsaw
@@ -353,8 +387,11 @@ optional.stream();
 '''
 [#jdk-8]
 == link:https://openjdk.java.net/projects/jdk8/features[8] LTS
-[.text-right]
-released March 2014, *LTS until March 2022*
+[cols="1,>1"]
+|===
+| LTS until | March 2022
+| released | March 2014
+|===
 
 ➕ link:https://openjdk.org/projects/jdk8/features#126[Lambda-Expressions]::
 Project Lambda
@@ -375,8 +412,10 @@ New `java.time`, inspired by link:https://www.joda.org/joda-time/index.html[Joda
 
 [#jdk-7]
 == link:https://openjdk.org/projects/jdk7/features/[7]
-[.text-right]
-released July 2011
+[cols="1,>1"]
+|===
+| released |  July 2011
+|===
 
 ➕ link:https://openjdk.org/projects/jdk7/features/#f618[Strings in switch statements]::
 ➕ link:https://openjdk.org/projects/jdk7/features/#f618[try-with-resources statements]::
@@ -385,16 +424,20 @@ released July 2011
 
 [#jdk-6]
 == 6
-[.text-right]
-released 2006
+[cols="1,>1"]
+|===
+| released | 2006
+|===
 
 ➕ Rhino JavaScript Engine::
 ➕ Dramatic performance improvements::
 
 [#jdk-5]
 == 5
-[.text-right]
-released 2004
+[cols="1,>1"]
+|===
+| released | 2004
+|===
 
 ➕ Generics::
 ➕ Autoboxing::
@@ -406,8 +449,10 @@ ConcurrentHasMap etc.
 
 [#jdk-1-4]
 == 1.4
-[.text-right]
-released 2002
+[cols="1,>1"]
+|===
+| released | 2002
+|===
 
 ➕ `assert` Keyword::
 ➕ `java.util.regex`::
@@ -416,16 +461,20 @@ Non-Blocking I/O
 
 [#jdk-1-3]
 == 1.3
-[.text-right]
-released 2000
+[cols="1,>1"]
+|===
+| released | 2000
+|===
 
 ➕ HotSpot JVM::
 ➕ Last Release for Microsoft Windows 95 :) ::
 
 [#jdk-1-2]
 == 1.2
-[.text-right]
-released 1998
+[cols="1,>1"]
+|===
+| released | 1998
+|===
 
 ➕ Swing::
 ➕ JIT-Compiler::
@@ -434,8 +483,10 @@ released 1998
 
 [#jdk-1-1]
 == 1.1
-[.text-right]
-released 1997
+[cols="1,>1"]
+|===
+| released | 1997
+|===
 
 ➕ +inner classes::
 ➕ RMI::
@@ -444,8 +495,10 @@ released 1997
 
 [#jdk-1-0]
 == 1
-[.text-right]
-released 1996
+[cols="1,>1"]
+|===
+| released | 1996
+|===
 
 INFO::
 Initial release
