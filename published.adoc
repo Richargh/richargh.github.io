@@ -7,8 +7,9 @@ content-type: eg
 
 == Articles
 
-* link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[Connascence: Regeln für gutes Software-Design 🇩🇪]
+* link:https://www.maibornwolff.de/en/know-how/connascence-rules-good-software-design/[Connascence: Rules for good software design 🇬🇧] and link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[also in 🇩🇪]
 * link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im JavaSPEKTRUM 1/2018
+* link:https://www.maibornwolff.de/insights/unsere-premiere-die-remote-keynote/[Unsere Premiere: die Remote Keynote 🇩🇪]
 
 == Interviews
 
