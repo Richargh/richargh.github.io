@@ -11,6 +11,8 @@ The Asciidoc source is in the *docs* branch, while master only contains generate
 . Build the site and make it available on a local server: `bundle exec jekyll serve`
 . Now browse to http://localhost:4000
 
+== Prerequisites
+
 === Install Ruby
 
 Since Mac comes bundled with an old ruby version I recommend using [Rubyenv](https://github.com/rbenv/rbenv#installation)
@@ -19,3 +21,9 @@ Since Mac comes bundled with an old ruby version I recommend using [Rubyenv](htt
 . Close and reopen terminal in this repo
 . `which ruby` should now point to _~/.rbenv/shims/ruby_
 . `ruby -v` should now be 2.6.3 for this directory
+
+== Maintenance
+
+* Update link:.ruby-version[]
+* Update bundler: `bundle update --bundler`
+* Update all gems: `bundle update`
