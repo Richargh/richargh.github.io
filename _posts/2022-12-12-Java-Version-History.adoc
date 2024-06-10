@@ -22,7 +22,7 @@ Another website that tracks java features but also gives upgrading advice is lin
 ====
 
 [#jdk-24]
-== 24
+== link:https://openjdk.org/projects/jdk/24/[24]
 [cols="1,>1"]
 |===
 | expected | March 2025
@@ -40,7 +40,7 @@ INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't ha
 | expected | September 2024
 |===
 
-INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before June 6th.
+INFO:: _Preliminary opinion_, since JDK is not globally available yet.
 
 ➕ link:https://openjdk.org/jeps/467[Markdown Documentation Comments]::
 Write markdown in Javadoc. Prefix every line with `///` and then write markdown.
