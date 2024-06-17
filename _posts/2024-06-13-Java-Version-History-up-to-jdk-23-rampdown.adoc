@@ -1,5 +1,6 @@
 ---
-title: Java Version History - up to JDK 23 rampdown
+title: Java Version History (up to JDK 23 rampdown)
+permalink: /posts/java-version-history/
 tags: java
 comments: false
 status: ongoing

@@ -2,7 +2,6 @@
 title: Upcoming
 comments: false
 status: ongoing
-date: 2024-06-18
 ---
 
 == Upcoming Talks
