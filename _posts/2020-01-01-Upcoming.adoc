@@ -1,0 +1,14 @@
+---
+title: Upcoming
+comments: false
+date: 2024-06-17
+status: ongoing
+---
+
+== Upcoming Talks
+
+* Continuous delivery for legacy code at link:https://leanagile.scot/programme/continuous-delivery-legacy-code[Lean Agile Scotland 25.09.2024 🇬🇧]
+
+== Upcoming Articles
+
+None right now
