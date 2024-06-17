@@ -1,8 +1,8 @@
 ---
 title: Upcoming
 comments: false
-date: 2024-06-17
 status: ongoing
+date: 2024-06-18
 ---
 
 == Upcoming Talks
@@ -11,4 +11,4 @@ status: ongoing
 
 == Upcoming Articles
 
-None right now
+* Strukturzementierende Tests und wie man sie vermeidet, Teil 2 - Konzepte der TestDsl 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/[Java Aktuell 5/24]
