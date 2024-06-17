@@ -1,8 +1,9 @@
 ---
-title: .NET Version History (Ongoing)
+title: .NET Version History (up to released .NET 8)
+permalink: /posts/dotnet-version-history/
 tags: .net
 comments: false
-date: 2024-04-02
+status: ongoing
 ---
 
 The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
