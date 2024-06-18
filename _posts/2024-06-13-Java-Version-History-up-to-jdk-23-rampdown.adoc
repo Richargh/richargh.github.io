@@ -21,6 +21,9 @@ The full Java version history can be found via link:https://openjdk.org/projects
 Another website that tracks java features but also gives upgrading advice is link:https://whichjdk.com/[whichjdk.com].
 ====
 
+.An outlook of future JDKs
+[%collapsible]
+====
 [#jdk-24]
 == link:https://openjdk.org/projects/jdk/24/[24]
 [cols="1,>1"]
@@ -32,6 +35,7 @@ INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't ha
 * It might finalize scoped values and structured concurrency, important pieces of the virtual thread puzzle. Hopefully we'll get the final String templates Preview.
 * We'll probably get record _withers_, also called link:https://openjdk.org/jeps/468[Derived Record creation (Preview)] which makes working with records so much nicer.
 * It could also be the release that finally delivers link:https://openjdk.org/jeps/401[Value Classes and Objects (Preview)] and link:https://openjdk.org/jeps/8316779[Null-Restricted Value Class Types (Preview)]?
+====
 
 [#jdk-23]
 == link:https://openjdk.org/projects/jdk/23/[23]
