@@ -9,7 +9,7 @@ content-type: eg
 
 * Strukturzementierende Tests und wie man sie vermeidet, Teil 1 – Bauen einer TestDsl 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-4-24-java-22/[Java Aktuell 4/24]
 * link:https://www.maibornwolff.de/en/know-how/connascence-rules-good-software-design/[Connascence: Rules for good software design 🇬🇧] and link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[also in 🇩🇪]
-* link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im JavaSPEKTRUM 1/2018
+* link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im link:https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018[JavaSPEKTRUM 1/2018]
 * link:https://www.maibornwolff.de/insights/unsere-premiere-die-remote-keynote/[Unsere Premiere: die Remote Keynote 🇩🇪]
 
 == Interviews
