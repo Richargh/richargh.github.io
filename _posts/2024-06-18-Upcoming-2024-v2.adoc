@@ -1,5 +1,6 @@
 ---
 title: Upcoming
+permalink: /posts/upcoming/
 comments: false
 status: ongoing
 ---
