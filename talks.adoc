@@ -7,7 +7,7 @@ content-type: eg
 
 == Upcoming Talks
 
-* see link:_posts/2020-01-01-Upcoming.adoc[upcoming].
+* see link:/posts/upcoming[upcoming].
 
 == Past Talks
 
