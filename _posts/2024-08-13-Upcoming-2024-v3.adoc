@@ -9,7 +9,8 @@ status: ongoing
 
 * Continuous delivery for legacy code at link:https://leanagile.scot/programme/continuous-delivery-legacy-code[Lean Agile Scotland 25.09.2024 🇬🇧]
 * Domain Re-discovery Patterns for Legacy Code at link:https://www.software-architecture-alliance.de/2024[Software Architecture Alliance 22.10.2024 🇬🇧]
+* Domain Re-discovery Patterns for Legacy Code at link:https://www.buildstuff.events/[Build Stuff 13.11.2024 🇬🇧]
 
 == Upcoming Articles
 
-* Strukturzementierende Tests und wie man sie vermeidet, Teil 2 - Konzepte der TestDsl 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/[Java Aktuell 5/24]
+* Strukturzementierende Tests und wie man sie vermeidet, Teil 3 - Das richtige Vorgehen 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/[Java Aktuell 6/24]
