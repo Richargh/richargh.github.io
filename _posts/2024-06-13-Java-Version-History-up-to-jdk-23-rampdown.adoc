@@ -21,20 +21,20 @@ The full Java version history can be found via link:https://openjdk.org/projects
 Another website that tracks java features but also gives upgrading advice is link:https://whichjdk.com/[whichjdk.com].
 ====
 
-.An outlook of future JDKs
+.The long term
 [%collapsible]
 ====
-[#jdk-24]
-== link:https://openjdk.org/projects/jdk/24/[24]
-[cols="1,>1"]
-|===
-| expected | March 2025
-|===
+It is rather impossible to say when we'll get cool new features. The JDK developers are known for "getting it right" over "getting it fast".
 
-INFO:: _Preliminary opinion_, since JDK rampdown and feature set freeze won't happen before December 2024.
-* It might finalize scoped values and structured concurrency, important pieces of the virtual thread puzzle. Hopefully we'll get the final String templates Preview.
-* We'll probably get record _withers_, also called link:https://openjdk.org/jeps/468[Derived Record creation (Preview)] which makes working with records so much nicer.
-* It could also be the release that finally delivers link:https://openjdk.org/jeps/401[Value Classes and Objects (Preview)] and link:https://openjdk.org/jeps/8316779[Null-Restricted Value Class Types (Preview)]?
+For example link:https://openjdk.org/jeps/326[raw string literals] was developed, then dropped in 2018 and we got link:https://openjdk.org/jeps/355[Text Blocks] in 2019 instead but still no string interpolation. String interpolation was ignored in favor of the safer alternative, link:https://openjdk.org/jeps/430[String templates (Preview)] in 2023, but that went back to the drawing board in 2024 after one year of previews due to design concerns.
+
+It is however rather known where the road is heading. At some point in the future we'll get:
+
+* link:https://openjdk.org/jeps/8305968[Integrity by Default]. Which means the removal of unsupported code like `sun.misc.unsafe` when adequate replacements have been developed.
+* link:https://openjdk.org/jeps/468[Derived Record creation (Preview)], also called `record` _withers_, which make working with records so much nicer.
+* link:https://openjdk.org/jeps/8303099[Null-Restricted and Nullable Types], i.e. fields that can be marked as null-restricted `Name!` or nullable `Name?`.
+* link:https://openjdk.org/jeps/401[Value Classes and Objects (Preview)] and link:https://openjdk.org/jeps/8316779[Null-Restricted Value Class Types (Preview)]
+* link:https://openjdk.org/jeps/8209434[Concise Method Bodies]
 ====
 
 [#jdk-23]
