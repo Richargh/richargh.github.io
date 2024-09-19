@@ -1,5 +1,5 @@
 ---
-title: Java Version History (up to JDK 23 rampdown)
+title: Java Version History (up to JDK 23)
 permalink: /posts/java-version-history/
 tags: java
 comments: false
@@ -41,10 +41,8 @@ It is however rather known where the road is heading. At some point in the futur
 == link:https://openjdk.org/projects/jdk/23/[23]
 [cols="1,>1"]
 |===
-| expected | September 2024
+| released | September 2024
 |===
-
-INFO:: _Preliminary opinion_, since JDK is not globally available yet.
 
 ➕ link:https://openjdk.org/jeps/467[Markdown Documentation Comments]::
 Write markdown in Javadoc. Prefix every line with `///` and then write markdown.
@@ -52,7 +50,7 @@ Write markdown in Javadoc. Prefix every line with `///` and then write markdown.
 ⚠ link:https://openjdk.org/jeps/471[Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal]::
 Most of its methods — 79 out of 87 — are for accessing memory. All these methods are used by performance-sensitive libraries and no longer needed since link:https://openjdk.org/jeps/454[Foreign Function & Memory API (JDK 22)] and link:https://openjdk.org/jeps/193[Variable Handles (JDK 9)], which is why the methods are now deprecated.
 
-➕ link:https://openjdk.org/jeps/474[ZGC: Generational Mode by Default]:: Which was introduced in <<jdk-22, JDK 22>>.
+⚠ link:https://openjdk.org/jeps/474[ZGC: Generational Mode by Default]:: Which was introduced in <<jdk-22, JDK 22>>.
 
 [#jdk-22]
 == link:https://openjdk.org/projects/jdk/22/[22]
