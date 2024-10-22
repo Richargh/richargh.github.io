@@ -11,4 +11,4 @@ status: ongoing
 
 == Upcoming Articles
 
-* Strukturzementierende Tests und wie man sie vermeidet, Teil 3 - Das richtige Vorgehen 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/[Java Aktuell 6/24]
+None right now :)
