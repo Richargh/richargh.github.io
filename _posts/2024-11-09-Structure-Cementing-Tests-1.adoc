@@ -71,7 +71,7 @@ void should_be_able_to_rent_book(){
 <1> The basis for most of our tests are, in this example, books. Therefore, most of our tests instantiate at least one book and with each redundant instantiation we cement the structure of book more and more, since a change would result in adjustments in hundreds of tests.
 <2> The repositories follow the naming convention `+{implementation}+{name of managed entity with plural s}Double`. The _Double_ postfix indicates that this is a test double <<xunit-test-double>> located in src/testFixtures (or src/test). The postfix is not necessary, but it makes finding all created doubles very convenient.
 <3> Our code to be tested needs to load the books from the repository, so they must also be stored there first. How this is done is actually an irrelevant implementation detail for the test. However, redundancy in several tests cements this. It also makes the test unnecessarily long.
-<4> The more often we instantiate the `RentingService`, the less interest we have in changing its dependencies. The dependencies on our service are cemented.
+<4> The more often we instantiate the `RentingService`, the less interest we have in changing its dependencies. The dependencies of our service are cemented.
 <5> The method whose behavior we actually want to test. Cementing the structure of this method with multiple tests is a tradeoff we want to make because this time we get something back: Feedback. Feedback on whether the method is pleasant and logical to use.
 
 In addition to the test smell “structure-cementing”, this test has a few other problems:
@@ -302,7 +302,7 @@ void should_be_able_to_rent_book(){
 <2> We group all `Ports` into the outside world in the so-called `Floor`, the floor on which our application stands. A repository is such a `Port`, just like `Clock` or an external `Client`. The _Floor_ allows us to flexibly control how our _testee_ communicates with the outside world in tests. We can **pull the floor out from under the feet of our application in tests and set up a much more testable floor**. In the _ports & adapters architecture_ <<ports-and-adapters>>, the `floor` is synonymous with the _driven_ but not the _driving_ ports. Since it is easy to overlook whether something is _driven_ or _driving_, the terms were out of the question. `Floor` was chosen as an identifier because it is short and thus provides an analogy for software +++<s>architects</s>+++ gardeners who take care of the _Forest_ `Floor`, the _Forest_ `Canopy` and the forest. Alternative names for _driven_ (=outcomes) or _driving_ (=triggers) `Port` were not known at the time.
 <3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` (<<lst:first-class-floor>>) and no longer have to write the concrete dependencies.
 
-To simplify the dependency management we pass floor directly to the constructor of our production services (<<lst:first-class-floor>>). We don't have to do this to utilize TestDsl. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
+To simplify the dependency management we pass floor directly to the constructor of our production services (<<lst:first-class-floor>>). We don't have to do this to utilize the TestDsl. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
 
 [[lst:first-class-floor]]
 .RentingServices takes required dependencies
@@ -321,7 +321,7 @@ public class RentingService {
 }
 ----
 
-To ensure that the tests are isolated from each other, we instantiate TestState and Floor individually for each test (<<lst:testdsl-init-before-each>>).
+To ensure that the tests are isolated from each other, we instantiate TestState and Floor for each test (<<lst:testdsl-init-before-each>>).
 
 [[lst:testdsl-init-before-each]]
 .Instantiate TestDsl in BeforeEach
@@ -388,13 +388,13 @@ We have already come a long way with this refactoring:
 . we were able to write the entire setup in the same place as our test. You can see at a glance which preconditions the test requires and you don't have to scroll or open another file to understand the context.
 . we were able to hide irrelevant details (you need some `book` and some `user`) and highlight relevant ones (the `user` needs the `CAN_RENT_BOOK` permission).
 . we have a standardized way to do the test setup for all tests.
-. we could avoid a structure-cementing test setup.
+. we were able to avoid a structure-cementing test setup.
 
 However, we can still make one improvement.
 
 == 5. Refactoring - Extension
 
-So far we have to write redundant initialization code for the TestDsl in the `@BeforeEach` block in every test. If we are using JUnit5, we can summarize the whole thing in an annotation (<<lst:testdsl-complete-test-w-extension>>).
+So far we have to write redundant initialization code for the TestDsl in the `@BeforeEach` block in every test. If we are using JUnit5, we can make it reusable for multiple tests with an annotation (<<lst:testdsl-complete-test-w-extension>>).
 
 [[lst:testdsl-complete-test-w-extension]]
 .Complete test with TestDsl Extension
@@ -417,7 +417,7 @@ void should_be_able_to_rent_book(TestState a, Floor floor){ // <2>
 <1> Our `@BeforeEach` is completely merged into the annotation `@Unit`.
 <2> The annotation turns the two parts of our Dsl into parameters of the test.
 
-The new annotation registers a JUnit 5 extension <<junit5-user-guide-extension-model>>. Such an extension can react to the test LifeCycle by implementing special interfaces. We are only interested in `ParameterResolver` to be able to pass the two possible parameters `TestState` or `Floor` to our test (<<lst:testdsl-extension>>).
+The new annotation registers a JUnit 5 extension <<junit5-user-guide-extension-model>>. Such an extension can react to the test LifeCycle by implementing special interfaces. We are only interested in `ParameterResolver` because it resolves the parameters `TestState` and `Floor` (<<lst:testdsl-extension>>) that our test requires.
 
 [[lst:testdsl-extension]]
 .resolveParameter() of the TestDsl extension
