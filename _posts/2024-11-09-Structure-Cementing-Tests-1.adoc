@@ -1,0 +1,528 @@
+---
+title: Structure-cementing tests and how to avoid them
+tags: testing architecture cementing
+comments: false
+---
+== Part 1 - Building a TestDsl
+
+Tests should react to behavioral changes but be insensitive to structural changes. We call tests that do not fulfill the second condition structure-cementing. They make it difficult or even impossible to change the structure and architecture. Teams to whom this happens test and improve less code. With the right approach and a TestDsl, however, we can completely avoid cementation and write tests that turn from integration tests to unit tests after changing *just one line* of test code.
+
+If we change behavior, we should have to change tests. When we restructure code (add, rename or remove methods, classes, parameters or fields) we should not have to change the tests. Both conditions are essential because agile developers are constantly jumping back and forth between the two modes _change behavior_ and _change structure_.
+
+With a failing test we jump to the change behavior mode. If the test is green, we have our safety net to change structure and jump back (<<fig:structure-behavior, see figure>>). The same applies if we write our tests after the implementation, then the transition between the modes is just not quite as sharp.
+
+[[fig:structure-behavior]]
+.The two development modes, loosely based on Kent Beck
+image::/assets/img/posts/structure-cementing-tests/part1/Structure-Behavior.png[A picture showing how we go from changing structure to changing behavior with failling and passing tests]
+
+*Changing behavior* is of course very risky, because a desired change in behavior can also bring with it an undesirable one. So most of the time we want to spend in *change structure* mode and use techniques like _preparatory refactoring_ <<preparatory-refactoring>> that make our behavior change as simple and manageable as possible.
+
+However, this also requires tests that allow structural changes and do not cement them. Such tests allow use to proceed in very small and manageable steps. A difficult change is first prepared with 10 to 20 “r” (refactor) commits in order to then make a very small “F” (feature) commit. The commit format is Arlo's Commit Notation <<arlos-commit>>, because this models the risk of the commit.
+
+[quote, Kent Beck [3]]
+____
+When faced with a hard change, first make it easy (warning, this may be hard), then make the easy change.
+____
+
+However, if the structure is cemented, then not only structural but also feature-related behavioral changes are more difficult. This is because we no longer build in features where they make sense, but where they are easier to integrate. As a result, the code becomes increasingly confusing. At the beginning, you can no longer find code, it ends up in the simplest place, not the most sensible one. Later on, there are more and more unexpected dependencies, more and more unknown unknowns. We change one place and this leads to a behavior change in a completely different place.
+
+The structure-cementing tests have destroyed maintainability. Or we have deleted them and caught regressions.
+
+Tests are structure-cementing in two ways:
+
+1. through redundancy: tests use the same structure in several places. The more often the same structure (class, method) is required and the more excessively mocked, the more the design is cemented.
+2. by testing at the wrong level: we test unstable elements and not modules.
+
+In part 1 of this article series, we look at how we can avoid structure-cementation through redundancy with a TestDsl, in part 2 we explain the concepts of the Dsl in more detail and part 3 deals with the correct test levels.
+
+== The initial test
+
+We can see the cementation through redundancy in <<lst:initialer-test>>.
+
+[[lst:initialer-test]]
+.Initial test
+[source,java]
+----
+@Test
+void should_be_able_to_rent_book(){
+	// given
+	var book = new Book(bookId("b"), "Refactoring", "Martin Fowler"); // <1>
+	var permission = new Permission(permissionId("p"), CAN_RENT_BOOK);
+	var role = new Role(roleId("r"), "Renter", permission.id);
+	var user = new User(userId("u", "Alex Mack", role.id);
+
+	var books = new InMemoryBooksDouble(); // <2>
+	var permissions = new InMemoryPermissionsDouble();
+	var roles = new InMemoryRolesDouble();
+	var users = new InMemoryUsersDouble();
+
+	books.add(book); // <3>
+	permissions.add(permission);
+	roles.add(role);
+	users.add(user);
+
+	var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, …); // <4>
+	// when
+	var result = testee.rentBook(book, user); // <5>
+	// then
+	assertThat(result.isRented()).isTrue();
+}
+----
+<1> The basis for most of our tests are, in this example, books. Therefore, most of our tests instantiate at least one book and with each redundant instantiation we cement the structure of book more and more, since a change would result in adjustments in hundreds of tests.
+<2> The repositories follow the naming convention `+{implementation}+{name of managed entity with plural s}Double`. The _Double_ postfix indicates that this is a test double <<xunit-test-double>> located in src/testFixtures (or src/test). The postfix is not necessary, but it makes finding all created doubles very convenient.
+<3> Our code to be tested needs to load the books from the repository, so they must also be stored there first. How this is done is actually an irrelevant implementation detail for the test. However, redundancy in several tests cements this. It also makes the test unnecessarily long.
+<4> The more often we instantiate the `RentingService`, the less interest we have in changing its dependencies. The dependencies on our service are cemented.
+<5> The method whose behavior we actually want to test. Cementing the structure of this method with multiple tests is a tradeoff we want to make because this time we get something back: Feedback. Feedback on whether the method is pleasant and logical to use.
+
+In addition to the test smell “structure-cementing”, this test has a few other problems:
+
+1. long test: there is a lot to read and therefore many potentially hidden errors.
+2. irrelevant details: Does it have to be a specific book or is any book possible? Do the fields have to have the specified values for the test to be successful?
+
+We will therefore refactor the test in several steps and work our way towards the final TestDsl [<<lst:testdsl-complete-test-w-extension>>].
+
+== 1. Refactoring - Factory Methods
+
+We can break the redundancy and focus tests by no longer instantiating objects directly, but using factory methods [<<lst:factory-methods>>].
+
+[[lst:factory-methods]]
+.Factory Methods
+[source,java]
+----
+@Test
+void should_be_able_to_rent_book(){
+    // given
+    var book = makeBook();
+    var permission = makePermission(CAN_RENT_BOOK);
+    var role = makeRole(permission);
+    var user = makeUser(role);
+
+    var books = new InMemoryBooksDouble();
+    // remaining Test
+    // ...
+}
+
+static Book makeBook(){
+    return new Book(bookId("b"), "Refactoring", "Martin Fowler");
+}
+----
+
+For this small example this is fine, but we quickly run into many problems with this approach (which is also known as the object-mother <<object-mother>> pattern):
+
+1. either each new use case gets a new method (`makeBook()`, `makeExpensiveBook()` etc.).
+2. or the method gets dozens of optional parameters without it being clear which parameters are dependent on each other.
+
+This does not mean that factory methods should not be used. Especially when introducing new structures, factory methods are great because we can create them directly under our test with little effort. However, if we are more sure about our structure, we should first use the `Builder` from the next section (<<lst:entity-test-builder>>) within the factory method and then inline it with our refactoring tools.
+
+== 2. Refactoring - Simple Builder
+
+Instead of the factory method or the object-mother pattern, we prefer to use a builder (<<lst:entity-test-builder>>).
+
+[[lst:entity-test-builder]]
+.Builder Methods
+[source,java]
+----
+@Test
+void should_be_able_to_rent_book(){
+	// given
+	var book = new BookBuilder().build();
+	var permission = new PermissionBuilder().withPermission(CAN_RENT_BOOK).build();
+	var role = new RoleBuilder().withPermissions(permission).build();
+	var user = new UserBuilder().withRole(role).build();
+
+	var books = new InMemoryBooksDouble();
+	// remaining Test
+	// ...
+}
+----
+
+If you call the `build()` method directly, the entity is assigned default values. With the `withX()` methods, we can adapt the default values to our specific test if necessary. We are therefore much more flexible than with the Factories/Object Mother pattern, because not every case needs its own method.
+
+With the builder, we have also redirected the redundant dependencies to a test-specific abstraction (<<fig:structure-cement-init>>). We now only have to make changes to the structure of the entity in the builder, not in n tests. We can maintain the structural changes in the builder because we are protected by the tests that already use the builder. If existing tests become red, we have broken something.
+
+[[fig:structure-cement-init]]
+.Cementing structure by init
+image::/assets/img/posts/structure-cementing-tests/part1/Structure-cementing-via-init.png[A picture showing ]
+
+In addition to flexible test setup and avoiding the cementing of structure, such a `Builder` offers us a few more advantages:
+
+1. the test *no longer mentions irrelevant details*. The above test shows us that it needs any book and not a specific one.
+2. the builder highlights *essential differences* between the tests. By using the `with()` method, we see that the user absolutely needs the `CAN_RENT_BOOK` permission.
+3. in the builder we have a unique place to store technically meaningful default values (<<lst:builder-value-example>>). Practical documentation for developers.
+
+[[lst:builder-value-example]]
+.Entity-TestBuilder
+[source,java]
+----
+public class BookBuilder extends TestBuilder<Book> {
+
+    public BookId id = ids.next(BookId.class);
+    public String title = "Refactoring"; // <1>
+    public String author = "Martin Fowler";
+    public Instant createdOn = clock.now();
+
+    public BookBuilder(Clock clock, Ids ids){ // <2>
+        super(clock, ids);
+    }
+
+    public BookBuilder(){ // <3>
+        this(globalTestClock, globalTestIds);
+    }
+
+    public Book build(){
+        return new Book(id, title);
+    }
+
+    public BookBuilder with(Consumer<? super BookBuilder> action) { // <4>
+        action.accept(this);
+        return this;
+    }
+
+    // <5>
+}
+----
+<1> Useful defaults that are representative for the production are stored here.
+<2> We already design the builder so we can enter the two main sources of non-deterministic tests (time and random values) from outside.
+<3> With the TestDsl refactoring, this parameterless constructor is omitted.
+<4> The `with()` method speeds up the writing of the initial builder. However, you then have to get used to the fact that the builder has _public_ fields. This is a trade-off that can be made for tests. The specific `withX()` are more flexible because they can be overloaded though.
+<5> As an alternative to the generic `with()`, you can introduce field-specific `withX()` methods below.
+
+However, we are not finished yet, because the combination of permission, role and user can be modeled even more strongly and the test can be further focused.
+
+== 3. Refactoring - Combo Builder
+
+We introduce the concept of the _Combo_ Builder (<<lst:combo-test-builder-usage>>) so that we can build several separately stored objects in a coordinated manner.
+
+[[lst:combo-test-builder-usage]]
+.Using the ComboBuilder
+[source,java]
+----
+@Test
+void should_be_able_to_rent_book(){
+    // given
+    var book = new BookBuilder().build(); // <1>
+    var userCombo = new UserComboBuilder.with(it ->
+        it.hasPermissions(CAN_RENT_BOOK)
+    ).build();
+    // Combo includes:
+    // var permissions = userCombo.permissions();
+    //   var role = userCombo.role();
+    //   var user = userCombo.user();
+
+    var books = new InMemoryBooksDouble();
+    // remaining Test
+    // ...
+}
+----
+
+To keep the complexity of the combo builder low, it only ever builds standard cases (<<lst:combo-test-builder-design>>). For more difficult and atypical situations, e.g. if a user has several roles, the individual builders of permission, role and user are used again. This is important because all the special cases will create a lot of unmaintainable code. The rule of thumb is that a builder should never contain `if` or `switch`.
+
+[[lst:combo-test-builder-design]]
+.Entity-ComboBuilder
+[source,java]
+----
+public class UserComboBuilder implements TestBuilder<UserCombo> {
+
+    // combination fields
+    private List<Permission> permissions = Collections.emptyList();
+
+    public UserCombo build(){
+        var role = new RoleBuilder().withPermissions(permissions).build();
+        var user = new UserBuilder().withRole(role).build();
+    }
+
+    public UserBundleBuilder hasPermissions(PermissionCode... permissionCode) {
+        this.permissions = Stream.of(permissionCode)
+            .map(code -> new Permission(code))
+            .toList();
+        return this;
+    }
+}
+----
+
+Using the builder has already streamlined the test considerably. However, we still have the implementation detail of the repositories. We still need to store created entities in repositories and the test needs to know how to do this.
+
+== 4. Refactoring - TestDsl
+
+First we introduce the TestState (<<lst:testdsl-teststate>>).
+
+[[lst:testdsl-teststate]]
+.TestState of the TestDsl
+[source,java]
+----
+private TestState a; // <1>
+
+@Test
+void should_be_able_to_rent_book(){
+    // given
+    var book = a.book(); // <2>
+    var userCombo = a.userCombo(it -> it.hasPermission(CAN_RENT_BOOK));
+
+    var books = new InMemoryBooksDouble();
+    var permissions = new InMemoryPermissionsDouble();
+    var roles = new InMemoryRolesDouble();
+    var users = new InMemoryUsersDouble();
+
+    books.add(book);
+    permissions.addAll(userCombo.permissions());
+    roles.add(userCombo.role());
+    users.add(userCombo.user());
+
+    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, /* ... */);
+    // WHEN + THEN
+    // ...
+}
+----
+<1> The TestState is a class that recognizes all builders.
+<2> Build tasks are always delegated to the already written builders.
+
+At first glance, we only gain some compactness: `xyzBuilder()` no longer needs to be instantiated and we don't need a `.build()` method. Behind the scenes, however, we have gained much more. The `TestState` is now a central point that recognizes all created entities. We can therefore ask the state to store all created entities in the repositories and streamline our test even further (<<lst:testdsl-floor>>).
+
+[[lst:testdsl-floor]]
+.Floor of the TestDsl
+[source,java]
+----
+private TestState a;
+private Floor floor; // contains the floor that the application is build on
+
+@Test
+void should_be_able_to_rent_book(){
+    // given
+    var book = a.book();
+	var userCombo = a.userCombo(it -> it.hasPermission(CAN_RENT_BOOK));
+    a.saveTo(floor); // <1> <2>
+
+    var testee = new RentingService(floor); // <3>
+    // WHEN + THEN
+    // ...
+}
+----
+<1> With this call, we save `book`, `permission`, `role` and `user` in the respective repositories. Theoretically, the call to `a.book();` could already have saved the book in the `BookRepository`. However, the `saveTo()` makes saving more explicit and also offers the flexibility to create entities that do not automatically end up in repositories.
+<2> We group all `Ports` into the outside world in the so-called `Floor`, the floor on which our application stands. A repository is such a `Port`, just like `Clock` or an external `Client`. The _Floor_ allows us to flexibly control how our _testee_ communicates with the outside world in tests. We can **pull the floor out from under the feet of our application in tests and set up a much more testable floor**. In the _ports & adapters architecture_ <<ports-and-adapters>>, the `floor` is synonymous with the _driven_ but not the _driving_ ports. Since it is easy to overlook whether something is _driven_ or _driving_, the terms were out of the question. `Floor` was chosen as an identifier because it is short and thus provides an analogy for software +++<s>architects</s>+++ gardeners who take care of the _Forest_ `Floor`, the _Forest_ `Canopy` and the forest. Alternative names for _driven_ (=outcomes) or _driving_ (=triggers) `Port` were not known at the time.
+<3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` (<<lst:first-class-floor>>) and no longer have to write the concrete dependencies. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
+
+[[lst:first-class-floor]]
+.Floor of the TestDsl
+[source,java]
+----
+public class RentingService {
+    private final Clock clock;
+    private final Books books;
+    // etc.
+
+    public RentingService(Floor floor) {
+        this.clock = floor.clock();
+        this.books = floor.books();
+        // etc.
+    }
+}
+----
+
+To ensure that the tests are isolated from each other, we instantiate TestState and Floor anew for each test (<<lst:testdsl-init-before-each>>).
+
+[[lst:testdsl-init-before-each]]
+.Instantiate TestDsl in BeforeEach
+[source,java]
+----
+private TestState a;
+private Floor floor;
+
+@BeforeEach
+void init(){
+    var dsl = TestDsl.of(unitFloor());
+    a = dsl.testState();
+    floor = dsl.floor();
+}
+----
+
+The floor itself is simply an interface that recognizes all dependencies (<<lst:floor>>). The unit test implementation `unitFloor()` then returns _InMemoryDoubles_ when the methods are called.
+
+[[lst:floor]]
+.Floor of the TestDsl
+[source,java]
+----
+public interface Floor {
+    Clock clock();
+    Books books();
+    // etc.
+}
+----
+
+Our test already looks very compact (<<lst:testdsl-complete-test-with-before-each>>).
+
+[[lst:testdsl-complete-test-with-before-each]]
+.Complete test with TestDsl
+[source,java]
+----
+private TestState a;
+private Floor floor;
+
+@BeforeEach
+void init(){
+    var dsl = TestDsl.of(unitFloor());
+    a = dsl.testState();
+    floor = dsl.floor();
+}
+
+@Test
+void should_be_able_to_rent_book(){
+    // given
+    var book = a.book();
+    var userCombo = a.userCombo(it -> it.hasPermission(CAN_RENT_BOOK));
+    a.saveTo(floor);
+
+    var testee = new RentingService(floor);
+    // WHEN
+    var result = testee.rentBook(book, userCombo.user());
+    // THEN
+    assertThat(result.isRented()).isTrue();
+}
+----
+
+We have already come a long way with this refactoring:
+
+. we were able to map the setup for our test in just 4 lines.
+. we were able to write the entire setup in the same place as our test. You can see at a glance which preconditions the test requires and you don't have to scroll or open another file to understand the context.
+. we were able to hide irrelevant details (you need some `book` and some `user`) and highlight relevant ones (the `user` needs the `CAN_RENT_BOOK` permission).
+. we have a standardized way to do the test setup for all tests.
+. we could avoid a structure-cementing test setup.
+
+However, we can still make one improvement.
+
+== 5. Refactoring - Extension
+
+So far we have to write redundant initialization code for the TestDsl in the `@BeforeEach` block in every test. If we are using JUnit5, we can summarize the whole thing in an annotation (<<lst:testdsl-complete-test-w-extension>>).
+
+[[lst:testdsl-complete-test-w-extension]]
+.Complete test with TestDsl Extension
+[source,java]
+----
+@Unit @Test // <1>
+void should_be_able_to_rent_book(TestState a, Floor floor){ // <2>
+    // given
+    var book = a.book();
+    var userCombo = a.userCombo(it -> it.hasPermission("CAN_RENT_BOOK"));
+    a.saveTo(floor);
+
+    var testee = new RentingService(floor);
+    // WHEN
+    var result = testee.rentBook(book, userCombo.user());
+    // THEN
+    assertThat(result.isRented()).isTrue();
+}
+----
+<1> Our `@BeforeEach` is completely merged into the annotation `@Unit`.
+<2> The annotation turns the two parts of our Dsl into parameters of the test.
+
+The new annotation registers a JUnit 5 extension <<junit5-user-guide-extension-model>>. Such an extension can react to the test LifeCycle by implementing special interfaces. We are only interested in `ParameterResolver` to be able to pass the two possible parameters `TestState` or `Floor` to our test (<<lst:testdsl-extension>>).
+
+[[lst:testdsl-extension]]
+.resolveParameter() of the TestDsl extension
+[source,java]
+----
+@Target({ ElementType.METHOD })
+@Retention(RetentionPolicy.RUNTIME)
+@org.junit.jupiter.api.extension.ExtendWith(UnitTestExtension.class) // <1>
+public @interface Unit { } // <2>
+
+class UnitTestExtension implements ParameterResolver {
+    @Override
+    public Object resolveParameter(
+            ParameterContext parameterContext,
+            ExtensionContext extensionContext
+        ) throws ParameterResolutionException {
+
+        var storeNamespace = Namespace.create(
+            getClass(), context.getRequiredTestMethod());
+        var store = extensionContext.getStore(store); // <3>
+
+        var dsl = store.getOrComputeIfAbsent(
+            "UNIT_TEST_DSL",
+            (key) -> testDslOf(unitFloor()), // <4>
+            UnitTestDsl.class
+        );
+
+        var parameterType = parameterContext.getParameter().getType(); // <5>
+        if (parameterType.equals(TestState.class))
+            return dsl.testState();
+        else if (parameterType.equals(Floor.class))
+            return dsl.floor();
+        else
+            throw new ParameterResolutionException("...");
+    }
+    // ...
+}
+----
+<1> With `@ExtendWith` we connect annotation with the extension code.
+<2> A normal Java annotation. The name is freely selectable.
+<3> Extensions must always save state in a store. This is unique per namespace.
+<4> This creator function is used if no Dsl has yet been created for the test. The `resolveParameter()` method is called exactly twice per test. Once for the `TestState` and once for the `Floor`. We use `getOrComputeIfAbsent()` so that the same instance of the Dsl is returned.
+<5> We use the parameterType to recognize what is to be returned.
+
+In addition to the UnitTest extension shown here, we can of course write another extension, the `IntegrationTestExtension`. This looks the same, but uses `(key) -> testDslOf(integrationFloor())` as the creator function. The `TestState` remains the same but the implementation of the `Floor` is an `IntegrationFloor` which does not contain `InMemoryDoubles` but `Jpa` repositories.
+
+Since the `TestState` only knows the `Floor` interface and not the concrete implementation, we can now make any test by changing *a single annotation* from an `@Integration` to an `@Unit` test.
+
+This property of the TestDsl is particularly helpful for legacy code, because this code often contains a lot of domain logic in the database. You therefore write many integration tests at the beginning to validate regressions. Once you have pulled the domain logic out of the database and into the application code, you can convert the initially written tests into unit tests with a one-liner. Without a TestDsl, you would have to completely rewrite them at unit level, which is *why many teams do not do this, remain stuck with slow integration tests and cannot iterate much faster* despite increasing test coverage.
+
+== Alternatives
+
+Testing without mocks” <<testing-without-mocks>> follows a similar approach to TestDsl. With this approach, however, you have to modify your production code more because we place special test doubles, the so-called “nullables” <<testing-without-mocks-nullables>>, directly in the production code.
+
+The refactoring tools of our IDE can also intercept certain forms of cementing from our initial test (<<lst:initialer-test>>). “Change Signature” is the most helpful refactoring against structure cementing. You can use it to remove constructor parameters very well. However, adding them is only useful if the default parameter inserted in tests is very simple and has no dependency on other states in the test. Refactoring can also catch bugs, as default values are not only set in the test code, but also in the production code and you can forget to adjust them. The `Builder` of the Dsl are much more flexible and prevent more cementing of entities. The same applies to the `TestState` which allows more flexible customization of the `Ports`. Refactoring tools are therefore not a replacement, but a supplement for the TestDsl.
+
+The refactoring framework Open Rewrite <<open-rewrite>> looks promising, but seems to be designed more for framework migrations. It should therefore also be more of a supplement to TestDsl, which focuses on domain logic.
+
+== Interim conclusion
+
+With the TestDsl we can make our test setup:
+
+1. standardized for all tests,
+2. complete (nothing needs to be outsourced),
+3. compact (although nothing has been outsourced),
+4. free of irrelevant details,
+5. with relevant details highlighted,
+6. readable,
+7. low-maintenance,
+8. parallelizable,
+9. fast,
+10. and free of structure cementation
+
+The TestDsl is of course not free. But it is not expensive either. We have to lay a one-off foundation with Extension, TestState, Floor and BaseInMemoryDouble. However, experience from several JVM and Node projects shows that the maintenance effort is low once the foundation has been laid.
+
+It is rather rare that you have to create new entities. You work much more with existing entities and services and restructure them. The initial investment then pays dividends continuously. Since the entire setup is done via the Dsl (<<fig:testdsl-struktur, see figure>>), only the Dsl is affected by structural changes.
+
+[[fig:testdsl-struktur]]
+.The TestDsl is between tests and the structure of the production code
+image::/assets/img/posts/structure-cementing-tests/part1/LL-Test-DSL-Layer.png[A picture showing]
+
+<<fig:testdsl-struktur, The figure>> also shows what the actual trade-off is that we make with the Dsl: Loss of feedback on our setup. Without Dsl, you notice whether the setup is “annoying” when writing tests. If you have to write a lot of code for testing, you naturally ask yourself whether there is an easier way to do it. There is a natural pressure to improve the structure. This “annoying” setup can now be hidden in the Dsl. It is therefore all the more important to use the Dsl only for the setup, to leave it as dumb as possible, to define as few combo builders as possible and to keep thinking about whether the structure is on the right track when adapting the Dsl.
+
+If you are more interested in the topic, you can view the TestDsl example code on Github <<test-dsl>> or watch the presentation on “Beehive Architecture” <<beehive-architecture>> (in 🇩🇪), which is also about the TestDsl.
+
+== Outlook
+
+In this part we have seen how to solve structure cementation through redundancy with the TestDsl.
+
+In the next part, we will take a closer look at the concepts on which the TestDsl is based. We will go into the design of the builder, how to combine the DSL with `@SpringBootTest`, what the difference between a high- and a low-level TestDsl is, how to keep test doubles synchronized with the production code and why the excessive use of mocking frameworks also leads to structure cementation.
+
+In part 3, we will see how to prevent structure cementation by testing at the wrong level with the right approach.
+
+NOTE: This article was originally published in link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-4-24-java-22/[Java Aktuell 4/24] in 🇩🇪. It is translated and republished here with the magazine's permission.
+
+[bibliography]
+== References
+
+* [[[preparatory-refactoring, 1]]] M. Fowler, “An example of preparatory refactoring.” 2015. Available: link:https://martinfowler.com/articles/preparatory-refactoring-example.html[]
+* [[[arlos-commit, 2]]] A. Belshee, “Arlo’s Commit Notation.” 2018. Available: link:https://github.com/RefactoringCombos/ArlosCommitNotation[]
+* [[[mastering-programming, 3]]] K. Beck, “Mastering Programming.” Available: link:https://tidyfirst.substack.com/p/mastering-programming[]
+* [[[xunit-test-double, 4]]] G. Meszaros, “Test Double.” 2011. Available: link:http://xunitpatterns.com/Test%20Double.html[]
+* [[[object-mother, 5]]] M. Fowler, “Object Mother.” 2006. Available: link:https://martinfowler.com/bliki/ObjectMother.html[]
+* [[[ports-and-adapters, 6]]] 	A. Cockburn, “Hexagonal architecture.” 2005. Available: link:https://alistair.cockburn.us/hexagonal-architecture/[]
+* [[[spring-2-unit-tests, 7]]] 	T. Spring, “Unit Testing.” 2006. Available: link:https://docs.spring.io/spring-framework/docs/2.0.4/reference/testing.html#unit-testing[]
+* [[[junit5-user-guide-extension-model, 8]]] T. JUnit5, “JUnit 5 User Guide - Extension Model.” Available: https://junit.org/junit5/docs/current/user-guide/#extensions
+* [[[testing-without-mocks, 9]]] J. Shore, “Testing Without Mocks: A Pattern Language.” 2023. Available: https://www.jamesshore.com/v2/projects/nullables/testing-without-mocks
+* [[[testing-without-mocks-nullables, 10]]] 	J. Shore, “Nullables.” 2023. Available: link:https://www.jamesshore.com/v2/projects/nullables/testing-without-mocks#nullables[]
+* [[[open-rewrite,11]]] 	T. Moderne, “Large-scale automated source code refactoring.” 2024. Available: https://docs.openrewrite.org/
+* [[[test-dsl,12]]] R. Gross, “TestDsl (Avoid structure-cementing Tests).” 2024. Available: https://github.com/Richargh/testdsl
+* [[[beehive-architecture,13]]] R. Gross, “Beehive Architecture 🇩🇪” 2023. Available: http://richargh.de/talks/#beehive-architecture
