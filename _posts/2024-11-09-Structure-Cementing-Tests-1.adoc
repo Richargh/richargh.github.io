@@ -244,10 +244,10 @@ Using the builder has already streamlined the test considerably. However, we sti
 
 == 4. Refactoring - TestDsl
 
-First we introduce the TestState (<<lst:testdsl-teststate>>).
+First we introduce the <<lst:testdsl-teststate, TestState>>.
 
 [[lst:testdsl-teststate]]
-.TestState of the TestDsl
+.Using the TestState
 [source,java]
 ----
 private TestState a; // <1>
@@ -273,13 +273,13 @@ void should_be_able_to_rent_book(){
     // ...
 }
 ----
-<1> The TestState is a class that recognizes all builders.
+<1> The TestState is a class that knows all builders.
 <2> Build tasks are always delegated to the already written builders.
 
 At first glance, we only gain some compactness: `xyzBuilder()` no longer needs to be instantiated and we don't need a `.build()` method. Behind the scenes, however, we have gained much more. The `TestState` is now a central point that recognizes all created entities. We can therefore ask the state to store all created entities in the repositories and streamline our test even further (<<lst:testdsl-floor>>).
 
 [[lst:testdsl-floor]]
-.Floor of the TestDsl
+.Saving state to the floor
 [source,java]
 ----
 private TestState a;
@@ -299,10 +299,12 @@ void should_be_able_to_rent_book(){
 ----
 <1> With this call, we save `book`, `permission`, `role` and `user` in the respective repositories. Theoretically, the call to `a.book();` could already have saved the book in the `BookRepository`. However, the `saveTo()` makes saving more explicit and also offers the flexibility to create entities that do not automatically end up in repositories.
 <2> We group all `Ports` into the outside world in the so-called `Floor`, the floor on which our application stands. A repository is such a `Port`, just like `Clock` or an external `Client`. The _Floor_ allows us to flexibly control how our _testee_ communicates with the outside world in tests. We can **pull the floor out from under the feet of our application in tests and set up a much more testable floor**. In the _ports & adapters architecture_ <<ports-and-adapters>>, the `floor` is synonymous with the _driven_ but not the _driving_ ports. Since it is easy to overlook whether something is _driven_ or _driving_, the terms were out of the question. `Floor` was chosen as an identifier because it is short and thus provides an analogy for software +++<s>architects</s>+++ gardeners who take care of the _Forest_ `Floor`, the _Forest_ `Canopy` and the forest. Alternative names for _driven_ (=outcomes) or _driving_ (=triggers) `Port` were not known at the time.
-<3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` (<<lst:first-class-floor>>) and no longer have to write the concrete dependencies. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
+<3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` (<<lst:first-class-floor>>) and no longer have to write the concrete dependencies.
+
+To simplify the dependency management we pass floor directly to the constructor of our production services (<<lst:first-class-floor>>). We don't have to do this to utilize TestDsl. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
 
 [[lst:first-class-floor]]
-.Floor of the TestDsl
+.RentingServices takes required dependencies
 [source,java]
 ----
 public class RentingService {
@@ -318,7 +320,7 @@ public class RentingService {
 }
 ----
 
-To ensure that the tests are isolated from each other, we instantiate TestState and Floor anew for each test (<<lst:testdsl-init-before-each>>).
+To ensure that the tests are isolated from each other, we instantiate TestState and Floor individually for each test (<<lst:testdsl-init-before-each>>).
 
 [[lst:testdsl-init-before-each]]
 .Instantiate TestDsl in BeforeEach
@@ -348,7 +350,7 @@ public interface Floor {
 }
 ----
 
-Our test already looks very compact (<<lst:testdsl-complete-test-with-before-each>>).
+The sum of these changes is that our test looks very compact (<<lst:testdsl-complete-test-with-before-each>>).
 
 [[lst:testdsl-complete-test-with-before-each]]
 .Complete test with TestDsl
