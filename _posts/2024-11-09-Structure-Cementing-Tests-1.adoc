@@ -497,7 +497,7 @@ It is rather rare that you have to create new entities. You work much more with 
 
 [[fig:testdsl-struktur]]
 .The TestDsl is between tests and the structure of the production code
-image::/assets/img/posts/structure-cementing-tests/part1/LL-Test-Dsl-Layer[A picture showing]
+image::/assets/img/posts/structure-cementing-tests/part1/LL-Test-Dsl-Layer.png[A picture showing]
 
 <<fig:testdsl-struktur, The figure>> also shows what the actual trade-off is that we make with the Dsl: Loss of feedback on our setup. Without Dsl, you notice whether the setup is “annoying” when writing tests. If you have to write a lot of code for testing, you naturally ask yourself whether there is an easier way to do it. There is a natural pressure to improve the structure. This “annoying” setup can now be hidden in the Dsl. It is therefore all the more important to use the Dsl only for the setup, to leave it as dumb as possible, to define as few combo builders as possible and to keep thinking about whether the structure is on the right track when adapting the Dsl.
 
