@@ -45,27 +45,27 @@ We can see the cementation through redundancy in <<lst:initialer-test>>.
 ----
 @Test
 void should_be_able_to_rent_book(){
-	// given
-	var book = new Book(bookId("b"), "Refactoring", "Martin Fowler"); // <1>
-	var permission = new Permission(permissionId("p"), CAN_RENT_BOOK);
-	var role = new Role(roleId("r"), "Renter", permission.id);
-	var user = new User(userId("u", "Alex Mack", role.id);
+    // given
+    var book = new Book(bookId("b"), "Refactoring", "Martin Fowler"); // <1>
+    var permission = new Permission(permissionId("p"), CAN_RENT_BOOK);
+    var role = new Role(roleId("r"), "Renter", permission.id);
+    var user = new User(userId("u", "Alex Mack", role.id);
 
-	var books = new InMemoryBooksDouble(); // <2>
-	var permissions = new InMemoryPermissionsDouble();
-	var roles = new InMemoryRolesDouble();
-	var users = new InMemoryUsersDouble();
+    var books = new InMemoryBooksDouble(); // <2>
+    var permissions = new InMemoryPermissionsDouble();
+    var roles = new InMemoryRolesDouble();
+    var users = new InMemoryUsersDouble();
 
-	books.add(book); // <3>
-	permissions.add(permission);
-	roles.add(role);
-	users.add(user);
+    books.add(book); // <3>
+    permissions.add(permission);
+    roles.add(role);
+    users.add(user);
 
-	var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, …); // <4>
-	// when
-	var result = testee.rentBook(book, user); // <5>
-	// then
-	assertThat(result.isRented()).isTrue();
+    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, …); // <4>
+    // when
+    var result = testee.rentBook(book, user); // <5>
+    // then
+    assertThat(result.isRented()).isTrue();
 }
 ----
 <1> The basis for most of our tests are, in this example, books. Therefore, most of our tests instantiate at least one book and with each redundant instantiation we cement the structure of book more and more, since a change would result in adjustments in hundreds of tests.
@@ -124,15 +124,15 @@ Instead of the factory method or the object-mother pattern, we prefer to use a b
 ----
 @Test
 void should_be_able_to_rent_book(){
-	// given
-	var book = new BookBuilder().build();
-	var permission = new PermissionBuilder().withPermission(CAN_RENT_BOOK).build();
-	var role = new RoleBuilder().withPermissions(permission).build();
-	var user = new UserBuilder().withRole(role).build();
+    // given
+    var book = new BookBuilder().build();
+    var permission = new PermissionBuilder().withPermission(CAN_RENT_BOOK).build();
+    var role = new RoleBuilder().withPermissions(permission).build();
+    var user = new UserBuilder().withRole(role).build();
 
-	var books = new InMemoryBooksDouble();
-	// remaining Test
-	// ...
+    var books = new InMemoryBooksDouble();
+    // remaining Test
+    // ...
 }
 ----
 
@@ -229,6 +229,7 @@ public class UserComboBuilder implements TestBuilder<UserCombo> {
     public UserCombo build(){
         var role = new RoleBuilder().withPermissions(permissions).build();
         var user = new UserBuilder().withRole(role).build();
+        return new UserCombo(user, role, permissions);
     }
 
     public UserBundleBuilder hasPermissions(PermissionCode... permissionCode) {
@@ -289,7 +290,7 @@ private Floor floor; // contains the floor that the application is build on
 void should_be_able_to_rent_book(){
     // given
     var book = a.book();
-	var userCombo = a.userCombo(it -> it.hasPermission(CAN_RENT_BOOK));
+    var userCombo = a.userCombo(it -> it.hasPermission(CAN_RENT_BOOK));
     a.saveTo(floor); // <1> <2>
 
     var testee = new RentingService(floor); // <3>
