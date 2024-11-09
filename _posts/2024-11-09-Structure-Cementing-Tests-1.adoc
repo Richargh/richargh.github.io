@@ -49,7 +49,7 @@ void should_be_able_to_rent_book(){
     var book = new Book(bookId("b"), "Refactoring", "Martin Fowler"); // <1>
     var permission = new Permission(permissionId("p"), CAN_RENT_BOOK);
     var role = new Role(roleId("r"), "Renter", permission.id);
-    var user = new User(userId("u", "Alex Mack", role.id);
+    var user = new User(userId("u", "Alex Mack", role.id));
 
     var books = new InMemoryBooksDouble(); // <2>
     var permissions = new InMemoryPermissionsDouble();
@@ -61,7 +61,7 @@ void should_be_able_to_rent_book(){
     roles.add(role);
     users.add(user);
 
-    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, …); // <4>
+    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users /* ... */); // <4>
     // when
     var result = testee.rentBook(book, user); // <5>
     // then
@@ -269,7 +269,7 @@ void should_be_able_to_rent_book(){
     roles.add(userCombo.role());
     users.add(userCombo.user());
 
-    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users, /* ... */);
+    var testee = new RentingService(new ClockDouble(), books, permissions, roles, users /* ... */);
     // WHEN + THEN
     // ...
 }
