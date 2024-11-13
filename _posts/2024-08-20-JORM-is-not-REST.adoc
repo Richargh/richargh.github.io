@@ -5,7 +5,7 @@ comments: false
 ---
 
 The link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model] is a great model for explaining the basics of building an http Api.
-By the name of its layers it is unfortunately suggesting that reaching Level 1 is already REST.
+Unfortunately the indexing of its layers (0, 1, 2, 3) suggests that reaching Level 1 is already REST.
 That is a problem because it closes people to the decoupling and integration merits that actual REST has and leaves them with an API that can only be described as *JORM* (Json Object-Relational Mapping): Their API is not designed to solve a problem but to get data from A to B, so the problem can be solved at B.
 
 For Service B to solve the problem it needs to make decisions based on state.
@@ -24,7 +24,9 @@ The inventor of REST, Roy Fielding, described the architectural style quite well
 
 To make this more transparent, let's see how JORM and REST differ when we model a bank Api for viewing your account balance and transferring money.
 
-.GET /accounts/1234 (JORM-Style)
+=== JORM-Style
+
+.GET https://cool-bank.com/api/accounts/1234 (JORM-Style)
 [source,json]
 ----
 {
@@ -50,19 +52,25 @@ It's possible the Api is too simplistic but it's a good place to start discussin
 . Where can we find further information? Where can we lookup the source and target of the transaction?
 . What actions are we allowed to take? Can we transfer more money? Can we close the account?
 
-The first question is usually solved by something like link:https://apiblueprint.org/[Api Blueprint] or link:https://www.openapis.org/[OpenApi] which provides documentation for a human to sift through, guess and try if `GET /users/b2-d2` or `GET /owners/b2-d2` provides the right data for the source of the transaction.
-It would be nicer and less error-prone if the Account-Representation would tell us where the data is but that is a somewhat-solved problem of JORM-Apis.
+The first question is usually addressed by something like link:https://apiblueprint.org/[Api Blueprint] or link:https://www.openapis.org/[OpenApi] which provides documentation for a human to sift through, guess and finally try if `GET /api/users/b2-d2` or `GET /api/owners/b2-d2` provides the right data for the source of the transaction.
+It would be more convenient and less error-prone if the Account-Representation would tell us where the data is.
+It would also make our Api evolvable.
+The JORM approach leads to code where URLs are constructed via string concatenation, which means the URLs cannot change.
+link:https://youtu.be/pspy1H6A3FM?t=1471[The URL is in fact the Api].
+If we instead not hard-code anything but just follow links that the server supplies then the server can change them at any time.
 
-The second question is not satisfactory solvable because it always requires code duplication:
+The second question cannot be addressed by JORM in a satisfying way because it always requires code duplication:
 If we can and are allowed to withdraw money or close this account is dependent on multiple business rules.
 A transaction is always possible unless the account is closed and unless the balance is below zero, but sometimes below zero is also ok but only up to a certain balance and so on.
 A client would have to implement the same rules as the server and always keep them in sync lest it allows something that the server rejects.
 
+=== REST-Style
+
 REST solves these problems, because REST publishes all the possible actions from the current state.
 A client can simply look at the list of actions and decide what to do next.
-It does not need to know nor care why an action is allowed and thus less information needs to be shared and almost no duplication occurs:
+It does not need to know nor care why an action is allowed and thus less information needs to be shared and no duplication occurs:
 
-.GET /accounts/1234 (REST-Style, using link:https://github.com/JornWildt/Mason[Mason Format])
+.GET https://cool-bank.com/api/accounts/1234 (REST-Style, using link:https://github.com/JornWildt/Mason[Mason Format])
 [source,json]
 ----
 {
@@ -76,17 +84,17 @@ It does not need to know nor care why an action is allowed and thus less informa
       "date": "2024-08-20T01:23:45.678Z",
 
       "@controls": { // <1>
-        "self": { "href": "http://cool-bank/transactions/aa-11-11" }, // <2>
-        "coolb:view-source": { "href": "http://cool-bank/transactions/b2-d2" }, // <3>
-        "coolb:view-target": { "href": "http://cool-bank/transactions/c3-pd" } // <3>
+        "self": { "href": "https://cool-bank.com/api/transactions/aa-11-11" }, // <2>
+        "coolb:view-source": { "href": "https://cool-bank.com/api/transactions/b2-d2" }, // <3>
+        "coolb:view-target": { "href": "https://cool-bank.com/api/transactions/c3-pd" } // <3>
       }
     }
   ],
   "@controls": { // <1>
-    "self": { "href": "http://cool-bank/accounts/aa-11" }, // <2>
+    "self": { "href": "https://cool-bank.com/api/accounts/aa-11" }, // <2>
     "coolb:close-account": { // <4>
       "title": "Close account",
-      "href": "http://cool-bank/accounts/aa-11",
+      "href": "https://cool-bank.com/api/accounts/aa-11",
       "method": "DELETE"
     }
   }
@@ -97,15 +105,17 @@ It does not need to know nor care why an action is allowed and thus less informa
 <3> Link to source and target of the transaction
 <4> The presence of this control means that we are allowed to close the account
 
-What is missing is the control for transferring money from a source to a target.
+The response is missing the control for transferring money from a source to a target.
 It is missing because the account owner is on vacation right now and does not want any transfers.
 Or maybe it is missing because the account is closed.
+
 We don't actually need to know the business reason.
 All our client sees is that the control is missing and therefore it cannot do it.
-We don't need to duplicate why something is not allowed and that means Service A is free to add or remove rules whenever it wants and the client, Service B, just needs to react to the presence of a control or its absence.
+We don't need to duplicate why something is not allowed and that means Service A is free to add or remove rules whenever it wants and the client, Service B, just needs to react to the **presence of a control or its absence**.
+
 This is a supremely powerful concept and why the relatively new **REST-style from the year 2000 is better at decoupling teams** than the older RPC-Style Apis.
 The cost is that the services require more protocol knowledge as Oliver Drotbohm link:https://odrotbohm.github.io/2016/04/benefits-of-hypermedia/[describes].
-If we adapt his naming to include JORM and REST we get:
+If we adapt his drawing so it mentions JORM and REST we get:
 
 image::/assets/img/posts/jorm-is-not-rest/benefits-of-rest.drawio.svg[Benefits of REST]
 
@@ -113,43 +123,59 @@ image::/assets/img/posts/jorm-is-not-rest/benefits-of-rest.drawio.svg[Benefits o
 
 The client only having protocol knowledge gives us very clear benefits when we design a SPAs (Single-Page Applications) or need to support multiple devices such as iOS or Android.
 
-The clients just need to look for the existence of the `"coolb:close-account"` or the `"coolb:transfer-money"` to know they should display the buttons for closing or transferring money.
-They ignore controls and optional fields they are unfamiliar with or render generic widgets based on the inputs the server requires.
+A priori the client just needs to know the relevant relations, such as `"coolb:close-account"`.
+The prefix `coolb` just means that it is a relation of the domain cool bank.
+There are link:https://www.iana.org/assignments/link-relations/link-relations.xhtml[multiple standardized relations] that the client can use such as `next` or `prev` for pagination, `self` for the resource itself or `up` for the parent of a resource.
+
+Once a client connects it just need to look for the existence of the `"coolb:close-account"` or the `"coolb:transfer-money"` to know it should display the buttons for closing or transferring money.
+It ignores controls and optional fields that are unfamiliar or renders generic widgets based on the inputs the server requires.
 
 All in all a lot less code is required for each client, because the server controls the interaction and you have a lot less errors to deal with because your iOS, Android or Web Apps cannot mismatch state.
 
 If that seems far-fetched then please consider that you are viewing this post in your browser that allows you to react to arbitrary content without Mozilla, Google, Apple or Microsoft making adaptions in their client.
 
 All your browser has is the protocol knowledge and that is enough.
-If we design our Apis the same way the web is designed, then we get the same decoupling and scalability benefits that have powered the last 30 years.
-This is not surprising because Roy Fielding's link:https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm[dissertation], which defined the REST architectural style, was **defining the core properties of HTTP** so they knew which changes would benefit the protocol.
+If we design our Apis the same way the web is designed, then we get the same decoupling and scalability benefits that have powered the last 35 years (the web went public in 1991).
+This is not surprising because Roy Fielding's link:https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm[dissertation], which defined the REST architectural style, was **defining the core properties of HTTP** so he knew which changes would benefit the protocol.
 
-[quote, Mike Amundsen, http://mamund.com/blog/archives/1107]
+[quote, Roy Fielding, http://mamund.com/blog/archives/1107]
 ____
 What makes HTTP significantly different from RPC is that the requests are directed to resources using a generic interface with standard semantics that can be interpreted by intermediaries almost as well as by the machines that originate services.
 ____
 
-== Should everyone adopt REST?
+== The Why of JORM
 
 By now it should be clear why REST has clear benefits and why a small but vocal group (so called RESTafarians) take every opportunity to point out that most street-REST is not REST (link:https://www.youtube.com/watch?v=pspy1H6A3FM[REST: I don't Think it Means What You Think it Does]).
 
-It seems that this grouped has switched to using the name Hypermedia and Hypermedia Apis when talking about actual REST though.
-link:https://martinfowler.com/bliki/SemanticDiffusion.html[Semantic diffusion] has taken its toll but since the ideas are so great and there is a dissertation describing them it is worth bringing back the term REST.
-For that to work we need a name for the alternative, and since that alternative is close enough to what many object-relational modelling tools give us, the name for the alternative is simply JORM.
+It seems that this group has switched to using the name Hypermedia and Hypermedia Apis when talking about actual REST though.
+link:https://martinfowler.com/bliki/SemanticDiffusion.html[Semantic diffusion] has taken its toll but since the REST ideas are so great and there is a dissertation describing them, it is worth bringing back the term REST.
+For that to work we need a name for the alternative, and since that alternative is close enough to what many object-relational modelling tools give us, the name for the alternative is simply *JORM*.
+
+The name encourages discussions.
+As soon as you say, `"Should we build a JORM or a REST Api?"`, people get curious.
+Curiosity alone might be enough to get people to research and spread great concepts like Hypermedia controls.
 
 == Should everyone adopt REST?
 
 Now for the real question: should everyone adopt REST over JORM?
 
+=== Teams that own their clients
+
 I think the sweet spot is when *teams own their server (backend) as well as one or more clients (frontend: SPA, iOS or Android app)*.
 When they adopt REST, they can make their clients significantly dumber and by that not only save a lot of code but also iterate faster because their client is decoupled from their server.
 
-Sadly it is less clear for company-wide or even public Apis for two reasons:
+=== Teams that don't own their clients
+
+It is less clear for company-wide or even global Apis if REST is a good choice for two reasons:
 
 REST Apis make it very easy to solve problems because the server exposes all allowed actions in the form of Hypermedia Controls.
-That however means you have to somehow know the problems your clients want to solve, which requires more work than just exposing state and letting them figure it out.
+That however means you have to somehow figure out the *problems your clients want to solve*.
+And then you have to take the time to implement solutions to your clients problems.
 
-The second problems is that most clients are not used to the discoverable nature of REST Apis and demand stable URLs.
+If you just expose a lot of state to their outside world, you don't have to invest that time.
+You do have to support that exposed state for a long time though, lest you lose your clients again, and that might take more time in the long run.
+
+The second problem is that most clients are not used to the discoverable nature of REST Apis and demand stable URLs.
 Even without documentation teams often try to retro-engineer the URLs and when they inevitably change, their clients break, which is what Hyrum's Law describes:
 
 [quote, Hyrum Wright, https://www.laws-of-software.com/laws/hyrum/]
@@ -157,4 +183,27 @@ ____
 With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.
 ____
 
-That however means the Apis cannot evolve as intended which is why _solutions_ like link:https://blog.ploeh.dk/2020/10/26/fit-urls/[FIT URLs] are proposed where all your URLs are signed and any mismatch leads to a `404 Not Found`.
+That however means the Apis cannot evolve as intended which is why _solutions_ like link:https://blog.ploeh.dk/2020/10/26/fit-urls/[FIT URLs] are proposed where all your URLs are signed and if you don't have the right signature for the URL, you get a `404 Not Found`, even though the URL exists.
+It forces people to follow links and it's worth looking into, to keep your Api evolvable, but why do I have to force people to use REST?
+
+//=== Teams that want to support Offline
+//TODO
+
+== Irony
+
+[quote, irony, https://www.merriam-webster.com/dictionary/irony]
+____
+*irony*, noun
+
+the use of words to express something other than and especially the opposite of the literal meaning [...]
+____
+
+REST powers the internet and has allowed it to scale for the last 35 years.
+It should be perfectly suitable for company or global Apis.
+But after freeing ourselves from RPC-SOAP, we unintentionally conditioned ourselves to like RPC-JORM but call it REST.
+Whenever we try to rethink our approach, we still go for RPC (link:https://grpc.io/[grpc]) and sometimes even drop designing solutions altogether to instead offload the problem solving to the client (link:https://graphql.org/[GraphQL]).
+It's not that these tools are bad, depending on the use case they might even be a good choice.
+It is however strange to compare *REST, an architectural style*, with a tool, specifically one that implements the RPC architectural style (some "comparisons" are very good at explaining the difference link:https://www.youtube.com/watch?v=vgm_uGmspMI["A no nonsense GraphQL and REST comparison" by Phil Sturgeon]).
+
+Also ironic is that people "in the know" perceive building a REST Api as too difficult when really it's very easy to get started.
+I'd like to change this perception and have prepared a small link:/posts/Getting-Started-with-Hypermedia[Getting Started].
