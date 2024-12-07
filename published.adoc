@@ -14,7 +14,10 @@ content-type: eg
 * link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im link:https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018[JavaSPEKTRUM 1/2018]
 * link:https://www.maibornwolff.de/insights/unsere-premiere-die-remote-keynote/[Unsere Premiere: die Remote Keynote 🇩🇪]
 
-== Interviews
+== Podcasts
 
+* link:https://www.dotnetrocks.com/details/1927[.NET Rocks! > Grasping Code Quality with Richard Gross 🇬🇧]
+** link:https://podcasts.apple.com/gb/podcast/grasping-code-quality-with-richard-gross/id130068596?i=1000679300651[Apple Podcasts]
+** link:https://open.spotify.com/episode/6b4B7oEK8EvIfECakP0sQR?si=EZOXN2UdS6elsU3KF8a1jg[Spotify]
 * link:https://chinchillasqueaks.substack.com/p/raytracing-llamas-in-the-metaverse-04c[Chinchilla Squeaks > Raytracing Llamas in the Metaverse - Interviews from Build Stuff 🇬🇧] around 19m17s is when Chris Chinchilla interviews me about my talk on _"Remote Scaled Trunk-Based Development"_ at Build Stuff 2022
 * link:https://podbay.fm/p/die-code-coroner-tech-podcast-fur-softwarequalitat/e/1539717389[Code Coroner > Software-Metrik 🇩🇪]
