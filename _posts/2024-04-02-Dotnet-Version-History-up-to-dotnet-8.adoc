@@ -27,6 +27,34 @@ Odd numbered releases are *STS* releases that get free support and patches for 1
 
 === link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13[C#13]
 
+➕ `params` collections::
+You can now use params with any recognized collection type, including `Span<T>`, `ReadOnlySpan<T>`, and types that implement `IEnumerable<T>` and have an `Add` method.
+
+➕ New lock object::
+Add a new type for thread synchronization, the `System.Threading.Lock` type.
+
+➕ New escape sequence::
+You can use `\e` as a character literal escape sequence for the `ESCAPE` character, Unicode `U+001B`.
+
+➕ Method group natural type::
+
+➕ Implicit index access::
+The implicit "from the end" index operator, `^`, is now allowed in an object initializer expression.
+
+➕ `ref` and `unsafe` in iterators and async methods::
+
+➕ `allows ref struct`::
+[source,csharp]
+----
+public class C<T> where T : allows ref struct
+----
+
+➕ `ref struct` interfaces::
+
+➕ More partial members::
+You can declare partial properties and partial indexers in C# 13.
+
+
 '''
 
 [#net-8]
@@ -399,7 +427,7 @@ string first = args.Length >= 1 ? args[0] : throw new ArgumentException("Please 
 '''
 
 [#net-4-6]
-== link:https://github.com/microsoft/dotnet/tree/main/releases/net46[4.6] *LTS*
+== link:https://github.com/microsoft/dotnet/tree/main/releases/net46[4.6] LTS
 [cols="1,>1"]
 |===
 | LTS until | January 2027
