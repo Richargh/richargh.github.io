@@ -1,5 +1,5 @@
 ---
-title: .NET Version History (up to released .NET 8)
+title: .NET Version History (up to .NET 9)
 permalink: /posts/dotnet-version-history/
 tags: .net
 comments: false
