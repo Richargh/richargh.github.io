@@ -18,227 +18,626 @@ The link:https://github.com/dotnet/core/blob/main/releases.md[releases] that Mic
 A new major release of .NET is published every year in November. Even numbered releases are *LTS* releases that get free support and patches for three years.
 Odd numbered releases are *STS* releases that get free support and patches for 18 months.
 
-* link:https://github.com/dotnet/core/tree/main/release-notes/9.0[9] (expected November 2024)
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13[C#13]
+[#net-9]
+== link:https://github.com/dotnet/core/tree/main/release-notes/9.0[9]
+[cols="1,>1"]
+|===
+| released | November 2024
+|===
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13[C#13]
 
 '''
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/8.0/8.0.0/8.0.0.md[8] (November 2023) *LTS* until November 2026
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12[C#12]
-*** +Primary constructors: `class BankAccount(string accountID, string owner)`
-*** +Collection expressions: `string[] names = ["Julia", "Anna", "Thomas"];` and `string[] allNames = [.. names, .. moreNames];`
-*** +Optional parameters in lambda expressions: `var IncrementBy = (int source, int increment = 1) => source + increment;`
-*** +Experimental attribute: `[Experimental("1234")]`
-*** +Interceptors: substitute a call to an interceptable method with a call to itself at compile time
+[#net-8]
+== link:https://github.com/dotnet/core/blob/main/release-notes/8.0/8.0.0/8.0.0.md[8] LTS
+[cols="1,>1"]
+|===
+| LTS until | November 2026
+| released | November 2023
+|===
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/7.0/7.0.0/7.0.0.md[7]  (November 2022)
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11[C#11]
-*** +Pattern matching enhancements:
-**** +List patterns: `sequence is [1, 2, 3]`
-*** +`Required` members: must be initialized by an object initializer. Really important because now you can trust NRTs (nullable reference types) way more.
-*** +Raw string literals: `""" hello """;`
-*** +Newlines in string interpolation expressions
-*** +File-local types: `file` access modifier is scoped to the source
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12[C#12]
+
+➕ Primary constructors::
+[source,csharp]
+----
+class BankAccount(string accountID, string owner)
+----
+
+➕ Collection expressions::
+[source,csharp]
+----
+string[] names = ["Julia", "Anna", "Thomas"];
+// and
+string[] allNames = [.. names, .. moreNames];
+----
+
+➕ Optional parameters in lambda expressions::
+[source,csharp]
+----
+var IncrementBy = (int source, int increment = 1) => source + increment;
+----
+
+➕ Experimental attribute::
+[source,csharp]
+----
+[Experimental("1234")]
+----
+
+➕ Interceptors::
+Substitute a call to an interceptable method with a call to itself at compile time
+
+[#net-7]
+== link:https://github.com/dotnet/core/blob/main/release-notes/7.0/7.0.0/7.0.0.md[7]
+[cols="1,>1"]
+|===
+| released | November 2022
+|===
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11[C#11]
+
+➕ Pattern matching enhancements::
+➕ List patterns:::
+[source,csharp]
+----
+sequence is [1, 2, 3]
+----
+
+➕ `Required` members::
+Must be initialized by an object initializer. Really important because now you can trust NRTs (nullable reference types) way more.
+
+➕ Raw string literals::
+[source,csharp]
+----
+""" hello """;
+----
+
+➕ Newlines in string interpolation expressions::
+The text inside the `{` and `}` characters for a string interpolation can now span multiple lines.
+
+➕ File-local types::
+`file` access modifier is scoped to the source
 
 
 '''
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/6.0/6.0.0/6.0.0.md[6] (November 2021) *LTS* until November 2024
-** .NET 6 unifies the SDK, base libraries, and runtime across mobile, desktop, IoT, and cloud apps.
-** +link:https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-6/[Massive gains in performance]
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10[C#10]
-*** +Pattern matching enhancements:
-**** +Extended property patterns: nested properties `{ Prop1.Prop2: pattern }`
-*** +File-scoped namespace declaration: `namespace MyNamespace;` instead of nesting
-*** +Allow both assignment and declaration in the same deconstruction: `(x, int y) = point;`
-*** +Record structs
-*** +Improvements of structure types
-*** +Interpolated string handlers
-*** +Allow `const` interpolated strings
-*** +global using directives
-*** +Improvements on lambda expressions
-*** +Record types can `seal ToString()`
-*** +Improved definite assignment
-*** +Allow AsyncMethodBuilder attribute on methods
-*** +CallerArgumentExpression attribute
-*** +Warning wave 6
+[#net-6]
+== https://github.com/dotnet/core/blob/main/release-notes/6.0/6.0.0/6.0.0.md[6] LTS
+[cols="1,>1"]
+|===
+| LTS until | November 2024
+| released | November 2021
+|===
+
+* .NET 6 unifies the SDK, base libraries, and runtime across mobile, desktop, IoT, and cloud apps.
+* +link:https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-6/[Massive gains in performance]
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10[C#10]
+
+➕ Pattern matching enhancements::
+➕ Extended property patterns:::
+Nested properties:
+[source,csharp]
+----
+{ Prop1.Prop2: pattern }
+----
+
+➕ File-scoped namespace declaration::
+[source,csharp]
+----
+namespace MyNamespace;
+// instead of nesting
+----
+
+➕ Allow both assignment and declaration in the same deconstruction::
+[source,csharp]
+----
+(x, int y) = point;
+----
+
+➕ Record structs::
+[source,csharp]
+----
+public record struct Point
+{
+    public double X { get; init; }
+    public double Y { get; init; }
+    public double Z { get; init; }
+}
+----
+
+➕ Improvements of structure types::
+➕ Interpolated string handlers::
+➕ Allow `const` interpolated strings::
+➕ global using directives::
+➕ Improvements on lambda expressions::
+➕ Record types can `seal ToString()`::
+➕ Improved definite assignment::
+➕ Allow AsyncMethodBuilder attribute on methods::
+➕ CallerArgumentExpression attribute::
+➕ Warning wave 6::
+Any new keywords added for C# will be all lower-case ASCII characters. This warning ensures that none of your types conflict with future keywords.
 
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0.0/5.0.0.md[5] (November 2020) (skips "Core" and is now the main implementation of .NET going forward)
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-9[C#9]
-*** +Pattern matching enhancements:
-**** relational patterns: `<`, `>`, `<=`, or `>=`
-**** logical patterns: link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns[`and`, `or`, `not`]
-*** +link:https://github.com/dotnet/csharplang/blob/main/proposals/csharp-9.0/unconstrained-type-parameter-annotations.md[Unconstrained type parameter annotations] which makes NRTs (nullable-reference types) much nicer to use
-*** +`Init` only setters: `int YearOfBirth { get; init; }`
-*** +Records: `record Person(string FirstName);`
-*** +Top-level statements: programs without `Main` methods
-*** +`[ModuleInitializer]`
-*** +Target-typed new expressions: write just `new();` when the type is known
-*** +Target-typed conditional expressions: `M(b ? 1 : 2)`
-*** +Covariant return types
-*** +Lambda discard parameters: `(_, _) => 0`
-** link:https://devblogs.microsoft.com/dotnet/announcing-f-5/[F#5]
+[#net-5]
+== link:https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0.0/5.0.0.md[5]
+[cols="1,>1"]
+|===
+| released | November 2020
+|===
+* skips "Core" and is now the main implementation of .NET going forward
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-9[C#9]
+
+➕ Pattern matching enhancements::
+➕ Relational patterns:::
+`<`, `>`, `<=`, or `>=`
+➕ logical patterns:::
+link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns[`and`, `or`, `not`]
+➕ link:https://github.com/dotnet/csharplang/blob/main/proposals/csharp-9.0/unconstrained-type-parameter-annotations.md[Unconstrained type parameter annotations]::
+Which makes NRTs (nullable-reference types) much nicer to use
+➕ `Init` only setters::
+[source,csharp]
+----
+int YearOfBirth { get; init; }
+----
+➕ Records::
+[source,csharp]
+----
+record Person(string FirstName);
+----
+
+➕ Top-level statements::
+Programs without `Main` methods
+
+➕ `[ModuleInitializer]`::
+➕ Target-typed new expressions::
+Write just `new();` when the type is known
+
+➕ Target-typed conditional expressions::
+`M(b ? 1 : 2)`
+➕ Covariant return types::
+➕ Lambda discard parameters::
+[source,csharp]
+----
+(_, _) => 0
+----
+
+=== link:https://devblogs.microsoft.com/dotnet/announcing-f-5/[F#5]
 
 '''
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1.0/3.1.0.md[Core 3.1] (December 2019) *LTS* until December 2022
+[#net-core-3-1]
+== link:https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1.0/3.1.0.md[Core 3.1] LTS
+[cols="1,>1"]
+|===
+| LTS until | November 2022
+| released | November 2019
+|===
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/3.0/3.0.0/3.0.0.md[Core 3.0] (September 2019) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-1[.NET Standard 2.1] => 37,118 of the 37,118 APIs)
-** +WinForms, WPF on Windows
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-78[C#8.0] (link:https://devblogs.microsoft.com/dotnet/building-c-8-0/[only part of core])
-*** +`readonly` members
-*** +Default interface methods: methods in interface can have an implementation now
-*** +link:https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/may/csharp-8-0-pattern-matching-in-csharp-8-0[Pattern matching enhancements]
-**** +link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression[`switch` expression]
-**** +Property patterns: `shape switch { { Point: { Y : 100 } } => "Y is 100"};`
-**** +Tuple patterns: `(animal, other) switch { (Animal.Bird, _} => "It's a Bird" };`
-**** +Positional patterns: `shape switch { Rectangle (100, 100) => "It's a square" };`
-*** +link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types]Nullable reference types]: aka non-nullable `Person` and nullable `Person?`
-*** +`using` declarations: don't require braces, variable is disposed at the end of the scope
-*** +Static local functions
-*** +`await foreach`
-*** +Indices and ranges: `..`, `start..`, `..end`, `^start..` etc.
-*** +Null-coalescing assignment: `??=`
-*** +Enhancement of interpolated verbatim strings
+[#net-core-3]
+== link:https://github.com/dotnet/core/blob/main/release-notes/3.0/3.0.0/3.0.0.md[Core 3.0] LTS
+[cols="1,>1"]
+|===
+| released | September 2019
+|===
 
-** link:https://devblogs.microsoft.com/dotnet/announcing-f-4-7/[F# 4.7]
+* Fits (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-1[.NET Standard 2.1] => 37,118 of the 37,118 APIs)
 
-* link:https://github.com/microsoft/dotnet/blob/main/releases/net48/README.md[4.8] (August 2019) the final framework (still stuck at link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
-** C# <= 7.3
+➕ WinForms, WPF on Windows::
+Only on windows.
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/2.2/2.2.0/2.2.0.md[Core 2.2] (December 2018)
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-73[C#7.3]
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-72[C#7.2]
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-80[C#8.0] (link:https://devblogs.microsoft.com/dotnet/building-c-8-0/[only part of core])
+
+➕ `readonly` members::
+➕ Default interface methods::
+Methods in interface can have an implementation now
+
+➕ link:https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/may/csharp-8-0-pattern-matching-in-csharp-8-0[Pattern matching enhancements]::
+➕ link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression[`switch` expression]:::
+➕ Property patterns:::
+[source,csharp]
+----
+shape switch { { Point: { Y : 100 } } => "Y is 100"};
+----
+
+➕ Tuple patterns:::
+[source,csharp]
+----
+(animal, other) switch { (Animal.Bird, _} => "It's a Bird" };
+----
+
+➕ Positional patterns:::
+[source,csharp]
+----
+shape switch { Rectangle (100, 100) => "It's a square" };
+----
+
+➕ link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types[Nullable reference types]::
+Aka non-nullable `Person` and nullable `Person?`
+
+➕ `using` declarations::
+Don't require braces, variable is disposed at the end of the scope
+
+➕ Static local functions::
+➕ `await foreach`::
+➕ Indices and ranges::
+`..`, `start..`, `..end`, `^start..` etc.
+➕ Null-coalescing assignment::
+`??=`
+➕ Enhancement of interpolated verbatim strings::
+`$@` combination is still allowed but now also the `@$` order.
+
+=== link:https://devblogs.microsoft.com/dotnet/announcing-f-4-7/[F# 4.7]
+
+[#net-4-8]
+== link:https://github.com/microsoft/dotnet/blob/main/releases/net48/README.md[4.8]
+[cols="1,>1"]
+|===
+| released | August 2019
+|===
+
+* The final framework (still stuck at link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
+* C# <= 7.3
+
+[#net-core-2-2]
+== link:https://github.com/dotnet/core/blob/main/release-notes/2.2/2.2.0/2.2.0.md[Core 2.2]
+[cols="1,>1"]
+|===
+| released | December 2018
+|===
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-73[C#7.3]
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-72[C#7.2]
 
 '''
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/2.1/2.1.0.md[Core 2.1] (May 2018) *LTS* until August 2021
+[#net-core-2-1]
+== link:https://github.com/dotnet/core/blob/main/release-notes/2.1/2.1.0.md[Core 2.1] LTS
+[cols="1,>1"]
+|===
+| LTS until | August 2021
+| released | May 2018
+|===
+
+[#net-core-2-0]
+== link:https://github.com/dotnet/core/blob/main/release-notes/2.0/2.0.0.md[Core 2.0]
+[cols="1,>1"]
+|===
+| released | August 2017
+|===
+
+* (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0#select-net-standard-version[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70[C#7.1]
+➕ `async` Main method::
+➕ Default literal expressions::
+➕ Inferred tuple element names::
+➕ Pattern matching on generic type parameters::
+[source,csharp]
+----
+if (item is List<T> value)
+{
+// ...
+}
+----
+
+[#net-4-7]
+== link:https://github.com/microsoft/dotnet/tree/main/releases/net47[4.7]
+[cols="1,>1"]
+|===
+| released | June 2017
+|===
+
+* (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
+* Visual Studio 2017
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70[C#7]
+
+➕ Out variables::
+[source,csharp]
+----
+GetEmployeeDetails(out string EmployeeName);
+----
+
+➕ Tuples and deconstruction::
+[source,csharp]
+----
+var t = ("post office", 3.6);
+// and
+var (destination, distance) = t;
+----
+
+➕ Pattern matching::
+Via link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is[`is` operator] in `if` or `switch` statements.
+
+➕ Local functions::
+Methods nested in other members
+
+➕ Expanded expression bodied members::
+➕ Ref locals::
+[source,csharp]
+----
+int a = 1;
+// and
+ref int alias = ref a;
+----
+
+➕ Ref returns::
+➕ Discards::
+Use an underscore when you don't need the variable:
+[source,csharp]
+----
+(_, _, area) = city.GetCityInformation(cityName);
+----
+
+➕ Binary Literals and Digit Separators::
+[source,csharp]
+----
+var binaryLiteral = 0b_0010_1010;
+// and
+var bigNumber = 123_456_789;
+----
+
+➕ Throw expressions::
+[source,csharp]
+----
+string first = args.Length >= 1 ? args[0] : throw new ArgumentException("Please supply at least one argument.");
+----
 
 
-* link:https://github.com/dotnet/core/blob/main/release-notes/2.0/2.0.0.md[Core 2.0] (August 2017) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0#select-net-standard-version[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70[C#7.1]
-*** +`async` Main method
-*** +default literal expressions
-*** +Inferred tuple element names
-*** +Pattern matching on generic type parameters
+[#net-core-1]
+== link:https://github.com/dotnet/core/blob/main/release-notes/1.0/1.0.0.md[Core 1]
+[cols="1,>1"]
+|===
+| released | June 2016
+|===
 
-
-* link:https://github.com/microsoft/dotnet/tree/main/releases/net47[4.7] (June 2017) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs)
-** Visual Studio 2017
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70[C#7] (March 2017)
-*** +Out variables: `GetEmployeeDetails(out string EmployeeName);`
-*** +Tuples and deconstruction: `var t = ("post office", 3.6);` and `var (destination, distance) = t;`
-*** +Pattern matching: via link:https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is[`is` operator] in `if` or `switch` statements.
-*** +Local functions: methods nested in other members
-*** +Expanded expression bodied members
-*** +Ref locals: `int a = 1;` and `ref int alias = ref a;`
-*** +Ref returns
-*** +Discards: use an underscore when you don't need the variable `(_, _, area) = city.GetCityInformation(cityName);`
-*** +Binary Literals and Digit Separators: `var binaryLiteral = 0b_0010_1010;` and `var bigNumber = 123_456_789;`
-*** +Throw expressions: `string first = args.Length >= 1 ? args[0] : throw new ArgumentException("Please supply at least one argument.");`
-
-
-* link:https://github.com/dotnet/core/blob/main/release-notes/1.0/1.0.0.md[Core 1] (June 2016) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-1-6[.NET Standard 1.6] => 13,501 of the 37,118 APIs)
-*** Cross-platform: Runs on Windows, macOS and Linux.
+* (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-1-6[.NET Standard 1.6] => 13,501 of the 37,118 APIs)
+* Cross-platform: Runs on Windows, macOS and Linux.
 
 '''
 
-* link:https://github.com/microsoft/dotnet/tree/main/releases/net46[4.6] (July 2015) (link:https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0[.NET Standard 2.0] => 32,638 of the 37,118 APIs) *LTS* until link:https://learn.microsoft.com/en-us/lifecycle/products/microsoft-net-framework[January 2027]
-** Visual Studio 2015
-** Roslyn v1
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-60[C#6] (July 2015)
-*** +Static imports
-*** +Exception filters: `catch (ExceptionType [e]) when (expr)`
-*** +Auto-property initializers: `string FirstName { get; set; } = string.Empty;`
-*** +Default values for getter-only properties
-*** +Expression bodied members: `void DisplayName() => Console.WriteLine(ToString());`
-*** +Null propagator: `?.` and `?[]`
-*** +String interpolation: `Console.WriteLine($"Hello {name}");`
-*** +`nameof` operator
-*** +Index initializers: `var foo = new IndexableClass { [0] = 10 };`
-*** +Await in catch/finally blocks
-** F# 4
-** VB 14
+[#net-4-6]
+== link:https://github.com/microsoft/dotnet/tree/main/releases/net46[4.6] *LTS*
+[cols="1,>1"]
+|===
+| LTS until | January 2027
+| released | July 2015
+|===
+
+* Visual Studio 2015
+* Roslyn v1
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-60[C#6]
+
+➕ Static imports::
+➕ Exception filters::
+[source,csharp]
+----
+catch (ExceptionType [e]) when (expr)
+----
+
+➕ Auto-property initializers::
+[source,csharp]
+----
+string FirstName { get; set; } = string.Empty;
+----
+
+➕ Default values for getter-only properties::
+➕ Expression bodied members::
+[source,csharp]
+----
+void DisplayName() => Console.WriteLine(ToString());
+----
+
+➕ Null propagator::
+`?.` and `?[]`
+➕ String interpolation::
+[source,csharp]
+----
+Console.WriteLine($"Hello {name}");
+----
+
+➕ `nameof` operator::
+➕ Index initializers::
+[source,csharp]
+----
+var foo = new IndexableClass { [0] = 10 };
+----
+
+➕ Await in catch/finally blocks::
+[source,csharp]
+----
+try
+{
+    // something that throws
+}
+catch
+{
+await Task.Delay(1000); // using await in catch block
+}
+----
+
+=== F# 4
+
+=== VB 14
 
 
-* link:https://github.com/microsoft/dotnet/tree/main/releases/net45[4.5] (2012)
-** CLR 4.0
-** Visual Studio 2012
-** Framework
-*** Background just-in-time (JIT) compilation
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-50[C#5]
-*** Asynchronous members aka `async` and `await`
-*** Caller info attributes
+[#net-4-5]
+== link:https://github.com/microsoft/dotnet/tree/main/releases/net45[4.5]
+[cols="1,>1"]
+|===
+| released | 2012
+|===
+
+* CLR 4.0
+* Visual Studio 2012
+
+=== Framework
+* Background just-in-time (JIT) compilation
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-50[C#5]
+
+➕ Asynchronous members aka `async` and `await`::
+➕ Caller info attributes::
+[source,csharp]
+----
+public void TraceMessage(
+    string message,
+    [CallerMemberName] string memberName = "",
+    [CallerFilePath] string sourceFilePath = "",
+    [CallerLineNumber] int sourceLineNumber = 0)
+{
+// ...
+}
+----
+
+
+[#net-4-0]
+== link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-4[4]
+[cols="1,>1"]
+|===
+| released | 2010
+|===
+
+* CLR 4.0
+* Visual Studio 2010
+
+=== Framework
+➕ Background garbage collection::
+➕ Code Contracts::
+➕ Dynamic Language Runtime::
+➕ Windows Presentation Foundation (WPF) 4::
+Adding amongst other things DataGrid, DatePicker, and Calendar controls.
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-40[C#4]
+
+➕ Dynamic binding::
+[source,csharp]
+----
+dynamic dyn = 1;
+----
+
+➕ Named/optional arguments::
+[source,csharp]
+----
+ExampleMethod(3, optionalint: 4);
+// where
+int optionalint = 10
+----
+
+➕ Generic covariant and contravariant::
+Implicit or explicit covariant `out` and contravariant `in` keyword.
+➕ Embedded interop types::
+Eases the deployment pain of creating COM interop assemblies
+
+
+[#net-3-5]
+== link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-35[3.5]
+* CLR 2.0
+
+=== Framework
+➕ WCF and WF integration::
+Windows Communication Foundation.
+
+
+[#net-3-0]
+== link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-30[3]
+[cols="1,>1"]
+|===
+| released | 2007
+|===
+
+* CLR 2.0
+* Visual Studio 2008
+
+=== Framework
+
+➕ Windows Presentation Foundation::
+➕ Windows Communication Foundation::
+➕ Windows Workflow Foundation::
+➕ Windows CardSpace::
+An identity selector app.
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-30[C#3]
+➕ Auto-implemented properties::
+[source,csharp]
+----
+public string Name { get; set; }
+----
+
+➕ Implicitly typed local variables::
+[source,csharp]
+----
+var
+----
+
+➕ Anonymous types::
+[source,csharp]
+----
+var v = new { Amount = 108, Message = "Hello" };
+----
+Notice that v has no type.
+
+➕ Query expressions aka LINQ::
+➕ Lambda expressions::
+➕ Expression trees::
+➕ Extension methods::
+➕ Partial methods::
+[source,csharp]
+----
+partial void OnSomethingHappened(String s)
+----
+
+➕ Object and collection initializers::
+[source,csharp]
+----
+new Cat { Age = 10
+// and
+new List<int> { 0, 1, 2};
+----
+
+
+[#net-2-0]
+== 2
+[cols="1,>1"]
+|===
+| released | 2005
+|===
+
+* CLR 2.0
+* Visual Studio 2005
+
+=== Framework
+
+➕ Debugger edit and continue::
+➕ Improved scalability and performance::
+➕ ClickOnce deployment::
+➕ In ASP.NET 2.0, new controls and support for a broad array of browsers::
+➕ 64-bit support::
+For the first time.
+
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-20[C#02]
+
+➕ Generics::
+➕ Partial types::
+➕ Anonymous methods::
+➕ Iterators::
+➕ Covariance and contravariance::
+Implicit reference conversion for array types and method groups.
+➕ Nullable value types::
+➕ Null-coalescing operator::
+`??`
 
 
 
-* link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-4[4] (2010)
-** CLR 4.0
-** Visual Studio 2010
-** Framework
-*** +Background garbage collection
-*** +Code Contracts
-*** +Dynamic Language Runtime
-*** +Windows Presentation Foundation (WPF) 4
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-40[C#4]
-*** +Dynamic binding: `dynamic dyn = 1;`
-*** +Named/optional arguments: `ExampleMethod(3, optionalint: 4);` where `int optionalint = 10`
-*** +Generic covariant and contravariant: implicit or explicit covariant `out` and contravariant `in` keyword.
-*** +Embedded interop types: eases the deployment pain of creating COM interop assemblies
+[#net-1-0]
+== 1
+[cols="1,>1"]
+|===
+| released | 2002
+|===
+* CLR 1.0
 
-
-
-* link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-35[3.5]
-** CLR 2.0
-** Framework
-*** +WCF and WF integration
-*** +Peer-to-Peer networking
-*** +Add-ins for extensibility
-
-
-
-* link:https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-30[3] (2007)
-** CLR 2.0
-** Visual Studio 2008
-** Framework
-*** +Windows Presentation Foundation
-*** +Windows Communication Foundation
-*** +Windows Workflow Foundation
-*** +Windows CardSpace
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-30[C#3]
-*** +Auto-implemented properties: `public string Name { get; set; }`
-*** +Implicitly typed local variables: `var`
-*** +Anonymous types: `var v = new { Amount = 108, Message = "Hello" };`. Notice that v has no type.
-*** +Query expressions aka LINQ
-*** +Lambda expressions
-*** +Expression trees
-*** +Extension methods
-*** +Partial methods: `partial void OnSomethingHappened(String s)`
-*** +Object and collection initializers: `new Cat { Age = 10` and `new List<int> { 0, 1, 2};`
-
-
-
-* 2 (2005)
-** CLR 2.0
-** Visual Studio 2005
-** Framework
-*** +Debugger edit and continue
-*** +Improved scalability and performance
-*** +ClickOnce deployment
-*** +In ASP.NET 2.0, new controls and support for a broad array of browsers
-*** +64-bit support
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-20[C#02]
-*** +Generics
-*** +Partial types
-*** +Anonymous methods
-*** +Iterators
-*** +Covariance and contravariance: implicit reference conversion for array types and method groups.
-*** +Nullable value types
-*** +Null-coalescing operator `??`
-
-
-
-* 1  (2002): Initial Release
-** CLR 1.0
-** link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-10-1[C#1]
+=== link:https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-10-1[C#1]
