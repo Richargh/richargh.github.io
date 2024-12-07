@@ -103,6 +103,8 @@ Deprecate the 32-bit x86 port, with the intent to remove it in a future release.
 [cols="1,>1"]
 |===
 | released | September 2024
+| Stable JEPs | 3
+| Total JEPs | 12
 |===
 
 ➕ link:https://openjdk.org/jeps/467[Markdown Documentation Comments]::
@@ -118,6 +120,8 @@ Most of its methods — 79 out of 87 — are for accessing memory. All these met
 [cols="1,>1"]
 |===
 | released | March 2024
+| Stable JEPs | 4
+| Total JEPs | 12
 |===
 
 ➕ link:https://openjdk.org/jeps/454[Foreign Function & Memory API]::
@@ -149,6 +153,8 @@ link:https://youtu.be/YBGVK5JuSJ8?feature=shared&t=1588[Fixes most of the ZGC (J
 |===
 | LTS until | September 2028
 | released | September 2023
+| Stable JEPs | 9
+| Total JEPs | 15
 |===
 
 TIP::
@@ -208,6 +214,8 @@ Introduces an API for key encapsulation mechanisms (KEMs), an encryption techniq
 [cols="1,>1"]
 |===
 | released | March 2023
+| Stable JEPs | 0
+| Total JEPs | 7
 |===
 
 INFO:: Another huge release feature-wise but all features are either in preview or incubating.
@@ -217,6 +225,8 @@ INFO:: Another huge release feature-wise but all features are either in preview 
 [cols="1,>1"]
 |===
 | released | September 2022
+| Stable JEPs | 1
+| Total JEPs | 7
 |===
 
 INFO:: Another huge release feature-wise but all features are either in preview or incubating.
@@ -226,6 +236,8 @@ INFO:: Another huge release feature-wise but all features are either in preview 
 [cols="1,>1"]
 |===
 | released | March 2022
+| Stable JEPs | 6
+| Total JEPs | 9
 |===
 
 ⚠ link:https://openjdk.org/jeps/400[UTF-8 by Default]::
@@ -245,6 +257,8 @@ Reimplements `java.lang.reflect.Method`, Constructor, and Field on top of `java.
 |===
 | LTS until | September 2026
 | released | September 2021
+| Stable JEPs | 11
+| Total JEPs | 14
 |===
 
 ➕ link:https://openjdk.org/jeps/382[New macOS Rendering Pipeline]::
@@ -272,6 +286,8 @@ abstract sealed class Shape permits Circle, Rectangle /*... */ {
 [cols="1,>1"]
 |===
 | released | March 2021
+| Stable JEPs | 13
+| Total JEPs | 17
 |===
 
 ➕ link:https://openjdk.java.net/jeps/394[Pattern Matching for instanceof]::
@@ -306,6 +322,8 @@ stream.toList();
 [cols="1,>1"]
 |===
 | released | September 2020
+| Stable JEPs | 10
+| Total JEPs | 14
 |===
 
 ❌ link:https://openjdk.org/jeps/372[Remove Nashorn JavaScript Engine]:: Deprecated since <<jdk-11, JDK 11>>.
@@ -331,6 +349,8 @@ Cost of near-pauseless operation is a ~2% throughput reduction, and it uses more
 [cols="1,>1"]
 |===
 | released | March 2020
+| Stable JEPs | 11
+| Total JEPs | 16
 |===
 
 ➕ link:https://openjdk.org/jeps/349[JFR Event Streaming]::
@@ -355,6 +375,8 @@ return switch (day) {
 [cols="1,>1"]
 |===
 | released | September 2019
+| Stable JEPs | 3
+| Total JEPs | 5
 |===
 
 INFO::
@@ -362,8 +384,12 @@ Smaller Release
 
 [#jdk-12]
 == link:https://openjdk.org/projects/jdk/12/[12]
-[.text-right]
-released March 2019
+[cols="1,>1"]
+|===
+| released | March 2019
+| Stable JEPs | 6
+| Total JEPs | 8
+|===
 
 INFO::
 Smaller Release
@@ -375,6 +401,8 @@ Smaller Release
 |===
 | LTS until | September 2023
 | released | September 2018
+| Stable JEPs | 16
+| Total JEPs | 17
 |===
 
 ➕ link:https://openjdk.org/jeps/321[Http Client]::
@@ -390,6 +418,8 @@ JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. 
 [cols="1,>1"]
 |===
 | released | March 2018
+| Stable JEPs | 12
+| Total JEPs | 12
 |===
 
 ➕ link:https://openjdk.org/jeps/286[Local-Variable Type Inference]::
