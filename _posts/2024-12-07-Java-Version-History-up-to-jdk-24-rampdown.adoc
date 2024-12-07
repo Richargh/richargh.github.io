@@ -1,5 +1,5 @@
 ---
-title: Java Version History (up to JDK 23)
+title: Java Version History (up to JDK 24, in rampdown)
 permalink: /posts/java-version-history/
 tags: java
 comments: false
@@ -36,6 +36,67 @@ It is however rather known where the road is heading. At some point in the futur
 * link:https://openjdk.org/jeps/401[Value Classes and Objects (Preview)] and link:https://openjdk.org/jeps/8316779[Null-Restricted Value Class Types (Preview)]
 * link:https://openjdk.org/jeps/8209434[Concise Method Bodies]
 ====
+
+[#jdk-24]
+== link:https://openjdk.org/projects/jdk/24/[24]
+[cols="1,>1"]
+|===
+| Expected | March 2025
+| Stable JEPs | 14
+| Total JEPs | 24
+|===
+
+INFO:: _Preliminary_, since JDK is in rampdown and not released yet.
+
+
+⚠ link:https://openjdk.org/jeps/472[Prepare to Restrict the Use of JNI]:: Issue warnings about uses of the Java Native Interface (JNI). People should instead use the Foreign Function & Memory API, which was introduced in <<jdk-22, JDK 22>>.
+
+➕ link:https://openjdk.org/jeps/475[Late Barrier Expansion for G1]::
+Simplify the implementation of the G1 garbage collector's barriers.
+
+❌ link:https://openjdk.org/jeps/479[Remove the Windows 32-bit x86 Port]::
+Remove the source code and build support for the Windows 32-bit x86 port. The port was deprecated in <<jdk-21, JDK 21>>.
+
+➕ link:https://openjdk.org/jeps/483[Ahead-of-Time Class Loading & Linking]::
+Improve startup time by making the classes of an application instantly available, in a loaded and linked state, when the HotSpot Java Virtual Machine starts.
+
+➕ link:https://openjdk.org/jeps/484[Class-File API]::
+Provide a standard API for parsing, generating, and transforming Java class files. Will probably replace all instances of link:https://asm.ow2.io/[ASM] library.
+
+➕ link:https://openjdk.org/jeps/485[Stream Gatherers]::
+Enhance the Stream API to support custom intermediate operations. The result is the new `.gather` Method:
+[source,java]
+----
+Stream.generate(() -> ThreadLocalRandom.current().nextInt())
+    .limit(1000)
+    .gather(selectOne(Math::max))  // the new interface
+    .findFirst();
+----
+for which we can write custom _Gatherers_ or use the build-in ones: `Gatherers.fold`, `.mapConcurrent`, `.scan`, `.windowFixed` and `.windowSliding`.
+
+❌ link:https://openjdk.org/jeps/486[Permanently Disable the Security Manager]::
+The Security Manager has not been the primary means of securing client-side Java code for many years, it has rarely been used to secure server-side code, and it is costly to maintain. It was deprecated in <<jdk-17, JDK 17>>.
+
+⚠ link:https://openjdk.org/jeps/490[ZGC: Remove the Non-Generational Mode]::
+Remove the non-generational mode of the Z Garbage Collector (ZGC). The mode was introduced in <<jdk-22, JDK 22>> and made the default in <<jdk-23, JDK 23>>.
+
+➕ link:https://openjdk.org/jeps/491[Synchronize Virtual Threads without Pinning]::
+Virtual threads that enter a `synchronized` block no longer pin, that is they used to block the carrier thread on which they were scheduled.
+
+➕ link:https://openjdk.org/jeps/493[Linking Run-Time Images without JMODs]::
+Reduce the size of the JDK by approximately 25% by enabling the `jlink` tool to create custom run-time images without using the JDK's JMOD files. This feature must be enabled when the JDK is built; it will not be enabled by default, and some JDK vendors may choose not to enable it. The new JMOD format was introduced in <<jdk-9, JDK 9>> and goes beyond JAR files to include native code, configuration files, and other kinds of data that do not fit naturally, if at all, into JAR files.
+
+➕ link:https://openjdk.org/jeps/496[Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism]::
+Enhance the security of Java applications by providing an implementation of the quantum-resistant Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM). Builds on Key Encapsulation Mechanism API from <<jdk-21, JDK 21>>.
+
+➕ link:https://openjdk.org/jeps/497[Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm]::
+Enhance the security of Java applications by providing an implementation of the quantum-resistant Module-Lattice-Based Digital Signature Algorithm (ML-DSA).  Builds on Key Encapsulation Mechanism API from <<jdk-21, JDK 21>>.
+
+⚠ link:https://openjdk.org/jeps/498[Warn upon Use of Memory-Access Methods in sun.misc.Unsafe]::
+Issue a warning at run time on the first occasion that any memory-access method in sun.misc.Unsafe is invoked. All of these unsupported methods were terminally deprecated in <<jdk-23, JDK 23>>, because newer and better alternatives exist.
+
+⚠ link:https://openjdk.org/jeps/501[Deprecate the 32-bit x86 Port for Removal]::
+Deprecate the 32-bit x86 port, with the intent to remove it in a future release. This specifically means the Linux 32-bit x86 port, because it is the only one remaining.
 
 [#jdk-23]
 == link:https://openjdk.org/projects/jdk/23/[23]
