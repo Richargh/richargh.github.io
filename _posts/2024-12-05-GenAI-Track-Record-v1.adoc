@@ -94,7 +94,9 @@ We have no current plans to make revenue. We have no idea how we may one day gen
 ____
 
 == 2024-04-06 link:https://archive.ph/2BYtu[NY Times: How Tech Giants Cut Corners to Harvest Data for A.I.]
+
 Big Tech has no more sources of data to tap, for their scaling ideas.
+
 * In late 2021, OpenAI faced a *supply problem*.
 ** It needed more data to train the next version of its technology — lots more. So OpenAI researchers created a speech recognition tool called Whisper. It could transcribe the audio from YouTube videos...
 ** But YouTube prohibits people from not only using its videos for “independent” applications, but also accessing its videos by “any automated means (such as robots, botnets or scrapers).”
