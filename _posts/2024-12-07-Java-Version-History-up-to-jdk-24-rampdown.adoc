@@ -12,7 +12,12 @@ status: ongoing
 Ever since Java switched to its six-month release cadence (link:https://openjdk.org/jeps/322[Time-Based Release Versioning]) it has become a bit harder to keep up with the features they have implemented.
 //, especially the language updates that make it possible to write ever more concise Java code. See effective/concise Java for code examples that show how to write concise code
 The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
-The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes]. This list does not cover all api changes and only seldom things outside of JEPs. Check the link:https://javaalmanac.io/[Java Almanac] to see api updates of the JDK. Use a current JDK to get all performance improvements that happen constantly.
+The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that link:https://www.oracle.com/java/technologies/java-se-support-roadmap.html[Oracle publishes].
+Please note that other JDK distributions exist and they have their own plans.
+They follow the same link:https://openjdk.org/jeps/14[tip and tail] model though and only provide longer support for the same LTS versions as oracle.
+Take a look at the support roadmap of the most popular alternate distributions, link:https://adoptium.net/support#_release_roadmap[Temurin] and link:https://aws.amazon.com/corretto/faqs#support_calendar[Corretto].
+
+This list does not cover all api changes and only seldom things outside of JEPs. Check the link:https://javaalmanac.io/[Java Almanac] to see api updates of the JDK. Use a current JDK to get all performance improvements that happen constantly.
 
 The list is ongoing and will be updated with every new Java release.
 A ➕ marks an added feature, a ⚠ marks a deprecation that will likely lead to a ❌ breaking change when the feature is removed.
@@ -151,8 +156,10 @@ link:https://youtu.be/YBGVK5JuSJ8?feature=shared&t=1588[Fixes most of the ZGC (J
 == link:https://openjdk.org/projects/jdk/21/[21] LTS
 [cols="1,>1"]
 |===
-| LTS until | September 2028
-| released | September 2023
+| LTS until | Sep 2028 (Oracle) +
+Dec 2029 (Temurin) +
+Oct 2030 (Corretto)
+| released | Sep 2023
 | Stable JEPs | 9
 | Total JEPs | 15
 |===
@@ -255,8 +262,10 @@ Reimplements `java.lang.reflect.Method`, Constructor, and Field on top of `java.
 == link:https://openjdk.org/projects/jdk/17/[17] LTS
 [cols="1,>1"]
 |===
-| LTS until | September 2026
-| released | September 2021
+| LTS until | Sep 2026 (Oracle) +
+Oct 2027 (Temurin) +
+Oct 2029 (Corretto)
+| released | Sep 2021
 | Stable JEPs | 11
 | Total JEPs | 14
 |===
@@ -399,8 +408,10 @@ Smaller Release
 == link:https://openjdk.org/projects/jdk/11/[11] LTS
 [cols="1,>1"]
 |===
-| LTS until | September 2023
-| released | September 2018
+| LTS until | Sep 2023 (Oracle) +
+Oct 2027 (Temurin) +
+Jan 2032 (Corretto)
+| released | Sep 2018
 | Stable JEPs | 16
 | Total JEPs | 17
 |===
@@ -497,8 +508,10 @@ optional.stream();
 == link:https://openjdk.java.net/projects/jdk8/features[8] LTS
 [cols="1,>1"]
 |===
-| LTS until | March 2022
-| released | March 2014
+| LTS until | Mar 2022 +
+Nov 2026 (Temurin) +
+Dec 2030 (Corretto)
+| released | Mar 2014
 |===
 
 ➕ link:https://openjdk.org/projects/jdk8/features#126[Lambda-Expressions]::
