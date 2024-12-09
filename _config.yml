@@ -23,6 +23,8 @@ asciidoctor:
     - source-highlighter=rouge
     - rouge-css=class
     - icons
+    - sectlinks
+    - sectanchors
 
 sass:
   style: compressed
