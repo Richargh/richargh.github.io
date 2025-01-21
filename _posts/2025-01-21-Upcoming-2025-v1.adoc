@@ -1,0 +1,15 @@
+---
+title: Upcoming
+permalink: /posts/upcoming/
+comments: false
+status: ongoing
+---
+
+== Upcoming Talks
+
+* "Kotlin kontra Java - Braucht man 2024 überhaupt noch Kotlin" at link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196[JavaLand 01.04.2025 🇩🇪]
+* "Building dynamic web apps with Kotlin, WebComponents and Htmx" at link:https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy[NDC Oslo 21.05.2025 🇬🇧]
+
+== Upcoming Articles
+
+* Raus aus der Komplexitätsfalle - Moderne Webseiten mit htmx 🇩🇪 in link:https://entwickler.de/magazine-ebooks/php-magazin/php-magazin-22025[PHP Magazin 2.2025]
