@@ -5,7 +5,7 @@ user_description: IT Archaeologist
 profile_pic: /assets/img/profile.jpg
 favicon: /assets/img/favicon.ico
 copyright_name: Richard Groß
-url: # the base hostname & protocol for your site e.g. "https://richargh.de"
+url: https://richargh.de # the base hostname & protocol for your site e.g. "https://richargh.de"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 encoding: utf-8
 
