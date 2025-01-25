@@ -14,6 +14,10 @@ content-type: eg
 * link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im link:https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018[JavaSPEKTRUM 1/2018]
 * link:https://www.maibornwolff.de/insights/unsere-premiere-die-remote-keynote/[Unsere Premiere: die Remote Keynote 🇩🇪]
 
+== Videos
+
+* link:https://software-architektur.tv/2025/01/24/folge248.html["CodeCharta" 🇩🇪] im link:https://software-architektur.tv/[Software Architektur im Stream]
+
 == Podcasts
 
 * link:https://www.dotnetrocks.com/details/1927[.NET Rocks! > Grasping Code Quality with Richard Gross 🇬🇧]
