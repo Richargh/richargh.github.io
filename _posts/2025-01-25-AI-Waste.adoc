@@ -1,0 +1,22 @@
+---
+title: GenAI is a waste of our time
+tags: GenAI AI LLM
+comments: false
+---
+
+Generative AI is a waste.
+It's a waste of our time, our CO2 and our sanity.
+Tom Fishburne perfectly summarises why in his web comic:
+
+//  sharing cartoons in your personal blogs and social media is free
+image::/assets/img/posts/ai-waste/tom-fishburne-AI-Written-AI-Read.png[AI Written, AI Read]
+
+Can't we just communicate short and to the point?
+All the stuff in the middle is waste.
+It was waste before GenAI, it is worse with GenAi.
+
+There are good use cases for AI.
+Optimising the communication of people though, let's do that ourselves.
+We gain nothing but waste if we keep it as is and "make it easier" with AI.
+
+TIP: link:https://marketoonist.com/2023/03/ai-written-ai-read.html[AI Written, AI Read] is a comic by Tom Fishburne. link:https://marketoonist.com/faq[It is free (and appreciated) to share them in personal blogs and social media]. Please spread if you find it as inspiring as I did.
