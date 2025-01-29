@@ -1,0 +1,106 @@
+---
+title: SPACE - The Meta-Framework to Measure Developer Productivity
+tags: Productivity Metrics
+comments: false
+---
+
+[quote, Nicole Forsgren et. al.,https://queue.acm.org/detail.cfm?id=3454124]
+____
+Developer productivity has been studied extensively. Unfortunately, after decades of research and practical development experience, knowing how to measure productivity or even define developer productivity has remained elusive, while myths about the topic are common. Far too often teams or managers attempt to measure developer productivity with simple metrics, attempting to capture it all with "one metric that matters." +
+[...] +
+Productivity cannot be reduced to a single dimension (or metric!)
+____
+
+So title the authors of the paper link:https://queue.acm.org/detail.cfm?id=3454124[The SPACE of Developer Productivity] and I'm inclined to believe they are right.
+The most known of the authors, Nicole Forsgren, did after all write the book link:https://itrevolution.com/product/accelerate/[Accelerate] and create the link:https://dora.dev/[Accelerate State of DevOps Report] which gave us the link:https://dora.dev/guides/dora-metrics-four-keys/[DORA 4 keys], a set of metrics.
+
+Can we then even measure developer productivity?
+Should we?
+
+== To measure or not to measure
+
+Whether or not you want someone to measure developer productivity is beside the point because someone, somewhere is going to look at your teams velocity and decide things based on it.
+Then we have exactly the problem in the opening quote, productivity being reduced to a single number.
+The problem with this reduction is that it obscures too much and a single metric is too easy to game.
+Velocity for example is too easy to game (inflate story points, no longer work on bugs, ignore quality), which defeats the whole point of measuring it.
+
+[quote, Goodhart's law,https://en.wikipedia.org/wiki/Goodhart%27s_law]
+____
+When a measure becomes a target, it ceases to be a good measure
+____
+
+To stop this race to the bottom I would like each team to select multiple metrics that are somehow in tension with each other, so you cannot game one without worsening another.
+But which metrics have these properties?
+
+== The SPACE Dimensions
+
+link:https://queue.acm.org/detail.cfm?id=3454124[SPACE] is a meta-framework that helps us select metrics.
+According to the framework all productivity metrics fall into one of the following five dimensions.
+
+=== Satisfaction and well-being
+How fulfilled, happy and healthy one is. _Satisfaction_ is how fulfilled developers feel with their work, team, tools, or culture.
+_Well-being_ is how healthy and happy they are, and how their work impacts it.
+
+For example:
+
+* Employee satisfaction. NPS
+* Developer efficacy. Devs have all the tools to get the work done.
+* Burnout. The exhaustion.
+
+=== Performance
+Performance is the outcome of a system or process.
+
+For example:
+
+* Quality. Reliability, absence of bugs, ongoing service health.
+* Impact. Customer satisfaction, customer adoption and retention, feature usage, cost reduction.
+* link:https://dora.dev/guides/dora-metrics-four-keys/[DORA 4 keys]: Change Fail Rate
+
+=== _Activity_
+Activity is a count of actions or outputs completed in the course of performing work.
+
+For example:
+
+* Design and coding. Volume or count of design documents and specs, work items, pull requests, commits, and code reviews.
+* Continuous integration and deployment. Count of build, test, deployment/release, and infrastructure utilization.
+* Operational activity. Count or volume of incidents/issues and distribution based on their severities, on-call participation, and incident mitigation.
+* link:https://dora.dev/guides/dora-metrics-four-keys/[DORA 4 keys]: Deploy Frequency
+* Commits
+
+=== Communication and collaboration
+Communication and collaboration capture how people and teams communicate and work together.
+
+For example:
+
+* Discoverability of documentation and expertise.
+* How quickly work is integrated.
+* Quality of reviews of work contributed by team members.
+* Network metrics that show who is connected to whom and how.
+* Onboarding time for and experience of new members.
+* 1:1s
+
+=== Efficiency and flow
+Efficiency and flow capture the ability to complete work or make progress on it with minimal interruptions or delays, whether individually or through a system.
+Some research associates productivity with the ability to get complex tasks done with minimal distractions or interruptions, aka *"getting in the flow"*.
+
+For example:
+
+* Handoffs: Number of handoffs in a process; number of handoffs across different teams in a process.
+* Perceived ability to stay in flow and complete work.
+* Interruptions: quantity, timing, how spaced, impact on development work and flow.
+* Time measures through a system: total time, value-added time, wait time.
+* link:https://dora.dev/guides/dora-metrics-four-keys/[DORA 4 keys]: Lead Time
+* link:https://dora.dev/guides/dora-metrics-four-keys/[DORA 4 keys]: MTTR
+
+== What to do next
+
+When selecting your team metric it's best to follow
+link:https://www.youtube.com/watch?v=O2rbekHpG4Q[Nicole's suggestions]:
+
+1. There is no "one" metric that matters
+2. Have two-to-three metrics that are in tension with another. They should balance each other out.
+3. Make sure the metrics are along different *dimensions*.
+
+You can measure each metric at individual (one person), team (people that work together) or system (end-to-end work through a system) level.
+
+SPACE gives us the dimensions we need to find our metrics.
