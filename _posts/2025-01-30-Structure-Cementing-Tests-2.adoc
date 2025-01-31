@@ -6,21 +6,28 @@ comments: false
 
 == Part 2 - Concepts of the TestDsl
 
-_Tests should react to behavioural changes but be insensitive to structural changes. Tests that do not fulfil the second condition are called structure-cementing. In link:Structure-Cementing-Tests-1[part 1], we built a TestDsl with which we can completely avoid cementing through the test setup. In this part, we will go into more detail about the concepts of the DSL and show why you can use it to write tests that become unit tests after changing just one line of integration._
+_Tests should be sensitive to behavioural changes but be insensitive to structural changes.
+Tests that do not fulfil the second condition are called structure-cementing.
+In link:Structure-Cementing-Tests-1[part 1], we built a TestDsl with which we can completely avoid cementing structure through the test setup.
+In this part, we will go into more detail about the concepts of the DSL (Domain-Specific Language <<dsl>>) and show why you can use it to write tests that become unit tests after changing just one line of integration._
 
-The DSL (Domain-Specific Language <<dsl>>) implemented in link:Structure-Cementing-Tests-1[part 1] is an abstraction layer between test and test setup. It is used to decouple the actual test from the preconditions, more precisely how these preconditions are created.
+The test setup is a series of steps we need to take before we can test our testee.
+We need this because certain preconditions are required before we can test the actual behavior.
+The TestDsl is an abstraction layer between test and test setup that makes the test setup very comfortable and avoid structural cementation.
 
-For example, a method to be tested `rentBook(bookId, userId)` in a `RentingService` could have the precondition that the book and user must be stored in a `Repository` before we call `rentBook`. A user may also have a `role` and this must also already be stored, just like the `permission` of the role.
+Let us assume that we want to test a method `rentBook(bookId, userId)` in a `RentingService`.
+It is very common that this method has the precondition that the book and user must be stored in a `Repository` before we call `rentBook`.
+Additionally the renting user must exist, have a `role` and a `permission` called `CAN_RENT_BOOK` .
 
 If you were to create all the preconditions in each test by hand, you would not only have created a lot of redundancy, but (assuming enough tests) you would also have cemented the structure of all the preconditions. Implementation details, such as what a `Role` looks like, how it gets into its `Repository`, how the `RentingService` gets to that `Repository`, are cemented with every redundant test setup. This cementation happens because an engineer simply does not want to change a high number of files in order to implement an actually sensible structural change. The engineer feels that the structure is anything but soft and more like cement.
 
-If the entire test setup is done  <<fig:testdsl-structure, via the Dsl>>, only the Dsl is affected by structure changes and the test is decoupled from the structure. We can make structural changes in the production code without any problems because we only have to make changes in one place, in the Dsl.
+If the entire test setup is done  <<fig:testdsl-structure, via the TestDsl>>, only the Dsl is affected by structure changes and the test is decoupled from the structure. We can make structural changes in the production code without any problems because we only have to make changes in one place, in the Dsl.
 
 [[fig:testdsl-structure]]
 .The TestDsl inserts itself between tests and the structure of the production code
 image::/assets/img/posts/structure-cementing-tests/part2/LL-Test-Dsl-Layer.png[At the top are the tests. The tests only have dependencies on the Test-D.S.L. The Test-D.S.L. has dependencies on the production code. If production code changes only the D.S.L. has to change but not a single test.]
 
-The TestDsl consists of the parts:
+The TestDsl consists of the following parts:
 
 * TestState
 * Floor
@@ -58,7 +65,7 @@ In the following chapters, we will see why this is possible and which concepts a
 
 == Unit and integration tests
 
-Unit and integration tests are very vague terms across the industry (<<test-shapes>>, <<google-test-sizes>>). Even in small teams there is no clear definition, everyone has their own understanding. So we should pause for a moment and define what we are actually talking about when we say `@Unit @Test`.
+Unit and integration tests are very vague terms across the industry (<<test-shapes>>, <<google-test-sizes>>). Even in small teams there is no clear definition, everyone has their own understanding. So we should pause for a moment and define what we mean when we say `@Unit @Test`.
 
 The test written in part 1 are sociable unit tests <<fowler-unit-test>> and follow the unit test definition by Michael Feathers <<feathers-unit-test>>:
 
@@ -153,7 +160,7 @@ _JpaBooks_ implements the interface _Books_. The interface is a so-called **port
 
 The _Ports & Adapters Architecture_ <<ports-and-adapters>> helps us design better. We can model the domain logic first before we have to turn to implementation details. The architecture also offers us the option of replacing real adapters with test doubles <<xunit-test-double>> for tests. In our unit tests, we therefore use an _InMemoryBooksDouble_ instead of a slower and more expensive _JpaBooks_ repository.
 
-_InMemoryBooksDouble_ is a specific type of double, a so-called _fake_ <<xunit-fake>>. In contrast to the other double types (dummies, stubs, spies and mocks <<mocks-arent-stubs>>), fakes are working implementations of ports that take shortcuts that the production code cannot take, in this case the InMemory solution.
+_InMemoryBooksDouble_ is a specific type of double, a so-called _fake_ <<xunit-fake>>. In contrast to the other double types (dummies, stubs, and mocks <<mocks-arent-stubs>>), fakes are working implementations of ports that take shortcuts that the production code cannot take, in this case the InMemory solution.
 
 In contrast to other doubles, however, the fake must fulfil the expectations that the domain code has of the port. With repositories, for example, the domain code expects that an entity that was added with `add()` can then also be found again with a `find()`. The expectations that the domain has of the port are called *contract* and we can check them with a  <<lst:port-contract-test, port contract test>>.
 
@@ -423,9 +430,9 @@ void should_be_able_to_rent_book(InventoryDsl inventory, RentingDsl renting){
 <2> As with the low-level Dsl, each test must create its complete state.
 <3> Unlike the low-level Dsl, however, this Dsl takes significantly larger steps. Creating a book can consist of many browser actions or api calls. If one of the intermediate steps fails, the Dsl aborts immediately and provides specific feedback as to which of the intermediate steps did not work.
 
-You can also **parallelize** these tests in a similar way as we have done with integration tests: we can either provide a namespace per test directly in our system under test or solve this via our Dsl.
+You can also **parallelise** these tests in a similar way as we have done with integration tests: we can either provide a namespace per test directly in our system under test or solve this via our Dsl.
 
-The former is possible if you build multi-tenant capability into your system right from the start. Each entity then needs an additional _TenantId_ and you have to ensure that everyone can only see the data of their own client. If you now create a new client for each test and the test also creates all preconditions in the form of entities, then the tests are isolated from each other via the _TenantId_ and can therefore be parallelized.
+The former is possible if you build multi-tenant capability into your system right from the start. Each entity then needs an additional _TenantId_ and you have to ensure that everyone can only see the data of their own tenant. If you now create a new tenant for each test and the test also creates all preconditions in the form of entities, then the tests are isolated from each other via the _TenantId_ and can therefore be parallelized.
 
 If the _TenantId_ cannot be built directly into the system, the test data aliasing <<acceptance-test-dsl>> mentioned by Dave Farley is used. With this pattern, the TestDsl itself ensures that the test data is unique. It then adds a test-unique key to fields. `addBook(“Refactoring”)` does not create the book “Refactoring”, but the book “Refactoring dbac1q23”. `findBook(“Refactoring”)` does not search for “Refactoring”, but for “Refactoring dbac1q23”. When writing the test, however, you must be careful not to assert the number of books or similar, as this could change continuously due to tests running in parallel.
 
@@ -435,7 +442,7 @@ Overall, the high-level Dsl described here complements the low-level Dsl with th
 
 The TestDsl combines existing concepts such as builders, ports <<ports-and-adapters>>, port contract tests <<port-contract-test>>, stubs <<mocks-arent-stubs>> and fakes <<xunit-fake>> and provides a standardized api for all our unit and integration tests. With the TestDsl, we were able to solve structure cementation through redundant test setup. We will show how we use the TestDsl to prevent structure cementing through tests at the wrong level in Part 3.
 
-If you are more interested in the topic, you can view TestDsl sample code online <<test-dsl>> or watch the presentation on “Beehive Architecture” <<beehive-architecture>>, which also revolves around the TestDsl.
+If you are interested in more content about the topic, you can view TestDsl sample code online <<test-dsl>> or watch the presentation on “Beehive Architecture” <<beehive-architecture>>, which also revolves around the TestDsl.
 
 NOTE: This article was originally published in link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-5-24-cloud/[Java Aktuell 5/24] in 🇩🇪. It is translated and republished here with the magazine's permission.
 
