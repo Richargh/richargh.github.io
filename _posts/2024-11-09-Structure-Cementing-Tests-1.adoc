@@ -1,15 +1,20 @@
 ---
-title: Structure-cementing tests and how to avoid them
+title: Structure-cementing tests and how to avoid them 1/3
 tags: testing architecture cementing
 comments: false
 ---
+
 == Part 1 - Building a TestDsl
 
-Tests should react to behavioral changes but be insensitive to structural changes. We call tests that do not fulfill the second condition structure-cementing. They make it difficult or even impossible to change the structure and architecture. Teams to whom this happens test and improve less code. With the right approach and a TestDsl, however, we can completely avoid cementation and write tests that turn from integration tests to unit tests after changing *just one line* of test code.
+Tests should react to behavioral changes but be insensitive to structural changes. We call tests that do not fulfill the second condition *structure-cementing*. They make it difficult or even impossible to change the structure and architecture. Teams to whom this happens test and improve less code.
+
+With the right approach and a TestDsl, however, we can completely avoid cementation and write tests that turn from integration tests to unit tests after changing *just one line* of test code.
+
+== The two modes of development
 
 If we change behavior, we should have to change tests. When we restructure code (add, rename or remove methods, classes, parameters or fields) we should not have to change the tests. Both conditions are essential because agile developers are constantly jumping back and forth between the two modes _change behavior_ and _change structure_.
 
-With a failing test we jump to the change behavior mode. If the test is green, we have our safety net to change structure and jump back (<<fig:structure-behavior, see figure>>). The same applies if we write our tests after the implementation, then the transition between the modes is just not quite as sharp.
+A failing test forces us to jump to the change behavior mode to get it green again. When we get the test green we jump back to change structure mode. The green test now provides the safety net we need to change structure safely. Any time we change the structure (aka refactor) the tests tell us if we did it without changing behavior (<<fig:structure-behavior, see figure>>). The same applies if we write our tests after the implementation, then the transition between the modes is just not quite as pronounced.
 
 [[fig:structure-behavior]]
 .The two development modes, loosely based on Kent Beck
@@ -17,14 +22,14 @@ image::/assets/img/posts/structure-cementing-tests/part1/Structure-Behavior.png[
 
 *Changing behavior* is of course very risky, because a desired change in behavior can also bring with it an undesirable one. So most of the time we want to spend in *change structure* mode and use techniques like _preparatory refactoring_ <<preparatory-refactoring>> that make our behavior change as simple and manageable as possible.
 
-However, this also requires tests that allow structural changes and do not cement them. Such tests allow use to proceed in very small and manageable steps. A difficult change is first prepared with 10 to 20 “r” (refactor) commits in order to then make a very small “F” (feature) commit. The commit format is Arlo's Commit Notation <<arlos-commit>>, because this models the risk of the commit.
+However, this also requires tests that allow structural changes and do not cement them. Such tests allow us to proceed in very small and manageable steps. A difficult change is first prepared with 10 to 20 “r” (refactor) commits in order to then make a very small “F” (feature) commit. The commit format is Arlo's Commit Notation <<arlos-commit>>, because this models the risk of the commit.
 
 [quote, Kent Beck [3]]
 ____
 When faced with a hard change, first make it easy (warning, this may be hard), then make the easy change.
 ____
 
-However, if the structure is cemented, then not only structural but also feature-related behavioral changes are more difficult. This is because we no longer build in features where they make sense, but where they are easier to integrate. As a result, the code becomes increasingly confusing. At the beginning, you can no longer find code, it ends up in the simplest place, not the most sensible one. Later on, there are more and more unexpected dependencies, more and more unknown unknowns. We change one place and this leads to a behavior change in a completely different place.
+However, if the structure is cemented, then not only are structural but also feature-related behavioral changes more difficult. This is because we no longer build features where they make sense, but where they are easier to integrate. As a result, the code becomes increasingly confusing. At the beginning, you can no longer find code, it ends up in the simplest place, not the most sensible one. Later on, there are more and more unexpected dependencies, more and more unknown unknowns. We change one place and this leads to a behavior change in a completely different place.
 
 The structure-cementing tests have destroyed maintainability. Or we have deleted them and caught regressions.
 
@@ -33,7 +38,7 @@ Tests are structure-cementing in two ways:
 1. through redundancy: tests use the same structure in several places. The more often the same structure (class, method) is required and the more excessively mocked, the more the design is cemented.
 2. by testing at the wrong level: we test unstable elements and not modules.
 
-In part 1 of this article series, we look at how we can avoid structure-cementation through redundancy with a TestDsl, in part 2 we explain the concepts of the Dsl in more detail and part 3 deals with the correct test levels.
+In part 1 of this article series, we look at how we can avoid structure-cementation through redundancy with a TestDsl, in link:Structure-Cementing-Tests-2[part 2] we explain the concepts of the Dsl in more detail and part 3 deals with the correct test levels.
 
 == The initial test
 
@@ -112,11 +117,11 @@ For this small example this is fine, but we quickly run into many problems with 
 1. either each new use case gets a new method (`makeBook()`, `makeExpensiveBook()` etc.).
 2. or the method gets dozens of optional parameters without it being clear which parameters are dependent on each other.
 
-This does not mean that factory methods should not be used. Especially when introducing new structures, factory methods are great because we can create them directly under our test with little effort. However, if we are more sure about our structure, we should first use the `Builder` from the next section (<<lst:entity-test-builder>>) within the factory method and then inline it with our refactoring tools.
+This does not mean that factory methods should not be used. Especially when introducing new structures, factory methods are great because we can create them directly in the test class where we need them. However, if we are more sure about our structure, we should first use the `Builder` from the next section [<<lst:entity-test-builder>>] within the factory method and then inline it with our refactoring tools.
 
 == 2. Refactoring - Simple Builder
 
-Instead of the factory method or the object-mother pattern, we prefer to use a builder (<<lst:entity-test-builder>>).
+Instead of the factory method or the object-mother pattern, we prefer to use a builder [<<lst:entity-test-builder>>].
 
 [[lst:entity-test-builder]]
 .Builder Methods
@@ -138,7 +143,7 @@ void should_be_able_to_rent_book(){
 
 If you call the `build()` method directly, the entity is assigned default values. With the `withX()` methods, we can adapt the default values to our specific test if necessary. We are therefore much more flexible than with the Factories/Object Mother pattern, because not every case needs its own method.
 
-With the builder, we have also redirected the redundant dependencies to a test-specific abstraction (<<fig:structure-cement-init>>). We now only have to make changes to the structure of the entity in the builder, not in n tests. We can maintain the structural changes in the builder because we are protected by the tests that already use the builder. If existing tests become red, we have broken something.
+With the builder, we have also redirected the redundant dependencies to a test-specific abstraction [<<fig:structure-cement-init>>]. We now only have to make changes to the structure of the entity in the builder, not in n tests. We can maintain the structural changes in the builder because we are protected by the tests that already use the builder. If existing tests become red, we have broken something.
 
 [[fig:structure-cement-init]]
 .Cementing structure by init
@@ -147,8 +152,8 @@ image::/assets/img/posts/structure-cementing-tests/part1/Structure-cementing-via
 In addition to flexible test setup and avoiding the cementing of structure, such a `Builder` offers us a few more advantages:
 
 1. the test *no longer mentions irrelevant details*. The above test shows us that it needs any book and not a specific one.
-2. the builder highlights *essential differences* between the tests. By using the `with()` method, we see that the user absolutely needs the `CAN_RENT_BOOK` permission.
-3. in the builder we have a unique place to store technically meaningful default values (<<lst:builder-value-example>>). Practical documentation for developers.
+2. the builder highlights *essential differences* between the tests. By using the `with()` method, we see that the user in the test absolutely needs the `CAN_RENT_BOOK` permission.
+3. in the builder we have a unique place to store technically meaningful default values [<<lst:builder-value-example>>]. Practical documentation for developers.
 
 [[lst:builder-value-example]]
 .Entity-TestBuilder
@@ -191,7 +196,7 @@ However, we are not finished yet, because the combination of permission, role an
 
 == 3. Refactoring - Combo Builder
 
-We introduce the concept of the _Combo_ Builder (<<lst:combo-test-builder-usage>>) so that we can build several separately stored objects in a coordinated manner.
+We introduce the concept of the _Combo_ Builder [<<lst:combo-test-builder-usage>>] so that we can build several separately stored objects in a coordinated manner.
 
 [[lst:combo-test-builder-usage]]
 .Using the ComboBuilder
@@ -215,7 +220,7 @@ void should_be_able_to_rent_book(){
 }
 ----
 
-To keep the complexity of the combo builder low, it only ever builds standard cases (<<lst:combo-test-builder-design>>). For more difficult and atypical situations, e.g. if a user has several roles, the individual builders of permission, role and user are used again. This is important because all the special cases will create a lot of unmaintainable code. The rule of thumb is that a builder should never contain `if` or `switch`.
+To keep the complexity of the combo builder low, it only ever builds standard cases [<<lst:combo-test-builder-design>>]. For more difficult and atypical situations, e.g. if a user has several roles, the individual builders of permission, role and user are used again. This is important because all the special cases will create a lot of unmaintainable code. The rule of thumb is that a builder should never contain `if` or `switch`.
 
 [[lst:combo-test-builder-design]]
 .Entity-ComboBuilder
@@ -277,7 +282,7 @@ void should_be_able_to_rent_book(){
 <1> The TestState is a class that knows all builders.
 <2> Build tasks are always delegated to the already written builders.
 
-At first glance, we only gain some compactness: `xyzBuilder()` no longer needs to be instantiated and we don't need a `.build()` method. Behind the scenes, however, we have gained much more. The `TestState` is now a central point that recognizes all created entities. We can therefore ask the state to store all created entities in the repositories and streamline our test even further (<<lst:testdsl-floor>>).
+At first glance, we only gain some compactness: `xyzBuilder()` no longer needs to be instantiated and we don't need a `.build()` method. Behind the scenes, however, we have gained much more. The `TestState` is now a central point that recognizes all created entities. We can therefore ask the state to store all created entities in the repositories and streamline our test even further [<<lst:testdsl-floor>>].
 
 [[lst:testdsl-floor]]
 .Saving state to the floor
@@ -300,12 +305,12 @@ void should_be_able_to_rent_book(){
 ----
 <1> With this call, we save `book`, `permission`, `role` and `user` in the respective repositories. Theoretically, the call to `a.book();` could already have saved the book in the `BookRepository`. However, the `saveTo()` makes saving more explicit and also offers the flexibility to create entities that do not automatically end up in repositories.
 <2> We group all `Ports` into the outside world in the so-called `Floor`, the floor on which our application stands. A repository is such a `Port`, just like `Clock` or an external `Client`. The _Floor_ allows us to flexibly control how our _testee_ communicates with the outside world in tests. We can **pull the floor out from under the feet of our application in tests and set up a much more testable floor**. In the _ports & adapters architecture_ <<ports-and-adapters>>, the `floor` is synonymous with the _driven_ but not the _driving_ ports. Since it is easy to overlook whether something is _driven_ or _driving_, the terms were out of the question. `Floor` was chosen as an identifier because it is short and thus provides an analogy for software +++<s>architects</s>+++ gardeners who take care of the _Forest_ `Floor`, the _Forest_ `Canopy` and the forest. Alternative names for _driven_ (=outcomes) or _driving_ (=triggers) `Port` were not known at the time.
-<3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` (<<lst:first-class-floor>>) and no longer have to write the concrete dependencies.
+<3> We made the `Floor` part of our production code. To instantiate service classes, you only ever need the `Floor` [<<lst:first-class-floor>>] and no longer have to write the concrete dependencies.
 
-To simplify the dependency management we pass floor directly to the constructor of our production services (<<lst:first-class-floor>>). We don't have to do this to utilize the TestDsl. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
+To simplify the dependency management we pass floor directly to the constructor of our production services [<<lst:first-class-floor>>]. We don't have to do this to utilize the TestDsl. Alternatively, we could have left the constructor of the service as it is and written a `configureRentingService(floor)` method for tests that assigns dependencies from the `Floor`. Both ways avoid the structure cementation of the `RentingService`. If we were to use an _DI-Container_ like Spring to instantiate the service, we would have the same advantage. However, many of these containers make tests slower due to their startup overhead and make test parallelization more difficult due to context caching, which is why they are not a good choice for unit tests. In general we should write unit tests without such containers. This recommendation is also shared by the Spring Framework <<spring-2-unit-tests>>.
 
 [[lst:first-class-floor]]
-.RentingServices takes required dependencies
+.RentingServices extracts only required dependencies
 [source,java]
 ----
 public class RentingService {
@@ -321,7 +326,7 @@ public class RentingService {
 }
 ----
 
-To ensure that the tests are isolated from each other, we instantiate TestState and Floor for each test (<<lst:testdsl-init-before-each>>).
+To ensure that the tests are isolated from each other, we instantiate TestState and Floor for each test [<<lst:testdsl-init-before-each>>].
 
 [[lst:testdsl-init-before-each]]
 .Instantiate TestDsl in BeforeEach
@@ -338,7 +343,7 @@ void init(){
 }
 ----
 
-The floor itself is simply an interface that recognizes all dependencies (<<lst:floor>>). The unit test implementation `unitFloor()` then returns _InMemoryDoubles_ when the methods are called.
+The floor itself is simply an interface that recognizes all dependencies [<<lst:floor>>]. The unit test implementation `unitFloor()` then returns _InMemoryDoubles_ when the methods are called.
 
 [[lst:floor]]
 .Floor of the TestDsl
@@ -351,7 +356,7 @@ public interface Floor {
 }
 ----
 
-The sum of these changes is that our test looks very compact (<<lst:testdsl-complete-test-with-before-each>>).
+The sum of these changes is that our test looks very compact [<<lst:testdsl-complete-test-with-before-each>>].
 
 [[lst:testdsl-complete-test-with-before-each]]
 .Complete test with TestDsl
@@ -386,7 +391,7 @@ We have already come a long way with this refactoring:
 
 . we were able to map the setup for our test in just 4 lines.
 . we were able to write the entire setup in the same place as our test. You can see at a glance which preconditions the test requires and you don't have to scroll or open another file to understand the context.
-. we were able to hide irrelevant details (you need some `book` and some `user`) and highlight relevant ones (the `user` needs the `CAN_RENT_BOOK` permission).
+. we were able to hide irrelevant details (any `book` and any `user` will do) and highlight relevant ones (the `user` needs the `CAN_RENT_BOOK` permission).
 . we have a standardized way to do the test setup for all tests.
 . we were able to avoid a structure-cementing test setup.
 
@@ -394,7 +399,7 @@ However, we can still make one improvement.
 
 == 5. Refactoring - Extension
 
-So far we have to write redundant initialization code for the TestDsl in the `@BeforeEach` block in every test. If we are using JUnit5, we can make it reusable for multiple tests with an annotation (<<lst:testdsl-complete-test-w-extension>>).
+So far we have to write redundant initialization code for the TestDsl in the `@BeforeEach` block in every test. If we are using JUnit5, we can make it reusable for multiple tests with an annotation [<<lst:testdsl-complete-test-w-extension>>].
 
 [[lst:testdsl-complete-test-w-extension]]
 .Complete test with TestDsl Extension
@@ -417,7 +422,7 @@ void should_be_able_to_rent_book(TestState a, Floor floor){ // <2>
 <1> Our `@BeforeEach` is completely merged into the annotation `@Unit`.
 <2> The annotation turns the two parts of our Dsl into parameters of the test.
 
-The new annotation registers a JUnit 5 extension <<junit5-user-guide-extension-model>>. Such an extension can react to the test LifeCycle by implementing special interfaces. We are only interested in `ParameterResolver` because it resolves the parameters `TestState` and `Floor` (<<lst:testdsl-extension>>) that our test requires.
+The new annotation registers a JUnit 5 extension <<junit5-user-guide-extension-model>>. Such an extension can react to the test LifeCycle by implementing special interfaces. We are only interested in `ParameterResolver` because it resolves the parameters `TestState` and `Floor` [<<lst:testdsl-extension>>] that our test requires.
 
 [[lst:testdsl-extension]]
 .resolveParameter() of the TestDsl extension
@@ -464,15 +469,15 @@ class UnitTestExtension implements ParameterResolver {
 
 In addition to the UnitTest extension shown here, we can of course write another extension, the `IntegrationTestExtension`. This looks the same, but uses `(key) -> testDslOf(integrationFloor())` as the creator function. The `TestState` remains the same but the implementation of the `Floor` is an `IntegrationFloor` which does not contain `InMemoryDoubles` but `Jpa` repositories.
 
-Since the `TestState` only knows the `Floor` interface and not the concrete implementation, we can now make any test by changing *a single annotation* from an `@Integration` to an `@Unit` test.
+Since the `TestState` only knows the `Floor` interface and not the concrete implementation, we can now make any test by changing *a single annotation* from an `@Integration` to an `@Unit` test. This property of the TestDsl is particularly helpful for legacy code, because this code often contains a lot of domain logic in the database.
 
-This property of the TestDsl is particularly helpful for legacy code, because this code often contains a lot of domain logic in the database. You therefore write many integration tests at the beginning to validate regressions. Once you have pulled the domain logic out of the database and into the application code, you can convert the initially written tests into unit tests with a one-liner. Without a TestDsl, you would have to completely rewrite them at unit level, which is *why many teams do not do this, remain stuck with slow integration tests and cannot iterate much faster* despite increasing test coverage.
+In legacy code you can start by writing  integration tests to catch regressions. Once you have pulled the domain logic out of the database and into the application code, you can convert the tests you wrote at the start into unit tests by just changing the annotation. Without a TestDsl, you would have to completely rewrite them at unit level, which is *why many teams do not do this, remain stuck with slow integration tests and cannot iterate much faster* despite increasing test coverage.
 
 == Alternatives
 
 Testing without mocks” <<testing-without-mocks>> follows a similar approach to TestDsl. With this approach, however, you have to modify your production code more because we place special test doubles, the so-called “nullables” <<testing-without-mocks-nullables>>, directly in the production code.
 
-The refactoring tools of our IDE can also intercept certain forms of cementing from our initial test (<<lst:initialer-test>>). “Change Signature” is the most helpful refactoring against structure cementing. You can use it to remove constructor parameters very well. However, adding them is only useful if the default parameter inserted in tests is very simple and has no dependency on other states in the test. Refactoring can also catch bugs, as default values are not only set in the test code, but also in the production code and you can forget to adjust them. The `Builder` of the Dsl are much more flexible and prevent more cementing of entities. The same applies to the `TestState` which allows more flexible customization of the `Ports`. Refactoring tools are therefore not a replacement, but a supplement for the TestDsl.
+The refactoring tools of our IDE can also prevent certain forms of structure-cementation from our initial test [<<lst:initialer-test>>]. “Change Signature” is the most helpful refactoring against structure cementing. It works great when you need to remove constructor parameters. Adding them, however, is only useful if the default parameter inserted in tests are very simple and have no dependency on other state in the test. These refactoring tools can also create bugs, when default values are not only set in the test code, but also in the production code, and you forget to change them. It is clear that the Dsl-`Builder` are more flexible than the change signature refactoring and are better at preventing entity cementation. The same applies to the `TestState` which allows more flexible customization of the `Ports`. Refactoring tools are therefore not a replacement, but a supplement for the TestDsl.
 
 The refactoring framework Open Rewrite <<open-rewrite>> looks promising, but seems to be designed more for framework migrations. It should therefore also be more of a supplement to TestDsl, which focuses on domain logic.
 
@@ -491,9 +496,9 @@ With the TestDsl we can make our test setup:
 9. fast,
 10. and free of structure cementation
 
-The TestDsl is of course not free. But it is not expensive either. We have to lay a one-off foundation with Extension, TestState, Floor and BaseInMemoryDouble. However, experience from several JVM and Node projects shows that the maintenance effort is low once the foundation has been laid.
+The TestDsl is of course not free. But it is not expensive either. We have to create a foundation with Extension, TestState, Floor and BaseInMemoryDouble. Experience from several JVM and Node projects shows that the maintenance effort is low once this foundation has been laid.
 
-It is rather rare that you have to create new entities. You work much more with existing entities and services and restructure them. The initial investment then pays dividends continuously. Since the entire setup is done via the Dsl (<<fig:testdsl-struktur, see figure>>), only the Dsl is affected by structural changes.
+It is rather rare that you have to create new entities. You work much more with existing entities and services and restructure them. The initial investment then pays dividends continuously. Since the entire setup is done via the Dsl [<<fig:testdsl-struktur, see figure>>], only the Dsl is affected by structural changes.
 
 [[fig:testdsl-struktur]]
 .The TestDsl is between tests and the structure of the production code
@@ -501,15 +506,15 @@ image::/assets/img/posts/structure-cementing-tests/part1/LL-Test-Dsl-Layer.png[A
 
 <<fig:testdsl-struktur, The figure>> also shows what the actual trade-off is that we make with the Dsl: Loss of feedback on our setup. Without Dsl, you notice whether the setup is “annoying” when writing tests. If you have to write a lot of code for testing, you naturally ask yourself whether there is an easier way to do it. There is a natural pressure to improve the structure. This “annoying” setup can now be hidden in the Dsl. It is therefore all the more important to use the Dsl only for the setup, to leave it as dumb as possible, to define as few combo builders as possible and to keep thinking about whether the structure is on the right track when adapting the Dsl.
 
-If you are more interested in the topic, you can view the TestDsl example code on Github <<test-dsl>> or watch the presentation on “Beehive Architecture” <<beehive-architecture>> (in 🇩🇪), which is also about the TestDsl.
-
 == Outlook
 
 In this part we have seen how to solve structure cementation through redundancy with the TestDsl.
 
-In the next part, we will take a closer look at the concepts on which the TestDsl is based. We will go into the design of the builder, how to combine the DSL with `@SpringBootTest`, what the difference between a high- and a low-level TestDsl is, how to keep test doubles synchronized with the production code and why the excessive use of mocking frameworks also leads to structure cementation.
+In the link:Structure-Cementing-Tests-2[part 2], we will take a closer look at the concepts on which the TestDsl is based. We will go into the design of the builder, how to combine the DSL with `@SpringBootTest`, what the difference between a high- and a low-level TestDsl is, how to keep test doubles synchronized with the production code and why the excessive use of mocking frameworks also leads to structure cementation.
 
-In part 3, we will see how to prevent structure cementation by testing at the wrong level with the right approach.
+In part 3, we will see how to prevent the other kind structure cementation: testing unstable elements instead of modules.
+
+If you want even more information on the topic, you can view the TestDsl example code on Github <<test-dsl>> or watch the presentation on “Beehive Architecture” <<beehive-architecture>> (in 🇩🇪), which is also about the TestDsl.
 
 NOTE: This article was originally published in link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-4-24-java-22/[Java Aktuell 4/24] in 🇩🇪. It is translated and republished here with the magazine's permission.
 
