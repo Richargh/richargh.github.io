@@ -12,4 +12,4 @@ status: ongoing
 
 == Upcoming Articles
 
-* Raus aus der Komplexitätsfalle - Moderne Webseiten mit htmx 🇩🇪 in link:https://entwickler.de/magazine-ebooks/php-magazin/php-magazin-22025[PHP Magazin 2.2025]
+None right now :)
