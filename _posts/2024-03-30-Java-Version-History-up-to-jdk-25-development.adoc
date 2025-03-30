@@ -1,5 +1,5 @@
 ---
-title: Java Version History (up to JDK 24, in rampdown)
+title: Java Version History (up to JDK 25, in development)
 permalink: /posts/java-version-history/
 tags: java
 comments: false
@@ -42,17 +42,27 @@ It is however rather known where the road is heading. At some point in the futur
 * link:https://openjdk.org/jeps/8209434[Concise Method Bodies]
 ====
 
-[#jdk-24]
-== link:https://openjdk.org/projects/jdk/24/[24]
+[#jdk-25]
+== link:https://openjdk.org/projects/jdk/25/[25]
 [cols="1,>1"]
 |===
-| Expected | March 2025
-| Stable JEPs | 14
-| Total JEPs | 24
+| Expected | September 2025
+| Stable JEPs | ?
+| Total JEPs | ?
 |===
 
 INFO:: _Preliminary_, since JDK is in rampdown and not released yet.
 
+⚠ link:https://openjdk.org/jeps/503[Remove the 32-bit x86 Port]:: Remove the source code and build support for the 32-bit x86 port. Port was deprecated since <<jdk-24, JDK 24>>.
+
+[#jdk-24]
+== link:https://openjdk.org/projects/jdk/24/[24]
+[cols="1,>1"]
+|===
+| released | March 2025
+| Stable JEPs | 14
+| Total JEPs | 24
+|===
 
 ⚠ link:https://openjdk.org/jeps/472[Prepare to Restrict the Use of JNI]:: Issue warnings about uses of the Java Native Interface (JNI). People should instead use the Foreign Function & Memory API, which was introduced in <<jdk-22, JDK 22>>.
 
