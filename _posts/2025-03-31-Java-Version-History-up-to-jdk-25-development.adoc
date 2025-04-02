@@ -43,9 +43,12 @@ It is however rather known where the road is heading. At some point in the futur
 ====
 
 [#jdk-25]
-== link:https://openjdk.org/projects/jdk/25/[25]
+== link:https://openjdk.org/projects/jdk/25/[25] LTS
 [cols="1,>1"]
 |===
+| LTS until | ? (Oracle) +
+? (Temurin) +
+? (Corretto)
 | Expected | September 2025
 | Stable JEPs | ?
 | Total JEPs | ?
