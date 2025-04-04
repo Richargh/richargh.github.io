@@ -6,7 +6,7 @@
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta property="og:site_name" content="Knowledge Continuum"/>
-    <meta property="og:description" content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge.">
+    <meta property="og:description" content="{{ page.excerpt | strip_html | strip | escape }}">
     <meta property="article:author" content="{{ site.url }}/about/">
 
     {%- if page.title -%}
