@@ -48,6 +48,10 @@ This talk has gone through a changes through the years as I figured out what was
 
 * link:https://jax.de/devops-continuous-delivery/building-pipelines[JAX 2023 🇬🇧] | link:https://speakerdeck.com/richargh/how-to-build-the-greatest-and-best-pipeline-in-the-world-jax-2023[Slides]
 
+=== Kotlin kontra Java
+
+* link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196[JavaLand 2025 🇩🇪 (incl. Video, if you have a ticket)] | https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025[Slides] | link:https://github.com/Richargh/kotlin-kontra-java[Code]
+
 === Remote Scaled Trunk-Based Development
 
 * link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides] | link:https://www.youtube.com/watch?v=NBjZ3wRXkxY[Video]
