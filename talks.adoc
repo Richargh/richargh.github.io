@@ -37,7 +37,7 @@ This talk has gone through a changes through the years as I figured out what was
 
 *Java spotlight:*
 
-* link:https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679266800[JavaLand 2023 🇬🇧 (incl. Video, if you have a ticket)] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
+* link:https://meine.doag.org/events/javaland/2023/agenda/#agendaId.2006[JavaLand 2023 🇬🇧 (incl. Video, if you have a ticket)] | link:https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland[Slides] | link:https://github.com/Richargh/fixing-the-billion-dollar-mistake[Code]
 
 *C# spotlight:*
 
