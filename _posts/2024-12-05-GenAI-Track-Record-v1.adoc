@@ -8,8 +8,83 @@ status: ongoing
 
 //https://poloclub.github.io/transformer-explainer/
 
+== General LLM comparisons
+
+- link:https://arcprize.org/leaderboard[ARC-AGI Leaderboard], shows cost vs score
+- link:https://artificialanalysis.ai/[Artificial Analysis] of AI models and API providers
+- link:https://www.swebench.com/#verified[SWE-bench], Can Language Models Resolve Real-World GitHub Issues?
+
 // McDonalds order errors
 // NY legal errors
+
+== 2025-04-26 link:https://www.msn.com/en-us/news/technology/we-now-know-how-ai-thinks-and-it-s-barely-thinking-at-all/ar-AA1DDDZv[We Now Know How AI ‘Thinks’—and It’s Barely Thinking at All - The Wall Street Journal]
+
+* All of this work suggests that under the hood, today’s AIs are overly complicated, patched-together Rube Goldberg machines full of ad-hoc solutions for answering our prompts.
+* Understanding that these systems are long lists of cobbled-together rules of thumb could go a long way to explaining why they struggle when they’re asked to do things even a little bit outside their training [...]
+* [A model trained on millions of turn-by-turn directions in Manhattan] managed to give usable turn-by-turn directions between any two points in the borough with 99% accuracy. [...] [But when the researches] blocked just 1% of the virtual Manhattan’s roads, forcing the AI to navigate around detours, its performance plummeted.
+* [The] research also suggests why many models are so massive: They have to memorize an endless list of rules of thumb, and can’t compress that knowledge into a mental model like a person can.
+
+// == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
+
+// == 2024-06-08 link:https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
+
+
+== 2025-03-13 link:https://arstechnica.com/ai/2025/03/ai-search-engines-give-incorrect-answers-at-an-alarming-60-rate-study-says/[AI search engines cite incorrect news sources at an alarming 60% rate, study says]
+
+* They discovered that the AI models incorrectly cited sources in more than 60 percent of these queries.
+** Perplexity provided incorrect information in 37 percent of the queries tested,
+** whereas ChatGPT Search incorrectly identified 67 percent (134 out of 200) of articles queried.
+** Grok 3 demonstrated the highest error rate, at 94 percent.
+* In total, researchers ran 1,600 queries across the eight different generative search tools.
+* Surprisingly, premium paid versions of these AI search tools fared even worse in certain respects. Though these premium models correctly answered a higher number of prompts, their reluctance to decline uncertain responses drove higher overall error rates.
+** Perplexity Pro ($20/month) and Grok 3's premium service ($40/month) confidently delivered incorrect responses more often than their free counterparts.
+* On some occasions, the chatbots either incorrectly answered or declined to answer queries from publishers that permitted them to access their content. On the other hand, they sometimes correctlyanswered queries about publishers whose content they shouldn’t have had access to
+
+== 2025-03-06 link:https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php[AI Search Has A Citation Problem]
+
+- Chatbots were generally bad at declining to answer questions they couldn’t answer accurately, offering incorrect or speculative answers instead.
+- Premium chatbots provided more confidently incorrect answers than their free counterparts.
+- Multiple chatbots seemed to bypass Robot Exclusion Protocol preferences.
+- Generative search tools fabricated links and cited syndicated and copied versions of articles.
+- Content licensing deals with news sources provided no guarantee of accurate citation in chatbot responses.
+
+== 2025-02-26 link:https://arxiv.org/abs/2503.05777[Medical Hallucinations in Foundation Models and Their Impact on Healthcare]
+
+* [...] a key limitation of their reliability is hallucination, where inaccurate or fabricated information can impact clinical decisions and patient safety.
+* Our results reveal that inference techniques such as Chain-of-Thought (CoT) and Search Augmented Generation can effectively reduce hallucination rates. However, despite these improvements, non-trivial levels of hallucination persist.
+
+== 2025-02-06 link:https://arstechnica.com/tech-policy/2025/02/meta-torrented-over-81-7tb-of-pirated-books-to-train-ai-authors-say/[”Torrenting from a corporate laptop doesn’t feel right”: Meta emails unsealed]
+* Last month, Meta admitted to torrenting a controversial large dataset known as LibGen, which includes tens of millions of pirated books
+
+== 2025-02-03 link:https://www.404media.co/anthropic-claude-job-application-ai-assistants/[AI Company Asks Job Applicants Not to Use AI in Job Applications]
+* Anthropic, the developer of the conversational AI assistant Claude, doesn’t want prospective new hires using AI assistants in their applications, regardless of whether they’re in marketing or engineering.
+* “While we encourage people to use AI systems during their role to help them work faster and more effectively, please do not use AI assistants during the application process,”
+
+== 2025-01-20 link:https://queue.acm.org/detail.cfm?id=3711679[The Price of Intelligence - Three risks inherent in LLMs]
+
+* Discussions of LLM capabilities often overlook their inherently probabilistic nature [...]
+** [The models are losing data. They are trained] with billions of parameters on trillions of tokens, making it impossible for a model to perfectly memorize all information in its training data.
+** The generation process is also stochastic.
+* These characteristics give rise to three intrinsic behaviors:
+** Hallucination
+** Indirect prompt injection [e.g. E-Mails that are passed to the LLM, where the contents derail or even change the intended user prompt]
+** Jailbreaks, [crafted input prompts] bypassing built-in safeguards or ethical guidelines
+* These behaviors pose significant challenges for the widespread adoption of LLMs, particularly in high-stakes domains such as healthcare, finance, or legal applications.
+* We argue that there is no simple "fix" for these behaviors, but they are instead fundamental to how these models operate.
+
+== 2025-01-03 link:https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2025/01/ai-risk-consumer-harm[AI and the Risk of Consumer Harm]
+* The FTC is increasingly taking note of AI’s potential for and real-world instances of harm
+** from incentivizing commercial surveillance
+** to enabling fraud and impersonation
+** to perpetuating illegal discrimination
+* companies [should] consider these factors when developing, maintaining, using, and deploying an AI-based product:
+** Taking necessary steps to prevent harm before and after deploying a product.
+** Taking preventative measures to detect, deter, and halt AI-related impersonation, fraud, child sexual abuse material, and non-consensual intimate imagery.
+** Avoiding deceptive claims about AI tools that result in people losing money or put users at risk of harm.
+** Ensuring privacy and security by default.
+
+== 2024-12-13 link:https://arxiv.org/abs/2412.09871?trk=public_post_reshare-text[Byte Latent Transformer: Patches Scale Better Than Tokens]
+* The Byte Latent Transformer (BLT), is a new byte-level LLM architecture that, for the first time, matches tokenization-based LLM performance at scale with significant improvements in inference efficiency and robustness
 
 == 2024-11-27 link:https://www.theverge.com/2024/11/27/24307284/microsoft-debunks-office-ai-data-scraping-rumors[Microsoft says it isn’t using M360 data to train AI models]
 * Microsoft says it isn’t using customer data from its Microsoft 365 apps to train its AI models.
@@ -72,6 +147,11 @@ status: ongoing
 == 2024-07-29 link:https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025[Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025]
 * At least 30% of generative AI (GenAI) projects will be abandoned after proof of concept by the end of 2025, due to poor data quality, inadequate risk controls, escalating costs or unclear business value
 
+== 2024-07-25 link:https://www.popsci.com/technology/ai-trained-on-ai-gibberish/[AI trained on AI churns out gibberish garbage]
+
+* new research suggests that cannibalizing of past model outputs would quickly result in strings of babbling AI gibberish and could eventually lead to what’s being called “model collapse.”
+* Over time and successive generations [...][the] model “becomes poisoned with its own projection of reality.”
+
 == 2024-07-03 link:https://www.datacenterknowledge.com/sustainability/google-s-emissions-shot-up-48-over-five-years-due-to-ai[Google’s Emissions Shot Up 48% Over Five Years Due to AI]
 * According to a new environmental report from [Google]
 * [The] emissions climbed by almost half over five years
@@ -86,6 +166,8 @@ status: ongoing
 * AI’s “killer application” has yet to emerge
 
 // 2024-05-13 link:https://www.mdpi.com/2076-3417/14/10/4115[The Impact of Large Language Models on Programming Education and Student Learning Outcomes]
+
+// == 2024-06-08 https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
 
 == 2024-04-14 link:https://mastodon.social/@nixCraft/112269408187496933[Sam Altman, We have no idea how we may one day generate revenue]
 [quote, Sam Altman - CEO of OpenAI]
@@ -138,6 +220,13 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 * Google has warned its own employees not to disclose confidential information or use the code generated by its AI chatbot, Bard.
 * Other large firms have similarly cautioned their staff against leaking proprietary documents or code, and have banned them using other AI chatbots.
 * [Google] told Reuters its internal ban was introduced because Bard can output "undesired code suggestions." Issues could potentially lead to buggy programs or complex, bloated software that will cost developers more time to fix than if they didn't use AI to code at all.
+
+== 2023-05-29 link:https://arxiv.org/abs/2305.18654[Faith and Fate: Limits of Transformers on Compositionality]
+
+* The striking discrepancy between the impressive successes of transformer LLMs on seemingly complex tasks and the astonishing failures on seemingly trivial tasks spark critical open questions about how to faithfully interpret their mixed capabilities.
+** Shortcut learning via pattern-matching may yield fast correct answers when similar compositional patterns are available during training but does not allow for robust generalization to uncommon or complex examples.
+* Second, due to error propagation, transformers may have inherent limitations on solving high-complexity compositional tasks that exhibit novel patterns.
+* The problems [hallucination, prompt injection, and jailbreaks] are inherent, certainly in the present generation of models and [...] likely in LLMs _per se_
 
 == 2023-04-06 link:https://jonathanturley.org/2023/04/06/defamed-by-chatgpt-my-own-bizarre-experience-with-artificiality-of-artificial-intelligence/[ChatGPT invented a sexual harassment scandal and named a real law prof as the accused]
 * I have been writing about the threat of AI to free speech. Then recently I learned that ChatGPT falsely reported on a claim of sexual harassment that was *never made* against me on a trip that *never occurred* while I was on a faculty where I *never taught*. ChapGPT relied on a cited Post article that was *never written* and quotes a statement that was *never made* by the newspaper.
