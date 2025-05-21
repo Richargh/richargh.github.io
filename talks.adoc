@@ -15,6 +15,10 @@ content-type: eg
 
 * link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides] | link:https://vimeo.com/875223690[Video] | link:https://github.com/Richargh/testdsl[TestDsl Code]
 
+== Building dynamic web apps with Kotlin, WebComponents and Htmx
+
+* link:https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy[NDC Oslo 2025 🇬🇧] | link:https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025[Slides] | link:https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html[Code]
+
 === Continuous Delivery for Legacy Code
 
 This talk has gone through a changes through the years as I figured out what was important and what not so much.
