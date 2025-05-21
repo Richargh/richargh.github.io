@@ -1,0 +1,17 @@
+---
+title: Upcoming
+permalink: /posts/upcoming/
+comments: false
+status: ongoing
+---
+
+== Upcoming Talks
+
+* "Kotlin kontra Java" at link:https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java/[Java Forum Stuttgart 10.07.2025 🇩🇪]
+*  "The Surprising Similarities Between Renovating your House and your Code Base" at link:https://conference.ctocraft.com/berlin-2025/agenda/[CTO Craft Con Berlin 23.-24.09.2025 🇬🇧]
+* "Kotlin kontra Java" at link:https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html[IT Tage 08.–11.12.2025 🇩🇪]
+
+== Upcoming Articles
+
+* "A visual chronicle of the JDK's journey" at JavaPro.io in July 2025
+* "Fixing the Billion-Dollar Mistake" at JavaPro.io in August 2025
