@@ -17,6 +17,15 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-05-13 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5219933[Large Language Models, Small Labor Market Effects]
+
+* examine the labor market effects of AI chatbots using two large-scale adoption surveys (late 2023 and 2024) covering 11 exposed occupations (25,000 workers, 7,000 workplaces)
+* despite substantial investments, economic impacts remain minimal
+* [...] we estimate precise zeros: AI chatbots have had no significant impact on earnings or recorded hours in any occupation [...]
+* Modest productivity gains (average time savings of 3%), combined with weak wage pass-through, help explain these limited labor market effects.
+* Our findings challenge narratives of imminent labor market transformation due to Generative AI.
+* two years after the fastest technology adoption ever, labor market outcomes—whether at the individual or firm level—remain untouched.
+
 == 2025-04-26 link:https://www.msn.com/en-us/news/technology/we-now-know-how-ai-thinks-and-it-s-barely-thinking-at-all/ar-AA1DDDZv[We Now Know How AI ‘Thinks’—and It’s Barely Thinking at All - The Wall Street Journal]
 
 * All of this work suggests that under the hood, today’s AIs are overly complicated, patched-together Rube Goldberg machines full of ad-hoc solutions for answering our prompts.
@@ -26,7 +35,14 @@ status: ongoing
 
 // == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
 
-// == 2024-06-08 link:https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
+== 2025-04-14 link:https://arxiv.org/abs/2504.09762v2[Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!]
+
+* Intermediate token generation (ITG), where a model produces output before the solution, has been proposed as a method to improve the performance of language models on reasoning tasks.
+* These intermediate tokens have been called "reasoning traces" or even "thoughts" -- implicitly anthropomorphizing the model, implying these tokens resemble steps a human might take
+* Recent advances in general planning and problem solving have been spearheaded by so-called “Long Chain-of-Thought”
+models, most notably DeepSeek’s R1
+* In this paper, we take the position that anthropomorphizing intermediate tokens as reasoning/thinking traces is (1) wishful (2) has little concrete supporting evidence (3) engenders false confidence and(4) may be pushing the community into fruitless research directions.
+* Anthropomorphization of the intermediate tokens as reasoning/thinking traces has provided a comforting explanation of the observed performance of LRMs.Our arguments in this paper foreground the possibility that this is a cargo cult explanation [ 11 ], namely that derivation traces resemble reasoning in syntax only.
 
 
 == 2025-03-13 link:https://arstechnica.com/ai/2025/03/ai-search-engines-give-incorrect-answers-at-an-alarming-60-rate-study-says/[AI search engines cite incorrect news sources at an alarming 60% rate, study says]
@@ -167,7 +183,15 @@ status: ongoing
 
 // 2024-05-13 link:https://www.mdpi.com/2076-3417/14/10/4115[The Impact of Large Language Models on Programming Education and Student Learning Outcomes]
 
-// == 2024-06-08 https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
+== 2024-06-08 link:https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
+
+* [LLMs] have been plagued by persistent inaccuracies in their output; these are often called “AI hallucinations”.
+* We argue that these falsehoods, and the overall activity of large language models, is better understood as bullshit in the sense explored by Frankfurt (On Bullshit, Princeton, 2005)
+* these programs cannot themselves be concerned with truth, and because they are designed to produce text that looks truth-apt without any actual concern for truth, it seems appropriate to call their outputs bullshit.
+* We further argue that describing AI misrepresentations as bullshit is both a more useful and more accurate way of predicting and discussing the behaviour of these systems.
+* Currently, false statements by ChatGPT and other large language models are described as “hallucinations”, which give policymakers and the public the idea that these systems are misrepresenting the world, and describing what they “see”.
+* The problem here isn’t that large language models hallucinate, lie, or misrepresent the world in some way. It’s that they are not designed to represent the world at all; instead, they are designed to convey convincing lines of text.
+* Solutions such as connecting the LLM to a database don’t work because, if the models are trained on the database, then the words in the database affect the probability that the chatbot will add one or another word to the line of text it is generating. But this will only make it produce text similar to the text in the database; doing so will make it more likely that it reproduces the information in the database but by no means ensures that it will.
 
 == 2024-04-14 link:https://mastodon.social/@nixCraft/112269408187496933[Sam Altman, We have no idea how we may one day generate revenue]
 [quote, Sam Altman - CEO of OpenAI]
