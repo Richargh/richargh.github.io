@@ -17,6 +17,20 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-06-10 link:https://www.theguardian.com/commentisfree/2025/jun/10/billion-dollar-ai-puzzle-break-down[When billion-dollar AIs break down over puzzles a child can do, it’s time to rethink the hype - Gary Marcus]
+
+* neural networks of various kinds can generalise within a distribution of data they are exposed to, but their generalisations tend to break down beyond that distribution.
+** A simple example of this is that I once trained an older model to solve a very basic mathematical equation using only even-numbered training data. The model was able to generalise a little bit: solve for even numbers it hadn’t seen before, but unable to do so for problems where the answer was an odd number.
+
+== 2025-06 link:https://machinelearning.apple.com/research/illusion-of-thinking[The Illusion of Thinking - Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity]
+
+* Recent generations of frontier language models have introduced Large Reasoning Models
+(LRMs) that generate detailed thinking processes before providing answers
+* Through extensive experimentation across diverse puzzles, we show that frontier LRMs face a complete accuracy collapse beyond certain complexities.
+* [...] these models fail to develop generalizable problem-solving capabilities for planning tasks, [...]
+* At low complexity, non-thinking models are more accurate and token-efficient. As complexity increases, reasoning models outperform but require more tokens—until both collapse beyond a critical threshold, with shorter traces.
+* Rather than standard benchmarks (e.g., math problems), we adopt controllable puzzle environments that let us vary complexity systematically—by adjusting puzzle elements while preserving the core logic
+
 == 2025-05-13 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5219933[Large Language Models, Small Labor Market Effects]
 
 * examine the labor market effects of AI chatbots using two large-scale adoption surveys (late 2023 and 2024) covering 11 exposed occupations (25,000 workers, 7,000 workplaces)
