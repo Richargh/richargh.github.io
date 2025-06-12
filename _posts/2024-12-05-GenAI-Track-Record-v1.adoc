@@ -17,6 +17,7 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+
 == 2025-06-10 link:https://www.theguardian.com/commentisfree/2025/jun/10/billion-dollar-ai-puzzle-break-down[When billion-dollar AIs break down over puzzles a child can do, it’s time to rethink the hype - Gary Marcus]
 
 * neural networks of various kinds can generalise within a distribution of data they are exposed to, but their generalisations tend to break down beyond that distribution.
@@ -30,6 +31,19 @@ status: ongoing
 * [...] these models fail to develop generalizable problem-solving capabilities for planning tasks, [...]
 * At low complexity, non-thinking models are more accurate and token-efficient. As complexity increases, reasoning models outperform but require more tokens—until both collapse beyond a critical threshold, with shorter traces.
 * Rather than standard benchmarks (e.g., math problems), we adopt controllable puzzle environments that let us vary complexity systematically—by adjusting puzzle elements while preserving the core logic
+
+== 2025-06-05 link:https://github.com/r-three/common-pile/blob/main/paper.pdf[The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text]
+
+* Large language models (LLMs) are typically trained on enormous quantities of unlicensed text, a practice that has led to scrutiny due to possible intellectual property infringement and ethical concerns.
+** Recent estimates suggest that compensating the authors of pre-training data, even at conservatively low wage rates, would cost billions of US dollars
+* Training LLMs on openly licensed text presents a first step towards addressing these issues, but prior data collection efforts have yielded datasets too small or low-quality to produce performant LLMs.
+* To address this gap, we collect, curate, and release the Common Pile v0.1, an eight terabyte collection of openly licensed text designed for LLM pretraining.
+** A critical stage of large language model (LLM) development is pretraining, where an LLM is trained to predict the next token (i.e., word or subword unit) in a corpus of unstructured text.
+** Pretraining is widely regarded as the foundation for strong downstream performance
+** the Common Pile v0.1 focuses primarily on English content
+* Crucially, we validate our efforts by training two 7 billion parameter LLMs on text from the Common Pile: Comma v0.1-1T and Comma v0.1-2T, trained on 1 and 2 trillion tokens respectively.
+* Both models attain competitive performance to LLMs trained on unlicensed text with similar computational budgets, such as Llama 1 and 2 7B.
+* In addition to releasing the Common Pile v0.1 itself, we also release the code used in its creation as well as the training mixture and checkpoints for the Comma v0.1 models.
 
 == 2025-05-13 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5219933[Large Language Models, Small Labor Market Effects]
 
@@ -53,8 +67,7 @@ status: ongoing
 
 * Intermediate token generation (ITG), where a model produces output before the solution, has been proposed as a method to improve the performance of language models on reasoning tasks.
 * These intermediate tokens have been called "reasoning traces" or even "thoughts" -- implicitly anthropomorphizing the model, implying these tokens resemble steps a human might take
-* Recent advances in general planning and problem solving have been spearheaded by so-called “Long Chain-of-Thought”
-models, most notably DeepSeek’s R1
+* Recent advances in general planning and problem solving have been spearheaded by so-called “Long Chain-of-Thought” models, most notably DeepSeek’s R1
 * In this paper, we take the position that anthropomorphizing intermediate tokens as reasoning/thinking traces is (1) wishful (2) has little concrete supporting evidence (3) engenders false confidence and(4) may be pushing the community into fruitless research directions.
 * Anthropomorphization of the intermediate tokens as reasoning/thinking traces has provided a comforting explanation of the observed performance of LRMs.Our arguments in this paper foreground the possibility that this is a cargo cult explanation [ 11 ], namely that derivation traces resemble reasoning in syntax only.
 
