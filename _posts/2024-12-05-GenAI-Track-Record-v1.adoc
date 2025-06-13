@@ -23,7 +23,7 @@ status: ongoing
 * neural networks of various kinds can generalise within a distribution of data they are exposed to, but their generalisations tend to break down beyond that distribution.
 ** A simple example of this is that I once trained an older model to solve a very basic mathematical equation using only even-numbered training data. The model was able to generalise a little bit: solve for even numbers it hadn’t seen before, but unable to do so for problems where the answer was an odd number.
 
-== 2025-06 link:https://machinelearning.apple.com/research/illusion-of-thinking[The Illusion of Thinking - Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity]
+== 2025-06-06 link:https://machinelearning.apple.com/research/illusion-of-thinking[The Illusion of Thinking - Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity]
 
 * Recent generations of frontier language models have introduced Large Reasoning Models
 (LRMs) that generate detailed thinking processes before providing answers
