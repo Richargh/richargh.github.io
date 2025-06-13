@@ -45,6 +45,16 @@ status: ongoing
 * Both models attain competitive performance to LLMs trained on unlicensed text with similar computational budgets, such as Llama 1 and 2 7B.
 * In addition to releasing the Common Pile v0.1 itself, we also release the code used in its creation as well as the training mixture and checkpoints for the Comma v0.1 models.
 
+== 2025-05-24 link:https://arxiv.org/abs/2505.18878[CRMArena-Pro: Holistic Assessment of LLM Agents Across Diverse Business Scenarios and Interactions]
+
+* While AI agents have transformative potential in business, the absence of publicly-available business data on widely used platforms hinders effective performance benchmarking.
+* [...] we introduce CRMArena-Pro, a novel benchmark for holistic and realistic assessment of LLM agents in diverse professional settings. [It features] nineteen expert-validated tasks across customer sales, service, as well as configure, price, and quote for Business-to-Business and Business- to-Customer scenarios.
+* It also incorporates multi-turn interactions guided by diverse personas and confidentiality awareness assessments.
+** we enable[multi-turn interactions] using LLM-powered simulated users. Each simulated user adopts a randomly sampled persona (e.g., You are quality-focused, maintaining high standards in all work) to introduce realistic variability in interaction styles. Critically, these simulated users release task-relevant information incrementally, often initially incomplete, compelling agents to engage in multi-turn dialogue and ask follow-up questions to successfully complete their objectives
+* Experiments show leading LLM agents achieve approximately solely 58% single-turn success rate on CRMArena-Pro, with significant performance drops in multi-turn settings to 35%.
+* Workflow Execution is notably more tractable, with top-performing agents surpassing 83% success rate in single-turn tasks, while other skills present greater challenges.
+* Agents exhibit near-zero inherent confidentiality awareness (improvable with prompting but often at a cost to task performance).
+
 == 2025-05-13 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5219933[Large Language Models, Small Labor Market Effects]
 
 * examine the labor market effects of AI chatbots using two large-scale adoption surveys (late 2023 and 2024) covering 11 exposed occupations (25,000 workers, 7,000 workplaces)
@@ -220,6 +230,17 @@ status: ongoing
 * The problem here isn’t that large language models hallucinate, lie, or misrepresent the world in some way. It’s that they are not designed to represent the world at all; instead, they are designed to convey convincing lines of text.
 * Solutions such as connecting the LLM to a database don’t work because, if the models are trained on the database, then the words in the database affect the probability that the chatbot will add one or another word to the line of text it is generating. But this will only make it produce text similar to the text in the database; doing so will make it more likely that it reproduces the information in the database but by no means ensures that it will.
 
+== 2024-05-01 link:https://arxiv.org/abs/2405.00823[WorkBench: a Benchmark Dataset for Agents in a Realistic Workplace Setting]
+
+* We introduce WorkBench: a benchmark dataset for evaluating agents’ ability to execute tasks in a workplace setting.
+* WorkBench contains a sandbox environment with five databases, 26 tools, and 690 tasks.
+** These tasks represent common business activities, such as sending emails and scheduling meetings.
+** a task is sent to the agent, which has access to toolkits in various domains. The agent takes actions using these tools, which may alter the sandbox databases. The agent observes the result of using the tool to determine if more actions are required.
+** [One Limitation of study:] While our tasks require multiple actions, they are limited to single-turn chat. [...] a multi-turn chat setup may be more representative of real tasks and could build upon our work.
+* We evaluate five existing ReAct agents on WorkBench, finding they successfully complete as few as 3% of tasks (Llama2-70B), and just 43% for the best-performing (GPT-4).
+*  We further find that agents’ errors can result in the wrong action being taken, such as an email being sent to the wrong person.
+
+
 == 2024-04-14 link:https://mastodon.social/@nixCraft/112269408187496933[Sam Altman, We have no idea how we may one day generate revenue]
 [quote, Sam Altman - CEO of OpenAI]
 ____
@@ -310,6 +331,11 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 == 2021-01-05 link:https://en.wikipedia.org/wiki/DALL-E[DALL-E 1 revealed]
 * uses a version of GPT-3 modified to generate images.
 * The software's name is a portmanteau of the names of animated robot Pixar character WALL-E and the Catalan surrealist artist Salvador Dalí.
+
+== 2020-05-22 link:https://arxiv.org/abs/2005.11401[Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks]
+
+* We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation.
+* For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.
 
 '''
 
