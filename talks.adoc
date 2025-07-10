@@ -13,7 +13,7 @@ NOTE: These are all past talks. For upcoming talks see link:/posts/upcoming[upco
 
 == Building dynamic web apps with Kotlin, WebComponents and Htmx
 
-* link:https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy[NDC Oslo 2025 🇬🇧] | link:https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025[Slides] | link:https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html[Code]
+* link:https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy[NDC Oslo 2025 🇬🇧] | link:https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025[Slides] | link:https://www.youtube.com/watch?v=rEEACXNq-WA[Video] | link:https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html[Code]
 
 == Continuous Delivery for Legacy Code
 
