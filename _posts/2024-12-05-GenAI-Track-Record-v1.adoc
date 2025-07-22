@@ -19,6 +19,23 @@ status: ongoing
 
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 
+== 2025-07-10 link:https://arxiv.org/abs/2507.06952[What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models]
+
+* The promise of foundation models [LLMs] relies on a central presumption: that learning to predict sequences can uncover deeper truths, or optimistically, even a world model
+* How would we know if foundation models have also made the leap from making accurate predictions to developing reliable world models?
+* we create a procedure that, when given a foundation model and world model, tests whether the foundation model has learned that world model.
+* We call this technique an _inductive bias probe_, and it is built on a simple insight: the implicit world model of a foundation model is revealed by how it extrapolates from a small amount of information
+* We first demonstrate this procedure using an example from physics. Specifically, we aim to replicate Kepler’s and Newton’s experiments [i.e. Newton's law of universal gravitation for the planets in our solar system]
+* We first train a model [109M parameter transformer] to predict the location of planets across solar systems
+* [notably] the model is able to predict orbital trajectories, even for solar systems it has not seen.
+* We evaluate model predictions on held-out data. The model makes good predictions [...]
+* [...] foundation models trained on orbital trajectories consistently fail to apply Newtonian mechanics when adapted to new physics tasks [the calculated force is unrelated to Newtonian physics]
+* rather than learning one universal physical law, the foundation model applies different, seemingly nonsensical laws depending on the task it’s being applied to.
+* Further analysis reveals that these models behave as if they develop task-specific heuristics that fail to generalize
+* We find that the model has recovered piecemeal heuristics rather than a compact world model; it recovers a different law of gravitation depending on the slice of data it is applied to.
+* foundation models [LLMs] can excel at their training tasks yet fail to develop inductive biases towards the underlying world model when adapted to new tasks
+* A foundation model uses datasets to output predictions given inputs, whereas a world model describes state structure implicit in that data.
+
 == 2025-06-21 link:https://www.anthropic.com/research/agentic-misalignment[Agentic Misalignment: How LLMs could be insider threats]
 
 * We stress-tested 16 leading models from multiple developers in hypothetical corporate environments to identify potentially risky agentic behaviors before they cause real harm.
