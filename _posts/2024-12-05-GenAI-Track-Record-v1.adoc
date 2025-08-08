@@ -158,6 +158,20 @@ in an iterative sense-plan-act loop.
 * In this paper, we take the position that anthropomorphizing intermediate tokens as reasoning/thinking traces is (1) wishful (2) has little concrete supporting evidence (3) engenders false confidence and(4) may be pushing the community into fruitless research directions.
 * Anthropomorphization of the intermediate tokens as reasoning/thinking traces has provided a comforting explanation of the observed performance of LRMs.Our arguments in this paper foreground the possibility that this is a cargo cult explanation [ 11 ], namely that derivation traces resemble reasoning in syntax only.
 
+== 2025-04-10 link:https://youtu.be/eyrDM3A_YFc?feature=shared&t=35[Frontiers of AI and Computing: A Conversation With Yann LeCun and Bill Dally | NVIDIA GTC 2025]
+
+Yann LeCun:
+
+* I am not so interested in LLMs anymore
+* I think there are more interesting questions in 4 things:
+.. How do you get machines to understand the physical world
+.. How do you get them to have persistent memory
+.. How do you them to reason
+.. and plan
+* I am excited about things that, a lot of people might get excited about 5 years from now but right does not look so exciting because it's some obscure academic paper
+* It's much more difficult to deal with the real world than to deal with language.
+// * Tokens are discrete.
+// * When we talk about tokens, we talk about a finite set of possibilities. In a typical LLM the number of possible tokens is on the order of 100.000.
 
 == 2025-03-13 link:https://arstechnica.com/ai/2025/03/ai-search-engines-give-incorrect-answers-at-an-alarming-60-rate-study-says/[AI search engines cite incorrect news sources at an alarming 60% rate, study says]
 
