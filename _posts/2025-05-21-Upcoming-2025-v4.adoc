@@ -12,5 +12,4 @@ status: ongoing
 
 == Upcoming Articles
 
-* "A visual chronicle of the JDK's journey" at JavaPro.io in July 2025
-* "Fixing the Billion-Dollar Mistake" at JavaPro.io in August 2025
+* "Map your Code - Master your Architecture" at JavaPro.io
