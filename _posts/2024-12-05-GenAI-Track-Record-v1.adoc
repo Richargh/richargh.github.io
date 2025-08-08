@@ -70,6 +70,36 @@ status: ongoing
 * Both models attain competitive performance to LLMs trained on unlicensed text with similar computational budgets, such as Llama 1 and 2 7B.
 * In addition to releasing the Common Pile v0.1 itself, we also release the code used in its creation as well as the training mixture and checkpoints for the Comma v0.1 models.
 
+== 2025-06-04 link:https://arxiv.org/abs/2506.04133v1[TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems]
+
+* A structured analysis of Trust, Risk, and Security Management
+(TRiSM) in the context of LLM-based agentic multi-agent systems (AMAS).
+* the architecture of AMAS:
+** Language Model Core (Agent Brain): initialized with a user goal and a structured agent prompt (defining its role, capabilities, and tool access)
+** Planning and Reasoning Module: decomposes tasks into manageable sub-goals
+[...] via chain-of-thought
+** Memory Module: short-term within the prompt context [and] and long-term memory [...] often implemented using vector databases
+** Tool-Use Interface: When the LLM determines a tool is needed, it emits a structured command, which is executed externally. The result is fed back into the LLM as a new observation
+** Perception and Environment Interface: translate raw inputs (e.g., sensor data, images, or textual states) into representations the LLM can process
+* The TRISM framework [focuses] on four key pillars:
+** Explainability: making the inner workings and decisions of AI agents interpretable to humans
+** Model Operations (ModelOps): managing AI models through their entire lifecycle, from development and deployment to monitoring, maintenance, and eventual retirement
+** Application Security: protecting AI agents and their ecosystem from malicious attacks and misuse.
+*** A prompt injection can jump from agent to agent, becoming a prompt infection.
+*** identityspoofing and impersonation, means that commands might be issued by an attacker or rogue model pretending to be a trusted peer
+** Model Privacy: protection of sensitive data within AI agent
+systems
+*** In a multi-agent context, this challenge is amplified by the fact that agents may share information with each other
+* Unique Threat Vectors [for AMAS]
+** Autonomy abuse
+** Persistent memory
+** Agent orchestration: A compromised orchestrator could distort task distribution or misroute information
+* Taxonomy of Risks
+** Adversarial Attacks
+** Data Leakage
+** Agent Collusion and Mode Collapse
+** Emergent Behavior
+
 == 2025-05-24 link:https://arxiv.org/abs/2505.18878[CRMArena-Pro: Holistic Assessment of LLM Agents Across Diverse Business Scenarios and Interactions]
 
 * While AI agents have transformative potential in business, the absence of publicly-available business data on widely used platforms hinders effective performance benchmarking.
