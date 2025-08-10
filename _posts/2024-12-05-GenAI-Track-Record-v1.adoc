@@ -19,6 +19,40 @@ status: ongoing
 
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 
+== 2025-07-13 link:https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated[How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI]
+
+* AI has been around for many decades, split, almost since its very beginning, into two different traditions.
+** One is the neural network or “connectionist” tradition which goes back to the 1940s and 1950s, first developed by Frank Rosenblatt, and popularized, advanced and revived by *Geoffrey Hinton*, Yann LeCun, and Yoshua Bengio (along with many others, including most prominently, Juergen Schmidhuber who rightly feels that his work has been under-credited), and brought to current form by OpenAI and Google.
+*** Such systems are statistical, very loosely inspired by certain aspects of the brain (viz. the “nodes” in neural networks are meant to be abstractions of neurons), and typically trained on large-scale data.
+*** Large Language Models (LLMs) grew out of that tradition.
+** The other is the symbol-manipulation tradition, with roots going back to Bertrand Russell and Gottlob Frege, and John von Neumann and Alan Turing, and the original godfathers of AI, Herb Simon, Marvin Minsky, and John McCarthy, and even Hinton’s great-great-great-grandfather George Boole.
+*** In this approach, symbols and variables stand for abstractions; mathematical and logical functions are core.
+*** Systems generally represent knowledge explicitly, often in databases, and typically make extensive use of (are written entirely in) classic computer programming languages.
+*** *All of the world’s software relies on it.*
+*** Symbolic AI takes its name from the idea, central to mathematics, logic, and computer science, that abstractions can be represented by symbols.
+*** Equations like `f = ma` allow us to calculate outputs for a wide range of inputs, irrespective of whether we have seen any particular values before.
+** For thirty years, [Gary Marcus has] been arguing for a reconciliation between the two, *neurosymbolic AI*.
+*** The core notion has always been that the two main strands of AI—neural networks and symbolic manipulation—complement each other, with different strengths and weaknesses.
+*** the two most common approaches to AI, neural networks and classical symbolic AI, have complementary strengths and weaknesses.
+*** Neural networks are good at learning but weak at generalization; symbolic systems are good at generalization, but not at learning.
+*** Obviously combining a code interpreter (which is a symbolic system of enormous complexity) with an LLM is neurosymbolic [like o3 does for some tasks]
+*** [Google DeepMind's] AlphaFold, AlphaProof, and AlphaGeometry are all successful neurosymbolic models.
+*** Neurosymbolic AI is not one thing, but many. o3’s use of neurosymbolic AI is very different from AlphaFold’s use of neurosymbolic AI.
+* [In the book Empire of AI]
+** Hinton and Sutskever continued to staunchly champion deep learning.
+** Its flaws, they argued, are not inherent to the approach itself.
+** Rather they are the artifacts of imperfect neural-network design as well as limited training data and compute.
+** Some day with enough of both, fed into even better neural networks, deep learning models should be able to completely shed the aforementioned problems.
+** "The human brain has about 100 trillion parameters, or synapses,"
+** "What we now call a really big model, like GPT-3, has 175 billion. It's a thousand times smaller than the brain.
+** "Deep learning is going to be able to do everything," he said.
+* [Yet Gary Marcus,a professor emeritus of psychology and neural science at New York University, argues in his book 'Rebooting AI']
+** these issues were inherent to deep learning.
+** Forever stuck in the *realm of correlations**, neural networks would never, with any amount of data or compute, be able to understand *causal relationships-why things are the way they are*-and thus perform causal reasoning.
+** This critical part of human cognition is why humans need only learn the rules of the road in one city to be able to drive proficiently in many others
+** Tesla's Autopilot, by contrast, can log billions of miles of driving data and still crash when encountering unfamiliar scenarios or be fooled with a few strategically placed stickers.
+
+
 == 2025-07-10 link:https://arxiv.org/abs/2507.06952[What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models]
 
 * The promise of foundation models [LLMs] relies on a central presumption: that learning to predict sequences can uncover deeper truths, or optimistically, even a world model
