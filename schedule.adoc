@@ -1,0 +1,122 @@
+---
+layout: post
+title: Schedule
+permalink: /schedule/
+content-type: eg
+---
+
+[cols="1,1,1"]
+|===
+| Title
+| Conference
+| Date
+
+3+| *2025*
+
+| Kotlin kontra Java
+| IT Tage
+| 2025-12-08/11
+
+| Making sense of frontend code with forensic techniques
+| c't <webdev
+| 2025-11-19
+
+| The Surprising Similarities Between Renovating your House and your Code Base
+| CTO Craft Con Berlin
+| 2025-09-23/24
+
+| Domain Re-discovery Patterns for Legacy Code
+| Java Forum Nord
+| 2025-09-16
+
+| Building dynamic web apps with Kotlin, WebComponents and Htmx
+| NDC Oslo
+| 2025-05-21
+
+| Kotlin kontra Java
+| JavaLand
+| 2025-04-01
+
+3+| *2024*
+
+| Domain Re-discovery Patterns for Legacy Code
+| Build Stuff
+| 2024-11-15
+
+| Domain Re-discovery Patterns for Legacy Code
+| Software Architecture Alliance
+| 2024-10-22
+
+| Continuous Delivery for Legacy Code
+| Lean-Agile Scotland
+| 2024-09-25
+
+| Domain Re-discovery Patterns for Legacy Code
+| DDD Europe
+| 2024-05-31
+
+| Continuous Delivery for Legacy Code
+| NDC London
+| 2024-02-01
+
+3+| *2023*
+
+| How to build the greatest and best Pipeline in the World
+| JAX
+| 2023-05-10
+
+| Bienenstock Architektur
+| JUG Saxony Day
+| 2023-09-29
+
+| Fixing the Billion-Dollar Mistake in Java
+| JavaLand
+| 2023-03-22
+
+3+| *2022*
+
+| Continuous Delivery for Legacy Code
+| DevOpsCon
+| 2022-12-06
+
+| Remote Scaled Trunk-Based Development
+| Build Stuff
+| 2022-11-09
+
+| Remote Scaled Trunk-Based Development
+| IPC
+| 2022-10-25
+
+3+| *2021*
+
+| Fixing the Billion-Dollar Mistake in C#
+| Build Stuff
+| 2021-11-19
+
+3+| *2020*
+
+| Spring Boot: The Good Parts
+| Entwicklertag Frankfurt
+| 2020-02-20
+
+3+| *2019*
+
+| Continuous Delivery for Legacy Code
+| Build Stuff
+| 2019-11-13
+
+| Continuous Delivery for Legacy Code
+| Software Architecture Gathering
+| 2019-10-16
+
+| Continuous Delivery for Legacy Code
+| Entwicklertag Frankfurt
+| 2019-02-21
+
+3+| *2018*
+
+| Continuous Delivery for Legacy Code
+| Xp Days
+| 2018-11-09
+
+|===
