@@ -7,7 +7,6 @@ status: ongoing
 
 == Upcoming Talks
 
-* "Domain Re-discovery Patterns for Legacy Code" at link:https://javaforumnord.de/2025/[Java Forum Nord 2025 16.09.2025 🇩🇪]
 * "The Surprising Similarities Between Renovating your House and your Code Base" at link:https://conference.ctocraft.com/berlin-2025/agenda/[CTO Craft Con Berlin 23.-24.09.2025 🇬🇧]
 * "Making sense of frontend code with forensic techniques" at link:https://ct-webdev.com/agenda-2025/[c't <webdev 19.11.2025 🇬🇧]
 * "Kotlin kontra Java" at link:https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html[IT Tage 08.–11.12.2025 🇩🇪]
