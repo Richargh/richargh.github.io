@@ -11,6 +11,12 @@ content-type: eg
 | Conference
 | Date
 
+3+| *2026*
+
+| Domain Re-discovery Patterns for Legacy Code
+| OOP
+| 2026-02-13
+
 3+| *2025*
 
 | Kotlin kontra Java
