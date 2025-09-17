@@ -21,7 +21,7 @@ content-type: eg
 
 | Kotlin kontra Java
 | IT Tage
-| 2025-12-08/11
+| 2025-12-11
 
 | Making sense of frontend code with forensic techniques
 | c't <webdev>
