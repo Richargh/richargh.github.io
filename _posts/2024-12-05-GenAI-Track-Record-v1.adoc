@@ -19,6 +19,17 @@ status: ongoing
 
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 
+== 2025-09-22 link:https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity[AI-Generated “Workslop” Is Destroying Productivity]
+
+* Employees are using AI tools to create low-effort, passable looking work that ends up creating more work for their coworkers
+* In the context of work, we refer to this phenomenon as “workslop.”
+* We define workslop as AI generated work content that masquerades as good work, but lacks the substance to meaningfully advance a given task.
+* The insidious effect of workslop is that it shifts the burden of the work downstream, requiring the receiver to interpret, correct, or redo the work. In other words, it transfers the effort from creator to receiver.
+* Of 1,150 U.S.-based full-time employees across industries, 40% report having received workslop in the last month.
+* The phenomenon occurs mostly between peers (40%), but workslop is also sent to managers by direct reports (18%).
+* Employees reported spending an average of one hour and 56 minutes dealing with each instance of workslop.
+* Based on participants’ estimates of time spent, as well as on their self-reported salary, we find that these workslop incidents carry an invisible tax of $186 per month. For an organization of 10,000 workers, given the estimated prevalence of workslop (41%), this yields over *$9 million per year* in lost productivity.
+
 == 2025-07-13 link:https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated[How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI]
 
 * AI has been around for many decades, split, almost since its very beginning, into two different traditions.
