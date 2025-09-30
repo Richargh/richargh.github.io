@@ -56,6 +56,18 @@ status: ongoing
 * Employees reported spending an average of one hour and 56 minutes dealing with each instance of workslop.
 * Based on participants’ estimates of time spent, as well as on their self-reported salary, we find that these workslop incidents carry an invisible tax of $186 per month. For an organization of 10,000 workers, given the estimated prevalence of workslop (41%), this yields over *$9 million per year* in lost productivity.
 
+== 2025-08-18 link:https://promptql.io/blog/being-confidently-wrong-is-holding-ai-back[Being "Confidently Wrong" is holding AI back]
+
+* [LLMs] being Confidently Wrong is The Only Problem
+.. *Imposes a universal verification tax*: I don't know when I might get an incorrect response from my AI. So I have to forensically check every response. My minutes turn into hours; the ROI disappears.
+.. *Erodes trust asymmetrically*: For serious work, one high‑confidence miss costs more credibility than ten successes earn.
+.. *Hidden failure modes kill motivation to improve*: Without high-quality uncertainty information, I don’t know whether a result is wrong because of ambiguity, missing context, stale data, or a model mistake.
+.. *Compounding errors results in AI being doomed to fail*:
+*** 99.99% accuracy in a ten step workflow is 1 error in a 1000 runs.
+*** 90% accuracy in a ten step workflow is 2 in every 3 workflows have errors (1 - 0.9^10).
+* Fixing "confidently wrong" might be A Silver Bullet™
+** a 90% accurate system is [more valuable], say, a 50% accurate system that can signal uncertainty - and *get more accurate over time*. We don’t need perfection; we need a loop that tightens.
+
 == 2025-08-21 link:https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf[MIT The GenAI Divide - State of AI in Business 2025]
 
 * Despite $30–40 billion in enterprise investment into GenAI, this report uncovers a surprising result in that 95% of organizations are getting zero return
