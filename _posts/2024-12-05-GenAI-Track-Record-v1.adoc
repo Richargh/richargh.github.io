@@ -536,6 +536,26 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 * The extension is available on numerous editors such as Visual Studio, Visual Studio Code, Neovim, and JetBrains IDEs.
 * The extension works well with multiple coding languages with notable ones being Python, JavaScript, TypeScript, and Go.
 
+== 2022-03-10 link:https://archive.ph/6hEYS[Deep Learning Is Hitting a Wall]
+
+* Few fields have been more filled with hype and bravado than artificial intelligence.
+* It has flitted from fad to fad decade by decade, always promising the moon, and only occasionally delivering.
+* One minute it was expert systems, next it was Bayesian networks, and then Support Vector Machines.
+* In 2011, it was IBM’s Watson [...]
+* Nowadays, and in fact ever since 2012, the flavor of choice has been *deep learning* [...].
+** [The "Godfathers of AI" and "Godfathers of Deep Learning" are Geoffrey Hinton, Yoshua Bengio and Yann LeCun, for which they won the 2018 Turing Award.]
+** [Hinton, the Godfather of AI, joined Google in 2013 when his company was acquired but left May 2023 because he wanted to "freely speak out about the risks of A.I.". He's been cited half-a-million times]
+** [Yoshua Bengio is the most-cited computer scientist globally and the most-cited living scientist across all fields]
+** [Yann LeCun, Chief AI Scientist at Meta]
+* Deep learning, which is fundamentally a technique for recognizing patterns, is at its best when all we need are rough-ready results, where stakes are low and perfect results optional.
+* When a single error can cost a life, it’s just not good enough.
+* Deep-learning systems are particularly problematic when it comes to “outliers” that differ substantially from the things on which they are trained.
+* Current deep-learning systems frequently succumb to stupid errors like [the following]. They sometimes misread dirt on an image that a human radiologist would recognize as a glitch.
+* What else might we need? Among other things, we are very likely going to need to revisit a once-popular idea [...]: the idea of manipulating symbols—computer-internal encodings, like strings of binary bits, that stand for complex ideas.
+* What does “manipulating symbols” really mean? Ultimately, it means two things: having sets of symbols (essentially just patterns that stand for things) to represent information, and processing (manipulating) those symbols in a specific way, using something like algebra (or logic, or computer programs) to operate over those symbols.
+* Classical computer science [of the sort practiced by Turing and von Neumann and everyone after, manipulates symbols in a fashion that we think of as algebraic, and that’s what’s really at stake. In simple algebra, we have three kinds of entities, variables (like x and y), operations (like + or -), and bindings (which tell us, for example, to let x = 12 for the purpose of some calculation).
+* If symbols are so critical for software engineering, why not use them in AI, too?
+
 == 2022-04-06 link:https://en.wikipedia.org/wiki/DALL-E[DALL-E 2 revealed]
 * designed to generate more realistic images at higher resolutions that "can combine concepts, attributes, and styles".
 
