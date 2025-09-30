@@ -19,6 +19,27 @@ status: ongoing
 
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 
+== 2025-09-27 link:https://pluralistic.net/2025/09/27/econopocalypse/#subprime-intelligence[The real (economic) AI apocalypse is nigh, Cory Doctorow]
+
+* the AI bubble is driven by monopolists who've conquered their markets and have no more growth potential, who are desperate to convince investors that they can continue to grow by moving into some other sector, e.g. "pivot to video," crypto, blockchain, NFTs, AI, and now "super-intelligence."
+* [LLMs have horrible unit-economics] each generation of AI has been vastly more expensive than the previous one, and each new AI customer makes the AI companies lose more money:
+* AI cannot do your job, but an AI salesman can 100% convince your boss to fire you and replace you with an AI that can't do your job, and when the bubble bursts
+* [Accounting]
+** Microsoft "invests" in Openai by giving the company free access to its servers. Openai reports this as a ten billion dollar investment, then redeems these "tokens" at Microsoft's data-centers. Microsoft then books this as ten billion in revenue.
+
+== 2025-09-26 link:https://www.wsj.com/tech/ai/ai-bubble-building-spree-55ee6128?st=efV1EF&amp;reflink=article_email_share[Spending on AI Is at Epic Levels. Will It Ever Pay Off?]
+
+* The artificial-intelligence boom has ushered in one of the costliest building sprees in world history.
+* Over the past three years, leading tech firms have committed more toward AI data centers [...], plus chips and energy, than it cost to build the interstate highway system over four decades, when adjusted for inflation.
+* “I hope we don’t take 50 years,” Microsoft CEO Satya Nadella said at a May conference with Meta CEO Mark Zuckerberg, referring to the initially slow adoption of electricity.
+* [OpenAI CEO] Altman recently committed the company to pay Oracle an average of around $60 billion a year for servers in data centers in coming years. Yet OpenAI is on track to take in just $13 billion in revenue from all its paying customers this year.
+* David Cahn, a partner at venture-capital firm Sequoia, estimates that the money invested in AI infrastructure in 2023 and 2024 alone requires consumers and companies to buy roughly *$800 billion in AI products* over the life of these chips and data centers to produce a good investment return. Analysts believe most AI processors have a useful life of between *three and five years*.
+* This week, consultants at Bain & Co. estimated the wave of AI infrastructure spending will require $2 trillion in annual AI revenue by 2030. By comparison, that is more than the combined 2024 revenue of Amazon, Apple, Alphabet, Microsoft, Meta and Nvidia, and more than five times the size of the entire global subscription software market.
+* Morgan Stanley estimates that last year there was around $45 billion of revenue for AI products.
+* [Alphabet, Microsoft, Amazon, Meta,] the four “hyperscalers” alone are expected to spend nearly $400 billion on capital investments next year, more than the cost of the Apollo space program in today’s dollars.
+* Each new AI model—ChatGPT-4, ChatGPT-5—costs significantly more than the last to train and release to the world, often three to five times the cost of the previous, say AI executives.
+* Another hurdle: The chips in the data centers won’t be useful forever. Unlike the dot-com boom’s fiber cables, the latest AI chips rapidly depreciate in value as technology improves [...]
+
 == 2025-09-25 link:https://itrevolution.com/articles/ais-mirror-effect-how-the-2025-dora-report-reveals-your-organizations-true-capabilities/[2025 DORA State of AI-assisted Software Development Report]
 
 * AI’s [LLMs] primary role in software development is that of an amplifier. It magnifies the strengths of high-performing organizations and the dysfunctions of struggling ones.
@@ -126,6 +147,18 @@ status: ongoing
 * Crucially, we validate our efforts by training two 7 billion parameter LLMs on text from the Common Pile: Comma v0.1-1T and Comma v0.1-2T, trained on 1 and 2 trillion tokens respectively.
 * Both models attain competitive performance to LLMs trained on unlicensed text with similar computational budgets, such as Llama 1 and 2 7B.
 * In addition to releasing the Common Pile v0.1 itself, we also release the code used in its creation as well as the training mixture and checkpoints for the Comma v0.1 models.
+
+== 2025-06-30 link:https://pluralistic.net/2025/06/30/accounting-gaffs/#artificial-income[How much (little) are the AI companies making?]
+
+* Stein's Law: "anything that can't go on forever eventually stops."
+* What Google – and the rest of the tech sector – needed was a massive growth story, a story about how their companies, worth trillions of dollars, could double or triple in size in the coming years.
+* But spinning an endless growth story isn't merely ideological.
+** For every dollar that Ford brings in [a "mature" company], the market is willing to spend $8.60 on its stock. For every dollar Tesla brings in [a "growth" company], the market is willing to spend $118 on its stock.
+** That means that when Tesla and Ford compete to buy something – like another company, or the labor of highly sought after technical specialists – Tesla has a nearly unbeatable advantage. Rather than raiding its precious cash reserves to fund its offer, Tesla can offer stock. Ford can only spend as many dollars as it brings in through sales, but Tesla can make more stock, on demand, simply by typing numbers into a spreadsheet.
+** So when Tesla bids against Ford, Ford has to use dollars, and Tesla can use shares. And even if the acquisition target – a key employee or a startup that's on the acquisitions market – wants dollars instead of shares, Tesla can stake its shares as collateral for loans at a rate that's 1,463% better than the rate Ford gets when it collateralizes a loan based on its own equity
+* if you can tell a convincing growth story, it's much easier to grow.
+* Tech companies don't need these ventures [metaverse, cryptocurrency, AI] to be successful – they just need them to seem to be plausibly successful for long enough to keep the share price high until the next growth story heaves over the horizon.
+* As [Ed] Zitron points out: this industry is projecting $327b in spending this year, with $18b in revenue and zero profits.
 
 == 2025-06-04 link:https://arxiv.org/abs/2506.04133v1[TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems]
 
