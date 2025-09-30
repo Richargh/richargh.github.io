@@ -62,3 +62,7 @@ This talk has gone through a changes through the years as I figured out what was
 == Spring Boot: The Good Parts
 
 * link:https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner[Entwicklertag Frankfurt 2020 🇩🇪] | link:https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020[Slides]
+
+== The Surprising Similarities Between Renovating your House and your Code Base
+
+* link:https://conference.ctocraft.com/berlin-2025/agenda/[CTO Craft Con Berlin 2025 🇬🇧] | link:https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025[Slides]
