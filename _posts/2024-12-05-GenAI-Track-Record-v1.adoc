@@ -344,6 +344,16 @@ Yann LeCun:
 * Microsoft says it isn’t using customer data from its Microsoft 365 apps to train its AI models.
 * The confusion arose from a privacy setting in Microsoft Office that toggles “optional connected experiences”
 
+== 2024-09-25 link:https://techblog.comsoc.org/2024/11/25/superclusters-of-nvidia-gpu-ai-chips-combined-with-end-to-end-network-platforms-to-create-next-generation-data-centers/[Superclusters of Nvidia GPU/AI chips combined with end-to-end network platforms to create next generation data centers]
+
+* OpenAI used around 10,000 of Nvidia’s chips to train the version of ChatGPT it launched in late 2022, UBS analysts estimate.
+* Nvidia Chief Executive Jensen Huang  said that while the biggest clusters for training for giant AI models now top out at around 100,000 of Nvidia’s current chips, “the next generation starts at around 100,000 Blackwells.[...]"
+* Musk posted last month on his social-media platform X that his 100,000-chip Colossus super cluster was “soon to become” a 200,000-chip cluster in a single building. He also posted in June that the next step would probably be a 300,000-chip cluster of Nvidia’s newest GPU chips next summer.
+* Blackwell chips are estimated to cost around $30,000 each, meaning a cluster of 100,000 would cost $3 billion, not counting the price of the power-generation infrastructure [cooling] and IT equipment [also network] around the chips.
+* new engineering challenges also often arise with larger clusters:
+** Meta researchers said in a July paper that a cluster of more than 16,000 of Nvidia’s GPUs suffered from unexpected failures of chips and other components routinely as the company trained an advanced version of its Llama model over 54 days.
+* The trend also fosters demand for Nvidia’s networking equipment, which is fast becoming a significant business. Nvidia’s networking equipment revenue in 2024 was $3.13 billion, which was a 51.8% increase from the previous year.
+
 == 2024-11-21 link:https://www.businessinsider.com/microsoft-copilot-oversharing-problem-fix-customers-2024-11[Microsoft Copilot shares sensitive information, ignoring rights]
 * A [Microsoft] Copilot security issue that inadvertently let employees access sensitive information such as CEO emails and HR documents.
 * Microsoft Copilot and Github Copilot are different services. The first one is integrated into M365, the latter into IDEs to generate code.
