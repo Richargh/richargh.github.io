@@ -7,6 +7,12 @@ status: ongoing
 ---
 
 //https://poloclub.github.io/transformer-explainer/
+// == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
+// link:https://www.researchgate.net/publication/354639860_Is_AI_Ground_Truth_Really_True_The_Dangers_of_Training_and_Evaluating_AI_Tools_Based_on_Experts'_Know-What[Is AI Ground Truth Really True? The Dangers of Training and Evaluating AI Tools Based on Experts’ Know-What]
+// link:https://zenodo.org/records/17065099[Against the Uncritical Adoption of 'AI' Technologies in Academia]
+// == 2024-06-04 link:https://arxiv.org/abs/2211.04325[Will we run out of data? Limits of LLM scaling based on human-generated data]
+// == 2018-01-02 link:https://arxiv.org/abs/1801.00631[Deep Learning: A Critical Appraisal]
+// == 2024-02-28 link:https://arxiv.org/abs/2402.18649[A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-based Systems]
 
 == General LLM comparisons
 
@@ -18,6 +24,10 @@ status: ongoing
 // NY legal errors
 
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
+
+== 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
+
+* [Released on the same day with link:https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously[Claude Code v2]]
 
 == 2025-09-27 link:https://pluralistic.net/2025/09/27/econopocalypse/#subprime-intelligence[The real (economic) AI apocalypse is nigh, Cory Doctorow]
 
@@ -56,6 +66,10 @@ status: ongoing
 * Employees reported spending an average of one hour and 56 minutes dealing with each instance of workslop.
 * Based on participants’ estimates of time spent, as well as on their self-reported salary, we find that these workslop incidents carry an invisible tax of $186 per month. For an organization of 10,000 workers, given the estimated prevalence of workslop (41%), this yields over *$9 million per year* in lost productivity.
 
+== 2025-09-15 link:https://openai.com/index/introducing-upgrades-to-codex/[Introducing upgrades to Codex]
+
+* Today, we’re releasing GPT‑5-Codex—a version of GPT‑5 further optimized for agentic coding in Codex.
+
 == 2025-08-18 link:https://promptql.io/blog/being-confidently-wrong-is-holding-ai-back[Being "Confidently Wrong" is holding AI back]
 
 * [LLMs] being Confidently Wrong is The Only Problem
@@ -74,6 +88,23 @@ status: ongoing
 * Just 5% of integrated AI pilots are extracting millions in value, while the vast majority remain stuck with no measurable P&L impact.
 * This divide does not seem to be driven by model quality or regulation, but seems to be determined by approach.
 * Most organizations fall on the wrong side of the GenAI Divide, adoption is high, but disruption is low. Seven of nine sectors show little structural change.
+
+== 2025-08-19 link:https://github.com/openai/agents.md[Initial commit of Agents.md]
+
+* AGENTS.md is a simple, open format for guiding coding agents.
+
+== 2025-08-07 link:https://openai.com/index/introducing-gpt-5/[Introducing GPT-5]
+
+== 2025-08-05 link:https://www.anthropic.com/news/claude-opus-4-1[Claude Opus 4.1]
+
+== 2025-08-05 link:https://openai.com/index/introducing-gpt-oss/[Introducing gpt-oss]
+
+* gpt-oss-120b and gpt-oss-20b
+
+== 2025-07-14 link:https://kiro.dev/blog/introducing-kiro/[Introducing Kiro]
+
+* Kiro, a new agentic IDE that helps you do your best work with spec-driven development.
+* link:https://kiro.dev/changelog/v0-1-0-preview/[v0.1.0-preview]
 
 == 2025-07-13 link:https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated[How o3 and Grok 4 Accidentally Vindicated Neurosymbolic AI]
 
@@ -108,7 +139,6 @@ status: ongoing
 ** This critical part of human cognition is why humans need only learn the rules of the road in one city to be able to drive proficiently in many others
 ** Tesla's Autopilot, by contrast, can log billions of miles of driving data and still crash when encountering unfamiliar scenarios or be fooled with a few strategically placed stickers.
 
-
 == 2025-07-10 link:https://arxiv.org/abs/2507.06952[What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models]
 
 * The promise of foundation models [LLMs] relies on a central presumption: that learning to predict sequences can uncover deeper truths, or optimistically, even a world model
@@ -125,6 +155,10 @@ status: ongoing
 * We find that the model has recovered piecemeal heuristics rather than a compact world model; it recovers a different law of gravitation depending on the slice of data it is applied to.
 * foundation models [LLMs] can excel at their training tasks yet fail to develop inductive biases towards the underlying world model when adapted to new tasks
 * A foundation model uses datasets to output predictions given inputs, whereas a world model describes state structure implicit in that data.
+
+== 2025-07-08 link:https://blog.google/technology/google-labs/jules-now-available/[Jules, our asynchronous coding agent, is now available for everyone]
+
+* Jules is officially out of beta and launching publicly, powered by Gemini 2.5.
 
 == 2025-06-21 link:https://www.anthropic.com/research/agentic-misalignment[Agentic Misalignment: How LLMs could be insider threats]
 
@@ -212,6 +246,12 @@ systems
 * Workflow Execution is notably more tractable, with top-performing agents surpassing 83% success rate in single-turn tasks, while other skills present greater challenges.
 * Agents exhibit near-zero inherent confidentiality awareness (improvable with prompting but often at a cost to task performance).
 
+== 2025-05-22 link:https://www.anthropic.com/news/claude-4[Introducing Claude 4]
+
+* Claude Opus 4 is the world’s best coding model, with sustained performance on complex, long-running tasks and agent workflows.
+* Claude Sonnet 4 is a significant upgrade to Claude Sonnet 3.7, delivering superior coding and reasoning while responding more precisely to your instructions.
+* Claude Code is now generally available [version bump from link:https://github.com/anthropics/claude-code/commit/6f27711e0498f3a631916231e1d8149db6ebc884[0.2.125 to 1.0.0], first public version was 0.2.61 2025-04-03]
+
 == 2025-05-19 link:https://arxiv.org/pdf/2505.13076[The Hidden Dangers of Browsing AI Agents]
 
 * AI browsing or web agents are autonomous systems that use Large Language Models (LLMs) to navigate and interact with websites on behalf of a user. They typically perceive web content (through page text or visual renderings) and perform actions such as clicking links, filling forms, or entering text, in order to accomplish user-specified tasks. Unlike a standard chatbot, which only produces textual responses, a web agent operates
@@ -234,6 +274,12 @@ in an iterative sense-plan-act loop.
 *** Fallback to Safe Mode: In safe mode, only a minimal set of read-only actions are allowed,
 *** Red Team and Patching Cycle: patch the agent against exploits to harden it over time
 
+== 2025-05-16 link:https://openai.com/index/introducing-codex/[Introducing Codex]
+
+* Today we’re launching a research preview of Codex: a cloud-based software engineering agent that can work on many tasks in parallel.
+* [Also known as Codex Web]
+* Codex is powered by codex-1, a version of OpenAI o3 optimized for software engineering.
+
 == 2025-05-13 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5219933[Large Language Models, Small Labor Market Effects]
 
 * examine the labor market effects of AI chatbots using two large-scale adoption surveys (late 2023 and 2024) covering 11 exposed occupations (25,000 workers, 7,000 workplaces)
@@ -250,7 +296,9 @@ in an iterative sense-plan-act loop.
 * [A model trained on millions of turn-by-turn directions in Manhattan] managed to give usable turn-by-turn directions between any two points in the borough with 99% accuracy. [...] [But when the researches] blocked just 1% of the virtual Manhattan’s roads, forcing the AI to navigate around detours, its performance plummeted.
 * [The] research also suggests why many models are so massive: They have to memorize an endless list of rules of thumb, and can’t compress that knowledge into a mental model like a person can.
 
-// == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
+== 2025-04-16 link:https://openai.com/index/introducing-o3-and-o4-mini/#:~:text=Codex+CLI[Introducing OpenAI o3 and o4-mini]
+
+* [Announcement also includes] Codex CLI, a lightweight coding agent you can run from your terminal
 
 == 2025-04-14 link:https://arxiv.org/abs/2504.09762v2[Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!]
 
@@ -306,6 +354,10 @@ Yann LeCun:
 
 * [...] a key limitation of their reliability is hallucination, where inaccurate or fabricated information can impact clinical decisions and patient safety.
 * Our results reveal that inference techniques such as Chain-of-Thought (CoT) and Search Augmented Generation can effectively reduce hallucination rates. However, despite these improvements, non-trivial levels of hallucination persist.
+
+== 2025-02-24 link:https://www.anthropic.com/news/claude-3-7-sonnet[Claude 3.7 Sonnet and Claude Code]
+
+* Claude Code is available as a limited research preview
 
 == 2025-02-06 link:https://arstechnica.com/tech-policy/2025/02/meta-torrented-over-81-7tb-of-pirated-books-to-train-ai-authors-say/[”Torrenting from a corporate laptop doesn’t feel right”: Meta emails unsealed]
 * Last month, Meta admitted to torrenting a controversial large dataset known as LibGen, which includes tens of millions of pirated books
@@ -399,6 +451,10 @@ Yann LeCun:
 
 // == 2024-09-05 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566[The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers]
 
+== 2024-09-12 link:https://openai.com/index/introducing-openai-o1-preview/[Introducing OpenAI o1-preview]
+
+* We've developed a new series of AI models designed to spend more time thinking before they respond.
+
 == 2024-08-23 link:https://www.ciodive.com/news/generative-ai-hype-moment-reckoning-trough-disillusionment-gartner/725033/[GenerativeAI on the Gartner HypeCycle - Trough of disillusionment]
 * Enthusiasm for generative AI shows signs of cooling
 * In Gartner’s annual Hype Cycle for Emerging Technologies report, the research and advisory company placed generative AI past the peak of inflated expectations, and down the path towards what it calls the *trough of disillusionment*.
@@ -440,6 +496,10 @@ Yann LeCun:
 * Currently, false statements by ChatGPT and other large language models are described as “hallucinations”, which give policymakers and the public the idea that these systems are misrepresenting the world, and describing what they “see”.
 * The problem here isn’t that large language models hallucinate, lie, or misrepresent the world in some way. It’s that they are not designed to represent the world at all; instead, they are designed to convey convincing lines of text.
 * Solutions such as connecting the LLM to a database don’t work because, if the models are trained on the database, then the words in the database affect the probability that the chatbot will add one or another word to the line of text it is generating. But this will only make it produce text similar to the text in the database; doing so will make it more likely that it reproduces the information in the database but by no means ensures that it will.
+
+== 2024-05-13 link:https://openai.com/index/hello-gpt-4o/[Hello GPT-4o]
+
+* GPT‑4o (“o” for “omni”) is a step towards much more natural human-computer interaction—it accepts as input any combination of text, audio, image, and video and generates any combination of text, audio, and image outputs.
 
 == 2024-05-01 link:https://arxiv.org/abs/2405.00823[WorkBench: a Benchmark Dataset for Agents in a Realistic Workplace Setting]
 
@@ -484,6 +544,13 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 ** “As long as you can get over the synthetic data event horizon, where the model is smart enough to make good synthetic data, everything will be fine,”
 ** Easier said than done. [they] can get caught in a loop where they reinforce their own quirks, mistakes and limitations.
 
+== 2024-03-04 link:https://www.anthropic.com/news/claude-3-family[https://www.anthropic.com/news/claude-3-family]
+
+* The [Claude 3] family includes three state-of-the-art models in *ascending* order of capability:
+.. Claude 3 Haiku
+.. Claude 3 Sonnet
+.. Claude 3 Opus
+
 == 2024-02-12 link:https://arxiv.org/abs/2402.08021[Careless Whisper: Speech-to-Text Hallucination Harms]
 * We evaluate Open AI's Whisper [...] we find that roughly 1% of audio transcriptions contained entire hallucinated phrases or sentences which did not exist in any form in the underlying audio [... and of those] 38% of hallucinations include explicit harms.
 
@@ -513,6 +580,10 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 
 == 2023-04-06 link:https://jonathanturley.org/2023/04/06/defamed-by-chatgpt-my-own-bizarre-experience-with-artificiality-of-artificial-intelligence/[ChatGPT invented a sexual harassment scandal and named a real law prof as the accused]
 * I have been writing about the threat of AI to free speech. Then recently I learned that ChatGPT falsely reported on a claim of sexual harassment that was *never made* against me on a trip that *never occurred* while I was on a faculty where I *never taught*. ChapGPT relied on a cited Post article that was *never written* and quotes a statement that was *never made* by the newspaper.
+
+== 2023-03-14 link:https://cursor.com/changelog/0-0-37[Cursor IDE v0.0.37]
+
+* First Cursor IDE version
 
 == 2023-03 link:https://en.wikipedia.org/wiki/ChatGPT#Model_versions[ChatGPT release]
 * Based on GPT 4 (Generative Pre-trained Transformer)
