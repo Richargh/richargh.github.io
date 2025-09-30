@@ -366,6 +366,11 @@ Yann LeCun:
 * Anthropic, the developer of the conversational AI assistant Claude, doesn’t want prospective new hires using AI assistants in their applications, regardless of whether they’re in marketing or engineering.
 * “While we encourage people to use AI systems during their role to help them work faster and more effectively, please do not use AI assistants during the application process,”
 
+== 2025-01-23 link:https://blog.jetbrains.com/junie/2025/01/meet-junie-your-coding-agent-by-jetbrains/[Meet Junie, Your Coding Agent by JetBrains]
+
+* With the launch of Junie, JetBrains AI coding agent, we are redefining how we code by leveraging its agentic power for co-creation right in your IDE.
+* We’ve now opened the Early Access Program waitlist.
+
 == 2025-01-20 link:https://queue.acm.org/detail.cfm?id=3711679[The Price of Intelligence - Three risks inherent in LLMs]
 
 * Discussions of LLM capabilities often overlook their inherently probabilistic nature [...]
@@ -485,7 +490,7 @@ Yann LeCun:
 * Tech giants and beyond are set to spend over $1tn on AI capex in coming years, with so far little to show for it.
 * AI’s “killer application” has yet to emerge
 
-// 2024-05-13 link:https://www.mdpi.com/2076-3417/14/10/4115[The Impact of Large Language Models on Programming Education and Student Learning Outcomes]
+== 2024-06-21 link:https://www.anthropic.com/news/claude-3-5-sonnet[Claude 3.5 Sonnet]
 
 == 2024-06-08 link:https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
 
