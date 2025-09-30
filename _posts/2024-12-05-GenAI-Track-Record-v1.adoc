@@ -6,6 +6,7 @@ comments: false
 status: ongoing
 ---
 
+// TODO
 //https://poloclub.github.io/transformer-explainer/
 // == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
 // link:https://www.researchgate.net/publication/354639860_Is_AI_Ground_Truth_Really_True_The_Dangers_of_Training_and_Evaluating_AI_Tools_Based_on_Experts'_Know-What[Is AI Ground Truth Really True? The Dangers of Training and Evaluating AI Tools Based on Experts’ Know-What]
@@ -14,6 +15,10 @@ status: ongoing
 // == 2018-01-02 link:https://arxiv.org/abs/1801.00631[Deep Learning: A Critical Appraisal]
 // == 2024-02-28 link:https://arxiv.org/abs/2402.18649[A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-based Systems]
 // 2024-05-13 link:https://www.mdpi.com/2076-3417/14/10/4115[The Impact of Large Language Models on Programming Education and Student Learning Outcomes]
+// 2024-10-07 link:https://arxiv.org/pdf/2410.05229[Understanding the Limitations of Mathematical Reasoning in Large Language Models]
+// == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
+// == 2024-09-05 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566[The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers]
+// 2024-01-09 link:https://codescene.com/hubfs/whitepapers/Refactoring-vs-Refuctoring-Advancing-the-state-of-AI-automated-code-improvements.pdf[Refactoring vs Refuctoring: Advancing the state of AI-automated code improvements]
 
 == General LLM comparisons
 
@@ -24,8 +29,6 @@ status: ongoing
 
 // McDonalds order errors
 // NY legal errors
-
-// == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 
 == 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
 
@@ -365,6 +368,7 @@ Yann LeCun:
 * Last month, Meta admitted to torrenting a controversial large dataset known as LibGen, which includes tens of millions of pirated books
 
 == 2025-02-03 link:https://www.404media.co/anthropic-claude-job-application-ai-assistants/[AI Company Asks Job Applicants Not to Use AI in Job Applications]
+
 * Anthropic, the developer of the conversational AI assistant Claude, doesn’t want prospective new hires using AI assistants in their applications, regardless of whether they’re in marketing or engineering.
 * “While we encourage people to use AI systems during their role to help them work faster and more effectively, please do not use AI assistants during the application process,”
 
@@ -436,8 +440,6 @@ Yann LeCun:
 * CIOs could miscalculate AI costs by as much as 1,000% as they scale AI plans, Gartner research suggests.
 * “Set aside all that hype and focus on your pace,” LeHong said. “Choose the one that’s right for you and run your own race.”
 
-// 2024-10-07 link:https://arxiv.org/pdf/2410.05229[Understanding the Limitations of Mathematical Reasoning in Large Language Models]
-
 == 2024-09-27 link:https://www.nytimes.com/2024/09/27/technology/openai-chatgpt-investors-funding.html[OpenAI Is Growing Fast and Burning Through Piles of Money]
 * OpenAI’s monthly revenue hit $300 million in August, up 1,700 percent since the beginning of 2023, and the company expects about *$3.7 billion in annual sales* this year
 * Roughly *10 million* ChatGPT users pay the company a *$20 monthly fee*, according to the documents. OpenAI expects to raise that price by $2 by the end of the year, and will aggressively raise it to $44 over the next five years
@@ -456,7 +458,7 @@ Yann LeCun:
 * The Unit 1 reactor, which closed five years ago, is expected to be revived in 2028
 
 
-// == 2024-09-05 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566[The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers]
+
 
 == 2024-09-12 link:https://openai.com/index/introducing-openai-o1-preview/[Introducing OpenAI o1-preview]
 
@@ -561,7 +563,6 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 == 2024-02-12 link:https://arxiv.org/abs/2402.08021[Careless Whisper: Speech-to-Text Hallucination Harms]
 * We evaluate Open AI's Whisper [...] we find that roughly 1% of audio transcriptions contained entire hallucinated phrases or sentences which did not exist in any form in the underlying audio [... and of those] 38% of hallucinations include explicit harms.
 
-// 2024-01-09 link:https://codescene.com/hubfs/whitepapers/Refactoring-vs-Refuctoring-Advancing-the-state-of-AI-automated-code-improvements.pdf[Refactoring vs Refuctoring: Advancing the state of AI-automated code improvements]
 
 == 2023-10-06 link:https://en.wikipedia.org/wiki/Gemini_(chatbot)[Google Bard is relaunched as Gemini]
 * the company's "largest and most capable AI model"
