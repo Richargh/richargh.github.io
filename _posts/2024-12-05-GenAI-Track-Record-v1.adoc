@@ -13,12 +13,14 @@ status: ongoing
 // == 2024-06-04 link:https://arxiv.org/abs/2211.04325[Will we run out of data? Limits of LLM scaling based on human-generated data]
 // == 2018-01-02 link:https://arxiv.org/abs/1801.00631[Deep Learning: A Critical Appraisal]
 // == 2024-02-28 link:https://arxiv.org/abs/2402.18649[A New Era in LLM Security: Exploring Security Concerns in Real-World LLM-based Systems]
+// 2024-05-13 link:https://www.mdpi.com/2076-3417/14/10/4115[The Impact of Large Language Models on Programming Education and Student Learning Outcomes]
 
 == General LLM comparisons
 
 - link:https://arcprize.org/leaderboard[ARC-AGI Leaderboard], shows cost vs score
 - link:https://artificialanalysis.ai/[Artificial Analysis] of AI models and API providers
 - link:https://www.swebench.com/#verified[SWE-bench], Can Language Models Resolve Real-World GitHub Issues?
+- link:https://bbycroft.net/llm[LLM Visualization]
 
 // McDonalds order errors
 // NY legal errors
