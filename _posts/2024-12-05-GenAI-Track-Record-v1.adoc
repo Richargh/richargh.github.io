@@ -230,6 +230,14 @@ Yann LeCun:
 // * Tokens are discrete.
 // * When we talk about tokens, we talk about a finite set of possibilities. In a typical LLM the number of possible tokens is on the order of 100.000.
 
+== 2025-03-27 link:https://arxiv.org/abs/2503.21934[Proof or Bluff? Evaluating LLMs on 2025 USA Math Olympiad]
+
+* Recent math benchmarks for large language models (LLMs) such as MathArena indicate that state-of-the-art reasoning models achieve impressive performance on mathematical competitions like AIME
+* However, these benchmarks evaluate models solely based on final numerical answers, neglecting rigorous reasoning and proof generation which are essential for real-world mathematical tasks.
+* Using expert human annotators, we evaluated several state-of-the-art reasoning models on the six problems from the 2025 USAMO *within hours of their release.*
+* Our results reveal that all tested models struggled significantly: only Gemini-2.5-Pro achieves a non-trivial score of 25%, while all other models achieve less than 5%.
+* The most frequent failure mode among human participants is the inability to find a correct solution. [...] In contrast, all evaluated LLMs consistently claimed to have solved the problems.
+
 == 2025-03-13 link:https://arstechnica.com/ai/2025/03/ai-search-engines-give-incorrect-answers-at-an-alarming-60-rate-study-says/[AI search engines cite incorrect news sources at an alarming 60% rate, study says]
 
 * They discovered that the AI models incorrectly cited sources in more than 60 percent of these queries.
