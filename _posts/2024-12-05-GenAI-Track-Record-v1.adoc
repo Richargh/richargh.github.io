@@ -30,6 +30,23 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+
+
+== 2025-10-02 link:https://mdalmijn.com/p/ai-the-ultimate-product-killer[AI: The Ultimate Product Killer]
+
+* AI has made us better at shipping.
+* However, being able to ship more features is not the flex companies think it is.
+* Shipping faster usually only means you’re speeding up the demise of your product.
+* Every feature we add, unless it adds value, is a parasite.
+* Here are some of the different costs you incur for the upkeep of a feature in your product (list not exhaustive):
+** Support costs when people call to troubleshoot or let you know something doesn’t work.
+** Maintenance costs to fix issues or to update features, so they remain working.
+** Infrastructure costs to pay for servers and infrastructure the feature runs on.
+** Increased development costs for other features: as your codebase grows, it will become more expensive to add new features.
+** Dependency costs. More features mean more dependencies to manage. More dependencies result more time lost in coordination and meetings, which means higher development costs.
+** Marketing costs for features communicated to your users.
+* Product Management means shipping the right things and getting rid of the things that don’t pull their weight.
+
 == 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
 
 * [Released on the same day with link:https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously[Claude Code v2]]
