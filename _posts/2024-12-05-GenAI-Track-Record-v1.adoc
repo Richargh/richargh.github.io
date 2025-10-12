@@ -92,6 +92,21 @@ status: ongoing
 
 * Today, we’re releasing GPT‑5-Codex—a version of GPT‑5 further optimized for agentic coding in Codex.
 
+== 2025-08-30 link:https://www.wsj.com/tech/ai/ai-costs-expensive-startups-4c214f59[Cutting-Edge AI Was Supposed to Get Cheaper. It’s More Expensive Than Ever.]
+
+* What’s driving up costs? The latest AI models are doing more “thinking,” especially when used for deep research, AI agents and coding.
+* So while the price of a unit of AI, known as a token, continues to drop, the number of tokens needed to accomplish many tasks is skyrocketing.
+* Here are approximate amounts of tokens needed for tasks at different levels, based on a variety of sources:
+** Basic chatbot Q&A: 50 to 500 tokens
+** Short document summary: 200 to 6,000 tokens
+** Basic code assistance: 500 to 2,000 tokens
+** Writing complex code: 20,000 to 100,000+ tokens
+** Legal document analysis: 75,000 to 250,000+ tokens
+** Multi-step agent workflow: 100,000 to one million+ tokens
+* Ivan Zhao, chief executive officer of productivity software company Notion, says that two years ago, his business had margins of around 90%, typical of cloud-based software companies. Now, around 10 percentage points of that profit go to the AI companies that underpin Notion’s latest offerings.
+* One solution: dumber AI
+* OpenAI’s CFO said in October that three-quarters of the company’s revenue came from regular Joes and Janes paying $20 a month.
+
 == 2025-08-18 link:https://promptql.io/blog/being-confidently-wrong-is-holding-ai-back[Being "Confidently Wrong" is holding AI back]
 
 * [LLMs] being Confidently Wrong is The Only Problem
