@@ -103,6 +103,11 @@ status: ongoing
 
 * Today, we’re releasing GPT‑5-Codex—a version of GPT‑5 further optimized for agentic coding in Codex.
 
+== 2025-09-02 link:https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/[Spec-driven development with AI: Get started with a new open source toolkit]
+
+* Spec Kit, our new open sourced toolkit for spec-driven development, provides a structured process to bring spec-driven development to your coding agent workflows with tools including GitHub Copilot, Claude Code, and Gemini CLI.
+* [Alternative to AWS Kiro]
+
 == 2025-08-30 link:https://www.wsj.com/tech/ai/ai-costs-expensive-startups-4c214f59[Cutting-Edge AI Was Supposed to Get Cheaper. It’s More Expensive Than Ever.]
 
 * What’s driving up costs? The latest AI models are doing more “thinking,” especially when used for deep research, AI agents and coding.
