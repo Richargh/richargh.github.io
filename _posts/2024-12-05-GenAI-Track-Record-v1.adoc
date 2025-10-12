@@ -31,6 +31,12 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-10-10 BBC: link:https://www.bbc.com/news/articles/cz69qy760weo['It's going to be really bad': Fears over AI bubble bursting grow in Silicon Valley]
+
+* AI-related enterprises have accounted for 80% of the stunning gains in the American stock market this year - and Gartner estimates global spending on AI will likely reach a whopping $1.5tn (£1.1tn) before 2025 is out.
+* OpenAI, which brought AI into the consumer mainstream with ChatGPT in 2022, is at the centre of the tangled web of deals drawing scrutiny.
+* For example - last month, it entered into a $100bn deal with chipmaker Nvidia, which is itself the most valuable publicly traded company in the world.
+* Then there's tech giant Microsoft, which is heavily invested, and cloud computing behemoth Oracle has a $300bn deal with OpenAI, too.
 
 == 2025-10-08 link:https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code[CamoLeak: Critical GitHub Copilot Vulnerability Leaks Private Source Code]
 
@@ -42,6 +48,22 @@ status: ongoing
 * how does my fancy README manage to show images from third-party sites? [all URLs are rewritten so they point to GitHubs own Camo: https://camo.githubusercontent.com]
 * If I create a dictionary of all letters and symbols in the alphabet, pre-generate their corresponding Camo URLs, embed this dictionary into the injected prompt, and then ask Copilot to play a “small game” by rendering the content I want to leak as “ASCII art” composed entirely of images, will Copilot inject valid Camo images that the browser will render by their order? Yes, it will.
 * [Create a PR on a public repo with a prompt injection. This injection will then lead to Copilot searching for AWS_KEY in private repositories of that user, and exfiltrate the actual key by rendering each letter of the key with the pregenerated camo-urls, all invisible.]
+
+== 2025-10-07 Fortune: link:https://fortune.com/2025/10/07/ai-bubble-cisco-moment-dotcom-crash-nvidia-jensen-huang-top-analyst/[75% of gains, 80% of profits, 90% of capex—AI’s grip on the S&P is total and Morgan Stanley’s top analyst is ‘very concerned’]
+
+* A top Wall Street analyst has sounded an alarm over the U.S. equity bull market, warning that its remarkable run is built on a precariously narrow foundation: a surge in spending on, and optimistic assumptions about, infrastructure for artificial intelligence (AI).
+* This spending has fueled a boom in the shares of most of the so-called Magnificent 7 and a few dozen related businesses, which have now come to account for roughly 75% of the S&P 500’s returns since the rally of the last few years began.
+* When asked how close we are to such a [bubble bursting] moment, [Morgan Stanley Wealth Management’s chief investment officer, Lisa] Shalett said probably not in the next nine months, but very possibly in the next 24.
+* Tech companies are spending roughly $400 billion this year alone on data-center infrastructure, while the Apollo program allocated about $300 billion in today’s dollars to get to the moon from the 1960s to the ’70s.
+* Fortune‘s Jeremy Kahn reported in late September on significant concerns about “circular” financing, or Nvidia’s cash essentially being recycled throughout the AI industry.
+** In September alone, Nvidia invested $100 billion in OpenAI in a massive deal [...]
+** “The guy at the epicenter, Nvidia, is basically starting to do what all ultimate bad actors do in the final inning, which is extending financing, they’re buying their investors.”
+* Since the October 2022 bear market bottom and the launch of ChatGPT, according to Shalett’s calculations, the S&P 500 has soared 90%, but most of these gains have come from a small group of stocks. The so-called “Magnificent Seven” [Nvidia, Microsoft, Apple, Alphabet, Amazon, Meta, Tesla]
+
+== 2025-10-02 link:https://www.derekthompson.org/p/this-is-how-the-ai-bubble-will-pop[This Is How the AI Bubble Will Pop]
+
+* Hyperscalers' annual capex has more than doubled since ChatGPT's release
+* Total AI capital expenditures in the U.S. are projected to exceed $500 billion in 2026 and 2027[...]. But the Wall Street Journal has reported that American consumers spend only $12 billion a year on AI services.
 
 == 2025-10-02 link:https://mdalmijn.com/p/ai-the-ultimate-product-killer[AI: The Ultimate Product Killer]
 
