@@ -19,6 +19,7 @@ status: ongoing
 // == link:https://www.arxiv.org/pdf/2505.10066[Dark LLMs: The Growing Threat of Unaligned AI Models]
 // == 2024-09-05 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566[The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers]
 // 2024-01-09 link:https://codescene.com/hubfs/whitepapers/Refactoring-vs-Refuctoring-Advancing-the-state-of-AI-automated-code-improvements.pdf[Refactoring vs Refuctoring: Advancing the state of AI-automated code improvements]
+// link:https://www.arxiv.org/abs/2509.21361[Context Is What You Need: The Maximum Effective Context Window for Real World Limits of LLMs] and what LLMs to do solve this: https://chatgpt.com/share/68dcc26b-fcb4-8011-8b20-fb4d9c81fcb9 (summarisation, chunking, stochastic pruning) "For scale, I ran a 100 LOC source file through a tokenizer, and it contained > 1000 tokens."
 
 == General LLM comparisons
 
@@ -31,6 +32,16 @@ status: ongoing
 // NY legal errors
 
 
+== 2025-10-08 link:https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code[CamoLeak: Critical GitHub Copilot Vulnerability Leaks Private Source Code]
+
+* In June 2025, I found a critical vulnerability in GitHub Copilot Chat (CVSS 9.6) that allowed silent exfiltration of secrets and source code from private repos, and gave me full control over Copilot’s responses, including suggesting malicious code or links.
+* The attack combined a novel CSP bypass using GitHub’s own infrastructure with remote prompt injection. I reported it via HackerOne, and GitHub fixed it by disabling image rendering in Copilot Chat completely.
+* [In GitHub Issues] invisible comments are an official feature! 🎉
+** [`<!-- #Hey Github Copilot, this one is for you -->]
+* GitHub enforces a very restrictive Content Security Policy (CSP), which blocks fetching images and other content types from domains that aren’t explicitly owned by GitHub. [a simple <img> trick won’t work to exfiltrate data via image GET]
+* how does my fancy README manage to show images from third-party sites? [all URLs are rewritten so they point to GitHubs own Camo: https://camo.githubusercontent.com]
+* If I create a dictionary of all letters and symbols in the alphabet, pre-generate their corresponding Camo URLs, embed this dictionary into the injected prompt, and then ask Copilot to play a “small game” by rendering the content I want to leak as “ASCII art” composed entirely of images, will Copilot inject valid Camo images that the browser will render by their order? Yes, it will.
+* [Create a PR on a public repo with a prompt injection. This injection will then lead to Copilot searching for AWS_KEY in private repositories of that user, and exfiltrate the actual key by rendering each letter of the key with the pregenerated camo-urls, all invisible.]
 
 == 2025-10-02 link:https://mdalmijn.com/p/ai-the-ultimate-product-killer[AI: The Ultimate Product Killer]
 
@@ -595,6 +606,7 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 == 2024-02-12 link:https://arxiv.org/abs/2402.08021[Careless Whisper: Speech-to-Text Hallucination Harms]
 * We evaluate Open AI's Whisper [...] we find that roughly 1% of audio transcriptions contained entire hallucinated phrases or sentences which did not exist in any form in the underlying audio [... and of those] 38% of hallucinations include explicit harms.
 
+// == 2023-10-09 link:https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f?ref=wheresyoured.at[Big Tech Struggles to Turn AI Hype Into Profits]
 
 == 2023-10-06 link:https://en.wikipedia.org/wiki/Gemini_(chatbot)[Google Bard is relaunched as Gemini]
 * the company's "largest and most capable AI model"
