@@ -31,6 +31,12 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-10-13 link:https://x.com/karpathy/status/1977758204139331904[Excited to release new repo: nanochat!]
+Author: Andrej Karpathy
+
+* Unlike my earlier similar repo nanoGPT which only covered pretraining, nanochat is a minimal, from scratch, full-stack training/inference pipeline of a simple ChatGPT clone in a single, dependency-minimal codebase. You boot up a cloud GPU box, run a single script and in as little as 4 hours later you can talk to your own LLM in a ChatGPT-like web UI. [...]
+* [...] it's basically entirely hand-written (with tab autocomplete). I tried to use claude/codex agents a few times but they just didn't work well enough at all and net unhelpful, possibly the repo is too far off the data distribution.
+
 == 2025-10-10 BBC: link:https://www.bbc.com/news/articles/cz69qy760weo['It's going to be really bad': Fears over AI bubble bursting grow in Silicon Valley]
 
 * AI-related enterprises have accounted for 80% of the stunning gains in the American stock market this year - and Gartner estimates global spending on AI will likely reach a whopping $1.5tn (£1.1tn) before 2025 is out.
@@ -441,6 +447,11 @@ Yann LeCun:
 
 * Anthropic, the developer of the conversational AI assistant Claude, doesn’t want prospective new hires using AI assistants in their applications, regardless of whether they’re in marketing or engineering.
 * “While we encourage people to use AI systems during their role to help them work faster and more effectively, please do not use AI assistants during the application process,”
+
+== 2025-02-03 link:https://x.com/karpathy/status/1886192184808149383[There's a new kind of coding I call "vibe coding"]
+Author: Andrej Karpathy
+
+There's a new kind of coding I call "vibe coding", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like "decrease the padding on the sidebar by half" because I'm too lazy to find it. I "Accept All" always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works.
 
 == 2025-01-23 link:https://blog.jetbrains.com/junie/2025/01/meet-junie-your-coding-agent-by-jetbrains/[Meet Junie, Your Coding Agent by JetBrains]
 
