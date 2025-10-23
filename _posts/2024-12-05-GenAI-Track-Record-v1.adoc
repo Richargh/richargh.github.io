@@ -583,6 +583,8 @@ There's a new kind of coding I call "vibe coding", where you fully give in to th
 
 == 2024-06-21 link:https://www.anthropic.com/news/claude-3-5-sonnet[Claude 3.5 Sonnet]
 
+* The updated Claude 3.5 Sonnet shows wide-ranging improvements on industry benchmarks, with particularly strong gains in *agentic coding* and tool use tasks.
+
 == 2024-06-08 link:https://link.springer.com/article/10.1007/s10676-024-09775-5[ChatGPT is bullshit]
 
 * [LLMs] have been plagued by persistent inaccuracies in their output; these are often called “AI hallucinations”.
