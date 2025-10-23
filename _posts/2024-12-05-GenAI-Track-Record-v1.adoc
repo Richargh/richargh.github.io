@@ -104,7 +104,7 @@ Author: Andrej Karpathy
 * [Accounting]
 ** Microsoft "invests" in Openai by giving the company free access to its servers. Openai reports this as a ten billion dollar investment, then redeems these "tokens" at Microsoft's data-centers. Microsoft then books this as ten billion in revenue.
 
-== 2025-09-26 link:https://www.wsj.com/tech/ai/ai-bubble-building-spree-55ee6128?st=efV1EF&amp;reflink=article_email_share[Spending on AI Is at Epic Levels. Will It Ever Pay Off?]
+== 2025-09-26 link:https://www.wsj.com/tech/ai/ai-bubble-building-spree-55ee6128[Spending on AI Is at Epic Levels. Will It Ever Pay Off?]
 
 * The artificial-intelligence boom has ushered in one of the costliest building sprees in world history.
 * Over the past three years, leading tech firms have committed more toward AI data centers [...], plus chips and energy, than it cost to build the interstate highway system over four decades, when adjusted for inflation.
