@@ -32,6 +32,16 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-10-22 link:https://www.anildash.com//2025/10/22/atlas-anti-web-browser/[ChatGPT's Atlas: The Browser That's Anti-Web]
+
+. Atlas substitutes its own AI-generated content for the web, but it looks like it's showing you the web
+. The user experience makes you guess what commands to type instead of clicking on links
+. You're the agent for the browser, it's not being an agent for you
+
+== 2025-10-21 link:https://openai.com/index/introducing-chatgpt-atlas/[Introducing ChatGPT Atlas]
+
+* The browser with ChatGPT built in.
+
 == 2025-10-13 link:https://x.com/karpathy/status/1977758204139331904[Excited to release new repo: nanochat!]
 Author: Andrej Karpathy
 
