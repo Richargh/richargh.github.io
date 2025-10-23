@@ -20,6 +20,7 @@ status: ongoing
 // == 2024-09-05 link:https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945566[The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments with Software Developers]
 // 2024-01-09 link:https://codescene.com/hubfs/whitepapers/Refactoring-vs-Refuctoring-Advancing-the-state-of-AI-automated-code-improvements.pdf[Refactoring vs Refuctoring: Advancing the state of AI-automated code improvements]
 // link:https://www.arxiv.org/abs/2509.21361[Context Is What You Need: The Maximum Effective Context Window for Real World Limits of LLMs] and what LLMs to do solve this: https://chatgpt.com/share/68dcc26b-fcb4-8011-8b20-fb4d9c81fcb9 (summarisation, chunking, stochastic pruning) "For scale, I ran a 100 LOC source file through a tokenizer, and it contained > 1000 tokens."
+// link:https://arxiv.org/pdf/2307.02477[Reasoning or Reciting? Exploring the Capabilities and Limitations of Language Models Through Counterfactual Tasks]
 
 == General LLM comparisons
 
