@@ -66,6 +66,12 @@ Author: Andrej Karpathy
 ** “The guy at the epicenter, Nvidia, is basically starting to do what all ultimate bad actors do in the final inning, which is extending financing, they’re buying their investors.”
 * Since the October 2022 bear market bottom and the launch of ChatGPT, according to Shalett’s calculations, the S&P 500 has soared 90%, but most of these gains have come from a small group of stocks. The so-called “Magnificent Seven” [Nvidia, Microsoft, Apple, Alphabet, Amazon, Meta, Tesla]
 
+== 2025-10-06 link:https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security/[Introducing CodeMender: an AI agent for code security]
+
+* Today, we’re sharing early results from our research on CodeMender, a new AI-powered agent that improves code security automatically.
+* Over the past six months that we’ve been building CodeMender, we have already upstreamed 72 security fixes to open source projects, including some as large as 4.5 million lines of code.
+* CodeMender operates by leveraging the thinking capabilities of recent Gemini Deep Think models to produce an autonomous agent capable of debugging and fixing complex vulnerabilities.
+
 == 2025-10-02 link:https://www.derekthompson.org/p/this-is-how-the-ai-bubble-will-pop[This Is How the AI Bubble Will Pop]
 
 * Hyperscalers' annual capex has more than doubled since ChatGPT's release
