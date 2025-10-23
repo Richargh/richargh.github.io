@@ -38,9 +38,11 @@ status: ongoing
 . The user experience makes you guess what commands to type instead of clicking on links
 . You're the agent for the browser, it's not being an agent for you
 
+[#atlas-launch]
 == 2025-10-21 link:https://openai.com/index/introducing-chatgpt-atlas/[Introducing ChatGPT Atlas]
 
 * The browser with ChatGPT built in.
+* [A couple of weeks after Perplexity's comet browser was <<comet-available-to-all, available to all>>]
 
 == 2025-10-13 link:https://x.com/karpathy/status/1977758204139331904[Excited to release new repo: nanochat!]
 Author: Andrej Karpathy
@@ -102,6 +104,13 @@ Author: Andrej Karpathy
 ** Dependency costs. More features mean more dependencies to manage. More dependencies result more time lost in coordination and meetings, which means higher development costs.
 ** Marketing costs for features communicated to your users.
 * Product Management means shipping the right things and getting rid of the things that don’t pull their weight.
+
+[#comet-available-to-all]
+== 2025-10-02 link:https://www.perplexity.ai/hub/blog/comet-is-now-available-to-everyone-worldwide[The Internet is Better on Comet]
+author: Perplexity
+
+* Today we are releasing the Comet browser to the world, for free.
+* [Previously <<comet-invite-only, limited to max subscription and invite-only>>]
 
 == 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
 
@@ -253,6 +262,14 @@ Author: Andrej Karpathy
 * We find that the model has recovered piecemeal heuristics rather than a compact world model; it recovers a different law of gravitation depending on the slice of data it is applied to.
 * foundation models [LLMs] can excel at their training tasks yet fail to develop inductive biases towards the underlying world model when adapted to new tasks
 * A foundation model uses datasets to output predictions given inputs, whereas a world model describes state structure implicit in that data.
+
+[#comet-invite-only]
+== 2025-07-09 link:https://www.perplexity.ai/hub/blog/introducing-comet[Today we are launching Comet]
+author: Perplexity
+
+* Beginning today, Comet is available to Perplexity Max subscribers.
+* Invite-only access will roll out slowly to our waitlist over the summer. New users will also receive a limited number of invites to share.
+* In the meantime, you can join the waitlist here.
 
 == 2025-07-08 link:https://blog.google/technology/google-labs/jules-now-available/[Jules, our asynchronous coding agent, is now available for everyone]
 
