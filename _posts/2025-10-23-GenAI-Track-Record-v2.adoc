@@ -32,6 +32,27 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2025-10-31 link:https://ai.meta.com/blog/practical-ai-agent-security/[Agents Rule of Two: A Practical Approach to AI Agent Security]
+author: Meta
+
+* Prompt injection is a fundamental, unsolved weakness in all LLMs.
+* This vulnerability could be enough for an attacker to take control of the agent and cause harm to the AI agent’s user.
+* Like many of our industry peers, we’re excited by the potential for agentic AI to improve people’s lives and enhance productivity. The path to reach this vision involves granting AI agents [...] more capabilities.
+* To best protect people and our systems from this known risk, we’ve developed the Agents Rule of Two. [...] Inspired by the similarly named policy developed for Chromium, as well as Simon Willison’s “lethal trifecta,”
+* At a high level, the Agents Rule of Two states that until robustness research allows us to reliably detect and refuse prompt injection, agents must satisfy no more than two of the following three properties within a session to avoid the highest impact consequences of prompt injection.
+** [A] An agent can process untrustworthy inputs
+** [B] An agent can have access to sensitive systems or private data
+** [C] An agent can change state or communicate externally
+* It’s still possible that all three properties are necessary to carry out a request. If an agent requires all three without starting a new session (i.e., with a fresh context window), then the agent should not be permitted to operate autonomously and at a minimum requires supervision
+* It’s important to note that satisfying the Agents Rule of Two should not be viewed as sufficient for protecting against other threat vectors common to agents (e.g., attacker uplift, proliferation of spam, agent mistakes, hallucinations, excessive privileges, etc.) or lower consequence outcomes of prompt injection (e.g., misinformation in the agent’s response).
+* Similarly, applying the Agents Rule of Two should not be viewed as a finish line for mitigating risk. Designs that satisfy the Agents Rule of Two can still be prone to failure (e.g., a user blindly confirming a warning interstitial)[...]
+* The Agents Rule of Two is a supplement — and not a substitute — for common security principles such as least-privilege.
+* For further AI protection solutions that complement the Agents Rule of Two, read more about our Llama Protections [which puts system-level mitigations around the model-level mitigations]:
+** Llama Firewall for orchestrating agent protections like:
+*** Prompt Guard [a model] for classifying potential prompt injections
+*** Code Shield [scans generated code] to reduce insecure code suggestions
+*** Llama Guard [a set of models] for classifying potentially harmful content.
+
 == 2025-10-22 link:https://www.anildash.com//2025/10/22/atlas-anti-web-browser/[ChatGPT's Atlas: The Browser That's Anti-Web]
 
 . Atlas substitutes its own AI-generated content for the web, but it looks like it's showing you the web
