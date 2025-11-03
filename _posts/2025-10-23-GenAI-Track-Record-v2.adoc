@@ -733,6 +733,17 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 * Second, due to error propagation, transformers may have inherent limitations on solving high-complexity compositional tasks that exhibit novel patterns.
 * The problems [hallucination, prompt injection, and jailbreaks] are inherent, certainly in the present generation of models and [...] likely in LLMs _per se_
 
+== 2023-04-25 link:https://simonwillison.net/2023/Apr/25/dual-llm-pattern/[The Dual LLM pattern for building AI assistants that can resist prompt injection]
+author: Simon Willison
+
+* I think we need a pair of LLM instances that can work together: a Privileged LLM and a Quarantined LLM.
+* The Privileged LLM is the core of the AI assistant. It accepts input from trusted sources—primarily the user themselves—and acts on that input in various ways.
+* The Quarantined LLM is used any time we need to work with untrusted content—content that might conceivably incorporate a prompt injection attack. It does not have access to tools, and is expected to have the potential to go rogue at any moment.
+* Here’s where things get really tricky: it is absolutely crucial that unfiltered content output by the Quarantined LLM is never forwarded on to the Privileged LLM!
+* The Privileged LLM only ever sees [prompts where the supplied content is only referenced by variable]. It is never exposed to either the untrusted content from the email, or the tainted summary that came back from the Quarantined LLM.
+* You may have noticed something about this proposed solution: it’s pretty bad!
+* Building AI assistants in this way is likely to result in a great deal more implementation complexity and a degraded user experience.
+
 == 2023-04-06 link:https://jonathanturley.org/2023/04/06/defamed-by-chatgpt-my-own-bizarre-experience-with-artificiality-of-artificial-intelligence/[ChatGPT invented a sexual harassment scandal and named a real law prof as the accused]
 * I have been writing about the threat of AI to free speech. Then recently I learned that ChatGPT falsely reported on a claim of sexual harassment that was *never made* against me on a trip that *never occurred* while I was on a faculty where I *never taught*. ChapGPT relied on a cited Post article that was *never written* and quotes a statement that was *never made* by the newspaper.
 
