@@ -71,6 +71,14 @@ Author: Andrej Karpathy
 * Unlike my earlier similar repo nanoGPT which only covered pretraining, nanochat is a minimal, from scratch, full-stack training/inference pipeline of a simple ChatGPT clone in a single, dependency-minimal codebase. You boot up a cloud GPU box, run a single script and in as little as 4 hours later you can talk to your own LLM in a ChatGPT-like web UI. [...]
 * [...] it's basically entirely hand-written (with tab autocomplete). I tried to use claude/codex agents a few times but they just didn't work well enough at all and net unhelpful, possibly the repo is too far off the data distribution.
 
+== 2025-10-10 link:https://arxiv.org/abs/2510.09023[The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections]
+
+* Current defenses against jailbreaks and prompt injections (which aim to prevent an attacker from eliciting harmful knowledge or remotely triggering malicious actions, respectively) are typically evaluated either against a static set of harmful attack strings [a fixed dataset of known
+jailbreak or prompt injection prompts], or against computationally weak optimization methods that were not designed with the defense in mind. We argue that this evaluation process is flawed
+* Instead, we should evaluate defenses against adaptive attackers who explicitly modify their attack strategy to counter a defense’s design while spending considerable resources to optimize their objective.
+** In computer security and cryptography, a defense is deemed to be robust if the strongest human attackers (with large compute budgets) are unable to reliably construct attacks that evade the protection measures. These attacks are de-facto assumed to be adaptive and computationally heavy: formal security properties are typically defined by enumerating over all possible attackers that satisfy a set of computational assumptions
+* By systematically tuning and scaling general optimization techniques—gradient descent, reinforcement learning, random search, and human-guided exploration—we bypass *12 recent defenses* (based on a diverse set of techniques) with *attack success rate above 90% for most*; importantly, the majority of defenses originally reported near-zero attack success rates
+
 == 2025-10-10 BBC: link:https://www.bbc.com/news/articles/cz69qy760weo['It's going to be really bad': Fears over AI bubble bursting grow in Silicon Valley]
 
 * AI-related enterprises have accounted for 80% of the stunning gains in the American stock market this year - and Gartner estimates global spending on AI will likely reach a whopping $1.5tn (£1.1tn) before 2025 is out.
