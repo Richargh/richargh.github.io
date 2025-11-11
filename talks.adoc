@@ -51,6 +51,7 @@ This talk has gone through a changes through the years as I figured out what was
 
 == Kotlin kontra Java
 
+* link:https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html[IT Tage 2025 🇩🇪] | link:https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025[Slides] | link:https://github.com/Richargh/kotlin-kontra-java[Code]
 * link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196[JavaLand 2025 🇩🇪 (incl. Video, if you have a ticket)] | https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025[Slides] | link:https://github.com/Richargh/kotlin-kontra-java[Code]
 ** Deep dive, also at link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080[JavaLand 2025 🇩🇪 (incl. Video, if you have a ticket)]
 
