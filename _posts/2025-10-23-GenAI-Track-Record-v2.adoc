@@ -237,6 +237,16 @@ author: Perplexity
 
 * gpt-oss-120b and gpt-oss-20b
 
+== 2025-07-25 link:https://arxiv.org/abs/2507.19595[Efficient Attention Mechanisms for Large Language Models: A Survey]
+
+* The quadratic time and memory complexity of self-attention remains a fundamental obstacle to efficient long-context modeling.
+* To address this limitation, recent research has introduced two principal categories of efficient attention mechanisms.
+** Linear attention methods achieve linear complexity through kernel approximations, recurrent formulations, or fast-weight dynamics, thereby enabling scalable inference with reduced computational overhead.
+*** Traditional linear attention methods seek to approximate the softmax-based attention mechanism in a way that scales linearly with sequence length.
+*** The core idea is to replace the expensive softmax computation with a kernel-based approximation of the attention weights.
+** Sparse attention techniques, in contrast, limit attention computation to selected subsets of tokens based on fixed patterns, block-wise routing, or clustering strategies, enhancing efficiency while preserving contextual coverage.
+
+
 == 2025-07-14 link:https://kiro.dev/blog/introducing-kiro/[Introducing Kiro]
 
 * Kiro, a new agentic IDE that helps you do your best work with spec-driven development.
