@@ -53,6 +53,66 @@ author: Meta
 *** Code Shield [scans generated code] to reduce insecure code suggestions
 *** Llama Guard [a set of models] for classifying potentially harmful content.
 
+[#devstral-2-launch]
+== 2025-12-08 link:https://mistral.ai/news/devstral-2-vibe-clip[Devstral2]
+author: Mistral AI +
+headquarters: Paris, France
+
+* State-of-the-art, open-source agentic coding models and CLI agent.
+* Devstral 2 (123B) and Devstral Small 2 (24B). Devstral 2 ships under a modified MIT license, while Devstral Small 2 uses Apache 2.0. B
+* We are also introducing Mistral Vibe, a native CLI built for Devstral that enables end-to-end code automation.
+
+[#mistral-3-launch]
+== 2025-12-08 link:https://mistral.ai/news/mistral-3[Introducing Mistral 3]
+author: Mistral AI +
+headquarters: Paris, France
+
+[#deepseek-3-2-launch]
+== 2025-12-01 link:https://api-docs.deepseek.com/news/news251201[DeepSeek-V3.2 Release]
+author: DeepSeek
+headquarters: Hangzhou, Zhejiang, China
+
+[#opus-4-5-launch]
+== 2025-11-24 link:https://www.anthropic.com/news/claude-opus-4-5[Introducing Claude Opus 4.5]
+author: Anthropic PBC +
+headquarters: San Francisco, California, U.S.
+
+Supersedes <<sonnet-4-5-launch, Sonnet 4.5>> and <<claude-4-launch, Opus 4.0>>
+
+[#gpt-5-1-codex-max-launch]
+== 2025-11-19 link:https://openai.com/index/gpt-5-1-codex-max/[Building more with GPT-5.1-Codex-Max]
+author: OpenAI +
+headquarters: San Francisco, California, U.S.
+
+Supersedes <<gpt-codex-launch>>
+
+[#gemini-3-launch]
+== 2025-11-18 link:https://blog.google/products/gemini/gemini-3/#note-from-ceo[A new era of intelligence with Gemini 3]
+author: Google DeepMind +
+headquarters: London, England
+
+Supersedes <<gemini-2-5-launch, Gemini 2.5>>
+
+[#gpt-5-1-launch]
+== 2025-11-12 link:https://openai.com/index/gpt-5-1/[GPT-5.1: A smarter, more conversational ChatGPT]
+author: OpenAI +
+headquarters: San Francisco, California, U.S.
+
+Supersedes <<gpt-5-launch, GPT 5>>
+
+[#sora2-launch]
+== 2025-10-30 link:https://openai.com/index/sora-2/[Sora 2 is here]
+author: OpenAI +
+headquarters: San Francisco, California, U.S.
+
+[#minimax-m2-launch]
+== 2025-10-27 link:https://www.minimax.io/news/minimax-m2[MiniMax M2 & Agent]
+author: MiniMax +
+hquarters: Shanghai, China
+
+* MiniMax M2, a model born for Agents and code.
+* At only 8% of the price of Claude Sonnet and twice the speed
+
 == 2025-10-22 link:https://www.anildash.com//2025/10/22/atlas-anti-web-browser/[ChatGPT's Atlas: The Browser That's Anti-Web]
 
 . Atlas substitutes its own AI-generated content for the web, but it looks like it's showing you the web
@@ -141,6 +201,7 @@ author: Perplexity
 * Today we are releasing the Comet browser to the world, for free.
 * [Previously <<comet-invite-only, limited to max subscription and invite-only>>]
 
+[#sonnet-4-5-launch]
 == 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
 
 * [Released on the same day with link:https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously[Claude Code v2]]
@@ -182,6 +243,7 @@ author: Perplexity
 * Employees reported spending an average of one hour and 56 minutes dealing with each instance of workslop.
 * Based on participants’ estimates of time spent, as well as on their self-reported salary, we find that these workslop incidents carry an invisible tax of $186 per month. For an organization of 10,000 workers, given the estimated prevalence of workslop (41%), this yields over *$9 million per year* in lost productivity.
 
+[#gpt-codex-launch]
 == 2025-09-15 link:https://openai.com/index/introducing-upgrades-to-codex/[Introducing upgrades to Codex]
 
 * Today, we’re releasing GPT‑5-Codex—a version of GPT‑5 further optimized for agentic coding in Codex.
@@ -218,6 +280,13 @@ author: Perplexity
 * Fixing "confidently wrong" might be A Silver Bullet™
 ** a 90% accurate system is [more valuable], say, a 50% accurate system that can signal uncertainty - and *get more accurate over time*. We don’t need perfection; we need a loop that tightens.
 
+[#deepseek-3-1-launch]
+== 2025-08-21 link:https://api-docs.deepseek.com/news/news250821[DeepSeek-V3.1 Release]
+author: DeepSeek +
+headquarters: Hangzhou, Zhejiang, China
+
+* Hybrid inference: Think & Non-Think — one model, two modes
+
 == 2025-08-21 link:https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf[MIT The GenAI Divide - State of AI in Business 2025]
 
 * Despite $30–40 billion in enterprise investment into GenAI, this report uncovers a surprising result in that 95% of organizations are getting zero return
@@ -229,10 +298,13 @@ author: Perplexity
 
 * AGENTS.md is a simple, open format for guiding coding agents.
 
+[#gpt-5-launch]
 == 2025-08-07 link:https://openai.com/index/introducing-gpt-5/[Introducing GPT-5]
 
+[#opus-4-1-launch]
 == 2025-08-05 link:https://www.anthropic.com/news/claude-opus-4-1[Claude Opus 4.1]
 
+[#gpt-oss-launch]
 == 2025-08-05 link:https://openai.com/index/introducing-gpt-oss/[Introducing gpt-oss]
 
 * gpt-oss-120b and gpt-oss-20b
@@ -246,6 +318,10 @@ author: Perplexity
 *** The core idea is to replace the expensive softmax computation with a kernel-based approximation of the attention weights.
 ** Sparse attention techniques, in contrast, limit attention computation to selected subsets of tokens based on fixed patterns, block-wise routing, or clustering strategies, enhancing efficiency while preserving contextual coverage.
 
+[#qwen-3-coder-launch]
+== 2025-07-22 link:https://qwenlm.github.io/blog/qwen3-coder/[Qwen3-Coder: Agentic Coding in the World]
+author: Alibaba Cloud +
+headquarters: Singapore
 
 == 2025-07-14 link:https://kiro.dev/blog/introducing-kiro/[Introducing Kiro]
 
@@ -310,6 +386,7 @@ author: Perplexity
 * Invite-only access will roll out slowly to our waitlist over the summer. New users will also receive a limited number of invites to share.
 * In the meantime, you can join the waitlist here.
 
+[#jules-launch]
 == 2025-07-08 link:https://blog.google/technology/google-labs/jules-now-available/[Jules, our asynchronous coding agent, is now available for everyone]
 
 * Jules is officially out of beta and launching publicly, powered by Gemini 2.5.
@@ -320,6 +397,15 @@ author: Perplexity
 * In the scenarios, we allowed models to autonomously send emails and access sensitive information.
 * we then tested whether they would act against these companies either when facing replacement with an updated version, or when their assigned goal conflicted with the company's changing direction.
 * In at least some cases, models from all developers resorted to malicious insider behaviors when that was the only way to avoid replacement or achieve their goals—including blackmailing officials and leaking sensitive information to competitors. We call this phenomenon agentic misalignment.
+
+[#gemini-2-5-launch]
+== 2025-06-17 link:https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/[Gemini 2.5: Updates to our family of thinking models]
+author: Google DeepMind +
+headquarters: London, England
+
+* Gemini 2.5 Pro is generally available and stable
+* Gemini 2.5 Flash is generally available and stable
+* Gemini 2.5 Flash-Lite is now available in preview
 
 == 2025-06-10 link:https://www.theguardian.com/commentisfree/2025/jun/10/billion-dollar-ai-puzzle-break-down[When billion-dollar AIs break down over puzzles a child can do, it’s time to rethink the hype - Gary Marcus]
 
@@ -400,6 +486,7 @@ systems
 * Workflow Execution is notably more tractable, with top-performing agents surpassing 83% success rate in single-turn tasks, while other skills present greater challenges.
 * Agents exhibit near-zero inherent confidentiality awareness (improvable with prompting but often at a cost to task performance).
 
+[#claude-4-launch]
 == 2025-05-22 link:https://www.anthropic.com/news/claude-4[Introducing Claude 4]
 
 * Claude Opus 4 is the world’s best coding model, with sustained performance on complex, long-running tasks and agent workflows.
@@ -428,6 +515,7 @@ in an iterative sense-plan-act loop.
 *** Fallback to Safe Mode: In safe mode, only a minimal set of read-only actions are allowed,
 *** Red Team and Patching Cycle: patch the agent against exploits to harden it over time
 
+[#codex-preview]
 == 2025-05-16 link:https://openai.com/index/introducing-codex/[Introducing Codex]
 
 * Today we’re launching a research preview of Codex: a cloud-based software engineering agent that can work on many tasks in parallel.
@@ -443,6 +531,11 @@ in an iterative sense-plan-act loop.
 * Our findings challenge narratives of imminent labor market transformation due to Generative AI.
 * two years after the fastest technology adoption ever, labor market outcomes—whether at the individual or firm level—remain untouched.
 
+[#qwen-3-launch]
+== 2025-04-29 link:https://qwenlm.github.io/blog/qwen3/[Qwen3: Think Deeper, Act Faster]
+author: Alibaba Cloud +
+headquarters: Singapore
+
 == 2025-04-26 link:https://www.msn.com/en-us/news/technology/we-now-know-how-ai-thinks-and-it-s-barely-thinking-at-all/ar-AA1DDDZv[We Now Know How AI ‘Thinks’—and It’s Barely Thinking at All - The Wall Street Journal]
 
 * All of this work suggests that under the hood, today’s AIs are overly complicated, patched-together Rube Goldberg machines full of ad-hoc solutions for answering our prompts.
@@ -450,6 +543,7 @@ in an iterative sense-plan-act loop.
 * [A model trained on millions of turn-by-turn directions in Manhattan] managed to give usable turn-by-turn directions between any two points in the borough with 99% accuracy. [...] [But when the researches] blocked just 1% of the virtual Manhattan’s roads, forcing the AI to navigate around detours, its performance plummeted.
 * [The] research also suggests why many models are so massive: They have to memorize an endless list of rules of thumb, and can’t compress that knowledge into a mental model like a person can.
 
+[#gpt-o-3-launch]
 == 2025-04-16 link:https://openai.com/index/introducing-o3-and-o4-mini/#:~:text=Codex+CLI[Introducing OpenAI o3 and o4-mini]
 
 * [Announcement also includes] Codex CLI, a lightweight coding agent you can run from your terminal
@@ -509,6 +603,7 @@ Yann LeCun:
 * [...] a key limitation of their reliability is hallucination, where inaccurate or fabricated information can impact clinical decisions and patient safety.
 * Our results reveal that inference techniques such as Chain-of-Thought (CoT) and Search Augmented Generation can effectively reduce hallucination rates. However, despite these improvements, non-trivial levels of hallucination persist.
 
+[#sonnet-3-7-launch]
 == 2025-02-24 link:https://www.anthropic.com/news/claude-3-7-sonnet[Claude 3.7 Sonnet and Claude Code]
 
 * Claude Code is available as a limited research preview
@@ -526,10 +621,20 @@ Author: Andrej Karpathy
 
 There's a new kind of coding I call "vibe coding", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like "decrease the padding on the sidebar by half" because I'm too lazy to find it. I "Accept All" always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works.
 
+[#junie-eap]
 == 2025-01-23 link:https://blog.jetbrains.com/junie/2025/01/meet-junie-your-coding-agent-by-jetbrains/[Meet Junie, Your Coding Agent by JetBrains]
 
 * With the launch of Junie, JetBrains AI coding agent, we are redefining how we code by leveraging its agentic power for co-creation right in your IDE.
 * We’ve now opened the Early Access Program waitlist.
+
+[#deepseek-r1-launch]
+== 2025-01-20 link:https://api-docs.deepseek.com/news/news250120[DeepSeek-R1 Release]
+author: DeepSeek +
+headquarters: Hangzhou, Zhejiang, China
+
+* Performance on par with OpenAI-o1
+* Fully open-source model & technical report
+* Code and models are released under the MIT License: Distill & commercialize freely!
 
 == 2025-01-20 link:https://queue.acm.org/detail.cfm?id=3711679[The Price of Intelligence - Three risks inherent in LLMs]
 
@@ -559,6 +664,11 @@ There's a new kind of coding I call "vibe coding", where you fully give in to th
 ** Taking preventative measures to detect, deter, and halt AI-related impersonation, fraud, child sexual abuse material, and non-consensual intimate imagery.
 ** Avoiding deceptive claims about AI tools that result in people losing money or put users at risk of harm.
 ** Ensuring privacy and security by default.
+
+[#deepseek-3-launch]
+== 2024-12-26 link:https://api-docs.deepseek.com/news/news1226[Introducing DeepSeek-V3]
+author: DeepSeek +
+headquarters: Hangzhou, Zhejiang, China
 
 == 2024-12-13 link:https://arxiv.org/abs/2412.09871?trk=public_post_reshare-text[Byte Latent Transformer: Patches Scale Better Than Tokens]
 * The Byte Latent Transformer (BLT), is a new byte-level LLM architecture that, for the first time, matches tokenization-based LLM performance at scale with significant improvements in inference efficiency and robustness
