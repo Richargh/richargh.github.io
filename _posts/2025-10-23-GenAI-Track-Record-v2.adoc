@@ -32,27 +32,6 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
-== 2025-10-31 link:https://ai.meta.com/blog/practical-ai-agent-security/[Agents Rule of Two: A Practical Approach to AI Agent Security]
-author: Meta
-
-* Prompt injection is a fundamental, unsolved weakness in all LLMs.
-* This vulnerability could be enough for an attacker to take control of the agent and cause harm to the AI agent’s user.
-* Like many of our industry peers, we’re excited by the potential for agentic AI to improve people’s lives and enhance productivity. The path to reach this vision involves granting AI agents [...] more capabilities.
-* To best protect people and our systems from this known risk, we’ve developed the Agents Rule of Two. [...] Inspired by the similarly named policy developed for Chromium, as well as Simon Willison’s “lethal trifecta,”
-* At a high level, the Agents Rule of Two states that until robustness research allows us to reliably detect and refuse prompt injection, agents must satisfy no more than two of the following three properties within a session to avoid the highest impact consequences of prompt injection.
-** [A] An agent can process untrustworthy inputs
-** [B] An agent can have access to sensitive systems or private data
-** [C] An agent can change state or communicate externally
-* It’s still possible that all three properties are necessary to carry out a request. If an agent requires all three without starting a new session (i.e., with a fresh context window), then the agent should not be permitted to operate autonomously and at a minimum requires supervision
-* It’s important to note that satisfying the Agents Rule of Two should not be viewed as sufficient for protecting against other threat vectors common to agents (e.g., attacker uplift, proliferation of spam, agent mistakes, hallucinations, excessive privileges, etc.) or lower consequence outcomes of prompt injection (e.g., misinformation in the agent’s response).
-* Similarly, applying the Agents Rule of Two should not be viewed as a finish line for mitigating risk. Designs that satisfy the Agents Rule of Two can still be prone to failure (e.g., a user blindly confirming a warning interstitial)[...]
-* The Agents Rule of Two is a supplement — and not a substitute — for common security principles such as least-privilege.
-* For further AI protection solutions that complement the Agents Rule of Two, read more about our Llama Protections [which puts system-level mitigations around the model-level mitigations]:
-** Llama Firewall for orchestrating agent protections like:
-*** Prompt Guard [a model] for classifying potential prompt injections
-*** Code Shield [scans generated code] to reduce insecure code suggestions
-*** Llama Guard [a set of models] for classifying potentially harmful content.
-
 [#devstral-2-launch]
 == 2025-12-08 link:https://mistral.ai/news/devstral-2-vibe-clip[Devstral2]
 author: Mistral AI +
@@ -63,7 +42,7 @@ headquarters: Paris, France
 * We are also introducing Mistral Vibe, a native CLI built for Devstral that enables end-to-end code automation.
 
 [#mistral-3-launch]
-== 2025-12-08 link:https://mistral.ai/news/mistral-3[Introducing Mistral 3]
+== 2025-12-02 link:https://mistral.ai/news/mistral-3[Introducing Mistral 3]
 author: Mistral AI +
 headquarters: Paris, France
 
@@ -99,6 +78,27 @@ author: OpenAI +
 headquarters: San Francisco, California, U.S.
 
 Supersedes <<gpt-5-launch, GPT 5>>
+
+== 2025-10-31 link:https://ai.meta.com/blog/practical-ai-agent-security/[Agents Rule of Two: A Practical Approach to AI Agent Security]
+author: Meta
+
+* Prompt injection is a fundamental, unsolved weakness in all LLMs.
+* This vulnerability could be enough for an attacker to take control of the agent and cause harm to the AI agent’s user.
+* Like many of our industry peers, we’re excited by the potential for agentic AI to improve people’s lives and enhance productivity. The path to reach this vision involves granting AI agents [...] more capabilities.
+* To best protect people and our systems from this known risk, we’ve developed the Agents Rule of Two. [...] Inspired by the similarly named policy developed for Chromium, as well as Simon Willison’s “lethal trifecta,”
+* At a high level, the Agents Rule of Two states that until robustness research allows us to reliably detect and refuse prompt injection, agents must satisfy no more than two of the following three properties within a session to avoid the highest impact consequences of prompt injection.
+** [A] An agent can process untrustworthy inputs
+** [B] An agent can have access to sensitive systems or private data
+** [C] An agent can change state or communicate externally
+* It’s still possible that all three properties are necessary to carry out a request. If an agent requires all three without starting a new session (i.e., with a fresh context window), then the agent should not be permitted to operate autonomously and at a minimum requires supervision
+* It’s important to note that satisfying the Agents Rule of Two should not be viewed as sufficient for protecting against other threat vectors common to agents (e.g., attacker uplift, proliferation of spam, agent mistakes, hallucinations, excessive privileges, etc.) or lower consequence outcomes of prompt injection (e.g., misinformation in the agent’s response).
+* Similarly, applying the Agents Rule of Two should not be viewed as a finish line for mitigating risk. Designs that satisfy the Agents Rule of Two can still be prone to failure (e.g., a user blindly confirming a warning interstitial)[...]
+* The Agents Rule of Two is a supplement — and not a substitute — for common security principles such as least-privilege.
+* For further AI protection solutions that complement the Agents Rule of Two, read more about our Llama Protections [which puts system-level mitigations around the model-level mitigations]:
+** Llama Firewall for orchestrating agent protections like:
+*** Prompt Guard [a model] for classifying potential prompt injections
+*** Code Shield [scans generated code] to reduce insecure code suggestions
+*** Llama Guard [a set of models] for classifying potentially harmful content.
 
 [#sora2-launch]
 == 2025-10-30 link:https://openai.com/index/sora-2/[Sora 2 is here]
@@ -268,18 +268,6 @@ author: Perplexity
 * One solution: dumber AI
 * OpenAI’s CFO said in October that three-quarters of the company’s revenue came from regular Joes and Janes paying $20 a month.
 
-== 2025-08-18 link:https://promptql.io/blog/being-confidently-wrong-is-holding-ai-back[Being "Confidently Wrong" is holding AI back]
-
-* [LLMs] being Confidently Wrong is The Only Problem
-.. *Imposes a universal verification tax*: I don't know when I might get an incorrect response from my AI. So I have to forensically check every response. My minutes turn into hours; the ROI disappears.
-.. *Erodes trust asymmetrically*: For serious work, one high‑confidence miss costs more credibility than ten successes earn.
-.. *Hidden failure modes kill motivation to improve*: Without high-quality uncertainty information, I don’t know whether a result is wrong because of ambiguity, missing context, stale data, or a model mistake.
-.. *Compounding errors results in AI being doomed to fail*:
-*** 99.99% accuracy in a ten step workflow is 1 error in a 1000 runs.
-*** 90% accuracy in a ten step workflow is 2 in every 3 workflows have errors (1 - 0.9^10).
-* Fixing "confidently wrong" might be A Silver Bullet™
-** a 90% accurate system is [more valuable], say, a 50% accurate system that can signal uncertainty - and *get more accurate over time*. We don’t need perfection; we need a loop that tightens.
-
 [#deepseek-3-1-launch]
 == 2025-08-21 link:https://api-docs.deepseek.com/news/news250821[DeepSeek-V3.1 Release]
 author: DeepSeek +
@@ -297,6 +285,20 @@ headquarters: Hangzhou, Zhejiang, China
 == 2025-08-19 link:https://github.com/openai/agents.md[Initial commit of Agents.md]
 
 * AGENTS.md is a simple, open format for guiding coding agents.
+
+
+
+== 2025-08-18 link:https://promptql.io/blog/being-confidently-wrong-is-holding-ai-back[Being "Confidently Wrong" is holding AI back]
+
+* [LLMs] being Confidently Wrong is The Only Problem
+.. *Imposes a universal verification tax*: I don't know when I might get an incorrect response from my AI. So I have to forensically check every response. My minutes turn into hours; the ROI disappears.
+.. *Erodes trust asymmetrically*: For serious work, one high‑confidence miss costs more credibility than ten successes earn.
+.. *Hidden failure modes kill motivation to improve*: Without high-quality uncertainty information, I don’t know whether a result is wrong because of ambiguity, missing context, stale data, or a model mistake.
+.. *Compounding errors results in AI being doomed to fail*:
+*** 99.99% accuracy in a ten step workflow is 1 error in a 1000 runs.
+*** 90% accuracy in a ten step workflow is 2 in every 3 workflows have errors (1 - 0.9^10).
+* Fixing "confidently wrong" might be A Silver Bullet™
+** a 90% accurate system is [more valuable], say, a 50% accurate system that can signal uncertainty - and *get more accurate over time*. We don’t need perfection; we need a loop that tightens.
 
 [#gpt-5-launch]
 == 2025-08-07 link:https://openai.com/index/introducing-gpt-5/[Introducing GPT-5]
@@ -391,6 +393,19 @@ author: Perplexity
 
 * Jules is officially out of beta and launching publicly, powered by Gemini 2.5.
 
+
+== 2025-06-30 link:https://pluralistic.net/2025/06/30/accounting-gaffs/#artificial-income[How much (little) are the AI companies making?]
+
+* Stein's Law: "anything that can't go on forever eventually stops."
+* What Google – and the rest of the tech sector – needed was a massive growth story, a story about how their companies, worth trillions of dollars, could double or triple in size in the coming years.
+* But spinning an endless growth story isn't merely ideological.
+** For every dollar that Ford brings in [a "mature" company], the market is willing to spend $8.60 on its stock. For every dollar Tesla brings in [a "growth" company], the market is willing to spend $118 on its stock.
+** That means that when Tesla and Ford compete to buy something – like another company, or the labor of highly sought after technical specialists – Tesla has a nearly unbeatable advantage. Rather than raiding its precious cash reserves to fund its offer, Tesla can offer stock. Ford can only spend as many dollars as it brings in through sales, but Tesla can make more stock, on demand, simply by typing numbers into a spreadsheet.
+** So when Tesla bids against Ford, Ford has to use dollars, and Tesla can use shares. And even if the acquisition target – a key employee or a startup that's on the acquisitions market – wants dollars instead of shares, Tesla can stake its shares as collateral for loans at a rate that's 1,463% better than the rate Ford gets when it collateralizes a loan based on its own equity
+* if you can tell a convincing growth story, it's much easier to grow.
+* Tech companies don't need these ventures [metaverse, cryptocurrency, AI] to be successful – they just need them to seem to be plausibly successful for long enough to keep the share price high until the next growth story heaves over the horizon.
+* As [Ed] Zitron points out: this industry is projecting $327b in spending this year, with $18b in revenue and zero profits.
+
 == 2025-06-21 link:https://www.anthropic.com/research/agentic-misalignment[Agentic Misalignment: How LLMs could be insider threats]
 
 * We stress-tested 16 leading models from multiple developers in hypothetical corporate environments to identify potentially risky agentic behaviors before they cause real harm.
@@ -433,18 +448,6 @@ headquarters: London, England
 * Crucially, we validate our efforts by training two 7 billion parameter LLMs on text from the Common Pile: Comma v0.1-1T and Comma v0.1-2T, trained on 1 and 2 trillion tokens respectively.
 * Both models attain competitive performance to LLMs trained on unlicensed text with similar computational budgets, such as Llama 1 and 2 7B.
 * In addition to releasing the Common Pile v0.1 itself, we also release the code used in its creation as well as the training mixture and checkpoints for the Comma v0.1 models.
-
-== 2025-06-30 link:https://pluralistic.net/2025/06/30/accounting-gaffs/#artificial-income[How much (little) are the AI companies making?]
-
-* Stein's Law: "anything that can't go on forever eventually stops."
-* What Google – and the rest of the tech sector – needed was a massive growth story, a story about how their companies, worth trillions of dollars, could double or triple in size in the coming years.
-* But spinning an endless growth story isn't merely ideological.
-** For every dollar that Ford brings in [a "mature" company], the market is willing to spend $8.60 on its stock. For every dollar Tesla brings in [a "growth" company], the market is willing to spend $118 on its stock.
-** That means that when Tesla and Ford compete to buy something – like another company, or the labor of highly sought after technical specialists – Tesla has a nearly unbeatable advantage. Rather than raiding its precious cash reserves to fund its offer, Tesla can offer stock. Ford can only spend as many dollars as it brings in through sales, but Tesla can make more stock, on demand, simply by typing numbers into a spreadsheet.
-** So when Tesla bids against Ford, Ford has to use dollars, and Tesla can use shares. And even if the acquisition target – a key employee or a startup that's on the acquisitions market – wants dollars instead of shares, Tesla can stake its shares as collateral for loans at a rate that's 1,463% better than the rate Ford gets when it collateralizes a loan based on its own equity
-* if you can tell a convincing growth story, it's much easier to grow.
-* Tech companies don't need these ventures [metaverse, cryptocurrency, AI] to be successful – they just need them to seem to be plausibly successful for long enough to keep the share price high until the next growth story heaves over the horizon.
-* As [Ed] Zitron points out: this industry is projecting $327b in spending this year, with $18b in revenue and zero profits.
 
 == 2025-06-04 link:https://arxiv.org/abs/2506.04133v1[TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems]
 
@@ -677,16 +680,6 @@ headquarters: Hangzhou, Zhejiang, China
 * Microsoft says it isn’t using customer data from its Microsoft 365 apps to train its AI models.
 * The confusion arose from a privacy setting in Microsoft Office that toggles “optional connected experiences”
 
-== 2024-09-25 link:https://techblog.comsoc.org/2024/11/25/superclusters-of-nvidia-gpu-ai-chips-combined-with-end-to-end-network-platforms-to-create-next-generation-data-centers/[Superclusters of Nvidia GPU/AI chips combined with end-to-end network platforms to create next generation data centers]
-
-* OpenAI used around 10,000 of Nvidia’s chips to train the version of ChatGPT it launched in late 2022, UBS analysts estimate.
-* Nvidia Chief Executive Jensen Huang  said that while the biggest clusters for training for giant AI models now top out at around 100,000 of Nvidia’s current chips, “the next generation starts at around 100,000 Blackwells.[...]"
-* Musk posted last month on his social-media platform X that his 100,000-chip Colossus super cluster was “soon to become” a 200,000-chip cluster in a single building. He also posted in June that the next step would probably be a 300,000-chip cluster of Nvidia’s newest GPU chips next summer.
-* Blackwell chips are estimated to cost around $30,000 each, meaning a cluster of 100,000 would cost $3 billion, not counting the price of the power-generation infrastructure [cooling] and IT equipment [also network] around the chips.
-* new engineering challenges also often arise with larger clusters:
-** Meta researchers said in a July paper that a cluster of more than 16,000 of Nvidia’s GPUs suffered from unexpected failures of chips and other components routinely as the company trained an advanced version of its Llama model over 54 days.
-* The trend also fosters demand for Nvidia’s networking equipment, which is fast becoming a significant business. Nvidia’s networking equipment revenue in 2024 was $3.13 billion, which was a 51.8% increase from the previous year.
-
 == 2024-11-21 link:https://www.businessinsider.com/microsoft-copilot-oversharing-problem-fix-customers-2024-11[Microsoft Copilot shares sensitive information, ignoring rights]
 * A [Microsoft] Copilot security issue that inadvertently let employees access sensitive information such as CEO emails and HR documents.
 * Microsoft Copilot and Github Copilot are different services. The first one is integrated into M365, the latter into IDEs to generate code.
@@ -716,19 +709,26 @@ headquarters: Hangzhou, Zhejiang, China
 * It expects to *lose roughly $5 billion* this year after paying for costs related to running its services
 * [They are planning] an investment round that could bring in $7 billion and value the company at $150 billion, among the highest ever for a private tech company
 
+== 2024-09-25 link:https://techblog.comsoc.org/2024/11/25/superclusters-of-nvidia-gpu-ai-chips-combined-with-end-to-end-network-platforms-to-create-next-generation-data-centers/[Superclusters of Nvidia GPU/AI chips combined with end-to-end network platforms to create next generation data centers]
+
+* OpenAI used around 10,000 of Nvidia’s chips to train the version of ChatGPT it launched in late 2022, UBS analysts estimate.
+* Nvidia Chief Executive Jensen Huang  said that while the biggest clusters for training for giant AI models now top out at around 100,000 of Nvidia’s current chips, “the next generation starts at around 100,000 Blackwells.[...]"
+* Musk posted last month on his social-media platform X that his 100,000-chip Colossus super cluster was “soon to become” a 200,000-chip cluster in a single building. He also posted in June that the next step would probably be a 300,000-chip cluster of Nvidia’s newest GPU chips next summer.
+* Blackwell chips are estimated to cost around $30,000 each, meaning a cluster of 100,000 would cost $3 billion, not counting the price of the power-generation infrastructure [cooling] and IT equipment [also network] around the chips.
+* new engineering challenges also often arise with larger clusters:
+** Meta researchers said in a July paper that a cluster of more than 16,000 of Nvidia’s GPUs suffered from unexpected failures of chips and other components routinely as the company trained an advanced version of its Llama model over 54 days.
+* The trend also fosters demand for Nvidia’s networking equipment, which is fast becoming a significant business. Nvidia’s networking equipment revenue in 2024 was $3.13 billion, which was a 51.8% increase from the previous year.
+
+== 2024-09-20 link:https://edition.cnn.com/2024/09/20/energy/three-mile-island-microsoft-ai/index.html[Microsoft revives the nuclear reactor that was responsible for the worst nuclear disaster in US history, to power its AI efforts]
+* Three Mile Island, the site of worst nuclear disaster in the United States, is reopening and will exclusively sell the power to Microsoft as the company searches for energy sources to fuel its AI ambitions.
+* The Unit 1 reactor, which closed five years ago, is expected to be revived in 2028
+
 == 2024-09-16 link:https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html[CIO: Devs gaining little (if anything) from AI coding assistants]
 * Uplevel, using data generated by its customers, compared the output of about 800 developers using GitHub Copilot over a three-month period to their output in a three-month period before adoption.
 * The study measured pull request (PR) cycle time, or the time to merge code into a repository, and PR throughput, the number of pull requests merged. It found *no significant improvements* for developers using Copilot.
 * Use of GitHub Copilot also introduced *41% more bugs*
 
 //== 2024-09-16 link:https://www.wheresyoured.at/subprimeai/[The Subprime AI Crisis] The AI Bubble implosion
-
-== 2024-09-20 link:https://edition.cnn.com/2024/09/20/energy/three-mile-island-microsoft-ai/index.html[Microsoft revives the nuclear reactor that was responsible for the worst nuclear disaster in US history, to power its AI efforts]
-* Three Mile Island, the site of worst nuclear disaster in the United States, is reopening and will exclusively sell the power to Microsoft as the company searches for energy sources to fuel its AI ambitions.
-* The Unit 1 reactor, which closed five years ago, is expected to be revived in 2028
-
-
-
 
 == 2024-09-12 link:https://openai.com/index/introducing-openai-o1-preview/[Introducing OpenAI o1-preview]
 
@@ -837,12 +837,12 @@ Big Tech has no more sources of data to tap, for their scaling ideas.
 
 // == 2023-10-09 link:https://www.wsj.com/tech/ai/ais-costly-buildup-could-make-early-products-a-hard-sell-bdd29b9f?ref=wheresyoured.at[Big Tech Struggles to Turn AI Hype Into Profits]
 
-== 2023-10-06 link:https://en.wikipedia.org/wiki/Gemini_(chatbot)[Google Bard is relaunched as Gemini]
-* the company's "largest and most capable AI model"
-
 == 2023-10-09 link:https://www.neowin.net/news/microsoft-reportedly-is-losing-lots-of-money-per-user-on-github-copilot/[Microsoft reportedly is losing lots of money per user on GitHub Copilot]
 * [Github Copilot] is available now for $10 a month or $100 for a year's subscription.
 * In the first few months of this year, [Microsoft] was *losing n average more than $20 a month* per user, according to a person familiar with the figures, who said some users were costing [Microsoft] as much as *$80 a month*.
+
+== 2023-10-06 link:https://en.wikipedia.org/wiki/Gemini_(chatbot)[Google Bard is relaunched as Gemini]
+* the company's "largest and most capable AI model"
 
 == 2023-09 link:https://en.wikipedia.org/wiki/DALL-E[DALL-E 3 revealed]
 * capable of understanding "significantly more nuance and detail" than previous iterations.
