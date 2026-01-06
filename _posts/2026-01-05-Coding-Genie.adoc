@@ -7,9 +7,9 @@ comments: false
 The genie is a term coined by link:https://kentbeck.com/[Kent Beck], defined in link:https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=365s[TDD, AI agents and coding with Kent Beck]
 
 [quote, Kent Beck]
-----
+____
 The best analogy I could find is a genie. It grants you wishes. And then you wish for something and you get it but it's not what you actually wanted. Sometimes it even seems like the [genie] has it in for you.
-----
+____
 
 Kent has been talking about the metaphor since link:https://www.linkedin.com/posts/kentbeck_augmented-coding-note-today-i-feel-like-activity-7322970358070837248-d0hB[April 28, 2025] and elaborated further in link:https://tidyfirst.substack.com/p/augmented-coding-and-design[Augmented Coding and Design], link:https://tidyfirst.substack.com/p/genie-wants-to-leap[Genie wants to Leap] and link:https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes[Augmented Coding: Beyond the Vibes].
 
