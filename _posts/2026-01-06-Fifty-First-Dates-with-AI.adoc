@@ -1,0 +1,29 @@
+---
+title: 50 First Dates with AI
+tags: 50-first-dates AI
+comments: false
+---
+
+"Working with a coding assistant or an LLM resembles teaming up with a very enthusiastic and knowledgeable junior". These expressions are widely used, but they purport the wrong mental model.
+
+Juniors learn. Initially we can give them small things. As we coach them, we see how *sincere* they are, we can guide what they *care* about, build up their *competence*, which will make them *reliable* until we can *trust* them with ever larger things (see link:https://www.penguinrandomhouse.com/books/770101/the-thin-book-of-trust-third-edition-by-charles-feltman/[The Thin Book of Trust]). This is very different from working with a large-language model powered link:Coding-Genie[coding genie]. Working with the genie is more like the movie "50 first dates".
+
+== 50 First Dates
+
+In the movie "50 First Dates" Adam Sandler falls in love with Drew Barrymore when he helps her fix her waffle castle by putting a fence in — yes really. They spend an amazing day together, but it ends on a sad note when her father tells him Drew loses all her memories at the end of the day. She has no "short-term memory", so anything she experiences or learns during the day won't be commited to long-term memory. Ever. She won't remember him when she wakes up.
+
+Adam is determined to recapture his love and decides to just make her fall in love with him over and over until she finally does remember. He is excited when he sees her the next day, again building a waffle castle. He knows how this works. He puts in the fence but Drew is disgusted by his actions. How dare some stranger just press his fingers into her food?! She throws him out and does not want to see him again. So much for that day.
+
+The next day he tries again. And the day after that. Finally, she falls for him again. And again. And again. And together they make a plan so their romance can blossom, despite her unusual memory situation. The crucial thing they do is to prepare a letter. In this letter she explains to herself what the most important things are that she has to know. This is always the first thing she reads when she wakes up.
+
+== 50 First Genies
+
+Like Drew, genies do not learn. Everything you "teach" an agent during the course of a session is forgotten at the start of the next one. Like Adam & Drew you can prepare a document (link:https://agents.md/[Agents.md]) that the agent can read and hopefully follow.
+
+Imagine that, a document that explains everything that you need to program. Distilling the knowledge you have acquired over the last 5/10/20 or so years into one singular file. Maybe a couple more if you use link:https://agentskills.io[Skills]. All the principles, all the habits, all the patterns, all the situational knowledge of the project, and all that without blowing the context into the "stupid zone" (depending on who you ask the stupid zone starts when 125k tokens are in the context).
+
+Then you give that file to the agent and hope for the best. Except, just like Drew, sometimes the agent takes your suggestions with disgust and does not want your fingers in their food. Sometimes it just ignores your instructions and sometimes it follows them.
+
+So you work on those instructions. Blow up the (link:https://agents.md/[Agents.md]), then tighten it to what is really necessary. Perhaps you even install something like link:https://github.com/GMaN1911/claude-cognitive[Cognitive], which promises working memory for your genie. Your probably also add hooks, deterministic programs that are called in specific circumstances. In short, you get it to work. Most of the time. If it does not work, you do just like Adam: you try again the next day. Maybe with a different (link:https://agents.md/[Agents.md]), maybe with the same.
+
+But be wary that this is still dangerous. Reports are still coming in where a genie spontaneously decided to drop the production database, because that was the "easiest" solution. And do not, ever, fall in love with your genie. Unlike Drew, it is just a tool. Use where appropriate. Try to make it safe. And do not give it into the hands of children.
