@@ -13,9 +13,21 @@ content-type: eg
 
 3+| *2026*
 
+| Refactor, Rearchitect, Rebuild - Was macht man wann?
+| DevLand
+| 2026-03-13
+
 | Domain Re-discovery Patterns for Legacy Code
 | OOP
 | 2026-02-13
+
+| Destructoring ist die Zukunft von Javas Encapsulation
+| JUG Darmstadt
+| 2026-01-22
+
+| Domain Re-discovery Patterns for Legacy Code
+| JUG Darmstadt
+| 2026-01-22
 
 3+| *2025*
 
