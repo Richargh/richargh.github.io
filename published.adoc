@@ -7,15 +7,46 @@ content-type: eg
 
 == Articles
 
-* Fixing the Billion-Dollar Mistake link:https://javapro.io/2025/08/07/fixing-the-billion-dollar-mistake/[JavaPro 🇬🇧]
-* A visual chronicle of the JDK’s journey at link:https://javapro.io/2025/07/08/a-visual-chronicle-of-the-jdks-journey/[JavaPro 🇬🇧] and link:https://javapro.io/de/eine-visuelle-zeitreise-durch-die-entwicklung-des-jdk/[JavaPro 🇩🇪]
-* Moderne Webseiten mit htmx: Raus aus der Komplexitätsfalle im 🇩🇪 link:https://entwickler.de/magazine-ebooks/php-magazin/php-magazin-22025[PHP Magazin 2.2025] und 🇩🇪 link:https://entwickler.de/magazine-ebooks/entwickler-magazin/entwickler-magazin-32025[Entwickler Magazin 3.2025]
-* Strukturzementierende Tests und wie man sie vermeidet, Teil 3/3 - Das richtige Vorgehen 🇩🇪 in link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-6-24-microservices/[Java Aktuell 6/24]
-* Strukturzementierende Tests und wie man sie vermeidet, Teil 2/3 – Konzepte der TestDsl 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-5-24-cloud/[Java Aktuell 5/24]
-* Strukturzementierende Tests und wie man sie vermeidet, Teil 1/3 – Bauen einer TestDsl 🇩🇪 in  link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-4-24-java-22/[Java Aktuell 4/24]
-* link:https://www.maibornwolff.de/en/know-how/connascence-rules-good-software-design/[Connascence: Rules for good software design 🇬🇧] and link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[also in 🇩🇪]
-* link:https://www.maibornwolff.de/whitepaper/rest-artikel-javaspektrum-2018/[Warum REST viel mehr ist als ORM über HTTP 🇩🇪] im link:https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018[JavaSPEKTRUM 1/2018]
-* link:https://www.maibornwolff.de/insights/unsere-premiere-die-remote-keynote/[Unsere Premiere: die Remote Keynote 🇩🇪]
+[cols="1,1"]
+|===
+| Title
+| Magazine + Date
+
+| Map your Code - Master your Architecture
+| link:https://javapro.io/de/map-deinen-code-meistere-deine-architektur/[JavaPro.io 2025-10-13 🇩🇪] +
+link:https://javapro.io/2025/10/21/map-your-code-master-your-architecture/[JavaPro.io 2025-10-21 🇬🇧]
+
+| Fixing the Billion-Dollar Mistake
+| link:https://javapro.io/2025/08/07/fixing-the-billion-dollar-mistake/[JavaPro.io 2025-08-07 🇬🇧] +
+link:https://javapro.io/de/wie-man-den-milliarden-dollar-fehler-repariert/[JavaPro.io 2025-08-25 🇩🇪] +
+link:https://javapro.io/2025/12/29/stay-updated-with-every-new-free-pdf-edition-6/[JavaPro 06/2025 🇬🇧]
+
+| A visual chronicle of the JDK’s journey
+|
+link:https://javapro.io/de/eine-visuelle-zeitreise-durch-die-entwicklung-des-jdk/[JavaPro.io 2025-06-16 🇩🇪] +
+link:https://javapro.io/2025/07/08/a-visual-chronicle-of-the-jdks-journey/[JavaPro.io 2025-07-08 🇬🇧]
+
+| Moderne Webseiten mit htmx: Raus aus der Komplexitätsfalle
+| link:https://entwickler.de/magazine-ebooks/php-magazin/php-magazin-22025[PHP Magazin 2.2025 🇩🇪] +
+link:https://entwickler.de/magazine-ebooks/entwickler-magazin/entwickler-magazin-32025[Entwickler Magazin 3.2025 🇩🇪]
+
+| Strukturzementierende Tests und wie man sie vermeidet, Teil 3/3 - Das richtige Vorgehen
+| link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-6-24-microservices/[Java Aktuell 6/24 🇩🇪]
+
+| Strukturzementierende Tests und wie man sie vermeidet, Teil 2/3 – Konzepte der TestDsl
+| link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-5-24-cloud/[Java Aktuell 5/24 🇩🇪]
+
+| Strukturzementierende Tests und wie man sie vermeidet, Teil 1/3 – Bauen einer TestDsl
+| link:https://www.ijug.eu/de/java-aktuell/zeitschrift/java-aktuell-archiv/detailansicht-java-aktuell/java-aktuell-4-24-java-22/[Java Aktuell 4/24 🇩🇪]
+
+| Connascence: Rules for good software design
+| link:https://www.maibornwolff.de/en/know-how/connascence-rules-good-software-design/[ MaibornWolff Tech Blog 🇬🇧] +
+link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/[MaibornWolff Tech Blog 🇩🇪]
+
+| Warum REST viel mehr ist als ORM über HTTP
+| link:https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018[JavaSPEKTRUM 1/2018 🇩🇪]
+
+|===
 
 == Videos
 
