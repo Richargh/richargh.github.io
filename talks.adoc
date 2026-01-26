@@ -27,6 +27,10 @@ This talk has gone through a changes through the years as I figured out what was
 * 1st Gen: link:https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme[Entwicklertag Frankfurt 2019 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218[Slides]
 * 1st Gen: link:https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html[Xp Days 2018 🇩🇪] | link:https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme[Slides]
 
+== Destructoring is the future of Javas Encapsulation
+
+* Lightning Talk: link:https://www.jug-da.de/2026/01/Domain-Rediscovery/[JUG Darmstadt 2026 🇩🇪] | link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-jug-darmstadt-2026[Slides] | link:https://github.com/Richargh/encapsulation-java-mvn-sandbox[Code]
+
 == Domain Re-discovery Patterns for Legacy Code
 
 * 3.1 Gen link:https://javaforumnord.de/2025/[Java Forum Nord 16.09.2025 🇬🇧] | link:https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-1-at-javaforumnord-2025[Slides]
