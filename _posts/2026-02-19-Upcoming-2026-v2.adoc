@@ -7,6 +7,7 @@ status: ongoing
 
 == Upcoming Talks
 
+* "Destructoring ist die Zukunft von Javas Encapsulation" at link:https://meine.doag.org/events/javaland/2026/agenda/#agendaId.6841[DevLand 2026-03-10 🇩🇪]
 * "Refactor, Rearchitect, Rebuild - Was macht man wann?" at link:https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049[DevLand 2026-03-13 🇩🇪]
 
 == Upcoming Articles
