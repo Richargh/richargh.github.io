@@ -1011,6 +1011,59 @@ development and deployment of ever larger language models, especially for Englis
 
 * We introduce a new language representation model called *BERT*, which stands for Bidirectional Encoder Representations from Transformers.
 
+[#deep-learning-critical-appraisal]
+== 2018-01-02 link:https://arxiv.org/abs/1801.00631[Deep Learning: A Critical Appraisal]
+
+* Against a background of considerable progress in areas such as speech recognition, image recognition, and game playing, and considerable enthusiasm in the popular press, I present ten concerns for deep learning, and suggest that deep learning must be supplemented by other techniques if we are to reach artificial general intelligence.
+* What deep learning is, and what it does well
+** Deep learning, as it is primarily used, is essentially a statistical technique for classifying patterns, based on sample data, using neural networks with multiple layers.
+** Neural networks in the deep learning literature typically consist of a set of input units that stand for things like pixels or words, multiple hidden layers (the more such layers, the deeper a network is said to be) containing hidden units (also known as nodes or neurons), and a set output units, with connections running between those nodes.
+** Over time, an algorithm called back-propagation allows a process called gradient descent to adjust the connections between units using a process, such that any given input tends to produce the corresponding output.
+** Such systems are commonly described as neural networks because the input nodes, hidden nodes, and output nodes can be thought of as loosely analogous to biological neurons, albeit greatly simplified
+** In principle, given infinite data, deep learning systems are powerful enough to represent any finite deterministic “mapping” between any given set of inputs and a set of corresponding outputs, though in practice whether they can learn such a mapping depends on many factors. One common concern is getting caught in local minima, in which a systems gets stuck on a suboptimal solution, with no better solution nearby in the space of solutions being searched.
+* Limits on the scope of deep learning
+** systems that rely on deep learning frequently have to **generalize beyond the specific** data that they have seen, whether to a new pronunciation of a word or to an image that differs from one that the system has seen before.
+** generalization can be thought of as coming in two flavors, _interpolation_ between known examples, and _extrapolation_, which requires going beyond a space of known training examples
+
+* Here are ten [concerns] faced by current deep learning systems:
+** *Concern 1*: Deep learning thus far is data hungry
+*** Human beings can learn abstract relationships in a few trials. [...] even 7-month old infants can do so, acquiring learned abstract language-like rules from a small number of unlabeled examples, in just two minutes [...]
+*** Deep learning currently lacks a mechanism for learning abstractions through explicit, verbal definition, and works best when there are thousands, millions or even billions of training examples
+** *Concern 2*: Deep learning thus far is shallow and has limited capacity for transfer
+*** it is important to realize that the word “deep” in deep learning refers to a technical, architectural property (the large number of hidden layers used in a modern neural networks, where there predecessors used only one) rather than a conceptual one
+*** [the system] doesn’t really understand what a tunnel, or
+what a wall is; it has just learned specific contingencies for particular scenarios.
+*** the patterns extracted by deep learning are more superficial than they initially appear.
+** *Concern 3*: Deep learning thus far has no natural way to deal with hierarchical structure
+*** deep learning learns correlations between sets of features that are themselves “flat” or nonhierachical, as if in a simple, unstructured list, with every feature on equal footing.
+*** Hierarchical structure  are not inherently or directly represented in such systems
+** *Concern 4*: Deep learning thus far has struggled with open-ended inference
+*** [systems have less sucess] in tasks in which inference goes beyond what is explicit in a text, either by combining multiple sentences (so called multi-hop inference) or by combining explicit sentences with background knowledge that is not stated in a specific text selection.
+*** Humans, as they read texts, frequently derive wide-ranging inferences that are both novel and only *implicitly licensed*, as when they, for example, *infer the intentions* of a character based only on indirect dialog.
+** *Concern 5*: Deep learning thus far is not sufficiently transparent
+*** The transparency issue, as yet unsolved, is a potential liability when using deep learning for problem domains like financial trades or medical diagnosis, in which human users might like to understand how a given system made a given decision.
+** Concern 6: Deep learning thus far has not been well integrated with prior knowledge
+*** Problems that have less to do with categorization and more to do with commonsense reasoning essentially lie outside the scope of what deep learning is appropriate for
+*** people can readily answer [the following] without anything like direct training: _Who is taller, Prince William or his baby son Prince George? Can you make a salad out of a polyester shirt? If you stick a pin into a carrot, does it make a hole in the carrot or in the pin?_
+** *Concern 7*: Deep learning thus far cannot inherently distinguish causation from correlation
+*** Roughly speaking, deep learning learns complex correlations between input and output features, but with no inherent representation of causality.
+*** _kids get bigger as they learn more words, but that doesn’t mean that growing tall causes them to learn more words, nor that learning new words causes them to grow_
+** *Concern 8*: Deep learning presumes a largely stable world, in ways that may be problematic
+** *Concern 9*: Deep learning thus far works well as an approximation, but its answers often cannot be fully trusted
+*** deep learning systems are quite good at some large fraction of a given domain, yet easily fooled
+*** mistaken yellow-and-black patterns of stripes for school buses
+*** real-world stop signs, lightly defaced, that have been mistaken for speed limit signs
+*** 3d-printed turtles that have been mistaken for rifles
+** *Concern 10*: Deep learning thus far is difficult to engineer with
+*** machine learning as yet lacks the incrementality, transparency and debuggability of classical programming, trading off a kind of simplicity for deep challenges in achieving robustness
+
+* Discussion
+** deep learning is just a statistical technique, and all statistical techniques suffer from deviation from their assumptions.
+** In general, the neural nets I tested could learn their training examples, and interpolate to a set of test examples that were in a cloud of points around those examples in n-dimensional space (which I dubbed the training space), but they **could not extrapolate beyond that training space.**
+* Potential risks of excessive hype
+** If, for example, driverless car should also, disappoint, relative to their early hype, by proving unsafe when rolled out at scale, or simply not achieving full autonomy after many promises, the whole field of AI could be in for a sharp downturn, both in popularity and funding.
+** My own largest fear is that the field of AI could get trapped in a *local minimum*, dwelling too heavily in the wrong part of intellectual space, focusing too much on the detailed exploration of a particular class of accessible but limited models that are geared around capturing low-hanging fruit — potentially neglecting riskier excursions that might ultimately lead to a more robust path.
+
 == 2018 link:https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf[Improving Language Understanding by Generative Pre-Training]
 
 * Although large unlabeled text corpora are abundant,
