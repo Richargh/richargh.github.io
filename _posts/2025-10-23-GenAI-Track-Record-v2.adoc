@@ -32,6 +32,12 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+[#mcp-linux-foundation]
+== 2025-12-09 link:https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/[MCP joins the Agentic AI Foundation (Linux Foundation)]
+
+* Anthropic is donating MCP to the Agentic AI Foundation, a directed fund under the Linux Foundation.
+* MCP will become a founding project of the newly created foundation.
+
 [#devstral-2-launch]
 == 2025-12-08 link:https://mistral.ai/news/devstral-2-vibe-clip[Devstral2]
 author: Mistral AI +
@@ -50,6 +56,9 @@ headquarters: Paris, France
 == 2025-12-01 link:https://api-docs.deepseek.com/news/news251201[DeepSeek-V3.2 Release]
 author: DeepSeek
 headquarters: Hangzhou, Zhejiang, China
+
+[#mcp-v4]
+== 2025-11-25 link:https://modelcontextprotocol.io/specification/2025-11-25[MCP Specification 2025-11-25]
 
 [#opus-4-5-launch]
 == 2025-11-24 link:https://www.anthropic.com/news/claude-opus-4-5[Introducing Claude Opus 4.5]
@@ -413,6 +422,9 @@ author: Perplexity
 * we then tested whether they would act against these companies either when facing replacement with an updated version, or when their assigned goal conflicted with the company's changing direction.
 * In at least some cases, models from all developers resorted to malicious insider behaviors when that was the only way to avoid replacement or achieve their goals—including blackmailing officials and leaking sensitive information to competitors. We call this phenomenon agentic misalignment.
 
+[#mcp-v3]
+== 2025-06-18 link:https://modelcontextprotocol.io/specification/2025-06-18[MCP Specification 2025-06-18]
+
 [#gemini-2-5-launch]
 == 2025-06-17 link:https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/[Gemini 2.5: Updates to our family of thinking models]
 author: Google DeepMind +
@@ -582,6 +594,9 @@ Yann LeCun:
 * Our results reveal that all tested models struggled significantly: only Gemini-2.5-Pro achieves a non-trivial score of 25%, while all other models achieve less than 5%.
 * The most frequent failure mode among human participants is the inability to find a correct solution. [...] In contrast, all evaluated LLMs consistently claimed to have solved the problems.
 
+[#mcp-v2]
+== 2025-03-26 link:https://modelcontextprotocol.io/specification/2025-03-26[MCP Specification 2025-03-26]
+
 == 2025-03-13 link:https://arstechnica.com/ai/2025/03/ai-search-engines-give-incorrect-answers-at-an-alarming-60-rate-study-says/[AI search engines cite incorrect news sources at an alarming 60% rate, study says]
 
 * They discovered that the AI models incorrectly cited sources in more than 60 percent of these queries.
@@ -680,6 +695,11 @@ headquarters: Hangzhou, Zhejiang, China
 == 2024-11-27 link:https://www.theverge.com/2024/11/27/24307284/microsoft-debunks-office-ai-data-scraping-rumors[Microsoft says it isn’t using M360 data to train AI models]
 * Microsoft says it isn’t using customer data from its Microsoft 365 apps to train its AI models.
 * The confusion arose from a privacy setting in Microsoft Office that toggles “optional connected experiences”
+
+[#mcp-v1]
+== 2024-11-25 link:https://www.anthropic.com/news/model-context-protocol[Introducing the Model Context Protocol]
+
+* [MCP] provides a universal, open standard for connecting AI systems with data sources, replacing fragmented integrations with a single protocol.
 
 == 2024-11-21 link:https://www.businessinsider.com/microsoft-copilot-oversharing-problem-fix-customers-2024-11[Microsoft Copilot shares sensitive information, ignoring rights]
 * A [Microsoft] Copilot security issue that inadvertently let employees access sensitive information such as CEO emails and HR documents.
