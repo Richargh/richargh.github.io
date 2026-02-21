@@ -32,6 +32,11 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+[#agent-skills-open-standard]
+== 2025-12-18 link:https://agentskills.io/home[Agent Skills becomes an open Standard]
+
+* Agent Skills are folders of instructions, scripts, and resources that agents can discover and use to do things more accurately and efficiently.
+
 [#mcp-linux-foundation]
 == 2025-12-09 link:https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/[MCP joins the Agentic AI Foundation (Linux Foundation)]
 
