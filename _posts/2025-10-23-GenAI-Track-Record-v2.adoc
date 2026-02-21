@@ -32,6 +32,22 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+[#glm-5-launch]
+== 2026-02-12 link:https://z.ai/blog/glm-5[GLM-5: From Vibe Coding to Agentic Engineering]
+
+Author: z.ai
+Previous: <<glm-4-7-launch>>
+
+* scales from 355B parameters (32B active) to 744B parameters (40B active)
+* increases pre-training data from 23T to 28.5T tokens
+* integrates DeepSeek Sparse Attention (DSA)
+
+[#glm-4-7-launch]
+== 2025-12-22 link:https://z.ai/blog/glm-4.7[GLM-4.7: Advancing the Coding Capability]
+
+Author: z.ai
+Previous: <<glm-4-6-launch>>
+
 [#agent-skills-open-standard]
 == 2025-12-18 link:https://agentskills.io/home[Agent Skills becomes an open Standard]
 
@@ -215,6 +231,13 @@ author: Perplexity
 * Today we are releasing the Comet browser to the world, for free.
 * [Previously <<comet-invite-only, limited to max subscription and invite-only>>]
 
+[#glm-4-6-launch]
+== 2025-09-30 link:https://z.ai/blog/glm-4.6[GLM-4.6: Advanced Agentic, Reasoning and Coding Capabilities]
+Author: z.ai
+Previous: <<glm-4-5-launch>>
+
+* Longer context window: The context window has been expanded from 128K to 200K tokens
+
 [#sonnet-4-5-launch]
 == 2025-09-29 link:https://www.anthropic.com/news/claude-sonnet-4-5[Introducing Claude Sonnet 4.5]
 
@@ -324,6 +347,12 @@ headquarters: Hangzhou, Zhejiang, China
 == 2025-08-05 link:https://openai.com/index/introducing-gpt-oss/[Introducing gpt-oss]
 
 * gpt-oss-120b and gpt-oss-20b
+
+[#glm-4-5-launch]
+== 2025-07-28 link:https://z.ai/blog/glm-4.5[GLM-4.5: Reasoning, Coding, and Agentic Abililties]
+Author: z.ai
+
+* two new GLM family members: GLM-4.5 and GLM-4.5-Air
 
 == 2025-07-25 link:https://arxiv.org/abs/2507.19595[Efficient Attention Mechanisms for Large Language Models: A Survey]
 
@@ -1068,7 +1097,7 @@ what a wall is; it has just learned specific contingencies for particular scenar
 *** Humans, as they read texts, frequently derive wide-ranging inferences that are both novel and only *implicitly licensed*, as when they, for example, *infer the intentions* of a character based only on indirect dialog.
 ** *Concern 5*: Deep learning thus far is not sufficiently transparent
 *** The transparency issue, as yet unsolved, is a potential liability when using deep learning for problem domains like financial trades or medical diagnosis, in which human users might like to understand how a given system made a given decision.
-** Concern 6: Deep learning thus far has not been well integrated with prior knowledge
+** *Concern 6*: Deep learning thus far has not been well integrated with prior knowledge
 *** Problems that have less to do with categorization and more to do with commonsense reasoning essentially lie outside the scope of what deep learning is appropriate for
 *** people can readily answer [the following] without anything like direct training: _Who is taller, Prince William or his baby son Prince George? Can you make a salad out of a polyester shirt? If you stick a pin into a carrot, does it make a hole in the carrot or in the pin?_
 ** *Concern 7*: Deep learning thus far cannot inherently distinguish causation from correlation
