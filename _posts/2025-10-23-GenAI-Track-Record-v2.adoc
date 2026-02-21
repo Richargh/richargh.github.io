@@ -619,6 +619,7 @@ Yann LeCun:
 * Anthropic, the developer of the conversational AI assistant Claude, doesn’t want prospective new hires using AI assistants in their applications, regardless of whether they’re in marketing or engineering.
 * “While we encourage people to use AI systems during their role to help them work faster and more effectively, please do not use AI assistants during the application process,”
 
+[#vibe-coding-definition]
 == 2025-02-03 link:https://x.com/karpathy/status/1886192184808149383[There's a new kind of coding I call "vibe coding"]
 Author: Andrej Karpathy
 
