@@ -971,6 +971,16 @@ naturally in sufficiently large language models via a simple method called chain
 
 Paper seems to be the origin of the term "foundation model".
 
+== 2021-03-03 link:https://www.semanticscholar.org/paper/On-the-Dangers-of-Stochastic-Parrots%3A-Can-Language-Bender-Gebru/ca2f1088d3e581b2c6c75cf0ebc96506d620f64d[On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?]
+
+* The past 3 years of work in NLP have been characterized by the
+development and deployment of ever larger language models, especially for English. BERT, its variants, GPT-2/3, and others, most recently Switch-C, have pushed the boundaries of the possible both through architectural innovations and through sheer size.
+* In this paper, we take a step back and ask: How big is too big? What are the possible risks associated with this technology and what paths are available for mitigating those risks?
+* We first consider environmental risks. [...] As we outline in §3, increasing the environmental and financial costs of these models doubly punishes marginalized communities that are least likely to benefit from the progress achieved by large LMs and most likely to be harmed by negative environmental consequences of its resource consumption.
+* Just as environmental impact scales with model size, so does the difficulty of understanding what is in the training data. In §4, we discuss how large datasets based on texts from the Internet overrepresent hegemonic viewpoints and encode biases potentially damaging to marginalized populations.
+* Furthermore, the tendency of human interlocutors to impute meaning where there is none can mislead both NLP researchers and the general public into taking synthetic text as meaningful.
+* Combined with the ability of LMs to pick up on both subtle biases and overtly abusive language patterns in training data, this leads to risks of harms, including encountering derogatory language and experiencing discrimination at the hands of others who reproduce racist, sexist, ableist, extremist or other harmful ideologies reinforced through interactions with synthetic language.
+
 == 2021-01-05 link:https://en.wikipedia.org/wiki/DALL-E[DALL-E 1 revealed]
 * uses a version of GPT-3 modified to generate images.
 * The software's name is a portmanteau of the names of animated robot Pixar character WALL-E and the Catalan surrealist artist Salvador Dalí.
