@@ -32,6 +32,20 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+[#gemini-3-1-pro-launch]
+== 2026-02-20 link:https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-pro-on-gemini-cli-gemini-enterprise-and-vertex-ai[Introducing Gemini 3.1 Pro on Google Cloud]
+
+Company: Google DeepMind +
+Headquarters: London, England +
+Previous: <<gemini-3-launch>> +
+
+[#sonnet-4-6-launch]
+== 2026-02-17 link:https://www.anthropic.com/news/claude-sonnet-4-6[Introducing Claude Sonnet 4.6]
+
+Company: Anthropic PBC +
+Headquarters: San Francisco, California, U.S. +
+Previous: <<sonnet-4-5-launch>>
+
 [#semantic-ablation]
 == 2026-02-16 link:https://www.theregister.com/2026/02/16/semantic_ablation_ai_writing/[Semantic ablation: Why AI writing is so generic, boring, and dangerous]
 
@@ -39,6 +53,25 @@ status: ongoing
 * During "refinement," the model gravitates toward the center of the Gaussian distribution, discarding "tail" data – the rare, precise, and complex tokens – to maximize statistical probability.
 * The AI identifies high-entropy clusters – the precise points where unique insights and "blood" reside – and systematically replaces them with the most probable, generic token sequences.
 * What began as a jagged, precise Romanesque structure of stone is eroded into a polished, Baroque plastic shell: it looks "clean" to the casual eye, but its structural integrity – its "ciccia" – has been ablated to favor a hollow, frictionless aesthetic.
+
+== 2026-02-16 link:https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/[Gemini 3 Deep Think: Advancing science, research and engineering]
+
+Company: Google DeepMind +
+Headquarters: London, England +
+Previous: <<gemini-3-launch>> +
+
+[#qwen-3-5-launch]
+== 2026-02-02 link:https://qwen.ai/blog?id=qwen3.5[Qwen3.5: Towards Native Multimodal Agents]
+
+Company: Alibaba Cloud +
+Headquarters: Singapore
+
+[#gpt-5-3-codex-spark-launch]
+== 2026-02-12 link:https://openai.com/index/introducing-gpt-5-3-codex-spark/[Introducing GPT‑5.3‑Codex‑Spark]
+
+Company: OpenAI +
+Headquarters: San Francisco, California, U.S. +
+Previous: <<gpt-5-3-codex-launch>>
 
 [#glm-5-launch]
 == 2026-02-12 link:https://z.ai/blog/glm-5[GLM-5: From Vibe Coding to Agentic Engineering]
@@ -58,6 +91,19 @@ Company: OpenAI +
 Headquarters: San Francisco, California, U.S. +
 Previous: <<gpt-5-2-codex-launch>>
 
+[#opus-4-6-launch]
+== 2026-02-05 link:https://www.anthropic.com/news/claude-opus-4-6[Introducing Claude Opus 4.6]
+
+Company: Anthropic PBC +
+Headquarters: San Francisco, California, U.S. +
+Previous: <<opus-4-5-launch>>
+
+[#qwen-coder-next-launch]
+== 2026-02-02 link:https://qwen.ai/blog?id=qwen3-coder-next[Qwen3-Coder-Next: Pushing Small Hybrid Models on Agentic Coding]
+
+Company: Alibaba Cloud +
+Headquarters: Singapore
+
 [#glm-4-7-launch]
 == 2025-12-22 link:https://z.ai/blog/glm-4.7[GLM-4.7: Advancing the Coding Capability]
 
@@ -76,6 +122,16 @@ Previous: <<glm-4-6-launch>>
 Company: OpenAI +
 Headquarters: San Francisco, California, U.S. +
 Previous: <<gpt-5-1-codex-max-launch>>
+
+[#gemini-3-flash-launch]
+== 2025-12-17 link:https://blog.google/products-and-platforms/products/gemini/gemini-3-flash/[Gemini 3 Flash: frontier intelligence built for speed]
+
+Company: Google DeepMind +
+Headquarters: London, England +
+Previous: <<gemini-3-launch>> +
+
+[#gpt-image-1-5-launch]
+== 2025-12-16 link:https://openai.com/index/new-chatgpt-images-is-here/[The new ChatGPT Images is here]
 
 [#gpt-5-2-launch]
 == 2025-12-11 link:https://openai.com/index/introducing-gpt-5-2/[Introducing GPT‑5.2]
