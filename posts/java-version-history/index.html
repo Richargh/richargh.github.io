@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:site_name" content="Knowledge Continuum"/>
+    <meta property="og:description" content="An ongoing list of Java features per release
+
+
+Ever since Java switched to its six-month release cadence (Time-Based Release Versioning) it has become a bit harder to keep up with the features they have implemented.
+The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
+The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that Oracle publishes.
+Please note that other JDK distributions exist and they have their own plans.
+They follow the same tip and tail model though and only provide longer support for the same LTS versions as oracle.
+Take a look at the support roadmap of the most popular alternate distributions, Temurin and Corretto.">
+    <meta property="article:author" content="https://richargh.de/about/"><meta property="og:title" content="Java Version History (up to JDK 25, in development)">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://richargh.de/posts/java-version-history/"><title>Richard's Blog</title>
+
+    <link rel="canonical" href="https://richargh.de/posts/java-version-history/"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <!--[if IE]>
+        <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
+    <link rel="alternate" type="application/rss+xml" href="https://richargh.de/feed.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="dashboard disable-select">
+        <div class="site-heading profile-board-col">
+           <h4 class="medium"><a href="/">Richard's Blog</a></h4>
+        </div>
+
+        <div class="userboard profile-board-col">
+            <div class="username">
+                <p class="title-sans">Richard Groß</p>
+            </div>
+            <div class="userdesc">
+                <p class="title-sans">IT Archaeologist</p>
+            </div>
+        </div>
+    </div>
+    <div class="avatar disable-select">
+        <a class="avatar-link" href="/">
+            <img src="/assets/img/profile.jpg" class="avatar-img" alt="avatar"/>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <div class="main-site-subheader menu disable-select">
+        <div class="talks">
+            <a style="text-decoration: none;" href="/talks">
+                <!-- from https://www.reshot.com/free-svg-icons/item/speaker-ZQA938GVWS/ -->
+                <svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
+                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
+                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
+                </svg>
+                <p class="home-p">Talks</p>
+            </a>
+        </div>
+        <div class="published">
+            <a style="text-decoration: none;" href="/published">
+                <!-- from https://www.reshot.com/free-svg-icons/item/paper-plane-D72FP5NHXZ/ -->
+                <svg class="icon-published" width="25" height="25" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Layer_x0020_1"><g id="_559822392"><path id="_559822728" class="fil0" d="M1657.53 872.581 348.07 521.715l493.348 993.204 338.593-451.457-.1-.074a31.858 31.858 0 0 1 16.456-11.467l461.159-179.34zM296.27 441.664l1470.41 393.994c10.174 2.183 19.089 9.275 23.141 19.697 6.406 16.47-1.755 35.018-18.225 41.423l-11.599-29.824 11.5 29.75-545.971 212.322-362.47 483.291a31.844 31.844 0 0 1-12.97 11.81c-15.828 7.86-35.034 1.403-42.895-14.424l28.66-14.236-28.626 14.125L260.4 488.722c-4.181-7.128-5.62-15.863-3.312-24.475 4.573-17.07 22.121-27.201 39.191-22.628l-.01.04z"/><path
+                            id="_559822560" class="fil0"
+                            d="M305.626 445.908c-14.705-9.733-34.518-5.705-44.251 9-9.734 14.705-5.705 34.518 9 44.251l917.512 610.055c14.705 9.734 34.518 5.705 44.251-9 9.733-14.705 5.705-34.518-9-44.251L305.626 445.908z"/><path
+                            id="_559822608" class="fil0"
+                            d="M1237.39 1080.09c-1.38-17.604-16.772-30.756-34.376-29.375-17.604 1.38-30.756 16.772-29.375 34.376l28.922 361.603-132.165-169.905c-10.838-13.944-30.931-16.462-44.875-5.625-13.944 10.838-16.462 30.931-5.625 44.875l197.058 253.327c6.326 8.797 16.966 14.166 28.553 13.24 17.617-1.407 30.755-16.833 29.347-34.449l-.026.003-37.437-468.07z"/></g></g>
+                    <path style="fill:none" d="M0 0h2048v2048H0z"/>
+                </svg>
+                <p class="published-p">Published</p>
+            </a>
+        </div>
+        <div class="built">
+            <a style="text-decoration: none;" href="/built">
+                <!-- from https://www.reshot.com/free-svg-icons/item/tool-UACF35PGN9/ -->
+                <svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
+                </svg>
+                <p class="built-p">Built</p>
+            </a>
+        </div>
+        <div class="home">
+            <a style="text-decoration: none;" href="/about">
+                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="home-p">About</p>  
+            </a>
+        </div>
+        <div class="categories">
+            <a style="text-decoration: none;" href="/tags">
+            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="categories-p">Tags</p>
+            </a>
+        </div>
+        <div class="rss">
+            <a style="text-decoration: none;" href="/feed.xml">
+                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            <p class="rss-p">RSS</p>
+            </a>
+        </div>
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search the Blog..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                })
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="https://richargh.de{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })
+    </script><div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Home</p>
+    </div></header><main>
+                <h1>Java Version History (up to JDK 25, in development)</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="javascript:void(0)" class="tag"><b>Status:</b> <i>Ongoing</i></a></li><li><a href="/dates/#31-March-2025" class="tag">March-31-2025</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#java" class="tag">java</a></li></ul><div class="content"><details>
+<summary class="title">An ongoing list of Java features per release</summary>
+<div class="content">
+<div class="paragraph">
+<p>Ever since Java switched to its six-month release cadence (<a href="https://openjdk.org/jeps/322">Time-Based Release Versioning</a>) it has become a bit harder to keep up with the features they have implemented.
+The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.
+The releases that Oracle will provide Long-Term Support (LTS) for are marked as such, based on the plan that <a href="https://www.oracle.com/java/technologies/java-se-support-roadmap.html">Oracle publishes</a>.
+Please note that other JDK distributions exist and they have their own plans.
+They follow the same <a href="https://openjdk.org/jeps/14">tip and tail</a> model though and only provide longer support for the same LTS versions as oracle.
+Take a look at the support roadmap of the most popular alternate distributions, <a href="https://adoptium.net/support#_release_roadmap">Temurin</a> and <a href="https://aws.amazon.com/corretto/faqs#support_calendar">Corretto</a>.</p>
+</div>
+<div class="paragraph">
+<p>This list does not cover all api changes and only seldom things outside of JEPs. Check the <a href="https://javaalmanac.io/">Java Almanac</a> to see api updates of the JDK. Use a current JDK to get all performance improvements that happen constantly.</p>
+</div>
+<div class="paragraph">
+<p>The list is ongoing and will be updated with every new Java release.
+A ➕ marks an added feature, a ⚠ marks a deprecation that will likely lead to a ❌ breaking change when the feature is removed.</p>
+</div>
+<div class="paragraph">
+<p>The full Java version history can be found via <a href="https://openjdk.org/projects/jdk/">Open JDK</a>, <a href="https://en.wikipedia.org/wiki/Java_version_history">at Wikipedia</a> or via the <a href="https://www.java.com/releases/">Java releases page</a>.
+Another website that tracks java features but also gives upgrading advice is <a href="https://whichjdk.com/">whichjdk.com</a>.</p>
+</div>
+</div>
+</details>
+<details>
+<summary class="title">The long term</summary>
+<div class="content">
+<div class="paragraph">
+<p>It is rather impossible to say when we&#8217;ll get cool new features. The JDK developers are known for "getting it right" over "getting it fast".</p>
+</div>
+<div class="paragraph">
+<p>For example <a href="https://openjdk.org/jeps/326">raw string literals</a> was developed, then dropped in 2018 and we got <a href="https://openjdk.org/jeps/355">Text Blocks</a> in 2019 instead but still no string interpolation. String interpolation was ignored in favor of the safer alternative, <a href="https://openjdk.org/jeps/430">String templates (Preview)</a> in 2023, but that went back to the drawing board in 2024 after one year of previews due to design concerns.</p>
+</div>
+<div class="paragraph">
+<p>It is however rather known where the road is heading. At some point in the future we&#8217;ll get:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://openjdk.org/jeps/8305968">Integrity by Default</a>. Which means the removal of unsupported code like <code>sun.misc.unsafe</code> when adequate replacements have been developed.</p>
+</li>
+<li>
+<p><a href="https://openjdk.org/jeps/468">Derived Record creation (Preview)</a>, also called <code>record</code> <em>withers</em>, which make working with records so much nicer.</p>
+</li>
+<li>
+<p><a href="https://openjdk.org/jeps/8303099">Null-Restricted and Nullable Types</a>, i.e. fields that can be marked as null-restricted <code>Name!</code> or nullable <code>Name?</code>.</p>
+</li>
+<li>
+<p><a href="https://openjdk.org/jeps/401">Value Classes and Objects (Preview)</a> and <a href="https://openjdk.org/jeps/8316779">Null-Restricted Value Class Types (Preview)</a></p>
+</li>
+<li>
+<p><a href="https://openjdk.org/jeps/8209434">Concise Method Bodies</a></p>
+</li>
+</ul>
+</div>
+</div>
+</details>
+<div class="sect1">
+<h2 id="jdk-25"><a class="anchor" href="#jdk-25"></a><a class="link" href="#jdk-25"><a href="https://openjdk.org/projects/jdk/25/">25</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">? (Oracle)<br>
+? (Temurin)<br>
+? (Corretto)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2025</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">?</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p><em>Preliminary</em>, since JDK is in rampdown and not released yet.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/503">Remove the 32-bit x86 Port</a></dt>
+<dd>
+<p>Remove the source code and build support for the 32-bit x86 port. Port was deprecated since <a href="#jdk-24">JDK 24</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-24"><a class="anchor" href="#jdk-24"></a><a class="link" href="#jdk-24"><a href="https://openjdk.org/projects/jdk/24/">24</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2025</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">14</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">24</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/472">Prepare to Restrict the Use of JNI</a></dt>
+<dd>
+<p>Issue warnings about uses of the Java Native Interface (JNI). People should instead use the Foreign Function &amp; Memory API, which was introduced in <a href="#jdk-22">JDK 22</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/475">Late Barrier Expansion for G1</a></dt>
+<dd>
+<p>Simplify the implementation of the G1 garbage collector&#8217;s barriers.</p>
+</dd>
+<dt class="hdlist1">❌ <a href="https://openjdk.org/jeps/479">Remove the Windows 32-bit x86 Port</a></dt>
+<dd>
+<p>Remove the source code and build support for the Windows 32-bit x86 port. The port was deprecated in <a href="#jdk-21">JDK 21</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/483">Ahead-of-Time Class Loading &amp; Linking</a></dt>
+<dd>
+<p>Improve startup time by making the classes of an application instantly available, in a loaded and linked state, when the HotSpot Java Virtual Machine starts.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/484">Class-File API</a></dt>
+<dd>
+<p>Provide a standard API for parsing, generating, and transforming Java class files. Will probably replace all instances of <a href="https://asm.ow2.io/">ASM</a> library.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/485">Stream Gatherers</a></dt>
+<dd>
+<p>Enhance the Stream API to support custom intermediate operations. The result is the new <code>.gather</code> Method:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="nc">ThreadLocalRandom</span><span class="o">.</span><span class="na">current</span><span class="o">().</span><span class="na">nextInt</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">gather</span><span class="o">(</span><span class="n">selectOne</span><span class="o">(</span><span class="nl">Math:</span><span class="o">:</span><span class="n">max</span><span class="o">))</span>  <span class="c1">// the new interface</span>
+    <span class="o">.</span><span class="na">findFirst</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>for which we can write custom <em>Gatherers</em> or use the build-in ones: <code>Gatherers.fold</code>, <code>.mapConcurrent</code>, <code>.scan</code>, <code>.windowFixed</code> and <code>.windowSliding</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">❌ <a href="https://openjdk.org/jeps/486">Permanently Disable the Security Manager</a></dt>
+<dd>
+<p>The Security Manager has not been the primary means of securing client-side Java code for many years, it has rarely been used to secure server-side code, and it is costly to maintain. It was deprecated in <a href="#jdk-17">JDK 17</a>.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/490">ZGC: Remove the Non-Generational Mode</a></dt>
+<dd>
+<p>Remove the non-generational mode of the Z Garbage Collector (ZGC). The mode was introduced in <a href="#jdk-22">JDK 22</a> and made the default in <a href="#jdk-23">JDK 23</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/491">Synchronize Virtual Threads without Pinning</a></dt>
+<dd>
+<p>Virtual threads that enter a <code>synchronized</code> block no longer pin, that is they used to block the carrier thread on which they were scheduled.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/493">Linking Run-Time Images without JMODs</a></dt>
+<dd>
+<p>Reduce the size of the JDK by approximately 25% by enabling the <code>jlink</code> tool to create custom run-time images without using the JDK&#8217;s JMOD files. This feature must be enabled when the JDK is built; it will not be enabled by default, and some JDK vendors may choose not to enable it. The new JMOD format was introduced in <a href="#jdk-9">JDK 9</a> and goes beyond JAR files to include native code, configuration files, and other kinds of data that do not fit naturally, if at all, into JAR files.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/496">Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism</a></dt>
+<dd>
+<p>Enhance the security of Java applications by providing an implementation of the quantum-resistant Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM). Builds on Key Encapsulation Mechanism API from <a href="#jdk-21">JDK 21</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/497">Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm</a></dt>
+<dd>
+<p>Enhance the security of Java applications by providing an implementation of the quantum-resistant Module-Lattice-Based Digital Signature Algorithm (ML-DSA).  Builds on Key Encapsulation Mechanism API from <a href="#jdk-21">JDK 21</a>.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/498">Warn upon Use of Memory-Access Methods in sun.misc.Unsafe</a></dt>
+<dd>
+<p>Issue a warning at run time on the first occasion that any memory-access method in sun.misc.Unsafe is invoked. All of these unsupported methods were terminally deprecated in <a href="#jdk-23">JDK 23</a>, because newer and better alternatives exist.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/501">Deprecate the 32-bit x86 Port for Removal</a></dt>
+<dd>
+<p>Deprecate the 32-bit x86 port, with the intent to remove it in a future release. This specifically means the Linux 32-bit x86 port, because it is the only one remaining.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-23"><a class="anchor" href="#jdk-23"></a><a class="link" href="#jdk-23"><a href="https://openjdk.org/projects/jdk/23/">23</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2024</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">12</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/467">Markdown Documentation Comments</a></dt>
+<dd>
+<p>Write markdown in Javadoc. Prefix every line with <code>///</code> and then write markdown.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/471">Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal</a></dt>
+<dd>
+<p>Most of its methods — 79 out of 87 — are for accessing memory. All these methods are used by performance-sensitive libraries and no longer needed since <a href="https://openjdk.org/jeps/454">Foreign Function &amp; Memory API (JDK 22)</a> and <a href="https://openjdk.org/jeps/193">Variable Handles (JDK 9)</a>, which is why the methods are now deprecated.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/474">ZGC: Generational Mode by Default</a></dt>
+<dd>
+<p>Which was introduced in <a href="#jdk-22">JDK 22</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-22"><a class="anchor" href="#jdk-22"></a><a class="link" href="#jdk-22"><a href="https://openjdk.org/projects/jdk/22/">22</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2024</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">12</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/454">Foreign Function &amp; Memory API</a></dt>
+<dd>
+<p>It provides native code access without the brittleness and danger of JNI. Previews in 19, 20 and 21.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/456">Unnamed Variables &amp; Patterns</a></dt>
+<dd>
+<p>Allows you to write <code>_</code> when you don&#8217;t need a variable. Underscore as a variable name has been a warning since 8 and an error since 9.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">_</span><span class="o">){</span> <span class="o">}</span>
+<span class="c1">// or</span>
+<span class="k">switch</span><span class="o">(</span><span class="n">ball</span><span class="o">){</span>
+    <span class="k">case</span> <span class="nc">RedBall</span> <span class="n">_</span> <span class="o">-&gt;</span> <span class="cm">/* do sth*/</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/458">Launch Multi-File Source-Code Programs</a></dt>
+<dd>
+<p>Launch class that contains a <code>main()</code>. Referenced classes will also be compiled. Simply use <code>java MyProg.java</code> and all will be well.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/439">Generational ZGC</a></dt>
+<dd>
+<p><a href="https://youtu.be/YBGVK5JuSJ8?feature=shared&amp;t=1588">Fixes most of the ZGC (JDK 15) throughput drawbacks and requires 75% less memory</a>.</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-21"><a class="anchor" href="#jdk-21"></a><a class="link" href="#jdk-21"><a href="https://openjdk.org/projects/jdk/21/">21</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2028 (Oracle)<br>
+Dec 2029 (Temurin)<br>
+Oct 2030 (Corretto)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2023</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">15</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">TIP</dt>
+<dd>
+<p>This is an amazing LTS release. We get virtual threads and we are very close at making <a href="https://www.infoq.com/articles/data-oriented-programming-java/">Data Oriented Programming in Java</a> a reality with record patterns and pattern matching for switch</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/440">Record patterns</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">r</span> <span class="k">instanceof</span> <span class="nf">Rectangle</span><span class="o">(</span><span class="nc">ColoredPoint</span><span class="o">(</span><span class="nc">Point</span><span class="o">(</span><span class="kt">var</span> <span class="n">x</span><span class="o">,</span> <span class="kt">var</span> <span class="n">y</span><span class="o">)))){</span>
+    <span class="c1">// if all types match you can now use x and y</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/441">Pattern matching for switch</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">switch</span> <span class="o">(</span><span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Integer</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="c1">// if obj is an Integer, you can now refer to it as i</span>
+<span class="o">}</span>
+<span class="c1">// or</span>
+<span class="k">switch</span> <span class="o">(</span><span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="kc">null</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="o">}</span>
+        <span class="k">case</span> <span class="s">"y"</span><span class="o">,</span> <span class="s">"Y"</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You said yes"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">case</span> <span class="nc">String</span> <span class="n">s</span>
+        <span class="n">when</span> <span class="n">s</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">"YES"</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You said yes"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">case</span> <span class="nc">String</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You said no"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/431">Sequenced Collections</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">list</span><span class="o">.</span><span class="na">addLast</span><span class="o">(...);</span>
+<span class="n">map</span><span class="o">.</span><span class="na">putFirst</span><span class="o">(...);</span>
+<span class="n">set</span><span class="o">.</span><span class="na">reversed</span><span class="o">();</span>
+<span class="c1">// etc.</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/444">Virtual Threads</a> (formerly Fibers)</dt>
+<dd>
+<p>Improving scalability of IO-bound operations with virtual threads that you can create 10.000 of without penalty.</p>
+</dd>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/449">Deprecate the Windows 32-bit x86 Port</a></dt>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/451">Warning if Agents are dynamically loaded</a></dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/452">Key Encapsulation Mechanism API</a></dt>
+<dd>
+<p>Introduces an API for key encapsulation mechanisms (KEMs), an encryption technique for securing symmetric keys using public key cryptography.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-20"><a class="anchor" href="#jdk-20"></a><a class="link" href="#jdk-20"><a href="https://openjdk.org/projects/jdk/20/">20</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2023</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Another huge release feature-wise but all features are either in preview or incubating.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-19"><a class="anchor" href="#jdk-19"></a><a class="link" href="#jdk-19"><a href="https://openjdk.org/projects/jdk/19/">19</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Another huge release feature-wise but all features are either in preview or incubating.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-18"><a class="anchor" href="#jdk-18"></a><a class="link" href="#jdk-18"><a href="https://openjdk.org/projects/jdk/18/">18</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">⚠ <a href="https://openjdk.org/jeps/400">UTF-8 by Default</a></dt>
+<dd>
+<p>Specify UTF-8 as the default charset of the standard Java APIs</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/408">Simple Web Server</a></dt>
+<dd>
+<p>Command-line tool to start a minimal web server that serves static files only.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/416">Reimplement Core Reflection with Method Handles</a></dt>
+<dd>
+<p>Reimplements <code>java.lang.reflect.Method</code>, Constructor, and Field on top of <code>java.lang.invoke</code> method handles. Before up to three different internal mechanisms for reflective operations were used.</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-17"><a class="anchor" href="#jdk-17"></a><a class="link" href="#jdk-17"><a href="https://openjdk.org/projects/jdk/17/">17</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2026 (Oracle)<br>
+Oct 2027 (Temurin)<br>
+Oct 2029 (Corretto)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2021</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">14</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/382">New macOS Rendering Pipeline</a></dt>
+<dd>
+<p>Create a new Swing Renderer based on Metal Api before Apple removes OpenGL Api.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/391">macOS/AArch64 Port</a></dt>
+<dd>
+<p>Port for Apple Silicon</p>
+</dd>
+<dt class="hdlist1">❌ <a href="https://openjdk.org/jeps/403">Strongly Encapsulate JDK Internals by Default</a></dt>
+<dd>
+<p>JDK internals can no longer be opened via command-line option (except <code>sun.misc.Unsafe</code> for which this is still possible).</p>
+</dd>
+<dt class="hdlist1">❌ <a href="https://openjdk.org/jeps/407">Remove RMI Activation</a></dt>
+<dd>
+<p>Only RMI Activation is removed after deprecation in <a href="#jdk-15">JDK 15</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.java.net/jeps/409">Sealed Classes and interfaces</a></dt>
+<dd>
+<p>Enums on steroids. Create a class or interface for which you know <strong>all</strong> allowed subtypes. Combines great with <code>instanceof</code> (<a href="#jdk-17">JDK 17</a> or switch <a href="#jdk-21">JDK 21</a> pattern matching.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">abstract</span> <span class="n">sealed</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="n">permits</span> <span class="nc">Circle</span><span class="o">,</span> <span class="nc">Rectangle</span> <span class="cm">/*... */</span> <span class="o">{</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-16"><a class="anchor" href="#jdk-16"></a><a class="link" href="#jdk-16"><a href="https://openjdk.org/projects/jdk/16/">16</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2021</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">13</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">17</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.java.net/jeps/394">Pattern Matching for instanceof</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">// the old way</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="nc">String</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>    <span class="c1">// grr...</span>
+<span class="o">}</span>
+<span class="c1">// the new pattern-matching way</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Let pattern matching do the work!</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>➕ <a href="https://openjdk.java.net/jeps/395">Records</a>
+Records are immutable carriers of data. Automatically implements data-driven methods such as equals and accessors.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">record</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Stream toList Shortcut</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">stream</span><span class="o">.</span><span class="na">toList</span><span class="o">();</span>
+<span class="c1">// careful, the returned List is unmodifiable</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-15"><a class="anchor" href="#jdk-15"></a><a class="link" href="#jdk-15"><a href="https://openjdk.org/projects/jdk/15/">15</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2020</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">14</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">❌ <a href="https://openjdk.org/jeps/372">Remove Nashorn JavaScript Engine</a></dt>
+<dd>
+<p>Deprecated since <a href="#jdk-11">JDK 11</a>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/378">Text Blocks</a></dt>
+<dd>
+<p>(multi-line string literals)</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">html</span> <span class="o">=</span> <span class="s">"""
+              &lt;html&gt;
+                  &lt;body&gt;
+                      &lt;p&gt;Hello, world&lt;/p&gt;
+                  &lt;/body&gt;
+              &lt;/html&gt;
+              """</span><span class="o">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/377">ZGC: A Scalable Low-Latency Garbage Collector</a></dt>
+<dd>
+<p>Cost of near-pauseless operation is a ~2% throughput reduction, and it uses more memory. G1 remains default garbage collector though.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-14"><a class="anchor" href="#jdk-14"></a><a class="link" href="#jdk-14"><a href="https://openjdk.org/projects/jdk/14/">14</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2020</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">11</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">16</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/349">JFR Event Streaming</a></dt>
+<dd>
+<p>Expose JDK Flight Recorder data for continuous monitoring.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.java.net/jeps/358">Helpful Nullpointer exceptions</a></dt>
+<dd>
+<p>Thrown exceptions now pinpoint what caused the nullpointer, not just filename and line number.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/361">Switch Expressions</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">return</span> <span class="k">switch</span> <span class="o">(</span><span class="n">day</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="no">MONDAY</span><span class="o">,</span> <span class="no">FRIDAY</span><span class="o">,</span> <span class="no">SUNDAY</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">6</span><span class="o">);</span>
+    <span class="k">case</span> <span class="no">TUESDAY</span>                <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
+    <span class="k">case</span> <span class="no">THURSDAY</span><span class="o">,</span> <span class="no">SATURDAY</span>     <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+    <span class="k">case</span> <span class="no">WEDNESDAY</span>              <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="mi">9</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-13"><a class="anchor" href="#jdk-13"></a><a class="link" href="#jdk-13"><a href="https://openjdk.org/projects/jdk/13/">13</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2019</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Smaller Release</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-12"><a class="anchor" href="#jdk-12"></a><a class="link" href="#jdk-12"><a href="https://openjdk.org/projects/jdk/12/">12</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2019</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Smaller Release</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-11"><a class="anchor" href="#jdk-11"></a><a class="link" href="#jdk-11"><a href="https://openjdk.org/projects/jdk/11/">11</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2023 (Oracle)<br>
+Oct 2027 (Temurin)<br>
+Jan 2032 (Corretto)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Sep 2018</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">16</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">17</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/321">Http Client</a></dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/330">Launch Single-File Source-Code Programs</a></dt>
+<dd>
+<p>Enhance the java launcher to run a program supplied as a single file of Java source code, including usage from within a script by means of "shebang" files and related techniques.</p>
+</dd>
+<dt class="hdlist1">❌ JavaFx</dt>
+<dd>
+<p>JavaFx was never part of Java SE but Oracle bundled it with their JDKs since 8. Now they&#8217;ve unbundled it and passed the torch to the <a href="https://openjfx.io/">OpenJFX project</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-10"><a class="anchor" href="#jdk-10"></a><a class="link" href="#jdk-10"><a href="https://openjdk.org/projects/jdk/10/">10</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">March 2018</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total JEPs</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">12</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/286">Local-Variable Type Inference</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">// now possible</span>
+<span class="kt">var</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
+<span class="kt">var</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">"John"</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://www.docker.com/blog/improved-docker-container-integration-with-java-10/">Recognizes constraints set by container control groups (cgroup)</a></dt>
+<dd>
+<p>Before Java didn’t recognize that it was running in a container and used the maximum available resources, not the one for the cgroup. Was also backported to <a href="#jdk-8">JDK 8</a>.</p>
+</dd>
+<dt class="hdlist1">➕ Optional API Additions</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">optional</span><span class="o">.</span><span class="na">orElseThrow</span><span class="o">();</span> <span class="c1">// clearer version of `optional.get()`</span>
+<span class="c1">// Also allows us to specify the exception being thrown.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-9"><a class="anchor" href="#jdk-9"></a><a class="link" href="#jdk-9"><a href="https://openjdk.org/projects/jdk9/">9</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2017</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/200">Modularized JDK</a></dt>
+<dd>
+<p>Project Jigsaw</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/261">Module System</a></dt>
+<dd>
+<p>Create a module (a jar that only exposes a defined set of types, not all of them) by adding <code>module-info.java</code> at the root:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>module my.module { // name the module
+    requires transitive other.module.name; // what modules it requires
+
+    exports my.module.myapi; // what api to expose
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/222">JShell</a></dt>
+<dd>
+<p>Read-Eval-Print Loop</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/248">G1 is the Default Garbage Collector</a></dt>
+<dd>
+<p>The premise is that limiting GC pause times is, in general, more important than maximizing throughput. The previous GC, Parallel GC, was throughput-oriented.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/260">Encapsulate Most Internal APIs</a></dt>
+<dd>
+<p>Things such as <code>sun.misc.Unsafe</code> are not encapsulated for now.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/266">Interfaces supporting Reactive Streams</a></dt>
+<dd>
+<p>For interoperability across a number of async systems running on JVMs.</p>
+</dd>
+<dt class="hdlist1">➕ Private Methods in Interfaces</dt>
+<dd>
+<p>Can be called from default methods.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/jeps/269">Convenience Factory Methods for Collections</a></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">);</span>
+<span class="nc">List</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span>
+<span class="nc">Map</span><span class="o">.</span><span class="na">ofEntries</span><span class="o">(</span><span class="n">entry</span><span class="o">(</span><span class="n">k1</span><span class="o">,</span> <span class="n">v1</span><span class="o">),</span> <span class="n">entry</span><span class="o">(</span><span class="n">k2</span><span class="o">,</span> <span class="n">v2</span><span class="o">));</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Optional API Additions</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">optional</span><span class="o">.</span><span class="na">or</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="nc">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"default"</span><span class="o">));</span>
+<span class="n">optional</span><span class="o">.</span><span class="na">ifPresentOrElse</span><span class="o">(</span><span class="n">it</span> <span class="o">-&gt;</span> <span class="n">doSth</span><span class="o">(</span><span class="n">it</span><span class="o">),</span> <span class="o">::</span><span class="n">otherwise</span><span class="o">);</span>
+<span class="n">optional</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-8"><a class="anchor" href="#jdk-8"></a><a class="link" href="#jdk-8"><a href="https://openjdk.java.net/projects/jdk8/features">8</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Mar 2022<br>
+Nov 2026 (Temurin)<br>
+Dec 2030 (Corretto)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Mar 2014</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk8/features#126">Lambda-Expressions</a></dt>
+<dd>
+<p>Project Lambda</p>
+</dd>
+<dt class="hdlist1">➕ Default Methods for Interfaces</dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk8/features#174">Nashorn JavaScript Engine</a></dt>
+<dd>
+<p>Supersedes Rhino JavaScript Engine</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk8/features#153">Launch JavaFX Applications</a></dt>
+<dd>
+<p>Only added to Oracle JDK.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk8/features#150">Date &amp; Time API</a></dt>
+<dd>
+<p>New <code>java.time</code>, inspired by <a href="https://www.joda.org/joda-time/index.html">Joda-Time</a>. Supersedes <code>java.util.Date</code> and <code>java.util.Calendar</code>.</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk8/features#107">Bulk Data Operations for Collections</a></dt>
+<dd>
+<p>Adds streams to java:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">it</span> <span class="o">-&gt;</span> <span class="n">it</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">it</span> <span class="o">-&gt;</span> <span class="s">"it"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>Optional&lt;T&gt;</code></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+<span class="nc">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+
+<span class="n">opt</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="s">"john"</span><span class="o">).</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">name</span> <span class="o">-&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">name</span><span class="o">));</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-7"><a class="anchor" href="#jdk-7"></a><a class="link" href="#jdk-7"><a href="https://openjdk.org/projects/jdk7/features/">7</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">July 2011</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk7/features/#f618">Strings in switch statements</a></dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk7/features/#f618">try-with-resources statements</a></dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk7/features/#f618">Improved type inference for generic instance creation ("diamond")</a></dt>
+<dt class="hdlist1">➕ <a href="https://openjdk.org/projects/jdk7/features/#f618">Improved exception handling (multi-catch)</a></dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-6"><a class="anchor" href="#jdk-6"></a><a class="link" href="#jdk-6">6</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2006</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Rhino JavaScript Engine</dt>
+<dt class="hdlist1">➕ Dramatic performance improvements</dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-5"><a class="anchor" href="#jdk-5"></a><a class="link" href="#jdk-5">5</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2004</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Generics</dt>
+<dt class="hdlist1">➕ Autoboxing</dt>
+<dt class="hdlist1">➕ Enumerations</dt>
+<dt class="hdlist1">➕ Varargs</dt>
+<dt class="hdlist1">➕ <code>for each</code></dt>
+<dt class="hdlist1">➕ <code>java.util.concurrent</code></dt>
+<dd>
+<p>ConcurrentHasMap etc.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-1-4"><a class="anchor" href="#jdk-1-4"></a><a class="link" href="#jdk-1-4">1.4</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2002</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>assert</code> Keyword</dt>
+<dt class="hdlist1">➕ <code>java.util.regex</code></dt>
+<dt class="hdlist1">➕ <code>java.nio</code></dt>
+<dd>
+<p>Non-Blocking I/O</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-1-3"><a class="anchor" href="#jdk-1-3"></a><a class="link" href="#jdk-1-3">1.3</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2000</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ HotSpot JVM</dt>
+<dt class="hdlist1">➕ Last Release for Microsoft Windows 95 :) </dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-1-2"><a class="anchor" href="#jdk-1-2"></a><a class="link" href="#jdk-1-2">1.2</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1998</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Swing</dt>
+<dt class="hdlist1">➕ JIT-Compiler</dt>
+<dt class="hdlist1">➕ Collections-Framework</dt>
+<dt class="hdlist1">➕ Modify Objects via Reflection</dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-1-1"><a class="anchor" href="#jdk-1-1"></a><a class="link" href="#jdk-1-1">1.1</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1997</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ +inner classes</dt>
+<dt class="hdlist1">➕ RMI</dt>
+<dt class="hdlist1">➕ Serialization</dt>
+<dt class="hdlist1">➕ Reflection</dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdk-1-0"><a class="anchor" href="#jdk-1-0"></a><a class="link" href="#jdk-1-0">1</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1996</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>Initial release</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div><!-- Add backlinks to the current page --></main><div id="copyright">
+    <p id="copyright-notice">© Richard Groß
+         - with help from <a href="https://jekyllrb.com/">Jekyll</a>
+        and <a href="https://github.com/raghuveerdotnet/simply-jekyll">Simply Jekyll Theme</a></p>
+</div> </div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+</html>
