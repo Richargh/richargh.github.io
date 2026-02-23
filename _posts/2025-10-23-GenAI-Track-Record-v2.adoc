@@ -32,6 +32,14 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+[#semantic-ablation]
+== 2026-02-16 link:https://www.theregister.com/2026/02/16/semantic_ablation_ai_writing/[Semantic ablation: Why AI writing is so generic, boring, and dangerous]
+
+* When an author uses AI for "polishing" a draft, they are not seeing improvement; they are witnessing *semantic ablation*.
+* During "refinement," the model gravitates toward the center of the Gaussian distribution, discarding "tail" data – the rare, precise, and complex tokens – to maximize statistical probability.
+* The AI identifies high-entropy clusters – the precise points where unique insights and "blood" reside – and systematically replaces them with the most probable, generic token sequences.
+* What began as a jagged, precise Romanesque structure of stone is eroded into a polished, Baroque plastic shell: it looks "clean" to the casual eye, but its structural integrity – its "ciccia" – has been ablated to favor a hollow, frictionless aesthetic.
+
 [#glm-5-launch]
 == 2026-02-12 link:https://z.ai/blog/glm-5[GLM-5: From Vibe Coding to Agentic Engineering]
 
