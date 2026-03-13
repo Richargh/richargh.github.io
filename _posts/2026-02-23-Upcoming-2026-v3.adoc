@@ -7,7 +7,7 @@ status: ongoing
 
 == Upcoming Talks
 
-* "Refactor, Rearchitect, Rebuild - Was macht man wann?" at link:https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049[DevLand 2026-03-13 🇩🇪]
+None right now :)
 
 == Upcoming Articles
 

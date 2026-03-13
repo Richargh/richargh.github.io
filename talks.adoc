@@ -66,6 +66,10 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 
 * link:https://ct-webdev.com/agenda-2025/[c't <webdev> 2025 🇬🇧] | link:https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-at-ct-webdev-2025[Slides]
 
+== Refactor, Rearchitect, Rebuild - What to do when?
+
+* link:https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049[DevLand 2026 🇩🇪] | link:https://speakerdeck.com/richargh/refactor-rearchitect-rebuild-was-macht-man-wann-v1-at-devland-2026[Slides]
+
 == Remote Scaled Trunk-Based Development
 
 * link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides] | link:https://www.youtube.com/watch?v=NBjZ3wRXkxY[Video]
