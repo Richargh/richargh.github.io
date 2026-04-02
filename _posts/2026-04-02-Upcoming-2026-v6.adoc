@@ -11,7 +11,7 @@ status: ongoing
 
 * 2026-04-22 Destructuring ist die Zukunft von Javas Encapsulation at link:https://www.andrena.de/event/of-ffm-apr-2026[ObjektForum Frankfurt]
 * 2026-05-15 Making sense of frontend code with forensic techniques at link:https://jsheroes.io/#:~:text=Forensic[JS Heroes 2026]
-* 2026-07-01 Domain Rediscovery Patterns for Legacy Code at link:https://www.developer-world.de/dwx/dwx-programm[DWX
+* 2026-07-01 Domain Rediscovery Patterns for Legacy Code at link:https://www.developer-world.de/dw-dwx-program-sessions#:~:text=Domain%20Re-discovery[DWX
 2026]
 
 == Upcoming Articles
