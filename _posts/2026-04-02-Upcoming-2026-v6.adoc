@@ -9,17 +9,19 @@ status: ongoing
 
 // None right now :)
 
+* 2026-04-22 Destructuring ist die Zukunft von Javas Encapsulation at link:https://www.andrena.de/event/of-ffm-apr-2026[ObjektForum Frankfurt]
+* 2026-05-15 Making sense of frontend code with forensic techniques at link:https://jsheroes.io/#:~:text=Forensic[JS Heroes 2026]
 * 2026-07-01 Domain Rediscovery Patterns for Legacy Code at link:https://www.developer-world.de/dwx/dwx-programm[DWX
 2026]
 
 == Upcoming Articles
 
-* Kotlin kontra Java – Part 1(EN) Print and Pdf: April
-* Kotlin kontra Java – Part 1(EN) JavaPro.io: 16. April
+* Kotlin kontra Java – Part 1 (EN) Print and Pdf: April
+* Kotlin kontra Java – Part 1 (EN) JavaPro.io: 16. April
 * Kotlin kontra Java – Part 2 (EN) JavaPro.io: 22. April
 * Kotlin kontra Java – Part 3 (EN) JavaPro.io: 07. Mai
 * Destructuring is the future of Java's Encapsulation (EN) JavaPro.io: 26. Mai
-* Destructuring ist die Zukunft von Javas Encapsulation JavaPro.io: 08. Juni
+* Destructuring ist die Zukunft von Javas Encapsulation (DE) JavaPro.io: 08. Juni
 * Kotlin kontra Java – Part 1(DE) JavaPro.io: 29.Juni
 * Kotlin kontra Java – Part 2 (DE) JavaPro.io: 13. Juli
 * Kotlin kontra Java – Part 3 (DE) JavaPro.io: 27. Juli
