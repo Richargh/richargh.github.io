@@ -13,9 +13,29 @@ content-type: eg
 
 3+| *2026*
 
+| Secure Your Coding Agent Like It’s Malware
+| Container Days Hamburg
+| 2026-09-02
+
+| Domain Rediscovery Patterns for Legacy Code
+| DWX
+| 2026-07-01
+
+| Making sense of frontend code with forensic techniques
+| JSHeroes
+| 2026-05-15
+
+| Destructuring ist die Zukunft von Javas Encapsulation
+| ObjektForum Frankfurt
+| 2026-04-22
+
 | Refactor, Rearchitect, Rebuild - Was macht man wann?
 | DevLand
 | 2026-03-13
+
+| Destructuring ist die Zukunft von Javas Encapsulation
+| JavaLand
+| 2026-03-10
 
 | Domain Re-discovery Patterns for Legacy Code
 | OOP
