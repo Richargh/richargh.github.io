@@ -716,6 +716,20 @@ Headquarters: San Francisco, California, U.S.
 * Our findings challenge narratives of imminent labor market transformation due to Generative AI.
 * two years after the fastest technology adoption ever, labor market outcomes—whether at the individual or firm level—remain untouched.
 
+== 2025-05-01 link:https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf[The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers]
+
+Author: Microsoft
+
+* The rise of Generative AI (GenAI) in knowledge workflows raises questions about its impact on critical thinking skills and practices.
+* We survey 319 knowledge workers to investigate 1) when and how they perceive the enaction of critical thinking when using GenAI, and 2) when and why GenAI affects their effort to do so.
+* Quantitatively [...] higher confidence in GenAI is associated with less critical thinking, while higher self-confidence is associated with more critical thinking.
+* Generative AI (GenAI) tools [...] are the latest in a long line of technologies that raise questions about their impact on the quality of human thought, a line that includes
+** writing (objected to by Socrates)
+** printing (objected to by Trithemius)
+** calculators (objected to by teachers of arithmetic)
+* Such consternation is not unfounded. [...] As Bainbridge [Ironies of Automation] noted, a key irony of automation is that by mechanising routine tasks and leaving exception-handling to the human user, you deprive the user of the routine opportunities to practice their judgement and strengthen their cognitive musculature, leaving them atrophied and unprepared when the exceptions do arise.
+* Recent work has motivated the need for critical thinking support in AI-assisted knowledge work. It is motivated primarily by the observation of the tendency of AI-assisted knowledge workflows to be subject to “mechanised convergence” [114], i.e., that users with access to GenAI tools produce a less diverse set of outcomes for the same task, compared to those without.
+
 [#qwen-3-launch]
 == 2025-04-29 link:https://qwenlm.github.io/blog/qwen3/[Qwen3: Think Deeper, Act Faster]
 
