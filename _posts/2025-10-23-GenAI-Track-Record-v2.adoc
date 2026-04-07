@@ -978,6 +978,20 @@ Previous: <<gpt-4o-launch>>
 * new research suggests that cannibalizing of past model outputs would quickly result in strings of babbling AI gibberish and could eventually lead to what’s being called “model collapse.”
 * Over time and successive generations [...][the] model “becomes poisoned with its own projection of reality.”
 
+== 2024-07-24 link:https://www.nature.com/articles/s41586-024-07566-y[AI models collapse when trained on recursively generated data]
+
+* If the training data of most future models are also scraped from the web, then they will inevitably train on data produced by their predecessors.
+* We find that indiscriminate use of model-generated content in training causes irreversible defects in the resulting models, in which tails of the original content distribution disappear.
+* We refer to this effect as *‘model collapse’* and show that it can occur in LLMs as well as in variational autoencoders (VAEs) and Gaussian mixture models (GMMs) [and Large Language Models (LLMs)].
+* We separate two special cases: early model collapse and late model collapse.
+** In early model collapse, the model begins losing information about the tails of the distribution
+** in late model collapse, the model converges to a distribution that carries little resemblance to the original one, often with substantially reduced variance.
+* We build theoretical intuition behind the phenomenon and portray its ubiquity among all learned generative models.
+* We also briefly mention two close concepts to model collapse from the existing literature:
+** catastrophic forgetting arising in the framework of task-free continual learning
+** data poisoning maliciously leading to unintended behaviour.
+
+
 == 2024-07-03 link:https://www.datacenterknowledge.com/sustainability/google-s-emissions-shot-up-48-over-five-years-due-to-ai[Google’s Emissions Shot Up 48% Over Five Years Due to AI]
 * According to a new environmental report from [Google]
 * [The] emissions climbed by almost half over five years
