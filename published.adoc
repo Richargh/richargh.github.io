@@ -12,6 +12,11 @@ content-type: eg
 | Title
 | Magazine + Date
 
+2+| *2026*
+
+| Kotlin kontra Java - Part 1 - Ecosystem
+| link:https://javapro.io/2026/04/16/kotlin-kontra-java-part-1-ecosystem/[JavaPro.io 2026-04-16 🇬🇧]
+
 2+| *2025*
 
 | Map your Code - Master your Architecture
