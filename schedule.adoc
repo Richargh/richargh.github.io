@@ -17,6 +17,10 @@ content-type: eg
 | Container Days Hamburg
 | 2026-09-02
 
+| Kotlin kontra Java
+| Java Forum Stuttgart
+| 2026-07-09
+
 | Domain Rediscovery Patterns for Legacy Code
 | DWX
 | 2026-07-01

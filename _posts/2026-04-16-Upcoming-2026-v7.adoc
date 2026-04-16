@@ -13,6 +13,7 @@ status: ongoing
 * 2026-05-15 Making sense of frontend code with forensic techniques at link:https://jsheroes.io/#:~:text=Forensic[JS Heroes 2026]
 * 2026-07-01 Domain Rediscovery Patterns for Legacy Code at link:https://www.developer-world.de/dw-dwx-program-sessions#:~:text=Domain%20Re-discovery[DWX
 2026]
+* 2026-07-09 Kotlin kontra Java at link:https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/[Java Forum Stuttgart 2026]
 
 == Upcoming Articles
 
