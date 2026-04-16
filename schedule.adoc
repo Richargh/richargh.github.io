@@ -5,13 +5,13 @@ permalink: /schedule/
 content-type: eg
 ---
 
-[cols="1,1,1"]
+== 2026
+
+[cols="2,1,1"]
 |===
 | Title
 | Conference
 | Date
-
-3+| *2026*
 
 | Secure Your Coding Agent Like It’s Malware
 | Container Days Hamburg
@@ -53,7 +53,15 @@ content-type: eg
 | JUG Darmstadt
 | 2026-01-22
 
-3+| *2025*
+|===
+
+== 2025
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Kotlin kontra Java
 | IT Tage
@@ -84,7 +92,15 @@ wann?
 | JavaLand
 | 2025-04-01
 
-3+| *2024*
+|===
+
+== 2024
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Domain Re-discovery Patterns for Legacy Code
 | Build Stuff
@@ -106,7 +122,15 @@ wann?
 | NDC London
 | 2024-02-01
 
-3+| *2023*
+|===
+
+== 2023
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | How to build the greatest and best Pipeline in the World
 | JAX
@@ -120,7 +144,15 @@ wann?
 | JavaLand
 | 2023-03-22
 
-3+| *2022*
+|===
+
+== 2022
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Continuous Delivery for Legacy Code
 | DevOpsCon
@@ -134,19 +166,43 @@ wann?
 | IPC
 | 2022-10-25
 
-3+| *2021*
+|===
+
+== 2021
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Fixing the Billion-Dollar Mistake in C#
 | Build Stuff
 | 2021-11-19
 
-3+| *2020*
+|===
+
+== 2020
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Spring Boot: The Good Parts
 | Entwicklertag Frankfurt
 | 2020-02-20
 
-3+| *2019*
+|===
+
+== 2019
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Continuous Delivery for Legacy Code
 | Build Stuff
@@ -160,7 +216,15 @@ wann?
 | Entwicklertag Frankfurt
 | 2019-02-21
 
-3+| *2018*
+|===
+
+== 2018
+
+[cols="2,1,1"]
+|===
+| Title
+| Conference
+| Date
 
 | Continuous Delivery for Legacy Code
 | Xp Days
