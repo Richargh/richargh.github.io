@@ -14,6 +14,9 @@ content-type: eg
 
 2+| *2026*
 
+| Kotlin kontra Java - Part 3 - Interop
+| link:https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/[JavaPro.io 2026-05-07 🇬🇧]
+
 | Kotlin kontra Java - Part 2 - MultiPlatform
 | link:https://javapro.io/2026/04/22/kotlin-kontra-java-part-2-multiplatform/[JavaPro.io 2026-04-22 🇬🇧]
 
