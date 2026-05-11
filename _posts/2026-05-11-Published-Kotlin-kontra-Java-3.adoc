@@ -1,0 +1,8 @@
+---
+title: "Just Published: Kotlin kontra Java - Part 3"
+tags: kotlin java ecosystem
+comments: false
+---
+
+When you start a new project on the JVM, should you pick Java or Kotlin? JAVAPRO has just published the link:https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/[third part] of my article series, focusing on interop. Enjoy :)
+
