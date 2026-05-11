@@ -1,6 +1,6 @@
 ---
 title: Coding Genie
-tags: augmented-coding coding-genie
+tags: augmented-coding coding-genie GenAI LLM
 comments: false
 ---
 
