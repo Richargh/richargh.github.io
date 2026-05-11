@@ -13,9 +13,17 @@ content-type: eg
 | Conference
 | Date
 
+| Destructoring is the future of Javas Encapsulation
+| IT Tage
+| 2026-12-xx
+
 | Secure Your Coding Agent Like It’s Malware
 | Container Days Hamburg
 | 2026-09-02
+
+| Domain Rediscovery Patterns for Legacy Code
+| TechCamp Hamburg
+| 2026-08-25
 
 | Kotlin kontra Java
 | Java Forum Stuttgart
