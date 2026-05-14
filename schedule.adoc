@@ -19,7 +19,7 @@ content-type: eg
 
 | Secure Your Coding Agent Like It’s Malware
 | Container Days Hamburg
-| 2026-09-02
+| 2026-09-03
 
 | Domain Rediscovery Patterns for Legacy Code
 | TechCamp Hamburg
