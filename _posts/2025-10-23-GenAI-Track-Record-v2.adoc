@@ -696,6 +696,19 @@ systems
 * Workflow Execution is notably more tractable, with top-performing agents surpassing 83% success rate in single-turn tasks, while other skills present greater challenges.
 * Agents exhibit near-zero inherent confidentiality awareness (improvable with prompting but often at a cost to task performance).
 
+== 2025-05-22 link:https://arxiv.org/abs/2505.16957[Invisible Prompts, Visible Threats: Malicious Font Injection in External Resources for Large Language Models]
+
+* We present a systematic investigation of LLM vulnerabilities to hidden adversarial prompts through malicious font injection in external resources like webpages, where attackers manipulate code-to-glyph mapping to inject deceptive content which are invisible to users [undetectable to human readers while being fully accessible to LLMs during content processing]
+* We evaluate two critical attack scenarios:
+** (1) "malicious content relay" [whether LLMs can process and relay hidden malicious content from external sources to end-users]
+** (2) "sensitive data leakage" through MCP-enabled tools
+* Our experiments reveal that indirect prompts with injected malicious font can bypass LLM safety mechanisms through external resources, achieving varying success rates based on data sensitivity and prompt design. Our research underscores the urgent need for enhanced security measures in LLM deployments when processing external content.
+* Experiments show:
+** (1) PDF documents have higher attack success rates (up to 70%) than HTML;
+** (2) Strategic prompt placement and higher injection frequency boost success, especially at document starts;
+** (3) Newer LLMs are more vulnerable;
+** (4) Indirect prompts bypass safety mechanisms, with 100% success for low-sensitivity data (person names and ages) and 30% for high-sensitivity data (phone numbers, geolocation, SSN).
+
 [#claude-4-launch]
 == 2025-05-22 link:https://www.anthropic.com/news/claude-4[Introducing Claude 4]
 
