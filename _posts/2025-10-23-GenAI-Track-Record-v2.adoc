@@ -22,6 +22,32 @@ status: ongoing
 // link:https://www.arxiv.org/abs/2509.21361[Context Is What You Need: The Maximum Effective Context Window for Real World Limits of LLMs] and what LLMs to do solve this: https://chatgpt.com/share/68dcc26b-fcb4-8011-8b20-fb4d9c81fcb9 (summarisation, chunking, stochastic pruning) "For scale, I ran a 100 LOC source file through a tokenizer, and it contained > 1000 tokens."
 // link:https://arxiv.org/pdf/2307.02477[Reasoning or Reciting? Exploring the Capabilities and Limitations of Language Models Through Counterfactual Tasks]
 
+// How AI Destroys Institutions 8 Dec 2025 https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5870623
+
+// Code for Machines, Not Just Humans: Quantifying AI-Friendliness with Code Health Metrics [Adam Tornhill] 5 Jan 2026 https://arxiv.org/pdf/2601.02200
+
+// Can you prove AI ROI in Software Eng? (Stanford 120k Devs Study) – Yegor Denisov-Blanch, Stanford Dec11 2025 https://www.youtube.com/watch?app=desktop&v=JvosMkuNxF8
+
+// How AI assistance impacts the formation of coding skills 29 Jan 2026 https://www.anthropic.com/research/AI-assistance-coding-skills
+
+// Then end of thinking Sep 25 2025 https://www.derekthompson.org/p/the-end-of-thinking
+
+// AI startup Anthropic agrees to pay $1.5bn to settle book piracy lawsuit 5 Sep 2025 https://www.theguardian.com/technology/2025/sep/05/anthropic-settlement-ai-book-lawsuit
+
+// Introducing OpenClaw 29 Jan 2026 https://openclaw.ai/blog/introducing-openclaw
+
+// OpenAI says prompt injections that can trick AI browsers like ChatGPT Atlas may never be fully ‘solved’—experts say risks are ‘a feature not a bug’ Dec 25, 2025 https://fortune.com/2025/12/23/openai-ai-browser-prompt-injections-cybersecurity-hackers/
+
+// Adversarial Poetry as a Universal Single-Turn Jailbreak Mechanism in Large Language Models https://arxiv.org/html/2511.15304v1
+
+// Speed at the Cost of Quality: How Cursor AI Increases Short-Term Velocity and Long-Term Complexity in Open-Source Projects 6 Nov 2025 https://arxiv.org/abs/2511.04427
+
+// Firm Data on AI Feb 2026 https://www.nber.org/papers/w34836
+
+// How AI Impacts Skill Formation Feb 2026 https://arxiv.org/abs/2601.20245
+
+// System Over Model: Zero-Day Discovery at the Jagged Frontier Apr 2026 https://aisle.com/blog/system-over-model-zero-day-discovery-at-the-jagged-frontier
+
 == General LLM comparisons
 
 - link:https://arcprize.org/leaderboard[ARC-AGI Leaderboard], shows cost vs score
@@ -31,6 +57,20 @@ status: ongoing
 
 // McDonalds order errors
 // NY legal errors
+
+== 2026-05-12 link:https://arxiv.org/abs/2605.07912[Sycophantic AI makes human interaction feel more effortful and less satisfying over time]
+
+* Millions of people now turn to artificial intelligence (AI) systems for personal advice, guidance, and support.
+* Such systems can be *sycophantic*, frequently affirming users' views and beliefs.
+* Across five preregistered studies (N = 3,075 participants, 12,766 human-AI conversations), including a three-week study with a census-representative U.S. sample, we provide longitudinal experimental evidence that sycophantic AI shifts how users approach their closest relationships.
+* We show that sycophantic AI immediately delivers the emotional and esteem support users typically associate *with close friends and family*.
+* Over three weeks of such interactions, users became nearly as likely to seek personal advice from sycophantic AI as from close friends and family, and reported *lower satisfaction with their real-world social interactions*.
+* When given a choice among AI response styles, a majority *preferred sycophantic AI* -- not for the quality of its advice, but because it made them feel most understood.
+* Overall, our work suggests that sycophantic AI delivers what people have always sought from close others, the experience of being seen and understood, but without the work that produces it:
+** the time to explain and listen,
+** the risk of opening up,
+** and the friction and empathic effort of bridging disparate experiences.
+* When feeling understood becomes the default of every interaction, the human relationships that still require the work may, over time, come to feel like *insufficient versions of what AI systems readily provide*.
 
 // [#gemini-3-1-pro-launch]
 // == 2026-02-20 link:https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-pro-on-gemini-cli-gemini-enterprise-and-vertex-ai[Introducing Gemini 3.1 Pro on Google Cloud]
