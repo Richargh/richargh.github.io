@@ -64,7 +64,7 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 
 == Making sense of frontend code with forensic techniques
 
-* link:https://jsheroes.io/#:~:text=Forensic[JsHeroes 2026 🇬🇧] (25min) | link:https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026[Slides]
+* link:https://jsheroes.io/#:~:text=Forensic[JsHeroes 2026 🇬🇧] (25min) | link:https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026[Slides] | link:https://www.youtube.com/watch?v=P7d9rtJa4VU[Video]
 * link:https://ct-webdev.com/agenda-2025/[c't <webdev> 2025 🇬🇧] (45min) | link:https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-at-ct-webdev-2025[Slides]
 
 == Refactor, Rearchitect, Rebuild - What to do when?
