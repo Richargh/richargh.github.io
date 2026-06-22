@@ -18,6 +18,10 @@ content-type: eg
 | 2026-12-xx
 
 | Secure Your Coding Agent Like It’s Malware
+| Code.talks
+| 2026-11-04
+
+| Secure Your Coding Agent Like It’s Malware
 | Container Days Hamburg
 | 2026-09-03
 
