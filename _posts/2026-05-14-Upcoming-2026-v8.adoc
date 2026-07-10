@@ -9,7 +9,6 @@ status: ongoing
 
 // None right now :)
 
-* 2026-07-09 Kotlin kontra Java at link:https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/[Java Forum Stuttgart 2026]
 * 2026-09-03 Secure Your Coding Agent Like It’s Malware link:https://www.containerdays.io/containerdays-hamburg-2026/agenda/[Container Days Hamburg]
 
 == Upcoming Articles
