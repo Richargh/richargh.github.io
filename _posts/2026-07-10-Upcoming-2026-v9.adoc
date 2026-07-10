@@ -1,0 +1,24 @@
+---
+title: Upcoming
+permalink: /posts/upcoming/
+comments: false
+status: ongoing
+---
+
+== Upcoming Talks
+
+// None right now :)
+
+* 2026-08-26 > Domain Re-discovery Patterns for Legacy Code > link:https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery[Tech Camp Hamburg]
+* 2026-09-03 > Secure Your Coding Agent Like It’s Malware > link:https://www.containerdays.io/containerdays-hamburg-2026/agenda/[Container Days Hamburg]
+* 2026-11-04 > Secure Your Coding Agent Like It’s Malware > link:https://codetalks.com/speaker#:~:text=Richard%20Gross[Code.Talks]
+* 2026-12-08 > Destructoring ist die Zukunft von Javas Encapsulation > link:https://www.ittage.informatik-aktuell.de/programm/2026/destructoring-ist-die-zukunft-von-javas-encapsulation.html[IT Tage]
+
+== Upcoming Articles
+
+* Kotlin kontra Java – Part 4 (EN) JavaPro.io: TBD
+* Kotlin kontra Java – Part 5 (EN) JavaPro.io: TBD
+* Kotlin kontra Java – Part 2 (DE) JavaPro.io: 13. Juli
+* Kotlin kontra Java – Part 3 (DE) JavaPro.io: 27. Juli
+* Kotlin kontra Java – Part 4 (DE) JavaPro.io: TBD
+* Kotlin kontra Java – Part 5 (DE) JavaPro.io: TBD
