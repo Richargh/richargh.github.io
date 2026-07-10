@@ -14,8 +14,8 @@ status: ongoing
 == Upcoming Articles
 
 * Kotlin kontra Java – Part 4 (EN) JavaPro.io: TBD
-* Destructuring is the future of Java's Encapsulation (EN) JavaPro.io: 26. Mai
-* Destructuring ist die Zukunft von Javas Encapsulation (DE) JavaPro.io: 08. Juni
-* Kotlin kontra Java – Part 1(DE) JavaPro.io: 29.Juni
+* Kotlin kontra Java – Part 5 (EN) JavaPro.io: TBD
 * Kotlin kontra Java – Part 2 (DE) JavaPro.io: 13. Juli
 * Kotlin kontra Java – Part 3 (DE) JavaPro.io: 27. Juli
+* Kotlin kontra Java – Part 4 (DE) JavaPro.io: TBD
+* Kotlin kontra Java – Part 5 (DE) JavaPro.io: TBD
