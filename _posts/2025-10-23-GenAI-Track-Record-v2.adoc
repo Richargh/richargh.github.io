@@ -72,6 +72,15 @@ status: ongoing
 ** and the friction and empathic effort of bridging disparate experiences.
 * When feeling understood becomes the default of every interaction, the human relationships that still require the work may, over time, come to feel like *insufficient versions of what AI systems readily provide*.
 
+== 2026-04 link:https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/[How We Broke Top AI Agent Benchmarks: And What Comes Next]
+
+* We built an automated scanning agent that systematically audited eight among the most prominent AI agent benchmarks — SWE-bench, WebArena, OSWorld, GAIA, Terminal-Bench, FieldWorkArena, and CAR-bench — and discovered that every single one can be exploited to achieve *near-perfect scores without solving a single task*. No reasoning. No capability. Just exploitation of how the score is computed.
+* These aren’t theoretical attacks. Our agent builds working exploits for each benchmark, runs them through the official evaluation pipelines, and watches the scores roll in.
+* [The methods used are]
+** A conftest.py file with 10 lines of Python “resolves” every instance on SWE-bench Verified.
+** A fake `curl` wrapper gives a perfect score on all 89 Terminal-Bench tasks without writing a single line of solution code.
+** Navigating Chromium to a `file://` URL reads the gold answer directly from the task config — giving ~100% on all 812 WebArena tasks.
+
 // [#gemini-3-1-pro-launch]
 // == 2026-02-20 link:https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-pro-on-gemini-cli-gemini-enterprise-and-vertex-ai[Introducing Gemini 3.1 Pro on Google Cloud]
 //
