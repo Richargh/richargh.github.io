@@ -17,6 +17,10 @@ content-type: eg
 | IT Tage
 | 2026-12-xx
 
+| Ironies of AI Automation - What 1983 Can Teach Us About AI in 2026
+| Build Stuff
+| 2026-12-xx
+
 | Secure Your Coding Agent Like It’s Malware
 | Code.talks
 | 2026-11-04
