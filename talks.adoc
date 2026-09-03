@@ -79,6 +79,10 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 * link:https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference[Build Stuff 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff[Slides] | link:https://www.youtube.com/watch?v=NBjZ3wRXkxY[Video]
 * link:https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/[IPC 2022 🇬🇧] | link:https://speakerdeck.com/richargh/remote-scaled-trunk-based-development[Slides]
 
+== Secure your Coding Agent like it's Malware
+
+* link:https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F[Container Days Hamburg 2026 🇬🇧] | link:https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026[Slides] | link:https://github.com/Richargh/clamp[Clamp Sandbox]
+
 == Spring Boot: The Good Parts
 
 * link:https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner[Entwicklertag Frankfurt 2020 🇩🇪] | link:https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020[Slides]
