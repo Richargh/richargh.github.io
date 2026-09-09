@@ -27,11 +27,11 @@ content-type: eg
 
 | Destructoring is the future of Javas Encapsulation
 | Devoxx Belgium
-| 2026-10-xx
+| 2026-10-05
 
 | Secure Your Coding Agent Like It’s Malware
 | Devoxx Belgium
-| 2026-10-xx
+| 2026-10-05
 
 | Secure Your Coding Agent Like It’s Malware
 | Container Days Hamburg
