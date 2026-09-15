@@ -15,7 +15,7 @@ content-type: eg
 
 | Destructoring is the future of Javas Encapsulation
 | IT Tage
-| 2026-12-xx
+| 2026-12-08
 
 | Ironies of AI Automation - What 1983 Can Teach Us About AI in 2026
 | Build Stuff
