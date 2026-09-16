@@ -17,7 +17,7 @@ status: ongoing
 
 == Upcoming Articles
 
-* Kotlin kontra Java – Part 4 (EN) JavaPro.io: TBD
-* Kotlin kontra Java – Part 5 (EN) JavaPro.io: TBD
-* Kotlin kontra Java – Part 4 (DE) JavaPro.io: TBD
-* Kotlin kontra Java – Part 5 (DE) JavaPro.io: TBD
+* Kotlin kontra Java – Part 4 (DE) JavaPro.io: 2026-10-05
+* Kotlin kontra Java – Part 5 (DE) JavaPro.io: 2026-10-12
+* Kotlin kontra Java – Part 4 (EN) JavaPro.io: 2026-10-20
+* Kotlin kontra Java – Part 5 (EN) JavaPro.io: 2026-10-28
