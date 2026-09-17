@@ -65,6 +65,10 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 * link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196[JavaLand 2025 🇩🇪 (incl. Video, if you have a ticket)] | https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025[Slides] | link:https://github.com/Richargh/kotlin-kontra-java[Code]
 ** Deep dive, also at link:https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080[JavaLand 2025 🇩🇪 (incl. Video, if you have a ticket)]
 
+== LLMs are not Skynet
+
+* link:https://www.jug-da.de/2026/09/Quarkus-LLMs/[JUG Darmstadt September 2026 🇩🇪] (15min) | link:https://speakerdeck.com/richargh/llms-sind-nicht-skynet-v1-at-jug-darmstadt-september-2026[Slides]
+
 == Making sense of frontend code with forensic techniques
 
 * link:https://jsheroes.io/#:~:text=Forensic[JsHeroes 2026 🇬🇧] (25min) | link:https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026[Slides] | link:https://www.youtube.com/watch?v=P7d9rtJa4VU[Video]
