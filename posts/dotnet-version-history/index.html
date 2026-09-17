@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:site_name" content="Knowledge Continuum"/>
+    <meta property="og:description" content="The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.">
+    <meta property="article:author" content="https://richargh.de/about/"><meta property="og:title" content=".NET Version History (up to .NET 9)">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://richargh.de/posts/dotnet-version-history/"><title>Richard's Blog</title>
+
+    <link rel="canonical" href="https://richargh.de/posts/dotnet-version-history/"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <!--[if IE]>
+        <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
+    <link rel="alternate" type="application/rss+xml" href="https://richargh.de/feed.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="dashboard disable-select">
+        <div class="site-heading profile-board-col">
+           <h4 class="medium"><a href="/">Richard's Blog</a></h4>
+        </div>
+
+        <div class="userboard profile-board-col">
+            <div class="username">
+                <p class="title-sans">Richard Groß</p>
+            </div>
+            <div class="userdesc">
+                <p class="title-sans">IT Archaeologist</p>
+            </div>
+        </div>
+    </div>
+    <div class="avatar disable-select">
+        <a class="avatar-link" href="/">
+            <img src="/assets/img/profile.jpg" class="avatar-img" alt="avatar"/>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <div class="main-site-subheader menu disable-select">
+        <div class="talks">
+            <a style="text-decoration: none;" href="/talks">
+                <!-- from https://www.reshot.com/free-svg-icons/item/speaker-ZQA938GVWS/ -->
+                <svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
+                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
+                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
+                </svg>
+                <p class="home-p">Talks</p>
+            </a>
+        </div>
+        <div class="published">
+            <a style="text-decoration: none;" href="/published">
+                <!-- from https://www.reshot.com/free-svg-icons/item/paper-plane-D72FP5NHXZ/ -->
+                <svg class="icon-published" width="25" height="25" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Layer_x0020_1"><g id="_559822392"><path id="_559822728" class="fil0" d="M1657.53 872.581 348.07 521.715l493.348 993.204 338.593-451.457-.1-.074a31.858 31.858 0 0 1 16.456-11.467l461.159-179.34zM296.27 441.664l1470.41 393.994c10.174 2.183 19.089 9.275 23.141 19.697 6.406 16.47-1.755 35.018-18.225 41.423l-11.599-29.824 11.5 29.75-545.971 212.322-362.47 483.291a31.844 31.844 0 0 1-12.97 11.81c-15.828 7.86-35.034 1.403-42.895-14.424l28.66-14.236-28.626 14.125L260.4 488.722c-4.181-7.128-5.62-15.863-3.312-24.475 4.573-17.07 22.121-27.201 39.191-22.628l-.01.04z"/><path
+                            id="_559822560" class="fil0"
+                            d="M305.626 445.908c-14.705-9.733-34.518-5.705-44.251 9-9.734 14.705-5.705 34.518 9 44.251l917.512 610.055c14.705 9.734 34.518 5.705 44.251-9 9.733-14.705 5.705-34.518-9-44.251L305.626 445.908z"/><path
+                            id="_559822608" class="fil0"
+                            d="M1237.39 1080.09c-1.38-17.604-16.772-30.756-34.376-29.375-17.604 1.38-30.756 16.772-29.375 34.376l28.922 361.603-132.165-169.905c-10.838-13.944-30.931-16.462-44.875-5.625-13.944 10.838-16.462 30.931-5.625 44.875l197.058 253.327c6.326 8.797 16.966 14.166 28.553 13.24 17.617-1.407 30.755-16.833 29.347-34.449l-.026.003-37.437-468.07z"/></g></g>
+                    <path style="fill:none" d="M0 0h2048v2048H0z"/>
+                </svg>
+                <p class="published-p">Published</p>
+            </a>
+        </div>
+        <div class="built">
+            <a style="text-decoration: none;" href="/built">
+                <!-- from https://www.reshot.com/free-svg-icons/item/tool-UACF35PGN9/ -->
+                <svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
+                </svg>
+                <p class="built-p">Built</p>
+            </a>
+        </div>
+        <div class="home">
+            <a style="text-decoration: none;" href="/about">
+                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="home-p">About</p>  
+            </a>
+        </div>
+        <div class="categories">
+            <a style="text-decoration: none;" href="/tags">
+            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="categories-p">Tags</p>
+            </a>
+        </div>
+        <div class="rss">
+            <a style="text-decoration: none;" href="/feed.xml">
+                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            <p class="rss-p">RSS</p>
+            </a>
+        </div>
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search the Blog..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                })
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="https://richargh.de{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })
+    </script><div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Home</p>
+    </div></header><main>
+                <h1>.NET Version History (up to .NET 9)</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="javascript:void(0)" class="tag"><b>Status:</b> <i>Ongoing</i></a></li><li><a href="/dates/#12-November-2024" class="tag">November-12-2024</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#.net" class="tag">.net</a></li></ul><div class="content"><div class="paragraph">
+<p>The following list tracks the stable (not incubating or in preview) feature changes I deemed most noteworthy.</p>
+</div>
+<div class="paragraph">
+<p>The list is ongoing and will be updated with every new .NET release.
+A <strong>+</strong> marks an added feature, a <strong>-</strong> marks a removed feature.</p>
+</div>
+<div class="paragraph">
+<p>Typically C# versions are only supported on the .NET Version they are introduced with or newer.
+Microsoft has a list of what is considered <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version#defaults">C# language version default</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://github.com/dotnet/core/blob/main/releases.md">releases</a> that Microsoft will provide Long-Term Support (LTS) for are marked as such, based on the plan that <a href="https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core">Microsoft publishes</a>.
+A new major release of .NET is published every year in November. Even numbered releases are <strong>LTS</strong> releases that get free support and patches for three years.
+Odd numbered releases are <strong>STS</strong> releases that get free support and patches for 18 months.</p>
+</div>
+<div class="sect1">
+<h2 id="net-9"><a class="anchor" href="#net-9"></a><a class="link" href="#net-9"><a href="https://github.com/dotnet/core/tree/main/release-notes/9.0">9</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2024</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="c13"><a class="anchor" href="#c13"></a><a class="link" href="#c13"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13">C#13</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>params</code> collections</dt>
+<dd>
+<p>You can now use params with any recognized collection type, including <code>Span&lt;T&gt;</code>, <code>ReadOnlySpan&lt;T&gt;</code>, and types that implement <code>IEnumerable&lt;T&gt;</code> and have an <code>Add</code> method.</p>
+</dd>
+<dt class="hdlist1">➕ New lock object</dt>
+<dd>
+<p>Add a new type for thread synchronization, the <code>System.Threading.Lock</code> type.</p>
+</dd>
+<dt class="hdlist1">➕ New escape sequence</dt>
+<dd>
+<p>You can use <code>\e</code> as a character literal escape sequence for the <code>ESCAPE</code> character, Unicode <code>U+001B</code>.</p>
+</dd>
+<dt class="hdlist1">➕ Method group natural type</dt>
+<dt class="hdlist1">➕ Implicit index access</dt>
+<dd>
+<p>The implicit "from the end" index operator, <code>^</code>, is now allowed in an object initializer expression.</p>
+</dd>
+<dt class="hdlist1">➕ <code>ref</code> and <code>unsafe</code> in iterators and async methods</dt>
+<dt class="hdlist1">➕ <code>allows ref struct</code></dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">C</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">allows</span> <span class="k">ref</span> <span class="k">struct</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>ref struct</code> interfaces</dt>
+<dt class="hdlist1">➕ More partial members</dt>
+<dd>
+<p>You can declare partial properties and partial indexers in C# 13.</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-8"><a class="anchor" href="#net-8"></a><a class="link" href="#net-8"><a href="https://github.com/dotnet/core/blob/main/release-notes/8.0/8.0.0/8.0.0.md">8</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2026</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2023</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="c12"><a class="anchor" href="#c12"></a><a class="link" href="#c12"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12">C#12</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Primary constructors</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">accountID</span><span class="p">,</span> <span class="kt">string</span> <span class="n">owner</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Collection expressions</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">string</span><span class="p">[]</span> <span class="n">names</span> <span class="p">=</span> <span class="p">[</span><span class="s">"Julia"</span><span class="p">,</span> <span class="s">"Anna"</span><span class="p">,</span> <span class="s">"Thomas"</span><span class="p">];</span>
+<span class="c1">// and</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">allNames</span> <span class="p">=</span> <span class="p">[..</span> <span class="n">names</span><span class="p">,</span> <span class="p">..</span> <span class="n">moreNames</span><span class="p">];</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Optional parameters in lambda expressions</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span> <span class="n">IncrementBy</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span> <span class="n">source</span><span class="p">,</span> <span class="kt">int</span> <span class="n">increment</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">source</span> <span class="p">+</span> <span class="n">increment</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Experimental attribute</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">[</span><span class="nf">Experimental</span><span class="p">(</span><span class="s">"1234"</span><span class="p">)]</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Interceptors</dt>
+<dd>
+<p>Substitute a call to an interceptable method with a call to itself at compile time</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-7"><a class="anchor" href="#net-7"></a><a class="link" href="#net-7"><a href="https://github.com/dotnet/core/blob/main/release-notes/7.0/7.0.0/7.0.0.md">7</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2022</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="c11"><a class="anchor" href="#c11"></a><a class="link" href="#c11"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11">C#11</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Pattern matching enhancements</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ List patterns</dt>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="n">sequence</span> <span class="k">is</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>Required</code> members</dt>
+<dd>
+<p>Must be initialized by an object initializer. Really important because now you can trust NRTs (nullable reference types) way more.</p>
+</dd>
+<dt class="hdlist1">➕ Raw string literals</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="s">""" hello """</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Newlines in string interpolation expressions</dt>
+<dd>
+<p>The text inside the <code>{</code> and <code>}</code> characters for a string interpolation can now span multiple lines.</p>
+</dd>
+<dt class="hdlist1">➕ File-local types</dt>
+<dd>
+<p><code>file</code> access modifier is scoped to the source</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-6"><a class="anchor" href="#net-6"></a><a class="link" href="#net-6"><a href="https://github.com/dotnet/core/blob/main/release-notes/6.0/6.0.0/6.0.0.md">6</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2024</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2021</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>.NET 6 unifies the SDK, base libraries, and runtime across mobile, desktop, IoT, and cloud apps.</p>
+</li>
+<li>
+<p>+<a href="https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-6/">Massive gains in performance</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c10"><a class="anchor" href="#c10"></a><a class="link" href="#c10"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10">C#10</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Pattern matching enhancements</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Extended property patterns</dt>
+<dd>
+<p>Nested properties:</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">{</span> <span class="n">Prop1</span><span class="p">.</span><span class="n">Prop2</span><span class="p">:</span> <span class="n">pattern</span> <span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ File-scoped namespace declaration</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">namespace</span> <span class="nn">MyNamespace</span><span class="p">;</span>
+<span class="c1">// instead of nesting</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Allow both assignment and declaration in the same deconstruction</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">point</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Record structs</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">public</span> <span class="n">record</span> <span class="k">struct</span> <span class="nc">Point</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">X</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="n">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Y</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="n">init</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Z</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="n">init</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Improvements of structure types</dt>
+<dt class="hdlist1">➕ Interpolated string handlers</dt>
+<dt class="hdlist1">➕ Allow <code>const</code> interpolated strings</dt>
+<dt class="hdlist1">➕ global using directives</dt>
+<dt class="hdlist1">➕ Improvements on lambda expressions</dt>
+<dt class="hdlist1">➕ Record types can <code>seal ToString()</code></dt>
+<dt class="hdlist1">➕ Improved definite assignment</dt>
+<dt class="hdlist1">➕ Allow AsyncMethodBuilder attribute on methods</dt>
+<dt class="hdlist1">➕ CallerArgumentExpression attribute</dt>
+<dt class="hdlist1">➕ Warning wave 6</dt>
+<dd>
+<p>Any new keywords added for C# will be all lower-case ASCII characters. This warning ensures that none of your types conflict with future keywords.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-5"><a class="anchor" href="#net-5"></a><a class="link" href="#net-5"><a href="https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0.0/5.0.0.md">5</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2020</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>skips "Core" and is now the main implementation of .NET going forward</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c9"><a class="anchor" href="#c9"></a><a class="link" href="#c9"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-9">C#9</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Pattern matching enhancements</dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Relational patterns</dt>
+<dd>
+<p><code>&lt;</code>, <code>&gt;</code>, <code>&#8656;</code>, or <code>&gt;=</code></p>
+</dd>
+<dt class="hdlist1">➕ logical patterns</dt>
+<dd>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns"><code>and</code>, <code>or</code>, <code>not</code></a></p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1">➕ <a href="https://github.com/dotnet/csharplang/blob/main/proposals/csharp-9.0/unconstrained-type-parameter-annotations.md">Unconstrained type parameter annotations</a></dt>
+<dd>
+<p>Which makes NRTs (nullable-reference types) much nicer to use</p>
+</dd>
+<dt class="hdlist1">➕ <code>Init</code> only setters</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">int</span> <span class="n">YearOfBirth</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="n">init</span><span class="p">;</span> <span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Records</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="n">record</span> <span class="nf">Person</span><span class="p">(</span><span class="kt">string</span> <span class="n">FirstName</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Top-level statements</dt>
+<dd>
+<p>Programs without <code>Main</code> methods</p>
+</dd>
+<dt class="hdlist1">➕ <code>[ModuleInitializer]</code></dt>
+<dt class="hdlist1">➕ Target-typed new expressions</dt>
+<dd>
+<p>Write just <code>new();</code> when the type is known</p>
+</dd>
+<dt class="hdlist1">➕ Target-typed conditional expressions</dt>
+<dd>
+<p><code>M(b ? 1 : 2)</code></p>
+</dd>
+<dt class="hdlist1">➕ Covariant return types</dt>
+<dt class="hdlist1">➕ Lambda discard parameters</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="m">0</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="f5"><a class="anchor" href="#f5"></a><a class="link" href="#f5"><a href="https://devblogs.microsoft.com/dotnet/announcing-f-5/">F#5</a></a></h3>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-3-1"><a class="anchor" href="#net-core-3-1"></a><a class="link" href="#net-core-3-1"><a href="https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1.0/3.1.0.md">Core 3.1</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">November 2019</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-3"><a class="anchor" href="#net-core-3"></a><a class="link" href="#net-core-3"><a href="https://github.com/dotnet/core/blob/main/release-notes/3.0/3.0.0/3.0.0.md">Core 3.0</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">September 2019</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Fits (<a href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-1">.NET Standard 2.1</a> &#8658; 37,118 of the 37,118 APIs)</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ WinForms, WPF on Windows</dt>
+<dd>
+<p>Only on windows.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c8-0-only-part-of-core"><a class="anchor" href="#c8-0-only-part-of-core"></a><a class="link" href="#c8-0-only-part-of-core"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-80">C#8.0</a> (<a href="https://devblogs.microsoft.com/dotnet/building-c-8-0/">only part of core</a>)</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>readonly</code> members</dt>
+<dt class="hdlist1">➕ Default interface methods</dt>
+<dd>
+<p>Methods in interface can have an implementation now</p>
+</dd>
+<dt class="hdlist1">➕ <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/may/csharp-8-0-pattern-matching-in-csharp-8-0">Pattern matching enhancements</a></dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression"><code>switch</code> expression</a></dt>
+<dt class="hdlist1">➕ Property patterns</dt>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="n">shape</span> <span class="k">switch</span> <span class="p">{</span> <span class="p">{</span> <span class="n">Point</span><span class="p">:</span> <span class="p">{</span> <span class="n">Y</span> <span class="p">:</span> <span class="m">100</span> <span class="p">}</span> <span class="p">}</span> <span class="p">=&gt;</span> <span class="s">"Y is 100"</span><span class="p">};</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Tuple patterns</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="k">switch</span> <span class="p">{</span> <span class="p">(</span><span class="n">Animal</span><span class="p">.</span><span class="n">Bird</span><span class="p">,</span> <span class="n">_</span><span class="p">}</span> <span class="p">=&gt;</span> <span class="s">"It's a Bird"</span> <span class="p">};</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Positional patterns</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="n">shape</span> <span class="k">switch</span> <span class="p">{</span> <span class="nf">Rectangle</span> <span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s">"It's a square"</span> <span class="p">};</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types">Nullable reference types</a></dt>
+<dd>
+<p>Aka non-nullable <code>Person</code> and nullable <code>Person?</code></p>
+</dd>
+<dt class="hdlist1">➕ <code>using</code> declarations</dt>
+<dd>
+<p>Don&#8217;t require braces, variable is disposed at the end of the scope</p>
+</dd>
+<dt class="hdlist1">➕ Static local functions</dt>
+<dt class="hdlist1">➕ <code>await foreach</code></dt>
+<dt class="hdlist1">➕ Indices and ranges</dt>
+<dd>
+<p><code>..</code>, <code>start..</code>, <code>..end</code>, <code>^start..</code> etc.</p>
+</dd>
+<dt class="hdlist1">➕ Null-coalescing assignment</dt>
+<dd>
+<p><code>??=</code></p>
+</dd>
+<dt class="hdlist1">➕ Enhancement of interpolated verbatim strings</dt>
+<dd>
+<p><code>$@</code> combination is still allowed but now also the <code>@$</code> order.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="f-4-7"><a class="anchor" href="#f-4-7"></a><a class="link" href="#f-4-7"><a href="https://devblogs.microsoft.com/dotnet/announcing-f-4-7/">F# 4.7</a></a></h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-4-8"><a class="anchor" href="#net-4-8"></a><a class="link" href="#net-4-8"><a href="https://github.com/microsoft/dotnet/blob/main/releases/net48/README.md">4.8</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">August 2019</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>The final framework (still stuck at <a href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0">.NET Standard 2.0</a> &#8658; 32,638 of the 37,118 APIs)</p>
+</li>
+<li>
+<p>C# &#8656; 7.3</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-2-2"><a class="anchor" href="#net-core-2-2"></a><a class="link" href="#net-core-2-2"><a href="https://github.com/dotnet/core/blob/main/release-notes/2.2/2.2.0/2.2.0.md">Core 2.2</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">December 2018</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="c7-3"><a class="anchor" href="#c7-3"></a><a class="link" href="#c7-3"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-73">C#7.3</a></a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="c7-2"><a class="anchor" href="#c7-2"></a><a class="link" href="#c7-2"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-72">C#7.2</a></a></h3>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-2-1"><a class="anchor" href="#net-core-2-1"></a><a class="link" href="#net-core-2-1"><a href="https://github.com/dotnet/core/blob/main/release-notes/2.1/2.1.0.md">Core 2.1</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">August 2021</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">May 2018</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-2-0"><a class="anchor" href="#net-core-2-0"></a><a class="link" href="#net-core-2-0"><a href="https://github.com/dotnet/core/blob/main/release-notes/2.0/2.0.0.md">Core 2.0</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">August 2017</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>(<a href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0#select-net-standard-version">.NET Standard 2.0</a> &#8658; 32,638 of the 37,118 APIs)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c7-1"><a class="anchor" href="#c7-1"></a><a class="link" href="#c7-1"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70">C#7.1</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>async</code> Main method</dt>
+<dt class="hdlist1">➕ Default literal expressions</dt>
+<dt class="hdlist1">➕ Inferred tuple element names</dt>
+<dt class="hdlist1">➕ Pattern matching on generic type parameters</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="k">is</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="c1">// ...</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-4-7"><a class="anchor" href="#net-4-7"></a><a class="link" href="#net-4-7"><a href="https://github.com/microsoft/dotnet/tree/main/releases/net47">4.7</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">June 2017</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>(<a href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-2-0">.NET Standard 2.0</a> &#8658; 32,638 of the 37,118 APIs)</p>
+</li>
+<li>
+<p>Visual Studio 2017</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c7"><a class="anchor" href="#c7"></a><a class="link" href="#c7"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-70">C#7</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Out variables</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="nf">GetEmployeeDetails</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">EmployeeName</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Tuples and deconstruction</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span> <span class="n">t</span> <span class="p">=</span> <span class="p">(</span><span class="s">"post office"</span><span class="p">,</span> <span class="m">3.6</span><span class="p">);</span>
+<span class="c1">// and</span>
+<span class="kt">var</span> <span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span> <span class="p">=</span> <span class="n">t</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Pattern matching</dt>
+<dd>
+<p>Via <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/is"><code>is</code> operator</a> in <code>if</code> or <code>switch</code> statements.</p>
+</dd>
+<dt class="hdlist1">➕ Local functions</dt>
+<dd>
+<p>Methods nested in other members</p>
+</dd>
+<dt class="hdlist1">➕ Expanded expression bodied members</dt>
+<dt class="hdlist1">➕ Ref locals</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+<span class="c1">// and</span>
+<span class="k">ref</span> <span class="kt">int</span> <span class="k">alias</span> <span class="p">=</span> <span class="k">ref</span> <span class="n">a</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Ref returns</dt>
+<dt class="hdlist1">➕ Discards</dt>
+<dd>
+<p>Use an underscore when you don&#8217;t need the variable:</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">area</span><span class="p">)</span> <span class="p">=</span> <span class="n">city</span><span class="p">.</span><span class="nf">GetCityInformation</span><span class="p">(</span><span class="n">cityName</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Binary Literals and Digit Separators</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span> <span class="n">binaryLiteral</span> <span class="p">=</span> <span class="m">0</span><span class="n">b_0010_1010</span><span class="p">;</span>
+<span class="c1">// and</span>
+<span class="kt">var</span> <span class="n">bigNumber</span> <span class="p">=</span> <span class="m">123</span><span class="n">_456_789</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Throw expressions</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">string</span> <span class="n">first</span> <span class="p">=</span> <span class="n">args</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;=</span> <span class="m">1</span> <span class="p">?</span> <span class="n">args</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">:</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentException</span><span class="p">(</span><span class="s">"Please supply at least one argument."</span><span class="p">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-core-1"><a class="anchor" href="#net-core-1"></a><a class="link" href="#net-core-1"><a href="https://github.com/dotnet/core/blob/main/release-notes/1.0/1.0.0.md">Core 1</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">June 2016</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>(<a href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard?tabs=net-standard-1-6">.NET Standard 1.6</a> &#8658; 13,501 of the 37,118 APIs)</p>
+</li>
+<li>
+<p>Cross-platform: Runs on Windows, macOS and Linux.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-4-6"><a class="anchor" href="#net-4-6"></a><a class="link" href="#net-4-6"><a href="https://github.com/microsoft/dotnet/tree/main/releases/net46">4.6</a> LTS</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LTS until</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">January 2027</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">July 2015</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Visual Studio 2015</p>
+</li>
+<li>
+<p>Roslyn v1</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c6"><a class="anchor" href="#c6"></a><a class="link" href="#c6"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-60">C#6</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Static imports</dt>
+<dt class="hdlist1">➕ Exception filters</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">catch</span> <span class="p">(</span><span class="n">ExceptionType</span> <span class="p">[</span><span class="n">e</span><span class="p">])</span> <span class="nf">when</span> <span class="p">(</span><span class="n">expr</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Auto-property initializers</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Default values for getter-only properties</dt>
+<dt class="hdlist1">➕ Expression bodied members</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">void</span> <span class="nf">DisplayName</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="nf">ToString</span><span class="p">());</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Null propagator</dt>
+<dd>
+<p><code>?.</code> and <code>?[]</code></p>
+</dd>
+<dt class="hdlist1">➕ String interpolation</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Hello </span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">"</span><span class="p">);</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ <code>nameof</code> operator</dt>
+<dt class="hdlist1">➕ Index initializers</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span> <span class="n">foo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">IndexableClass</span> <span class="p">{</span> <span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">10</span> <span class="p">};</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Await in catch/finally blocks</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">try</span>
+<span class="p">{</span>
+    <span class="c1">// something that throws</span>
+<span class="p">}</span>
+<span class="k">catch</span>
+<span class="p">{</span>
+<span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Delay</span><span class="p">(</span><span class="m">1000</span><span class="p">);</span> <span class="c1">// using await in catch block</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="f-4"><a class="anchor" href="#f-4"></a><a class="link" href="#f-4">F# 4</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="vb-14"><a class="anchor" href="#vb-14"></a><a class="link" href="#vb-14">VB 14</a></h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-4-5"><a class="anchor" href="#net-4-5"></a><a class="link" href="#net-4-5"><a href="https://github.com/microsoft/dotnet/tree/main/releases/net45">4.5</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2012</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 4.0</p>
+</li>
+<li>
+<p>Visual Studio 2012</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="framework"><a class="anchor" href="#framework"></a><a class="link" href="#framework">Framework</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Background just-in-time (JIT) compilation</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="c5"><a class="anchor" href="#c5"></a><a class="link" href="#c5"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-50">C#5</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Asynchronous members aka <code>async</code> and <code>await</code></dt>
+<dt class="hdlist1">➕ Caller info attributes</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">public</span> <span class="k">void</span> <span class="nf">TraceMessage</span><span class="p">(</span>
+    <span class="kt">string</span> <span class="n">message</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">CallerMemberName</span><span class="p">]</span> <span class="kt">string</span> <span class="n">memberName</span> <span class="p">=</span> <span class="s">""</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">CallerFilePath</span><span class="p">]</span> <span class="kt">string</span> <span class="n">sourceFilePath</span> <span class="p">=</span> <span class="s">""</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">CallerLineNumber</span><span class="p">]</span> <span class="kt">int</span> <span class="n">sourceLineNumber</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="c1">// ...</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-4-0"><a class="anchor" href="#net-4-0"></a><a class="link" href="#net-4-0"><a href="https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-4">4</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2010</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 4.0</p>
+</li>
+<li>
+<p>Visual Studio 2010</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="framework-2"><a class="anchor" href="#framework-2"></a><a class="link" href="#framework-2">Framework</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Background garbage collection</dt>
+<dt class="hdlist1">➕ Code Contracts</dt>
+<dt class="hdlist1">➕ Dynamic Language Runtime</dt>
+<dt class="hdlist1">➕ Windows Presentation Foundation (WPF) 4</dt>
+<dd>
+<p>Adding amongst other things DataGrid, DatePicker, and Calendar controls.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="c4"><a class="anchor" href="#c4"></a><a class="link" href="#c4"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-40">C#4</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Dynamic binding</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">dynamic</span> <span class="n">dyn</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Named/optional arguments</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="nf">ExampleMethod</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="n">optionalint</span><span class="p">:</span> <span class="m">4</span><span class="p">);</span>
+<span class="c1">// where</span>
+<span class="kt">int</span> <span class="n">optionalint</span> <span class="p">=</span> <span class="m">10</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Generic covariant and contravariant</dt>
+<dd>
+<p>Implicit or explicit covariant <code>out</code> and contravariant <code>in</code> keyword.</p>
+</dd>
+<dt class="hdlist1">➕ Embedded interop types</dt>
+<dd>
+<p>Eases the deployment pain of creating COM interop assemblies</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-3-5"><a class="anchor" href="#net-3-5"></a><a class="link" href="#net-3-5"><a href="https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-35">3.5</a></a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 2.0</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="framework-3"><a class="anchor" href="#framework-3"></a><a class="link" href="#framework-3">Framework</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ WCF and WF integration</dt>
+<dd>
+<p>Windows Communication Foundation.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-3-0"><a class="anchor" href="#net-3-0"></a><a class="link" href="#net-3-0"><a href="https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#net-framework-30">3</a></a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2007</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 2.0</p>
+</li>
+<li>
+<p>Visual Studio 2008</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="framework-4"><a class="anchor" href="#framework-4"></a><a class="link" href="#framework-4">Framework</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Windows Presentation Foundation</dt>
+<dt class="hdlist1">➕ Windows Communication Foundation</dt>
+<dt class="hdlist1">➕ Windows Workflow Foundation</dt>
+<dt class="hdlist1">➕ Windows CardSpace</dt>
+<dd>
+<p>An identity selector app.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="c3"><a class="anchor" href="#c3"></a><a class="link" href="#c3"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-30">C#3</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Auto-implemented properties</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Implicitly typed local variables</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Anonymous types</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">Amount</span> <span class="p">=</span> <span class="m">108</span><span class="p">,</span> <span class="n">Message</span> <span class="p">=</span> <span class="s">"Hello"</span> <span class="p">};</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that v has no type.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Query expressions aka LINQ</dt>
+<dt class="hdlist1">➕ Lambda expressions</dt>
+<dt class="hdlist1">➕ Expression trees</dt>
+<dt class="hdlist1">➕ Extension methods</dt>
+<dt class="hdlist1">➕ Partial methods</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">partial</span> <span class="k">void</span> <span class="nf">OnSomethingHappened</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Object and collection initializers</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csharp"><span class="k">new</span> <span class="n">Cat</span> <span class="p">{</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">10</span>
+<span class="c1">// and</span>
+<span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">};</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-2-0"><a class="anchor" href="#net-2-0"></a><a class="link" href="#net-2-0">2</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2005</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 2.0</p>
+</li>
+<li>
+<p>Visual Studio 2005</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="framework-5"><a class="anchor" href="#framework-5"></a><a class="link" href="#framework-5">Framework</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Debugger edit and continue</dt>
+<dt class="hdlist1">➕ Improved scalability and performance</dt>
+<dt class="hdlist1">➕ ClickOnce deployment</dt>
+<dt class="hdlist1">➕ In ASP.NET 2.0, new controls and support for a broad array of browsers</dt>
+<dt class="hdlist1">➕ 64-bit support</dt>
+<dd>
+<p>For the first time.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="c02"><a class="anchor" href="#c02"></a><a class="link" href="#c02"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-20">C#02</a></a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">➕ Generics</dt>
+<dt class="hdlist1">➕ Partial types</dt>
+<dt class="hdlist1">➕ Anonymous methods</dt>
+<dt class="hdlist1">➕ Iterators</dt>
+<dt class="hdlist1">➕ Covariance and contravariance</dt>
+<dd>
+<p>Implicit reference conversion for array types and method groups.</p>
+</dd>
+<dt class="hdlist1">➕ Nullable value types</dt>
+<dt class="hdlist1">➕ Null-coalescing operator</dt>
+<dd>
+<p><code>??</code></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="net-1-0"><a class="anchor" href="#net-1-0"></a><a class="link" href="#net-1-0">1</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">released</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2002</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>CLR 1.0</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c1"><a class="anchor" href="#c1"></a><a class="link" href="#c1"><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history#c-version-10-1">C#1</a></a></h3>
+
+</div>
+</div>
+</div>
+</div><!-- Add backlinks to the current page --></main><div id="copyright">
+    <p id="copyright-notice">© Richard Groß
+         - with help from <a href="https://jekyllrb.com/">Jekyll</a>
+        and <a href="https://github.com/raghuveerdotnet/simply-jekyll">Simply Jekyll Theme</a></p>
+</div> </div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+</html>

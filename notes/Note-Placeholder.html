@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:site_name" content="Knowledge Continuum"/>
+    <meta property="og:description" content="Without this placeholder no auto-complete is generated.">
+    <meta property="article:author" content="https://richargh.de/about/"><meta property="og:title" content="Note Placeholder">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://richargh.de/notes/Note-Placeholder"><title>Richard's Blog</title>
+
+    <link rel="canonical" href="https://richargh.de/notes/Note-Placeholder"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <!--[if IE]>
+        <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
+    <link rel="alternate" type="application/rss+xml" href="https://richargh.de/feed.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="notes-page-subheader disable-select">
+        <div class="notes-page-site-heading">
+            <p><a href="/index.html">Richard's Blog</a></p>
+        </div>
+
+        <div class="notes-page-main-heading">
+            <p class="notes-page-heading"><a href="/notes">Notes and Thoughts</a></p>
+            <p class="notes-page-tagline">The journey from raw thoughts to <a href="/">blogposts</a></p>
+        </div>
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search Notes..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                })
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search_notes.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="https://richargh.de{url}" style="text-decoration: none; color: #333333;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })
+    </script><div class="notes-page-subheader disable-select" id="scroll-head" onclick="window.location.assign('/notes');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Notes</p>
+    </div></header><main>
+                <h1>Note Placeholder</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><div class="content"><div class="paragraph">
+<p>Without this placeholder no auto-complete is generated.</p>
+</div>
+</div><!-- Add backlinks to the current page --></main><div id="copyright">
+    <p id="copyright-notice">© Richard Groß
+         - with help from <a href="https://jekyllrb.com/">Jekyll</a>
+        and <a href="https://github.com/raghuveerdotnet/simply-jekyll">Simply Jekyll Theme</a></p>
+</div> </div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+</html>
