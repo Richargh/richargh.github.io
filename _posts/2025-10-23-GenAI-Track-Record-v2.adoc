@@ -81,6 +81,16 @@ status: ongoing
 ** A fake `curl` wrapper gives a perfect score on all 89 Terminal-Bench tasks without writing a single line of solution code.
 ** Navigating Chromium to a `file://` URL reads the gold answer directly from the task config — giving ~100% on all 812 WebArena tasks.
 
+== 2026-03 link:https://www.sciencedirect.com/science/article/abs/pii/S0160791X25002775[Creative scar without generative AI: Individual creativity fails to sustain while homogeneity keeps climbing]
+
+* In this study, we examine the impact of both the presence and absence of ChatGPT on sustained creative output and content homogeneity, leveraging two complementary methodologies:
+** a natural experiment (Study 1)
+** a controlled laboratory experiment with extended follow-ups (Study 2)
+* Generative AI enhances creative performance but erodes content diversity over time.
+* Upon AI withdrawal, creative performance drops remarkably while content homogeneity continues to increase.
+* Generative AI augments performance without fostering real creative ability, leading to a creativity illusion.
+* Large-scale natural experiment and longitudinal lab experiment provide robust causal evidence.
+
 // [#gemini-3-1-pro-launch]
 // == 2026-02-20 link:https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-pro-on-gemini-cli-gemini-enterprise-and-vertex-ai[Introducing Gemini 3.1 Pro on Google Cloud]
 //
