@@ -58,6 +58,13 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2026-09-19 link:https://nypost.com/2026/09/19/us-news/openai-anthropic-oversold-security-breaches-to-pressure-feds-into-protecting-turf-insiders/[OpenAI and Anthropic oversold AI security breaches to pressure feds into protecting turf: insiders]
+
+* OpenAI and Anthropic oversold “rogue AI” hacks to pressure the feds into regulating the industry which would effectively lock out future competition, tech insiders told The Post.
+* The security breaches were more like blips — not unpredictable harbingers of a hive-minded “swarm” ready to take over the web.
+* “[The bots] were simply told to get the best result possible on a test, and they correctly identified that the best way to do that was to get the answers, which is what they proceeded to do.”
+* “One man’s ‘the model escaped the sandbox’ is another man’s ‘you failed to build the sandbox correctly.’ There was a live route to the internet . . . and nobody was watching what the agents were doing while it ran,”
+
 == 2026-05-12 link:https://arxiv.org/abs/2605.07912[Sycophantic AI makes human interaction feel more effortful and less satisfying over time]
 
 * Millions of people now turn to artificial intelligence (AI) systems for personal advice, guidance, and support.
