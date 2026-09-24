@@ -254,4 +254,8 @@ wann?
 | Xp Days
 | 2018-11-09
 
+| What is Software Quality
+| IT Day Frankfurt
+| 2018-10-26
+
 |===
