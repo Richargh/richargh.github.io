@@ -93,4 +93,4 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 
 == The Surprising Similarities Between Renovating your House and your Code Base
 
-* link:https://conference.ctocraft.com/berlin-2025/agenda/[CTO Craft Con Berlin 2025 🇬🇧] | link:https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025[Slides]
+* link:https://conference.ctocraft.com/berlin-2025/agenda/[CTO Craft Con Berlin 2025 🇬🇧] | link:https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025[Slides] | link:https://www.youtube.com/watch?v=xsd4PS-gfJk[Video]
