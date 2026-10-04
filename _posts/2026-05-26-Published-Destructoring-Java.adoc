@@ -1,0 +1,7 @@
+---
+title: "Just Published: Destructoring is the future of Javas Encapsulation"
+tags: java encapsulation destructoring
+comments: false
+---
+
+Encapsulation in Java has been broken since the Java Development Kit (JDK) 5 but there is hope on the horizon. JAVAPRO has just published my link:https://javapro.io/2026/05/26/destructoring-is-the-future-of-javas-encapsulation/[article about it]. Enjoy :)

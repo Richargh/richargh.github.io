@@ -14,6 +14,10 @@ content-type: eg
 
 2+| *2026*
 
+| Destructoring is the future of Javas Encapsulation
+| link:https://javapro.io/2026/05/26/destructoring-is-the-future-of-javas-encapsulation/[JavaPro.io 2026-05-26 🇬🇧] +
+link:https://javapro.io/de/destructoring-ist-die-zukunft-von-javas-encapsulation/[JavaPro.io 2026-06-08 🇩🇪]
+
 | Kotlin kontra Java - Part 3 - Interop
 | link:https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/[JavaPro.io 2026-05-07 🇬🇧]
 
