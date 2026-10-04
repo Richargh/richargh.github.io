@@ -19,13 +19,17 @@ content-type: eg
 link:https://javapro.io/de/destructoring-ist-die-zukunft-von-javas-encapsulation/[JavaPro.io 2026-06-08 🇩🇪]
 
 | Kotlin kontra Java - Part 3 - Interop
-| link:https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/[JavaPro.io 2026-05-07 🇬🇧]
+| link:https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/[JavaPro.io 2026-05-07 🇬🇧] +
+link:https://javapro.io/de/kotlin-kontra-java-teil-3-eine-sprache-fuer-interoperabilitaet/[JavaPro.io 2026-07-13 🇩🇪]
 
 | Kotlin kontra Java - Part 2 - MultiPlatform
-| link:https://javapro.io/2026/04/22/kotlin-kontra-java-part-2-multiplatform/[JavaPro.io 2026-04-22 🇬🇧]
+| link:https://javapro.io/2026/04/22/kotlin-kontra-java-part-2-multiplatform/[JavaPro.io 2026-04-22 🇬🇧] +
+link:https://javapro.io/de/kotlin-kontra-java-teil-2-multiplattform/[JavaPro.io 2026-07-06 🇩🇪]
 
 | Kotlin kontra Java - Part 1 - Ecosystem
-| link:https://javapro.io/2026/04/16/kotlin-kontra-java-part-1-ecosystem/[JavaPro.io 2026-04-16 🇬🇧]
+| link:https://javapro.io/2026/04/16/kotlin-kontra-java-part-1-ecosystem/[JavaPro.io 2026-04-16 🇬🇧] +
+link:https://javapro.io/de/kotlin-kontra-java-teil-1-oekosystem/[JavaPro.io 2026-06-29 🇩🇪]
+
 
 2+| *2025*
 
