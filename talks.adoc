@@ -7,6 +7,10 @@ content-type: eg
 
 NOTE: These are all past talks. For upcoming talks see link:/posts/upcoming[upcoming].
 
+== Ai-assisted Modernisation
+
+* link:https://agenticai.bettercode.eu/veranstaltung-89613-se-0-ki-gestuetzte-legacy-modernisierung-von-systemverstaendnis-zu-kontrollierter-veraenderung.html[BetterCode(Agentic Ai) 2026 🇩🇪] | link:https://speakerdeck.com/richargh/ki-gestutzte-legacy-modernisierung-v1-at-bettercode-agentic-ai-2026[Slides]
+
 == Beehive Architecture
 
 * link:https://jugsaxony.org/day/programm/details/130[JUG Saxony Day 2023 🇩🇪] | link:https://speakerdeck.com/richargh/bienenstock-architektur[Slides] | link:https://vimeo.com/875223690[Video] | link:https://github.com/Richargh/testdsl[TestDsl Code]
