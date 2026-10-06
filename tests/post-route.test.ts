@@ -13,6 +13,7 @@ test("metadata is escaped by the route instead of inserted as raw HTML", () => {
     tags: ["<b>tag</b>"],
     comments: false,
     html: "<p>converted AsciiDoc is the only raw insertion point</p>",
+    excerpt: "converted AsciiDoc is the only raw insertion point",
   } satisfies Post);
 
   assert.match(html, /&lt;script&gt;alert\(&#39;xss&#39;\)&lt;\/script&gt;/);

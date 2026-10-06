@@ -1,7 +1,11 @@
-export const title = "Richargh's Blog";
-export const paragraph = "This is the smallest possible Mastro bootstrap page for the blog migration.";
+import { renderFeedList } from "../_includes/FeedList.ts";
+import { loadAllPosts } from "../lib/content.ts";
 
-export function render(): string {
+export const title = "Richard's Blog";
+
+export async function render(): Promise<string> {
+  const posts = await loadAllPosts({ buildDate: process.env.MASTRO_BUILD_DATE });
+
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -12,8 +16,7 @@ export function render(): string {
 <body>
   <main>
     <h1>${title}</h1>
-    <p>${paragraph}</p>
-    <p><a href="/posts/AI-Waste">GenAI is a waste of our time</a></p>
+    ${renderFeedList(posts)}
   </main>
 </body>
 </html>`;

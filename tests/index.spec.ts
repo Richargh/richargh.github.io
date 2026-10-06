@@ -1,14 +1,14 @@
 import { expect, test } from "@playwright/test";
 
-test("index title is visible", async ({ page }) => {
+test("index feed is generated from posts", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1, name: "Richargh's Blog" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "GenAI is a waste of our time" })).toHaveAttribute("href", "/posts/AI-Waste");
+  await expect(page.getByRole("heading", { level: 1, name: "Richard's Blog" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /GenAI is a waste of our time/ })).toHaveAttribute("href", "/posts/AI-Waste");
 });
 
 test("selected AsciiDoc post renders end to end", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "GenAI is a waste of our time" }).click();
+  await page.getByRole("link", { name: /GenAI is a waste of our time/ }).click();
 
   await expect(page).toHaveURL(/\/posts\/AI-Waste$/);
   await expect(page.getByRole("heading", { level: 1, name: "GenAI is a waste of our time" })).toBeVisible();
