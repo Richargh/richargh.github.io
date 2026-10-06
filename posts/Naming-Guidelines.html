@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta property="og:site_name" content="Knowledge Continuum"/>
+    <meta property="og:description" content="Programming is a team sport where we use code to send messages of intent to our future selves.
+The messages are the names we have assigned to various function, class and other code elements.
+The assigned name can then help our future selves figure out the intent of an element and if a new piece of functionality goes here or over there.
+Thus naming is inseparable from design.
+A well-chosen name is the difference between one hour of &quot;I know exactly what to do&quot; and days and weeks of rework because &quot;I thought I needed to do this but actually&amp;#8230;&amp;#8203;&quot;.">
+    <meta property="article:author" content="https://richargh.de/about/"><meta property="og:title" content="Naming Guidelines">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://richargh.de/posts/Naming-Guidelines"><title>Richard's Blog</title>
+
+    <link rel="canonical" href="https://richargh.de/posts/Naming-Guidelines"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <!--[if IE]>
+        <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
+    <link rel="alternate" type="application/rss+xml" href="https://richargh.de/feed.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="dashboard disable-select">
+        <div class="site-heading profile-board-col">
+           <h4 class="medium"><a href="/">Richard's Blog</a></h4>
+        </div>
+
+        <div class="userboard profile-board-col">
+            <div class="username">
+                <p class="title-sans">Richard Groß</p>
+            </div>
+            <div class="userdesc">
+                <p class="title-sans">IT Archaeologist</p>
+            </div>
+        </div>
+    </div>
+    <div class="avatar disable-select">
+        <a class="avatar-link" href="/">
+            <img src="/assets/img/profile.jpg" class="avatar-img" alt="avatar"/>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <div class="main-site-subheader menu disable-select">
+        <div class="talks">
+            <a style="text-decoration: none;" href="/talks">
+                <!-- from https://www.reshot.com/free-svg-icons/item/speaker-ZQA938GVWS/ -->
+                <svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
+                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
+                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
+                </svg>
+                <p class="home-p">Talks</p>
+            </a>
+        </div>
+        <div class="published">
+            <a style="text-decoration: none;" href="/published">
+                <!-- from https://www.reshot.com/free-svg-icons/item/paper-plane-D72FP5NHXZ/ -->
+                <svg class="icon-published" width="25" height="25" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Layer_x0020_1"><g id="_559822392"><path id="_559822728" class="fil0" d="M1657.53 872.581 348.07 521.715l493.348 993.204 338.593-451.457-.1-.074a31.858 31.858 0 0 1 16.456-11.467l461.159-179.34zM296.27 441.664l1470.41 393.994c10.174 2.183 19.089 9.275 23.141 19.697 6.406 16.47-1.755 35.018-18.225 41.423l-11.599-29.824 11.5 29.75-545.971 212.322-362.47 483.291a31.844 31.844 0 0 1-12.97 11.81c-15.828 7.86-35.034 1.403-42.895-14.424l28.66-14.236-28.626 14.125L260.4 488.722c-4.181-7.128-5.62-15.863-3.312-24.475 4.573-17.07 22.121-27.201 39.191-22.628l-.01.04z"/><path
+                            id="_559822560" class="fil0"
+                            d="M305.626 445.908c-14.705-9.733-34.518-5.705-44.251 9-9.734 14.705-5.705 34.518 9 44.251l917.512 610.055c14.705 9.734 34.518 5.705 44.251-9 9.733-14.705 5.705-34.518-9-44.251L305.626 445.908z"/><path
+                            id="_559822608" class="fil0"
+                            d="M1237.39 1080.09c-1.38-17.604-16.772-30.756-34.376-29.375-17.604 1.38-30.756 16.772-29.375 34.376l28.922 361.603-132.165-169.905c-10.838-13.944-30.931-16.462-44.875-5.625-13.944 10.838-16.462 30.931-5.625 44.875l197.058 253.327c6.326 8.797 16.966 14.166 28.553 13.24 17.617-1.407 30.755-16.833 29.347-34.449l-.026.003-37.437-468.07z"/></g></g>
+                    <path style="fill:none" d="M0 0h2048v2048H0z"/>
+                </svg>
+                <p class="published-p">Published</p>
+            </a>
+        </div>
+        <div class="built">
+            <a style="text-decoration: none;" href="/built">
+                <!-- from https://www.reshot.com/free-svg-icons/item/tool-UACF35PGN9/ -->
+                <svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg" >
+                    <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
+                </svg>
+                <p class="built-p">Built</p>
+            </a>
+        </div>
+        <div class="home">
+            <a style="text-decoration: none;" href="/about">
+                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="home-p">About</p>  
+            </a>
+        </div>
+        <div class="categories">
+            <a style="text-decoration: none;" href="/tags">
+            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="categories-p">Tags</p>
+            </a>
+        </div>
+        <div class="rss">
+            <a style="text-decoration: none;" href="/feed.xml">
+                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            <p class="rss-p">RSS</p>
+            </a>
+        </div>
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search the Blog..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                })
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="https://richargh.de{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })
+    </script><div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Home</p>
+    </div></header><main>
+                <h1>Naming Guidelines</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#11-October-2020" class="tag">October-11-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#naming" class="tag">naming</a></li><li><a href="/tags/#code" class="tag">code</a></li></ul><div class="content"><div class="paragraph">
+<p>Programming is a team sport where we use code to send messages of intent to our future selves.
+<strong>The messages</strong> are <strong>the names</strong> we have assigned to various <code>function</code>, <code>class</code> and other code elements.
+The assigned name can then help our future selves figure out the intent of an element and if a new piece of functionality goes here or over there.
+Thus naming is inseparable from design.
+A well-chosen name is the difference between one hour of <em>"I know exactly what to do"</em> and days and weeks of rework because <em>"I thought I needed to do this but actually&#8230;&#8203;"</em>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Leon Bambrick
+</div>
+</div>
+<div class="paragraph">
+<p>True to the above quote I still find namings things very hard.
+Fortunately <a href="https://journal.stuffwithstuff.com/">Bob Nystrom</a> has written two great blog posts on the subject: <a href="https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/">Long Names are Long</a> and <a href="https://journal.stuffwithstuff.com/2009/06/05/naming-things-in-code/">Naming Things in Code</a>.
+These two describe guidelines for naming which I want to reiterate, extend and sometimes even change.
+Most of the stuff I&#8217;ve added are ideas from the community (f.ex. <a href="https://printhelloworld.de/">Johannes Seitz</a>).
+I&#8217;m not making any originality vows here :)</p>
+</div>
+<div class="paragraph">
+<p>In a future post I&#8217;d also like to take a look at <a href="https://arlobelshee.com/">Arlo Belshee&#8217;s</a> "Naming is a Process" which describes the process of coming up with a good name.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you know about even more great articles, books, etc. please consider contacting me using Twitter and the like.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect1">
+<h2 id="good-names"><a class="anchor" href="#good-names"></a><a class="link" href="#good-names">Good Names</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A name has one goal:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It needs to reveal the authors <strong>intention</strong> (see <a href="https://www.martinfowler.com/bliki/BeckDesignRules.html">Kent Beck&#8217;s Four Rules of Simple Design</a>). Which means:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It needs to be <strong>clear</strong>: you need to know what the name refers to (<a href="https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/">Long Names are Long</a>).</p>
+</li>
+<li>
+<p>It needs to be <strong>precise</strong>: you need to know what it does <strong>not</strong> refer to (<a href="https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/">Long Names are Long</a>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once a name has accomplished its goal, any additional characters are redundant.</p>
+</div>
+<div class="paragraph">
+<p>The following guidelines will help us write terse code that communicates intention.</p>
+</div>
+<div class="sect2">
+<h3 id="use-one-word-per-concept"><a class="anchor" href="#use-one-word-per-concept"></a><a class="link" href="#use-one-word-per-concept">Use one word per concept</a></h3>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; Use one word per concept.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad (three variations for the same concept: fetching accounts):</span>
+<span class="k">fun</span> <span class="nf">fetchActiveAccount</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Account</span><span class="p">&gt;</span>
+<span class="k">fun</span> <span class="nf">allActiveAccounts</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Account</span><span class="p">&gt;</span>
+<span class="k">fun</span> <span class="nf">retrieveActiveAccountInfo</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Account</span><span class="p">&gt;</span>
+<span class="c1">// Better</span>
+<span class="k">fun</span> <span class="nf">allActiveAccounts</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Account</span><span class="p">&gt;</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="omit-words-that-are-obvious-given-a-variables-or-parameters-type"><a class="anchor" href="#omit-words-that-are-obvious-given-a-variables-or-parameters-type"></a><a class="link" href="#omit-words-that-are-obvious-given-a-variables-or-parameters-type">Omit words that are obvious given a variable’s or parameter’s type</a></h3>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; Don&#8217;t put the type in the variable’s name</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="kd">val</span> <span class="py">integerId</span><span class="p">:</span> <span class="nc">Int</span>
+<span class="kd">val</span> <span class="py">nameString</span><span class="p">:</span> <span class="nc">String</span>
+<span class="c1">// Better</span>
+<span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="nc">Int</span>
+<span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="nc">String</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>&#10003; Pair Numbers and their unit (5 meter, 20 seconds, 5 €) so you can never pass seconds to a method that expects milliseconds (length class in the appendix)</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="kd">val</span> <span class="py">lengthInMillis</span><span class="p">:</span> <span class="nc">Int</span>
+<span class="c1">// Better</span>
+<span class="kd">val</span> <span class="py">length</span><span class="p">:</span> <span class="nc">Length</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>&#10003; Express concepts with types and avoid <a href="https://wiki.c2.com/?StringlyTyped">stringly typed</a> code.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="kd">class</span> <span class="nc">Person</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">street</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">zipCode</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">city</span><span class="p">:</span> <span class="nc">String</span><span class="p">){</span> <span class="cm">/* */</span> <span class="p">}</span>
+
+<span class="c1">// Better:</span>
+<span class="kd">class</span> <span class="nc">Person</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="nc">Name</span><span class="p">,</span> <span class="kd">val</span> <span class="py">address</span><span class="p">:</span> <span class="nc">Address</span><span class="p">){</span> <span class="cm">/* */</span> <span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Address</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="py">street</span><span class="p">:</span> <span class="nc">Street</span><span class="p">,</span> <span class="kd">val</span> <span class="py">zipCode</span><span class="p">:</span> <span class="nc">ZipCode</span><span class="p">,</span> <span class="kd">val</span> <span class="py">city</span><span class="p">:</span> <span class="nc">City</span><span class="p">){</span> <span class="cm">/* */</span> <span class="p">}</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>&#10003; Name collections not by their type but what&#8217;s in them using the (forced) plural form.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="kd">val</span> <span class="py">personList</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Person</span><span class="p">&gt;</span>
+<span class="kd">val</span> <span class="py">furnitureList</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Furniture</span><span class="p">&gt;</span>
+<span class="kd">val</span> <span class="py">dogPersonHashMap</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">Dog</span><span class="p">,</span> <span class="nc">Person</span><span class="p">&gt;</span>
+<span class="c1">// Better</span>
+<span class="kd">val</span> <span class="py">people</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Person</span><span class="p">&gt;</span>
+<span class="kd">val</span> <span class="py">furnitures</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Furniture</span><span class="p">&gt;</span>
+<span class="kd">val</span> <span class="py">dogOwners</span><span class="p">:</span> <span class="nc">Map</span><span class="p">&lt;</span><span class="nc">Dog</span><span class="p">,</span> <span class="nc">Person</span><span class="p">&gt;</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>&#10003; Don’t add the argument name to function name. It&#8217;s redundant since our type system and IDE tell us everything we need to know.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="k">fun</span> <span class="nf">mergeTableCells</span><span class="p">(</span><span class="n">cells</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">TableCell</span><span class="p">&gt;)</span>
+<span class="c1">// Better</span>
+<span class="k">fun</span> <span class="nf">merge</span><span class="p">(</span><span class="n">cells</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">TableCell</span><span class="p">&gt;)</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This also makes the call easier to read: <code>merge(cells)</code> vs <code>mergeTableCells(tableCells)</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>&#10003; Only describe the return in the name if there are identical functions that return different types.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="n">list</span><span class="p">.</span><span class="nf">countInt</span><span class="p">()</span>
+<span class="c1">// Better:</span>
+<span class="n">list</span><span class="p">.</span><span class="nf">count</span><span class="p">()</span>
+<span class="n">message</span><span class="p">.</span><span class="nf">valueAsInt</span><span class="p">()</span>
+<span class="n">message</span><span class="p">.</span><span class="nf">valueAsFloat</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="omit-words-that-dont-disambiguate-the-name"><a class="anchor" href="#omit-words-that-dont-disambiguate-the-name"></a><a class="link" href="#omit-words-that-dont-disambiguate-the-name">Omit words that don’t disambiguate the name</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Take a look at <code>recentlyUpdatedAnnualSalesBid</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Are there updated annual sales bids that aren’t <strong>recent</strong>?</p>
+</li>
+<li>
+<p>Are there recent annual sales bids that were not <strong>updated</strong>?</p>
+</li>
+<li>
+<p>Are there recently updated sales bids that aren’t <strong>annual</strong>?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>And so on. We can apply such questioning to all of our names to figure out which words are just fluff, don’t disambiguate the name and should be removed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="omit-words-that-are-known-from-the-surrounding-context"><a class="anchor" href="#omit-words-that-are-known-from-the-surrounding-context"></a><a class="link" href="#omit-words-that-are-known-from-the-surrounding-context">Omit words that are known from the surrounding context</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Class variables are in the context of their class. Class names are in the context of their component and so on.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad:</span>
+<span class="kd">class</span> <span class="nc">AnnualHolidaySale</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="py">annualSaleRebate</span><span class="p">:</span> <span class="nc">Rebate</span><span class="p">){</span>
+    <span class="k">fun</span> <span class="nf">promoteHolidaySale</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* */</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Better:</span>
+<span class="kd">class</span> <span class="nc">AnnualHolidaySale</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="py">rebate</span><span class="p">:</span> <span class="nc">Rebate</span><span class="p">){</span>
+    <span class="k">fun</span> <span class="nf">promote</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* */</span> <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="omit-words-that-dont-mean-much-of-anything"><a class="anchor" href="#omit-words-that-dont-mean-much-of-anything"></a><a class="link" href="#omit-words-that-dont-mean-much-of-anything">Omit words that don’t mean much of anything</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We&#8217;re looking at you <code>manager</code>, <code>instance</code>, <code>amount</code>, <code>state</code> etc.</p>
+</li>
+<li>
+<p><code>Connection</code> provides exactly the same information as <code>ConnectionManager</code>.</p>
+</li>
+<li>
+<p>If in doubt ask yourself <em>“Would this name mean the same thing if I removed the word?”</em>.</p>
+</li>
+<li>
+<p>Never use <em>set-Methods</em>. The Merriam-Webster dictionary has more than 25 definitions of the verb set. It is one of the least-precise words you can use. Consider using names that express intent and give you the ability to protect invariants.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad</span>
+<span class="n">car</span><span class="p">.</span><span class="nf">setEngineState</span><span class="p">(</span><span class="nc">EngineState</span><span class="p">.</span><span class="nc">On</span><span class="p">)</span>
+<span class="n">car</span><span class="p">.</span><span class="nf">setDestination</span><span class="p">(</span><span class="nc">London</span><span class="p">)</span>
+<span class="c1">// Better</span>
+<span class="n">car</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
+<span class="n">car</span><span class="p">.</span><span class="nf">plotCourseTo</span><span class="p">(</span><span class="nc">London</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Never use <em>get-Methods</em>. The Merriam-Webster dictionary has more than 15 definitions of the verb get. Name functions that just return a property and don’t change state using nouns. Using a get as prefix does not provide any meaningful additional information and is just fluff.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// Bad</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">getCount</span><span class="p">()</span>
+<span class="c1">// Better</span>
+<span class="n">dogs</span><span class="p">.</span><span class="nf">count</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary"><a class="anchor" href="#summary"></a><a class="link" href="#summary">Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Use one word per concept</p>
+</li>
+<li>
+<p>Omit words that are obvious given a variable’s or parameter’s type</p>
+</li>
+<li>
+<p>Omit words that don’t disambiguate the name</p>
+</li>
+<li>
+<p>Omit words that are known from the surrounding context</p>
+</li>
+<li>
+<p>Omit words that don’t mean much of anything</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I hope these guidelines provide value to you.
+Most of them are from <a href="https://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/">Long Names are Long</a> and I&#8217;ve only added little bits here and there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="appendix-length-class"><a class="anchor" href="#appendix-length-class"></a><a class="link" href="#appendix-length-class">Appendix: Length class</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s not hard to write a class that pairs a number and a unit.
+I&#8217;ve included an example below with lots of useful methods.
+Depending on your domain a money object can be more challenging because you do have to remember your unit and can&#8217;t convert everything to a default unit.
+Please also not that I used integer precision for my length.
+Depending on your domain you might want to use long or BigDecimal instead.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="kotlin"><span class="c1">// (you can write this much shorter if you use Kotlin data classes or Java records)</span>
+<span class="kd">class</span> <span class="nc">Length</span> <span class="k">private</span> <span class="k">constructor</span><span class="p">(</span><span class="k">private</span> <span class="kd">val</span> <span class="py">rawValueInMeter</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Comparable</span><span class="p">&lt;</span><span class="nc">Length</span><span class="p">&gt;{</span>
+    <span class="c1">// so that Length(4) == Length(4)</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">equals</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="nc">Any</span><span class="p">?):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">other</span> <span class="p">===</span> <span class="k">this</span><span class="p">)</span> <span class="k">return</span> <span class="k">true</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">other</span> <span class="p">!</span><span class="k">is</span> <span class="nc">Length</span><span class="p">)</span> <span class="k">return</span> <span class="k">false</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="nc">Objects</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="n">rawValueInMeter</span><span class="p">,</span> <span class="n">other</span><span class="p">.</span><span class="n">rawValueInMeter</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// so that you can use Length in a Set or Map</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">hashCode</span><span class="p">():</span> <span class="nc">Int</span> <span class="p">{</span> <span class="k">return</span> <span class="nc">Objects</span><span class="p">.</span><span class="nf">hash</span><span class="p">(</span><span class="n">rawValueInMeter</span><span class="p">)</span> <span class="p">}</span>
+    <span class="c1">// for nicer debugging</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">toString</span><span class="p">():</span> <span class="nc">String</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"$rawValueInMeter m"</span> <span class="p">}</span>
+
+    <span class="c1">// so that Length(4) &lt; Length(5)</span>
+    <span class="k">override</span> <span class="k">operator</span> <span class="k">fun</span> <span class="nf">compareTo</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="nc">Length</span><span class="p">):</span> <span class="nc">Int</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">rawValueInMeter</span><span class="p">.</span><span class="nf">compareTo</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="n">rawValueInMeter</span><span class="p">)</span>
+    <span class="c1">// so that Length(4) + Length(5) = Length(9)</span>
+    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">plus</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="nc">Length</span><span class="p">)</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="n">rawValueInMeter</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">rawValueInMeter</span><span class="p">)</span>
+    <span class="c1">// so that Length(8) - Length(5) = Length(3)</span>
+    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">minus</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="nc">Length</span><span class="p">)</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="n">rawValueInMeter</span> <span class="p">-</span> <span class="n">other</span><span class="p">.</span><span class="n">rawValueInMeter</span><span class="p">)</span>
+
+    <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+        <span class="c1">// so that you can write Length.fromMeter(4) and know the unit</span>
+        <span class="k">fun</span> <span class="nf">fromMeter</span><span class="p">(</span><span class="n">meter</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">=</span> <span class="nc">Length</span><span class="p">(</span><span class="n">meter</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div><!-- Add backlinks to the current page --></main><div id="copyright">
+    <p id="copyright-notice">© Richard Groß
+         - with help from <a href="https://jekyllrb.com/">Jekyll</a>
+        and <a href="https://github.com/raghuveerdotnet/simply-jekyll">Simply Jekyll Theme</a></p>
+</div> </div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+</html>
