@@ -15,6 +15,26 @@ test("explicit permalink post renders at its public URL", async ({ page }) => {
   await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/upcoming/");
 });
 
+test("home-page browser search uses the generated post search index", async ({ page }) => {
+  await page.goto("/");
+
+  await page.waitForResponse((response) => response.url().endsWith("/search.json") && response.ok());
+  await page.getByPlaceholder("Search the Blog...").pressSequentially("waste");
+
+  const result = page.locator("#results-container .search_res").filter({ hasText: "GenAI is a waste of our time" });
+  await expect(result).toBeVisible();
+  await expect(result.getByRole("link")).toHaveAttribute("href", "https://richargh.de/posts/AI-Waste");
+});
+
+test("generated autocomplete.txt is served without trailing empty suggestions", async ({ page }) => {
+  const response = await page.goto("/autocomplete.txt");
+  expect(response?.ok()).toBeTruthy();
+  const body = await page.locator("body").innerText();
+
+  expect(body).toContain("GenAI is a waste of our time");
+  expect(body.trimEnd().endsWith(";")).toBeFalsy();
+});
+
 test("selected AsciiDoc post renders end to end", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("link", { name: /GenAI is a waste of our time/ }).click();
