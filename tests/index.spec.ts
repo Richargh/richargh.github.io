@@ -38,6 +38,18 @@ test("home-page browser search uses the generated post search index", async ({ p
   await expect(result.getByRole("link")).toHaveAttribute("href", "https://richargh.de/posts/AI-Waste");
 });
 
+test("tag and date compatibility anchors are served from generated indexes", async ({ page }) => {
+  await page.goto("/tags/#java");
+  await expect(page).toHaveURL(/\/tags\/#java$/);
+  await expect(page.locator("h3#java")).toHaveText("Java");
+  await expect(page.locator("h3#java")).toBeVisible();
+
+  await page.goto("/dates/#26-May-2026");
+  await expect(page).toHaveURL(/\/dates\/#26-May-2026$/);
+  await expect(page.locator('h3[id="26-May-2026"]')).toHaveText("26-May-2026");
+  await expect(page.locator('h3[id="26-May-2026"]')).toBeVisible();
+});
+
 test("generated autocomplete.txt is served without trailing empty suggestions", async ({ page }) => {
   const response = await page.goto("/autocomplete.txt");
   expect(response?.ok()).toBeTruthy();
