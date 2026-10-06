@@ -13,6 +13,7 @@ export function render(): string {
   <main>
     <h1>${title}</h1>
     <p>${paragraph}</p>
+    <p><a href="/posts/AI-Waste">GenAI is a waste of our time</a></p>
   </main>
 </body>
 </html>`;

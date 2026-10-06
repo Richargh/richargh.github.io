@@ -5,12 +5,18 @@
   "type": "module",
   "description": "Phase 1 bootstrap for migrating the blog to Mastro.",
   "scripts": {
-    "dev": "node --experimental-strip-types server.ts",
+    "dev": "npm run generate && node --experimental-strip-types server.ts",
     "generate": "node --experimental-strip-types scripts/generate.ts",
-    "test": "playwright test"
+    "lint": "oxlint --deny-warnings",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:unit": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "devDependencies": {
     "@mastrojs/mastro": "npm:@jsr/mastrojs__mastro@0.8.10",
-    "@playwright/test": "1.63.0"
+    "@playwright/test": "1.63.0",
+    "@std/yaml": "npm:@jsr/std__yaml@1.1.1",
+    "asciidoctor": "3.0.4",
+    "oxlint": "1.87.0"
   }
 }

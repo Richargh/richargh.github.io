@@ -3,4 +3,18 @@ import { expect, test } from "@playwright/test";
 test("index title is visible", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1, name: "Richargh's Blog" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "GenAI is a waste of our time" })).toHaveAttribute("href", "/posts/AI-Waste");
+});
+
+test("selected AsciiDoc post renders end to end", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "GenAI is a waste of our time" }).click();
+
+  await expect(page).toHaveURL(/\/posts\/AI-Waste$/);
+  await expect(page.getByRole("heading", { level: 1, name: "GenAI is a waste of our time" })).toBeVisible();
+  const aiWasteImage = page.getByRole("img", { name: "AI Written" });
+  await expect(aiWasteImage).toBeVisible();
+  await expect.poll(() => aiWasteImage.evaluate((image) => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(page.getByText("Try to keep E-Mails to")).toBeVisible();
+  await expect(page.getByRole("link", { name: "AI Written, AI Read" })).toHaveAttribute("href", "https://marketoonist.com/2023/03/ai-written-ai-read.html");
 });
