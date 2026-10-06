@@ -24,7 +24,7 @@ export function convertAsciiDocFragment(source: string, options: AsciiDocOptions
   }
   assertIncludesAreAllowed(source, options.allowIncludesFrom);
 
-  return String(asciidoctor.convert(source, {
+  const html = String(asciidoctor.convert(source, {
     backend: "html5",
     safe: options.safeMode,
     standalone: false,
@@ -32,8 +32,21 @@ export function convertAsciiDocFragment(source: string, options: AsciiDocOptions
       icons: options.attributes.icons ? "font" : undefined,
       sectlinks: options.attributes.sectlinks,
       sectanchors: options.attributes.sectanchors,
+      idprefix: "",
+      idseparator: "-",
     },
   }));
+
+  return normalizeCodeCalloutsForMicroLighter(html);
+}
+
+function normalizeCodeCalloutsForMicroLighter(html: string): string {
+  return html.replaceAll(/<pre\b[^>]*><code\b[^>]*>[\s\S]*?<\/code><\/pre>/g, (block) =>
+    block.replaceAll(
+      /<i class="conum" data-value="(\d+)"><\/i><b>\(\1\)<\/b>/g,
+      "($1)",
+    ),
+  );
 }
 
 function assertIncludesAreAllowed(source: string, allowIncludesFrom: string[]): void {

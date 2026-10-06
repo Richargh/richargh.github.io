@@ -2,8 +2,17 @@ import { expect, test } from "@playwright/test";
 
 test("index feed is generated from posts", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1, name: "Richard's Blog" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 4, name: "Richard's Blog" })).toBeVisible();
   await expect(page.getByRole("link", { name: /GenAI is a waste of our time/ })).toHaveAttribute("href", "/posts/AI-Waste");
+});
+
+test("explicit permalink post renders at its public URL", async ({ page }) => {
+  await page.goto("/posts/upcoming/");
+
+  await expect(page).toHaveURL(/\/posts\/upcoming\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Upcoming" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Upcoming Talks" })).toBeVisible();
+  await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/upcoming/");
 });
 
 test("selected AsciiDoc post renders end to end", async ({ page }) => {

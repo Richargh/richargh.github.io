@@ -57,6 +57,7 @@ export async function loadPost(sourcePath: string): Promise<Post> {
   const inferred = inferPostMetadata(sourcePath);
   const title = stringAttribute(attributes.title) ?? inferred.title;
   const slug = inferred.title;
+  const permalink = stringAttribute(attributes.permalink);
   const html = convertAsciiDocFragment(body);
 
   return {
@@ -64,7 +65,7 @@ export async function loadPost(sourcePath: string): Promise<Post> {
     title,
     date: inferred.date,
     slug,
-    urlPath: `/posts/${slug}`,
+    urlPath: permalink ?? `/posts/${slug}`,
     tags: normalizeTags(attributes.tags),
     status: stringAttribute(attributes.status),
     comments: booleanAttribute(attributes.comments) ?? true,

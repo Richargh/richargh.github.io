@@ -18,5 +18,8 @@
     "@std/yaml": "npm:@jsr/std__yaml@1.1.1",
     "asciidoctor": "3.0.4",
     "oxlint": "1.87.0"
+  },
+  "dependencies": {
+    "microlighter": "2.0.0"
   }
 }

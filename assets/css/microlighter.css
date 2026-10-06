@@ -1,0 +1,78 @@
+/* MicroLighter theme adapted for the existing Simply Jekyll code-block styling.
+   Keep source blocks light even when the browser/OS prefers a dark color scheme. */
+[data-syntax-theme="github"] {
+  color-scheme: light;
+  --syntax-comment: #6e7781;
+  --syntax-keyword: #cf222e;
+  --syntax-operator: #24292f;
+  --syntax-string: #0a3069;
+  --syntax-constant: #0550ae;
+  --syntax-function: #8250df;
+  --syntax-type: #8250df;
+  --syntax-variable: #953800;
+  --syntax-property: #0550ae;
+  --syntax-tag: #116329;
+  --syntax-selector: #8250df;
+  --syntax-inserted: #116329;
+  --syntax-deleted: #cf222e;
+}
+
+[data-syntax-theme="github"] pre:has(> code[class*="language-"]) {
+  background-color: #f7f7f7;
+  color: #555;
+  overflow: auto;
+}
+
+[data-syntax-theme="github"] pre > code[class*="language-"] {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 100%;
+  background-color: #f7f7f7;
+}
+
+::highlight(comment),
+::highlight(quote) { color: var(--syntax-comment); }
+
+::highlight(keyword),
+::highlight(storage),
+::highlight(at-rule),
+::highlight(doctype),
+::highlight(important),
+::highlight(section) { color: var(--syntax-keyword); }
+
+::highlight(operator),
+::highlight(punctuation) { color: var(--syntax-operator); }
+
+::highlight(string),
+::highlight(regexp),
+::highlight(attribute-value),
+::highlight(link),
+::highlight(raw) { color: var(--syntax-string); }
+
+::highlight(numeric),
+::highlight(boolean),
+::highlight(constant),
+::highlight(symbol),
+::highlight(character-entity),
+::highlight(anchor),
+::highlight(entity) { color: var(--syntax-constant); }
+
+::highlight(function),
+::highlight(decorator),
+::highlight(animation) { color: var(--syntax-function); }
+
+::highlight(type),
+::highlight(support) { color: var(--syntax-type); }
+
+::highlight(variable),
+::highlight(interpolation) { color: var(--syntax-variable); }
+
+::highlight(property),
+::highlight(key),
+::highlight(attribute-name) { color: var(--syntax-property); }
+
+::highlight(tag) { color: var(--syntax-tag); }
+::highlight(selector) { color: var(--syntax-selector); }
+::highlight(inserted) { color: var(--syntax-inserted); }
+::highlight(deleted) { color: var(--syntax-deleted); }
