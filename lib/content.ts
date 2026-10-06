@@ -2,6 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { convertAsciiDocFragment } from "./asciidoc.ts";
 import { splitFrontMatter } from "./frontmatter.ts";
+import { outputKeyForUrlPath } from "./output-compat.ts";
 
 export interface Post {
   sourcePath: string;
@@ -20,6 +21,15 @@ export interface LoadPostsOptions {
   postsDir?: string;
   buildDate?: Date | string;
   warn?: (message: string) => void;
+  validate?: boolean;
+}
+
+export interface PostInventoryEntry {
+  sourcePath: string;
+  status: "published" | "future" | "invalid-name";
+  date?: string;
+  title?: string;
+  urlPath?: string;
 }
 
 export const selectedPostPath = "_posts/2025-01-25-AI-Waste.adoc";
@@ -48,7 +58,35 @@ export async function loadAllPosts(options: LoadPostsOptions = {}): Promise<Post
     posts.push(await loadPost(sourcePath));
   }
 
-  return posts.sort((left, right) => right.date.localeCompare(left.date) || right.slug.localeCompare(left.slug));
+  const sorted = posts.sort((left, right) => right.date.localeCompare(left.date) || right.slug.localeCompare(left.slug));
+  if (options.validate !== false) validatePosts(sorted);
+  return sorted;
+}
+
+export async function inventoryPosts(options: LoadPostsOptions = {}): Promise<PostInventoryEntry[]> {
+  const postsDir = options.postsDir ?? "_posts";
+  const buildDate = dateOnly(options.buildDate ?? new Date());
+  const names = await readdir(postsDir);
+  const inventory: PostInventoryEntry[] = [];
+
+  for (const name of names.toSorted()) {
+    const sourcePath = join(postsDir, name);
+    if (!isDatedPostFile(name)) {
+      if (name.endsWith(".adoc")) inventory.push({ sourcePath, status: "invalid-name" });
+      continue;
+    }
+
+    const inferred = inferPostMetadata(sourcePath);
+    if (inferred.date > buildDate) {
+      inventory.push({ sourcePath, status: "future", date: inferred.date, title: inferred.title, urlPath: `/posts/${inferred.title}` });
+      continue;
+    }
+
+    const post = await loadPost(sourcePath);
+    inventory.push({ sourcePath, status: "published", date: post.date, title: post.title, urlPath: post.urlPath });
+  }
+
+  return inventory;
 }
 
 export async function loadPost(sourcePath: string): Promise<Post> {
@@ -77,7 +115,16 @@ export async function loadPost(sourcePath: string): Promise<Post> {
 export function inferPostMetadata(sourcePath: string): { date: string; title: string } {
   const match = basename(sourcePath).match(/^(\d{4}-\d{2}-\d{2})-(.+)\.adoc$/);
   if (!match) throw new Error(`Post path does not follow Jekyll naming convention: ${sourcePath}`);
+  if (!isValidIsoDate(match[1])) throw new Error(`Post path contains an invalid date: ${sourcePath}`);
   return { date: match[1], title: match[2] };
+}
+
+export function validatePosts(posts: Post[]): void {
+  assertUnique(posts, (post) => post.title, "duplicate post title");
+  assertUnique(posts, (post) => post.urlPath, "duplicate post URL");
+  assertUnique(posts, (post) => post.urlPath.toLocaleLowerCase("en-US"), "case-folded duplicate post URL");
+  assertUnique(posts, (post) => outputKeyForUrlPath(post.urlPath), "duplicate generated post output path");
+  assertUnique(posts, (post) => outputKeyForUrlPath(post.urlPath).toLocaleLowerCase("en-US"), "case-folded duplicate generated post output path");
 }
 
 export function normalizeTags(value: unknown): string[] {
@@ -105,6 +152,26 @@ function truncate(value: string, length: number): string {
 
 function isDatedPostFile(name: string): boolean {
   return /^\d{4}-\d{2}-\d{2}-.+\.adoc$/.test(name);
+}
+
+function isValidIsoDate(value: string): boolean {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return false;
+  const year = Number.parseInt(match[1], 10);
+  const month = Number.parseInt(match[2], 10);
+  const day = Number.parseInt(match[3], 10);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+function assertUnique(posts: Post[], keyFor: (post: Post) => string, label: string): void {
+  const seen = new Map<string, Post>();
+  for (const post of posts) {
+    const key = keyFor(post);
+    const previous = seen.get(key);
+    if (previous) throw new Error(`${label}: ${key} in ${previous.sourcePath} and ${post.sourcePath}`);
+    seen.set(key, post);
+  }
 }
 
 function dateOnly(value: Date | string): string {

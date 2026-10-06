@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { convertAsciiDocFragment } from "../lib/asciidoc.ts";
-import { loadSelectedPost } from "../lib/content.ts";
+import { loadPost, loadSelectedPost } from "../lib/content.ts";
 
 test("AsciiDoc conversion renders links, images, admonitions, Unicode, and paragraphs", async () => {
   const post = await loadSelectedPost();
@@ -17,4 +17,24 @@ test("AsciiDoc conversion renders links, images, admonitions, Unicode, and parag
 
 test("AsciiDoc include directives are rejected", () => {
   assert.throws(() => convertAsciiDocFragment("include::/etc/passwd[]"), /include directives are disabled/);
+});
+
+test("AsciiDoc conversion covers source blocks, callouts, tables, images, passthrough, details, anchors, xrefs, bibliography anchors, and Unicode", async () => {
+  const structureTests = await loadPost("_posts/2024-11-09-Structure-Cementing-Tests-1.adoc");
+  assert.match(structureTests.html, /<pre class="highlight"><code class="language-java" data-lang="java">/);
+  assert.match(structureTests.html, /<div class="colist arabic">/);
+  assert.match(structureTests.html, /<table>/);
+  assert.match(structureTests.html, /<img src="\/assets\/img\/posts\/structure-cementing-tests\//);
+  assert.match(structureTests.html, /<s>architects<\/s>/);
+  assert.match(structureTests.html, /id="ports-and-adapters"/);
+  assert.match(structureTests.html, /href="#ports-and-adapters"/);
+  assert.match(structureTests.html, /class="bibliography"/);
+
+  const failures = await loadPost("_posts/2025-11-22-Everything-fails-all-the-time.adoc");
+  assert.match(failures.html, /<details>/);
+  assert.match(failures.html, /Everything fails, all the time/);
+
+  const javaHistory = await loadPost("_posts/2025-03-31-Java-Version-History-up-to-jdk-25-development.adoc");
+  assert.match(javaHistory.html, /⚠/u);
+  assert.match(javaHistory.html, /href="#jdk-24"/);
 });
