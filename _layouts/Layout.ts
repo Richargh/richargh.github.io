@@ -1,3 +1,4 @@
+import { renderContextMenu } from "../_includes/ContextMenu.ts";
 import { renderFooter } from "../_includes/Footer.ts";
 import { renderHeader } from "../_includes/Header.ts";
 import { absoluteUrl, site } from "../lib/config.ts";
@@ -9,6 +10,7 @@ export interface LayoutOptions {
   description?: string;
   type?: "website" | "article";
   showBackToHome?: boolean;
+  showContextMenu?: boolean;
   content: string;
 }
 
@@ -46,6 +48,7 @@ export function renderLayout(options: LayoutOptions): string {
         <div class="box">
             ${renderHeader({ showBackToHome: options.showBackToHome })}
             ${options.content}
+            ${renderContextMenu({ enabled: options.showContextMenu ?? options.urlPath === "/" })}
             ${renderFooter()}
         </div>
         <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>

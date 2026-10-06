@@ -9,7 +9,7 @@ function clickInsideElement(e, className) {
     if (el.classList.contains(className)) {
         return el;
     } else {
-        while (el = el.parentNode) {
+        while ((el = el.parentNode)) {
             if (el.classList && el.classList.contains(className)) {
                 return el;
             }
@@ -43,14 +43,11 @@ function getPosition(e) {
 }
 
 /* Variables related to main context menu */
-var contextMenuClassName = "context-menu";
-var contextMenuItemClassName = "context-menu__item";
 var contextMenuLinkClassName = "context-menu__link";
 var contextMenuActive = "context-menu--active";
 
 /* Variables related to context menu results */
 var contextMenuResActive = "context-menu-res--active";
-var contextMenuResClassName = "context-menu-res"
 var contextMenuResLinkClassName = "context-menu-res__link";
 
 
@@ -63,21 +60,14 @@ var clickCoordsX;
 var clickCoordsY;
 
 var menu = document.querySelector("#context-menu");
-var menuItems = menu.querySelectorAll(".context-menu__item");
 var menuState = 0;
 var menuWidth;
-var menuHeight;
-var menuPosition;
-var menuPositionX;
-var menuPositionY;
 
 var resMenu = document.querySelector("#context-menu-res");
 var resMenuState = 0;
 var resMenuWidth;
-var resMenuHeight;
 
 var windowWidth;
-var windowHeight;
 
 function positionMenu(e) {
     clickCoords = getPosition(e);
@@ -85,10 +75,8 @@ function positionMenu(e) {
     clickCoordsY = clickCoords.y;
   
     menuWidth = menu.offsetWidth + 4;
-    menuHeight = menu.offsetHeight + 4;
   
     windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
   
     if ( (windowWidth - clickCoordsX) < menuWidth ) {
       menu.style.left = windowWidth - menuWidth + "px";
@@ -103,10 +91,8 @@ function positionMenu(e) {
 function positionContextMenuRes() {
     
     resMenuWidth = resMenu.offsetWidth + 10;
-    resMenuHeight = resMenu.offsetHeight + 10;
   
     windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
   
     if ( (windowWidth - clickCoordsX) < resMenuWidth ) {
       resMenu.style.left = windowWidth - resMenuWidth + "px";
@@ -129,7 +115,7 @@ function init() {
 }
 
 function resizeListener() {
-    window.onresize = function(e) {
+    window.onresize = function() {
       toggleMenuOff();
       toggleContextResMenuOff();
     };
@@ -269,7 +255,7 @@ function showRelated(dataAction, dataUrl) {
 }
 */
 
-function menuItemListener( link , e ) {
+function menuItemListener( link ) {
       var dataUrl = feedItemInContext.getAttribute("data-url");
       var dataAction = link.getAttribute("data-action");
       switch(dataAction)  {
@@ -314,7 +300,7 @@ function clickListener() {
   
       if ( clickeElIsLink ) {
         e.preventDefault();
-        menuItemListener( clickeElIsLink, e );
+        menuItemListener( clickeElIsLink );
       } else {
         var button = e.which || e.button;
         if ( button === 1 ) {

@@ -15,10 +15,22 @@ test("explicit permalink post renders at its public URL", async ({ page }) => {
   await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/upcoming/");
 });
 
-test("home-page browser search uses the generated post search index", async ({ page }) => {
+test("main navigation opens ordinary content pages", async ({ page }) => {
   await page.goto("/");
 
-  await page.waitForResponse((response) => response.url().endsWith("/search.json") && response.ok());
+  await page.getByRole("link", { name: "About", exact: true }).click();
+  await expect(page).toHaveURL(/\/about\/?$/);
+  await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+
+  await page.goto("/talks/");
+  await expect(page.getByRole("heading", { level: 1, name: "Talks" })).toBeVisible();
+  await expect(page.getByText("These are all past talks")).toBeVisible();
+});
+
+test("home-page browser search uses the generated post search index", async ({ page }) => {
+  const searchJson = page.waitForResponse((response) => response.url().endsWith("/search.json") && response.ok());
+  await page.goto("/");
+  await searchJson;
   await page.getByPlaceholder("Search the Blog...").pressSequentially("waste");
 
   const result = page.locator("#results-container .search_res").filter({ hasText: "GenAI is a waste of our time" });

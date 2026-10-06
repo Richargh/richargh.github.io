@@ -17,6 +17,16 @@ export interface Post {
   excerpt: string;
 }
 
+export interface Page {
+  sourcePath: string;
+  title: string;
+  slug: string;
+  urlPath: string;
+  comments: boolean;
+  html: string;
+  excerpt: string;
+}
+
 export interface LoadPostsOptions {
   postsDir?: string;
   buildDate?: Date | string;
@@ -61,6 +71,46 @@ export async function loadAllPosts(options: LoadPostsOptions = {}): Promise<Post
   const sorted = posts.sort((left, right) => right.date.localeCompare(left.date) || right.slug.localeCompare(left.slug));
   if (options.validate !== false) validatePosts(sorted);
   return sorted;
+}
+
+export async function loadAllPages(pagesDir = "_pages"): Promise<Page[]> {
+  const names = await readdir(pagesDir);
+  const pages: Page[] = [];
+
+  for (const name of names.toSorted()) {
+    if (!name.endsWith(".adoc")) continue;
+    pages.push(await loadPage(join(pagesDir, name)));
+  }
+
+  validatePages(pages);
+  return pages.sort((left, right) => left.title.localeCompare(right.title));
+}
+
+export async function loadPage(sourcePath: string): Promise<Page> {
+  const source = await readFile(sourcePath, "utf8");
+  const { attributes, body } = splitFrontMatter(source);
+  const slug = basename(sourcePath, ".adoc");
+  const title = stringAttribute(attributes.title) ?? titleFromSlug(slug);
+  const permalink = stringAttribute(attributes.permalink);
+  const html = convertAsciiDocFragment(body);
+
+  return {
+    sourcePath,
+    title,
+    slug,
+    urlPath: permalink ?? `/${slug}/`,
+    comments: booleanAttribute(attributes.comments) ?? false,
+    html,
+    excerpt: excerptFromHtml(html),
+  };
+}
+
+export function validatePages(pages: Page[]): void {
+  assertUnique(pages, (page) => page.title, "duplicate page title");
+  assertUnique(pages, (page) => page.urlPath, "duplicate page URL");
+  assertUnique(pages, (page) => page.urlPath.toLocaleLowerCase("en-US"), "case-folded duplicate page URL");
+  assertUnique(pages, (page) => outputKeyForUrlPath(page.urlPath), "duplicate generated page output path");
+  assertUnique(pages, (page) => outputKeyForUrlPath(page.urlPath).toLocaleLowerCase("en-US"), "case-folded duplicate generated page output path");
 }
 
 export async function inventoryPosts(options: LoadPostsOptions = {}): Promise<PostInventoryEntry[]> {
@@ -164,14 +214,22 @@ function isValidIsoDate(value: string): boolean {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 
-function assertUnique(posts: Post[], keyFor: (post: Post) => string, label: string): void {
-  const seen = new Map<string, Post>();
-  for (const post of posts) {
-    const key = keyFor(post);
+function assertUnique<T extends { sourcePath: string }>(items: T[], keyFor: (item: T) => string, label: string): void {
+  const seen = new Map<string, T>();
+  for (const item of items) {
+    const key = keyFor(item);
     const previous = seen.get(key);
-    if (previous) throw new Error(`${label}: ${key} in ${previous.sourcePath} and ${post.sourcePath}`);
-    seen.set(key, post);
+    if (previous) throw new Error(`${label}: ${key} in ${previous.sourcePath} and ${item.sourcePath}`);
+    seen.set(key, item);
   }
+}
+
+function titleFromSlug(slug: string): string {
+  return slug
+    .split(/[-_]+/)
+    .filter(Boolean)
+    .map((word) => `${word[0]?.toUpperCase() ?? ""}${word.slice(1)}`)
+    .join(" ");
 }
 
 function dateOnly(value: Date | string): string {
