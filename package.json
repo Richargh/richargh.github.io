@@ -1,0 +1,16 @@
+{
+  "name": "richargh-de-mastro-migration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Phase 1 bootstrap for migrating the blog to Mastro.",
+  "scripts": {
+    "dev": "node --experimental-strip-types server.ts",
+    "generate": "node --experimental-strip-types scripts/generate.ts",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@mastrojs/mastro": "npm:@jsr/mastrojs__mastro@0.8.10",
+    "@playwright/test": "1.63.0"
+  }
+}

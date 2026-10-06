@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "types": ["node"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": [
+      "server.ts",
+      "routes/**/*.ts",
+      "scripts/**/*.ts",
+      "tests/**/*.ts",
+      "playwright.config.ts"
+  ]
+}

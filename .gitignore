@@ -5,6 +5,16 @@
 .bundle
 .sass-cache
 _site
+generated/
+.mastro/
+.mastro-cache/
+
+### Node
+node_modules/
+
+### Tests
+test-results/
+playwright-report/
 
 ### Ruby
 Gemfile
