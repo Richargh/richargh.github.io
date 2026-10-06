@@ -37,7 +37,7 @@ content-type: eg
 | Container Days Hamburg
 | 2026-09-03
 
-| Domain Rediscovery Patterns for Legacy Code
+| Domain Re-Discovery Patterns for Legacy Code
 | TechCamp Hamburg
 | 2026-08-25
 
@@ -45,7 +45,7 @@ content-type: eg
 | Java Forum Stuttgart
 | 2026-07-09
 
-| Domain Rediscovery Patterns for Legacy Code
+| Domain Re-discovery Patterns for Legacy Code
 | DWX
 | 2026-07-01
 
