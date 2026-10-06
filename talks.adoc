@@ -91,8 +91,8 @@ link:https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-en
 
 == Secure your Coding Agent like it's Malware
 
-* link:https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware[Devoxx Be 2026 🇬🇧] | link:https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026[Slides] | link:https://www.youtube.com/watch?v=GLJGhkxMdgU[Video]
-* link:https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F[Container Days Hamburg 2026 🇬🇧] | link:https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026[Slides] | link:https://github.com/Richargh/clamp[Clamp Sandbox] | link:https://www.youtube.com/watch?v=3U4YDNbLOiI[Video]
+* Gen 1.1 link:https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware[Devoxx Be 2026 🇬🇧] | link:https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026[Slides] | link:https://www.youtube.com/watch?v=GLJGhkxMdgU[Video]
+* Gen 1.0 link:https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F[Container Days Hamburg 2026 🇬🇧] | link:https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026[Slides] | link:https://github.com/Richargh/clamp[Clamp Sandbox] | link:https://www.youtube.com/watch?v=3U4YDNbLOiI[Video]
 
 == Spring Boot: The Good Parts
 
