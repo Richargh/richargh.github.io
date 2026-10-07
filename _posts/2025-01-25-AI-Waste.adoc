@@ -1,6 +1,6 @@
 ---
 title: GenAI is a waste of our time
-tags: GenAI AI LLM
+tags: GenAI LLM
 comments: false
 ---
 
