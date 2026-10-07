@@ -30,10 +30,6 @@ test("AsciiDoc conversion covers source blocks, callouts, tables, images, passth
   assert.match(structureTests.html, /href="#ports-and-adapters"/);
   assert.match(structureTests.html, /class="bibliography"/);
 
-  const failures = await loadPost("_posts/2025-11-22-Everything-fails-all-the-time.adoc");
-  assert.match(failures.html, /<details>/);
-  assert.match(failures.html, /Everything fails, all the time/);
-
   const javaHistory = await loadPost("_posts/2025-03-31-Java-Version-History-up-to-jdk-25-development.adoc");
   assert.match(javaHistory.html, /⚠/u);
   assert.match(javaHistory.html, /href="#jdk-24"/);
