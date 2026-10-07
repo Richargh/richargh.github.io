@@ -1,29 +1,77 @@
-// README ignored via _config.yml
 = The Source for my Blog
 
-This repository uses link:https://jekyllrb.com/[Jekyll] and the link:https://github.com/raghuveerdotnet/simply-jekyll[Simply Jekyll Theme].
+This repository contains the source for link:https://richargh.de/[richargh.de].
+The site is built with node, link:https://mastrojs.github.io/[Mastro], and Asciidoctor.js.
 
-The Asciidoc source is in the *docs* branch, while master only contains generated sources.
-
-== Usage
-
-. Install all gems: `bundle`
-. Build the site and make it available on a local server: `bundle exec jekyll serve`
-. Now browse to http://localhost:4000
+The `docs` branch contains the editable source.
+GitHub Actions builds `generated/` and deploys that artifact to GitHub Pages.
 
 == Prerequisites
 
-=== Install Ruby
+Install link:https://mise.jdx.dev/[mise] to get the node version from the link:mise.toml[].
 
-Since Mac comes bundled with an old ruby version I recommend using [Rubyenv](https://github.com/rbenv/rbenv#installation)
+[source,shell]
+----
+mise install
+npm ci
+----
 
-. `brew install rbenv`
-. Close and reopen terminal in this repo
-. `which ruby` should now point to _~/.rbenv/shims/ruby_
-. `ruby -v` should now be 2.6.3 for this directory
+== Local development
 
-== Maintenance
+Serve the generated site locally:
 
-* Update link:.ruby-version[]
-* Update bundler: `bundle update --bundler`
-* Update all gems: `bundle update`
+[source,shell]
+----
+npm run dev
+----
+
+Then open link:http://127.0.0.1:3000/[].
+
+Generate the static site into the `generated/` folder:
+
+[source,shell]
+----
+mise run generate
+----
+
+Run the same checks used by CI:
+
+[source,shell]
+----
+mise run check
+----
+
+== Structure
+
+* Ordinary content live in `_pages/`
+* Blog posts live in `_posts/`
+* Static assets live under `assets/`
+
+== Authoring posts
+
+Posts live in `_posts/` as AsciiDoc files named:
+
+[source,text]
+----
+YYYY-MM-DD-Title-Slug.adoc
+----
+
+Each post may start with YAML front matter delimited by `---`. Common fields are:
+
+[source,yaml]
+----
+---
+title: Example Title
+tags: [architecture, testing]
+status: ongoing
+permalink: /posts/example/
+---
+----
+
+If `title` is omitted, it is inferred from the filename. Tags may be a YAML list or a whitespace-separated scalar. Future-dated posts are excluded from generated output and reported during generation.
+
+Write the body in AsciiDoc. The build converts only the AsciiDoc body to HTML; front-matter metadata is escaped by the Mastro templates.
+
+== Publishing
+
+Push to the `docs` branch to deploy.
