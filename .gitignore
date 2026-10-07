@@ -1,10 +1,10 @@
-### Jekyll
-.jekyll
-.jekyll-metadata
-.jekyll-cache
-.bundle
-.sass-cache
-_site
+### Clamp
+.clamp
+
+### Drafts
+_drafts/
+
+### Mastro
 generated/
 .mastro/
 .mastro-cache/
@@ -15,13 +15,6 @@ node_modules/
 ### Tests
 test-results/
 playwright-report/
-
-### Ruby
-Gemfile
-Gemfile.lock
-
-### Rubyenv
-.ruby-version
 
 ### MacOS
 .DS_Store
