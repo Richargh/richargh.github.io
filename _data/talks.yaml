@@ -1,0 +1,466 @@
+- id: ai-auto
+  title: Ironies of AI Automation - What 1983 Can Teach Us About AI in 2026
+  appearances:
+    - conference: Build Stuff
+      location: in-person
+      city: Vilnius
+      country: Lithuania
+      date: 2026-12-02
+      eventUrl: https://buildstuff.events/pages/agenda#aoa-day-1:~:text=Richard%20Gro%C3%9F
+
+- id: aimod
+  title: Ai-assisted Modernisation
+  appearances:
+    - title: KI-gestützte Legacy-Modernisierung
+      conference: betterCode(Agentic Ai)
+      location: remote
+      date: 2026-10-06
+      language: de
+      eventUrl: https://agenticai.bettercode.eu/veranstaltung-89613-se-0-ki-gestuetzte-legacy-modernisierung-von-systemverstaendnis-zu-kontrollierter-veraenderung.html
+      slideUrl: https://speakerdeck.com/richargh/ki-gestutzte-legacy-modernisierung-v1-at-bettercode-agentic-ai-2026
+
+- id: beehive
+  title: Beehive Architecture
+  appearances:
+    - title: Bienenstock Architektur
+      conference: JUG Saxony Day
+      location: in-person
+      city: Radebeul
+      country: Germany
+      date: 2023-09-29
+      language: de
+      eventUrl: https://jugsaxony.org/day/programm/details/130
+      slideUrl: https://speakerdeck.com/richargh/bienenstock-architektur
+      videoUrl: https://vimeo.com/875223690
+      codeUrl: https://github.com/Richargh/testdsl
+
+- id: htmx
+  title: Building dynamic web apps with Kotlin, WebComponents and Htmx
+  appearances:
+    - conference: NDC Oslo
+      location: in-person
+      city: Oslo
+      country: Norway
+      date: 2025-05-21
+      language: en
+      eventUrl: https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy
+      slideUrl: https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025
+      videoUrl: https://www.youtube.com/watch?v=rEEACXNq-WA
+      codeUrl: https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html
+
+- id: cd4lc
+  title: Continuous Delivery for Legacy Code
+  abstract: This talk has gone through a changes through the years as I figured out what was important and what not so much.
+  appearances:
+    - conference: Lean-Agile Scotland
+      location: in-person
+      city: Edinburgh
+      country: United Kingdom
+      date: 2024-09-25
+      talkVersion: 3.1
+      language: en
+      eventUrl: https://leanagile.scot/programme/continuous-delivery-legacy-code
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-v3-dot-1-at-leanagile-scotland-2024
+    - conference: NDC London
+      location: in-person
+      city: London
+      country: United Kingdom
+      date: 2024-02-01
+      talkVersion: 3
+      language: en
+      eventUrl: https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-ndc-london
+      videoUrl: https://www.youtube.com/watch?v=djl2hJkzmGQ
+    - conference: DevOpsCon
+      location: in-person
+      city: Munich
+      country: Germany
+      date: 2022-12-06
+      talkVersion: 3
+      language: en
+      eventUrl: https://devopscon.io/microservices-software-architecture/continuous-delivery-for-legacy-code/
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-devopscon-winter-2022
+    - conference: Build Stuff
+      location: in-person
+      city: Vilnius
+      country: Lithuania
+      date: 2019-11-13
+      talkVersion: 2
+      language: en
+      eventUrl: https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code
+      videoUrl: https://www.youtube.com/watch?v=AaexmSPQVpU
+    - conference: Software Architecture Gathering
+      location: in-person
+      city: Munich
+      country: Germany
+      date: 2019-10-16
+      talkVersion: 2
+      language: en
+      eventUrl: https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/
+      slideUrl: https://speakerdeck.com/richargh/cd-for-legacy-code
+    - conference: Entwicklertag Frankfurt
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2019-02-21
+      talkVersion: 1
+      language: de
+      eventUrl: https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218
+    - conference: Xp Days
+      location: in-person
+      city: Karlsruhe
+      country: Germany
+      date: 2018-11-09
+      talkVersion: 1
+      language: de
+      eventUrl: https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html
+      slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme
+
+- id: javaenc
+  title: Destructoring is the future of Javas Encapsulation
+  appearances:
+    - title: Destructoring ist die Zukunft von Javas Encapsulation
+      conference: IT Tage
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2026-12-08
+      language: de
+      eventUrl: https://www.ittage.informatik-aktuell.de/programm/2026/destructoring-ist-die-zukunft-von-javas-encapsulation.html
+    - conference: Devoxx Belgium
+      location: in-person
+      city: Antwerp
+      country: Belgium
+      date: 2026-10-05
+      language: en
+      eventUrl: https://m.devoxx.com/events/dvbe26/talks/7012/destructoring-is-the-future-of-javas-encapsulation
+      slideUrl: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
+      videoUrl: https://www.youtube.com/watch?v=wcghmWdu-HY
+      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
+    - conference: ObjektForum Frankfurt
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2026-04-22
+      title: Destructuring ist die Zukunft von Javas Encapsulation
+      language: de
+      eventUrl: https://www.andrena.de/event/of-ffm-apr-2026
+    - conference: JavaLand
+      location: in-person
+      city: Rust
+      country: Germany
+      date: 2026-03-10
+      title: Destructuring ist die Zukunft von Javas Encapsulation
+      language: de
+      eventUrl: https://meine.doag.org/events/javaland/2026/agenda/#agendaId.6841
+      slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-javaland-2026
+      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
+    - conference: JUG Darmstadt
+      location: in-person
+      city: Darmstadt
+      country: Germany
+      date: 2026-01-22
+      title: Destructoring ist die Zukunft von Javas Encapsulation
+      language: de
+      variant: Lightning Talk
+      durationMinutes: 15
+      eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
+      slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-jug-darmstadt-2026
+      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
+
+- id: drp4lc
+  title: Domain Re-discovery Patterns for Legacy Code
+  appearances:
+    - conference: TechCamp Hamburg
+      location: in-person
+      city: Hamburg
+      country: Germany
+      date: 2026-08-25
+      talkVersion: 3.4
+      language: en
+      eventUrl: https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-4-at-techcamp-hamburg-2026
+    - conference: DWX
+      location: in-person
+      city: Nuremberg
+      country: Germany
+      date: 2026-07-01
+      talkVersion: 3.3
+      language: en
+      eventUrl: https://www.developer-world.de/dwx/dwx-programm
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-3-at-dwx-2026
+    - conference: OOP
+      location: in-person
+      city: Munich
+      country: Germany
+      date: 2026-02-13
+      talkVersion: 3.2
+      language: en
+      eventUrl: https://www.oop-konferenz.de/de/ueber-die-konferenz/konferenzprogramm/details/fr-71
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-2-at-oop-2026
+    - conference: JUG Darmstadt
+      location: in-person
+      city: Darmstadt
+      country: Germany
+      date: 2026-01-22
+      language: en
+      eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
+    - conference: Java Forum Nord
+      location: in-person
+      city: Hanover
+      country: Germany
+      date: 2025-09-16
+      talkVersion: 3.1
+      language: en
+      eventUrl: https://javaforumnord.de/2025/
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-1-at-javaforumnord-2025
+    - conference: Build Stuff
+      location: in-person
+      city: Vilnius
+      country: Lithuania
+      date: 2024-11-15
+      talkVersion: 3
+      language: en
+      eventUrl: https://www.buildstuff.events/
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-at-buildstuff-2024
+      videoUrl: https://www.youtube.com/watch?v=SoMI-KEADiM
+    - conference: Software Architecture Alliance
+      location: remote
+      date: 2024-10-22
+      talkVersion: 2
+      language: en
+      eventUrl: https://www.software-architecture-alliance.de/2024/programm/konferenzprogramm#item-7971
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v2-at-software-architecture-alliance-2024
+    - conference: DDD Europe
+      location: in-person
+      city: Amsterdam
+      country: Netherlands
+      date: 2024-05-31
+      talkVersion: 1
+      language: en
+      eventUrl: https://2024.dddeurope.com/program/domain-re-discovery-patterns-for-legacy-code/
+      slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-at-ddd-eu-2024
+      videoUrl: https://www.youtube.com/watch?v=_TKqc784PH8
+
+- id: bdm
+  title: Fixing the Billion-Dollar Mistake
+  appearances:
+    - conference: JavaLand
+      location: in-person
+      city: Brühl
+      country: Germany
+      date: 2023-03-22
+      title: Fixing the Billion-Dollar Mistake in Java
+      language: en
+      variant: Java spotlight
+      eventUrl: https://meine.doag.org/events/javaland/2023/agenda/#agendaId.2006
+      slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland
+      codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
+    - conference: Build Stuff
+      location: in-person
+      city: Vilnius
+      country: Lithuania
+      date: 2021-11-19
+      title: Fixing the Billion-Dollar Mistake in C#
+      language: en
+      variant: C# spotlight
+      eventUrl: https://events.pinetool.ai/2275/#sessions/83071
+      slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number
+      videoUrl: https://www.youtube.com/watch?v=lCqdy6Qf-nM
+      codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
+
+- id: pipeline
+  title: How to build the greatest and best Pipeline in the World
+  appearances:
+    - conference: JAX
+      location: in-person
+      city: Mainz
+      country: Germany
+      date: 2023-05-10
+      language: en
+      eventUrl: https://jax.de/devops-continuous-delivery/building-pipelines
+      slideUrl: https://speakerdeck.com/richargh/how-to-build-the-greatest-and-best-pipeline-in-the-world-jax-2023
+
+- id: kvj
+  title: Kotlin kontra Java
+  appearances:
+    - conference: Java Forum Stuttgart
+      location: in-person
+      city: Stuttgart
+      country: Germany
+      date: 2026-07-09
+      language: de
+      eventUrl: https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/
+      slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2026-uberhaupt-noch-kotlin-v1-dot-2-at-java-forum-stuttgart-2026
+      codeUrl: https://github.com/Richargh/kotlin-kontra-java
+    - conference: IT Tage
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2025-12-11
+      language: de
+      eventUrl: https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html
+      slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025
+      codeUrl: https://github.com/Richargh/kotlin-kontra-java
+    - conference: JavaLand
+      location: in-person
+      city: Nürburg
+      country: Germany
+      date: 2025-04-01
+      language: de
+      eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196
+      slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025
+      codeUrl: https://github.com/Richargh/kotlin-kontra-java
+      links:
+        - label: Deep dive, also at JavaLand 2025
+          url: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080
+
+- id: llmnet
+  title: LLMs are not Skynet
+  appearances:
+    - conference: JUG Darmstadt
+      location: in-person
+      city: Darmstadt
+      country: Germany
+      date: 2026-09-09
+      title: LLMs sind nicht Skynet
+      language: de
+      variant: lightning talk
+      durationMinutes: 15
+      eventUrl: https://www.jug-da.de/2026/09/Quarkus-LLMs/
+      slideUrl: https://speakerdeck.com/richargh/llms-sind-nicht-skynet-v1-at-jug-darmstadt-september-2026
+
+- id: frontend
+  title: Making sense of frontend code with forensic techniques
+  appearances:
+    - conference: JSHeroes
+      location: in-person
+      city: Cluj-Napoca
+      country: Romania
+      date: 2026-05-15
+      durationMinutes: 25
+      language: en
+      eventUrl: https://jsheroes.io/#:~:text=Forensic
+      slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026
+      videoUrl: https://www.youtube.com/watch?v=P7d9rtJa4VU
+    - conference: c't <webdev>
+      location: in-person
+      city: Cologne
+      country: Germany
+      date: 2025-11-19
+      durationMinutes: 45
+      language: en
+      eventUrl: https://ct-webdev.com/agenda-2025/
+      slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-at-ct-webdev-2025
+
+- id: rrr
+  title: Refactor, Rearchitect, Rebuild - What to do when?
+  appearances:
+    - conference: DevLand
+      location: in-person
+      city: Brühl
+      country: Germany
+      date: 2026-03-13
+      title: Refactor, Rearchitect, Rebuild - Was macht man wann?
+      language: de
+      durationMinutes: 45
+      eventUrl: https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049
+      slideUrl: https://speakerdeck.com/richargh/refactor-rearchitect-rebuild-was-macht-man-wann-v1-at-devland-2026
+    - conference: Bitkom AK Software Engineering und Software Architektur
+      location: remote
+      date: 2025-09-15
+      title: Refactor, Rearchitect, Rebuild - Was macht man wann?
+      language: de
+      durationMinutes: 25
+
+- id: rstbd
+  title: Remote Scaled Trunk-Based Development
+  appearances:
+    - conference: Build Stuff
+      location: hybrid
+      city: Vilnius
+      country: Lithuania
+      date: 2022-11-09
+      language: en
+      eventUrl: https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference
+      slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff
+      videoUrl: https://www.youtube.com/watch?v=NBjZ3wRXkxY
+    - conference: IPC
+      location: in-person
+      city: Munich
+      country: Germany
+      date: 2022-10-25
+      language: en
+      eventUrl: https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/
+      slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development
+
+- id: agentsec
+  title: Secure Your Coding Agent Like It’s Malware
+  appearances:
+    - conference: Code.talks
+      location: in-person
+      city: Hamburg
+      country: Germany
+      date: 2026-11-04
+      talkVersion: 1.5
+      language: en
+      eventUrl: https://codetalks.com/speaker#:~:text=Richard%20Gross
+    - conference: Devoxx Belgium
+      location: in-person
+      city: Antwerp
+      country: Belgium
+      date: 2026-10-05
+      talkVersion: 1.1
+      language: en
+      eventUrl: https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware
+      slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026
+      videoUrl: https://www.youtube.com/watch?v=GLJGhkxMdgU
+    - conference: Container Days Hamburg
+      location: in-person
+      city: Hamburg
+      country: Germany
+      date: 2026-09-03
+      talkVersion: 1
+      language: en
+      eventUrl: https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F
+      slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026
+      videoUrl: https://www.youtube.com/watch?v=3U4YDNbLOiI
+      links:
+        - label: Clamp Sandbox
+          url: https://github.com/Richargh/clamp
+
+- id: bootgp
+  title: "Spring Boot: The Good Parts"
+  appearances:
+    - conference: Entwicklertag Frankfurt
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2020-02-20
+      language: de
+      eventUrl: https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner
+      slideUrl: https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020
+
+- id: supreno
+  title: The Surprising Similarities Between Renovating your House and your Code Base
+  appearances:
+    - conference: CTO Craft Con Berlin
+      location: in-person
+      city: Berlin
+      country: Germany
+      date: 2025-09-23
+      language: en
+      eventUrl: https://conference.ctocraft.com/berlin-2025/agenda/
+      slideUrl: https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025
+      videoUrl: https://www.youtube.com/watch?v=xsd4PS-gfJk
+
+- id: quality
+  title: What is Software Quality
+  appearances:
+    - conference: IT Day Frankfurt
+      location: in-person
+      city: Frankfurt
+      country: Germany
+      date: 2018-10-26

@@ -46,6 +46,12 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             updated: newestDate(posts)
         },
         {
+            urlPath: "/schedule/",
+            outputKey: outputKeyForUrlPath("/schedule/"),
+            kind: "index" as const,
+            title: "Schedule"
+        },
+        {
             urlPath: "/feed.xml",
             outputKey: outputKeyForUrlPath("/feed.xml"),
             kind: "resource" as const,

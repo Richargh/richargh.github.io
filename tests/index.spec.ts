@@ -38,6 +38,17 @@ test("home-page browser search uses the generated post search index", async ({ p
   await expect(result.getByRole("link")).toHaveAttribute("href", "https://richargh.de/posts/AI-Waste");
 });
 
+test("schedule is generated from structured talk appearances", async ({ page }) => {
+  await page.goto("/schedule/");
+
+  await expect(page.getByRole("heading", { level: 1, name: "Schedule" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "2025" })).toBeVisible();
+  const representativeRow = page.locator("tr").filter({ hasText: "The Surprising Similarities Between Renovating your House and your Code Base" }).filter({ hasText: "CTO Craft Con Berlin" }).filter({ hasText: "2025-09-23" });
+  await expect(representativeRow).toBeVisible();
+  await expect(representativeRow.getByRole("link", { name: "The Surprising Similarities Between Renovating your House and your Code Base" })).toHaveAttribute("href", "https://conference.ctocraft.com/berlin-2025/agenda/");
+  await expect(representativeRow.getByRole("link", { name: "CTO Craft Con Berlin" })).toHaveCount(0);
+});
+
 test("tag and date compatibility anchors are served from generated indexes", async ({ page }) => {
   await page.goto("/tags/#java");
   await expect(page).toHaveURL(/\/tags\/#java$/);
