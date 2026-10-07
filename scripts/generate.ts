@@ -1,7 +1,11 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { renderPageDocument } from "../routes/pages/[slug].server.ts";
 import { renderPostDocument } from "../routes/posts/AI-Waste.server.ts";
+import { render as render404 } from "../routes/404.html.server.ts";
+import { render as renderFeed } from "../routes/feed.xml.server.ts";
+import { render as renderRobots } from "../routes/robots.txt.server.ts";
+import { render as renderSitemap } from "../routes/sitemap.xml.server.ts";
 import { loadAllPages, loadAllPosts } from "../lib/content.ts";
 import { render as renderIndex } from "../routes/index.server.ts";
 import { render as renderDatesIndex } from "../routes/dates/index.server.ts";
@@ -25,6 +29,11 @@ const posts = await loadAllPosts({ buildDate: process.env.MASTRO_BUILD_DATE });
 const pages = await loadAllPages();
 await writeFile(join(outputDir, "search.json"), await renderSearchJson(posts), "utf8");
 await writeFile(join(outputDir, "autocomplete.txt"), renderAutocompleteText(posts), "utf8");
+await writeFile(join(outputDir, "feed.xml"), await renderFeed(), "utf8");
+await writeFile(join(outputDir, "sitemap.xml"), await renderSitemap(), "utf8");
+await writeFile(join(outputDir, "robots.txt"), renderRobots(), "utf8");
+await writeFile(join(outputDir, "404.html"), `${render404()}\n`, "utf8");
+await writeFile(join(outputDir, "CNAME"), await readFile(join("routes", "CNAME"), "utf8"), "utf8");
 for (const post of posts) {
   const outputPath = outputPathForUrlPath(post.urlPath);
   await mkdir(join(outputDir, ...outputPath.slice(0, -1)), { recursive: true });
@@ -43,5 +52,10 @@ console.log(`Generated ${join(outputDir, "tags", "index.html")}`);
 console.log(`Generated ${join(outputDir, "dates", "index.html")}`);
 console.log(`Generated ${join(outputDir, "search.json")}`);
 console.log(`Generated ${join(outputDir, "autocomplete.txt")}`);
+console.log(`Generated ${join(outputDir, "feed.xml")}`);
+console.log(`Generated ${join(outputDir, "sitemap.xml")}`);
+console.log(`Generated ${join(outputDir, "robots.txt")}`);
+console.log(`Generated ${join(outputDir, "404.html")}`);
+console.log(`Generated ${join(outputDir, "CNAME")}`);
 console.log(`Generated ${join(outputDir, "assets")}`);
 

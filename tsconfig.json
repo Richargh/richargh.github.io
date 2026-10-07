@@ -6,10 +6,14 @@
     "strict": true,
     "types": ["node"],
     "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
     "noEmit": true
   },
   "include": [
       "server.ts",
+      "lib/**/*.ts",
+      "_includes/**/*.ts",
+      "_layouts/**/*.ts",
       "routes/**/*.ts",
       "scripts/**/*.ts",
       "tests/**/*.ts",

@@ -1,5 +1,8 @@
-import asciidoctorFactory from "asciidoctor";
+import { createRequire } from "node:module";
+import type { Asciidoctor } from "asciidoctor";
 
+const require = createRequire(import.meta.url);
+const asciidoctorFactory = require("asciidoctor") as () => Asciidoctor;
 const asciidoctor = asciidoctorFactory();
 
 export interface AsciiDocOptions {

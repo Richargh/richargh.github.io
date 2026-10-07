@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "npm run generate && node --experimental-strip-types server.ts",
     "generate": "node --experimental-strip-types scripts/generate.ts",
-    "lint": "oxlint --deny-warnings",
+    "lint": "npm run lint:tsc && oxlint --deny-warnings",
+    "lint:tsc": "tsc --noEmit",
     "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "playwright test",
     "test:unit": "node --experimental-strip-types --test tests/*.test.ts"
@@ -16,10 +17,13 @@
     "@mastrojs/mastro": "npm:@jsr/mastrojs__mastro@0.8.10",
     "@playwright/test": "1.63.0",
     "@std/yaml": "npm:@jsr/std__yaml@1.1.1",
+    "@types/node": "24.10.1",
     "asciidoctor": "3.0.4",
-    "oxlint": "1.87.0"
+    "oxlint": "1.87.0",
+    "typescript": "5.9.3"
   },
   "dependencies": {
+    "@mastrojs/feed": "npm:@jsr/mastrojs__feed@0.0.1",
     "microlighter": "2.0.0"
   }
 }
