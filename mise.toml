@@ -1,2 +1,10 @@
 [tools]
 node = "24"
+
+[tasks.check]
+description = "Run linting and tests"
+run = "npm run lint && npm test"
+
+[tasks.generate]
+description = "Generate the static Mastro site"
+run = "npm run generate"

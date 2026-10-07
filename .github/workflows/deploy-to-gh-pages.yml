@@ -1,28 +1,72 @@
-name: Build and Deploy
+name: Deploy Mastro to GitHub Pages
+
 on:
   push:
-    branches:
-      - docs
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
+    name: Build and test Mastro site
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
-      # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v4
+      - name: Install mise-pinned toolchain
+        uses: jdx/mise-action@v4.3.0
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          install: true
+          cache: true
+
+      - name: Cache npm and Playwright downloads
+        uses: actions/cache@v6.1.0
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
+            ${{ runner.os }}-node-
 
-      ## The Personal Access Token (PAT) is created in your Personal Github Profile, and must be set in each repostiories settings->secrets
+      - name: Install npm dependencies
+        run: npm ci
 
-      # Standard usage, because the docs are in the top-level folder
-      - uses: helaili/jekyll-action@v2
+      - name: Install Playwright Chromium and CI dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Run checks
+        run: mise run check
+
+      - name: Generate static site
+        run: mise run generate
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload generated site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: generated
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/docs'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy generated site
+        id: deployment
+        uses: actions/deploy-pages@v4

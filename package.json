@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Phase 1 bootstrap for migrating the blog to Mastro.",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "npm run generate && node --experimental-strip-types server.ts",
     "generate": "node --experimental-strip-types scripts/generate.ts",
