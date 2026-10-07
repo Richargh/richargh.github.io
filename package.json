@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "npm run generate && node --experimental-strip-types server.ts",
     "generate": "node --experimental-strip-types scripts/generate.ts",
+    "validate:generated": "html-validate 'generated/**/*.html'",
     "lint": "npm run lint:tsc && oxlint --deny-warnings",
     "lint:tsc": "tsc --noEmit",
     "test": "npm run test:unit && npm run test:e2e",
@@ -22,6 +23,7 @@
     "@std/yaml": "npm:@jsr/std__yaml@1.1.1",
     "@types/node": "24.10.1",
     "asciidoctor": "3.0.4",
+    "html-validate": "10.4.0",
     "oxlint": "1.87.0",
     "typescript": "5.9.3"
   },

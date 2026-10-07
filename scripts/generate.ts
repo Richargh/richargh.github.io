@@ -12,6 +12,7 @@ import { render as renderDatesIndex } from "../routes/dates/index.server.ts";
 import { render as renderTagsIndex } from "../routes/tags/index.server.ts";
 import { renderAutocompleteText, renderSearchJson } from "../lib/search.ts";
 import { outputPathForUrlPath } from "../lib/output-compat.ts";
+import { assertGeneratedLinksResolve } from "../lib/generated-link-check.ts";
 
 const outputDir = "generated";
 
@@ -44,6 +45,8 @@ for (const page of pages) {
   await mkdir(join(outputDir, ...outputPath.slice(0, -1)), { recursive: true });
   await writeFile(join(outputDir, ...outputPath), `${renderPageDocument(page)}\n`, "utf8");
 }
+
+await assertGeneratedLinksResolve(outputDir);
 
 console.log(`Generated ${join(outputDir, "index.html")}`);
 console.log(`Generated ${posts.length} posts in ${join(outputDir, "posts")}`);
