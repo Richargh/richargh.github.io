@@ -164,7 +164,7 @@ export async function loadPost(sourcePath: string): Promise<Post> {
 
 export function inferPostMetadata(sourcePath: string): { date: string; title: string } {
   const match = basename(sourcePath).match(/^(\d{4}-\d{2}-\d{2})-(.+)\.adoc$/);
-  if (!match) throw new Error(`Post path does not follow Jekyll naming convention: ${sourcePath}`);
+  if (!match) throw new Error(`Post path does not follow dated post naming convention: ${sourcePath}`);
   if (!isValidIsoDate(match[1])) throw new Error(`Post path contains an invalid date: ${sourcePath}`);
   return { date: match[1], title: match[2] };
 }

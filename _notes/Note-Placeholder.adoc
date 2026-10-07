@@ -1,5 +1,0 @@
----
-tags: placeholder
----
-
-Without this placeholder no auto-complete is generated.
