@@ -31,13 +31,23 @@ function renderTalkCard(talk: Talk): string {
   return `<section class="talk-card" id="${escapeHtml(talk.id)}">
 ${banner}
 <div class="talk-card-body">
+<div class="talk-card-heading">
 <h2><a class="talk-title-anchor" href="#${escapeHtml(talk.id)}">${escapeHtml(talk.title)}</a></h2>
+<div class="talk-card-actions">${renderTalkActions(talk)}</div>
+</div>
 ${talk.abstract ? `<p class="talk-abstract">${escapeHtml(talk.abstract)}</p>` : ""}
 <ul class="talk-appearances-list">
 ${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLine).join("\n")}
 </ul>
 </div>
 </section>`;
+}
+
+function renderTalkActions(talk: Talk): string {
+  const links: TalkLink[] = [];
+  if (talk.codeUrl) links.push({ label: "Code", url: talk.codeUrl });
+  links.push(...talk.links);
+  return links.map((link) => `<a class="talk-resource-button talk-card-code" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function renderBanner(talk: Talk): string {
@@ -83,7 +93,6 @@ function renderDuration(appearance: TalkAppearance): string {
 function renderResourceLinks(appearance: TalkAppearance): string {
   const links: TalkLink[] = [...appearance.links];
   if (appearance.videoUrl) links.push({ label: "Video", url: appearance.videoUrl });
-  if (appearance.codeUrl) links.push({ label: "Code", url: appearance.codeUrl });
   if (appearance.slideUrl) links.push({ label: "Slides", url: appearance.slideUrl });
   return links.map((link) => `<a class="talk-resource-button${link.label.includes("Video") ? " talk-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }

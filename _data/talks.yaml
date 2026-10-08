@@ -29,6 +29,7 @@
 
 - id: bee-arc
   title: Beehive Architecture
+  codeUrl: https://github.com/Richargh/testdsl
   thumbnail: /assets/img/thumbnails/bee-arc-2023-09-29-875223690.avif
   tags:
     - architecture
@@ -44,10 +45,10 @@
       eventUrl: https://jugsaxony.org/day/programm/details/130
       slideUrl: https://speakerdeck.com/richargh/bienenstock-architektur
       videoUrl: https://vimeo.com/875223690
-      codeUrl: https://github.com/Richargh/testdsl
 
 - id: dyn-web-htmx
   title: Building dynamic web apps with Kotlin, WebComponents and Htmx
+  codeUrl: https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html
   thumbnail: /assets/img/thumbnails/dyn-web-htmx-2025-05-21-rEEACXNq-WA.jpg
   tags:
     - kotlin
@@ -63,7 +64,6 @@
       eventUrl: https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy
       slideUrl: https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025
       videoUrl: https://www.youtube.com/watch?v=rEEACXNq-WA
-      codeUrl: https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html
 
 - id: cd4lc
   title: Continuous Delivery for Legacy Code
@@ -141,6 +141,7 @@
 
 - id: java-dest-enc
   title: Destructoring is the future of Javas Encapsulation
+  codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
   thumbnail: /assets/img/thumbnails/java-dest-enc-2026-10-05-wcghmWdu-HY.jpg
   tags:
     - java
@@ -163,7 +164,6 @@
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7012/destructoring-is-the-future-of-javas-encapsulation
       slideUrl: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
       videoUrl: https://www.youtube.com/watch?v=wcghmWdu-HY
-      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
     - conference: ObjektForum Frankfurt
       location: in-person
       city: Frankfurt
@@ -181,7 +181,6 @@
       language: de
       eventUrl: https://meine.doag.org/events/javaland/2026/agenda/#agendaId.6841
       slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-javaland-2026
-      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
     - conference: JUG Darmstadt
       location: in-person
       city: Darmstadt
@@ -193,7 +192,6 @@
       durationMinutes: 15
       eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
       slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-jug-darmstadt-2026
-      codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
 
 - id: drp4lc
   title: Domain Re-discovery Patterns for Legacy Code
@@ -276,6 +274,7 @@
 
 - id: ftbdm
   title: Fixing the Billion-Dollar Mistake
+  codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
   thumbnail: /assets/img/thumbnails/ftbdm-2021-11-19-lCqdy6Qf-nM.jpg
   tags:
     - java
@@ -292,7 +291,6 @@
       variant: Java spotlight
       eventUrl: https://meine.doag.org/events/javaland/2023/agenda/#agendaId.2006
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland
-      codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
     - conference: Build Stuff
       location: in-person
       city: Vilnius
@@ -304,7 +302,6 @@
       eventUrl: https://events.pinetool.ai/2275/#sessions/83071
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number
       videoUrl: https://www.youtube.com/watch?v=lCqdy6Qf-nM
-      codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
 
 - id: tenacious-pipe
   title: How to build the greatest and best Pipeline in the World
@@ -323,6 +320,7 @@
 
 - id: kvj
   title: Kotlin kontra Java
+  codeUrl: https://github.com/Richargh/kotlin-kontra-java
   tags:
     - kotlin
     - java
@@ -335,7 +333,6 @@
       language: de
       eventUrl: https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2026-uberhaupt-noch-kotlin-v1-dot-2-at-java-forum-stuttgart-2026
-      codeUrl: https://github.com/Richargh/kotlin-kontra-java
     - conference: IT Tage
       location: in-person
       city: Frankfurt
@@ -344,7 +341,6 @@
       language: de
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025
-      codeUrl: https://github.com/Richargh/kotlin-kontra-java
     - conference: JavaLand
       location: in-person
       city: Nürburg
@@ -353,7 +349,6 @@
       language: de
       eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025
-      codeUrl: https://github.com/Richargh/kotlin-kontra-java
       links:
         - label: Deep dive, also at JavaLand 2025
           url: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080
@@ -459,6 +454,9 @@
     - ai
     - security
     - coding-agents
+  links:
+    - label: Clamp Sandbox
+      url: https://github.com/Richargh/clamp
   appearances:
     - conference: Code.talks
       location: in-person
@@ -488,9 +486,6 @@
       eventUrl: https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=3U4YDNbLOiI
-      links:
-        - label: Clamp Sandbox
-          url: https://github.com/Richargh/clamp
 
 - id: bootgp
   title: "Spring Boot: The Good Parts"

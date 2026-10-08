@@ -12,6 +12,8 @@ export interface Talk {
   title: string;
   tags: string[];
   thumbnail?: string;
+  codeUrl?: string;
+  links: TalkLink[];
   abstract?: string;
   appearances: TalkAppearance[];
 }
@@ -35,7 +37,6 @@ export interface TalkAppearance {
   eventUrl?: string;
   slideUrl?: string;
   videoUrl?: string;
-  codeUrl?: string;
   links: TalkLink[];
 }
 
@@ -44,7 +45,7 @@ export interface TalkYearGroup {
   appearances: TalkAppearance[];
 }
 
-const talkFields = new Set(["id", "title", "tags", "thumbnail", "abstract", "appearances"]);
+const talkFields = new Set(["id", "title", "tags", "thumbnail", "codeUrl", "links", "abstract", "appearances"]);
 const appearanceFields = new Set([
   "title",
   "conference",
@@ -59,7 +60,6 @@ const appearanceFields = new Set([
   "eventUrl",
   "slideUrl",
   "videoUrl",
-  "codeUrl",
   "links",
 ]);
 const linkFields = new Set(["label", "url"]);
@@ -122,11 +122,14 @@ function normalizeTalk(entry: unknown, sourcePath: string, index: number): Talk 
   const title = requiredString(object.title, `${location}.title`);
   const tags = normalizeTags(object.tags, `${location}.tags`);
   const thumbnail = optionalThumbnail(object.thumbnail, `${location}.thumbnail`);
+  const codeUrl = optionalUrl(object.codeUrl, `${location}.codeUrl`);
+  const links = normalizeLinks(object.links, `${location}.links`);
   const abstract = optionalString(object.abstract, `${location}.abstract`);
   if (!Array.isArray(object.appearances) || object.appearances.length === 0) throw new Error(`${location}.appearances must be a non-empty sequence`);
 
-  const talk: Talk = { sourcePath, id, title, tags, appearances: [] };
+  const talk: Talk = { sourcePath, id, title, tags, links, appearances: [] };
   if (thumbnail !== undefined) talk.thumbnail = thumbnail;
+  if (codeUrl !== undefined) talk.codeUrl = codeUrl;
   if (abstract !== undefined) talk.abstract = abstract;
   talk.appearances = object.appearances.map((appearance, appearanceIndex) => normalizeAppearance(appearance, sourcePath, `${location}.appearances[${appearanceIndex}]`, talk));
   return talk;
@@ -164,7 +167,6 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalUrl(appearance, "eventUrl", object.eventUrl, `${location}.eventUrl`);
   assignOptionalUrl(appearance, "slideUrl", object.slideUrl, `${location}.slideUrl`);
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
-  assignOptionalUrl(appearance, "codeUrl", object.codeUrl, `${location}.codeUrl`);
   return appearance;
 }
 
@@ -286,14 +288,19 @@ function isValidIsoDate(value: string): boolean {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 
-function assignOptionalUrl<T extends keyof Pick<TalkAppearance, "eventUrl" | "slideUrl" | "videoUrl" | "codeUrl">>(
+function assignOptionalUrl<T extends keyof Pick<TalkAppearance, "eventUrl" | "slideUrl" | "videoUrl">>(
   appearance: TalkAppearance,
   field: T,
   value: unknown,
   location: string,
 ): void {
-  if (value === undefined) return;
-  appearance[field] = requiredUrl(value, location);
+  const url = optionalUrl(value, location);
+  if (url !== undefined) appearance[field] = url;
+}
+
+function optionalUrl(value: unknown, location: string): string | undefined {
+  if (value === undefined) return undefined;
+  return requiredUrl(value, location);
 }
 
 function requiredUrl(value: unknown, location: string): string {
