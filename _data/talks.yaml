@@ -598,6 +598,22 @@
       slideUrl: https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025
       videoUrl: https://www.youtube.com/watch?v=xsd4PS-gfJk
 
+- id: ccstream
+  title: CodeCharta im Stream
+  thumbnail: /assets/img/thumbnails/ccstream-2025-01-24-rDHtNNBoP6Y.jpg
+  tags:
+    - architecture
+    - code-analysis
+    - codecharta
+    - visualisation
+  appearances:
+    - conference: Software Architektur im Stream
+      location: remote
+      date: 2025-01-24
+      language: de
+      eventUrl: https://software-architektur.tv/2025/01/24/folge248.html
+      videoUrl: https://tube.tchncs.de/w/a55879a2-5c3c-4d1f-bc1c-51e1c7a71cbd
+
 - id: wtsq
   title: What is Software Quality
   tags:

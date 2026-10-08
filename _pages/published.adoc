@@ -75,10 +75,6 @@ link:https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software
 
 |===
 
-== Videos
-
-* link:https://software-architektur.tv/2025/01/24/folge248.html["CodeCharta" 🇩🇪] im link:https://software-architektur.tv/[Software Architektur im Stream]
-
 == Podcasts
 
 * link:https://www.dotnetrocks.com/details/1927[.NET Rocks! > Grasping Code Quality with Richard Gross 🇬🇧]
