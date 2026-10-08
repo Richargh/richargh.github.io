@@ -43,41 +43,16 @@ ${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLi
 function renderBanner(talk: Talk): string {
   const video = newestVersionVideo(talk.appearances);
   const tags = talk.tags.length > 0 ? talk.tags : [talk.title];
-  const style = video ? ` style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.08)), url('${escapeHtml(thumbnailPath(talk, video))}');"` : "";
+  const style = talk.thumbnail ? ` style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.08)), url('${escapeHtml(talk.thumbnail)}');"` : "";
   const content = `<div class="talk-banner-content">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`;
   if (video?.videoUrl) return `<a class="talk-banner talk-banner-link"${style} href="${escapeHtml(video.videoUrl)}" aria-label="Open newest video for ${escapeHtml(talk.title)}">${content}</a>`;
-  return `<div class="talk-banner">${content}</div>`;
+  return `<div class="talk-banner"${style}>${content}</div>`;
 }
 
 function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | undefined {
   return appearances
     .filter((appearance) => appearance.videoUrl)
     .toSorted((left, right) => (right.talkVersion ?? -1) - (left.talkVersion ?? -1) || right.date.localeCompare(left.date))[0];
-}
-
-function thumbnailPath(talk: Talk, appearance: TalkAppearance): string {
-  const videoId = appearance.videoUrl ? youtubeVideoId(appearance.videoUrl) : undefined;
-  return videoId ? `/assets/img/thumbnails/${talk.id}-${appearance.date}-${videoId}.jpg` : "";
-}
-
-function youtubeVideoId(url: string): string | undefined {
-  try {
-    const parsed = new URL(url);
-    const host = parsed.hostname.toLowerCase().replace(/^www\./, "");
-    if (host === "youtu.be") return cleanVideoId(parsed.pathname.slice(1));
-    if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com") {
-      if (parsed.pathname === "/watch") return cleanVideoId(parsed.searchParams.get("v") ?? "");
-      if (parsed.pathname.startsWith("/embed/") || parsed.pathname.startsWith("/shorts/")) return cleanVideoId(parsed.pathname.split("/")[2] ?? "");
-    }
-  } catch {
-    return undefined;
-  }
-  return undefined;
-}
-
-function cleanVideoId(value: string): string | undefined {
-  const id = value.trim();
-  return /^[A-Za-z0-9_-]{6,}$/.test(id) ? id : undefined;
 }
 
 function renderAppearanceLine(appearance: TalkAppearance): string {

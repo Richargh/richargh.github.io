@@ -1539,7 +1539,9 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 .talk-line-links {
+    display: flex;
     flex: 0 0 auto;
+    gap: 0.35rem;
     white-space: nowrap;
 }
 
@@ -1579,6 +1581,9 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     .talk-line-links {
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: flex-end;
         white-space: normal;
     }
 

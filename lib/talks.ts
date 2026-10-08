@@ -11,6 +11,7 @@ export interface Talk {
   id: string;
   title: string;
   tags: string[];
+  thumbnail?: string;
   abstract?: string;
   appearances: TalkAppearance[];
 }
@@ -43,7 +44,7 @@ export interface TalkYearGroup {
   appearances: TalkAppearance[];
 }
 
-const talkFields = new Set(["id", "title", "tags", "abstract", "appearances"]);
+const talkFields = new Set(["id", "title", "tags", "thumbnail", "abstract", "appearances"]);
 const appearanceFields = new Set([
   "title",
   "conference",
@@ -120,10 +121,12 @@ function normalizeTalk(entry: unknown, sourcePath: string, index: number): Talk 
   if (!/^[a-z0-9][a-z0-9-]{1,31}$/.test(id)) throw new Error(`${location}.id must be a short lowercase ASCII id`);
   const title = requiredString(object.title, `${location}.title`);
   const tags = normalizeTags(object.tags, `${location}.tags`);
+  const thumbnail = optionalThumbnail(object.thumbnail, `${location}.thumbnail`);
   const abstract = optionalString(object.abstract, `${location}.abstract`);
   if (!Array.isArray(object.appearances) || object.appearances.length === 0) throw new Error(`${location}.appearances must be a non-empty sequence`);
 
   const talk: Talk = { sourcePath, id, title, tags, appearances: [] };
+  if (thumbnail !== undefined) talk.thumbnail = thumbnail;
   if (abstract !== undefined) talk.abstract = abstract;
   talk.appearances = object.appearances.map((appearance, appearanceIndex) => normalizeAppearance(appearance, sourcePath, `${location}.appearances[${appearanceIndex}]`, talk));
   return talk;
@@ -186,6 +189,15 @@ function normalizeTags(value: unknown, location: string): string[] {
     if (typeof tag !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(tag)) throw new Error(`${location}[${index}] must be a lowercase kebab-case tag`);
     return tag;
   });
+}
+
+function optionalThumbnail(value: unknown, location: string): string | undefined {
+  const thumbnail = optionalString(value, location);
+  if (thumbnail === undefined) return undefined;
+  if (!/^\/assets\/img\/thumbnails\/[A-Za-z0-9_.-]+\.(?:jpg|jpeg|png|webp|avif)$/.test(thumbnail)) {
+    throw new Error(`${location} must be an /assets/img/thumbnails/ path ending in jpg, jpeg, png, webp, or avif`);
+  }
+  return thumbnail;
 }
 
 function compareTalksDescending(left: TalkAppearance, right: TalkAppearance): number {

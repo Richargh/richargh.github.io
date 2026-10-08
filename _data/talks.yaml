@@ -29,6 +29,7 @@
 
 - id: beehive
   title: Beehive Architecture
+  thumbnail: /assets/img/thumbnails/beehive-2023-09-29-875223690.avif
   tags:
     - architecture
     - testing
@@ -47,6 +48,7 @@
 
 - id: htmx
   title: Building dynamic web apps with Kotlin, WebComponents and Htmx
+  thumbnail: /assets/img/thumbnails/htmx-2025-05-21-rEEACXNq-WA.jpg
   tags:
     - kotlin
     - frontend
@@ -65,6 +67,7 @@
 
 - id: cd4lc
   title: Continuous Delivery for Legacy Code
+  thumbnail: /assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.jpg
   tags:
     - continuous-delivery
     - legacy-code
@@ -138,6 +141,7 @@
 
 - id: javaenc
   title: Destructoring is the future of Javas Encapsulation
+  thumbnail: /assets/img/thumbnails/javaenc-2026-10-05-wcghmWdu-HY.jpg
   tags:
     - java
     - encapsulation
@@ -193,6 +197,7 @@
 
 - id: drp4lc
   title: Domain Re-discovery Patterns for Legacy Code
+  thumbnail: /assets/img/thumbnails/drp4lc-2024-11-15-SoMI-KEADiM.jpg
   tags:
     - legacy-code
     - architecture
@@ -271,6 +276,7 @@
 
 - id: bdm
   title: Fixing the Billion-Dollar Mistake
+  thumbnail: /assets/img/thumbnails/bdm-2021-11-19-lCqdy6Qf-nM.jpg
   tags:
     - java
     - csharp
@@ -372,6 +378,7 @@
 
 - id: frontend
   title: Making sense of frontend code with forensic techniques
+  thumbnail: /assets/img/thumbnails/frontend-2026-05-15-P7d9rtJa4VU.jpg
   tags:
     - frontend
     - forensics
@@ -422,6 +429,7 @@
 
 - id: rstbd
   title: Remote Scaled Trunk-Based Development
+  thumbnail: /assets/img/thumbnails/rstbd-2022-11-09-NBjZ3wRXkxY.jpg
   tags:
     - trunk-based-development
     - remote-work
@@ -446,6 +454,7 @@
 
 - id: agentsec
   title: Secure Your Coding Agent Like It’s Malware
+  thumbnail: /assets/img/thumbnails/agentsec-2026-10-05-GLJGhkxMdgU.jpg
   tags:
     - ai
     - security
@@ -500,6 +509,7 @@
 
 - id: supreno
   title: The Surprising Similarities Between Renovating your House and your Code Base
+  thumbnail: /assets/img/thumbnails/supreno-2025-09-23-xsd4PS-gfJk.jpg
   tags:
     - software-engineering
     - renovation
