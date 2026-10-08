@@ -34,6 +34,12 @@
   tags:
     - architecture
     - testing
+  abstract: >
+      Our team has decoupled multiple large legacy code bases without being slown down by structure-sensitive tests. In fact we were able to painlessly grow our suite of business critical tests while we were completely reimagining our internal structure and without our users being impacted.
+      
+      We did this with a variation of the hexagonal architecture that we now call the beehive architecture. The beehive architecture defines the structure as well as decoupling and test patterns that help you scale beyond 10.000 lines of code. Its structure is that of multiple stacked hexagons that talk to each other only via their driving facades, which makes it look like a large beehive.
+      
+      This talk explores the isolation mechanisms in the beehive that support decoupling even large applications and the refactoring-friendly test patterns that are possible due to the structure.
   appearances:
     - title: Bienenstock Architektur
       conference: JUG Saxony Day
@@ -55,6 +61,12 @@
     - frontend
     - web
     - htmx
+  abstract: >
+      The complexity of single-page application (SPA) frameworks is increasing every year. Developers are not only faced with a steep learning curve, but a never-ending one. Every year, existing concepts are replaced by new ones, some of which radically change how we build applications. 
+      
+      Granted, it is not impossible to keep up and write SPAs well. It just takes a lot of time, dedication and knowledge. This leads to teams being fragmented into (a few) frontend experts and the others.
+      
+      In this talk we will look at a modern approach with Htmx and WebComponents that is much simpler and can deliver at least the same user experience as a SPA. Teams don't have to learn two separate stacks for backend and frontend. This gives us full-stack teams that can be productive together. They can focus on the business logic again and less on the technical aspects.
   appearances:
     - conference: NDC Oslo
       location: in-person
@@ -72,7 +84,14 @@
   tags:
     - continuous-delivery
     - legacy-code
-  abstract: This talk has gone through a changes through the years as I figured out what was important and what not so much.
+  abstract: >
+    This is based on a true story.
+
+    My day job is software archeology. I find joy in recovering and analyzing code bones and culture as well as making the skeleton walk again. A short time ago, however, I was confronted with the most horrible code base I have ever seen. This talk is about how we managed to save it and achieve bi-weekly deployments with a high level of confidence.
+    
+    Five million lines of code in multiple languages (Classic ASP, .NET, VBScript, VBA, JavaScript, T-SQL, PL-SQL) in one monolith. The business logic stretched from the UI (WebForms, Scripting, SQL Queries) down to the database (Stored Procedures), there was no test coverage and an enormous amount of hidden coupling. A version control system was not used, we had no test environment, deployments required developers to copy their local compilation to production and multiple customer installations are supported by uncommenting and commenting code.
+    
+    Together we will explore what to do when you inherit such a thing: how to identify hotspots, find hidden coupling, explore how connascence can help you, ways to test as well as refactor and how to achieve a regular deployment schedule.
   appearances:
     - conference: Lean-Agile Scotland
       location: in-person
@@ -148,6 +167,14 @@
     - java
     - destructoring
     - encapsulation
+  abstract: >
+      Destructoring—the breakdown of an object into its constituent parts—is key to Java's ability to reliably maintain encapsulation and invariants. We resolve this apparent paradox in the presentation by looking at past and future language and platform features in the JDK.
+
+      Classic Java serialization breaks encapsulation: it directly accesses private fields, thereby bypassing constructors and the checks anchored there. The reason for this is that deconstruction and reconstruction have not been first-class citizens in the JDK until now.
+
+      This is precisely where current work within the JDK Project Amber comes in – under the working title “Derived Record/Class Creation.” This approach allows us to explicitly specify how objects are deconstructed and reconstructed. This will not only make serialization more secure and robust in the future, but we will also gain “withers” (targeted, immutable copies with individual modified components) for records and pattern matching, which will be extended beyond pure record patterns to normal classes.
+
+      Given these circumstances, it is worth taking a closer look: What is already there, what comes next – and what does this mean for our daily Java practice?
   appearances:
     - title: Destructoring ist die Zukunft von Javas Encapsulation
       conference: IT Tage
@@ -202,6 +229,12 @@
     - legacy-code
     - architecture
     - domain-discovery
+  abstract: >
+      Legacy code projects struggle before coding even begins. Which features are implemented, where they are located, and at what maturity level, is often unclear. In short, a gap exists between the business domain and what is implemented in code. 
+
+      In green-field projects we use Domain-Driven Design tools and patterns, so the gap does not happen. An additional set of patterns is needed when we start out with legacy code though. 
+
+      In this talk we'll explore the core patterns to rediscover the domain. These patterns go beyond merely deciphering the code's functionality. They provide strategies to comprehend the underlying concepts, behaviors, and relationships in the domain.
   appearances:
     - conference: TechCamp Hamburg
       location: in-person
@@ -283,6 +316,10 @@
     - java
     - csharp
     - nullability
+  abstract: >
+      Sir Anthony Hoare calls the null reference his billion dollar mistake because it has led to "innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years." Whether the order of magnitude is true remains to be proven by the scientific community but I think it's fair to say that null references are one of the leading causes of sleep deprivation for developers about to release. Thankfully most programming languages have been extended with alternate ways to handle "the absence of value" that lead to more expressive code, less room for errors and better sleep.
+
+      In this talk we will explore the Nullability possibilities that Java provide, the alternate ways that other languages like Python, Kotlin or C# have picked and techniques such as Railway-Oriented Programming or the Null-Object-Pattern that can help if the language of choice does not provide an option. Finally we'll look at migration options for older code bases.
   appearances:
     - conference: JavaLand
       location: in-person
@@ -311,6 +348,14 @@
   tags:
     - continuous-delivery
     - pipeline
+  abstract: >
+      The Heart of any well-performing team is it‘s own hand-crafted Engineering process. But a heart would be useless without veins that pass along the blood and can take the pressure that the heart builds. In a similar manner a team needs it’s own hand-crafted pipeline. Most teams today have one but only few teams have a pipeline that can take the pressure and not collapse. This talk is how to build this Greatest and Best Pipeline in the world. 
+
+      To be realistic though, it‘s more of a tribute to the greatest and best pipeline in the world. Not because we couldn’t remember but because we want to show you how you can build your greatest and best pipeline. 
+
+      Since your process is different from ours we‘ll show you how to hand-craft your pipeline and not prescripe a solution that won't fit.
+
+      The examples will cover building, bundling, testing and securing your deployment artifact. They'll be written in Gitlab-Ci format and deploy to Kubernetes, but you can apply the same principles and patterns to any other pipeline and any other environment.
   appearances:
     - conference: JAX
       location: in-person
@@ -327,6 +372,12 @@
   tags:
     - kotlin
     - java
+  abstract: >
+      Java has introduced many attractive language features in recent years - records, pattern matching and virtual threads - and thus a large part of what was previously exclusive to Kotlin. But has Java really covered everything attractive about Kotlin? Is Kotlin still relevant in 2026?
+
+      To get to the bottom of these questions, we will analyze and evaluate the developments in the architecture of both languages and the exemplary use cases from a developer's perspective. We will also take a look into the future and compare the emerging development steps of both languages over the next few years.
+
+      The talk aims to help current and future developers choose the right programming language for their needs by providing a complete, unbiased picture of the strengths and limitations of both languages.
   appearances:
     - conference: Java Forum Stuttgart
       location: in-person
@@ -380,6 +431,12 @@
   tags:
     - frontend
     - software-forensics
+  abstract: >
+      In projects with hundreds of thousands of lines, it is easy to lose track of code, architecture and quality. Are we still on the right track, are we blocking ourselves with internal dependencies, or are we already stuck? Software is immaterial, we cannot see how it is doing. 
+
+      In this talk, we will therefore look at the forensic techniques and tools we can use to make the quality of code and architecture tangible. The tools extract quantitative information from code, architecture, git history, and the techniques qualify these results. Put together we have accurate picture where we stand. This also support us in having a dialog with non-technical stakeholders at eye level about the required quality. 
+
+      Some of the techniques we will look at in-depth are Quality Views and feature injection. The forensic tools include the open-source tool CodeCharta and CodeGraph.
   appearances:
     - conference: JSHeroes
       location: in-person
@@ -407,6 +464,8 @@
     - architecture
     - legacy-code
     - modernisation
+  abstract: >
+      There are many ways to modernize software – but which strategy makes sense when? “Refactor, rearchitect, rebuild” and their relatives are buzzwords, but behind each approach are different prerequisites and goals. In this presentation, we will highlight how to recognize the right time for renewal and which methods can be used to accurately assess the current state of the system. Only on this basis can we assess which modernization strategy – from targeted refactoring to complete rebuild – best suits the individual system and future requirements.
   appearances:
     - conference: DevLand
       location: in-person
@@ -431,6 +490,10 @@
   tags:
     - trunk-based-development
     - remote-work
+  abstract: >
+      How to coordinate teams of 40+ developers and get consistent quality in a remote setting? Plenty scaling methods have been proposed but they leave out the technical practices needed to achieve quality at scale and big-bang migrate teams.
+
+      In this talk we‘ll explore how my project grew from a local 6 person scrum team to a remote 20 person continuous flow team and beyond. We‘ll take a look at the iterations needed to achieve our flow, how we used Xp practices like trunk-based development and what practices we adopted in our all-remote setting.
   appearances:
     - conference: Build Stuff
       location: hybrid
@@ -457,6 +520,10 @@
     - ai
     - security
     - coding-agents
+  abstract: >
+      Coding agents are unsafe, just like a campfire in a drought. OpenAi's agent hacking Hugging Face shows what these agents are trained to do. And even a safety-tuned agent can be hijacked by any external content (pull request, external library, or website), which can inject prompts and lead to persisted compromise. Safety training and prompt-injection classifiers can lower the odds, but as Simon Willison puts it: "In application security, 99% is a failing grade."
+
+      In this talk, I break down the Hugging Face attack, map the current state of agent security, and lay out a sandbox taxonomy with seven layers of defense. I'll show why built-in sandboxes, container isolation, and regular VMs leave serious gaps, and what today's best sandboxes do differently. You'll leave knowing how to let coding agents work on your code while enforcing the principle of least privilege.
   links:
     - label: Clamp Sandbox
       url: https://github.com/Richargh/clamp
@@ -511,6 +578,12 @@
   tags:
     - legacy-code
     - modernisation
+  abstract: >
+      Code and buildings have nothing in common. One is a malleable construct of our minds, while the other is an observable object, constructed of brick and mortar, amongst other things. Given that code and buildings have no similarities it is clear that we cannot apply metaphors from constructing a building to "constructing" a code base. Or so I thought.  
+
+      Last year I bought a house and started renovating it, while at the same time my team was renovating a legacy code base. It turns out that while construction of code and buildings is very different, renovating them has some surprising similarities.  
+
+      In this experience report I'll show lots of pictures from our house renovation - full of torn down walls, replaced floors and the like - and draw analogies to our legacy code renovation. I'll share helpful tips for code renovation that can be understood by anyone due to the building analogies and hopefully entertain you along the way. By the end I hope to have convinced you that renovating a legacy code base is a much nicer task than renovating a house, where each torn down wall can lead to brick and mortar raining down on your malleable head.
   appearances:
     - conference: CTO Craft Con Berlin
       location: in-person

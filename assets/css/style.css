@@ -1513,6 +1513,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .talk-card-body h2 {
     margin-top: 0;
+    margin-bottom: 0.25rem;
 }
 
 .talk-card-actions {
@@ -1613,4 +1614,60 @@ label.margin-toggle:not(.sidenote-number) {
 .talk-title-anchor:hover,
 .talk-title-anchor:focus {
     text-decoration: underline;
+}
+
+.talk-abstract {
+    margin: 0 0 0.65rem;
+    color: #666666;
+}
+
+.talk-abstract summary {
+    cursor: pointer;
+    color: #666666;
+    font-style: italic;
+    line-height: 1.45;
+    list-style: none;
+}
+
+.talk-abstract summary::-webkit-details-marker {
+    display: none;
+}
+
+.talk-abstract summary::after {
+    content: " ... more";
+    color: #555555;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.talk-abstract[open] summary::after {
+    content: " less";
+}
+
+.talk-abstract summary:hover,
+.talk-abstract summary:focus {
+    color: #333333;
+}
+
+.talk-abstract p {
+    margin: 0.45rem 0 0;
+    line-height: 1.55;
+}
+
+.talk-abstract[open] summary {
+    margin-bottom: 0.1rem;
+}
+
+.talk-abstract-short {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .talk-abstract-long {
+        display: none;
+    }
+
+    .talk-abstract-short {
+        display: inline;
+    }
 }

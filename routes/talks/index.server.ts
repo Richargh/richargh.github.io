@@ -35,12 +35,32 @@ ${banner}
 <h2><a class="talk-title-anchor" href="#${escapeHtml(talk.id)}">${escapeHtml(talk.title)}</a></h2>
 <div class="talk-card-actions">${renderTalkActions(talk)}</div>
 </div>
-${talk.abstract ? `<p class="talk-abstract">${escapeHtml(talk.abstract)}</p>` : ""}
+${talk.abstract ? renderAbstract(talk.abstract) : ""}
 <ul class="talk-appearances-list">
 ${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLine).join("\n")}
 </ul>
 </div>
 </section>`;
+}
+
+function renderAbstract(abstract: string): string {
+  return `<details class="talk-abstract">
+<summary><span class="talk-abstract-long">${escapeHtml(excerpt(abstract, 70))}</span><span class="talk-abstract-short">${escapeHtml(excerpt(abstract, 45))}</span></summary>
+${abstractParagraphs(abstract).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
+</details>`;
+}
+
+function abstractParagraphs(value: string): string[] {
+  return value
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replaceAll(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function excerpt(value: string, length: number): string {
+  const normalized = value.replaceAll(/\s+/g, " ").trim();
+  if (normalized.length <= length) return normalized;
+  return normalized.slice(0, length).trimEnd();
 }
 
 function renderTalkActions(talk: Talk): string {
