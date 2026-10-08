@@ -17,7 +17,7 @@
   tags:
     - ai
     - legacy-code
-    - modernization
+    - modernisation
   appearances:
     - title: KI-gestützte Legacy-Modernisierung
       conference: betterCode(Agentic Ai)
@@ -54,6 +54,7 @@
     - kotlin
     - frontend
     - web
+    - htmx
   appearances:
     - conference: NDC Oslo
       location: in-person
@@ -145,6 +146,7 @@
   thumbnail: /assets/img/thumbnails/java-dest-enc-2026-10-05-wcghmWdu-HY.jpg
   tags:
     - java
+    - destructoring
     - encapsulation
   appearances:
     - title: Destructoring ist die Zukunft von Javas Encapsulation
@@ -308,7 +310,7 @@
   title: How to build the greatest and best Pipeline in the World
   tags:
     - continuous-delivery
-    - pipelines
+    - pipeline
   appearances:
     - conference: JAX
       location: in-person
@@ -377,7 +379,7 @@
   thumbnail: /assets/img/thumbnails/forend-2026-05-15-P7d9rtJa4VU.jpg
   tags:
     - frontend
-    - forensics
+    - software-forensics
   appearances:
     - conference: JSHeroes
       location: in-person
@@ -404,7 +406,7 @@
   tags:
     - architecture
     - legacy-code
-    - modernization
+    - modernisation
   appearances:
     - conference: DevLand
       location: in-person
@@ -507,8 +509,8 @@
   title: The Surprising Similarities Between Renovating your House and your Code Base
   thumbnail: /assets/img/thumbnails/supreno-2025-09-23-xsd4PS-gfJk.jpg
   tags:
-    - software-engineering
-    - renovation
+    - legacy-code
+    - modernisation
   appearances:
     - conference: CTO Craft Con Berlin
       location: in-person
@@ -523,8 +525,7 @@
 - id: wtsq
   title: What is Software Quality
   tags:
-    - quality
-    - software-engineering
+    - software-quality
   appearances:
     - conference: IT Day Frankfurt
       location: in-person
