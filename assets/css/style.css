@@ -1671,3 +1671,16 @@ label.margin-toggle:not(.sidenote-number) {
         display: inline;
     }
 }
+
+.talk-upcoming {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.05rem 0.35rem;
+    background: #fff4cc;
+    color: #6f5200;
+    font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}

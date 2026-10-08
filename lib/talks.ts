@@ -34,6 +34,7 @@ export interface TalkAppearance {
   variant?: string;
   language?: string;
   durationMinutes?: number;
+  upcoming?: boolean;
   eventUrl?: string;
   slideUrl?: string;
   videoUrl?: string;
@@ -57,6 +58,7 @@ const appearanceFields = new Set([
   "variant",
   "language",
   "durationMinutes",
+  "upcoming",
   "eventUrl",
   "slideUrl",
   "videoUrl",
@@ -164,6 +166,7 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalString(appearance, "variant", object.variant, `${location}.variant`);
   assignOptionalString(appearance, "language", object.language, `${location}.language`);
   assignOptionalNumber(appearance, "durationMinutes", object.durationMinutes, `${location}.durationMinutes`);
+  assignOptionalBoolean(appearance, "upcoming", object.upcoming, `${location}.upcoming`);
   assignOptionalUrl(appearance, "eventUrl", object.eventUrl, `${location}.eventUrl`);
   assignOptionalUrl(appearance, "slideUrl", object.slideUrl, `${location}.slideUrl`);
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
@@ -263,6 +266,17 @@ function assignOptionalNumber<T extends keyof Pick<TalkAppearance, "talkVersion"
 ): void {
   if (value === undefined) return;
   if (typeof value !== "number" || !Number.isFinite(value)) throw new Error(`${location} must be a number`);
+  appearance[field] = value;
+}
+
+function assignOptionalBoolean<T extends keyof Pick<TalkAppearance, "upcoming">>(
+  appearance: TalkAppearance,
+  field: T,
+  value: unknown,
+  location: string,
+): void {
+  if (value === undefined) return;
+  if (typeof value !== "boolean") throw new Error(`${location} must be a boolean`);
   appearance[field] = value;
 }
 

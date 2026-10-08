@@ -10,6 +10,7 @@
       city: Vilnius
       country: Lithuania
       date: 2026-12-02
+      upcoming: true
       eventUrl: https://buildstuff.events/pages/agenda#aoa-day-1:~:text=Richard%20Gro%C3%9F
 
 - id: ai-mod
@@ -182,6 +183,7 @@
       city: Frankfurt
       country: Germany
       date: 2026-12-08
+      upcoming: true
       language: de
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2026/destructoring-ist-die-zukunft-von-javas-encapsulation.html
     - conference: Devoxx Belgium
@@ -534,6 +536,7 @@
       country: Germany
       date: 2026-11-04
       talkVersion: 1.5
+      upcoming: true
       language: en
       eventUrl: https://codetalks.com/speaker#:~:text=Richard%20Gross
     - conference: Devoxx Belgium

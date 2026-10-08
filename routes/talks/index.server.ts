@@ -87,7 +87,7 @@ function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | und
 
 function renderAppearanceLine(appearance: TalkAppearance): string {
   return `<li class="talk-appearance-line${appearance.videoUrl ? " has-video" : ""}">
-<span class="talk-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
+<span class="talk-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderUpcoming(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
 <span class="talk-line-links">${renderResourceLinks(appearance)}</span>
 </li>`;
 }
@@ -118,6 +118,10 @@ function renderResourceLinks(appearance: TalkAppearance): string {
 
 function renderVersion(appearance: TalkAppearance): string {
   return appearance.talkVersion === undefined ? "" : `${escapeHtml(`v${appearance.talkVersion}`)}: `;
+}
+
+function renderUpcoming(appearance: TalkAppearance): string {
+  return appearance.upcoming ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(appearance.date)}</span>` : "";
 }
 
 function renderVariant(appearance: TalkAppearance): string {
