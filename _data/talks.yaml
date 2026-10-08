@@ -1,4 +1,4 @@
-- id: ai-auto
+- id: iro-ai-auto
   title: Ironies of AI Automation - What 1983 Can Teach Us About AI in 2026
   tags:
     - ai
@@ -12,7 +12,7 @@
       date: 2026-12-02
       eventUrl: https://buildstuff.events/pages/agenda#aoa-day-1:~:text=Richard%20Gro%C3%9F
 
-- id: aimod
+- id: ai-mod
   title: Ai-assisted Modernisation
   tags:
     - ai
@@ -27,9 +27,9 @@
       eventUrl: https://agenticai.bettercode.eu/veranstaltung-89613-se-0-ki-gestuetzte-legacy-modernisierung-von-systemverstaendnis-zu-kontrollierter-veraenderung.html
       slideUrl: https://speakerdeck.com/richargh/ki-gestutzte-legacy-modernisierung-v1-at-bettercode-agentic-ai-2026
 
-- id: beehive
+- id: bee-arc
   title: Beehive Architecture
-  thumbnail: /assets/img/thumbnails/beehive-2023-09-29-875223690.avif
+  thumbnail: /assets/img/thumbnails/bee-arc-2023-09-29-875223690.avif
   tags:
     - architecture
     - testing
@@ -46,9 +46,9 @@
       videoUrl: https://vimeo.com/875223690
       codeUrl: https://github.com/Richargh/testdsl
 
-- id: htmx
+- id: dyn-web-htmx
   title: Building dynamic web apps with Kotlin, WebComponents and Htmx
-  thumbnail: /assets/img/thumbnails/htmx-2025-05-21-rEEACXNq-WA.jpg
+  thumbnail: /assets/img/thumbnails/dyn-web-htmx-2025-05-21-rEEACXNq-WA.jpg
   tags:
     - kotlin
     - frontend
@@ -139,9 +139,9 @@
       eventUrl: https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme
 
-- id: javaenc
+- id: java-dest-enc
   title: Destructoring is the future of Javas Encapsulation
-  thumbnail: /assets/img/thumbnails/javaenc-2026-10-05-wcghmWdu-HY.jpg
+  thumbnail: /assets/img/thumbnails/java-dest-enc-2026-10-05-wcghmWdu-HY.jpg
   tags:
     - java
     - encapsulation
@@ -274,9 +274,9 @@
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-at-ddd-eu-2024
       videoUrl: https://www.youtube.com/watch?v=_TKqc784PH8
 
-- id: bdm
+- id: ftbdm
   title: Fixing the Billion-Dollar Mistake
-  thumbnail: /assets/img/thumbnails/bdm-2021-11-19-lCqdy6Qf-nM.jpg
+  thumbnail: /assets/img/thumbnails/ftbdm-2021-11-19-lCqdy6Qf-nM.jpg
   tags:
     - java
     - csharp
@@ -306,7 +306,7 @@
       videoUrl: https://www.youtube.com/watch?v=lCqdy6Qf-nM
       codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
 
-- id: pipeline
+- id: tenacious-pipe
   title: How to build the greatest and best Pipeline in the World
   tags:
     - continuous-delivery
@@ -376,9 +376,9 @@
       eventUrl: https://www.jug-da.de/2026/09/Quarkus-LLMs/
       slideUrl: https://speakerdeck.com/richargh/llms-sind-nicht-skynet-v1-at-jug-darmstadt-september-2026
 
-- id: frontend
+- id: forend
   title: Making sense of frontend code with forensic techniques
-  thumbnail: /assets/img/thumbnails/frontend-2026-05-15-P7d9rtJa4VU.jpg
+  thumbnail: /assets/img/thumbnails/forend-2026-05-15-P7d9rtJa4VU.jpg
   tags:
     - frontend
     - forensics
@@ -524,7 +524,7 @@
       slideUrl: https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025
       videoUrl: https://www.youtube.com/watch?v=xsd4PS-gfJk
 
-- id: quality
+- id: wtsq
   title: What is Software Quality
   tags:
     - quality
