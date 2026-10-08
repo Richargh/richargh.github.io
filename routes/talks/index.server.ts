@@ -66,9 +66,8 @@ function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | und
 }
 
 function renderAppearanceLine(appearance: TalkAppearance): string {
-  const prefix = prefixFor(appearance);
   return `<li class="talk-appearance-line${appearance.videoUrl ? " has-video" : ""}">
-<span class="talk-line-main">${prefix ? `${escapeHtml(prefix)}: ` : ""}${renderEventLink(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
+<span class="talk-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
 <span class="talk-line-links">${renderResourceLinks(appearance)}</span>
 </li>`;
 }
@@ -97,11 +96,12 @@ function renderResourceLinks(appearance: TalkAppearance): string {
   return links.map((link) => `<a class="talk-resource-button${link.label.includes("Video") ? " talk-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
-function prefixFor(appearance: TalkAppearance): string {
-  const parts: string[] = [];
-  if (appearance.talkVersion !== undefined) parts.push(`v${appearance.talkVersion}`);
-  if (appearance.variant) parts.push(appearance.variant);
-  return parts.join(", ");
+function renderVersion(appearance: TalkAppearance): string {
+  return appearance.talkVersion === undefined ? "" : `${escapeHtml(`v${appearance.talkVersion}`)}: `;
+}
+
+function renderVariant(appearance: TalkAppearance): string {
+  return appearance.variant ? ` <span class="talk-duration">${escapeHtml(appearance.variant)}</span>` : "";
 }
 
 function compareAppearancesDescending(left: TalkAppearance, right: TalkAppearance): number {
