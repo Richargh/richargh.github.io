@@ -1443,7 +1443,7 @@ label.margin-toggle:not(.sidenote-number) {
 
 .talk-banner {
     display: block;
-    min-height: 150px;
+    min-height: 210px;
     text-decoration: none;
     background: linear-gradient(135deg, #314a8b 0%, #7b3f98 42%, #e36f4a 100%);
     background-position: center;
@@ -1482,7 +1482,7 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 .talk-banner-content {
-    min-height: 150px;
+    min-height: 210px;
     display: flex;
     align-items: end;
     flex-wrap: wrap;
@@ -1504,8 +1504,24 @@ label.margin-toggle:not(.sidenote-number) {
     padding: 1rem;
 }
 
+.talk-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 .talk-card-body h2 {
     margin-top: 0;
+}
+
+.talk-card-actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: flex-end;
+    margin-top: 0.1rem;
 }
 
 .talk-appearances-list {
