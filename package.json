@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "npm run generate && node --experimental-strip-types server.ts",
     "generate": "node --experimental-strip-types scripts/generate.ts",
+    "fetch:youtube-thumbnails": "node --experimental-strip-types scripts/fetch-youtube-thumbnails.ts",
     "validate:generated": "html-validate 'generated/**/*.html'",
     "lint": "npm run lint:tsc && oxlint --deny-warnings",
     "lint:tsc": "tsc --noEmit",

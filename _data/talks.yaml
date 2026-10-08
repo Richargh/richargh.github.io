@@ -1,5 +1,9 @@
 - id: ai-auto
   title: Ironies of AI Automation - What 1983 Can Teach Us About AI in 2026
+  tags:
+    - ai
+    - automation
+    - safety
   appearances:
     - conference: Build Stuff
       location: in-person
@@ -10,6 +14,10 @@
 
 - id: aimod
   title: Ai-assisted Modernisation
+  tags:
+    - ai
+    - legacy-code
+    - modernization
   appearances:
     - title: KI-gestützte Legacy-Modernisierung
       conference: betterCode(Agentic Ai)
@@ -21,6 +29,9 @@
 
 - id: beehive
   title: Beehive Architecture
+  tags:
+    - architecture
+    - testing
   appearances:
     - title: Bienenstock Architektur
       conference: JUG Saxony Day
@@ -36,6 +47,10 @@
 
 - id: htmx
   title: Building dynamic web apps with Kotlin, WebComponents and Htmx
+  tags:
+    - kotlin
+    - frontend
+    - web
   appearances:
     - conference: NDC Oslo
       location: in-person
@@ -50,6 +65,9 @@
 
 - id: cd4lc
   title: Continuous Delivery for Legacy Code
+  tags:
+    - continuous-delivery
+    - legacy-code
   abstract: This talk has gone through a changes through the years as I figured out what was important and what not so much.
   appearances:
     - conference: Lean-Agile Scotland
@@ -120,6 +138,9 @@
 
 - id: javaenc
   title: Destructoring is the future of Javas Encapsulation
+  tags:
+    - java
+    - encapsulation
   appearances:
     - title: Destructoring ist die Zukunft von Javas Encapsulation
       conference: IT Tage
@@ -172,6 +193,10 @@
 
 - id: drp4lc
   title: Domain Re-discovery Patterns for Legacy Code
+  tags:
+    - legacy-code
+    - architecture
+    - domain-discovery
   appearances:
     - conference: TechCamp Hamburg
       location: in-person
@@ -246,6 +271,10 @@
 
 - id: bdm
   title: Fixing the Billion-Dollar Mistake
+  tags:
+    - java
+    - csharp
+    - nullability
   appearances:
     - conference: JavaLand
       location: in-person
@@ -273,6 +302,9 @@
 
 - id: pipeline
   title: How to build the greatest and best Pipeline in the World
+  tags:
+    - continuous-delivery
+    - pipelines
   appearances:
     - conference: JAX
       location: in-person
@@ -285,6 +317,9 @@
 
 - id: kvj
   title: Kotlin kontra Java
+  tags:
+    - kotlin
+    - java
   appearances:
     - conference: Java Forum Stuttgart
       location: in-person
@@ -319,6 +354,9 @@
 
 - id: llmnet
   title: LLMs are not Skynet
+  tags:
+    - llm
+    - ai
   appearances:
     - conference: JUG Darmstadt
       location: in-person
@@ -334,6 +372,9 @@
 
 - id: frontend
   title: Making sense of frontend code with forensic techniques
+  tags:
+    - frontend
+    - forensics
   appearances:
     - conference: JSHeroes
       location: in-person
@@ -357,6 +398,10 @@
 
 - id: rrr
   title: Refactor, Rearchitect, Rebuild - What to do when?
+  tags:
+    - architecture
+    - legacy-code
+    - modernization
   appearances:
     - conference: DevLand
       location: in-person
@@ -377,6 +422,9 @@
 
 - id: rstbd
   title: Remote Scaled Trunk-Based Development
+  tags:
+    - trunk-based-development
+    - remote-work
   appearances:
     - conference: Build Stuff
       location: hybrid
@@ -398,6 +446,10 @@
 
 - id: agentsec
   title: Secure Your Coding Agent Like It’s Malware
+  tags:
+    - ai
+    - security
+    - coding-agents
   appearances:
     - conference: Code.talks
       location: in-person
@@ -433,6 +485,9 @@
 
 - id: bootgp
   title: "Spring Boot: The Good Parts"
+  tags:
+    - spring-boot
+    - kotlin
   appearances:
     - conference: Entwicklertag Frankfurt
       location: in-person
@@ -445,6 +500,9 @@
 
 - id: supreno
   title: The Surprising Similarities Between Renovating your House and your Code Base
+  tags:
+    - software-engineering
+    - renovation
   appearances:
     - conference: CTO Craft Con Berlin
       location: in-person
@@ -458,6 +516,9 @@
 
 - id: quality
   title: What is Software Quality
+  tags:
+    - quality
+    - software-engineering
   appearances:
     - conference: IT Day Frankfurt
       location: in-person

@@ -10,6 +10,7 @@ export interface Talk {
   sourcePath: string;
   id: string;
   title: string;
+  tags: string[];
   abstract?: string;
   appearances: TalkAppearance[];
 }
@@ -42,7 +43,7 @@ export interface TalkYearGroup {
   appearances: TalkAppearance[];
 }
 
-const talkFields = new Set(["id", "title", "abstract", "appearances"]);
+const talkFields = new Set(["id", "title", "tags", "abstract", "appearances"]);
 const appearanceFields = new Set([
   "title",
   "conference",
@@ -118,10 +119,11 @@ function normalizeTalk(entry: unknown, sourcePath: string, index: number): Talk 
   const id = requiredString(object.id, `${location}.id`);
   if (!/^[a-z0-9][a-z0-9-]{1,31}$/.test(id)) throw new Error(`${location}.id must be a short lowercase ASCII id`);
   const title = requiredString(object.title, `${location}.title`);
+  const tags = normalizeTags(object.tags, `${location}.tags`);
   const abstract = optionalString(object.abstract, `${location}.abstract`);
   if (!Array.isArray(object.appearances) || object.appearances.length === 0) throw new Error(`${location}.appearances must be a non-empty sequence`);
 
-  const talk: Talk = { sourcePath, id, title, appearances: [] };
+  const talk: Talk = { sourcePath, id, title, tags, appearances: [] };
   if (abstract !== undefined) talk.abstract = abstract;
   talk.appearances = object.appearances.map((appearance, appearanceIndex) => normalizeAppearance(appearance, sourcePath, `${location}.appearances[${appearanceIndex}]`, talk));
   return talk;
@@ -174,6 +176,15 @@ function normalizeLinks(value: unknown, location: string): TalkLink[] {
       label: requiredString(object.label, `${linkLocation}.label`),
       url: requiredUrl(object.url, `${linkLocation}.url`),
     };
+  });
+}
+
+function normalizeTags(value: unknown, location: string): string[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value)) throw new Error(`${location} must be a sequence`);
+  return value.map((tag, index) => {
+    if (typeof tag !== "string" || !/^[a-z0-9][a-z0-9-]*$/.test(tag)) throw new Error(`${location}[${index}] must be a lowercase kebab-case tag`);
+    return tag;
   });
 }
 

@@ -24,7 +24,7 @@ test("main navigation opens ordinary content pages", async ({ page }) => {
 
   await page.goto("/talks/");
   await expect(page.getByRole("heading", { level: 1, name: "Talks" })).toBeVisible();
-  await expect(page.getByText("These are all past talks")).toBeVisible();
+  await expect(page.locator(".talk-card", { hasText: "Domain Re-discovery Patterns for Legacy Code" })).toBeVisible();
 });
 
 test("home-page browser search uses the generated post search index", async ({ page }) => {
@@ -36,6 +36,21 @@ test("home-page browser search uses the generated post search index", async ({ p
   const result = page.locator("#results-container .search_res").filter({ hasText: "GenAI is a waste of our time" });
   await expect(result).toBeVisible();
   await expect(result.getByRole("link")).toHaveAttribute("href", "https://richargh.de/posts/AI-Waste");
+});
+
+test("talks page is generated as grouped cards from structured talk data", async ({ page }) => {
+  await page.goto("/talks/");
+
+  const talkCard = page.locator(".talk-card#drp4lc");
+  await expect(talkCard.getByRole("heading", { level: 2, name: "Domain Re-discovery Patterns for Legacy Code" })).toBeVisible();
+  await expect(talkCard.locator(".talk-banner-content")).toContainText("legacy-code");
+  await expect(talkCard.locator(".talk-banner-content")).not.toContainText("drp4lc");
+  await expect(talkCard.locator(".talk-appearance-line").filter({ hasText: "TechCamp Hamburg 2026" }).filter({ hasText: "v3.4" })).toBeVisible();
+  await expect(talkCard.getByRole("link", { name: "TechCamp Hamburg 2026" })).toHaveAttribute("href", /techcamp\.hamburg/);
+
+  const videoCard = page.locator(".talk-card#agentsec");
+  await expect(videoCard.locator(".talk-banner-link")).toHaveAttribute("href", "https://www.youtube.com/watch?v=GLJGhkxMdgU");
+  await expect(videoCard.locator(".talk-video-button", { hasText: "Video" }).first()).toBeVisible();
 });
 
 test("schedule is generated from structured talk appearances", async ({ page }) => {
