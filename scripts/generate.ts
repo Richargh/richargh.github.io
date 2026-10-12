@@ -6,8 +6,9 @@ import { render as render404 } from "../routes/404.html.server.ts";
 import { render as renderFeed } from "../routes/feed.xml.server.ts";
 import { render as renderRobots } from "../routes/robots.txt.server.ts";
 import { render as renderSitemap } from "../routes/sitemap.xml.server.ts";
-import { loadAllPages, loadAllPosts } from "../lib/content.ts";
+import { isStandalonePage, loadAllPages, loadAllPosts } from "../lib/content.ts";
 import { render as renderIndex } from "../routes/index.server.ts";
+import { render as renderBlog } from "../routes/posts/index.server.ts";
 import { render as renderDatesIndex } from "../routes/dates/index.server.ts";
 import { render as renderTagsIndex } from "../routes/tags/index.server.ts";
 import { render as renderSchedule } from "../routes/schedule/index.server.ts";
@@ -25,6 +26,7 @@ await mkdir(join(outputDir, "posts"), { recursive: true });
 await cp("assets", join(outputDir, "assets"), { recursive: true, force: true });
 await cp("node_modules/microlighter/dist", join(outputDir, "assets", "vendor", "microlighter"), { recursive: true, force: true });
 await writeFile(join(outputDir, "index.html"), `${await renderIndex()}\n`, "utf8");
+await writeFile(join(outputDir, "posts", "index.html"), `${await renderBlog()}\n`, "utf8");
 await mkdir(join(outputDir, "tags"), { recursive: true });
 await writeFile(join(outputDir, "tags", "index.html"), `${await renderTagsIndex()}\n`, "utf8");
 await mkdir(join(outputDir, "dates"), { recursive: true });
@@ -33,7 +35,7 @@ await mkdir(join(outputDir, "schedule"), { recursive: true });
 await writeFile(join(outputDir, "schedule", "index.html"), `${await renderSchedule()}\n`, "utf8");
 
 const posts = await loadAllPosts({ buildDate: process.env.MASTRO_BUILD_DATE });
-const pages = await loadAllPages();
+const pages = (await loadAllPages()).filter(isStandalonePage);
 await writeFile(join(outputDir, "search.json"), await renderSearchJson(posts), "utf8");
 await writeFile(join(outputDir, "autocomplete.txt"), renderAutocompleteText(posts), "utf8");
 await writeFile(join(outputDir, "feed.xml"), await renderFeed(), "utf8");
@@ -61,6 +63,7 @@ await writeFile(join(outputDir, "interviews", "index.html"), `${await renderInte
 await assertGeneratedLinksResolve(outputDir);
 
 console.log(`Generated ${join(outputDir, "index.html")}`);
+console.log(`Generated ${join(outputDir, "posts", "index.html")}`);
 console.log(`Generated ${posts.length} posts in ${join(outputDir, "posts")}`);
 console.log(`Generated ${pages.length} pages`);
 console.log(`Generated generated talks page from _data/talks.yaml`);

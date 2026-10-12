@@ -26,7 +26,7 @@ export function renderLayout(options: LayoutOptions): string {
     <meta charset="utf-8">
     <meta property="og:site_name" content="Knowledge Continuum"/>
     <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="article:author" content="${site.url}/about/">
+    <meta property="article:author" content="${site.url}/">
     <meta property="og:title" content="${escapeHtml(pageTitle)}">
     <meta property="og:type" content="${options.type ?? "website"}">
     <meta property="og:url" content="${canonical}">

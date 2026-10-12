@@ -105,6 +105,10 @@ export async function loadPage(sourcePath: string): Promise<Page> {
   };
 }
 
+export function isStandalonePage(page: Page): boolean {
+  return page.urlPath !== "/";
+}
+
 export function validatePages(pages: Page[]): void {
   assertUnique(pages, (page) => page.title, "duplicate page title");
   assertUnique(pages, (page) => page.urlPath, "duplicate page URL");

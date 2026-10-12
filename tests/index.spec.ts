@@ -1,8 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-test("index feed is generated from posts", async ({ page }) => {
+test("index is the about page", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 4, name: "Richard's Blog" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+});
+
+test("blog feed is generated from posts", async ({ page }) => {
+  await page.goto("/posts/");
   await expect(page.getByRole("link", { name: /GenAI is a waste of our time/ })).toHaveAttribute("href", "/posts/AI-Waste");
 });
 
@@ -18,11 +23,12 @@ test("explicit permalink post renders at its public URL", async ({ page }) => {
 test("main navigation opens ordinary content pages", async ({ page }) => {
   await page.goto("/");
 
-  await page.getByRole("link", { name: "About", exact: true }).click();
-  await expect(page).toHaveURL(/\/about\/?$/);
-  await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+  await page.getByRole("link", { name: "Blog", exact: true }).click();
+  await expect(page).toHaveURL(/\/posts\/?$/);
+  await expect(page.getByRole("link", { name: /GenAI is a waste of our time/ })).toHaveAttribute("href", "/posts/AI-Waste");
 
   await page.goto("/talks/");
+
   await expect(page.getByRole("heading", { level: 1, name: "Talks" })).toBeVisible();
   await expect(page.locator(".talk-card", { hasText: "Domain Re-discovery Patterns for Legacy Code" })).toBeVisible();
 
@@ -128,7 +134,7 @@ test("generated autocomplete.txt is served without trailing empty suggestions", 
 });
 
 test("selected AsciiDoc post renders end to end", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/posts/");
   await page.getByRole("link", { name: /GenAI is a waste of our time/ }).click();
 
   await expect(page).toHaveURL(/\/posts\/AI-Waste$/);

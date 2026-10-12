@@ -1,4 +1,4 @@
-import type {Page, Post} from "./content.ts";
+import { isStandalonePage, type Page, type Post } from "./content.ts";
 import {outputKeyForUrlPath} from "./output-compat.ts";
 
 export interface RouteManifestEntry {
@@ -15,7 +15,13 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             urlPath: "/",
             outputKey: outputKeyForUrlPath("/"),
             kind: "home" as const,
-            title: "Richard's Blog",
+            title: "About"
+        },
+        {
+            urlPath: "/posts/",
+            outputKey: outputKeyForUrlPath("/posts/"),
+            kind: "index" as const,
+            title: "Blog",
             updated: newestDate(posts)
         },
         ...posts.map((post) => ({
@@ -25,7 +31,7 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             title: post.title,
             updated: post.date
         })),
-        ...pages.map((page) => ({
+        ...pages.filter(isStandalonePage).map((page) => ({
             urlPath: page.urlPath,
             outputKey: outputKeyForUrlPath(page.urlPath),
             kind: "page" as const,

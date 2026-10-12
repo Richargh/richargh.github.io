@@ -25,6 +25,16 @@ export function renderHeader({ showBackToHome = false } = {}): string {
 
     <!-- Navbar -->
     <div class="main-site-subheader menu disable-select">
+        <div class="blog">
+            <a style="text-decoration: none;" href="/posts">
+                <svg class="icon-blog" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 20H8L18.5 9.5L14.5 5.5L4 16V20Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 6.5L17.5 10.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 5L20 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="blog-p">Blog</p>
+            </a>
+        </div>
         <div class="talks">
             <a style="text-decoration: none;" href="/talks">
                 <!-- from https://www.reshot.com/free-svg-icons/item/speaker-ZQA938GVWS/ -->
@@ -65,15 +75,6 @@ export function renderHeader({ showBackToHome = false } = {}): string {
                     <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
                 </svg>
                 <p class="built-p">Built</p>
-            </a>
-        </div>
-        <div class="home">
-            <a style="text-decoration: none;" href="/about">
-                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p class="home-p">About</p>  
             </a>
         </div>
         <div class="categories">
