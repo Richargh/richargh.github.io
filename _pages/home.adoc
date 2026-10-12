@@ -5,11 +5,13 @@ permalink: /
 content-type: eg
 ---
 
-Decent IT Archeologist+Gardener, bad Runner and exceptional story absorber that really wants to quit coffee. One of these things is a lie.
+Richard Gross is the head of software archeology at MaibornWolff, where he drives the topics software archeology, modernisation and continuous delivery. He has a decade of experience as an architect, developer and consultant, helping organisations achieve a return on investment as early and continuously as possible.
 
-I think that software is created by people. That makes me interested in topics that go beyond writing code and into the human domain. Since my knowledge in all these domains is limited I try to read a lot and build on community knowledge, which makes me an idea farmer. 
+To achieve this, he rides the architect elevator and connects users, development engine, operations outlook and executive penthouse through systems thinking, user-centered design and many, many forms of problem mapping.
 
-It turns out I only really learn when I write about something and have to find words for my thoughts. That is what twitter and blog are for. Incidentally I also always am wrong about stuff, at least initially, so please don't take the content unfiltered.
+Down in the engine room he coaches teams in code quality, test automation and collective ownership. His technical focus is on hexagonal architectures, TestDSLs, hypermedia APIs and the expressive and unambiguous modelling of the domain as code.
+
+Richard shares his knowledge through ensemble working, as well as trainings, articles and talks at international conferences. He has also long been involved in the open source project CodeCharta, which enables non-developers to gain an understanding of the quality of their software.
 
 == Find me
 
