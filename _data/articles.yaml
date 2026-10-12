@@ -56,23 +56,23 @@
           language: de
           url: 'https://javapro.io/de/kotlin-kontra-java-teil-3-eine-sprache-fuer-interoperabilitaet/'
     - part: 4/5
-      subtitle: TBA
+      subtitle: Language for Safety
       publications:
         - publisher: JavaPro.io
-          date: '2026-10-05'
+          date: '2026-09-28'
           language: de
-          upcomingSince: 2026-10-05
+          url: 'https://javapro.io/de/kotlin-kontra-java-teil-4-sprache-fuer-sicherheit/'
         - publisher: JavaPro.io
           date: '2026-10-20'
           language: en
           upcomingSince: 2026-10-12
     - part: 5/5
-      subtitle: TBA
+      subtitle: Domain Modelling
       publications:
         - publisher: JavaPro.io
-          date: '2026-10-12'
+          date: '2026-10-05'
           language: de
-          upcomingSince: 2026-10-05
+          url: 'https://javapro.io/de/kotlin-kontra-java-teil-5-domaenenmodellierung/'
         - publisher: JavaPro.io
           date: '2026-10-28'
           language: en
