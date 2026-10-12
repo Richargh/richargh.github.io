@@ -51,10 +51,10 @@ jobs:
         run: mise run generate
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v5.0.0
 
       - name: Upload generated site artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: generated
 
@@ -69,4 +69,4 @@ jobs:
     steps:
       - name: Deploy generated site
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
