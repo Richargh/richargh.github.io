@@ -41,7 +41,6 @@ export function renderLayout(options: LayoutOptions): string {
     <link rel="icon" href="${site.favicon}" type="image/png" sizes="16x16"/>
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
     <link href="/assets/css/microlighter.css" rel="stylesheet" media="all"/>
-    <!--[if IE]><link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/><![endif]-->
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">
 </head>
 

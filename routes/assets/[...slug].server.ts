@@ -1,5 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
+import { buildCssBundle } from "../../scripts/build-css.ts";
 
 const assetsDir = resolve("assets");
 
@@ -19,7 +20,9 @@ const mediaTypes: Record<string, string> = {
 };
 
 export async function getStaticPaths(): Promise<Array<{ params: { slug: string } }>> {
-  return (await listAssetFiles(assetsDir)).map((slug) => ({ params: { slug } }));
+  const paths = await listAssetFiles(assetsDir);
+  if (!paths.includes("css/style.css")) paths.push("css/style.css");
+  return paths.sort().map((slug) => ({ params: { slug } }));
 }
 
 export async function render({ params }: { params: { slug: string } }): Promise<Response> {
@@ -32,6 +35,10 @@ export async function assetResponse(slug: string): Promise<Response> {
   if (!isInsideAssets(file)) return new Response("Forbidden", { status: 403 });
 
   try {
+    if (slug === "css/style.css") {
+      return new Response(await buildCssBundle(), { headers: { "content-type": mediaType(file) } });
+    }
+
     const bytes = await readFile(file);
     return new Response(bytes, { headers: { "content-type": mediaType(file) } });
   } catch (error) {

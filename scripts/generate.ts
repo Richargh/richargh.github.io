@@ -18,12 +18,15 @@ import { render as renderInterviews } from "../routes/interviews/index.server.ts
 import { renderAutocompleteText, renderSearchJson } from "../lib/search.ts";
 import { outputPathForUrlPath } from "../lib/output-compat.ts";
 import { assertGeneratedLinksResolve } from "../lib/generated-link-check.ts";
+import { writeCssBundle } from "./build-css.ts";
 
 const outputDir = "generated";
 
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(join(outputDir, "posts"), { recursive: true });
 await cp("assets", join(outputDir, "assets"), { recursive: true, force: true });
+await mkdir(join(outputDir, "assets", "css"), { recursive: true });
+await writeCssBundle(join(outputDir, "assets", "css", "style.css"));
 await cp("node_modules/microlighter/dist", join(outputDir, "assets", "vendor", "microlighter"), { recursive: true, force: true });
 await writeFile(join(outputDir, "index.html"), `${await renderIndex()}\n`, "utf8");
 await writeFile(join(outputDir, "posts", "index.html"), `${await renderBlog()}\n`, "utf8");
