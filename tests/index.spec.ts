@@ -15,7 +15,7 @@ test("explicit permalink post renders at its public URL", async ({ page }) => {
   await page.goto("/posts/gen-ai-track-record/");
 
   await expect(page).toHaveURL(/\/posts\/gen-ai-track-record\/$/);
-  await expect(page.getByRole("heading", { level: 1, name: "The Track Record of GenAI" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Generative AI Track record" })).toBeVisible();
   await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/gen-ai-track-record/");
 });
 
@@ -32,12 +32,12 @@ test("main navigation opens ordinary content pages", async ({ page }) => {
   await expect(page.locator(".talk-card", { hasText: "Domain Re-discovery Patterns for Legacy Code" })).toBeVisible();
 
   await page.goto("/");
-  await page.getByRole("link", { name: "Articles", exact: true }).click();
+  await page.getByRole("link", { name: /Articles/ }).click();
   await expect(page).toHaveURL(/\/articles\/?$/);
   await expect(page.getByRole("heading", { level: 1, name: "Articles" })).toBeVisible();
 
   await page.goto("/");
-  await page.getByRole("link", { name: "Interviews", exact: true }).click();
+  await page.getByRole("link", { name: /Interviews/ }).click();
   await expect(page).toHaveURL(/\/interviews\/?$/);
   await expect(page.getByRole("heading", { level: 1, name: "Interviews" })).toBeVisible();
 });
@@ -77,7 +77,7 @@ test("articles page is generated from structured article data", async ({ page })
   const articleCard = page.locator(".talk-card#kvj");
   await expect(articleCard.getByRole("heading", { level: 2, name: "Kotlin kontra Java" })).toBeVisible();
   await expect(articleCard).toContainText("Part 1/5 - Ecosystem");
-  await expect(articleCard).toContainText("Part 4/5 - TBA");
+  await expect(articleCard).toContainText("Part 4/5 - Language for Safety");
   await expect(articleCard).toContainText("2026-04-16");
   await expect(articleCard).toContainText("Upcoming");
   await expect(articleCard.locator(".talk-card-actions").getByRole("link", { name: "Talk" })).toHaveAttribute("href", "/talks/#kvj");
