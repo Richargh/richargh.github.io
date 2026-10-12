@@ -115,6 +115,15 @@ cite {
     padding-left: 50px;
 }
 
+.content a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
 blockquote p {
     font-family: inherit;
     font-size: inherit;

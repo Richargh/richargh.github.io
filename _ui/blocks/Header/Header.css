@@ -167,3 +167,16 @@ header {
     cursor: pointer;
     font-weight: 600;
 }
+
+@media print {
+    .userboard,
+    .avatar,
+    .searchbar,
+    .menu {
+        display: none !important;
+    }
+
+    #scroll-head {
+        display: none !important;
+    }
+}

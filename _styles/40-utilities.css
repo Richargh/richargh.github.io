@@ -29,3 +29,11 @@
 .very-small {
     font-size: 0.7rem;
 }
+
+.medium {
+    font-size: 22px !important;
+}
+
+.title-sans {
+    font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}

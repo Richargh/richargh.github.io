@@ -33,12 +33,6 @@ main {
     padding-right: var(--space-content-narrow);
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .box {
-        border: none !important;
-    }
-}
-
 @media screen and (max-width: 800px) {
     .box {
         width: 80%;
