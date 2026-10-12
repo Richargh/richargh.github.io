@@ -1,0 +1,7 @@
+article[data-source="_pages/home.adoc"] .content {
+    color: var(--color-text);
+}
+
+article[data-source="_pages/home.adoc"] .content p {
+    font-size: 16px;
+}

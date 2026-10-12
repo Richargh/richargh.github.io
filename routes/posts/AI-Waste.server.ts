@@ -1,28 +1,8 @@
-import { renderPostMeta } from "../../_ui/blocks/ContentMeta/ContentMeta.ts";
-import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
-import type { Post } from "../../lib/content.ts";
+import { renderPostDocument } from "../../_ui/pages/Post/Post.ts";
 import { loadSelectedPost } from "../../lib/content.ts";
-import { escapeHtml, unsafeAsciiDocHtml } from "../../lib/html.ts";
+
+export { renderPostDocument } from "../../_ui/pages/Post/Post.ts";
 
 export async function render(): Promise<string> {
   return renderPostDocument(await loadSelectedPost());
-}
-
-export function renderPostDocument(post: Post): string {
-  return renderLayout({
-    title: post.title,
-    urlPath: post.urlPath,
-    description: post.excerpt,
-    type: "article",
-    showBackToHome: true,
-    content: `<main>
-                <article data-source="${escapeHtml(post.sourcePath)}">
-                  <h1>${escapeHtml(post.title)}</h1>
-                  ${renderPostMeta(post)}
-                  <div class="content">
-                    ${unsafeAsciiDocHtml(post.html)}
-                  </div>
-                </article>
-            </main>`,
-  });
 }

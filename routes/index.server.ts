@@ -1,9 +1,6 @@
-import { appCounters } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
-import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
-import { renderLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
+import { renderHomePageDocument } from "../_ui/pages/Home/Home.ts";
 import { loadArticles } from "../lib/articles.ts";
 import { loadPage } from "../lib/content.ts";
-import { escapeHtml, unsafeAsciiDocHtml } from "../lib/html.ts";
 import { loadInterviews } from "../lib/interviews.ts";
 import { loadTalks } from "../lib/talks.ts";
 
@@ -12,20 +9,5 @@ export const title = "About";
 export async function render(): Promise<string> {
   const [page, talks, articles, interviews] = await Promise.all([loadPage("_pages/home.adoc"), loadTalks(), loadArticles(), loadInterviews()]);
 
-  return renderLayout({
-    title: page.title,
-    urlPath: "/",
-    description: page.excerpt,
-    type: "website",
-    appCounters: appCounters({ talks, articles, interviews }),
-    content: `<main>
-                <article data-source="${escapeHtml(page.sourcePath)}">
-                  <h1>${escapeHtml(page.title)}</h1>
-                  ${renderUpcomingCollection({ talks, articles, interviews })}
-                  <div class="content">
-                    ${unsafeAsciiDocHtml(page.html)}
-                  </div>
-                </article>
-            </main>`,
-  });
+  return renderHomePageDocument({ page, talks, articles, interviews });
 }

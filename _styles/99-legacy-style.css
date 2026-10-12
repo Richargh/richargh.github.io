@@ -545,9 +545,6 @@ label.srs-toggle {
     margin-right: -30%;
     width: 25% !important;
 }
-    .box {
-        border: none !important;
-    }
 }
 
 @media screen and (max-width: 1200px){
@@ -672,10 +669,6 @@ width: 30% !important;
 
 @media screen and (max-width: 800px){
 
-.box {
-    width: 80%;
-}
-
 label {
     cursor: pointer; 
 }
@@ -717,12 +710,6 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 @media screen and (max-width: 500px){
-.box {
-    width: 100%;
-    max-width: 100% !important;
-    border-left: none !important;
-    border-right: none !important;
-}
 .related-wrapper {
     grid-template-columns: repeat(1, 1fr);
 }
@@ -750,9 +737,6 @@ label.margin-toggle:not(.sidenote-number) {
 .mn-left {
     margin-left: -30%;
     width: 25%;
-}
-.box {
-    border: none !important;
 }
 }
 

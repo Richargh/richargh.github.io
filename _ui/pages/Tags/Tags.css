@@ -1,0 +1,9 @@
+.category-content a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+.category-content a:hover {
+    color: #4183c4;
+    text-decoration: underline;
+}

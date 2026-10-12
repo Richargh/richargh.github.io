@@ -1,0 +1,9 @@
+.date-content a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+.date-content a:hover {
+    color: #4183c4;
+    text-decoration: underline;
+}

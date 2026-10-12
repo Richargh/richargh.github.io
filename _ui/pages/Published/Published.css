@@ -1,0 +1,7 @@
+article[data-source="_pages/published.adoc"] table {
+    width: 90%;
+}
+
+article[data-source="_pages/published.adoc"] td {
+    text-align: left;
+}

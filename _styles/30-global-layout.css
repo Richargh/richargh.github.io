@@ -32,3 +32,30 @@ main {
     min-height: 300px;
     padding-right: var(--space-content-narrow);
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .box {
+        border: none !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .box {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .box {
+        width: 100%;
+        max-width: 100% !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+}
+
+@media print {
+    .box {
+        border: none !important;
+    }
+}

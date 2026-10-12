@@ -11,6 +11,11 @@ import { appCounters, renderArticleStats } from "../_ui/blocks/CollectionStats/C
 import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout as renderSiteLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
+import { renderBuiltPageDocument } from "../_ui/pages/Built/Built.ts";
+import { renderCredentialsPageDocument } from "../_ui/pages/Credentials/Credentials.ts";
+import { renderHomePageDocument } from "../_ui/pages/Home/Home.ts";
+import { renderPublishedPageDocument } from "../_ui/pages/Published/Published.ts";
+import type { Page } from "../lib/content.ts";
 
 function normalized(html: string): string {
   return html.replace(/\s+/g, " ").trim();
@@ -63,4 +68,21 @@ test("SiteLayout renders the site shell", () => {
   assert.match(html, /<div class="container">/);
   assert.match(html, /<main><h1>Body<\/h1><\/main>/);
   assert.match(html, /id="scroll-to-top"/);
+});
+
+test("page renderers own page presentation markup", () => {
+  const page = (slug: string, title: string): Page => ({
+    sourcePath: `_pages/${slug}.adoc`,
+    title,
+    slug,
+    urlPath: slug === "home" ? "/" : `/${slug}/`,
+    comments: false,
+    html: "<p>Body</p>",
+    excerpt: "Body",
+  });
+
+  assert.match(renderHomePageDocument({ page: page("home", "About"), talks: [], articles: [], interviews: [] }), /data-source="_pages\/home.adoc"/);
+  assert.match(renderPublishedPageDocument(page("published", "Published")), /data-source="_pages\/published.adoc"/);
+  assert.match(renderBuiltPageDocument(page("built", "Built")), /data-source="_pages\/built.adoc"/);
+  assert.match(renderCredentialsPageDocument(page("credentials", "Credentials")), /data-source="_pages\/credentials.adoc"/);
 });
