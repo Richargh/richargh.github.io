@@ -1,9 +1,9 @@
 .date-content a {
-    color: #4183c4;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .date-content a:hover {
-    color: #4183c4;
+    color: var(--color-primary);
     text-decoration: underline;
 }

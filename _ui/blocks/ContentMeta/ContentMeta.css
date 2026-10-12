@@ -10,15 +10,15 @@
 }
 
 .tag {
-    color: #555555;
-    background: #f7f7f7;
+    color: var(--color-text);
+    background: var(--color-surface);
     text-decoration: none;
     display: inline-block;
     padding: 0 12px;
     border-radius: 32px;
     height: auto;
     vertical-align: middle;
-    font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-heading);
     font-weight: normal !important;
     font-size: 13px;
 }

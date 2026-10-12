@@ -4,10 +4,10 @@
     z-index: 10;
     padding: 12px 0;
     width: 240px;
-    background-color: #fff;
-    border: solid 1px #dfdfdf;
+    background-color: var(--color-surface-raised);
+    border: solid 1px var(--color-border-strong);
     border-radius: 5px;
-    box-shadow: 1px 1px 15px #cfcfcf;
+    box-shadow: 1px 1px 15px var(--color-shadow);
 }
 
 .context-menu-res li {
@@ -22,8 +22,8 @@
 }
 
 .context-menu-res li:hover {
-    color: #555;
-    background-color: #f4f4f4;
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
 }
 
 .context-menu-res li:hover > .context-menu-res__link {
@@ -31,7 +31,7 @@
 }
 
 .context-menu-res__link {
-    color: #555;
+    color: var(--color-text);
     text-decoration: none;
 }
 
@@ -41,10 +41,10 @@
     z-index: 10;
     padding: 12px 0;
     width: 177px;
-    background-color: #fff;
-    border: solid 1px #dfdfdf;
+    background-color: var(--color-surface-raised);
+    border: solid 1px var(--color-border-strong);
     border-radius: 5px;
-    box-shadow: 1px 1px 15px #cfcfcf;
+    box-shadow: 1px 1px 15px var(--color-shadow);
 }
 
 .context-menu--active {
@@ -70,15 +70,15 @@
 .context-menu__link {
     display: block;
     padding: 4px 12px;
-    color: #555;
+    color: var(--color-text);
     text-decoration: none;
     font-size: 12px;
-    font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-heading);
 }
 
 .context-menu__link:hover {
-    color: #555;
-    background-color: #f4f4f4;
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
 }
 
 .popup {

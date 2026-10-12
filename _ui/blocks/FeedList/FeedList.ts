@@ -11,7 +11,7 @@ function renderFeedItem(post: Post): string {
     : `<p class="feed-title">${escapeHtml(post.title)}</p>`;
 
   return `<div class="feed-title-excerpt-block disable-select" data-url="https://richargh.de${escapeHtml(post.urlPath)}">
-            <a href="${escapeHtml(post.urlPath)}" style="text-decoration: none; color: #555555;">
+            <a href="${escapeHtml(post.urlPath)}" style="text-decoration: none; color: var(--color-text);">
             ${status}
             <p class="feed-excerpt">${escapeHtml(post.excerpt)}</p>
             </a>

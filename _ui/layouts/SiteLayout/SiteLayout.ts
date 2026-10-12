@@ -26,6 +26,7 @@ export function renderLayout(options: LayoutOptions): string {
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
     <meta property="og:site_name" content="Knowledge Continuum"/>
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="article:author" content="${site.url}/">

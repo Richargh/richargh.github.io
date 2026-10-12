@@ -116,7 +116,7 @@ cite {
 }
 
 .content a {
-    color: #4183c4;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
