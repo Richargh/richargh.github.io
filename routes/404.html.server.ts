@@ -1,4 +1,4 @@
-import { renderLayout } from "../_layouts/Layout.ts";
+import { renderLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 
 export function render(): string {
   return renderLayout({

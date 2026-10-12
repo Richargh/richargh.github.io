@@ -494,23 +494,6 @@ label.srs-toggle {
     font-size: 12px !important;
 }
 
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 30px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    color: #555;
-    outline: none;
-    border: none;
-    overflow: hidden;
-    font-size: 18px;
-}
-
-
-
 /* IE-SPECIFIC STYLING */
 
 

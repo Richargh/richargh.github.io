@@ -1,6 +1,6 @@
 import { appCounters } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
-import { renderLayout } from "../_layouts/Layout.ts";
+import { renderLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { loadArticles } from "../lib/articles.ts";
 import { loadPage } from "../lib/content.ts";
 import { escapeHtml, unsafeAsciiDocHtml } from "../lib/html.ts";

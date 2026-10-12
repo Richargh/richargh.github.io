@@ -1,5 +1,5 @@
 import { renderPostMeta } from "../../_ui/blocks/ContentMeta/ContentMeta.ts";
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import type { Post } from "../../lib/content.ts";
 import { loadSelectedPost } from "../../lib/content.ts";
 import { escapeHtml, unsafeAsciiDocHtml } from "../../lib/html.ts";

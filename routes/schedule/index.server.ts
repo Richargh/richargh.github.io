@@ -1,4 +1,4 @@
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { escapeHtml } from "../../lib/html.ts";
 import { displayTalkDate, groupTalkAppearancesByYear, loadTalkAppearances, type TalkAppearance, type TalkYearGroup } from "../../lib/talks.ts";
 

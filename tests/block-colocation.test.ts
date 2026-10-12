@@ -10,6 +10,7 @@ import { renderCollectionBanners } from "../_ui/blocks/CollectionBanners/Collect
 import { appCounters, renderArticleStats } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
 import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
+import { renderLayout as renderSiteLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 
 function normalized(html: string): string {
   return html.replace(/\s+/g, " ").trim();
@@ -53,4 +54,13 @@ test("ArticleCard block renders banner, actions, and children", () => {
   assert.match(html, /<section class="talk-card" id="card">/);
   assert.match(html, /class="talk-card-actions"/);
   assert.match(html, /<p>Body<\/p>/);
+});
+
+test("SiteLayout renders the site shell", () => {
+  const options = { title: "Page <Title>", urlPath: "/posts/page/", content: "<main><h1>Body</h1></main>", showContextMenu: false };
+  const html = renderSiteLayout(options);
+
+  assert.match(html, /<div class="container">/);
+  assert.match(html, /<main><h1>Body<\/h1><\/main>/);
+  assert.match(html, /id="scroll-to-top"/);
 });

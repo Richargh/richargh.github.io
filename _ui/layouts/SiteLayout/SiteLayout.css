@@ -1,0 +1,14 @@
+.scroll-to-top {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 30px;
+    bottom: 20px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+    overflow: hidden;
+    position: fixed;
+    right: 20px;
+}

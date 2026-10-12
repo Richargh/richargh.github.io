@@ -1,4 +1,4 @@
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { loadAllPosts } from "../../lib/content.ts";
 import { groupPostsByDate, renderGroupedPostIndex } from "../../lib/indexes.ts";
 

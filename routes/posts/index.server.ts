@@ -1,5 +1,5 @@
 import { renderFeedList } from "../../_ui/blocks/FeedList/FeedList.ts";
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { loadAllPosts } from "../../lib/content.ts";
 
 export const title = "Blog";

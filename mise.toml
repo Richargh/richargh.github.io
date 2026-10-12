@@ -1,6 +1,9 @@
 [tools]
 node = "v24.21.0"
 
+[hooks]
+postinstall = "npx playwright install chromium"
+
 [tasks.check]
 description = "Run linting and tests"
 run = [

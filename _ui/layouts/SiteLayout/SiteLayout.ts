@@ -1,9 +1,9 @@
-import { renderContextMenu } from "../_ui/blocks/ContextMenu/ContextMenu.ts";
-import { renderFooter } from "../_ui/blocks/Footer/Footer.ts";
-import type { AppCounters } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
-import { renderHeader } from "../_ui/blocks/Header/Header.ts";
-import { absoluteUrl, site } from "../lib/config.ts";
-import { escapeHtml } from "../lib/html.ts";
+import { renderContextMenu } from "../../blocks/ContextMenu/ContextMenu.ts";
+import { renderFooter } from "../../blocks/Footer/Footer.ts";
+import type { AppCounters } from "../../blocks/CollectionStats/CollectionStats.ts";
+import { renderHeader } from "../../blocks/Header/Header.ts";
+import { absoluteUrl, site } from "../../../lib/config.ts";
+import { escapeHtml } from "../../../lib/html.ts";
 
 export interface LayoutOptions {
   title?: string;

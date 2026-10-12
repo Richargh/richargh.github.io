@@ -81,6 +81,14 @@ test("block CSS is bundled after global layout styles", async () => {
   assert.ok(bundle.indexOf(".site-heading") > bundle.indexOf(".container"));
 });
 
+test("SiteLayout CSS is bundled before block CSS", async () => {
+  const bundle = await buildCssBundle(["_ui/layouts/SiteLayout/SiteLayout.css", "_ui/blocks/Header/Header.css"]);
+
+  assert.ok(bundle.includes(".scroll-to-top {"));
+  assert.ok(bundle.includes(".site-heading {"));
+  assert.ok(bundle.indexOf(".scroll-to-top") < bundle.indexOf(".site-heading"));
+});
+
 test("reusable block CSS includes phase 2 block selectors", async () => {
   const bundle = await buildCssBundle([
     "_ui/blocks/ArticleCard/ArticleCard.css",

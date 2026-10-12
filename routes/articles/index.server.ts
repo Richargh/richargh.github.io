@@ -1,7 +1,7 @@
 import { renderArticleCard as renderSharedArticleCard } from "../../_ui/blocks/ArticleCard/ArticleCard.ts";
 import { appCounters, renderArticleStats } from "../../_ui/blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingArticles } from "../../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { loadArticles, type Article, type ArticlePart, type ArticlePublication } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLink, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
 import { escapeHtml } from "../../lib/html.ts";

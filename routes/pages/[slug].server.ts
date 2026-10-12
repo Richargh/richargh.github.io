@@ -1,4 +1,4 @@
-import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderLayout } from "../../_ui/layouts/SiteLayout/SiteLayout.ts";
 import type { Page } from "../../lib/content.ts";
 import { loadAllPages } from "../../lib/content.ts";
 import { escapeHtml, unsafeAsciiDocHtml } from "../../lib/html.ts";
