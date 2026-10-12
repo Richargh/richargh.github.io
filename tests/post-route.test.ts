@@ -24,7 +24,7 @@ test("metadata is escaped by the route instead of inserted as raw HTML", () => {
 });
 
 test("explicit post permalinks are used for canonical URLs", async () => {
-  const post = await loadPost("_posts/2026-09-09-Upcoming-2026-v12.adoc");
-  assert.equal(post.urlPath, "/posts/upcoming/");
-  assert.match(renderPostDocument(post), /<link rel="canonical" href="https:\/\/richargh\.de\/posts\/upcoming\/"\/>/);
+  const post = await loadPost("_posts/2025-10-23-GenAI-Track-Record-v2.adoc");
+  assert.equal(post.urlPath, "/posts/gen-ai-track-record/");
+  assert.match(renderPostDocument(post), /<link rel="canonical" href="https:\/\/richargh\.de\/posts\/gen-ai-track-record\/"\/>/);
 });

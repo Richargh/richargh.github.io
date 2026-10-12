@@ -12,12 +12,11 @@ test("blog feed is generated from posts", async ({ page }) => {
 });
 
 test("explicit permalink post renders at its public URL", async ({ page }) => {
-  await page.goto("/posts/upcoming/");
+  await page.goto("/posts/gen-ai-track-record/");
 
-  await expect(page).toHaveURL(/\/posts\/upcoming\/$/);
-  await expect(page.getByRole("heading", { level: 1, name: "Upcoming" })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 2, name: "Upcoming Talks" })).toBeVisible();
-  await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/upcoming/");
+  await expect(page).toHaveURL(/\/posts\/gen-ai-track-record\/$/);
+  await expect(page.getByRole("heading", { level: 1, name: "The Track Record of GenAI" })).toBeVisible();
+  await expect(page.locator("link[rel='canonical']")).toHaveAttribute("href", "https://richargh.de/posts/gen-ai-track-record/");
 });
 
 test("main navigation opens ordinary content pages", async ({ page }) => {

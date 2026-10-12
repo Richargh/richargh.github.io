@@ -21,6 +21,7 @@ export async function render(): Promise<string> {
     content: `<main>
                 <article data-source="${escapeHtml(page.sourcePath)}">
                   <h1>${escapeHtml(page.title)}</h1>
+                  ${renderUpcomingCollection({ talks, articles, interviews })}
                   <div class="content">
                     ${unsafeAsciiDocHtml(page.html)}
                   </div>

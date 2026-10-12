@@ -57,28 +57,26 @@
           url: 'https://javapro.io/de/kotlin-kontra-java-teil-3-eine-sprache-fuer-interoperabilitaet/'
     - part: 4/5
       subtitle: TBA
-      upcoming: true
       publications:
         - publisher: JavaPro.io
           date: '2026-10-05'
           language: de
-          upcoming: true
+          upcomingSince: 2026-10-05
         - publisher: JavaPro.io
           date: '2026-10-20'
           language: en
-          upcoming: true
+          upcomingSince: 2026-10-12
     - part: 5/5
       subtitle: TBA
-      upcoming: true
       publications:
         - publisher: JavaPro.io
           date: '2026-10-12'
           language: de
-          upcoming: true
+          upcomingSince: 2026-10-05
         - publisher: JavaPro.io
           date: '2026-10-28'
           language: en
-          upcoming: true
+          upcomingSince: 2026-10-12
 - id: map-y-code
   title: Map your Code - Master your Architecture
   tags:

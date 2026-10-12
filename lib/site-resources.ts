@@ -4,21 +4,40 @@ import { absoluteUrl, site } from "./config.ts";
 import type { RouteManifestEntry } from "./route-manifest.ts";
 import { sitemapRoutes } from "./route-manifest.ts";
 
-export async function renderAtomFeed(posts: Post[]): Promise<string> {
-  const response = await atomResponse({
-    title: site.title,
-    id: new URL(absoluteUrl("/")),
-    linkSelf: new URL(absoluteUrl("/feed.xml")),
-    linkWebsite: new URL(absoluteUrl("/")),
-    updated: dateAtUtcMidnight(posts[0]?.date ?? new Date().toISOString().slice(0, 10)),
-    author: { name: site.name },
-    entries: posts.map((post) => ({
+export interface FeedEntry {
+  title: string;
+  idPath: string;
+  linkPath: string;
+  date: string;
+  summary?: string;
+}
+
+export async function renderAtomFeed(posts: Post[], extraEntries: FeedEntry[] = []): Promise<string> {
+  const entries = [
+    ...posts.map((post) => ({
       title: post.title,
       id: new URL(absoluteUrl(post.urlPath)),
       link: new URL(absoluteUrl(post.urlPath)),
       updated: dateAtUtcMidnight(post.date),
       summary: post.excerpt,
     })),
+    ...extraEntries.map((entry) => ({
+      title: entry.title,
+      id: new URL(absoluteUrl(entry.idPath)),
+      link: new URL(absoluteUrl(entry.linkPath)),
+      updated: dateAtUtcMidnight(entry.date),
+      summary: entry.summary,
+    })),
+  ].toSorted((left, right) => right.updated.getTime() - left.updated.getTime() || left.title.localeCompare(right.title));
+
+  const response = await atomResponse({
+    title: site.title,
+    id: new URL(absoluteUrl("/")),
+    linkSelf: new URL(absoluteUrl("/feed.xml")),
+    linkWebsite: new URL(absoluteUrl("/")),
+    updated: entries[0]?.updated ?? dateAtUtcMidnight(new Date().toISOString().slice(0, 10)),
+    author: { name: site.name },
+    entries,
   });
 
   return response.text();

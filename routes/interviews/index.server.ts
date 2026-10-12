@@ -1,5 +1,6 @@
 import { renderArticleCard } from "../../_includes/ArticleCard.ts";
 import { appCounters, renderInterviewStats } from "../../_includes/CollectionStats.ts";
+import { renderUpcomingInterviews } from "../../_includes/UpcomingCollection.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadArticles, type Article } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLink, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
@@ -25,6 +26,7 @@ export function renderInterviewsDocument(interviews: InterviewAppearance[], talk
                 <article data-source="_data/interviews.yaml">
                   <h1>Interviews</h1>
                   ${renderInterviewStats(interviews)}
+                  ${renderUpcomingInterviews(interviews)}
                   <div class="content talks-cards">
                     <p>Podcasts, interviews, and streams.</p>
                     ${interviews.toSorted(compareInterviewsDescending).map((interview) => renderInterviewCard(interview, relatedGroups)).join("\n")}

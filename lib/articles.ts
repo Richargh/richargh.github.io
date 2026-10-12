@@ -31,12 +31,13 @@ export interface ArticlePublication {
   date: string;
   language?: string;
   upcoming?: boolean;
+  upcomingSince?: string;
   url?: string;
 }
 
 const articleFields = new Set(["id", "title", "tags", "thumbnail", "articles"]);
 const partFields = new Set(["part", "subtitle", "upcoming", "publications"]);
-const publicationFields = new Set(["publisher", "issue", "date", "language", "upcoming", "url"]);
+const publicationFields = new Set(["publisher", "issue", "date", "language", "upcoming", "upcomingSince", "url"]);
 
 export async function loadArticles(sourcePath = "_data/articles.yaml"): Promise<Article[]> {
   const source = await readFile(sourcePath, "utf8");
@@ -113,6 +114,8 @@ function normalizePublication(entry: unknown, sourcePath: string, location: stri
   assignOptionalString(publication, "issue", object.issue, `${location}.issue`);
   assignOptionalString(publication, "language", object.language, `${location}.language`);
   assignOptionalBoolean(publication, "upcoming", object.upcoming, `${location}.upcoming`);
+  assignOptionalIsoDate(publication, "upcomingSince", object.upcomingSince, `${location}.upcomingSince`);
+  if (publication.upcomingSince !== undefined) publication.upcoming = true;
   assignOptionalUrl(publication, "url", object.url, `${location}.url`);
   if (publication.url === undefined && !publication.upcoming) throw new Error(`${location}.url is required unless upcoming is true`);
   return publication;
@@ -178,6 +181,18 @@ function assignOptionalBoolean<T extends keyof Pick<ArticlePart & ArticlePublica
   if (value === undefined) return;
   if (typeof value !== "boolean") throw new Error(`${location} must be a boolean`);
   target[field] = value;
+}
+
+function assignOptionalIsoDate<T extends keyof Pick<ArticlePublication, "upcomingSince">>(
+  target: ArticlePublication,
+  field: T,
+  value: unknown,
+  location: string,
+): void {
+  if (value === undefined) return;
+  const date = normalizeYamlDate(value);
+  if (!date || !isValidIsoDate(date)) throw new Error(`${location} must be an ISO date (YYYY-MM-DD)`);
+  target[field] = date;
 }
 
 function requiredIsoDate(value: unknown, location: string): string {

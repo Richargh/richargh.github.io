@@ -35,6 +35,7 @@ export interface TalkAppearance {
   language?: string;
   durationMinutes?: number;
   upcoming?: boolean;
+  upcomingSince?: string;
   eventUrl?: string;
   slideUrl?: string;
   videoUrl?: string;
@@ -59,6 +60,7 @@ const appearanceFields = new Set([
   "language",
   "durationMinutes",
   "upcoming",
+  "upcomingSince",
   "eventUrl",
   "slideUrl",
   "videoUrl",
@@ -167,6 +169,8 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalString(appearance, "language", object.language, `${location}.language`);
   assignOptionalNumber(appearance, "durationMinutes", object.durationMinutes, `${location}.durationMinutes`);
   assignOptionalBoolean(appearance, "upcoming", object.upcoming, `${location}.upcoming`);
+  assignOptionalIsoDate(appearance, "upcomingSince", object.upcomingSince, `${location}.upcomingSince`);
+  if (appearance.upcomingSince !== undefined) appearance.upcoming = true;
   assignOptionalUrl(appearance, "eventUrl", object.eventUrl, `${location}.eventUrl`);
   assignOptionalUrl(appearance, "slideUrl", object.slideUrl, `${location}.slideUrl`);
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
@@ -278,6 +282,18 @@ function assignOptionalBoolean<T extends keyof Pick<TalkAppearance, "upcoming">>
   if (value === undefined) return;
   if (typeof value !== "boolean") throw new Error(`${location} must be a boolean`);
   appearance[field] = value;
+}
+
+function assignOptionalIsoDate<T extends keyof Pick<TalkAppearance, "upcomingSince">>(
+  appearance: TalkAppearance,
+  field: T,
+  value: unknown,
+  location: string,
+): void {
+  if (value === undefined) return;
+  const date = normalizeYamlDate(value);
+  if (!date || !isValidIsoDate(date)) throw new Error(`${location} must be an ISO date (YYYY-MM-DD)`);
+  appearance[field] = date;
 }
 
 function requiredIsoDate(value: unknown, location: string): string {

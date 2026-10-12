@@ -1,5 +1,6 @@
 import { renderArticleCard as renderSharedArticleCard } from "../../_includes/ArticleCard.ts";
 import { appCounters, renderArticleStats } from "../../_includes/CollectionStats.ts";
+import { renderUpcomingArticles } from "../../_includes/UpcomingCollection.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadArticles, type Article, type ArticlePart, type ArticlePublication } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLink, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
@@ -26,6 +27,7 @@ export function renderArticlesDocument(articles: Article[], talks: Talk[] = [], 
                 <article data-source="_data/articles.yaml">
                   <h1>Articles</h1>
                   ${renderArticleStats(articles)}
+                  ${renderUpcomingArticles(articles)}
                   <div class="content talks-cards">
                     ${sortedArticles.map((article) => renderArticleCard(article, relatedGroups)).join("\n")}
                   </div>
@@ -73,7 +75,7 @@ function renderPublicationLine(publication: ArticlePublication): string {
   const label = publication.issue ? `${publication.publisher} ${publication.issue}` : publication.publisher;
   const linkedLabel = publication.url ? `<a href="${escapeHtml(publication.url)}">${escapeHtml(label)}</a>` : escapeHtml(label);
   return `<li class="talk-appearance-line">
-<span class="talk-line-main">${linkedLabel} <span class="talk-duration">${escapeHtml(publication.date)}</span>${publication.upcoming ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(publication.date)}</span>` : ""} ${renderLanguageFlag(publication.language)}</span>
+<span class="talk-line-main">${linkedLabel} <span class="talk-duration">${escapeHtml(publication.date)}</span>${publication.upcoming || publication.upcomingSince ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(publication.date)}</span>` : ""} ${renderLanguageFlag(publication.language)}</span>
 </li>`;
 }
 

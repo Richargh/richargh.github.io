@@ -1,5 +1,6 @@
 import { renderArticleCard } from "../../_includes/ArticleCard.ts";
 import { appCounters, renderTalkStats } from "../../_includes/CollectionStats.ts";
+import { renderUpcomingTalks } from "../../_includes/UpcomingCollection.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadArticles, type Article } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
@@ -26,8 +27,8 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
                 <article data-source="_data/talks.yaml">
                   <h1>Talks</h1>
                   ${renderTalkStats(talks)}
+                  ${renderUpcomingTalks(talks)}
                   <div class="content talks-cards">
-                    <p>For upcoming talks see <a href="/posts/upcoming/">upcoming</a>.</p>
                     ${sortedTalks.map((talk) => renderTalkCard(talk, relatedGroups)).join("\n")}
                   </div>
                 </article>
@@ -132,7 +133,7 @@ function renderVersion(appearance: TalkAppearance): string {
 }
 
 function renderUpcoming(appearance: TalkAppearance): string {
-  return appearance.upcoming ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(appearance.date)}</span>` : "";
+  return appearance.upcoming || appearance.upcomingSince ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(appearance.date)}</span>` : "";
 }
 
 function renderVariant(appearance: TalkAppearance): string {
