@@ -1,9 +1,4 @@
-/* MicroLighter theme adapted for the existing Simply Jekyll code-block styling.
-   Keep source blocks light even when the browser/OS prefers a dark color scheme. */
-[data-syntax-theme="github"] {
-  color-scheme: light;
-}
-
+/* MicroLighter theme adapted for the existing Simply Jekyll code-block styling. */
 [data-syntax-theme="github"] pre:has(> code[class*="language-"]) {
   background-color: var(--color-surface);
   color: var(--color-text);
