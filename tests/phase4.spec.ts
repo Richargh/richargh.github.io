@@ -22,7 +22,7 @@ test("MicroLighter highlights AsciiDoc callout code without token span markup", 
   expect(firstCodeHasHighlightRanges).toBe(true);
 });
 
-test("MicroLighter code blocks stay light and fill the pre in dark color scheme", async ({ page }) => {
+test("MicroLighter code blocks follow dark color scheme and fill the pre", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/posts/java-version-history/");
   const code = page.locator("pre > code[class*='language-']").first();
@@ -39,7 +39,7 @@ test("MicroLighter code blocks stay light and fill the pre in dark color scheme"
     };
   });
 
-  expect(styles.preBackground).toBe("rgb(247, 247, 247)");
-  expect(styles.codeBackground).toBe("rgb(247, 247, 247)");
+  expect(styles.preBackground).toBe("rgb(26, 26, 26)");
+  expect(styles.codeBackground).toBe("rgb(26, 26, 26)");
   expect(styles.codeWidth).toBeGreaterThanOrEqual(styles.preWidth);
 });
