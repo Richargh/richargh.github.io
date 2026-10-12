@@ -1,13 +1,19 @@
 import { renderLayout } from "../../_layouts/Layout.ts";
+import { renderArticleCard } from "../../_includes/ArticleCard.ts";
+import { loadArticles, type Article } from "../../lib/articles.ts";
+import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
 import { escapeHtml } from "../../lib/html.ts";
+import { loadInterviews, type InterviewAppearance } from "../../lib/interviews.ts";
 import { loadTalks, type Talk, type TalkAppearance, type TalkLink } from "../../lib/talks.ts";
 
 export async function render(): Promise<string> {
-  return renderTalksDocument(await loadTalks());
+  const [talks, articles, interviews, relatedGroups] = await Promise.all([loadTalks(), loadArticles(), loadInterviews(), loadRelatedGroups()]);
+  return renderTalksDocument(talks, articles, interviews, relatedGroups);
 }
 
-export function renderTalksDocument(talks: Talk[]): string {
+export function renderTalksDocument(talks: Talk[], articles: Article[] = [], interviews: InterviewAppearance[] = [], relatedGroups: RelatedGroup[] = []): string {
   const sortedTalks = talks.toSorted((left, right) => left.title.localeCompare(right.title));
+  assertRelatedReferencesExist(relatedGroups, relatedItems(talks, articles, interviews));
   return renderLayout({
     title: "Talks",
     urlPath: "/talks/",
@@ -19,28 +25,38 @@ export function renderTalksDocument(talks: Talk[]): string {
                   <h1>Talks</h1>
                   <div class="content talks-cards">
                     <p>For upcoming talks see <a href="/posts/upcoming/">upcoming</a>.</p>
-                    ${sortedTalks.map(renderTalkCard).join("\n")}
+                    ${sortedTalks.map((talk) => renderTalkCard(talk, relatedGroups)).join("\n")}
                   </div>
                 </article>
             </main>`,
   });
 }
 
-function renderTalkCard(talk: Talk): string {
-  const banner = renderBanner(talk);
-  return `<section class="talk-card" id="${escapeHtml(talk.id)}">
-${banner}
-<div class="talk-card-body">
-<div class="talk-card-heading">
-<h2><a class="talk-title-anchor" href="#${escapeHtml(talk.id)}">${escapeHtml(talk.title)}</a></h2>
-<div class="talk-card-actions">${renderTalkActions(talk)}</div>
-</div>
-${talk.abstract ? renderAbstract(talk.abstract) : ""}
+function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[]): string {
+  const video = newestVersionVideo(talk.appearances);
+  return renderArticleCard({
+    id: talk.id,
+    title: talk.title,
+    banner: {
+      thumbnail: talk.thumbnail,
+      tags: talk.tags,
+      linkUrl: video?.videoUrl,
+      linkLabel: `Open newest video for ${talk.title}`,
+    },
+    actionsHtml: renderTalkActions(talk, relatedGroups),
+    childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}
 <ul class="talk-appearances-list">
 ${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLine).join("\n")}
-</ul>
-</div>
-</section>`;
+</ul>`,
+  });
+}
+
+function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewAppearance[]): CrossLinkItem[] {
+  return [
+    ...talks.map((talk) => ({ id: talk.id, kind: "talk" as const })),
+    ...articles.map((article) => ({ id: article.id, kind: "article" as const })),
+    ...interviews.map((interview) => ({ id: interview.id, kind: "interview" as const })),
+  ];
 }
 
 function renderAbstract(abstract: string): string {
@@ -63,20 +79,12 @@ function excerpt(value: string, length: number): string {
   return normalized.slice(0, length).trimEnd();
 }
 
-function renderTalkActions(talk: Talk): string {
+function renderTalkActions(talk: Talk, relatedGroups: RelatedGroup[]): string {
   const links: TalkLink[] = [];
   if (talk.codeUrl) links.push({ label: "Code", url: talk.codeUrl });
   links.push(...talk.links);
-  return links.map((link) => `<a class="talk-resource-button talk-card-code" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
-}
-
-function renderBanner(talk: Talk): string {
-  const video = newestVersionVideo(talk.appearances);
-  const tags = talk.tags.length > 0 ? talk.tags : [talk.title];
-  const style = talk.thumbnail ? ` style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.08)), url('${escapeHtml(talk.thumbnail)}');"` : "";
-  const content = `<div class="talk-banner-content">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`;
-  if (video?.videoUrl) return `<a class="talk-banner talk-banner-link"${style} href="${escapeHtml(video.videoUrl)}" aria-label="Open newest video for ${escapeHtml(talk.title)}">${content}</a>`;
-  return `<div class="talk-banner"${style}>${content}</div>`;
+  links.push(...relatedContentLinks({ id: talk.id, kind: "talk" }, relatedGroups));
+  return links.map((link) => `<a class="talk-resource-button talk-card-code${link.url.startsWith("/") ? " talk-cross-link-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | undefined {

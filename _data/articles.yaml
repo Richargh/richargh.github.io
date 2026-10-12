@@ -1,0 +1,211 @@
+- id: java-dest-enc
+  title: Destructoring is the future of Javas Encapsulation
+  tags:
+    - java
+    - destructoring
+    - encapsulation
+  thumbnail: /assets/img/thumbnails/article-java-dest-enc.png
+  articles:
+    - publications:
+        - publisher: JavaPro.io
+          date: '2026-05-26'
+          language: en
+          url: 'https://javapro.io/2026/05/26/destructoring-is-the-future-of-javas-encapsulation/'
+        - publisher: JavaPro.io
+          date: '2026-06-08'
+          language: de
+          url: 'https://javapro.io/de/destructoring-ist-die-zukunft-von-javas-encapsulation/'
+- id: kvj
+  title: Kotlin kontra Java
+  tags:
+    - kotlin
+    - java
+  thumbnail: /assets/img/thumbnails/article-kvj.png
+  articles:
+    - part: 1/5
+      subtitle: Ecosystem
+      publications:
+        - publisher: JavaPro.io
+          date: '2026-04-16'
+          language: en
+          url: 'https://javapro.io/2026/04/16/kotlin-kontra-java-part-1-ecosystem/'
+        - publisher: JavaPro.io
+          date: '2026-06-29'
+          language: de
+          url: 'https://javapro.io/de/kotlin-kontra-java-teil-1-oekosystem/'
+    - part: 2/5
+      subtitle: Multiplatform
+      publications:
+        - publisher: JavaPro.io
+          date: '2026-04-22'
+          language: en
+          url: 'https://javapro.io/2026/04/22/kotlin-kontra-java-part-2-multiplatform/'
+        - publisher: JavaPro.io
+          date: '2026-07-06'
+          language: de
+          url: 'https://javapro.io/de/kotlin-kontra-java-teil-2-multiplattform/'
+    - part: 3/5
+      subtitle: Interop
+      publications:
+        - publisher: JavaPro.io
+          date: '2026-05-07'
+          language: en
+          url: 'https://javapro.io/2026/05/07/kotlin-kontra-java-part-3-language-for-interop/'
+        - publisher: JavaPro.io
+          date: '2026-07-13'
+          language: de
+          url: 'https://javapro.io/de/kotlin-kontra-java-teil-3-eine-sprache-fuer-interoperabilitaet/'
+    - part: 4/5
+      subtitle: TBA
+      upcoming: true
+      publications:
+        - publisher: JavaPro.io
+          date: '2026-10-05'
+          language: de
+          upcoming: true
+        - publisher: JavaPro.io
+          date: '2026-10-20'
+          language: en
+          upcoming: true
+    - part: 5/5
+      subtitle: TBA
+      upcoming: true
+      publications:
+        - publisher: JavaPro.io
+          date: '2026-10-12'
+          language: de
+          upcoming: true
+        - publisher: JavaPro.io
+          date: '2026-10-28'
+          language: en
+          upcoming: true
+- id: map-y-code
+  title: Map your Code - Master your Architecture
+  tags:
+    - architecture
+    - code-analysis
+    - visualisation
+  thumbnail: /assets/img/thumbnails/article-map-y-code.png
+  articles:
+    - publications:
+        - publisher: JavaPro.io
+          date: '2025-10-13'
+          language: de
+          url: 'https://javapro.io/de/map-deinen-code-meistere-deine-architektur/'
+        - publisher: JavaPro.io
+          date: '2025-10-21'
+          language: en
+          url: 'https://javapro.io/2025/10/21/map-your-code-master-your-architecture/'
+- id: ftbdm
+  title: Fixing the Billion-Dollar Mistake
+  tags:
+    - nullability
+    - java
+  thumbnail: /assets/img/thumbnails/article-ftbdm.png
+  articles:
+    - publications:
+        - publisher: JavaPro.io
+          date: '2025-08-07'
+          language: en
+          url: 'https://javapro.io/2025/08/07/fixing-the-billion-dollar-mistake/'
+        - publisher: JavaPro.io
+          date: '2025-08-25'
+          language: de
+          url: 'https://javapro.io/de/wie-man-den-milliarden-dollar-fehler-repariert/'
+        - publisher: JavaPro
+          issue: 06/2025
+          date: '2025-12-29'
+          language: en
+          url: 'https://javapro.io/2025/12/29/stay-updated-with-every-new-free-pdf-edition-6/'
+- id: jdk-chron
+  title: A visual chronicle of the JDK’s journey
+  tags:
+    - java
+    - jdk
+    - history
+  thumbnail: /assets/img/thumbnails/article-jdk-chron.png
+  articles:
+    - publications:
+        - publisher: JavaPro.io
+          date: '2025-06-16'
+          language: de
+          url: 'https://javapro.io/de/eine-visuelle-zeitreise-durch-die-entwicklung-des-jdk/'
+        - publisher: JavaPro.io
+          date: '2025-07-08'
+          language: en
+          url: 'https://javapro.io/2025/07/08/a-visual-chronicle-of-the-jdks-journey/'
+- id: web-htmx
+  title: Modern websites with htmx - out of the complexity trap
+  tags:
+    - htmx
+    - frontend
+    - web
+  articles:
+    - publications:
+        - publisher: PHP Magazin
+          issue: '2.2025'
+          date: '2025-02-01'
+          language: de
+          url: 'https://entwickler.de/magazine-ebooks/php-magazin/php-magazin-22025'
+        - publisher: Entwickler Magazin
+          issue: '3.2025'
+          date: '2025-03-01'
+          language: de
+          url: 'https://entwickler.de/magazine-ebooks/entwickler-magazin/entwickler-magazin-32025'
+- id: sc-tests
+  title: Structure-Cementing Tests and How to Avoid Them
+  tags:
+    - testing
+    - testdsl
+  articles:
+    - part: 1/3
+      subtitle: Building a TestDsl
+      publications:
+        - publisher: Java Aktuell
+          issue: '4/24'
+          date: '2024-07-01'
+          language: de
+          url: 'https://www.ijug.eu/java-aktuell/archiv?b=1000763&c=ND1000009&s=djEtV3A4yGZ7Y0j7RoSDbF85MhLaj4vuP78sFR1AUOaJNYM='
+    - part: 2/3
+      subtitle: TestDsl Concepts
+      publications:
+        - publisher: Java Aktuell
+          issue: '5/24'
+          date: '2024-09-01'
+          language: de
+          url: 'https://www.ijug.eu/java-aktuell/archiv?b=1000763&c=ND1000008&s=djEt8XEdiuaww4c7bRurIaY6DN2szBOt3zo_K-QIpyAn3Ik='
+    - part: 3/3
+      subtitle: The Right Approach
+      publications:
+        - publisher: Java Aktuell
+          issue: '6/24'
+          date: '2024-11-01'
+          language: de
+          url: 'https://www.ijug.eu/java-aktuell/archiv?b=1000763&c=ND1000007&s=djEtB_xGcr-Xs6Usody-ntgvTlfyz_Y_AaYz9BlDk-UDN_Y='
+- id: conn-rules
+  title: 'Connascence: Rules for good software design'
+  tags:
+    - architecture
+    - software-design
+  articles:
+    - publications:
+        - publisher: MaibornWolff Tech Blog
+          date: '2020-01-01'
+          language: en
+          url: 'https://www.maibornwolff.de/en/know-how/connascence-rules-good-software-design/'
+        - publisher: MaibornWolff Tech Blog
+          date: '2020-01-01'
+          language: de
+          url: 'https://www.maibornwolff.de/know-how/connascence-regeln-fuer-gutes-software-design/'
+- id: rest-not-orm
+  title: Why REST is Much More than ORM over HTTP
+  tags:
+    - rest
+    - api
+  articles:
+    - publications:
+        - publisher: JavaSPEKTRUM
+          issue: 1/2018
+          date: '2018-01-01'
+          language: de
+          url: 'https://webreader.javaspektrum.de/de/profiles/4967c6d5eae1-javaspektrum/editions/javaspektrum-01-2018'

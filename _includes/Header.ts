@@ -37,17 +37,25 @@ export function renderHeader({ showBackToHome = false } = {}): string {
             </a>
         </div>
         <div class="published">
-            <a style="text-decoration: none;" href="/published">
-                <!-- from https://www.reshot.com/free-svg-icons/item/paper-plane-D72FP5NHXZ/ -->
-                <svg class="icon-published" width="25" height="25" viewBox="0 0 2048 2048" xmlns="http://www.w3.org/2000/svg">
-                    <g id="Layer_x0020_1"><g id="_559822392"><path id="_559822728" class="fil0" d="M1657.53 872.581 348.07 521.715l493.348 993.204 338.593-451.457-.1-.074a31.858 31.858 0 0 1 16.456-11.467l461.159-179.34zM296.27 441.664l1470.41 393.994c10.174 2.183 19.089 9.275 23.141 19.697 6.406 16.47-1.755 35.018-18.225 41.423l-11.599-29.824 11.5 29.75-545.971 212.322-362.47 483.291a31.844 31.844 0 0 1-12.97 11.81c-15.828 7.86-35.034 1.403-42.895-14.424l28.66-14.236-28.626 14.125L260.4 488.722c-4.181-7.128-5.62-15.863-3.312-24.475 4.573-17.07 22.121-27.201 39.191-22.628l-.01.04z"/><path
-                            id="_559822560" class="fil0"
-                            d="M305.626 445.908c-14.705-9.733-34.518-5.705-44.251 9-9.734 14.705-5.705 34.518 9 44.251l917.512 610.055c14.705 9.734 34.518 5.705 44.251-9 9.733-14.705 5.705-34.518-9-44.251L305.626 445.908z"/><path
-                            id="_559822608" class="fil0"
-                            d="M1237.39 1080.09c-1.38-17.604-16.772-30.756-34.376-29.375-17.604 1.38-30.756 16.772-29.375 34.376l28.922 361.603-132.165-169.905c-10.838-13.944-30.931-16.462-44.875-5.625-13.944 10.838-16.462 30.931-5.625 44.875l197.058 253.327c6.326 8.797 16.966 14.166 28.553 13.24 17.617-1.407 30.755-16.833 29.347-34.449l-.026.003-37.437-468.07z"/></g></g>
-                    <path style="fill:none" d="M0 0h2048v2048H0z"/>
+            <a style="text-decoration: none;" href="/articles">
+                <svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 2.5H14.5L20 8V21.5H6V2.5Z" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M14.5 2.5V8H20" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M9 12H17" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 16H17" stroke-width="2" stroke-linecap="round"/>
                 </svg>
-                <p class="published-p">Published</p>
+                <p class="published-p">Articles</p>
+            </a>
+        </div>
+        <div class="interviews">
+            <a style="text-decoration: none;" href="/interviews">
+                <svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 14C14.2091 14 16 12.2091 16 10V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V10C8 12.2091 9.79086 14 12 14Z" stroke-width="2"/>
+                    <path d="M5 10C5 13.866 8.13401 17 12 17C15.866 17 19 13.866 19 10" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 17V22" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 22H15" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <p class="published-p">Interviews</p>
             </a>
         </div>
         <div class="built">

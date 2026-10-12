@@ -358,7 +358,7 @@ hr {
     padding-left: 15px;
 }
 
-.home, .talks, .published, .built, .categories, .rss, .projects {
+.home, .talks, .published, .interviews, .built, .categories, .rss, .projects {
     padding-left: 5px;
     padding-right: 10px;
     padding-top: 5px;
@@ -1484,10 +1484,28 @@ label.margin-toggle:not(.sidenote-number) {
 .talk-banner-content {
     min-height: 210px;
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    padding: 1rem;
+}
+
+.talk-banner-title {
+    max-width: min(42rem, 100%);
+    padding: 0.45rem 0.75rem;
+    background: rgba(0, 0, 0, 0.58);
+    color: #ffffff;
+    font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(1.2rem, 2.4vw, 2rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.talk-banner-tags {
+    display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    padding: 1rem;
 }
 
 .talk-banner-content span {
@@ -1577,6 +1595,17 @@ label.margin-toggle:not(.sidenote-number) {
 .talk-resource-button:focus {
     background: #e4e4e4;
     text-decoration: none;
+}
+
+.talk-cross-link-button {
+    background: #eef3fb;
+    color: #365a8c !important;
+    box-shadow: inset 0 0 0 1px rgba(54, 90, 140, 0.16);
+}
+
+.talk-cross-link-button:hover,
+.talk-cross-link-button:focus {
+    background: #dfeafa;
 }
 
 .talk-video-button {

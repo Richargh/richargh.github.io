@@ -1,0 +1,60 @@
+- id: dnr-gcq
+  show: .NET Rocks!
+  title: Grasping Code Quality with Richard Gross
+  type: podcast
+  tags:
+    - software-quality
+    - code-quality
+  episode: "1927"
+  date: 2024-12-03
+  language: en
+  thumbnail: /assets/img/thumbnails/interview-dotnet-rocks.jpg
+  url: https://www.dotnetrocks.com/details/1927
+  links:
+    - label: Apple Podcasts
+      url: https://podcasts.apple.com/gb/podcast/grasping-code-quality-with-richard-gross/id130068596?i=1000679300651
+    - label: Spotify
+      url: https://open.spotify.com/episode/6b4B7oEK8EvIfECakP0sQR?si=EZOXN2UdS6elsU3KF8a1jg
+
+- id: swaist-cc
+  show: Software Architektur im Stream
+  title: CodeCharta im Stream
+  type: stream
+  tags:
+    - architecture
+    - code-analysis
+    - codecharta
+    - visualisation
+  episode: "248"
+  date: 2025-01-24
+  language: de
+  thumbnail: /assets/img/thumbnails/ccstream-2025-01-24-rDHtNNBoP6Y.jpg
+  url: https://software-architektur.tv/2025/01/24/folge248.html
+  links:
+    - label: Video
+      url: https://tube.tchncs.de/w/a55879a2-5c3c-4d1f-bc1c-51e1c7a71cbd
+
+- id: csq-rstbd
+  show: Chinchilla Squeaks
+  title: Raytracing Llamas in the Metaverse - Interviews from Build Stuff
+  type: podcast
+  tags:
+    - trunk-based-development
+    - remote-work
+  date: 2022-11-09
+  language: en
+  thumbnail: /assets/img/thumbnails/interview-chinchilla-squeaks.jpg
+  note: Interview about "Remote Scaled Trunk-Based Development" at Build Stuff 2022, around 19m17s.
+  url: https://chinchillasqueaks.substack.com/p/raytracing-llamas-in-the-metaverse-04c
+
+- id: ccor-metrics
+  show: Code Coroner
+  title: Software-Metrik
+  type: podcast
+  tags:
+    - software-quality
+    - metrics
+  date: 2018-10-16
+  language: de
+  thumbnail: /assets/img/thumbnails/interview-code-coroner.jpg
+  url: https://podbay.fm/p/die-code-coroner-tech-podcast-fur-softwarequalitat/e/1539717389

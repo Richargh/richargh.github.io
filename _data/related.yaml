@@ -1,0 +1,34 @@
+- id: java-dest-enc
+  items:
+    - kind: talk
+      id: java-dest-enc
+    - kind: article
+      id: java-dest-enc
+
+- id: kvj
+  items:
+    - kind: talk
+      id: kvj
+    - kind: article
+      id: kvj
+
+- id: ftbdm
+  items:
+    - kind: talk
+      id: ftbdm
+    - kind: article
+      id: ftbdm
+
+- id: web-htmx
+  items:
+    - kind: talk
+      id: dyn-web-htmx
+    - kind: article
+      id: web-htmx
+
+- id: rstbd
+  items:
+    - kind: talk
+      id: rstbd
+    - kind: interview
+      id: csq-rstbd

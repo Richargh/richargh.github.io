@@ -12,6 +12,8 @@ import { render as renderDatesIndex } from "../routes/dates/index.server.ts";
 import { render as renderTagsIndex } from "../routes/tags/index.server.ts";
 import { render as renderSchedule } from "../routes/schedule/index.server.ts";
 import { render as renderTalks } from "../routes/talks/index.server.ts";
+import { render as renderArticles } from "../routes/articles/index.server.ts";
+import { render as renderInterviews } from "../routes/interviews/index.server.ts";
 import { renderAutocompleteText, renderSearchJson } from "../lib/search.ts";
 import { outputPathForUrlPath } from "../lib/output-compat.ts";
 import { assertGeneratedLinksResolve } from "../lib/generated-link-check.ts";
@@ -51,6 +53,10 @@ for (const page of pages) {
 }
 await mkdir(join(outputDir, "talks"), { recursive: true });
 await writeFile(join(outputDir, "talks", "index.html"), `${await renderTalks()}\n`, "utf8");
+await mkdir(join(outputDir, "articles"), { recursive: true });
+await writeFile(join(outputDir, "articles", "index.html"), `${await renderArticles()}\n`, "utf8");
+await mkdir(join(outputDir, "interviews"), { recursive: true });
+await writeFile(join(outputDir, "interviews", "index.html"), `${await renderInterviews()}\n`, "utf8");
 
 await assertGeneratedLinksResolve(outputDir);
 
@@ -58,6 +64,8 @@ console.log(`Generated ${join(outputDir, "index.html")}`);
 console.log(`Generated ${posts.length} posts in ${join(outputDir, "posts")}`);
 console.log(`Generated ${pages.length} pages`);
 console.log(`Generated generated talks page from _data/talks.yaml`);
+console.log(`Generated generated articles page from _data/articles.yaml`);
+console.log(`Generated generated interviews page from _data/interviews.yaml`);
 console.log(`Generated ${join(outputDir, "tags", "index.html")}`);
 console.log(`Generated ${join(outputDir, "dates", "index.html")}`);
 console.log(`Generated ${join(outputDir, "schedule", "index.html")}`);

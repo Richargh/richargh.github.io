@@ -25,6 +25,16 @@ test("main navigation opens ordinary content pages", async ({ page }) => {
   await page.goto("/talks/");
   await expect(page.getByRole("heading", { level: 1, name: "Talks" })).toBeVisible();
   await expect(page.locator(".talk-card", { hasText: "Domain Re-discovery Patterns for Legacy Code" })).toBeVisible();
+
+  await page.goto("/");
+  await page.getByRole("link", { name: "Articles", exact: true }).click();
+  await expect(page).toHaveURL(/\/articles\/?$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Articles" })).toBeVisible();
+
+  await page.goto("/");
+  await page.getByRole("link", { name: "Interviews", exact: true }).click();
+  await expect(page).toHaveURL(/\/interviews\/?$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Interviews" })).toBeVisible();
 });
 
 test("home-page browser search uses the generated post search index", async ({ page }) => {
@@ -51,6 +61,38 @@ test("talks page is generated as grouped cards from structured talk data", async
   const videoCard = page.locator(".talk-card#agentsec");
   await expect(videoCard.locator(".talk-banner-link")).toHaveAttribute("href", "https://www.youtube.com/watch?v=GLJGhkxMdgU");
   await expect(videoCard.locator(".talk-video-button", { hasText: "Video" }).first()).toBeVisible();
+
+  const articleBackedTalk = page.locator(".talk-card#kvj");
+  await expect(articleBackedTalk.locator(".talk-card-actions").getByRole("link", { name: "Article" })).toHaveAttribute("href", "/articles/#kvj");
+});
+
+test("articles page is generated from structured article data", async ({ page }) => {
+  await page.goto("/articles/");
+
+  const articleCard = page.locator(".talk-card#kvj");
+  await expect(articleCard.getByRole("heading", { level: 2, name: "Kotlin kontra Java" })).toBeVisible();
+  await expect(articleCard).toContainText("Part 1/5 - Ecosystem");
+  await expect(articleCard).toContainText("Part 4/5 - TBA");
+  await expect(articleCard).toContainText("2026-04-16");
+  await expect(articleCard).toContainText("Upcoming");
+  await expect(articleCard.locator(".talk-card-actions").getByRole("link", { name: "Talk" })).toHaveAttribute("href", "/talks/#kvj");
+});
+
+test("interviews page is generated from structured interview data with visible show names", async ({ page }) => {
+  await page.goto("/interviews/");
+
+  const interviewCard = page.locator(".talk-card#dnr-gcq");
+  await expect(interviewCard.getByRole("heading", { level: 2, name: "Grasping Code Quality with Richard Gross" })).toBeVisible();
+  await expect(interviewCard).toContainText(".NET Rocks!");
+  await expect(interviewCard.getByRole("link", { name: ".NET Rocks! #1927" })).toHaveAttribute("href", "https://www.dotnetrocks.com/details/1927");
+  await expect(interviewCard.locator(".talk-line-links").getByRole("link", { name: "Apple Podcasts" })).toBeVisible();
+  const streamCard = page.locator(".talk-card#swaist-cc");
+  await expect(streamCard.locator(".talk-banner-link")).toHaveAttribute("style", /ccstream-2025-01-24-rDHtNNBoP6Y\.jpg/);
+  await expect(streamCard.locator(".talk-banner-link")).toHaveAttribute("href", "https://tube.tchncs.de/w/a55879a2-5c3c-4d1f-bc1c-51e1c7a71cbd");
+  await expect(streamCard.locator(".talk-video-button", { hasText: "Video" })).toBeVisible();
+
+  const talkInterviewCard = page.locator(".talk-card#csq-rstbd");
+  await expect(talkInterviewCard.locator(".talk-card-actions").getByRole("link", { name: "Talk" })).toHaveAttribute("href", "/talks/#rstbd");
 });
 
 test("schedule is generated from structured talk appearances", async ({ page }) => {

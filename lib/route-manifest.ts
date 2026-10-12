@@ -58,6 +58,18 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             title: "Talks"
         },
         {
+            urlPath: "/articles/",
+            outputKey: outputKeyForUrlPath("/articles/"),
+            kind: "index" as const,
+            title: "Articles"
+        },
+        {
+            urlPath: "/interviews/",
+            outputKey: outputKeyForUrlPath("/interviews/"),
+            kind: "index" as const,
+            title: "Interviews"
+        },
+        {
             urlPath: "/feed.xml",
             outputKey: outputKeyForUrlPath("/feed.xml"),
             kind: "resource" as const,
