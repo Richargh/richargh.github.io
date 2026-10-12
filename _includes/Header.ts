@@ -1,7 +1,9 @@
 import { site } from "../lib/config.ts";
 import { escapeHtml } from "../lib/html.ts";
+import type { AppCounters } from "./CollectionStats.ts";
+import { renderNavItem } from "./NavItem.ts";
 
-export function renderHeader({ showBackToHome = false } = {}): string {
+export function renderHeader({ showBackToHome = false, appCounters }: { showBackToHome?: boolean; appCounters?: AppCounters } = {}): string {
   return `<header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
@@ -25,79 +27,7 @@ export function renderHeader({ showBackToHome = false } = {}): string {
 
     <!-- Navbar -->
     <div class="main-site-subheader menu disable-select">
-        <div class="blog">
-            <a style="text-decoration: none;" href="/posts">
-                <svg class="icon-blog" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 20H8L18.5 9.5L14.5 5.5L4 16V20Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M13.5 6.5L17.5 10.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19 5L20 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p class="blog-p">Blog</p>
-            </a>
-        </div>
-        <div class="talks">
-            <a style="text-decoration: none;" href="/talks">
-                <!-- from https://www.reshot.com/free-svg-icons/item/speaker-ZQA938GVWS/ -->
-                <svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
-                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
-                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
-                </svg>
-                <p class="home-p">Talks</p>
-            </a>
-        </div>
-        <div class="published">
-            <a style="text-decoration: none;" href="/articles">
-                <svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 2.5H14.5L20 8V21.5H6V2.5Z" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M14.5 2.5V8H20" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M9 12H17" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M9 16H17" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <p class="published-p">Articles</p>
-            </a>
-        </div>
-        <div class="interviews">
-            <a style="text-decoration: none;" href="/interviews">
-                <svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 14C14.2091 14 16 12.2091 16 10V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V10C8 12.2091 9.79086 14 12 14Z" stroke-width="2"/>
-                    <path d="M5 10C5 13.866 8.13401 17 12 17C15.866 17 19 13.866 19 10" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M12 17V22" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M9 22H15" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <p class="published-p">Interviews</p>
-            </a>
-        </div>
-        <div class="built">
-            <a style="text-decoration: none;" href="/built">
-                <!-- from https://www.reshot.com/free-svg-icons/item/tool-UACF35PGN9/ -->
-                <svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg" >
-                    <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
-                </svg>
-                <p class="built-p">Built</p>
-            </a>
-        </div>
-        <div class="categories">
-            <a style="text-decoration: none;" href="/tags">
-            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p class="categories-p">Tags</p>
-            </a>
-        </div>
-        <div class="rss">
-            <a style="text-decoration: none;" href="/feed.xml">
-                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            <p class="rss-p">RSS</p>
-            </a>
-        </div>
+        ${renderMainNav(appCounters)}
     </div>
     <div class="searchbar search-container">
         <i class="fa fa-search" aria-hidden="true"></i>
@@ -134,6 +64,75 @@ export function renderHeader({ showBackToHome = false } = {}): string {
     </script>
     ${showBackToHome ? renderBackToHome() : ""}
 </header>`;
+}
+
+function renderMainNav(appCounters: AppCounters | undefined): string {
+  return [
+    renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: blogIcon(), labelClassName: "blog-p" }),
+    renderNavItem({ className: "talks", href: "/talks", label: "Talks", iconHtml: talksIcon(), labelClassName: "home-p", counter: appCounters?.appearances }),
+    renderNavItem({ className: "published", href: "/articles", label: "Articles", iconHtml: articleIcon(), labelClassName: "published-p", counter: appCounters?.publications }),
+    renderNavItem({ className: "interviews", href: "/interviews", label: "Interviews", iconHtml: interviewIcon(), labelClassName: "published-p", counter: appCounters?.interviews }),
+    renderNavItem({ className: "built", href: "/built", label: "Built", iconHtml: builtIcon(), labelClassName: "built-p" }),
+    renderNavItem({ className: "categories", href: "/tags", label: "Tags", iconHtml: tagsIcon(), labelClassName: "categories-p" }),
+    renderNavItem({ className: "rss", href: "/feed.xml", label: "RSS", iconHtml: rssIcon(), labelClassName: "rss-p" }),
+  ].join("\n");
+}
+
+function blogIcon(): string {
+  return `<svg class="icon-blog" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 20H8L18.5 9.5L14.5 5.5L4 16V20Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 6.5L17.5 10.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 5L20 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`;
+}
+
+function talksIcon(): string {
+  return `<svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
+                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
+                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
+                </svg>`;
+}
+
+function articleIcon(): string {
+  return `<svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 2.5H14.5L20 8V21.5H6V2.5Z" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M14.5 2.5V8H20" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M9 12H17" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 16H17" stroke-width="2" stroke-linecap="round"/>
+                </svg>`;
+}
+
+function interviewIcon(): string {
+  return `<svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 14C14.2091 14 16 12.2091 16 10V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V10C8 12.2091 9.79086 14 12 14Z" stroke-width="2"/>
+                    <path d="M5 10C5 13.866 8.13401 17 12 17C15.866 17 19 13.866 19 10" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 17V22" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 22H15" stroke-width="2" stroke-linecap="round"/>
+                </svg>`;
+}
+
+function builtIcon(): string {
+  return `<svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
+                </svg>`;
+}
+
+function tagsIcon(): string {
+  return `<svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`;
+}
+
+function rssIcon(): string {
+  return `<svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`;
 }
 
 function renderBackToHome(): string {

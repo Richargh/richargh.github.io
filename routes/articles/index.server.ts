@@ -1,5 +1,6 @@
-import { renderLayout } from "../../_layouts/Layout.ts";
 import { renderArticleCard as renderSharedArticleCard } from "../../_includes/ArticleCard.ts";
+import { appCounters, renderArticleStats } from "../../_includes/CollectionStats.ts";
+import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadArticles, type Article, type ArticlePart, type ArticlePublication } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLink, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";
 import { escapeHtml } from "../../lib/html.ts";
@@ -20,9 +21,11 @@ export function renderArticlesDocument(articles: Article[], talks: Talk[] = [], 
     description: "Articles by Richard Groß",
     type: "website",
     showBackToHome: true,
+    appCounters: appCounters({ talks, articles, interviews }),
     content: `<main>
                 <article data-source="_data/articles.yaml">
                   <h1>Articles</h1>
+                  ${renderArticleStats(articles)}
                   <div class="content talks-cards">
                     ${sortedArticles.map((article) => renderArticleCard(article, relatedGroups)).join("\n")}
                   </div>

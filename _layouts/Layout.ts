@@ -1,5 +1,6 @@
 import { renderContextMenu } from "../_includes/ContextMenu.ts";
 import { renderFooter } from "../_includes/Footer.ts";
+import type { AppCounters } from "../_includes/CollectionStats.ts";
 import { renderHeader } from "../_includes/Header.ts";
 import { absoluteUrl, site } from "../lib/config.ts";
 import { escapeHtml } from "../lib/html.ts";
@@ -11,6 +12,7 @@ export interface LayoutOptions {
   type?: "website" | "article";
   showBackToHome?: boolean;
   showContextMenu?: boolean;
+  appCounters?: AppCounters;
   content: string;
 }
 
@@ -46,7 +48,7 @@ export function renderLayout(options: LayoutOptions): string {
 <body data-syntax-theme="github">
     <div class="container">
         <div class="box">
-            ${renderHeader({ showBackToHome: options.showBackToHome })}
+            ${renderHeader({ showBackToHome: options.showBackToHome, appCounters: options.appCounters })}
             ${options.content}
             ${renderContextMenu({ enabled: options.showContextMenu ?? options.urlPath === "/" })}
             ${renderFooter()}
