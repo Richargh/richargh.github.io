@@ -1,7 +1,7 @@
-import { renderContextMenu } from "../_includes/ContextMenu.ts";
-import { renderFooter } from "../_includes/Footer.ts";
-import type { AppCounters } from "../_includes/elements/CollectionStats.ts";
-import { renderHeader } from "../_includes/Header.ts";
+import { renderContextMenu } from "../_ui/blocks/ContextMenu/ContextMenu.ts";
+import { renderFooter } from "../_ui/blocks/Footer/Footer.ts";
+import type { AppCounters } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
+import { renderHeader } from "../_ui/blocks/Header/Header.ts";
 import { absoluteUrl, site } from "../lib/config.ts";
 import { escapeHtml } from "../lib/html.ts";
 

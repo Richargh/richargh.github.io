@@ -1,6 +1,6 @@
-import { renderArticleCard } from "../../_includes/elements/ArticleCard.ts";
-import { appCounters, renderTalkStats } from "../../_includes/elements/CollectionStats.ts";
-import { renderUpcomingTalks } from "../../_includes/elements/UpcomingCollection.ts";
+import { renderArticleCard } from "../../_ui/blocks/ArticleCard/ArticleCard.ts";
+import { appCounters, renderTalkStats } from "../../_ui/blocks/CollectionStats/CollectionStats.ts";
+import { renderUpcomingTalks } from "../../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadArticles, type Article } from "../../lib/articles.ts";
 import { assertRelatedReferencesExist, loadRelatedGroups, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../lib/cross-links.ts";

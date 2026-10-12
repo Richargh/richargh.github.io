@@ -1,5 +1,5 @@
-import type { Post } from "../lib/content.ts";
-import { escapeHtml } from "../lib/html.ts";
+import type { Post } from "../../../lib/content.ts";
+import { escapeHtml } from "../../../lib/html.ts";
 
 export function renderPostMeta(post: Post): string {
   const status = post.status ? `<li><a href="javascript:void(0)" class="tag"><b>Status:</b> <i>${escapeHtml(capitalize(post.status))}</i></a></li>` : "";

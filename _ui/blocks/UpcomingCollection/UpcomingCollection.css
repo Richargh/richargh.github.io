@@ -1,0 +1,123 @@
+.upcoming-items {
+    margin: 0 0 2rem;
+    padding: 1rem;
+    background: #f7f7f7;
+    border: 1px solid #eeeeee;
+}
+
+.upcoming-items-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.upcoming-items-heading h2 {
+    margin: 0;
+}
+
+.upcoming-items-heading p {
+    margin: 0;
+    color: #777777;
+    font-size: 0.95rem;
+}
+
+.upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.upcoming-list li {
+    margin: 0;
+}
+
+.upcoming-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.75rem;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    color: #555555 !important;
+    text-decoration: none !important;
+}
+
+.upcoming-item:hover,
+.upcoming-item:focus {
+    background: #fbfbfb;
+    border-color: #e2e2e2;
+}
+
+.upcoming-item-kind {
+    grid-column: 1 / -1;
+    color: #888888;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.upcoming-item-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.upcoming-new {
+    display: inline-block;
+    padding: 0.05rem 0.35rem;
+    background: #fff4cc;
+    color: #6f5200;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.upcoming-item-title {
+    color: #555555;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.upcoming-item-meta,
+.upcoming-item-detail {
+    color: #777777;
+    font-size: 0.86rem;
+    line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+    .collection-banners {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .collection-banners {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-item {
+        grid-template-columns: 1fr auto;
+        align-items: flex-start;
+    }
+
+    .upcoming-item-main {
+        grid-column: 1 / -1;
+    }
+
+    .upcoming-items-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

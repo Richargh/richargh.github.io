@@ -1,7 +1,7 @@
-import { flattenArticlePublications, type Article } from "../../lib/articles.ts";
-import { escapeHtml } from "../../lib/html.ts";
-import { type InterviewAppearance } from "../../lib/interviews.ts";
-import { flattenTalkAppearances, type Talk } from "../../lib/talks.ts";
+import { flattenArticlePublications, type Article } from "../../../lib/articles.ts";
+import { escapeHtml } from "../../../lib/html.ts";
+import { type InterviewAppearance } from "../../../lib/interviews.ts";
+import { flattenTalkAppearances, type Talk } from "../../../lib/talks.ts";
 
 export interface CollectionBannersOptions {
   talks: Talk[];

@@ -71,3 +71,29 @@ test("utility styles are bundled after global layout styles", async () => {
   }
   assert.ok(bundle.indexOf(".serif") > bundle.indexOf(".container"));
 });
+
+test("block CSS is bundled after global layout styles", async () => {
+  const bundle = await buildCssBundle(["_styles/30-global-layout.css", "_ui/blocks/Header/Header.css", "_ui/blocks/Footer/Footer.css"]);
+
+  for (const selector of ["header", ".site-heading", "#copyright"] as const) {
+    assert.ok(bundle.includes(`${selector} {`), `missing ${selector} selector`);
+  }
+  assert.ok(bundle.indexOf(".site-heading") > bundle.indexOf(".container"));
+});
+
+test("reusable block CSS includes phase 2 block selectors", async () => {
+  const bundle = await buildCssBundle([
+    "_ui/blocks/ArticleCard/ArticleCard.css",
+    "_ui/blocks/CollectionBanners/CollectionBanners.css",
+    "_ui/blocks/CollectionStats/CollectionStats.css",
+    "_ui/blocks/ContentMeta/ContentMeta.css",
+    "_ui/blocks/ContextMenu/ContextMenu.css",
+    "_ui/blocks/FeedList/FeedList.css",
+    "_ui/blocks/NavItem/NavItem.css",
+    "_ui/blocks/UpcomingCollection/UpcomingCollection.css",
+  ]);
+
+  for (const selector of [".talk-card", ".collection-banner", ".collection-metric", ".tag", ".context-menu", ".feed-title", ".nav-item-link", ".upcoming-items"] as const) {
+    assert.ok(bundle.includes(`${selector} {`), `missing ${selector} selector`);
+  }
+});

@@ -1,0 +1,71 @@
+.collection-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.25rem 0 1.4rem;
+}
+
+.collection-metric-wrapper {
+    display: inline-block;
+}
+
+.collection-metric {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    padding: 0.12rem 0.42rem;
+    background: #fafafa;
+    color: #777777;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px #eeeeee;
+    cursor: pointer;
+    font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.collection-metric:hover,
+.collection-metric:focus {
+    background: #f4f4f4;
+    color: #555555;
+}
+
+.collection-metric strong {
+    color: #666666;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.collection-metric-popover {
+    max-width: min(34rem, calc(100vw - 2rem));
+    max-height: min(28rem, calc(100vh - 2rem));
+    padding: 1rem;
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+    overflow: auto;
+}
+
+.collection-metric-popover::backdrop {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.collection-metric-popover h2 {
+    margin: 0 0 0.6rem;
+    font-size: 1rem;
+}
+
+.collection-metric-popover ol {
+    margin: 0;
+    padding-left: 1.4rem;
+}
+
+.collection-metric-popover li {
+    margin: 0.22rem 0;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}

@@ -1,5 +1,5 @@
-import { site } from "../lib/config.ts";
-import { escapeHtml } from "../lib/html.ts";
+import { site } from "../../../lib/config.ts";
+import { escapeHtml } from "../../../lib/html.ts";
 
 export function renderFooter(): string {
   return `<div id="copyright">

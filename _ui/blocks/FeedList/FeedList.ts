@@ -1,5 +1,5 @@
-import type { Post } from "../lib/content.ts";
-import { escapeHtml } from "../lib/html.ts";
+import type { Post } from "../../../lib/content.ts";
+import { escapeHtml } from "../../../lib/html.ts";
 
 export function renderFeedList(posts: Post[]): string {
   return posts.map(renderFeedItem).join("\n");

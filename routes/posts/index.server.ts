@@ -1,4 +1,4 @@
-import { renderFeedList } from "../../_includes/FeedList.ts";
+import { renderFeedList } from "../../_ui/blocks/FeedList/FeedList.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import { loadAllPosts } from "../../lib/content.ts";
 

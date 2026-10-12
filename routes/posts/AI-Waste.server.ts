@@ -1,4 +1,4 @@
-import { renderPostMeta } from "../../_includes/ContentMeta.ts";
+import { renderPostMeta } from "../../_ui/blocks/ContentMeta/ContentMeta.ts";
 import { renderLayout } from "../../_layouts/Layout.ts";
 import type { Post } from "../../lib/content.ts";
 import { loadSelectedPost } from "../../lib/content.ts";
