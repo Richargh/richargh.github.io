@@ -1,6 +1,6 @@
 import { renderContextMenu } from "../_includes/ContextMenu.ts";
 import { renderFooter } from "../_includes/Footer.ts";
-import type { AppCounters } from "../_includes/CollectionStats.ts";
+import type { AppCounters } from "../_includes/elements/CollectionStats.ts";
 import { renderHeader } from "../_includes/Header.ts";
 import { absoluteUrl, site } from "../lib/config.ts";
 import { escapeHtml } from "../lib/html.ts";

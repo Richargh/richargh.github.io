@@ -1,4 +1,4 @@
-import { escapeHtml } from "../lib/html.ts";
+import { escapeHtml } from "../../lib/html.ts";
 
 export interface ArticleCardBanner {
   thumbnail?: string;

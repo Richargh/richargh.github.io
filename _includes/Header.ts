@@ -1,7 +1,7 @@
 import { site } from "../lib/config.ts";
 import { escapeHtml } from "../lib/html.ts";
-import type { AppCounters } from "./CollectionStats.ts";
-import { renderNavItem } from "./NavItem.ts";
+import type { AppCounters } from "./elements/CollectionStats.ts";
+import { renderNavItem } from "./elements/NavItem.ts";
 
 export function renderHeader({ showBackToHome = false, appCounters }: { showBackToHome?: boolean; appCounters?: AppCounters } = {}): string {
   return `<header>

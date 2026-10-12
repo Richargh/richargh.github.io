@@ -1,5 +1,5 @@
-import { appCounters } from "../_includes/CollectionStats.ts";
-import { renderUpcomingCollection } from "../_includes/UpcomingCollection.ts";
+import { appCounters } from "../_includes/elements/CollectionStats.ts";
+import { renderUpcomingCollection } from "../_includes/elements/UpcomingCollection.ts";
 import { renderLayout } from "../_layouts/Layout.ts";
 import { loadArticles } from "../lib/articles.ts";
 import { loadPage } from "../lib/content.ts";
