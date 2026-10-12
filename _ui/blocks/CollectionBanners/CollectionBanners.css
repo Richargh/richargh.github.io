@@ -10,18 +10,18 @@
     flex-direction: column;
     min-height: 150px;
     padding: 1rem;
-    background: linear-gradient(135deg, #314a8b 0%, #7b3f98 54%, #e36f4a 100%);
-    color: #ffffff !important;
+    background: var(--gradient-collection-banner-primary);
+    color: var(--color-on-accent) !important;
     text-decoration: none !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px var(--color-banner-shadow);
 }
 
 .collection-banner:nth-child(2) {
-    background: linear-gradient(135deg, #245f73 0%, #4183c4 50%, #80a85a 100%);
+    background: var(--gradient-collection-banner-secondary);
 }
 
 .collection-banner:nth-child(3) {
-    background: linear-gradient(135deg, #5b3f7f 0%, #b34b72 52%, #e38a4a 100%);
+    background: var(--gradient-collection-banner-tertiary);
 }
 
 .collection-banner:hover,
@@ -42,7 +42,7 @@
 }
 
 .collection-banner-kicker {
-    color: #ffffff;
+    color: var(--color-on-accent);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -50,7 +50,7 @@
 }
 
 .collection-banner-total {
-    color: #ffffff;
+    color: var(--color-on-accent);
     font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 800;
     line-height: 0.95;
@@ -58,7 +58,7 @@
 }
 
 .collection-banner-label {
-    color: rgba(255, 255, 255, 0.92);
+    color: var(--color-banner-text-muted);
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -74,13 +74,13 @@
 .collection-banner-topics span {
     display: inline-block;
     padding: 0.18rem 0.45rem;
-    background: rgba(0, 0, 0, 0.24);
-    color: #ffffff;
+    background: var(--color-overlay-soft);
+    color: var(--color-on-accent);
     font-size: 0.76rem;
     line-height: 1.25;
 }
 
 .collection-banner-topics strong {
-    color: #ffffff;
+    color: var(--color-on-accent);
     font-size: inherit;
 }
