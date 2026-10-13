@@ -82,9 +82,10 @@ function renderMainNav(appCounters: AppCounters | undefined): string {
 
 function blogIcon(): string {
   return `<svg class="icon-blog" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 20H8L18.5 9.5L14.5 5.5L4 16V20Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M13.5 6.5L17.5 10.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19 5L20 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 18H15" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.5 20H14.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.5 22H13.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.5 14.5C7.24562 13.5088 6.5 11.9919 6.5 10.4C6.5 7.41766 8.96243 5 12 5C15.0376 5 17.5 7.41766 17.5 10.4C17.5 11.9919 16.7544 13.5088 15.5 14.5C14.7711 15.076 14.5 15.65 14.5 17H9.5C9.5 15.65 9.2289 15.076 8.5 14.5Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>`;
 }
 
@@ -98,10 +99,12 @@ function talksIcon(): string {
 
 function articleIcon(): string {
   return `<svg class="icon-published" width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 2.5H14.5L20 8V21.5H6V2.5Z" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M14.5 2.5V8H20" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M9 12H17" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M9 16H17" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 5.5C6.8 5.5 9.2 6.1 12 8V20C9.2 18.1 6.8 17.5 4 17.5V5.5Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 5.5C17.2 5.5 14.8 6.1 12 8V20C14.8 18.1 17.2 17.5 20 17.5V5.5Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 10H9" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M15 10H16" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M8 14H9" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M15 14H16" stroke-width="2.2" stroke-linecap="round"/>
                 </svg>`;
 }
 
