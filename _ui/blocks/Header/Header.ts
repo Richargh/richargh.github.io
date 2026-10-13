@@ -17,6 +17,10 @@ export function renderHeader({ showBackToHome = false, appCounters }: { showBack
             <div class="userdesc">
                 <p class="title-sans">${escapeHtml(site.tagLine)}</p>
             </div>
+            <a class="header-rss-link" href="${escapeHtml(site.feedUrl)}" aria-label="RSS feed">
+                ${rssIcon()}
+                <span>RSS</span>
+            </a>
         </div>
     </div>
     <div class="avatar disable-select">
@@ -73,8 +77,6 @@ function renderMainNav(appCounters: AppCounters | undefined): string {
     renderNavItem({ className: "published", href: "/articles", label: "Articles", iconHtml: articleIcon(), labelClassName: "published-p", counter: appCounters?.publications }),
     renderNavItem({ className: "interviews", href: "/interviews", label: "Interviews", iconHtml: interviewIcon(), labelClassName: "published-p", counter: appCounters?.interviews }),
     renderNavItem({ className: "built", href: "/built", label: "Built", iconHtml: builtIcon(), labelClassName: "built-p" }),
-    renderNavItem({ className: "categories", href: "/tags", label: "Tags", iconHtml: tagsIcon(), labelClassName: "categories-p" }),
-    renderNavItem({ className: "rss", href: "/feed.xml", label: "RSS", iconHtml: rssIcon(), labelClassName: "rss-p" }),
   ].join("\n");
 }
 
@@ -116,15 +118,6 @@ function builtIcon(): string {
   return `<svg class="icon-built" width="18" height="19" viewBox="0 0 14 23" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 23V13a7.551 7.551 0 0 0 4-6.682A6.992 6.992 0 0 0 10 0v6.318a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V0a6.992 6.992 0 0 0-4 6.318A7.551 7.551 0 0 0 4 13v10h2v-8h2v8z"/>
                 </svg>`;
-}
-
-function tagsIcon(): string {
-  return `<svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 9.5H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 15.5H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 3.5L8 21.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 3.5L14 21.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>`;
 }
 
 function rssIcon(): string {

@@ -60,6 +60,7 @@ header {
 
 .userboard {
     background-color: var(--color-background-muted);
+    position: relative;
     width: var(--width-full);
 }
 
@@ -77,6 +78,32 @@ header {
 
 .userdesc p {
     font-size: var(--font-size-5xl);
+}
+
+.header-rss-link {
+    align-items: center;
+    bottom: var(--space-card);
+    color: var(--color-text);
+    display: inline-flex;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-s);
+    font-weight: 700;
+    gap: var(--space-xs);
+    position: absolute;
+    right: var(--space-content);
+    text-decoration: none;
+}
+
+.header-rss-link:hover,
+.header-rss-link:focus {
+    color: var(--color-link-hover);
+}
+
+.header-rss-link .icon-rss {
+    height: var(--space-4xl);
+    margin: 0;
+    stroke: currentColor;
+    width: var(--space-4xl);
 }
 
 .main-site-subheader {

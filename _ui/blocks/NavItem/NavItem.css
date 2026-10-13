@@ -20,7 +20,6 @@
     text-align: center;
 }
 
-.rss,
 .categories {
     padding-left: var(--space-3xl);
     padding-right: var(--space-content);
