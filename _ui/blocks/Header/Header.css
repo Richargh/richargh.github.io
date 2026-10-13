@@ -174,7 +174,6 @@ header {
 }
 
 .back-icon {
-    background-color: var(--color-background-raised);
     fill: currentColor;
     color: var(--color-text);
     margin-top: var(--space-button-block);
