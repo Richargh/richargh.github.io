@@ -1,0 +1,24 @@
+scroll-to-top {
+    bottom: var(--space-content);
+    display: block;
+    position: fixed;
+    right: var(--space-content);
+    z-index: 1;
+}
+
+scroll-to-top button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: var(--radius-pill);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font: inherit;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+scroll-to-top svg {
+    display: block;
+}

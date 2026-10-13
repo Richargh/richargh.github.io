@@ -1,6 +1,7 @@
 import { renderFooter } from "../../blocks/Footer/Footer.ts";
 import type { AppCounters } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderHeader } from "../../blocks/Header/Header.ts";
+import { renderScrollToTop } from "../../blocks/ScrollToTop/ScrollToTop.ts";
 import { absoluteUrl, site } from "../../../lib/config.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 
@@ -40,6 +41,7 @@ export function renderLayout(options: LayoutOptions): string {
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
     <link href="/assets/css/microlighter.css" rel="stylesheet" media="all"/>
     <script type="module" src="/assets/vendor/microlighter/microlighter.js"></script>
+    <script type="module" src="/assets/elements/ScrollToTopElement.mjs"></script>
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">
 </head>
 
@@ -50,17 +52,8 @@ export function renderLayout(options: LayoutOptions): string {
             ${options.content}
             ${renderFooter()}
         </div>
-        <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
-            <svg class="scroll-to-top-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                <path d="M6 15L12 9L18 15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
+        ${renderScrollToTop()}
     </div>
-    <script>
-        document.getElementById("scroll-to-top").addEventListener("click", function() {
-            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        });
-    </script>
 </body>
 </html>`;
 }

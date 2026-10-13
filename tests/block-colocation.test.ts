@@ -9,6 +9,7 @@ import { renderCollectionBanners } from "../_ui/blocks/CollectionBanners/Collect
 import { appCounters, renderArticleStats } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
 import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
+import { renderScrollToTop } from "../_ui/blocks/ScrollToTop/ScrollToTop.ts";
 import { renderLayout as renderSiteLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { renderBuiltPageDocument } from "../_ui/pages/Built/Built.ts";
 import { renderCredentialsPageDocument } from "../_ui/pages/Credentials/Credentials.ts";
@@ -31,6 +32,7 @@ test("Header block renders navigation, counters, and optional back link", () => 
 
 test("simple blocks render their expected root markup", () => {
   assert.match(renderFooter(), /id="copyright"/);
+  assert.equal(renderScrollToTop(), "<scroll-to-top></scroll-to-top>");
   assert.match(renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: "<svg></svg>", labelClassName: "blog-p", counter: 5 }), /class="blog nav-item"/);
 });
 
@@ -64,7 +66,8 @@ test("SiteLayout renders the site shell", () => {
 
   assert.match(html, /<div class="container">/);
   assert.match(html, /<main><h1>Body<\/h1><\/main>/);
-  assert.match(html, /id="scroll-to-top"/);
+  assert.match(html, /<scroll-to-top><\/scroll-to-top>/);
+  assert.match(html, /src="\/assets\/elements\/ScrollToTopElement\.mjs"/);
 });
 
 test("page renderers own page presentation markup", () => {

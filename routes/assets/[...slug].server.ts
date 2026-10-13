@@ -1,12 +1,15 @@
 import { readdir, readFile } from "node:fs/promises";
-import { extname, resolve, sep } from "node:path";
+import { basename, extname, resolve, sep } from "node:path";
 import { buildCssBundle } from "../../scripts/build-css.ts";
+import { discoverElementModules } from "../../scripts/copy-elements.ts";
 
 const assetsDir = resolve("assets");
+const uiDir = resolve("_ui");
 
 const mediaTypes: Record<string, string> = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
@@ -21,6 +24,7 @@ const mediaTypes: Record<string, string> = {
 
 export async function getStaticPaths(): Promise<Array<{ params: { slug: string } }>> {
   const paths = await listAssetFiles(assetsDir);
+  paths.push(...(await discoverElementModules(uiDir)).map((path) => `elements/${path.split(/[\\/]/).at(-1)}`));
   if (!paths.includes("css/style.css")) paths.push("css/style.css");
   return paths.sort().map((slug) => ({ params: { slug } }));
 }
@@ -31,8 +35,8 @@ export async function render({ params }: { params: { slug: string } }): Promise<
 
 export async function assetResponse(slug: string): Promise<Response> {
   if (slug.includes("\0")) return new Response("Bad Request", { status: 400 });
-  const file = resolve(assetsDir, slug);
-  if (!isInsideAssets(file)) return new Response("Forbidden", { status: 403 });
+  const file = await assetFileForSlug(slug);
+  if (!file) return new Response("Forbidden", { status: 403 });
 
   try {
     if (slug === "css/style.css") {
@@ -51,8 +55,19 @@ export function mediaType(path: string): string {
   return mediaTypes[extname(path).toLowerCase()] ?? "application/octet-stream";
 }
 
-function isInsideAssets(path: string): boolean {
-  return path === assetsDir || path.startsWith(`${assetsDir}${sep}`);
+async function assetFileForSlug(slug: string): Promise<string | undefined> {
+  if (slug.startsWith("elements/")) {
+    const elementName = slug.slice("elements/".length);
+    if (elementName.includes("/")) return undefined;
+    return (await discoverElementModules(uiDir)).find((file) => basename(file) === elementName);
+  }
+
+  const file = resolve(assetsDir, slug);
+  return isInside(file, assetsDir) ? file : undefined;
+}
+
+function isInside(path: string, directory: string): boolean {
+  return path === directory || path.startsWith(`${directory}${sep}`);
 }
 
 async function listAssetFiles(dir: string, prefix = ""): Promise<string[]> {
