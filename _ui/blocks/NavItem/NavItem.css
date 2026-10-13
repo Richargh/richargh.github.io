@@ -20,6 +20,10 @@
     text-align: center;
 }
 
+.nav-item:last-child {
+    border-right: none;
+}
+
 .categories {
     padding-left: var(--space-3xl);
     padding-right: var(--space-content);
