@@ -89,10 +89,10 @@ function blogIcon(): string {
 }
 
 function talksIcon(): string {
-  return `<svg class="icon-talks" width="18" height="19" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 25.983a1 1 0 0 1-.406-.086L4.218 21.29H1a1 1 0 0 1-1-1v-8.614a1 1 0 0 1 1-1h3.218L14.594 6.07A1 1 0 0 1 16 6.983v18a1 1 0 0 1-1 1zM2 19.29h2.43c.14 0 .278.029.405.085L14 23.445V8.52l-9.165 4.07a1.002 1.002 0 0 1-.405.085H2v6.614zM23.698 28a1 1 0 0 1-.39-1.92A10.942 10.942 0 0 0 30 15.982c0-4.379-2.599-8.33-6.62-10.065a1 1 0 0 1-.522-1.314.997.997 0 0 1 1.314-.522A12.95 12.95 0 0 1 32 15.982c0 5.22-3.106 9.906-7.913 11.939a1 1 0 0 1-.39.08z"/>
-                    <path d="M22.751 24.051a1 1 0 0 1-.47-1.883A6.993 6.993 0 0 0 26 15.983a6.992 6.992 0 0 0-3.719-6.185 1 1 0 1 1 .939-1.766 8.988 8.988 0 0 1 4.78 7.95 8.988 8.988 0 0 1-4.78 7.952.993.993 0 0 1-.469.117z"/>
-                    <path d="M19 20.733a1 1 0 0 1 0-2c1.517 0 2.75-1.233 2.75-2.75s-1.233-2.75-2.75-2.75a1 1 0 0 1 0-2c2.62 0 4.75 2.13 4.75 4.75s-2.13 4.75-4.75 4.75z"/>
+  return `<svg class="icon-talks" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20V15H4V4Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 20L12 15L16 20" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 11L11 9L13 10.5L16 7.5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>`;
 }
 
