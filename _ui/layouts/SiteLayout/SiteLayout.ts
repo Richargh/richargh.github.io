@@ -58,7 +58,6 @@ export function renderLayout(options: LayoutOptions): string {
             </svg>
         </button>
     </div>
-    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="module" src="/assets/vendor/microlighter/microlighter.js"></script>
     <script>
         document.getElementById("scroll-to-top").addEventListener("click", function() {
