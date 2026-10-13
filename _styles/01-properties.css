@@ -1,179 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@layer argh.theme, argh.base, argh.layout, argh.blocks, argh.pages, argh.utilities;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') layer(argh.theme);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap') layer(argh.theme);
 
-:root {
-    color-scheme: light dark;
+@layer argh.theme {
+    :root {
+        color-scheme: light dark;
 
-    --font-body: 'IBM Plex Sans', Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-heading: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-serif: 'EB Garamond', Georgia, serif;
-    --font-monospace: Consolas, 'Courier New', Courier, monospace;
+        --font-body: 'IBM Plex Sans', Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --font-heading: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --font-serif: 'EB Garamond', Georgia, serif;
+        --font-monospace: Consolas, 'Courier New', Courier, monospace;
 
-    /* Base colors */
-    --color-background: light-dark(#ffffff, #111111);
-    --color-background-muted: light-dark(#f7f7f7, #1a1a1a);
-    --color-background-raised: light-dark(#ffffff, #202020);
-    --color-background-hover: light-dark(#f4f4f4, #262626);
-    --color-text: light-dark(#555555, #f1f3f5);
-    --color-text-muted: light-dark(#aaaaaa, #adb5bd);
-    --color-border: light-dark(#f7f7f7, #343a40);
-    --color-border-strong: light-dark(#e9e9e9, #495057);
-    --color-rule: light-dark(#cccccc, #495057);
-    --color-shadow: light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55));
-    --color-on-accent: #ffffff;
+        /* Base colors */
+        --color-background: light-dark(#ffffff, #111111);
+        --color-background-muted: light-dark(#f7f7f7, #1a1a1a);
+        --color-background-raised: light-dark(#ffffff, #202020);
+        --color-background-hover: light-dark(#f4f4f4, #262626);
+        --color-text: light-dark(#555555, #f1f3f5);
+        --color-text-muted: light-dark(#aaaaaa, #adb5bd);
+        --color-border: light-dark(#f7f7f7, #343a40);
+        --color-border-strong: light-dark(#e9e9e9, #495057);
+        --color-rule: light-dark(#cccccc, #495057);
+        --color-shadow: light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55));
+        --color-on-accent: #ffffff;
 
-    /* Interactive colors */
-    --color-primary: light-dark(#4183c4, #74c0fc);
-    --color-primary-background: light-dark(#eef3fb, #14283d);
-    --color-link: var(--color-primary);
-    --color-link-hover: var(--color-primary);
-    --color-focus-ring: var(--color-primary);
+        /* Interactive colors */
+        --color-primary: light-dark(#4183c4, #74c0fc);
+        --color-primary-background: light-dark(#eef3fb, #14283d);
+        --color-link: var(--color-primary);
+        --color-link-hover: var(--color-primary);
+        --color-focus-ring: var(--color-primary);
 
-    /* Status colors */
-    --color-info: light-dark(#4183c4, #74c0fc);
-    --color-info-background: light-dark(#e7f5ff, #102a43);
-    --color-info-text: light-dark(#1864ab, #a5d8ff);
-    --color-success: light-dark(#2f9e44, #69db7c);
-    --color-success-background: light-dark(#ebfbee, #0b2e13);
-    --color-success-text: light-dark(#2b6b33, #b2f2bb);
-    --color-warning: light-dark(#b58100, #ffd43b);
-    --color-warning-background: light-dark(#fff4cc, #3a2c00);
-    --color-warning-text: light-dark(#6f5200, #ffe08a);
-    --color-danger: #d92323;
-    --color-danger-hover: #b81919;
-    --color-danger-background: rgba(217, 35, 35, 0.92);
-    --color-danger-shadow: rgba(217, 35, 35, 0.25);
+        /* Status colors */
+        --color-info: light-dark(#4183c4, #74c0fc);
+        --color-info-background: light-dark(#e7f5ff, #102a43);
+        --color-info-text: light-dark(#1864ab, #a5d8ff);
+        --color-success: light-dark(#2f9e44, #69db7c);
+        --color-success-background: light-dark(#ebfbee, #0b2e13);
+        --color-success-text: light-dark(#2b6b33, #b2f2bb);
+        --color-warning: light-dark(#b58100, #ffd43b);
+        --color-warning-background: light-dark(#fff4cc, #3a2c00);
+        --color-warning-text: light-dark(#6f5200, #ffe08a);
+        --color-danger: #d92323;
+        --color-danger-hover: #b81919;
+        --color-danger-background: rgba(217, 35, 35, 0.92);
+        --color-danger-shadow: rgba(217, 35, 35, 0.25);
 
-    /* Overlays */
-    --color-backdrop: rgba(0, 0, 0, 0.35);
-    --color-overlay-strong: rgba(0, 0, 0, 0.58);
-    --color-overlay-medium: rgba(0, 0, 0, 0.45);
-    --color-overlay-soft: rgba(0, 0, 0, 0.24);
+        /* Overlays */
+        --color-backdrop: rgba(0, 0, 0, 0.35);
+        --color-overlay-strong: rgba(0, 0, 0, 0.58);
+        --color-overlay-medium: rgba(0, 0, 0, 0.45);
+        --color-overlay-soft: rgba(0, 0, 0, 0.24);
 
-    /* Decorative colors */
-    --color-banner-shadow: rgba(0, 0, 0, 0.08);
-    --color-banner-text-muted: rgba(255, 255, 255, 0.92);
-    --gradient-article-card-banner: linear-gradient(135deg, #314a8b 0%, #7b3f98 42%, #e36f4a 100%);
-    --gradient-collection-banner-primary: linear-gradient(135deg, #314a8b 0%, #7b3f98 54%, #e36f4a 100%);
-    --gradient-collection-banner-secondary: linear-gradient(135deg, #245f73 0%, #4183c4 50%, #80a85a 100%);
-    --gradient-collection-banner-tertiary: linear-gradient(135deg, #5b3f7f 0%, #b34b72 52%, #e38a4a 100%);
+        /* Decorative colors */
+        --color-banner-shadow: rgba(0, 0, 0, 0.08);
+        --color-banner-text-muted: rgba(255, 255, 255, 0.92);
+        --gradient-article-card-banner: linear-gradient(135deg, #314a8b 0%, #7b3f98 42%, #e36f4a 100%);
+        --gradient-collection-banner-primary: linear-gradient(135deg, #314a8b 0%, #7b3f98 54%, #e36f4a 100%);
+        --gradient-collection-banner-secondary: linear-gradient(135deg, #245f73 0%, #4183c4 50%, #80a85a 100%);
+        --gradient-collection-banner-tertiary: linear-gradient(135deg, #5b3f7f 0%, #b34b72 52%, #e38a4a 100%);
 
-    /* Code colors */
-    --color-code-background: var(--color-background-muted);
-    --color-code-text: var(--color-text);
+        /* Code colors */
+        --color-code-background: var(--color-background-muted);
+        --color-code-text: var(--color-text);
 
-    /* Syntax colors */
-    --color-syntax-highlighting-comment: light-dark(#6e7781, #8b949e);
-    --color-syntax-highlighting-keyword: light-dark(#cf222e, #ff7b72);
-    --color-syntax-highlighting-operator: light-dark(#24292f, #c9d1d9);
-    --color-syntax-highlighting-string: light-dark(#0a3069, #a5d6ff);
-    --color-syntax-highlighting-constant: light-dark(#0550ae, #79c0ff);
-    --color-syntax-highlighting-function: light-dark(#8250df, #d2a8ff);
-    --color-syntax-highlighting-type: light-dark(#8250df, #d2a8ff);
-    --color-syntax-highlighting-variable: light-dark(#953800, #ffa657);
-    --color-syntax-highlighting-property: light-dark(#0550ae, #79c0ff);
-    --color-syntax-highlighting-tag: light-dark(#116329, #7ee787);
-    --color-syntax-highlighting-selector: light-dark(#8250df, #d2a8ff);
-    --color-syntax-highlighting-inserted: light-dark(#116329, #7ee787);
-    --color-syntax-highlighting-deleted: light-dark(#cf222e, #ff7b72);
+        /* Syntax colors */
+        --color-syntax-highlighting-comment: light-dark(#6e7781, #8b949e);
+        --color-syntax-highlighting-keyword: light-dark(#cf222e, #ff7b72);
+        --color-syntax-highlighting-operator: light-dark(#24292f, #c9d1d9);
+        --color-syntax-highlighting-string: light-dark(#0a3069, #a5d6ff);
+        --color-syntax-highlighting-constant: light-dark(#0550ae, #79c0ff);
+        --color-syntax-highlighting-function: light-dark(#8250df, #d2a8ff);
+        --color-syntax-highlighting-type: light-dark(#8250df, #d2a8ff);
+        --color-syntax-highlighting-variable: light-dark(#953800, #ffa657);
+        --color-syntax-highlighting-property: light-dark(#0550ae, #79c0ff);
+        --color-syntax-highlighting-tag: light-dark(#116329, #7ee787);
+        --color-syntax-highlighting-selector: light-dark(#8250df, #d2a8ff);
+        --color-syntax-highlighting-inserted: light-dark(#116329, #7ee787);
+        --color-syntax-highlighting-deleted: light-dark(#cf222e, #ff7b72);
 
-    /* Viewport tokens: queried by style queries in component CSS. */
-    --viewport: desktop;
-    @media (max-width: 900px) {
-        --viewport: tablet;
+        /* Viewport tokens: queried by style queries in component CSS. */
+        --viewport: desktop;
+        @media (max-width: 900px) {
+            --viewport: tablet;
+        }
+
+        @media (max-width: 620px) {
+            --viewport: mobile;
+        }
+
+        @media (max-width: 500px) {
+            --viewport: narrow;
+        }
+
+        /* Layout tokens (px: fixed UI geometry; rem: font-relative text below). */
+        --space-content: 20px;
+        --space-content-narrow: 10px;
+        --space-button-block: 5px;
+        --space-card: 15px;
+        
+        --space-2xs: 2px;
+        --space-xs: 4px;
+        --space-s: 6px;
+        --space-m: 7px;
+        --space-l: 8px;
+        --space-2xl: 12px;
+        --space-3xl: 14px;
+        --space-4xl: 16px;
+        --space-5xl: 22px;
+        --space-6xl: 24px;
+
+        --radius-card: 5px;
+        --radius-card-large: 8px;
+        --radius-inline: 4px;
+        --radius-pill: 999px;
+        --radius-round: 50%;
+
+        --border-width: 1px;
+        --border-width-strong: 2px;
+
+        --max-width-site: 1100px;
+        --width-readable: 90%;
+        --width-full: 100%;
+        --width-panel: 60%;
+        --width-panel-tablet: 80%;
+        --height-control: 40px;
+        --min-height-main: 300px;
+        --avatar-size: 80px;
+        --play-button-size: 4rem;
+
+        --font-size-2xs: 0.62rem;
+        --font-size-xs: 0.68rem;
+        --font-size-s: 0.7rem;
+        --font-size-m: 0.76rem;
+        --font-size-l: 0.78rem;
+        --font-size-xl: 0.82rem;
+        --font-size-2xl: 0.85rem;
+        --font-size-3xl: 0.86rem;
+        --font-size-4xl: 0.9rem;
+        --font-size-5xl: 0.95rem;
+        --font-size-base: 1rem;
+        --font-size-table-header: 0.75rem;
+        --font-size-table-cell: 0.875rem;
+        --font-size-h6: 0.8125rem;
+        --font-size-h4: 1.1875rem;
+        --font-size-h3: 1.375rem;
+        --font-size-h2: 1.5625rem;
+        --font-size-h1: 1.8125rem;
+        --font-size-icon: 1.125rem;
+        --font-size-play: 1.8rem;
+        --font-size-display-min: 2.5rem;
+        --font-size-display-max: 4.5rem;
+        --font-size-article-card-title-min: 1.2rem;
+        --font-size-article-card-title-max: 2rem;
+        --fluid-display-rate: 7vw;
+        --fluid-article-card-title-rate: 2.4vw;
+
+        --line-height-tight: 1;
+        --line-height-xs: 1.15;
+        --line-height-s: 1.25;
+        --line-height-m: 1.3;
+        --line-height-l: 1.35;
+        --line-height-xl: 1.45;
+        --line-height-2xl: 1.55;
+        --line-height-display: 0.95;
+        --letter-spacing-s: 0.03em;
+        --letter-spacing-m: 0.04em;
+        --letter-spacing-l: 0.05em;
+        --letter-spacing-xl: 0.08em;
+
+        --transition-fast: 0.15s ease-in-out;
+        --shadow-raised: 0 8px 24px var(--color-shadow);
+        --shadow-popover: 0 8px 28px var(--color-shadow);
+        --shadow-menu: 1px 1px 15px var(--color-shadow);
+        --shadow-inset-border: inset 0 0 0 var(--border-width) var(--color-border-strong);
+        --shadow-focus: 0 0 8px 0 var(--color-focus-ring);
+        --shadow-button: 0 var(--space-xs) var(--space-xs) 0 var(--color-border-strong);
+        --shadow-video: 0 var(--space-2xs) var(--space-l) var(--color-danger-shadow);
     }
-
-    @media (max-width: 620px) {
-        --viewport: mobile;
-    }
-
-    @media (max-width: 500px) {
-        --viewport: narrow;
-    }
-
-    /* Layout tokens (px: fixed UI geometry; rem: font-relative text below). */
-    --space-content: 20px;
-    --space-content-narrow: 10px;
-    --space-button-block: 5px;
-    --space-card: 15px;
-    
-    --space-2xs: 2px;
-    --space-xs: 4px;
-    --space-s: 6px;
-    --space-m: 7px;
-    --space-l: 8px;
-    --space-2xl: 12px;
-    --space-3xl: 14px;
-    --space-4xl: 16px;
-    --space-5xl: 22px;
-    --space-6xl: 24px;
-
-    --radius-card: 5px;
-    --radius-card-large: 8px;
-    --radius-inline: 4px;
-    --radius-pill: 999px;
-    --radius-round: 50%;
-
-    --border-width: 1px;
-    --border-width-strong: 2px;
-
-    --max-width-site: 1100px;
-    --width-readable: 90%;
-    --width-full: 100%;
-    --width-panel: 60%;
-    --width-panel-tablet: 80%;
-    --height-control: 40px;
-    --min-height-main: 300px;
-    --avatar-size: 80px;
-    --play-button-size: 4rem;
-
-    --font-size-2xs: 0.62rem;
-    --font-size-xs: 0.68rem;
-    --font-size-s: 0.7rem;
-    --font-size-m: 0.76rem;
-    --font-size-l: 0.78rem;
-    --font-size-xl: 0.82rem;
-    --font-size-2xl: 0.85rem;
-    --font-size-3xl: 0.86rem;
-    --font-size-4xl: 0.9rem;
-    --font-size-5xl: 0.95rem;
-    --font-size-base: 1rem;
-    --font-size-table-header: 0.75rem;
-    --font-size-table-cell: 0.875rem;
-    --font-size-h6: 0.8125rem;
-    --font-size-h4: 1.1875rem;
-    --font-size-h3: 1.375rem;
-    --font-size-h2: 1.5625rem;
-    --font-size-h1: 1.8125rem;
-    --font-size-icon: 1.125rem;
-    --font-size-play: 1.8rem;
-    --font-size-display-min: 2.5rem;
-    --font-size-display-max: 4.5rem;
-    --font-size-article-card-title-min: 1.2rem;
-    --font-size-article-card-title-max: 2rem;
-    --fluid-display-rate: 7vw;
-    --fluid-article-card-title-rate: 2.4vw;
-
-    --line-height-tight: 1;
-    --line-height-xs: 1.15;
-    --line-height-s: 1.25;
-    --line-height-m: 1.3;
-    --line-height-l: 1.35;
-    --line-height-xl: 1.45;
-    --line-height-2xl: 1.55;
-    --line-height-display: 0.95;
-    --letter-spacing-s: 0.03em;
-    --letter-spacing-m: 0.04em;
-    --letter-spacing-l: 0.05em;
-    --letter-spacing-xl: 0.08em;
-
-    --transition-fast: 0.15s ease-in-out;
-    --shadow-raised: 0 8px 24px var(--color-shadow);
-    --shadow-popover: 0 8px 28px var(--color-shadow);
-    --shadow-menu: 1px 1px 15px var(--color-shadow);
-    --shadow-inset-border: inset 0 0 0 var(--border-width) var(--color-border-strong);
-    --shadow-focus: 0 0 8px 0 var(--color-focus-ring);
-    --shadow-button: 0 var(--space-xs) var(--space-xs) 0 var(--color-border-strong);
-    --shadow-video: 0 var(--space-2xs) var(--space-l) var(--color-danger-shadow);
 }
-

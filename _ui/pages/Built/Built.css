@@ -1,7 +1,9 @@
-article[data-source="_pages/built.adoc"] .content {
-    color: var(--color-text);
-}
+@layer argh.pages {
+    article[data-source="_pages/built.adoc"] .content {
+        color: var(--color-text);
+    }
 
-article[data-source="_pages/built.adoc"] li {
-    font-size: var(--font-size-base);
+    article[data-source="_pages/built.adoc"] li {
+        font-size: var(--font-size-base);
+    }
 }

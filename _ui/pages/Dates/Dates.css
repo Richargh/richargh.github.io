@@ -1,9 +1,11 @@
-.date-content a {
-    color: var(--color-link);
-    text-decoration: none;
-}
+@layer argh.pages {
+    .date-content a {
+        color: var(--color-link);
+        text-decoration: none;
+    }
 
-.date-content a:hover {
-    color: var(--color-link-hover);
-    text-decoration: underline;
+    .date-content a:hover {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+    }
 }

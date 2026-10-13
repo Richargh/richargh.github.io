@@ -1,95 +1,97 @@
-.home,
-.blog,
-.talks,
-.published,
-.interviews,
-.built,
-.categories,
-.rss,
-.projects {
-    padding-left: var(--space-button-block);
-    padding-right: var(--space-content-narrow);
-    padding-top: var(--space-button-block);
-    padding-bottom: var(--space-button-block);
-    vertical-align: bottom;
-    display: inline-block;
-    justify-content: center;
-    border-right: var(--border-width) solid var(--color-border);
-    color: var(--color-text);
-    position: relative;
-    text-align: center;
-}
+@layer argh.blocks {
+    .home,
+    .blog,
+    .talks,
+    .published,
+    .interviews,
+    .built,
+    .categories,
+    .rss,
+    .projects {
+        padding-left: var(--space-button-block);
+        padding-right: var(--space-content-narrow);
+        padding-top: var(--space-button-block);
+        padding-bottom: var(--space-button-block);
+        vertical-align: bottom;
+        display: inline-block;
+        justify-content: center;
+        border-right: var(--border-width) solid var(--color-border);
+        color: var(--color-text);
+        position: relative;
+        text-align: center;
+    }
 
-.nav-item:last-child {
-    border-right: none;
-}
+    .nav-item:last-child {
+        border-right: none;
+    }
 
-.categories {
-    padding-left: var(--space-3xl);
-    padding-right: var(--space-content);
-}
+    .categories {
+        padding-left: var(--space-3xl);
+        padding-right: var(--space-content);
+    }
 
-.home {
-    padding-right: var(--space-3xl);
-}
+    .home {
+        padding-right: var(--space-3xl);
+    }
 
-.nav-item-link {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: var(--height-control);
-    text-decoration: none;
-}
+    .nav-item-link {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: var(--height-control);
+        text-decoration: none;
+    }
 
-.home-p,
-.blog-p,
-.talks-p,
-.published-p,
-.built-p,
-.categories-p,
-.rss-p,
-.projects-p {
-    margin: var(--space-xs) 0 0;
-    width: var(--width-full);
-    text-align: center;
-    font-weight: 600;
-    font-size: var(--font-size-s);
-    font-family: var(--font-heading);
-    color: var(--color-text);
-}
+    .home-p,
+    .blog-p,
+    .talks-p,
+    .published-p,
+    .built-p,
+    .categories-p,
+    .rss-p,
+    .projects-p {
+        margin: var(--space-xs) 0 0;
+        width: var(--width-full);
+        text-align: center;
+        font-weight: 600;
+        font-size: var(--font-size-s);
+        font-family: var(--font-heading);
+        color: var(--color-text);
+    }
 
-.icon-home,
-.icon-blog,
-.icon-talks,
-.icon-published,
-.icon-built,
-.icon-category,
-.icon-projects,
-.icon-rss {
-    display: block;
-    width: auto;
-    height: var(--space-6xl);
-    margin: var(--space-m) auto 0;
-    justify-content: center;
-    stroke: var(--color-text);
-}
+    .icon-home,
+    .icon-blog,
+    .icon-talks,
+    .icon-published,
+    .icon-built,
+    .icon-category,
+    .icon-projects,
+    .icon-rss {
+        display: block;
+        width: auto;
+        height: var(--space-6xl);
+        margin: var(--space-m) auto 0;
+        justify-content: center;
+        stroke: var(--color-text);
+    }
 
-.app-counter {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(0, -10%);
-    display: block;
-    padding: var(--space-2xs) var(--space-s);
-    min-width: var(--space-content);
-    background: var(--color-background-muted);
-    color: var(--color-text);
-    border-radius: var(--radius-pill);
-    font-family: var(--font-heading);
-    font-size: var(--font-size-2xs);
-    font-weight: 800;
-    line-height: var(--line-height-m);
-    text-align: center;
-    box-shadow: var(--shadow-inset-border);
+    .app-counter {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(0, -10%);
+        display: block;
+        padding: var(--space-2xs) var(--space-s);
+        min-width: var(--space-content);
+        background: var(--color-background-muted);
+        color: var(--color-text);
+        border-radius: var(--radius-pill);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-2xs);
+        font-weight: 800;
+        line-height: var(--line-height-m);
+        text-align: center;
+        box-shadow: var(--shadow-inset-border);
+    }
 }

@@ -1,173 +1,175 @@
-html {
-    scroll-behavior: smooth;
-}
+@layer argh.base {
+    html {
+        scroll-behavior: smooth;
+    }
 
-body {
-    counter-reset: sidenote-counter;
-    background: var(--color-background);
-}
+    body {
+        counter-reset: sidenote-counter;
+        background: var(--color-background);
+    }
 
-h1 {
-    font-size: var(--font-size-h1);
-}
+    h1 {
+        font-size: var(--font-size-h1);
+    }
 
-h2 {
-    font-size: var(--font-size-h2);
-}
+    h2 {
+        font-size: var(--font-size-h2);
+    }
 
-h3 {
-    font-size: var(--font-size-h3);
-}
+    h3 {
+        font-size: var(--font-size-h3);
+    }
 
-h4 {
-    font-size: var(--font-size-h4);
-}
+    h4 {
+        font-size: var(--font-size-h4);
+    }
 
-h5 {
-    font-size: var(--font-size-base);
-}
+    h5 {
+        font-size: var(--font-size-base);
+    }
 
-h6 {
-    font-size: var(--font-size-h6);
-}
+    h6 {
+        font-size: var(--font-size-h6);
+    }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-text);
-    font-family: var(--font-heading);
-    font-weight: 600;
-}
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-text);
+        font-family: var(--font-heading);
+        font-weight: 600;
+    }
 
-a, p, ul, li, ol, table, span, blockquote {
-    color: var(--color-text);
-    font-family: var(--font-body);
-    font-size: var(--font-size-base);
-}
+    a, p, ul, li, ol, table, span, blockquote {
+        color: var(--color-text);
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+    }
 
-p a,
-ul a,
-li a,
-td a,
-th a,
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a,
-span a,
-div a,
-ol a,
-blockquote a,
-cite a {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-}
+    p a,
+    ul a,
+    li a,
+    td a,
+    th a,
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a,
+    span a,
+    div a,
+    ol a,
+    blockquote a,
+    cite a {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+    }
 
-ul ul {
-    list-style-type: disc;
-}
+    ul ul {
+        list-style-type: disc;
+    }
 
-b, strong {
-    font-weight: 600;
-}
+    b, strong {
+        font-weight: 600;
+    }
 
-img {
-    height: auto;
-    max-width: var(--width-full);
-}
+    img {
+        height: auto;
+        max-width: var(--width-full);
+    }
 
-code {
-    border: var(--border-width) solid var(--color-border-strong);
-    border-radius: var(--radius-inline);
-    display: inline-block;
-    font-family: var(--font-monospace);
-    overflow: auto !important;
-    padding: var(--space-2xs);
-    vertical-align: middle;
-    word-wrap: break-word !important;
-}
+    code {
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-inline);
+        display: inline-block;
+        font-family: var(--font-monospace);
+        overflow: auto !important;
+        padding: var(--space-2xs);
+        vertical-align: middle;
+        word-wrap: break-word !important;
+    }
 
-pre code {
-    background-color: var(--color-code-background);
-    border: var(--border-width) solid var(--color-border-strong);
-    border-radius: var(--radius-card);
-    color: var(--color-code-text);
-    display: inline-block;
-    font-family: var(--font-monospace);
-    overflow: auto !important;
-    padding: var(--space-card);
-    vertical-align: middle;
-    width: var(--width-readable);
-    word-wrap: break-word !important;
-}
+    pre code {
+        background-color: var(--color-code-background);
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-card);
+        color: var(--color-code-text);
+        display: inline-block;
+        font-family: var(--font-monospace);
+        overflow: auto !important;
+        padding: var(--space-card);
+        vertical-align: middle;
+        width: var(--width-readable);
+        word-wrap: break-word !important;
+    }
 
-blockquote::before {
-    display: none;
-}
+    blockquote::before {
+        display: none;
+    }
 
-blockquote {
-    padding: var(--space-content-narrow);
-}
+    blockquote {
+        padding: var(--space-content-narrow);
+    }
 
-cite {
-    font-style: oblique;
-    padding-left: calc(var(--space-content) * 2 + var(--space-content-narrow));
-}
+    cite {
+        font-style: oblique;
+        padding-left: calc(var(--space-content) * 2 + var(--space-content-narrow));
+    }
 
-.content a {
-    color: var(--color-link);
-    text-decoration: none;
-}
+    .content a {
+        color: var(--color-link);
+        text-decoration: none;
+    }
 
-.content a:hover {
-    color: var(--color-link-hover);
-    text-decoration: underline;
-}
+    .content a:hover {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+    }
 
-blockquote p {
-    font-family: inherit;
-    font-size: inherit;
-}
+    blockquote p {
+        font-family: inherit;
+        font-size: inherit;
+    }
 
-table {
-    border-collapse: collapse;
-    border-radius: var(--radius-card);
-    width: var(--width-readable);
-}
+    table {
+        border-collapse: collapse;
+        border-radius: var(--radius-card);
+        width: var(--width-readable);
+    }
 
-th, td {
-    color: var(--color-text);
-    font-size: var(--font-size-table-header);
-    padding: var(--space-l);
-    text-align: left;
-}
+    th, td {
+        color: var(--color-text);
+        font-size: var(--font-size-table-header);
+        padding: var(--space-l);
+        text-align: left;
+    }
 
-td {
-    font-size: var(--font-size-table-cell);
-}
+    td {
+        font-size: var(--font-size-table-cell);
+    }
 
-td a {
-    color: inherit;
-    text-decoration: none;
-}
+    td a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-table th {
-    font-weight: 600;
-}
+    table th {
+        font-weight: 600;
+    }
 
-tr {
-    border-radius: var(--radius-card);
-}
+    tr {
+        border-radius: var(--radius-card);
+    }
 
-thead tr:nth-child(odd),
-tbody tr:nth-child(even) {
-    background-color: var(--color-background-muted);
-}
+    thead tr:nth-child(odd),
+    tbody tr:nth-child(even) {
+        background-color: var(--color-background-muted);
+    }
 
-hr {
-    background-color: var(--color-rule);
-    border: 0 none;
-    color: var(--color-rule);
-    height: var(--border-width);
+    hr {
+        background-color: var(--color-rule);
+        border: 0 none;
+        color: var(--color-rule);
+        height: var(--border-width);
+    }
 }

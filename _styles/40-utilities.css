@@ -1,39 +1,41 @@
-.serif {
-    font-family: var(--font-serif) !important;
-}
+@layer argh.utilities {
+    .serif {
+        font-family: var(--font-serif) !important;
+    }
 
-.serif code {
-    background-color: var(--color-background-muted);
-    border: none;
-    border-radius: var(--radius-card);
-    font-family: var(--font-serif) !important;
-    padding: var(--space-content);
-}
+    .serif code {
+        background-color: var(--color-background-muted);
+        border: none;
+        border-radius: var(--radius-card);
+        font-family: var(--font-serif) !important;
+        padding: var(--space-content);
+    }
 
-.regular-sans {
-    font-family: var(--font-body) !important;
-}
+    .regular-sans {
+        font-family: var(--font-body) !important;
+    }
 
-.regular-sans code {
-    background-color: var(--color-background-muted);
-    border: none;
-    border-radius: var(--radius-card);
-    font-family: var(--font-body) !important;
-    padding: var(--space-content);
-}
+    .regular-sans code {
+        background-color: var(--color-background-muted);
+        border: none;
+        border-radius: var(--radius-card);
+        font-family: var(--font-body) !important;
+        padding: var(--space-content);
+    }
 
-.disable-select {
-    user-select: none;
-}
+    .disable-select {
+        user-select: none;
+    }
 
-.very-small {
-    font-size: var(--font-size-s);
-}
+    .very-small {
+        font-size: var(--font-size-s);
+    }
 
-.medium {
-    font-size: var(--font-size-h3) !important;
-}
+    .medium {
+        font-size: var(--font-size-h3) !important;
+    }
 
-.title-sans {
-    font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    .title-sans {
+        font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    }
 }

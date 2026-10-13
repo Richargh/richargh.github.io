@@ -1,9 +1,11 @@
-.category-content a {
-    color: var(--color-link);
-    text-decoration: none;
-}
+@layer argh.pages {
+    .category-content a {
+        color: var(--color-link);
+        text-decoration: none;
+    }
 
-.category-content a:hover {
-    color: var(--color-link-hover);
-    text-decoration: underline;
+    .category-content a:hover {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+    }
 }

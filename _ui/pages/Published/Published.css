@@ -1,7 +1,9 @@
-article[data-source="_pages/published.adoc"] table {
-    width: var(--width-readable);
-}
+@layer argh.pages {
+    article[data-source="_pages/published.adoc"] table {
+        width: var(--width-readable);
+    }
 
-article[data-source="_pages/published.adoc"] td {
-    text-align: left;
+    article[data-source="_pages/published.adoc"] td {
+        text-align: left;
+    }
 }

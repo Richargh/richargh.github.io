@@ -1,8 +1,10 @@
-#copyright {
-    margin-left: var(--space-content);
-}
+@layer argh.blocks {
+    #copyright {
+        margin-left: var(--space-content);
+    }
 
-#copyright-notice {
-    font-size: var(--font-size-s);
-    font-weight: 700;
+    #copyright-notice {
+        font-size: var(--font-size-s);
+        font-weight: 700;
+    }
 }

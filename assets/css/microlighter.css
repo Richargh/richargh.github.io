@@ -1,60 +1,62 @@
-/* MicroLighter theme adapted for the existing Simply Jekyll code-block styling. */
-[data-syntax-theme="github"] pre:has(> code[class*="language-"]) {
-  background-color: var(--color-code-background);
-  color: var(--color-code-text);
-  overflow: auto;
+@layer argh.blocks {
+    /* MicroLighter theme adapted for the existing Simply Jekyll code-block styling. */
+    [data-syntax-theme="github"] pre:has(> code[class*="language-"]) {
+        background-color: var(--color-code-background);
+        color: var(--color-code-text);
+        overflow: auto;
+    }
+
+    [data-syntax-theme="github"] pre > code[class*="language-"] {
+        display: block;
+        box-sizing: border-box;
+        width: auto;
+        min-width: var(--width-full);
+        background-color: var(--color-code-background);
+    }
+
+    ::highlight(comment),
+    ::highlight(quote) { color: var(--color-syntax-highlighting-comment); }
+
+    ::highlight(keyword),
+    ::highlight(storage),
+    ::highlight(at-rule),
+    ::highlight(doctype),
+    ::highlight(important),
+    ::highlight(section) { color: var(--color-syntax-highlighting-keyword); }
+
+    ::highlight(operator),
+    ::highlight(punctuation) { color: var(--color-syntax-highlighting-operator); }
+
+    ::highlight(string),
+    ::highlight(regexp),
+    ::highlight(attribute-value),
+    ::highlight(link),
+    ::highlight(raw) { color: var(--color-syntax-highlighting-string); }
+
+    ::highlight(numeric),
+    ::highlight(boolean),
+    ::highlight(constant),
+    ::highlight(symbol),
+    ::highlight(character-entity),
+    ::highlight(anchor),
+    ::highlight(entity) { color: var(--color-syntax-highlighting-constant); }
+
+    ::highlight(function),
+    ::highlight(decorator),
+    ::highlight(animation) { color: var(--color-syntax-highlighting-function); }
+
+    ::highlight(type),
+    ::highlight(support) { color: var(--color-syntax-highlighting-type); }
+
+    ::highlight(variable),
+    ::highlight(interpolation) { color: var(--color-syntax-highlighting-variable); }
+
+    ::highlight(property),
+    ::highlight(key),
+    ::highlight(attribute-name) { color: var(--color-syntax-highlighting-property); }
+
+    ::highlight(tag) { color: var(--color-syntax-highlighting-tag); }
+    ::highlight(selector) { color: var(--color-syntax-highlighting-selector); }
+    ::highlight(inserted) { color: var(--color-syntax-highlighting-inserted); }
+    ::highlight(deleted) { color: var(--color-syntax-highlighting-deleted); }
 }
-
-[data-syntax-theme="github"] pre > code[class*="language-"] {
-  display: block;
-  box-sizing: border-box;
-  width: auto;
-  min-width: var(--width-full);
-  background-color: var(--color-code-background);
-}
-
-::highlight(comment),
-::highlight(quote) { color: var(--color-syntax-highlighting-comment); }
-
-::highlight(keyword),
-::highlight(storage),
-::highlight(at-rule),
-::highlight(doctype),
-::highlight(important),
-::highlight(section) { color: var(--color-syntax-highlighting-keyword); }
-
-::highlight(operator),
-::highlight(punctuation) { color: var(--color-syntax-highlighting-operator); }
-
-::highlight(string),
-::highlight(regexp),
-::highlight(attribute-value),
-::highlight(link),
-::highlight(raw) { color: var(--color-syntax-highlighting-string); }
-
-::highlight(numeric),
-::highlight(boolean),
-::highlight(constant),
-::highlight(symbol),
-::highlight(character-entity),
-::highlight(anchor),
-::highlight(entity) { color: var(--color-syntax-highlighting-constant); }
-
-::highlight(function),
-::highlight(decorator),
-::highlight(animation) { color: var(--color-syntax-highlighting-function); }
-
-::highlight(type),
-::highlight(support) { color: var(--color-syntax-highlighting-type); }
-
-::highlight(variable),
-::highlight(interpolation) { color: var(--color-syntax-highlighting-variable); }
-
-::highlight(property),
-::highlight(key),
-::highlight(attribute-name) { color: var(--color-syntax-highlighting-property); }
-
-::highlight(tag) { color: var(--color-syntax-highlighting-tag); }
-::highlight(selector) { color: var(--color-syntax-highlighting-selector); }
-::highlight(inserted) { color: var(--color-syntax-highlighting-inserted); }
-::highlight(deleted) { color: var(--color-syntax-highlighting-deleted); }
