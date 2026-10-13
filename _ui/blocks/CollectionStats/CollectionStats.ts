@@ -23,6 +23,15 @@ export function appCounters({ talks, articles, interviews }: CollectionStatsData
   };
 }
 
+export function renderSummaryStats(data: CollectionStatsData): string {
+  const counters = appCounters(data);
+  return renderLinkedStatsSummary([
+    linkedStat("/talks/", counters.appearances, "talks"),
+    linkedStat("/articles/", counters.publications, "articles"),
+    linkedStat("/interviews/", counters.interviews, "interviews"),
+  ]);
+}
+
 export function renderTalkStats(talks: Talk[]): string {
   const appearances = flattenTalkAppearances(talks);
   const topics = countValues(appearances, (appearance) => appearance.talkTitle);
@@ -62,8 +71,28 @@ interface StatItem {
   entries: string[];
 }
 
+interface LinkedStatItem {
+  href: string;
+  value: number;
+  label: string;
+}
+
 function stat(id: string, value: number, label: string, entries: string[]): StatItem {
   return { id, value, label, entries };
+}
+
+function linkedStat(href: string, value: number, label: string): LinkedStatItem {
+  return { href, value, label };
+}
+
+function renderLinkedStatsSummary(items: LinkedStatItem[]): string {
+  return `<section class="collection-stats" aria-label="Content collections">
+${items.map(renderLinkedMetric).join("\n")}
+</section>`;
+}
+
+function renderLinkedMetric(item: LinkedStatItem): string {
+  return `<span class="collection-stats-item"><a class="collection-stat" href="${escapeHtml(item.href)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</a></span>`;
 }
 
 function renderStatsSummary(scope: string, items: StatItem[]): string {

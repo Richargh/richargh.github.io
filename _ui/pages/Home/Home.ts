@@ -23,6 +23,7 @@ export function renderHomePageDocument({ page, talks, articles, interviews }: Ho
     content: `<main>
                 <article data-source="${escapeHtml(page.sourcePath)}">
                   <h1>${escapeHtml(page.title)}</h1>
+                  ${renderSummaryStats({ talks, articles, interviews })}
                   ${renderUpcomingCollection({ talks, articles, interviews })}
                   <div class="content">
                     ${unsafeAsciiDocHtml(page.html)}
