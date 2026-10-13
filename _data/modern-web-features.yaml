@@ -1,6 +1,6 @@
 - name: Cascade layers
   url: https://web-platform-dx.github.io/web-features-explorer/features/cascade-layers/
-  baselineSince: 2024-09-14
+  baselineSince: 2022-03-14
   examples:
     - description: >
         The CSS bundle is organized into theme, base, layout, block, page, and utility layers.
