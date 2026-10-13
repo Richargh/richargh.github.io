@@ -1,4 +1,4 @@
-import { appCounters } from "../../blocks/CollectionStats/CollectionStats.ts";
+import { renderSummaryStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingCollection } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import type { Article } from "../../../lib/articles.ts";
@@ -20,7 +20,6 @@ export function renderHomePageDocument({ page, talks, articles, interviews }: Ho
     urlPath: "/",
     description: page.excerpt,
     type: "website",
-    appCounters: appCounters({ talks, articles, interviews }),
     content: `<main>
                 <article data-source="${escapeHtml(page.sourcePath)}">
                   <h1>${escapeHtml(page.title)}</h1>

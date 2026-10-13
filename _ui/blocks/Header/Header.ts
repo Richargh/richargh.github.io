@@ -31,7 +31,7 @@ export function renderHeader({ showBackToHome = false, appCounters }: { showBack
 
     <!-- Navbar -->
     <div class="main-site-subheader menu disable-select">
-        ${renderMainNav(appCounters)}
+        ${renderMainNav()}
     </div>
     <div class="searchbar search-container">
         ${searchIcon()}
@@ -77,12 +77,12 @@ function searchIcon(): string {
                 </svg>`;
 }
 
-function renderMainNav(appCounters: AppCounters | undefined): string {
+function renderMainNav(): string {
   return [
     renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: blogIcon(), labelClassName: "blog-p" }),
-    renderNavItem({ className: "talks", href: "/talks", label: "Talks", iconHtml: talksIcon(), labelClassName: "home-p", counter: appCounters?.appearances }),
-    renderNavItem({ className: "published", href: "/articles", label: "Articles", iconHtml: articleIcon(), labelClassName: "published-p", counter: appCounters?.publications }),
-    renderNavItem({ className: "interviews", href: "/interviews", label: "Interviews", iconHtml: interviewIcon(), labelClassName: "published-p", counter: appCounters?.interviews }),
+    renderNavItem({ className: "talks", href: "/talks", label: "Talks", iconHtml: talksIcon(), labelClassName: "home-p" }),
+    renderNavItem({ className: "published", href: "/articles", label: "Articles", iconHtml: articleIcon(), labelClassName: "published-p" }),
+    renderNavItem({ className: "interviews", href: "/interviews", label: "Interviews", iconHtml: interviewIcon(), labelClassName: "published-p" }),
     renderNavItem({ className: "built", href: "/built", label: "Built", iconHtml: builtIcon(), labelClassName: "built-p" }),
   ].join("\n");
 }

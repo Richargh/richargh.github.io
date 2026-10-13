@@ -6,7 +6,7 @@ import { renderFooter } from "../_ui/blocks/Footer/Footer.ts";
 import { renderHeader } from "../_ui/blocks/Header/Header.ts";
 import { renderArticleCard } from "../_ui/blocks/ArticleCard/ArticleCard.ts";
 import { renderCollectionBanners } from "../_ui/blocks/CollectionBanners/CollectionBanners.ts";
-import { appCounters, renderArticleStats } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
+import { appCounters, renderArticleStats, renderSummaryStats } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
 import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderScrollToTop } from "../_ui/blocks/ScrollToTop/ScrollToTop.ts";
@@ -21,12 +21,12 @@ function normalized(html: string): string {
   return html.replace(/\s+/g, " ").trim();
 }
 
-test("Header block renders navigation, counters, and optional back link", () => {
+test("Header block renders navigation and optional back link without collection counters", () => {
   const html = normalized(renderHeader({ showBackToHome: true, appCounters: { appearances: 1, publications: 2, interviews: 3 } }));
 
   assert.match(html, /<header>/);
   assert.match(html, /class="dashboard disable-select"/);
-  assert.match(html, /class="app-counter">1<\/span>/);
+  assert.doesNotMatch(html, /class="app-counter"/);
   assert.match(html, /class="back-p">Home<\/p>/);
 });
 
@@ -48,6 +48,9 @@ test("collection blocks render summaries", () => {
 
   assert.deepEqual(appCounters(empty), { appearances: 0, publications: 0, interviews: 0 });
   assert.match(renderCollectionBanners(empty), /class="collection-banners"/);
+  assert.match(renderSummaryStats(empty), /href="\/talks\/"/);
+  assert.match(renderSummaryStats(empty), /href="\/articles\/"/);
+  assert.match(renderSummaryStats(empty), /href="\/interviews\/"/);
   assert.match(renderArticleStats([]), /class="collection-stats"/);
   assert.equal(renderUpcomingCollection(empty), "");
 });
@@ -81,7 +84,9 @@ test("page renderers own page presentation markup", () => {
     excerpt: "Body",
   });
 
-  assert.match(renderHomePageDocument({ page: page("home", "About"), talks: [], articles: [], interviews: [] }), /data-source="_pages\/home.adoc"/);
+  const homeHtml = renderHomePageDocument({ page: page("home", "About"), talks: [], articles: [], interviews: [] });
+  assert.match(homeHtml, /data-source="_pages\/home.adoc"/);
+  assert.match(homeHtml, /aria-label="Content collections"/);
   assert.match(renderPublishedPageDocument(page("published", "Published")), /data-source="_pages\/published.adoc"/);
   assert.match(renderBuiltPageDocument(page("built", "Built")), /data-source="_pages\/built.adoc"/);
   assert.match(renderCredentialsPageDocument(page("credentials", "Credentials")), /data-source="_pages\/credentials.adoc"/);
