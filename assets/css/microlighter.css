@@ -1,7 +1,7 @@
 /* MicroLighter theme adapted for the existing Simply Jekyll code-block styling. */
 [data-syntax-theme="github"] pre:has(> code[class*="language-"]) {
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: var(--color-code-background);
+  color: var(--color-code-text);
   overflow: auto;
 }
 
@@ -10,7 +10,7 @@
   box-sizing: border-box;
   width: auto;
   min-width: 100%;
-  background-color: var(--color-surface);
+  background-color: var(--color-code-background);
 }
 
 ::highlight(comment),

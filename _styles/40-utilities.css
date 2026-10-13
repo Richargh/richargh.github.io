@@ -3,7 +3,7 @@
 }
 
 .serif code {
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
     border: none;
     border-radius: var(--radius-card);
     font-family: var(--font-serif) !important;
@@ -15,7 +15,7 @@
 }
 
 .regular-sans code {
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
     border: none;
     border-radius: var(--radius-card);
     font-family: var(--font-body) !important;

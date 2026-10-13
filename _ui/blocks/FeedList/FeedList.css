@@ -6,7 +6,7 @@
 }
 
 .feed-title-excerpt-block:hover {
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
 }
 
 .feed-context {

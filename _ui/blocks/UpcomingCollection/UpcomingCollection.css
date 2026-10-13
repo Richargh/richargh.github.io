@@ -1,7 +1,7 @@
 .upcoming-items {
     margin: 0 0 2rem;
     padding: 1rem;
-    background: var(--color-surface);
+    background: var(--color-background-muted);
     border: 1px solid var(--color-border-strong);
 }
 
@@ -42,7 +42,7 @@
     align-items: center;
     gap: 0.65rem;
     padding: 0.65rem 0.75rem;
-    background: var(--color-surface-raised);
+    background: var(--color-background-raised);
     border: 1px solid var(--color-border-strong);
     color: var(--color-text) !important;
     text-decoration: none !important;
@@ -50,7 +50,7 @@
 
 .upcoming-item:hover,
 .upcoming-item:focus {
-    background: var(--color-surface-hover);
+    background: var(--color-background-hover);
     border-color: var(--color-border-strong);
 }
 
@@ -73,7 +73,7 @@
 .upcoming-new {
     display: inline-block;
     padding: 0.05rem 0.35rem;
-    background: var(--color-warning-surface);
+    background: var(--color-warning-background);
     color: var(--color-warning-text);
     font-size: 0.68rem;
     font-weight: 800;

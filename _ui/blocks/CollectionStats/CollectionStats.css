@@ -14,7 +14,7 @@
     align-items: baseline;
     gap: 0.2rem;
     padding: 0.12rem 0.42rem;
-    background: var(--color-surface);
+    background: var(--color-background-muted);
     color: var(--color-text-muted);
     border: 0;
     border-radius: 999px;
@@ -28,7 +28,7 @@
 
 .collection-metric:hover,
 .collection-metric:focus {
-    background: var(--color-surface-hover);
+    background: var(--color-background-hover);
     color: var(--color-text);
 }
 
@@ -45,7 +45,7 @@
     padding: 1rem;
     border: 1px solid var(--color-border-strong);
     border-radius: 8px;
-    background: var(--color-surface-raised);
+    background: var(--color-background-raised);
     box-shadow: 0 8px 28px var(--color-shadow);
     overflow: auto;
 }

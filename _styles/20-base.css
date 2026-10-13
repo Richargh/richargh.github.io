@@ -89,10 +89,10 @@ code {
 }
 
 pre code {
-    background-color: var(--color-surface);
+    background-color: var(--color-code-background);
     border: 1px solid var(--color-border-strong);
     border-radius: var(--radius-card);
-    color: var(--color-text);
+    color: var(--color-code-text);
     display: inline-block;
     font-family: var(--font-monospace);
     overflow: auto !important;
@@ -116,11 +116,12 @@ cite {
 }
 
 .content a {
-    color: var(--color-primary);
+    color: var(--color-link);
     text-decoration: none;
 }
 
 .content a:hover {
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
@@ -161,7 +162,7 @@ tr {
 
 thead tr:nth-child(odd),
 tbody tr:nth-child(even) {
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
 }
 
 hr {

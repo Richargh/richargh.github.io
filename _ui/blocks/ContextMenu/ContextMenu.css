@@ -4,7 +4,7 @@
     z-index: 10;
     padding: 12px 0;
     width: 240px;
-    background-color: var(--color-surface-raised);
+    background-color: var(--color-background-raised);
     border: solid 1px var(--color-border-strong);
     border-radius: 5px;
     box-shadow: 1px 1px 15px var(--color-shadow);
@@ -23,7 +23,7 @@
 
 .context-menu-res li:hover {
     color: var(--color-text);
-    background-color: var(--color-surface-hover);
+    background-color: var(--color-background-hover);
 }
 
 .context-menu-res li:hover > .context-menu-res__link {
@@ -41,7 +41,7 @@
     z-index: 10;
     padding: 12px 0;
     width: 177px;
-    background-color: var(--color-surface-raised);
+    background-color: var(--color-background-raised);
     border: solid 1px var(--color-border-strong);
     border-radius: 5px;
     box-shadow: 1px 1px 15px var(--color-shadow);
@@ -78,7 +78,7 @@
 
 .context-menu__link:hover {
     color: var(--color-text);
-    background-color: var(--color-surface-hover);
+    background-color: var(--color-background-hover);
 }
 
 .popup {

@@ -80,7 +80,7 @@
     display: block;
     padding: 0.05rem 0.35rem;
     min-width: 1.1rem;
-    background: var(--color-surface);
+    background: var(--color-background-muted);
     color: var(--color-text);
     border-radius: 999px;
     font-family: var(--font-heading);

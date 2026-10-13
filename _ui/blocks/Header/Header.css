@@ -31,7 +31,7 @@ header {
 }
 
 .avatar-link {
-    background-color: var(--color-surface-raised);
+    background-color: var(--color-background-raised);
     border-radius: 50%;
     display: inline-block !important;
     float: left;
@@ -43,8 +43,8 @@ header {
 }
 
 .avatar-img {
-    border: 2px solid var(--color-surface-raised);
-    color: var(--color-surface-raised);
+    border: 2px solid var(--color-background-raised);
+    color: var(--color-background-raised);
     border-radius: 50%;
     box-sizing: border-box;
     height: 80px;
@@ -59,7 +59,7 @@ header {
 }
 
 .userboard {
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
     width: 100%;
 }
 
@@ -95,7 +95,7 @@ header {
     color: var(--color-text);
     font-size: 18px;
     border-bottom: 1px solid var(--color-border);
-    background-color: var(--color-surface);
+    background-color: var(--color-background-muted);
 }
 
 ::placeholder {
@@ -116,13 +116,13 @@ header {
 
 .searchbar input[type="text"]:focus {
     border-color: var(--color-border);
-    box-shadow: 0 0 8px 0 var(--color-primary);
+    box-shadow: 0 0 8px 0 var(--color-focus-ring);
 }
 
 .searchbar input[type="text"]:hover,
 .searchbar input[type="text"]:active,
 .searchbar input[type="text"]:focus {
-    background-color: var(--color-surface-raised);
+    background-color: var(--color-background-raised);
 }
 
 .searchbar input[type="text"]:active,
@@ -135,7 +135,7 @@ header {
 }
 
 .search_res:hover {
-    background-color: var(--color-surface-hover);
+    background-color: var(--color-background-hover);
 }
 
 .search_res:hover > a {
@@ -147,7 +147,7 @@ header {
 }
 
 .back-icon {
-    background-color: var(--color-surface-raised);
+    background-color: var(--color-background-raised);
     fill: currentColor;
     color: var(--color-text);
     margin-top: 5px;
