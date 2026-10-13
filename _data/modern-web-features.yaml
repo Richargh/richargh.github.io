@@ -1,22 +1,10 @@
-- name: Cascade layers
-  url: https://web-platform-dx.github.io/web-features-explorer/features/cascade-layers/
-  baselineSince: 2022-03-14
-  examples:
-    - description: >
-        The CSS bundle is organized into theme, base, layout, block, page, and utility layers.
-      language: css
-      code: |
-        @layer argh.theme, argh.base, argh.layout, argh.blocks, argh.pages, argh.utilities;
-
-        @layer argh.blocks {
-          .nav-item {
-            display: flex;
-          }
-        }
-
 - name: Container style queries
-  url: https://web-platform-dx.github.io/web-features-explorer/features/container-style-queries/
-  baselineSince: 2026-05-19
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/container-style-queries/'
+  baselineSince: '2026-05-19'
+  fallback:
+      category: author-provided
+      url: 'https://blog.master.dev/what-you-need-to-know-about-modern-css-spring-2024-edition/'
+      explanation: Unsupported browsers ignore the query block, so the default styles must be authored as the fallback.
   examples:
     - description: >
         Viewport tokens such as --viewport: tablet and --viewport: narrow are queried by layout and card styles.
@@ -35,12 +23,220 @@
             width: var(--width-panel-tablet);
           }
         }
-
-- name: Autonomous Custom elements
-  url: https://web-platform-dx.github.io/web-features-explorer/features/autonomous-custom-elements/
-  baselineSince: 2020-01-15
+- name: Custom highlights
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/highlight/'
+  baselineSince: '2026-03-24'
+  fallback:
+      category: progressive-enhancement
+      explanation: 'Code remains readable if CSS.highlights or ::highlight() is ignored; only syntax coloring is lost.'
   examples:
     - description: >
+        MicroLighter registers syntax-token ranges with the CSS Custom Highlight API and the site themes those highlight
+        names without wrapping source code in extra spans.
+      language: css
+      code: |
+        ::highlight(keyword) {
+          color: var(--color-syntax-highlighting-keyword);
+        }
+
+        ::highlight(string) {
+          color: var(--color-syntax-highlighting-string);
+        }
+- name: Popover
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/popover/'
+  baselineSince: '2025-01-27'
+  fallback:
+      category: polyfillable
+      url: 'https://github.com/oddbird/popover-polyfill'
+      explanation: >-
+          Unsupported browsers need JavaScript to emulate show, hide, focus, and backdrop behavior; otherwise popover
+          content may appear inline.
+  examples:
+    - description: >
+        Collection counters expose their detail panel as a native popover so it can enter the top layer and light-dismiss.
+      language: html
+      code: |
+        <div id="collection-stats-talks" popover>
+          <h2>Talks</h2>
+          <p>42 counted talks.</p>
+        </div>
+- name: 'text-wrap: balance'
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/text-wrap-balance/'
+  baselineSince: '2024-05-13'
+  fallback:
+      category: progressive-enhancement
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/text-wrap'
+      explanation: Unsupported browsers ignore the declaration and fall back to default text wrapping.
+  examples:
+    - description: >
+        Home-page headings use balanced wrapping to avoid awkward short final lines.
+      language: css
+      code: |
+        .home-hero h1 {
+          text-wrap: balance;
+        }
+- name: light-dark()
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/light-dark/'
+  baselineSince: '2024-05-13'
+  fallback:
+      category: author-provided
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark#providing_a_fallback_for_older_browsers'
+      explanation: >-
+          Unsupported browsers drop declarations using the unknown color function, so fallback color declarations are
+          needed.
+  examples:
+    - description: >
+        Design tokens select light and dark theme values directly in CSS.
+      language: css
+      code: |
+        :root {
+          color-scheme: light dark;
+          --color-background: light-dark(#ffffff, #111111);
+          --color-text: light-dark(#555555, #f1f3f5);
+        }
+- name: Logical properties
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/logical-properties/'
+  baselineSince: '2021-09-20'
+  fallback:
+      category: author-provided
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values'
+      explanation: Unsupported browsers drop logical declarations, so physical-property fallbacks are needed where the spacing or sizing is essential.
+  examples:
+    - description: >
+        Home-page sections use block-axis padding and borders so spacing follows the document writing mode.
+      language: css
+      code: |
+        .home-section {
+          padding-block: var(--space-2xl);
+          border-block: var(--border-width) solid var(--color-border);
+        }
+- name: ':has()'
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/has/'
+  baselineSince: '2023-12-19'
+  fallback:
+      category: author-provided
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/:has'
+      explanation: Our usage only improves code-block styling; the base code styles are authored as the fallback for unsupported browsers.
+  examples:
+    - description: >-
+        Code-block styling targets pre elements that contain language-marked code.
+      language: css
+      code: |
+        pre:has(> code[class*="language-"]) {
+          background-color: var(--color-code-background);
+          overflow: auto;
+        }
+- name: CSS nesting
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/nesting/'
+  baselineSince: '2023-12-11'
+  fallback:
+      category: build-time-transform
+      url: 'https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting'
+      explanation: Build tools can flatten nested CSS to equivalent unnested rules.
+  examples:
+    - description: >-
+        Viewport token media queries are nested inside :root, keeping token defaults and overrides together.
+      language: css
+      code: |
+        :root {
+          --viewport: desktop;
+
+          @media (max-width: 900px) {
+            --viewport: tablet;
+          }
+        }
+- name: Import maps
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/import-maps/'
+  baselineSince: '2023-03-27'
+  fallback:
+      category: polyfillable
+      url: 'https://github.com/guybedford/es-module-shims'
+      explanation: Browsers without import maps need a loader or build step that rewrites bare module specifiers to URLs.
+  examples:
+    - description: |
+        The site maps bare module specifiers to generated asset URLs, then imports those modules by name.
+      language: html
+      code: |
+        <script type="importmap">
+          {
+            "imports": {
+              "microlighter": "/assets/vendor/microlighter/microlighter.js",
+              "scroll-to-top-element": "/assets/elements/ScrollToTopElement.mjs",
+              "secret-email-button-element": "/assets/elements/SecretEmailButtonElement.mjs"
+            }
+          }
+        </script>
+
+        <script type="module">
+          import "microlighter";
+          import "scroll-to-top-element";
+          import "secret-email-button-element";
+        </script>
+- name: 'Small, large, and dynamic viewport units'
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/viewport-unit-variants/'
+  baselineSince: '2022-12-05'
+  fallback:
+      category: author-provided
+      explanation: Unsupported browsers drop dvw and dvh declarations unless separate viewport-unit fallbacks are authored.
+  examples:
+    - description: |
+        Popovers are capped against the dynamic viewport so they fit mobile browser UI changes.
+      language: css
+      code: |
+        .collection-stats-popover {
+          max-width: min(34rem, calc(100dvw - 2rem));
+          max-height: min(28rem, calc(100dvh - 2rem));
+        }
+- name: Cascade layers
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/cascade-layers/'
+  baselineSince: '2022-03-14'
+  fallback:
+      category: build-time-transform
+      url: 'https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers'
+      explanation: >-
+          A build step can order and flatten layers for older browsers. Without that transform, unsupported browsers ignore
+          layered rules.
+  examples:
+    - description: |
+        The CSS bundle is organized into theme, base, layout, block, page, and utility layers.
+      language: css
+      code: |
+        @layer argh.theme, argh.base, argh.layout, argh.blocks, argh.pages, argh.utilities;
+
+        @layer argh.blocks {
+          .nav-item {
+            display: flex;
+          }
+        }
+- name: color-scheme
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/color-scheme/'
+  baselineSince: '2022-02-03'
+  fallback:
+      category: progressive-enhancement
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme'
+      explanation: Unsupported browsers keep their default control and browser chrome colors.
+  examples:
+    - description: |
+        The document advertises support for light and dark form controls and browser chrome.
+      language: html
+      code: |
+        <meta name="color-scheme" content="light dark">
+    - description: |
+        CSS also opts the page into both schemes for built-in controls and system colors.
+      language: css
+      code: |
+        :root {
+          color-scheme: light dark;
+        }
+- name: Autonomous custom elements
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/autonomous-custom-elements/'
+  baselineSince: '2020-01-15'
+  fallback:
+      category: polyfillable
+      url: 'https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements'
+      explanation: Unsupported browsers can use a JavaScript polyfill; without it, these custom elements wrap ordinary HTML and the page remains usable when they are not upgraded.
+  examples:
+    - description: |
         The scroll-to-top control is a <scroll-to-top> custom element.
       language: html
       code: |

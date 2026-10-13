@@ -36,13 +36,50 @@ ${features.map(renderFeature).join("\n")}
 }
 
 function renderFeature(feature: ModernWebFeature): string {
+  const fallbackCategory = fallbackCategoryDetails(feature.fallback.category);
+  const fallbackNotes = feature.fallback.url ? ` <a href="${escapeHtml(feature.fallback.url)}">See also</a>.` : "";
+
   return `  <dt><a href="${escapeHtml(feature.url)}">${escapeHtml(feature.name)}</a></dt>
   <dd>
     <p class="modern-web-feature-baseline"><strong>Baseline since:</strong> <time datetime="${escapeHtml(feature.baselineSince)}">${escapeHtml(feature.baselineSince)}</time></p>
+    <p class="modern-web-feature-fallback"><strong>Fallback:</strong> <a href="${escapeHtml(fallbackCategory.url)}">${escapeHtml(fallbackCategory.label)}</a> — ${escapeHtml(feature.fallback.explanation)}${fallbackNotes}</p>
     <div class="modern-web-feature-examples">
       ${feature.examples.map(renderExample).join("\n      ")}
     </div>
   </dd>`;
+}
+
+function fallbackCategoryDetails(category: string): { label: string; url: string } {
+  const details: Record<string, { label: string; url: string }> = {
+    "progressive-enhancement": {
+      label: "Progressive enhancement",
+      url: "https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement",
+    },
+    "graceful-degradation": {
+      label: "Graceful degradation",
+      url: "https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation",
+    },
+    polyfillable: {
+      label: "Polyfillable",
+      url: "https://developer.mozilla.org/en-US/docs/Glossary/Polyfill",
+    },
+    "build-time-transform": {
+      label: "Build-time transform",
+      url: "https://developer.mozilla.org/en-US/docs/Glossary/Compile",
+    },
+    "author-provided": {
+      label: "Author-provided",
+      url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection",
+    },
+    "hard-dependency": {
+      label: "Hard dependency",
+      url: "https://web-platform-dx.github.io/baseline/",
+    },
+  };
+
+  const detail = details[category];
+  if (detail === undefined) throw new Error(`Unknown fallback category: ${category}`);
+  return detail;
 }
 
 function renderExample(example: ModernWebFeatureExample): string {

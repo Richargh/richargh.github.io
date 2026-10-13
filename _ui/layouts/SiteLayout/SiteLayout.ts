@@ -3,6 +3,7 @@ import { renderHeader } from "../../blocks/Header/Header.ts";
 import { renderScrollToTop } from "../../blocks/ScrollToTop/ScrollToTop.ts";
 import { absoluteUrl, site } from "../../../lib/config.ts";
 import { escapeHtml } from "../../../lib/html.ts";
+import { renderJavaScriptImportMap } from "../../../lib/javascript-import-map.ts";
 
 export interface LayoutOptions {
   title?: string;
@@ -38,8 +39,12 @@ export function renderLayout(options: LayoutOptions): string {
     <link rel="icon" href="${site.favicon}" type="image/png" sizes="16x16"/>
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
     <link href="/assets/css/microlighter.css" rel="stylesheet" media="all"/>
-    <script type="module" src="/assets/vendor/microlighter/microlighter.js"></script>
-    <script type="module" src="/assets/elements/ScrollToTopElement.mjs"></script>
+    ${renderJavaScriptImportMap()}
+    <script type="module">
+      import "microlighter";
+      import "scroll-to-top-element";
+      import "#secret-email-button-element";
+    </script>
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">
 </head>
 

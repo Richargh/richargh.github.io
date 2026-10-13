@@ -8,6 +8,12 @@
         padding: var(--space-4xl);
     }
 
+    .example-card:has(.example-card-link) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-l);
+    }
+
     .example-card h2 {
         color: var(--color-text-muted);
         font-size: var(--font-size-xl);
@@ -15,6 +21,55 @@
         line-height: var(--line-height-s);
         margin-top: 0;
         text-transform: uppercase;
+    }
+
+    .example-card-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-l);
+        margin: 0;
+    }
+
+    .example-card-meta div {
+        min-width: min(14rem, var(--width-full));
+    }
+
+    .example-card-meta dt {
+        color: var(--color-text-muted);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-s);
+        font-weight: 800;
+        letter-spacing: var(--letter-spacing-l);
+        text-transform: uppercase;
+    }
+
+    .example-card-meta dd {
+        margin: var(--space-2xs) 0 0;
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+
+    .example-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-s);
+        margin: var(--space-l) 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .example-card-tags li {
+        padding: var(--space-2xs) var(--space-m);
+        background: var(--color-background-raised);
+        box-shadow: var(--shadow-inset-border);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-m);
+    }
+
+    .example-card-link {
+        margin-top: auto;
+        font-family: var(--font-heading);
+        font-weight: 800;
     }
 
     .example-card pre {
