@@ -60,11 +60,18 @@ header {
 
 .userboard {
     background-color: var(--color-background-muted);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "name rss"
+        "description rss";
+    column-gap: var(--space-content);
     position: relative;
     width: var(--width-full);
 }
 
 .username {
+    grid-area: name;
     padding-top: var(--space-card);
     padding-left: var(--space-content);
     font-size: var(--font-size-base);
@@ -72,6 +79,7 @@ header {
 }
 
 .userdesc {
+    grid-area: description;
     padding-left: var(--space-content);
     margin-top: calc(-1 * var(--space-2xl));
 }
@@ -82,15 +90,17 @@ header {
 
 .header-rss-link {
     align-items: center;
-    bottom: var(--space-card);
+    align-self: end;
     color: var(--color-text);
     display: inline-flex;
     font-family: var(--font-heading);
     font-size: var(--font-size-s);
     font-weight: 700;
     gap: var(--space-xs);
-    position: absolute;
-    right: var(--space-content);
+    grid-area: rss;
+    justify-self: end;
+    margin-right: var(--space-content);
+    margin-bottom: var(--space-card);
     text-decoration: none;
 }
 

@@ -25,7 +25,7 @@ test("Header block renders navigation and optional back link without collection 
   const html = normalized(renderHeader({ showBackToHome: true, appCounters: { appearances: 1, publications: 2, interviews: 3 } }));
 
   assert.match(html, /<header>/);
-  assert.match(html, /class="dashboard disable-select"/);
+  assert.match(html, /class="dashboard"/);
   assert.doesNotMatch(html, /class="app-counter"/);
   assert.match(html, /class="back-p">Home<\/p>/);
 });

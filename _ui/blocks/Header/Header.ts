@@ -5,7 +5,7 @@ import { renderNavItem } from "../NavItem/NavItem.ts";
 
 export function renderHeader({ showBackToHome = false, appCounters }: { showBackToHome?: boolean; appCounters?: AppCounters } = {}): string {
   return `<header>
-    <div class="dashboard disable-select">
+    <div class="dashboard">
         <div class="site-heading profile-board-col">
            <h4 class="medium"><a href="/">${escapeHtml(site.title)}</a></h4>
         </div>
