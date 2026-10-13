@@ -34,7 +34,7 @@ export function renderHeader({ showBackToHome = false, appCounters }: { showBack
         ${renderMainNav(appCounters)}
     </div>
     <div class="searchbar search-container">
-        <i class="fa fa-search" aria-hidden="true"></i>
+        ${searchIcon()}
         <label for="search-input"></label>
         <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search the Blog..."/>
         <ul id="results-container"></ul>
@@ -68,6 +68,13 @@ export function renderHeader({ showBackToHome = false, appCounters }: { showBack
     </script>
     ${showBackToHome ? renderBackToHome() : ""}
 </header>`;
+}
+
+function searchIcon(): string {
+  return `<svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.25 13.5C11.1495 13.5 13.5 11.1495 13.5 8.25C13.5 5.35051 11.1495 3 8.25 3C5.35051 3 3 5.35051 3 8.25C3 11.1495 5.35051 13.5 8.25 13.5Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 12L17 17" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`;
 }
 
 function renderMainNav(appCounters: AppCounters | undefined): string {

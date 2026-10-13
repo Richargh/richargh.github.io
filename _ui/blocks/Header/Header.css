@@ -111,6 +111,10 @@ header {
     padding-left: var(--space-card);
 }
 
+.searchbar {
+    position: relative;
+}
+
 .searchbar input[type="text"] {
     position: relative;
     padding-left: calc(var(--space-content) * 2 + var(--space-content-narrow));
@@ -131,13 +135,12 @@ header {
     font-family: var(--font-heading) !important;
 }
 
-.searchbar i {
+.searchbar .search-icon {
     position: absolute;
-    vertical-align: middle;
-    margin-top: calc(-1 * var(--space-2xs));
-    padding-left: var(--space-content);
+    top: 50%;
+    left: var(--space-content);
     color: var(--color-text-muted);
-    padding-top: var(--space-2xl);
+    transform: translateY(-50%);
     z-index: 1;
 }
 

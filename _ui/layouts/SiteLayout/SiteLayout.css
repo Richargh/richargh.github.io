@@ -12,3 +12,7 @@
     position: fixed;
     right: var(--space-content);
 }
+
+.scroll-to-top-icon {
+    display: block;
+}

@@ -38,7 +38,6 @@ export function renderLayout(options: LayoutOptions): string {
 
     <link rel="canonical" href="${canonical}"/>
     <link rel="apple-touch-icon" href="${site.profilePic}">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <link rel="icon" href="${site.favicon}" type="image/png" sizes="16x16"/>
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
     <link href="/assets/css/microlighter.css" rel="stylesheet" media="all"/>
@@ -53,7 +52,11 @@ export function renderLayout(options: LayoutOptions): string {
             ${renderContextMenu({ enabled: options.showContextMenu ?? options.urlPath === "/" })}
             ${renderFooter()}
         </div>
-        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+        <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+            <svg class="scroll-to-top-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                <path d="M6 15L12 9L18 15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
     </div>
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="module" src="/assets/vendor/microlighter/microlighter.js"></script>
