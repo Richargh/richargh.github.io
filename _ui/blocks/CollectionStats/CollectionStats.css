@@ -1,8 +1,8 @@
 .collection-metrics {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin: 0.25rem 0 1.4rem;
+    gap: var(--space-m);
+    margin: var(--space-xs) 0 var(--space-5xl);
 }
 
 .collection-metric-wrapper {
@@ -12,18 +12,18 @@
 .collection-metric {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.2rem;
-    padding: 0.12rem 0.42rem;
+    gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-m);
     background: var(--color-background-muted);
     color: var(--color-text-muted);
     border: 0;
-    border-radius: 999px;
-    box-shadow: inset 0 0 0 1px var(--color-border-strong);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-inset-border);
     cursor: pointer;
     font-family: var(--font-heading);
-    font-size: 0.76rem;
+    font-size: var(--font-size-m);
     font-weight: 500;
-    line-height: 1.3;
+    line-height: var(--line-height-m);
 }
 
 .collection-metric:hover,
@@ -35,18 +35,18 @@
 .collection-metric strong {
     color: var(--color-text);
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: var(--font-size-xl);
     font-weight: 700;
 }
 
 .collection-metric-popover {
-    max-width: min(34rem, calc(100vw - 2rem));
-    max-height: min(28rem, calc(100vh - 2rem));
-    padding: 1rem;
-    border: 1px solid var(--color-border-strong);
-    border-radius: 8px;
+    max-width: min(34rem, calc(100dvw - 2rem));
+    max-height: min(28rem, calc(100dvh - 2rem));
+    padding: var(--space-4xl);
+    border: var(--border-width) solid var(--color-border-strong);
+    border-radius: var(--radius-card-large);
     background: var(--color-background-raised);
-    box-shadow: 0 8px 28px var(--color-shadow);
+    box-shadow: var(--shadow-popover);
     overflow: auto;
 }
 
@@ -55,17 +55,17 @@
 }
 
 .collection-metric-popover h2 {
-    margin: 0 0 0.6rem;
-    font-size: 1rem;
+    margin: 0 0 var(--space-content-narrow);
+    font-size: var(--font-size-base);
 }
 
 .collection-metric-popover ol {
     margin: 0;
-    padding-left: 1.4rem;
+    padding-left: var(--space-5xl);
 }
 
 .collection-metric-popover li {
-    margin: 0.22rem 0;
-    font-size: 0.9rem;
-    line-height: 1.35;
+    margin: var(--space-xs) 0;
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-l);
 }

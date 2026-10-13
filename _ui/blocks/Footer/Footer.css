@@ -1,8 +1,8 @@
 #copyright {
-    margin-left: 20px;
+    margin-left: var(--space-content);
 }
 
 #copyright-notice {
-    font-size: 0.7rem;
+    font-size: var(--font-size-s);
     font-weight: 700;
 }

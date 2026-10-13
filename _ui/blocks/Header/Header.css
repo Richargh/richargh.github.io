@@ -4,8 +4,8 @@ header {
 }
 
 .site-heading {
-    border-bottom: 2px solid var(--color-border);
-    flex: 0 0 20px;
+    border-bottom: var(--border-width-strong) solid var(--color-border);
+    flex: 0 0 var(--space-content);
     align-self: stretch;
     align-content: flex-end;
 }
@@ -15,8 +15,8 @@ header {
     font-family: var(--font-heading);
     font-stretch: ultra-condensed;
     float: right;
-    margin-bottom: 10px;
-    margin-right: 20px;
+    margin-bottom: var(--space-content-narrow);
+    margin-right: var(--space-content);
     font-weight: 500;
 }
 
@@ -26,97 +26,97 @@ header {
 
 .avatar {
     position: absolute;
-    top: 40px;
-    left: 10px;
+    top: var(--height-control);
+    left: var(--space-content-narrow);
 }
 
 .avatar-link {
     background-color: var(--color-background-raised);
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     display: inline-block !important;
     float: left;
-    margin: -35px 5px 0 8px;
-    max-width: 100%;
-    padding: 1px;
+    margin: calc(-1 * (var(--space-content) + var(--space-card))) var(--space-button-block) 0 var(--space-l);
+    max-width: var(--width-full);
+    padding: var(--border-width);
     vertical-align: bottom;
     font-family: var(--font-heading);
 }
 
 .avatar-img {
-    border: 2px solid var(--color-background-raised);
+    border: var(--border-width-strong) solid var(--color-background-raised);
     color: var(--color-background-raised);
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     box-sizing: border-box;
-    height: 80px;
-    width: 80px;
+    height: var(--avatar-size);
+    width: var(--avatar-size);
 }
 
 .dashboard {
-    border-bottom: 2px solid var(--color-border);
-    width: 100%;
+    border-bottom: var(--border-width-strong) solid var(--color-border);
+    width: var(--width-full);
     display: flex;
     flex-direction: column;
 }
 
 .userboard {
     background-color: var(--color-background-muted);
-    width: 100%;
+    width: var(--width-full);
 }
 
 .username {
-    padding-top: 15px;
-    padding-left: 20px;
-    font-size: 16px;
+    padding-top: var(--space-card);
+    padding-left: var(--space-content);
+    font-size: var(--font-size-base);
     font-weight: 600;
 }
 
 .userdesc {
-    padding-left: 20px;
-    margin-top: -13px;
+    padding-left: var(--space-content);
+    margin-top: calc(-1 * var(--space-2xl));
 }
 
 .userdesc p {
-    font-size: 15px;
+    font-size: var(--font-size-5xl);
 }
 
 .main-site-subheader {
-    border-bottom: 1px solid var(--color-border);
-    padding-left: 15px;
+    border-bottom: var(--border-width) solid var(--color-border);
+    padding-left: var(--space-card);
 }
 
 .searchbar input[type="text"] {
     position: relative;
-    padding-left: 50px;
+    padding-left: calc(var(--space-content) * 2 + var(--space-content-narrow));
     box-sizing: border-box;
-    width: 100%;
-    height: 40px;
+    width: var(--width-full);
+    height: var(--height-control);
     border: 0;
     font-family: var(--font-heading) !important;
     color: var(--color-text);
-    font-size: 18px;
-    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-icon);
+    border-bottom: var(--border-width) solid var(--color-border);
     background-color: var(--color-background-muted);
 }
 
 ::placeholder {
     color: var(--color-text-muted);
-    font-size: 18px;
+    font-size: var(--font-size-icon);
     font-family: var(--font-heading) !important;
 }
 
 .searchbar i {
     position: absolute;
     vertical-align: middle;
-    margin-top: -2px;
-    padding-left: 20px;
+    margin-top: calc(-1 * var(--space-2xs));
+    padding-left: var(--space-content);
     color: var(--color-text-muted);
-    padding-top: 12.5px;
+    padding-top: var(--space-2xl);
     z-index: 1;
 }
 
 .searchbar input[type="text"]:focus {
     border-color: var(--color-border);
-    box-shadow: 0 0 8px 0 var(--color-focus-ring);
+    box-shadow: var(--shadow-focus);
 }
 
 .searchbar input[type="text"]:hover,
@@ -131,7 +131,7 @@ header {
 }
 
 .search_res {
-    padding-left: 10px;
+    padding-left: var(--space-content-narrow);
 }
 
 .search_res:hover {
@@ -150,8 +150,8 @@ header {
     background-color: var(--color-background-raised);
     fill: currentColor;
     color: var(--color-text);
-    margin-top: 5px;
-    padding-left: 5px;
+    margin-top: var(--space-button-block);
+    padding-left: var(--space-button-block);
     cursor: pointer;
 }
 

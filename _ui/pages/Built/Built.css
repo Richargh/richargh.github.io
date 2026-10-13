@@ -3,5 +3,5 @@ article[data-source="_pages/built.adoc"] .content {
 }
 
 article[data-source="_pages/built.adoc"] li {
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }

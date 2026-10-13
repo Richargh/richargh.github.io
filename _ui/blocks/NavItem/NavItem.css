@@ -7,14 +7,14 @@
 .categories,
 .rss,
 .projects {
-    padding-left: 5px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: var(--space-button-block);
+    padding-right: var(--space-content-narrow);
+    padding-top: var(--space-button-block);
+    padding-bottom: var(--space-button-block);
     vertical-align: bottom;
     display: inline-block;
     justify-content: center;
-    border-right: 1px solid var(--color-border);
+    border-right: var(--border-width) solid var(--color-border);
     color: var(--color-text);
     position: relative;
     text-align: center;
@@ -22,12 +22,12 @@
 
 .rss,
 .categories {
-    padding-left: 14px;
-    padding-right: 20px;
+    padding-left: var(--space-3xl);
+    padding-right: var(--space-content);
 }
 
 .home {
-    padding-right: 14px;
+    padding-right: var(--space-3xl);
 }
 
 .nav-item-link {
@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 38px;
+    min-width: var(--height-control);
     text-decoration: none;
 }
 
@@ -47,11 +47,11 @@
 .categories-p,
 .rss-p,
 .projects-p {
-    margin: 0.25rem 0 0;
-    width: 100%;
+    margin: var(--space-xs) 0 0;
+    width: var(--width-full);
     text-align: center;
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: var(--font-size-s);
     font-family: var(--font-heading);
     color: var(--color-text);
 }
@@ -66,8 +66,8 @@
 .icon-rss {
     display: block;
     width: auto;
-    height: 22px;
-    margin: 7px auto 0;
+    height: var(--space-6xl);
+    margin: var(--space-m) auto 0;
     justify-content: center;
     stroke: var(--color-text);
 }
@@ -78,15 +78,15 @@
     left: 50%;
     transform: translate(0, -10%);
     display: block;
-    padding: 0.05rem 0.35rem;
-    min-width: 1.1rem;
+    padding: var(--space-2xs) var(--space-s);
+    min-width: var(--space-content);
     background: var(--color-background-muted);
     color: var(--color-text);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     font-family: var(--font-heading);
-    font-size: 0.62rem;
+    font-size: var(--font-size-2xs);
     font-weight: 800;
-    line-height: 1.3;
+    line-height: var(--line-height-m);
     text-align: center;
-    box-shadow: inset 0 0 0 1px var(--color-border-strong);
+    box-shadow: var(--shadow-inset-border);
 }

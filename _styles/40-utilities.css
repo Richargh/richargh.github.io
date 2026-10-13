@@ -7,7 +7,7 @@
     border: none;
     border-radius: var(--radius-card);
     font-family: var(--font-serif) !important;
-    padding: 20px;
+    padding: var(--space-content);
 }
 
 .regular-sans {
@@ -19,7 +19,7 @@
     border: none;
     border-radius: var(--radius-card);
     font-family: var(--font-body) !important;
-    padding: 20px;
+    padding: var(--space-content);
 }
 
 .disable-select {
@@ -27,11 +27,11 @@
 }
 
 .very-small {
-    font-size: 0.7rem;
+    font-size: var(--font-size-s);
 }
 
 .medium {
-    font-size: 22px !important;
+    font-size: var(--font-size-h3) !important;
 }
 
 .title-sans {

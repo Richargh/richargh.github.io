@@ -1,19 +1,19 @@
 .collection-banners {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.85rem;
-    margin: 0.5rem 0 1.5rem;
+    gap: var(--space-3xl);
+    margin: var(--space-2xs) 0 var(--space-6xl);
 }
 
 .collection-banner {
     display: flex;
     flex-direction: column;
     min-height: 150px;
-    padding: 1rem;
+    padding: var(--space-4xl);
     background: var(--gradient-collection-banner-primary);
     color: var(--color-on-accent) !important;
     text-decoration: none !important;
-    box-shadow: 0 8px 24px var(--color-banner-shadow);
+    box-shadow: 0 var(--space-l) var(--space-6xl) var(--color-banner-shadow);
 }
 
 .collection-banner:nth-child(2) {
@@ -43,41 +43,41 @@
 
 .collection-banner-kicker {
     color: var(--color-on-accent);
-    font-size: 0.85rem;
+    font-size: var(--font-size-2xl);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--letter-spacing-xl);
     text-transform: uppercase;
 }
 
 .collection-banner-total {
     color: var(--color-on-accent);
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-size: clamp(var(--font-size-display-min), var(--fluid-display-rate), var(--font-size-display-max));
     font-weight: 800;
-    line-height: 0.95;
-    margin-top: 0.35rem;
+    line-height: var(--line-height-display);
+    margin-top: var(--space-s);
 }
 
 .collection-banner-label {
     color: var(--color-banner-text-muted);
-    font-size: 0.95rem;
+    font-size: var(--font-size-5xl);
     font-weight: 600;
 }
 
 .collection-banner-topics {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: var(--space-s);
     margin-top: auto;
-    padding-top: 0.8rem;
+    padding-top: var(--space-2xl);
 }
 
 .collection-banner-topics span {
     display: inline-block;
-    padding: 0.18rem 0.45rem;
+    padding: var(--space-2xs) var(--space-m);
     background: var(--color-overlay-soft);
     color: var(--color-on-accent);
-    font-size: 0.76rem;
-    line-height: 1.25;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-s);
 }
 
 .collection-banner-topics strong {

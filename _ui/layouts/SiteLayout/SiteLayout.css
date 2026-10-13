@@ -2,13 +2,13 @@
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
-    border-radius: 30px;
-    bottom: 20px;
+    border-radius: var(--radius-pill);
+    bottom: var(--space-content);
     color: var(--color-text-muted);
     cursor: pointer;
-    font-size: 18px;
+    font-size: var(--font-size-icon);
     outline: none;
     overflow: hidden;
     position: fixed;
-    right: 20px;
+    right: var(--space-content);
 }

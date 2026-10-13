@@ -8,27 +8,27 @@ body {
 }
 
 h1 {
-    font-size: 29px;
+    font-size: var(--font-size-h1);
 }
 
 h2 {
-    font-size: 25px;
+    font-size: var(--font-size-h2);
 }
 
 h3 {
-    font-size: 22px;
+    font-size: var(--font-size-h3);
 }
 
 h4 {
-    font-size: 19px;
+    font-size: var(--font-size-h4);
 }
 
 h5 {
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 h6 {
-    font-size: 13px;
+    font-size: var(--font-size-h6);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 a, p, ul, li, ol, table, span, blockquote {
     color: var(--color-text);
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 p a,
@@ -74,31 +74,31 @@ b, strong {
 
 img {
     height: auto;
-    max-width: 100%;
+    max-width: var(--width-full);
 }
 
 code {
-    border: 1px solid var(--color-border-strong);
+    border: var(--border-width) solid var(--color-border-strong);
     border-radius: var(--radius-inline);
     display: inline-block;
     font-family: var(--font-monospace);
     overflow: auto !important;
-    padding: 2px;
+    padding: var(--space-2xs);
     vertical-align: middle;
     word-wrap: break-word !important;
 }
 
 pre code {
     background-color: var(--color-code-background);
-    border: 1px solid var(--color-border-strong);
+    border: var(--border-width) solid var(--color-border-strong);
     border-radius: var(--radius-card);
     color: var(--color-code-text);
     display: inline-block;
     font-family: var(--font-monospace);
     overflow: auto !important;
-    padding: 15px;
+    padding: var(--space-card);
     vertical-align: middle;
-    width: 90%;
+    width: var(--width-readable);
     word-wrap: break-word !important;
 }
 
@@ -107,12 +107,12 @@ blockquote::before {
 }
 
 blockquote {
-    padding: 10px;
+    padding: var(--space-content-narrow);
 }
 
 cite {
     font-style: oblique;
-    padding-left: 50px;
+    padding-left: calc(var(--space-content) * 2 + var(--space-content-narrow));
 }
 
 .content a {
@@ -133,18 +133,18 @@ blockquote p {
 table {
     border-collapse: collapse;
     border-radius: var(--radius-card);
-    width: 90%;
+    width: var(--width-readable);
 }
 
 th, td {
     color: var(--color-text);
-    font-size: 12px;
-    padding: 8px;
+    font-size: var(--font-size-table-header);
+    padding: var(--space-l);
     text-align: left;
 }
 
 td {
-    font-size: 14px;
+    font-size: var(--font-size-table-cell);
 }
 
 td a {
@@ -169,5 +169,5 @@ hr {
     background-color: var(--color-rule);
     border: 0 none;
     color: var(--color-rule);
-    height: 1px;
+    height: var(--border-width);
 }

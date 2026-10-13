@@ -9,7 +9,7 @@
   display: block;
   box-sizing: border-box;
   width: auto;
-  min-width: 100%;
+  min-width: var(--width-full);
   background-color: var(--color-code-background);
 }
 
