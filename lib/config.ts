@@ -1,7 +1,7 @@
 export const site = {
   title: "Richard's Blog",
   name: "Richard Groß",
-  tagLine: "Software Archaeology · Mend Software · Increase ROI",
+  tagLine: "IT Archaeology: Mend Software · Create Options · Increase ROI",
   url: "https://richargh.de",
   profilePic: "/assets/img/profile.jpg",
   favicon: "/assets/img/favicon.ico",
