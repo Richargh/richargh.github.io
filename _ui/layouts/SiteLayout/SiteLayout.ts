@@ -1,5 +1,4 @@
 import { renderFooter } from "../../blocks/Footer/Footer.ts";
-import type { AppCounters } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderHeader } from "../../blocks/Header/Header.ts";
 import { renderScrollToTop } from "../../blocks/ScrollToTop/ScrollToTop.ts";
 import { absoluteUrl, site } from "../../../lib/config.ts";
@@ -11,7 +10,6 @@ export interface LayoutOptions {
   description?: string;
   type?: "website" | "article";
   showBackToHome?: boolean;
-  appCounters?: AppCounters;
   content: string;
 }
 
@@ -48,7 +46,7 @@ export function renderLayout(options: LayoutOptions): string {
 <body data-syntax-theme="github">
     <div class="container">
         <div class="box">
-            ${renderHeader({ showBackToHome: options.showBackToHome, appCounters: options.appCounters })}
+            ${renderHeader({ showBackToHome: options.showBackToHome })}
             ${options.content}
             ${renderFooter()}
         </div>

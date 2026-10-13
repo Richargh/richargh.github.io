@@ -1,5 +1,5 @@
 import { renderArticleCard as renderSharedArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
-import { appCounters, renderArticleStats } from "../../blocks/CollectionStats/CollectionStats.ts";
+import { renderArticleStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingArticles } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import type { Article, ArticlePart, ArticlePublication } from "../../../lib/articles.ts";
@@ -17,7 +17,6 @@ export function renderArticlesDocument(articles: Article[], talks: Talk[] = [], 
     description: "Articles by Richard Groß",
     type: "website",
     showBackToHome: true,
-    appCounters: appCounters({ talks, articles, interviews }),
     content: `<main>
                 <article data-source="_data/articles.yaml">
                   <h1>Articles</h1>

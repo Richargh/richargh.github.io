@@ -1,5 +1,5 @@
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
-import { appCounters, renderTalkStats } from "../../blocks/CollectionStats/CollectionStats.ts";
+import { renderTalkStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingTalks } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import type { Article } from "../../../lib/articles.ts";
@@ -17,7 +17,6 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
     description: "Talks by Richard Groß",
     type: "website",
     showBackToHome: true,
-    appCounters: appCounters({ talks, articles, interviews }),
     content: `<main>
                 <article data-source="_data/talks.yaml">
                   <h1>Talks</h1>

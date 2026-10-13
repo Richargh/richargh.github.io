@@ -1,5 +1,5 @@
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
-import { appCounters, renderInterviewStats } from "../../blocks/CollectionStats/CollectionStats.ts";
+import { renderInterviewStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingInterviews } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import type { Article } from "../../../lib/articles.ts";
@@ -16,7 +16,6 @@ export function renderInterviewsDocument(interviews: InterviewAppearance[], talk
     description: "Podcasts, interviews, and streams with Richard Groß",
     type: "website",
     showBackToHome: true,
-    appCounters: appCounters({ talks, articles, interviews }),
     content: `<main>
                 <article data-source="_data/interviews.yaml">
                   <h1>Interviews</h1>

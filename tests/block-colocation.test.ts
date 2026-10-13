@@ -22,7 +22,7 @@ function normalized(html: string): string {
 }
 
 test("Header block renders navigation and optional back link without collection counters", () => {
-  const html = normalized(renderHeader({ showBackToHome: true, appCounters: { appearances: 1, publications: 2, interviews: 3 } }));
+  const html = normalized(renderHeader({ showBackToHome: true }));
 
   assert.match(html, /<header>/);
   assert.match(html, /class="dashboard"/);

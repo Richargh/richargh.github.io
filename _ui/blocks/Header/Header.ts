@@ -1,9 +1,8 @@
 import { site } from "../../../lib/config.ts";
 import { escapeHtml } from "../../../lib/html.ts";
-import type { AppCounters } from "../CollectionStats/CollectionStats.ts";
 import { renderNavItem } from "../NavItem/NavItem.ts";
 
-export function renderHeader({ showBackToHome = false, appCounters }: { showBackToHome?: boolean; appCounters?: AppCounters } = {}): string {
+export function renderHeader({ showBackToHome = false }: { showBackToHome?: boolean } = {}): string {
   return `<header>
     <div class="dashboard">
         <div class="site-heading profile-board-col">
