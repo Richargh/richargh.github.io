@@ -1,0 +1,57 @@
+- name: Cascade layers
+  url: https://web-platform-dx.github.io/web-features-explorer/features/cascade-layers/
+  baselineSince: 2024-09-14
+  examples:
+    - description: >
+        The CSS bundle is organized into theme, base, layout, block, page, and utility layers.
+      language: css
+      code: |
+        @layer argh.theme, argh.base, argh.layout, argh.blocks, argh.pages, argh.utilities;
+
+        @layer argh.blocks {
+          .nav-item {
+            display: flex;
+          }
+        }
+
+- name: Container style queries
+  url: https://web-platform-dx.github.io/web-features-explorer/features/container-style-queries/
+  baselineSince: 2026-05-19
+  examples:
+    - description: >
+        Viewport tokens such as --viewport: tablet and --viewport: narrow are queried by layout and card styles.
+      language: css
+      code: |
+        :root {
+          --viewport: desktop;
+
+          @media (max-width: 900px) {
+            --viewport: tablet;
+          }
+        }
+
+        @container style(--viewport: tablet) {
+          .box {
+            width: var(--width-panel-tablet);
+          }
+        }
+
+- name: Autonomous Custom elements
+  url: https://web-platform-dx.github.io/web-features-explorer/features/autonomous-custom-elements/
+  baselineSince: 2020-01-15
+  examples:
+    - description: >
+        The scroll-to-top control is a <scroll-to-top> custom element.
+      language: html
+      code: |
+        <scroll-to-top></scroll-to-top>
+
+        <script type="module">
+          class ScrollToTop extends HTMLElement {
+            connectedCallback() {
+              this.innerHTML = `<button type="button">Top</button>`;
+            }
+          }
+
+          customElements.define("scroll-to-top", ScrollToTop);
+        </script>

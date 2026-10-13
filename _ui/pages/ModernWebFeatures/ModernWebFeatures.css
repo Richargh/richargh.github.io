@@ -1,0 +1,42 @@
+@layer argh.pages {
+    .modern-web-features {
+        margin-top: var(--space-5xl);
+    }
+
+    .modern-web-features dt {
+        font-size: var(--font-size-h3);
+        font-weight: 700;
+        line-height: var(--line-height-s);
+        margin-top: var(--space-6xl);
+        padding-top: var(--space-5xl);
+        position: relative;
+    }
+
+    .modern-web-features dt::before {
+        border-top: var(--border-width) solid var(--color-border-strong);
+        content: "";
+        left: calc(-1 * var(--space-content-narrow));
+        position: absolute;
+        right: calc(-1 * var(--space-content-narrow));
+        top: 0;
+    }
+
+    .modern-web-features dd {
+        margin-bottom: var(--space-6xl);
+        margin-left: var(--space-content);
+        min-width: 0;
+    }
+
+    .modern-web-feature-baseline {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xl);
+        margin-top: var(--space-s);
+    }
+
+    .modern-web-feature-examples {
+        display: grid;
+        gap: var(--space-4xl);
+        margin-top: var(--space-4xl);
+        min-width: 0;
+    }
+}

@@ -1,0 +1,38 @@
+@layer argh.blocks {
+    .example-card {
+        background: var(--color-background-muted);
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-card-large);
+        box-sizing: border-box;
+        min-width: 0;
+        padding: var(--space-4xl);
+    }
+
+    .example-card h2 {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-xl);
+        letter-spacing: var(--letter-spacing-l);
+        line-height: var(--line-height-s);
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    .example-card pre {
+        box-sizing: border-box;
+        margin-bottom: 0;
+        max-width: var(--width-full);
+        min-width: 0;
+        overflow-x: auto !important;
+        width: var(--width-full);
+    }
+
+    .example-card pre code {
+        box-sizing: border-box;
+        display: block;
+        max-width: none;
+        min-width: var(--width-full);
+        overflow: visible !important;
+        white-space: pre;
+        width: max-content;
+    }
+}
