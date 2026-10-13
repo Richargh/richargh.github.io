@@ -28,9 +28,9 @@ header {
 }
 
 main {
-    margin-left: var(--space-content);
+    margin-left: var(--space-content-narrow);
+    margin-right: var(--space-content-narrow);
     min-height: var(--min-height-main);
-    padding-right: var(--space-content-narrow);
 }
 
 @container style(--viewport: tablet) {
