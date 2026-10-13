@@ -23,7 +23,7 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
                   <h1>Talks</h1>
                   ${renderTalkStats(talks)}
                   ${renderUpcomingTalks(talks)}
-                  <div class="content talks-cards">
+                  <div class="content article-cards">
                     ${sortedTalks.map((talk) => renderTalkCard(talk, relatedGroups)).join("\n")}
                   </div>
                 </article>
@@ -44,7 +44,7 @@ function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[]): string {
     },
     actionsHtml: renderTalkActions(talk, relatedGroups),
     childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}
-<ul class="talk-appearances-list">
+<ul class="article-card-appearances-list">
 ${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLine).join("\n")}
 </ul>`,
   });
@@ -59,8 +59,8 @@ function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewA
 }
 
 function renderAbstract(abstract: string): string {
-  return `<details class="talk-abstract">
-<summary><span class="talk-abstract-long">${escapeHtml(excerpt(abstract, 70))}</span><span class="talk-abstract-short">${escapeHtml(excerpt(abstract, 45))}</span></summary>
+  return `<details class="article-card-abstract">
+<summary><span class="article-card-abstract-long">${escapeHtml(excerpt(abstract, 70))}</span><span class="article-card-abstract-short">${escapeHtml(excerpt(abstract, 45))}</span></summary>
 ${abstractParagraphs(abstract).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
 </details>`;
 }
@@ -83,7 +83,7 @@ function renderTalkActions(talk: Talk, relatedGroups: RelatedGroup[]): string {
   if (talk.codeUrl) links.push({ label: "Code", url: talk.codeUrl });
   links.push(...talk.links);
   links.push(...relatedContentLinks({ id: talk.id, kind: "talk" }, relatedGroups));
-  return links.map((link) => `<a class="talk-resource-button talk-card-code${link.url.startsWith("/") ? " talk-cross-link-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => `<a class="article-card-resource-button article-card-code${link.url.startsWith("/") ? " article-card-cross-link-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | undefined {
@@ -93,9 +93,9 @@ function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | und
 }
 
 function renderAppearanceLine(appearance: TalkAppearance): string {
-  return `<li class="talk-appearance-line${appearance.videoUrl ? " has-video" : ""}">
-<span class="talk-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderUpcoming(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
-<span class="talk-line-links">${renderResourceLinks(appearance)}</span>
+  return `<li class="article-card-appearance-line${appearance.videoUrl ? " has-video" : ""}">
+<span class="article-card-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderUpcoming(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
+<span class="article-card-line-links">${renderResourceLinks(appearance)}</span>
 </li>`;
 }
 
@@ -113,14 +113,14 @@ function renderLanguageFlag(language: string | undefined): string {
 
 function renderDuration(appearance: TalkAppearance): string {
   if (appearance.durationMinutes === undefined) return "";
-  return ` <span class="talk-duration">(${appearance.durationMinutes}min)</span>`;
+  return ` <span class="article-card-duration">(${appearance.durationMinutes}min)</span>`;
 }
 
 function renderResourceLinks(appearance: TalkAppearance): string {
   const links: TalkLink[] = [...appearance.links];
   if (appearance.videoUrl) links.push({ label: "Video", url: appearance.videoUrl });
   if (appearance.slideUrl) links.push({ label: "Slides", url: appearance.slideUrl });
-  return links.map((link) => `<a class="talk-resource-button${link.label.includes("Video") ? " talk-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => `<a class="article-card-resource-button${link.label.includes("Video") ? " article-card-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function renderVersion(appearance: TalkAppearance): string {
@@ -128,11 +128,11 @@ function renderVersion(appearance: TalkAppearance): string {
 }
 
 function renderUpcoming(appearance: TalkAppearance): string {
-  return appearance.upcoming || appearance.upcomingSince ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(appearance.date)}</span>` : "";
+  return appearance.upcoming || appearance.upcomingSince ? ` <span class="article-card-upcoming">Upcoming ${escapeHtml(appearance.date)}</span>` : "";
 }
 
 function renderVariant(appearance: TalkAppearance): string {
-  return appearance.variant ? ` <span class="talk-duration">${escapeHtml(appearance.variant)}</span>` : "";
+  return appearance.variant ? ` <span class="article-card-duration">${escapeHtml(appearance.variant)}</span>` : "";
 }
 
 function compareAppearancesDescending(left: TalkAppearance, right: TalkAppearance): number {

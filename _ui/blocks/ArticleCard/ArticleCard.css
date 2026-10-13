@@ -1,34 +1,34 @@
-/* Talk cards generated from _data/talks.yaml */
-.talks-cards {
+/* Shared article cards for articles, talks, and interviews. */
+.article-cards {
     display: flex;
     flex-direction: column;
     gap: var(--space-6xl);
 }
 
-.talk-card {
+.article-card {
     border: var(--border-width) solid var(--color-border-strong);
     overflow: hidden;
     background: var(--color-background-raised);
     box-shadow: var(--shadow-raised);
 }
 
-.talk-banner {
+.article-card-banner {
     display: block;
     min-height: 210px;
     text-decoration: none;
-    background: var(--gradient-talk-banner);
+    background: var(--gradient-article-card-banner);
     background-position: center;
     background-size: cover;
     color: var(--color-on-accent);
     position: relative;
 }
 
-.talk-banner-link:hover,
-.talk-banner-link:focus {
+.article-card-banner-link:hover,
+.article-card-banner-link:focus {
     filter: brightness(1.06);
 }
 
-.talk-banner-link::after {
+.article-card-banner-link::after {
     content: "▶";
     position: absolute;
     left: 50%;
@@ -46,13 +46,13 @@
     transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-.talk-banner-link:hover::after,
-.talk-banner-link:focus::after {
+.article-card-banner-link:hover::after,
+.article-card-banner-link:focus::after {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.talk-banner-content {
+.article-card-banner-content {
     min-height: 210px;
     display: flex;
     flex-direction: column;
@@ -62,24 +62,24 @@
     padding: var(--space-4xl);
 }
 
-.talk-banner-title {
+.article-card-banner-title {
     max-width: min(42rem, var(--width-full));
     padding: var(--space-m) var(--space-2xl);
     background: var(--color-overlay-strong);
     color: var(--color-on-accent);
     font-family: var(--font-heading);
-    font-size: clamp(var(--font-size-talk-title-min), var(--fluid-talk-title-rate), var(--font-size-talk-title-max));
+    font-size: clamp(var(--font-size-article-card-title-min), var(--fluid-article-card-title-rate), var(--font-size-article-card-title-max));
     font-weight: 700;
     line-height: var(--line-height-xs);
 }
 
-.talk-banner-tags {
+.article-card-banner-tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-s);
 }
 
-.talk-banner-content span {
+.article-card-banner-content span {
     display: inline-block;
     padding: var(--space-xs) var(--space-content-narrow);
     background: var(--color-overlay-medium);
@@ -89,23 +89,23 @@
     letter-spacing: var(--letter-spacing-m);
 }
 
-.talk-card-body {
+.article-card-body {
     padding: var(--space-4xl);
 }
 
-.talk-card-heading {
+.article-card-heading {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-4xl);
 }
 
-.talk-card-body h2 {
+.article-card-body h2 {
     margin-top: 0;
     margin-bottom: var(--space-xs);
 }
 
-.talk-card-actions {
+.article-card-actions {
     display: flex;
     flex: 0 0 auto;
     flex-wrap: wrap;
@@ -114,13 +114,13 @@
     margin-top: var(--space-2xs);
 }
 
-.talk-appearances-list {
+.article-card-appearances-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.talk-appearance-line {
+.article-card-appearance-line {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -130,28 +130,28 @@
     line-height: var(--line-height-xl);
 }
 
-.talk-line-main {
+.article-card-line-main {
     min-width: 0;
 }
 
-.talk-year,
-.talk-duration {
+.article-card-year,
+.article-card-duration {
     color: var(--color-text-muted);
     font-size: var(--font-size-4xl);
 }
 
-.talk-year::before {
+.article-card-year::before {
     content: " · ";
 }
 
-.talk-line-links {
+.article-card-line-links {
     display: flex;
     flex: 0 0 auto;
     gap: var(--space-s);
     white-space: nowrap;
 }
 
-.talk-resource-button {
+.article-card-resource-button {
     display: inline-block;
     padding: var(--space-2xs) var(--space-content-narrow);
     background: var(--color-background-muted);
@@ -162,42 +162,42 @@
     text-decoration: none;
 }
 
-.talk-resource-button:hover,
-.talk-resource-button:focus {
+.article-card-resource-button:hover,
+.article-card-resource-button:focus {
     background: var(--color-background-hover);
     text-decoration: none;
 }
 
-.talk-cross-link-button {
+.article-card-cross-link-button {
     background: var(--color-primary-background);
     color: var(--color-link) !important;
     box-shadow: var(--shadow-inset-border);
 }
 
-.talk-cross-link-button:hover,
-.talk-cross-link-button:focus {
+.article-card-cross-link-button:hover,
+.article-card-cross-link-button:focus {
     background: var(--color-background-hover);
 }
 
-.talk-video-button {
+.article-card-video-button {
     background: var(--color-danger);
     color: var(--color-on-accent) !important;
     box-shadow: var(--shadow-video);
 }
 
-.talk-video-button:hover,
-.talk-video-button:focus {
+.article-card-video-button:hover,
+.article-card-video-button:focus {
     background: var(--color-danger-hover);
 }
 
 @container style(--viewport: mobile) {
-    .talk-appearance-line {
+    .article-card-appearance-line {
         align-items: flex-start;
         flex-direction: column;
         gap: var(--space-xs);
     }
 
-    .talk-line-links {
+    .article-card-line-links {
         flex-direction: row-reverse;
         flex-wrap: wrap;
         justify-content: flex-end;
@@ -206,13 +206,13 @@
 }
 
 @container style(--viewport: narrow) {
-    .talk-appearance-line {
+    .article-card-appearance-line {
         align-items: flex-start;
         flex-direction: column;
         gap: var(--space-xs);
     }
 
-    .talk-line-links {
+    .article-card-line-links {
         flex-direction: row-reverse;
         flex-wrap: wrap;
         justify-content: flex-end;
@@ -220,22 +220,22 @@
     }
 }
 
-.talk-title-anchor {
+.article-card-title-anchor {
     color: inherit;
     text-decoration: none;
 }
 
-.talk-title-anchor:hover,
-.talk-title-anchor:focus {
+.article-card-title-anchor:hover,
+.article-card-title-anchor:focus {
     text-decoration: underline;
 }
 
-.talk-abstract {
+.article-card-abstract {
     margin: 0 0 var(--space-content-narrow);
     color: var(--color-text-muted);
 }
 
-.talk-abstract summary {
+.article-card-abstract summary {
     cursor: pointer;
     color: var(--color-text-muted);
     font-style: italic;
@@ -243,60 +243,60 @@
     list-style: none;
 }
 
-.talk-abstract summary::-webkit-details-marker {
+.article-card-abstract summary::-webkit-details-marker {
     display: none;
 }
 
-.talk-abstract summary::after {
+.article-card-abstract summary::after {
     content: " ... more";
     color: var(--color-text);
     font-style: normal;
     font-weight: 600;
 }
 
-.talk-abstract[open] summary::after {
+.article-card-abstract[open] summary::after {
     content: " less";
 }
 
-.talk-abstract summary:hover,
-.talk-abstract summary:focus {
+.article-card-abstract summary:hover,
+.article-card-abstract summary:focus {
     color: var(--color-text);
 }
 
-.talk-abstract p {
+.article-card-abstract p {
     margin: var(--space-m) 0 0;
     line-height: var(--line-height-2xl);
 }
 
-.talk-abstract[open] summary {
+.article-card-abstract[open] summary {
     margin-bottom: var(--space-2xs);
 }
 
-.talk-abstract-short {
+.article-card-abstract-short {
     display: none;
 }
 
 @container style(--viewport: mobile) {
-    .talk-abstract-long {
+    .article-card-abstract-long {
         display: none;
     }
 
-    .talk-abstract-short {
+    .article-card-abstract-short {
         display: inline;
     }
 }
 
 @container style(--viewport: narrow) {
-    .talk-abstract-long {
+    .article-card-abstract-long {
         display: none;
     }
 
-    .talk-abstract-short {
+    .article-card-abstract-short {
         display: inline;
     }
 }
 
-.talk-upcoming {
+.article-card-upcoming {
     display: inline-block;
     margin-left: var(--space-s);
     padding: var(--space-2xs) var(--space-s);

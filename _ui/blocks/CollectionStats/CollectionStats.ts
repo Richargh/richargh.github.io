@@ -67,16 +67,16 @@ function stat(id: string, value: number, label: string, entries: string[]): Stat
 }
 
 function renderStatsSummary(scope: string, items: StatItem[]): string {
-  return `<section class="collection-metrics" aria-label="Collection metrics">
+  return `<section class="collection-stats" aria-label="Collection stats">
 ${items.map((item) => renderMetric(scope, item)).join("\n")}
 </section>`;
 }
 
 function renderMetric(scope: string, item: StatItem): string {
-  const popoverId = `collection-metric-${scope}-${item.id}`;
-  return `<span class="collection-metric-wrapper">
-<button class="collection-metric" type="button" popovertarget="${escapeHtml(popoverId)}" aria-label="Show counted ${escapeHtml(item.label)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</button>
-<div class="collection-metric-popover" id="${escapeHtml(popoverId)}" popover>
+  const popoverId = `collection-stats-${scope}-${item.id}`;
+  return `<span class="collection-stats-item">
+<button class="collection-stat" type="button" popovertarget="${escapeHtml(popoverId)}" aria-label="Show counted ${escapeHtml(item.label)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</button>
+<div class="collection-stats-popover" id="${escapeHtml(popoverId)}" popover>
 <h2>${escapeHtml(item.value.toLocaleString("en"))} ${escapeHtml(item.label)}</h2>
 <ol>
 ${item.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("\n")}

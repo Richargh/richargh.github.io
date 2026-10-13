@@ -49,15 +49,15 @@ test("collection blocks render summaries", () => {
 
   assert.deepEqual(appCounters(empty), { appearances: 0, publications: 0, interviews: 0 });
   assert.match(renderCollectionBanners(empty), /class="collection-banners"/);
-  assert.match(renderArticleStats([]), /class="collection-metrics"/);
+  assert.match(renderArticleStats([]), /class="collection-stats"/);
   assert.equal(renderUpcomingCollection(empty), "");
 });
 
 test("ArticleCard block renders banner, actions, and children", () => {
   const html = renderArticleCard({ id: "card", title: "Title", banner: { tags: ["one"], linkUrl: "/watch", linkLabel: "Watch" }, actionsHtml: "<a>Action</a>", childrenHtml: "<p>Body</p>" });
 
-  assert.match(html, /<section class="talk-card" id="card">/);
-  assert.match(html, /class="talk-card-actions"/);
+  assert.match(html, /<section class="article-card" id="card">/);
+  assert.match(html, /class="article-card-actions"/);
   assert.match(html, /<p>Body<\/p>/);
 });
 

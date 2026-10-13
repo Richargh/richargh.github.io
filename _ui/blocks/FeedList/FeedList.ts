@@ -7,7 +7,7 @@ export function renderFeedList(posts: Post[]): string {
 
 function renderFeedItem(post: Post): string {
   const status = post.status?.toLowerCase() === "ongoing"
-    ? `<ul style="padding-left: 20px; margin-top: 20px;" class="tags">\n            <li style="padding: 0 5px; border-radius: 10px;" class="tag"><b>Status: </b>${capitalize(post.status)}</li>\n            </ul>\n            <p style="margin-top: 0px;" class="feed-title">${escapeHtml(post.title)}</p>`
+    ? `<ul style="padding-left: 20px; margin-top: 20px;" class="content-meta">\n            <li style="padding: 0 5px; border-radius: 10px;" class="content-meta-tag"><b>Status: </b>${capitalize(post.status)}</li>\n            </ul>\n            <p style="margin-top: 0px;" class="feed-title">${escapeHtml(post.title)}</p>`
     : `<p class="feed-title">${escapeHtml(post.title)}</p>`;
 
   return `<div class="feed-title-excerpt-block disable-select" data-url="https://richargh.de${escapeHtml(post.urlPath)}">

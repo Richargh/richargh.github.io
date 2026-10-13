@@ -44,12 +44,12 @@ export function renderUpcomingInterviews(interviews: InterviewAppearance[]): str
 function renderUpcomingSection({ description, items }: { description: string; items: { date: string; html: string }[] }): string {
   const sortedItems = items.toSorted(compareByDateAscending).map((item) => item.html).join("\n");
   if (!sortedItems) return "";
-  return `<section class="upcoming-items" id="upcoming" aria-labelledby="upcoming-heading">
-<div class="upcoming-items-heading">
+  return `<section class="upcoming-collection" id="upcoming" aria-labelledby="upcoming-heading">
+<div class="upcoming-collection-heading">
 <h2 id="upcoming-heading">Upcoming</h2>
 <p>${escapeHtml(description)}</p>
 </div>
-<ul class="upcoming-list">
+<ul class="upcoming-collection-list">
 ${sortedItems}
 </ul>
 </section>`;

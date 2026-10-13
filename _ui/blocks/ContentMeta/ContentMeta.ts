@@ -2,11 +2,11 @@ import type { Post } from "../../../lib/content.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 
 export function renderPostMeta(post: Post): string {
-  const status = post.status ? `<li><a href="javascript:void(0)" class="tag"><b>Status:</b> <i>${escapeHtml(capitalize(post.status))}</i></a></li>` : "";
+  const status = post.status ? `<li><a href="javascript:void(0)" class="content-meta-tag"><b>Status:</b> <i>${escapeHtml(capitalize(post.status))}</i></a></li>` : "";
   const dateLabel = formatDateLabel(post.date);
   const dateAnchor = formatDateAnchor(post.date);
-  const tags = post.tags.map((tag) => `<li><a href="/tags/#${encodeURIComponent(tag)}" class="tag">${escapeHtml(tag)}</a></li>`).join("");
-  return `<ul class="tags">${status}<li><a href="/dates/#${dateAnchor}" class="tag">${dateLabel}</a></li>${tags}</ul>`;
+  const metaTags = post.tags.map((tag) => `<li><a href="/tags/#${encodeURIComponent(tag)}" class="content-meta-tag">${escapeHtml(tag)}</a></li>`).join("");
+  return `<ul class="content-meta">${status}<li><a href="/dates/#${dateAnchor}" class="content-meta-tag">${dateLabel}</a></li>${metaTags}</ul>`;
 }
 
 function capitalize(value: string): string {

@@ -1,15 +1,15 @@
-.tags {
+.content-meta {
     list-style: none;
     margin: 0;
     overflow: hidden;
     padding: 0;
 }
 
-.tags li {
+.content-meta li {
     float: left;
 }
 
-.tag {
+.content-meta-tag {
     color: var(--color-text);
     background: var(--color-background-muted);
     text-decoration: none;

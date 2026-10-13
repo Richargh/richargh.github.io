@@ -23,7 +23,7 @@ export function renderArticlesDocument(articles: Article[], talks: Talk[] = [], 
                   <h1>Articles</h1>
                   ${renderArticleStats(articles)}
                   ${renderUpcomingArticles(articles)}
-                  <div class="content talks-cards">
+                  <div class="content article-cards">
                     ${sortedArticles.map((article) => renderArticleCard(article, relatedGroups)).join("\n")}
                   </div>
                 </article>
@@ -53,14 +53,14 @@ function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewA
 }
 
 function renderCrossLinks(links: CrossLink[]): string {
-  return links.map((link) => `<a class="talk-resource-button talk-card-code talk-cross-link-button" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => `<a class="article-card-resource-button article-card-code article-card-cross-link-button" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function renderArticlePart(part: ArticlePart): string {
   const heading = [part.part ? `Part ${part.part}` : undefined, part.subtitle].filter(Boolean).join(" - ");
   return `<div class="article-part">
 ${heading ? `<h3>${escapeHtml(heading)}</h3>` : ""}
-<ul class="talk-appearances-list">
+<ul class="article-card-appearances-list">
 ${part.publications.toSorted(comparePublicationsDescending).map(renderPublicationLine).join("\n")}
 </ul>
 </div>`;
@@ -69,8 +69,8 @@ ${part.publications.toSorted(comparePublicationsDescending).map(renderPublicatio
 function renderPublicationLine(publication: ArticlePublication): string {
   const label = publication.issue ? `${publication.publisher} ${publication.issue}` : publication.publisher;
   const linkedLabel = publication.url ? `<a href="${escapeHtml(publication.url)}">${escapeHtml(label)}</a>` : escapeHtml(label);
-  return `<li class="talk-appearance-line">
-<span class="talk-line-main">${linkedLabel} <span class="talk-duration">${escapeHtml(publication.date)}</span>${publication.upcoming || publication.upcomingSince ? ` <span class="talk-upcoming">Upcoming ${escapeHtml(publication.date)}</span>` : ""} ${renderLanguageFlag(publication.language)}</span>
+  return `<li class="article-card-appearance-line">
+<span class="article-card-line-main">${linkedLabel} <span class="article-card-duration">${escapeHtml(publication.date)}</span>${publication.upcoming || publication.upcomingSince ? ` <span class="article-card-upcoming">Upcoming ${escapeHtml(publication.date)}</span>` : ""} ${renderLanguageFlag(publication.language)}</span>
 </li>`;
 }
 

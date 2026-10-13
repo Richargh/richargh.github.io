@@ -22,7 +22,7 @@ export function renderInterviewsDocument(interviews: InterviewAppearance[], talk
                   <h1>Interviews</h1>
                   ${renderInterviewStats(interviews)}
                   ${renderUpcomingInterviews(interviews)}
-                  <div class="content talks-cards">
+                  <div class="content article-cards">
                     <p>Podcasts, interviews, and streams.</p>
                     ${interviews.toSorted(compareInterviewsDescending).map((interview) => renderInterviewCard(interview, relatedGroups)).join("\n")}
                   </div>
@@ -43,8 +43,8 @@ function renderInterviewCard(interview: InterviewAppearance, relatedGroups: Rela
       linkLabel: `Open video for ${interview.title}`,
     },
     actionsHtml: renderCrossLinks(relatedContentLinks({ id: interview.id, kind: "interview" }, relatedGroups)),
-    childrenHtml: `<ul class="talk-appearances-list">
-<li class="talk-appearance-line"><span class="talk-line-main">${renderMainLink(interview)} <span class="talk-duration">${escapeHtml(interview.date)}</span> ${renderLanguageFlag(interview.language)} <span class="talk-duration">${escapeHtml(interview.type)}</span></span><span class="talk-line-links">${renderLinks(interview.links)}</span></li>
+    childrenHtml: `<ul class="article-card-appearances-list">
+<li class="article-card-appearance-line"><span class="article-card-line-main">${renderMainLink(interview)} <span class="article-card-duration">${escapeHtml(interview.date)}</span> ${renderLanguageFlag(interview.language)} <span class="article-card-duration">${escapeHtml(interview.type)}</span></span><span class="article-card-line-links">${renderLinks(interview.links)}</span></li>
 </ul>
 ${interview.note ? `<p>${escapeHtml(interview.note)}</p>` : ""}`,
   });
@@ -59,7 +59,7 @@ function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewA
 }
 
 function renderCrossLinks(links: CrossLink[]): string {
-  return links.map((link) => `<a class="talk-resource-button talk-card-code talk-cross-link-button" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => `<a class="article-card-resource-button article-card-code article-card-cross-link-button" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function renderMainLink(interview: InterviewAppearance): string {
@@ -68,7 +68,7 @@ function renderMainLink(interview: InterviewAppearance): string {
 }
 
 function renderLinks(links: InterviewLink[]): string {
-  return links.map((link) => `<a class="talk-resource-button${link.label.includes("Video") ? " talk-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => `<a class="article-card-resource-button${link.label.includes("Video") ? " article-card-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
 }
 
 function renderLanguageFlag(language: string | undefined): string {

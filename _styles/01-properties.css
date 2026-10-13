@@ -53,7 +53,7 @@
     /* Decorative colors */
     --color-banner-shadow: rgba(0, 0, 0, 0.08);
     --color-banner-text-muted: rgba(255, 255, 255, 0.92);
-    --gradient-talk-banner: linear-gradient(135deg, #314a8b 0%, #7b3f98 42%, #e36f4a 100%);
+    --gradient-article-card-banner: linear-gradient(135deg, #314a8b 0%, #7b3f98 42%, #e36f4a 100%);
     --gradient-collection-banner-primary: linear-gradient(135deg, #314a8b 0%, #7b3f98 54%, #e36f4a 100%);
     --gradient-collection-banner-secondary: linear-gradient(135deg, #245f73 0%, #4183c4 50%, #80a85a 100%);
     --gradient-collection-banner-tertiary: linear-gradient(135deg, #5b3f7f 0%, #b34b72 52%, #e38a4a 100%);
@@ -149,10 +149,10 @@
     --font-size-play: 1.8rem;
     --font-size-display-min: 2.5rem;
     --font-size-display-max: 4.5rem;
-    --font-size-talk-title-min: 1.2rem;
-    --font-size-talk-title-max: 2rem;
+    --font-size-article-card-title-min: 1.2rem;
+    --font-size-article-card-title-max: 2rem;
     --fluid-display-rate: 7vw;
-    --fluid-talk-title-rate: 2.4vw;
+    --fluid-article-card-title-rate: 2.4vw;
 
     --line-height-context-menu: 0.8rem;
     --line-height-tight: 1;
