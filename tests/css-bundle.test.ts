@@ -95,13 +95,12 @@ test("reusable block CSS includes phase 2 block selectors", async () => {
     "_ui/blocks/CollectionBanners/CollectionBanners.css",
     "_ui/blocks/CollectionStats/CollectionStats.css",
     "_ui/blocks/ContentMeta/ContentMeta.css",
-    "_ui/blocks/ContextMenu/ContextMenu.css",
     "_ui/blocks/FeedList/FeedList.css",
     "_ui/blocks/NavItem/NavItem.css",
     "_ui/blocks/UpcomingCollection/UpcomingCollection.css",
   ]);
 
-  for (const selector of [".article-card", ".collection-banner", ".collection-stat", ".content-meta-tag", ".context-menu", ".feed-title", ".nav-item-link", ".upcoming-collection"] as const) {
+  for (const selector of [".article-card", ".collection-banner", ".collection-stat", ".content-meta-tag", ".feed-title", ".nav-item-link", ".upcoming-collection"] as const) {
     assert.ok(bundle.includes(`${selector} {`), `missing ${selector} selector`);
   }
 });

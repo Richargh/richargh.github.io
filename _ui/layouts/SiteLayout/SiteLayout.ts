@@ -1,4 +1,3 @@
-import { renderContextMenu } from "../../blocks/ContextMenu/ContextMenu.ts";
 import { renderFooter } from "../../blocks/Footer/Footer.ts";
 import type { AppCounters } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderHeader } from "../../blocks/Header/Header.ts";
@@ -11,7 +10,6 @@ export interface LayoutOptions {
   description?: string;
   type?: "website" | "article";
   showBackToHome?: boolean;
-  showContextMenu?: boolean;
   appCounters?: AppCounters;
   content: string;
 }
@@ -50,7 +48,6 @@ export function renderLayout(options: LayoutOptions): string {
         <div class="box">
             ${renderHeader({ showBackToHome: options.showBackToHome, appCounters: options.appCounters })}
             ${options.content}
-            ${renderContextMenu({ enabled: options.showContextMenu ?? options.urlPath === "/" })}
             ${renderFooter()}
         </div>
         <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">

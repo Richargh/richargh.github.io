@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { renderPostMeta } from "../_ui/blocks/ContentMeta/ContentMeta.ts";
-import { renderContextMenu } from "../_ui/blocks/ContextMenu/ContextMenu.ts";
 import { renderFeedList } from "../_ui/blocks/FeedList/FeedList.ts";
 import { renderFooter } from "../_ui/blocks/Footer/Footer.ts";
 import { renderHeader } from "../_ui/blocks/Header/Header.ts";
@@ -32,8 +31,6 @@ test("Header block renders navigation, counters, and optional back link", () => 
 
 test("simple blocks render their expected root markup", () => {
   assert.match(renderFooter(), /id="copyright"/);
-  assert.match(renderContextMenu({ enabled: true }), /class="context-menu"/);
-  assert.equal(renderContextMenu({ enabled: false }), "");
   assert.match(renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: "<svg></svg>", labelClassName: "blog-p", counter: 5 }), /class="blog nav-item"/);
 });
 
@@ -62,7 +59,7 @@ test("ArticleCard block renders banner, actions, and children", () => {
 });
 
 test("SiteLayout renders the site shell", () => {
-  const options = { title: "Page <Title>", urlPath: "/posts/page/", content: "<main><h1>Body</h1></main>", showContextMenu: false };
+  const options = { title: "Page <Title>", urlPath: "/posts/page/", content: "<main><h1>Body</h1></main>" };
   const html = renderSiteLayout(options);
 
   assert.match(html, /<div class="container">/);
