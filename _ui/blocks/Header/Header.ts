@@ -15,7 +15,7 @@ export function renderHeader({ showBackToHome = false, appCounters }: { showBack
                 <p class="title-sans">${escapeHtml(site.name)}</p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">${escapeHtml(site.userDescription)}</p>
+                <p class="title-sans">${escapeHtml(site.tagLine)}</p>
             </div>
         </div>
     </div>

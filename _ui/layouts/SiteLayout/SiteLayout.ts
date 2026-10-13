@@ -18,7 +18,7 @@ export interface LayoutOptions {
 
 export function renderLayout(options: LayoutOptions): string {
   const pageTitle = options.title ?? site.title;
-  const description = options.description ?? site.userDescription;
+  const description = options.description ?? site.tagLine;
   const canonical = absoluteUrl(options.urlPath);
 
   return `<!DOCTYPE html>
