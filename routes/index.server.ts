@@ -7,7 +7,7 @@ import { loadTalks } from "../lib/talks.ts";
 export const title = "About";
 
 export async function render(): Promise<string> {
-  const [page, talks, articles, interviews] = await Promise.all([loadPage("_pages/home.adoc"), loadTalks(), loadArticles(), loadInterviews()]);
+  const [page, talks, articles, interviews] = await Promise.all([loadPage("_pages/about.adoc"), loadTalks(), loadArticles(), loadInterviews()]);
 
   return renderHomePageDocument({ page, talks, articles, interviews });
 }

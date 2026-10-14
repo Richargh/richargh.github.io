@@ -5,10 +5,11 @@ import { loadModernWebFeatures, type ModernWebFeature, type ModernWebFeatureExam
 
 export const modernWebFeaturesTitle = "Made with modern web features";
 export const modernWebFeaturesUrlPath = "/modern-web-features/";
-export const modernWebFeaturesDescription = "This site intentionally uses a few modern web platform features instead of framework-specific replacements.";
+export const modernWebFeaturesDescription = "This site intentionally uses modern web platform features to showcase them, and because I trust my audience to use auto-updating browsers.";
 
 export function renderModernWebFeaturesPageDocument(): string {
   const features = loadModernWebFeatures();
+  const newestBaselineSince = newestBaselineDate(features);
 
   return renderLayout({
     title: modernWebFeaturesTitle,
@@ -21,12 +22,16 @@ export function renderModernWebFeaturesPageDocument(): string {
                   <h1>${escapeHtml(modernWebFeaturesTitle)}</h1>
                   <div class="content">
                     <p>${escapeHtml(modernWebFeaturesDescription)}</p>
-                    <p>Baseline dates summarize when the feature became available across the major browser engines according to the <a href="https://web-platform-dx.github.io/web-features/">Web Platform DX Web Features</a> data and MDN Baseline summaries.</p>
+                    <p><a href="https://web-platform-dx.github.io/baseline/">Baseline</a> describes web platform features that work across the core browser set. For this page, any Baseline browser released after <time datetime="${escapeHtml(newestBaselineSince)}">${escapeHtml(newestBaselineSince)}</time> should support every feature listed here.</p>
                     ${renderFeatureList(features)}
                   </div>
                 </article>
             </main>`,
   });
+}
+
+function newestBaselineDate(features: ModernWebFeature[]): string {
+  return features.reduce((newest, feature) => feature.baselineSince > newest ? feature.baselineSince : newest, "");
 }
 
 function renderFeatureList(features: ModernWebFeature[]): string {

@@ -23,6 +23,7 @@ export interface Page {
   slug: string;
   urlPath: string;
   comments: boolean;
+  body?: string;
   html: string;
   excerpt: string;
 }
@@ -100,6 +101,7 @@ export async function loadPage(sourcePath: string): Promise<Page> {
     slug,
     urlPath: permalink ?? `/${slug}/`,
     comments: booleanAttribute(attributes.comments) ?? false,
+    body,
     html,
     excerpt: excerptFromHtml(html),
   };

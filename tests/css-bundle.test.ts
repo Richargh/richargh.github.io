@@ -115,7 +115,7 @@ test("page CSS is bundled after block CSS", async () => {
   ]);
 
   for (const selector of [
-    'article[data-source="_pages/home.adoc"] .content',
+    'article[data-source="_pages/about.adoc"] .content',
     'article[data-source="_pages/published.adoc"] table',
     'article[data-source="_pages/built.adoc"] .content',
     'article[data-source="_pages/credentials.adoc"] table',

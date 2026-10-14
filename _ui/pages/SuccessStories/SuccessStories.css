@@ -1,0 +1,12 @@
+@layer argh.pages {
+    .success-stories-list {
+        display: grid;
+        gap: var(--space-2xl);
+        margin-top: var(--space-3xl);
+    }
+
+    .success-stories-list .example-card p {
+        max-width: 72ch;
+        text-wrap: pretty;
+    }
+}

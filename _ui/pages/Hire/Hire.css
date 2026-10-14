@@ -1,0 +1,23 @@
+@layer argh.pages {
+    .hire-page .content h2 {
+        margin-top: var(--space-5xl);
+        padding-top: var(--space-2xl);
+        border-top: var(--border-width) solid var(--color-border);
+    }
+
+    .hire-page .content > .paragraph:first-child p {
+        max-width: 62rem;
+        font-size: var(--font-size-base);
+    }
+
+    .hire-page .content p {
+        max-width: 68ch;
+        text-wrap: pretty;
+    }
+
+    .hire-track-record-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-s);
+    }
+}

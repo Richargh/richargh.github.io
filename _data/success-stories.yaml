@@ -1,0 +1,431 @@
+-   id: nnpwr
+    title: "Rewriting a Utility’s Network-Usage and Billing Backend"
+    assignmentKind: modernisation
+    published: true
+    dateFrom: 2026-01-01
+    dateTo: 2026-10-30
+    industry: "Energy"
+    role: "Platform Engineer, Modernisation Coach"
+    codebaseSize: 1M Lines
+    teamSize: 2 teams / 25 people
+    keyMethods:
+        - Agentic Coding
+        - Domain-Driven Design
+        - Domain Storytelling
+        - EventStorming
+        - Trunk-based Development
+    keyArchitecture:
+        - Self-contained Systems
+        - Hexagonal Architecture
+        - Event-Driven Architecture
+    keyTechnologies:
+        - Java
+        - Kotlin
+        - Spring Boot
+        - AWS
+        - Kafka
+    accomplished: >-
+        We modernised a utility’s network-usage and billing processes by rewriting a backend 
+        that consolidates energy-market data, standardises settlement calculations for all market participants, 
+        and supports accurate, on-time charges in line with regulatory requirements.
+
+-   id: oli-sdd
+    title: "Software Due Diligence of Pharmaceutical MES"
+    assignmentKind: sw-due-diligence
+    published: false
+    dateFrom: 2025-10-01
+    dateTo: 2025-11-21
+    industry: "Pharmaceuticals"
+    role: "Lead Auditor"
+    codebaseSize: 500k Lines
+    teamSize: 2 people
+    keyMethods:
+        - Agentic Analysis
+        - Software Due Diligence Check
+    keyTechnologies:
+        - .NET
+        - C#
+
+-   id: norsud-shc
+    title: "Software Health Check of Insurance System"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2025-08-01
+    dateTo: 2025-09-21
+    industry: "Finance & Insurance"
+    role: "Lead Auditor"
+    codebaseSize: 1M Lines
+    teamSize: 3 people
+    keyMethods:
+        - Software Health Check
+    keyTechnologies:
+        - .NET
+        - C#
+        - C++
+
+-   id: stutter-shc
+    title: "Software Health Check of BMS"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2025-05-01
+    dateTo: 2025-06-20
+    industry: "Energy"
+    role: "Lead Auditor"
+    codebaseSize: 500k Lines
+    teamSize: 3 people
+    keyMethods:
+        - Software Health Check
+    keyTechnologies:
+        - Java
+        - Ruby
+        - Python
+
+-   id: basket-shc
+    title: "Software Health Check of Pharmaceutical MES"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2025-01-01
+    dateTo: 2025-04-01
+    industry: "Pharmaceuticals"
+    role: "Lead Auditor"
+    codebaseSize: 1M Lines
+    teamSize: 3 people
+    keyMethods:
+        - Software Health Check
+    keyTechnologies:
+        - Java
+        - Spring Boot
+        - TypeScript
+        - Vue
+
+-   id: fla-sdd
+    title: "Software Due Diligence of BMS"
+    assignmentKind: sw-due-diligence
+    published: false
+    dateFrom: 2024-12-01
+    dateTo: 2025-01-01
+    industry: "Energy"
+    role: "Auditor"
+    codebaseSize: 500k Lines
+    teamSize: 2 people
+    keyMethods:
+        - Software Due Diligence Check
+    keyTechnologies:
+        - Java
+
+-   id: wmb-revs
+    title: "Architecture Reviews"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2024-10-01
+    dateTo: 2024-11-01
+    industry: "Automotive"
+    role: "Auditor"
+    codebaseSize: 2M Lines
+    teamSize: 6 people
+    keyMethods:
+        - Software Health Check
+    keyTechnologies:
+        - Java
+
+-   id: snar-sdd
+    title: "Software Due Diligence of Ai Companies"
+    assignmentKind: sw-due-diligence
+    published: false
+    dateFrom: 2024-07-01
+    dateTo: 2024-09-01
+    industry: "Other"
+    role: "Lead Auditor"
+    codebaseSize: 2M Lines
+    teamSize: 3 people
+    keyMethods:
+        - Software Due Diligence Check
+    keyTechnologies:
+        - TypeScript
+        - Angular
+        - React
+        - Python
+
+-   id: idok
+    title: "Modernising a Billing Portal"
+    assignmentKind: modernisation
+    published: true
+    dateFrom: 2023-10-01
+    dateTo: 2024-07-01
+    industry: "Energy"
+    role: "Tech Lead, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    codebaseSize: 500k Lines
+    teamSize: 1 team / 12 people
+    keyMethods:
+        - Domain-Driven Design
+        - Domain Storytelling
+        - EventStorming
+        - Trunk-based Development
+        - Test-Driven Development
+    keyArchitecture:
+        - Self-contained Systems
+        - Hexagonal Architecture
+        - Event-Driven Architecture
+        - Event Sourcing
+        - Server-Side Rendering
+    keyTechnologies:
+        - Kotlin
+        - Spring Boot
+        - AWS
+        - Htmx
+        - Web Components
+    accomplished: >-
+        We modernised an energy provider’s IT landscape by developing a cloud-based portal that streamlines the 
+        exchange of network usage and billing information with internal and external operators. 
+
+-   id: plite
+    title: "From a troubled system into a flagship project"
+    assignmentKind: modernisation
+    published: true
+    dateFrom: 2021-08-01
+    dateTo: 2023-09-01
+    industry: "Transportation & Logistics"
+    role: "Tech Lead, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    codebaseSize: 300k Lines
+    teamSize: 1 team / 12 people
+    keyMethods:
+        - Domain-Driven Design
+        - Domain Storytelling
+        - Trunk-based Development
+        - Test-Driven Development
+    keyArchitecture:
+        - Hexagonal Architecture
+    keyTechnologies:
+        - TypeScript
+        - Fastify
+        - Angular
+        - AWS
+        - MongoDb
+        - Redis
+    accomplished: >-
+        We transformed a central disruption-management platform from a troubled system into a flagship 
+        project. We addressed key quality, stability, and performance issues, verified fast response times, 
+        and strengthened service-level compliance across critical and less critical functions, 
+        laying the groundwork for international rollout.
+
+-   id: ll
+    title: "Developing an Automated Self-Service Equipment Rental Platform"
+    assignmentKind: green-field
+    published: true
+    dateFrom: 2021-03-01
+    dateTo: 2021-08-01
+    industry: "Industrial Technology"
+    role: "Tech Lead, Software Architect, Software Engineer (Backend)"
+    codebaseSize: 100k Lines
+    teamSize: 6 people
+    keyMethods:
+        - Domain-Driven Design
+        - Domain Storytelling
+        - Trunk-based Development
+        - Test-Driven Development
+        - RiskStorming
+    keyArchitecture:
+        - Hexagonal Architecture
+    keyTechnologies:
+        - .NET
+        - C#
+        - Azure
+        - Azure IoT Hub
+        - Azure Functions
+        - CosmosDb
+        - React
+    accomplished: >-
+        We developed and launched an international platform for an automated equipment rental system, 
+        enabling registered users to access equipment and consumables near their worksite around the clock. 
+
+-   id: abag
+    title: "Modernising Transportation Capacity and Routing System"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2018-08-01
+    dateTo: 2021-02-01
+    industry: "Transportation & Logistics"
+    role: "Tech Lead, Software Architect, Software Engineer (Backend), Modernisation Coach"
+    codebaseSize: todo
+    teamSize: todo
+    keyTechnologies:
+        - todo key tech
+    accomplished: >-
+        We developed a microservices-based replacement for a decades-old transportation capacity 
+        and routing management system. To validate sub-500-millisecond response times across the network, 
+        we ran automated performance tests daily, deploying all microservices on demand and using full-day 
+        production workloads and synthetic requests to identify performance risks before they could affect production.
+
+-   id: salo
+    title: "Modernising Transportation Sales Platform"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2017-05-01
+    dateTo: 2018-04-01
+    industry: "Transportation & Logistics"
+    role: "Scrum Master, Software Architect, Modernisation Coach"
+    codebaseSize: todo
+    teamSize: todo
+    keyTechnologies:
+        - todo key tech
+    accomplished: >-
+        A transportation provider's legacy sales platform had become difficult to evolve. 
+        As part of a large multi-team modernisation program, we contributed two teams that built microservices 
+        for managing the sales catalog and pricing, helping create a more adaptable, 
+        highly available platform and a consistent customer experience across multiple sales channels.
+
+-   id: rund
+    title: "Legacy Modernisation and Azure Migration for a Travel Company"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2016-06-01
+    dateTo: 2017-04-01
+    industry: "Travel & Tourism"
+    role: "Product Owner, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    codebaseSize: 200k Lines
+    teamSize: 2 teams / 16 people
+    keyTechnologies:
+        - todo key tech
+    accomplished: >-
+        We modernised a legacy contract management system for a travel company, 
+        refactoring it into a modular application and migrating it from on-premises hosting to Azure. 
+        We significantly improved performance and security, 
+        strengthened development processes to enable continuous deployment, and streamlined integration with external
+        systems.
+
+-   id: zealand-shc
+    title: "Software Health Check of Smart Home Platform"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2016-02-01
+    dateTo: 2016-04-01
+    industry: "Consumer Electronics"
+    role: "Auditor"
+    codebaseSize: 200k Lines
+    teamSize: 3 people
+    keyMethods:
+        - Software Health Check
+    keyTechnologies:
+        - Java
+
+-   id: gshc-mod
+    title: "Modernisation of Healthcare Operations"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2015-12-01
+    dateTo: 2016-02-01
+    industry: "Healthcare"
+    role: "Platform Engineer"
+    codebaseSize: 200k Lines
+    teamSize: 1 person
+    keyTechnologies:
+        - .NET
+        - C#
+        - Oracle SQL
+        - Atlassian Bamboo
+
+-   id: diamondb
+    title: "Modernising Press Shop Production Planning"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2015-03-01
+    dateTo: 2015-11-01
+    industry: "Automotive"
+    role: "Software Developer"
+    codebaseSize: 500k Lines
+    teamSize: 8 people
+    keyTechnologies:
+        - .NET
+        - C#
+        - WinForms
+        - Windows Presentation Foundation
+        - Db2
+    accomplished: >-
+        We modernised an automotive manufacturer’s press shop planning application by refactoring its existing codebase 
+        and extending its core functionality with essential features. 
+        The application schedules body-panel production across multiple plants, 
+        supporting tooling availability and logistics coordination.
+
+-   id: ljus-shc
+    title: "Software Health Check of Energy Trading System Landscape"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2014-11-01
+    dateTo: 2015-02-01
+    industry: "Energy"
+    role: "Auditor"
+    codebaseSize: 500k Lines
+    teamSize: 3 people
+    keyTechnologies:
+        - .NET
+        - C#
+
+-   id: veo-factory-audit
+    title: "Software Health Check of Factory Planning Platform"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2014-10-01
+    dateTo: 2014-11-01
+    industry: "Automotive"
+    role: "Auditor"
+    codebaseSize: 200k Lines
+    teamSize: 3 people
+    keyTechnologies:
+        - C++
+
+-   id: mdvt
+    title: "Extending a Model-Driven Vehicle Software Toolchain"
+    assignmentKind: development
+    published: false
+    dateFrom: 2014-06-01
+    dateTo: 2014-10-01
+    industry: "Automotive"
+    role: "Software Developer"
+    codebaseSize: 100k Lines
+    teamSize: 4 people
+    keyTechnologies:
+        - Java
+        - Eclipse Equinox
+
+-   id: amfm
+    title: "Modernising Network Fault Monitoring"
+    assignmentKind: modernisation
+    published: false
+    dateFrom: 2014-03-01
+    dateTo: 2014-04-01
+    industry: "Telecommunications"
+    role: "Software Developer"
+    codebaseSize: 200k Lines
+    teamSize: 2 people
+    keyTechnologies:
+        - Java
+        - Java Jakarta EE
+        - IBM WebSphere
+
+-   id: mirage-int
+    title: "Assessing Integration Options for Travel Procurement and Product Management"
+    assignmentKind: sw-health-check
+    published: false
+    dateFrom: 2014-02-01
+    dateTo: 2014-03-01
+    industry: "Travel & Tourism"
+    role: "Software Analyst"
+    codebaseSize: 200k Lines
+    teamSize: 3 people
+    keyTechnologies:
+        - Java
+
+-   id: her-kules
+    title: "Developing Hotel Contract and Reservation Management"
+    assignmentKind: green-field
+    published: false
+    dateFrom: 2013-06-01
+    dateTo: 2014-01-01
+    industry: "Travel & Tourism"
+    role: "Software Developer"
+    codebaseSize: 50k Lines
+    teamSize: 5 people
+    keyTechnologies:
+        - Java
+        - Smart GWT
+        - SQL Server

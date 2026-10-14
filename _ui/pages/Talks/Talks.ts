@@ -1,4 +1,6 @@
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
+import type { ButtonUtility } from "../../blocks/Button/Button.ts";
+import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderTalkStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingTalks } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
@@ -82,7 +84,7 @@ function renderTalkActions(talk: Talk, relatedGroups: RelatedGroup[]): string {
   if (talk.codeUrl) links.push({ label: "Code", url: talk.codeUrl });
   links.push(...talk.links);
   links.push(...relatedContentLinks({ id: talk.id, kind: "talk" }, relatedGroups));
-  return links.map((link) => `<a class="article-card-resource-button article-card-code${link.url.startsWith("/") ? " article-card-cross-link-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => renderArticleCardLink(link, link.url.startsWith("/") ? ["button-compact", "button-cross-link"] : ["button-compact", "button-muted"], `article-card-code${link.url.startsWith("/") ? " article-card-cross-link-button" : ""}`)).join(" ");
 }
 
 function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | undefined {
@@ -119,7 +121,16 @@ function renderResourceLinks(appearance: TalkAppearance): string {
   const links: TalkLink[] = [...appearance.links];
   if (appearance.videoUrl) links.push({ label: "Video", url: appearance.videoUrl });
   if (appearance.slideUrl) links.push({ label: "Slides", url: appearance.slideUrl });
-  return links.map((link) => `<a class="article-card-resource-button${link.label.includes("Video") ? " article-card-video-button" : ""}" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => renderArticleCardLink(link, link.label.includes("Video") ? ["button-compact", "button-video"] : ["button-compact", "button-muted"], link.label.includes("Video") ? "article-card-video-button" : "")).join(" ");
+}
+
+function renderArticleCardLink(link: TalkLink, utilities: ButtonUtility[], className = ""): string {
+  return renderCalloutLink({
+    href: link.url,
+    label: link.label,
+    utilities,
+    className: ["article-card-resource-button", className].filter(Boolean).join(" "),
+  });
 }
 
 function renderVersion(appearance: TalkAppearance): string {

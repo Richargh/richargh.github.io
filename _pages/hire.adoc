@@ -1,0 +1,44 @@
+---
+layout: post
+title: Hire Richard Gross
+permalink: /hire/
+content-type: eg
+---
+
+As Head of Software Archaeology with more than a decade of experience, I help teams understand, modernise and communicate software systems. These are the areas where I can help.
+
+Simply book a slot for a virtual coffee. In a Teams call, we can discuss first ideas together.
+
+Of course, you are also very welcome to send me an email.
+
+[[software-health-check]]
+== Software Health Check
+
+I help teams and organisations understand complex software landscapes, uncover risks, align stakeholders and decide on the next safe step.
+
+Typical work includes software archeology, architecture reviews, socio-technical discovery, code quality assessments and strategy workshops.
+
+link:https://www.maibornwolff.de/en/software-health-check/[Find out more on our corporate page].
+
+[[modernisation]]
+== Modernisation
+
+I link:/success-stories/[help slice modernisation work] into options that can pay back early and continuously instead of turning into one large rewrite bet.
+
+Typical work includes legacy code discovery, modularisation strategy, test automation, architecture refactoring and delivery flow improvements.
+
+link:https://www.maibornwolff.de/en/software-modernization/[Find out more on our corporate page].
+
+[[ai-safety]]
+== AI safety
+
+I link:/talks#agentsec[help teams use coding agents] with realistic expectations and safer guardrails.
+
+Typical work includes prompt-injection risk, agent permissions, network safety, establishing sandboxes, and practical operating rules for AI-assisted delivery.
+
+[[speaking]]
+== Speaking
+
+I speak and run workshops about software archeology, modernisation, architecture, agentic security and continuous delivery.
+
+You can find examples on the link:/talks/[talks page], including conference talks in German and English.

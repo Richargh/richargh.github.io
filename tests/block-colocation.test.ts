@@ -7,12 +7,15 @@ import { renderHeader } from "../_ui/blocks/Header/Header.ts";
 import { renderArticleCard } from "../_ui/blocks/ArticleCard/ArticleCard.ts";
 import { renderCollectionBanners } from "../_ui/blocks/CollectionBanners/CollectionBanners.ts";
 import { appCounters, renderArticleStats, renderSummaryStats } from "../_ui/blocks/CollectionStats/CollectionStats.ts";
+import { renderButton } from "../_ui/blocks/Button/Button.ts";
+import { renderCalloutLink } from "../_ui/blocks/CalloutLink/CalloutLink.ts";
 import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderScrollToTop } from "../_ui/blocks/ScrollToTop/ScrollToTop.ts";
 import { renderLayout as renderSiteLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 import { renderBuiltPageDocument } from "../_ui/pages/Built/Built.ts";
 import { renderCredentialsPageDocument } from "../_ui/pages/Credentials/Credentials.ts";
+import { renderHirePageDocument } from "../_ui/pages/Hire/Hire.ts";
 import { renderHomePageDocument } from "../_ui/pages/Home/Home.ts";
 import { renderPublishedPageDocument } from "../_ui/pages/Published/Published.ts";
 import type { Page } from "../lib/content.ts";
@@ -34,6 +37,8 @@ test("simple blocks render their expected root markup", () => {
   assert.match(renderFooter(), /id="copyright"/);
   assert.equal(renderScrollToTop(), "<scroll-to-top></scroll-to-top>");
   assert.match(renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: "<svg></svg>", labelClassName: "blog-p", counter: 5 }), /class="blog nav-item"/);
+  assert.match(renderButton({ label: "Email" }), /<button class="button button-compact button-muted" type="button">Email<\/button>/);
+  assert.match(renderCalloutLink({ href: "/hire/", label: "Hire", utilities: ["button-compact", "button-primary"] }), /class="callout-link button-compact button-primary"/);
 });
 
 test("content blocks render feed entries and metadata tags", () => {
@@ -70,7 +75,9 @@ test("SiteLayout renders the site shell", () => {
   assert.match(html, /<div class="container">/);
   assert.match(html, /<main><h1>Body<\/h1><\/main>/);
   assert.match(html, /<scroll-to-top><\/scroll-to-top>/);
-  assert.match(html, /src="\/assets\/elements\/ScrollToTopElement\.mjs"/);
+  assert.match(html, /type="importmap"/);
+  assert.match(html, /"scroll-to-top-element": "\/assets\/elements\/ScrollToTopElement\.mjs"/);
+  assert.match(html, /"#secret-email-cipher": "\/assets\/js\/SecretEmailCipher\.mjs"/);
 });
 
 test("page renderers own page presentation markup", () => {
@@ -81,13 +88,15 @@ test("page renderers own page presentation markup", () => {
     urlPath: slug === "home" ? "/" : `/${slug}/`,
     comments: false,
     html: "<p>Body</p>",
+    body: "// tag::blurb[]\nBody\n// end::blurb[]",
     excerpt: "Body",
   });
 
-  const homeHtml = renderHomePageDocument({ page: page("home", "About"), talks: [], articles: [], interviews: [] });
-  assert.match(homeHtml, /data-source="_pages\/home.adoc"/);
+  const homeHtml = renderHomePageDocument({ page: page("about", "About"), talks: [], articles: [], interviews: [] });
+  assert.match(homeHtml, /data-source="_pages\/about.adoc"/);
   assert.match(homeHtml, /aria-label="Content collections"/);
   assert.match(renderPublishedPageDocument(page("published", "Published")), /data-source="_pages\/published.adoc"/);
   assert.match(renderBuiltPageDocument(page("built", "Built")), /data-source="_pages\/built.adoc"/);
   assert.match(renderCredentialsPageDocument(page("credentials", "Credentials")), /data-source="_pages\/credentials.adoc"/);
+  assert.match(renderHirePageDocument(page("hire", "Hire")), /data-source="_pages\/hire.adoc"/);
 });

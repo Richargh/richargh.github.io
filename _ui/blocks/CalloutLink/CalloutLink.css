@@ -1,0 +1,31 @@
+@layer argh.blocks {
+    .callout-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-block-size: var(--button-min-block-size, auto);
+        padding: var(--button-padding, var(--space-2xs) var(--space-content-narrow));
+        background: var(--button-background, var(--color-background-muted));
+        color: var(--button-color, var(--color-text)) !important;
+        border: var(--button-border, 0);
+        border-radius: var(--button-border-radius, 0);
+        box-shadow: var(--button-shadow, var(--shadow-inset-border));
+        cursor: pointer;
+        font-family: var(--font-heading);
+        font-size: var(--button-font-size, var(--font-size-3xl));
+        font-weight: var(--button-font-weight, 600);
+        line-height: var(--button-line-height, var(--line-height-m));
+        text-decoration: underline;
+    }
+
+    .callout-link:hover,
+    .callout-link:focus {
+        background: var(--button-background-hover, var(--color-background-hover));
+        text-decoration: underline;
+    }
+
+    .callout-link:focus-visible {
+        outline: var(--border-width-strong) solid var(--color-focus-ring);
+        outline-offset: var(--space-2xs);
+    }
+}

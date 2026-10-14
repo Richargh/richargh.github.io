@@ -6,6 +6,7 @@ test("asset route exposes static asset paths and media types", async () => {
   const paths = await getStaticPaths();
   assert.ok(paths.some((path) => path.params.slug === "css/style.css"));
   assert.ok(paths.some((path) => path.params.slug === "elements/ScrollToTopElement.mjs"));
+  assert.ok(paths.some((path) => path.params.slug === "js/SecretEmailCipher.mjs"));
   assert.equal(mediaType("assets/css/style.css"), "text/css; charset=utf-8");
   assert.equal(mediaType("assets/elements/ScrollToTopElement.mjs"), "text/javascript; charset=utf-8");
   assert.equal(mediaType("assets/img/favicon.ico"), "image/x-icon");
@@ -26,4 +27,10 @@ test("asset route serves colocated element modules", async () => {
   const response = await assetResponse("elements/ScrollToTopElement.mjs");
   assert.equal(response.status, 200);
   assert.match(await response.text(), /customElements\.define\("scroll-to-top"/);
+});
+
+test("asset route serves the SecretEmailCipher from assets js", async () => {
+  const response = await assetResponse("js/SecretEmailCipher.mjs");
+  assert.equal(response.status, 200);
+  assert.match(await response.text(), /export function decryptEmail/);
 });

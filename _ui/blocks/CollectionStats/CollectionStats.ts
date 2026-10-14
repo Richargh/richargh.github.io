@@ -1,5 +1,6 @@
 import { flattenArticlePublications, type Article, type ArticlePublication } from "../../../lib/articles.ts";
 import { escapeHtml } from "../../../lib/html.ts";
+import { renderCalloutLink } from "../CalloutLink/CalloutLink.ts";
 import { type InterviewAppearance } from "../../../lib/interviews.ts";
 import { flattenTalkAppearances, type Talk, type TalkAppearance } from "../../../lib/talks.ts";
 
@@ -92,7 +93,7 @@ ${items.map(renderLinkedMetric).join("\n")}
 }
 
 function renderLinkedMetric(item: LinkedStatItem): string {
-  return `<span class="collection-stats-item"><a class="collection-stat" href="${escapeHtml(item.href)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</a></span>`;
+  return `<span class="collection-stats-item">${renderCalloutLink({ href: item.href, label: `${item.value.toLocaleString("en")} ${item.label}`, utilities: ["button-compact", "button-muted"] })}</span>`;
 }
 
 function renderStatsSummary(scope: string, items: StatItem[]): string {

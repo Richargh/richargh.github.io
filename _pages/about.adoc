@@ -1,0 +1,39 @@
+---
+layout: post
+title: Software Archeologist & Coding Architect in Frankfurt 🇩🇪🇬🇧
+permalink: /
+content-type: eg
+---
+
+== Blurb
+// tag::blurb[]
+As Head of Software Archeology at link:https://www.maibornwolff.de/en/[MaibornWolff], I help organisations understand, mend, and evolve software systems so they regain options and realise early and continuous returns on investment.
+
+Over the past decade I have consulted on or led multiple such link:/success-stories/[modernisation projects], and share practical lessons from this work through link:/articles/[articles], link:/interviews/[interviews] and link:/talks/[international conference talks].
+
+To do so, I ride the architect elevator: connecting users, development engine, operations outlook and executive penthouse through systems thinking, user-centered design and many, many forms of problem mapping.
+Down in the engine room, that means hexagonal architectures, TestDSLs, hypermedia APIs as well as expressive and unambiguous modelling of the domain as code.
+// end::blurb[]
+
+== Languages
+// tag::languages[]
+Fluent in German and English.
+
+Also in: Java, Kotlin, C#, TypeScript and JavaScript.
+
+As well as: AWS and Azure.
+// end::languages[]
+
+== Full Bio
+// tag::bio[]
+Richard Gross is the Head of Software Archeology at link:https://www.maibornwolff.de/en/[MaibornWolff], where he helps organisations understand, mend and evolve software systems.
+He has been building software since his first app in 2009 and brings almost 20 years of developer experience to modernisation and continuous delivery work.
+
+His focus is IT archaeology: making systems understandable enough to mend safely, creating options where teams felt boxed in, and turning modernisation into slices that can pay back early instead of becoming one large rewrite bet.
+
+He rides the architect elevator and connects users, development engine, operations outlook and executive penthouse through systems thinking, user-centered design and many forms of problem mapping.
+
+Down in the engine room he coaches teams in code quality, test automation and collective ownership. His technical focus is on hexagonal architectures, TestDSLs, hypermedia APIs and expressive, unambiguous domain models as code.
+
+Software is created by people for people. Richard helps teams communicate better: with shared maps, precise language and fast feedback loops that make the next safe step visible.
+// end::bio[]

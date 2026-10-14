@@ -1,4 +1,5 @@
 import { renderArticleCard as renderSharedArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
+import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderArticleStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingArticles } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
@@ -52,7 +53,7 @@ function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewA
 }
 
 function renderCrossLinks(links: CrossLink[]): string {
-  return links.map((link) => `<a class="article-card-resource-button article-card-code article-card-cross-link-button" href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join(" ");
+  return links.map((link) => renderCalloutLink({ href: link.url, label: link.label, utilities: ["button-compact", "button-cross-link"], className: "article-card-resource-button article-card-code article-card-cross-link-button" })).join(" ");
 }
 
 function renderArticlePart(part: ArticlePart): string {

@@ -82,6 +82,12 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             title: "Made with modern web features"
         },
         {
+            urlPath: "/success-stories/",
+            outputKey: outputKeyForUrlPath("/success-stories/"),
+            kind: "page" as const,
+            title: "Success stories"
+        },
+        {
             urlPath: "/feed.xml",
             outputKey: outputKeyForUrlPath("/feed.xml"),
             kind: "resource" as const,

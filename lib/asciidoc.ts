@@ -21,6 +21,15 @@ export const defaultAsciiDocOptions: AsciiDocOptions = {
   attributes: { icons: true, sectlinks: true, sectanchors: true },
 };
 
+export function convertTaggedAsciiDocFragment(sourcePath: string, tag: string, options: AsciiDocOptions = defaultAsciiDocOptions): string {
+  const html = convertAsciiDocFragment(`include::${sourcePath}[tag=${tag}]`, {
+    ...options,
+    allowIncludesFrom: [...options.allowIncludesFrom, sourcePath],
+  });
+  if (html.trim() === "") throw new Error(`${sourcePath} is missing required AsciiDoc tag: // tag::${tag}[]`);
+  return html;
+}
+
 export function convertAsciiDocFragment(source: string, options: AsciiDocOptions = defaultAsciiDocOptions): string {
   if (options.safeMode !== "safe" && options.safeMode !== "secure") {
     throw new Error("AsciiDoc conversion must run in a constrained safe mode");

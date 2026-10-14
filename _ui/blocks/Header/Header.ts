@@ -1,12 +1,13 @@
 import { site } from "../../../lib/config.ts";
 import { escapeHtml } from "../../../lib/html.ts";
+import { renderCalloutLink } from "../CalloutLink/CalloutLink.ts";
 import { renderNavItem } from "../NavItem/NavItem.ts";
 
 export function renderHeader({ showBackToHome = false }: { showBackToHome?: boolean } = {}): string {
   return `<header>
     <div class="dashboard">
         <div class="site-heading profile-board-col">
-           <h4 class="medium"><a href="/">${escapeHtml(site.title)}</a></h4>
+           <h4 class="medium">${renderCalloutLink({ href: "/hire/", label: "Let's work together", utilities: ["button-compact", "button-cross-link"] })}</h4>
         </div>
 
         <div class="userboard profile-board-col">

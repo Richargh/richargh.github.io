@@ -1,12 +1,8 @@
 import { cp, mkdir, readdir } from "node:fs/promises";
 import { basename, extname, join, resolve } from "node:path";
 
-const elementModulePattern = /Element\.mjs$/;
-
 export async function discoverElementModules(sourceDir = "_ui"): Promise<string[]> {
-  return (await findFiles(sourceDir))
-    .filter((file) => elementModulePattern.test(basename(file)))
-    .sort();
+  return (await findFiles(sourceDir)).sort();
 }
 
 export async function copyElementModules(outputDir = "generated/assets/elements", sourceDir = "_ui"): Promise<void> {

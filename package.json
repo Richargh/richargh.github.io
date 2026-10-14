@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "description": "Mastro static site source for richargh.de.",
+  "imports": {
+    "#secret-email-button-element": "./_ui/blocks/SecretEmailButton/SecretEmailButtonElement.mjs",
+    "#secret-email-cipher": "./assets/js/SecretEmailCipher.mjs"
+  },
   "engines": {
     "node": "v24.21.0"
   },

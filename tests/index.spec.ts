@@ -2,8 +2,8 @@ import { expect, test } from "@playwright/test";
 
 test("index is the about page", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 4, name: "Richard's Blog" })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Let's work together" })).toHaveAttribute("href", "/hire/");
+  await expect(page.getByRole("heading", { level: 1, name: "Software Archeologist & Coding Architect in Frankfurt 🇩🇪🇬🇧" })).toBeVisible();
 });
 
 test("blog feed is generated from posts", async ({ page }) => {

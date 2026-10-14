@@ -38,4 +38,44 @@
     .title-sans {
         font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     }
+
+    .button-compact {
+        --button-padding: var(--space-2xs) var(--space-content-narrow);
+        --button-font-size: var(--font-size-3xl);
+        --button-font-weight: 600;
+    }
+
+    .button-control {
+        --button-min-block-size: var(--height-control);
+        --button-padding: var(--space-s) var(--space-2xl);
+        --button-border-radius: var(--radius-pill);
+        --button-font-size: var(--font-size-m);
+        --button-font-weight: 800;
+    }
+
+    .button-muted {
+        --button-background: var(--color-background-muted);
+        --button-background-hover: var(--color-background-hover);
+        --button-color: var(--color-text);
+    }
+
+    .button-primary {
+        --button-background: var(--color-primary);
+        --button-background-hover: var(--color-link-hover);
+        --button-color: var(--color-on-accent);
+    }
+
+    .button-cross-link {
+        --button-background: var(--color-primary-background);
+        --button-background-hover: var(--color-background-hover);
+        --button-color: var(--color-link);
+        --button-shadow: var(--shadow-inset-border);
+    }
+
+    .button-video {
+        --button-background: var(--color-danger);
+        --button-background-hover: var(--color-danger-hover);
+        --button-color: var(--color-on-accent);
+        --button-shadow: var(--shadow-video);
+    }
 }
