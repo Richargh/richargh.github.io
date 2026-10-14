@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { loadSuccessStories, parseSuccessStories } from "../lib/success-stories.ts";
 
-const validStoryFields = "  assignmentKind: modernization\n  published: true\n  dateFrom: 2025-01-01\n  dateTo: 2025-02-01\n  industry: Test\n  role: Architect\n  codebaseSize: Roughly 100k lines of code\n  teamSize: Around 1 team / 8 people\n  keyTechnologies: [Kotlin]\n  accomplished: Done\n";
+const validStoryFields = "  assignmentKind: modernization\n  published: true\n  dateFrom: 2025-01-01\n  dateTo: 2025-02-01\n  industry: Test\n  roles: [Architect]\n  codebaseSize: Roughly 100k lines of code\n  teamSize: Around 1 team / 8 people\n  keyTechnologies: [Kotlin]\n  accomplished: Done\n";
 
 test("loads anonymized success stories from YAML", async () => {
   const stories = await loadSuccessStories();
@@ -10,7 +10,7 @@ test("loads anonymized success stories from YAML", async () => {
   assert.equal(stories.length, 4);
   assert.ok(stories.every((story) => story.sourcePath === "_data/success-stories.yaml"));
   assert.ok(stories.every((story) => story.published));
-  assert.ok(stories.some((story) => story.id === "nnpwr" && story.assignmentKind === "modernisation" && story.industry === "Energy" && story.role.includes("Platform Engineer") && story.codebaseSize.includes("1M") && story.teamSize.includes("25") && story.keyMethods.includes("Agentic Coding") && story.keyArchitecture.includes("Hexagonal Architecture") && story.keyTechnologies.includes("Kotlin")));
+  assert.ok(stories.some((story) => story.id === "nnpwr" && story.assignmentKind === "modernisation" && story.industry === "Energy" && story.roles.includes("Platform Engineer") && story.codebaseSize.includes("1M") && story.teamSize.includes("25") && story.keyMethods.includes("Agentic Coding") && story.keyArchitecture.includes("Hexagonal Architecture") && story.keyTechnologies.includes("Kotlin")));
 });
 
 test("only published success stories are visible", () => {
@@ -23,7 +23,7 @@ ${validStoryFields}- id: hidden-story
   dateFrom: 2025-01-01
   dateTo: 2025-02-01
   industry: Test
-  role: Architect
+  roles: [Architect]
   codebaseSize: Roughly 100k lines of code
   teamSize: Around 1 team / 8 people
   keyTechnologies: [Kotlin]

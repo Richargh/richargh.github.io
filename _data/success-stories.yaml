@@ -5,7 +5,9 @@
     dateFrom: 2026-01-01
     dateTo: 2026-10-30
     industry: "Energy"
-    role: "Platform Engineer, Modernisation Coach"
+    roles:
+        - Platform Engineer
+        - Modernisation Coach
     codebaseSize: 1M Lines
     teamSize: 2 teams / 25 people
     keyMethods:
@@ -36,7 +38,8 @@
     dateFrom: 2025-10-01
     dateTo: 2025-11-21
     industry: "Pharmaceuticals"
-    role: "Lead Auditor"
+    roles:
+        - Lead Auditor
     codebaseSize: 500k Lines
     teamSize: 2 people
     keyMethods:
@@ -53,7 +56,8 @@
     dateFrom: 2025-08-01
     dateTo: 2025-09-21
     industry: "Finance & Insurance"
-    role: "Lead Auditor"
+    roles:
+        - Lead Auditor
     codebaseSize: 1M Lines
     teamSize: 3 people
     keyMethods:
@@ -70,7 +74,8 @@
     dateFrom: 2025-05-01
     dateTo: 2025-06-20
     industry: "Energy"
-    role: "Lead Auditor"
+    roles:
+        - Lead Auditor
     codebaseSize: 500k Lines
     teamSize: 3 people
     keyMethods:
@@ -87,7 +92,8 @@
     dateFrom: 2025-01-01
     dateTo: 2025-04-01
     industry: "Pharmaceuticals"
-    role: "Lead Auditor"
+    roles:
+        - Lead Auditor
     codebaseSize: 1M Lines
     teamSize: 3 people
     keyMethods:
@@ -105,7 +111,8 @@
     dateFrom: 2024-12-01
     dateTo: 2025-01-01
     industry: "Energy"
-    role: "Auditor"
+    roles:
+        - Auditor
     codebaseSize: 500k Lines
     teamSize: 2 people
     keyMethods:
@@ -120,7 +127,8 @@
     dateFrom: 2024-10-01
     dateTo: 2024-11-01
     industry: "Automotive"
-    role: "Auditor"
+    roles:
+        - Auditor
     codebaseSize: 2M Lines
     teamSize: 6 people
     keyMethods:
@@ -135,7 +143,8 @@
     dateFrom: 2024-07-01
     dateTo: 2024-09-01
     industry: "Other"
-    role: "Lead Auditor"
+    roles:
+        - Lead Auditor
     codebaseSize: 2M Lines
     teamSize: 3 people
     keyMethods:
@@ -153,7 +162,11 @@
     dateFrom: 2023-10-01
     dateTo: 2024-07-01
     industry: "Energy"
-    role: "Tech Lead, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    roles:
+        - Tech Lead
+        - Software Engineer (Fullstack)
+        - Software Architect
+        - Modernisation Coach
     codebaseSize: 500k Lines
     teamSize: 1 team / 12 people
     keyMethods:
@@ -185,7 +198,11 @@
     dateFrom: 2021-08-01
     dateTo: 2023-09-01
     industry: "Transportation & Logistics"
-    role: "Tech Lead, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    roles:
+        - Tech Lead
+        - Software Engineer (Fullstack)
+        - Software Architect
+        - Modernisation Coach
     codebaseSize: 300k Lines
     teamSize: 1 team / 12 people
     keyMethods:
@@ -215,7 +232,10 @@
     dateFrom: 2021-03-01
     dateTo: 2021-08-01
     industry: "Industrial Technology"
-    role: "Tech Lead, Software Architect, Software Engineer (Backend)"
+    roles:
+        - Tech Lead
+        - Software Architect
+        - Software Engineer (Backend)
     codebaseSize: 100k Lines
     teamSize: 6 people
     keyMethods:
@@ -245,7 +265,11 @@
     dateFrom: 2018-08-01
     dateTo: 2021-02-01
     industry: "Transportation & Logistics"
-    role: "Tech Lead, Software Architect, Software Engineer (Backend), Modernisation Coach"
+    roles:
+        - Tech Lead
+        - Software Architect
+        - Software Engineer (Backend)
+        - Modernisation Coach
     codebaseSize: todo
     teamSize: todo
     keyTechnologies:
@@ -263,7 +287,10 @@
     dateFrom: 2017-05-01
     dateTo: 2018-04-01
     industry: "Transportation & Logistics"
-    role: "Scrum Master, Software Architect, Modernisation Coach"
+    roles:
+        - Scrum Master
+        - Software Architect
+        - Modernisation Coach
     codebaseSize: todo
     teamSize: todo
     keyTechnologies:
@@ -281,7 +308,11 @@
     dateFrom: 2016-06-01
     dateTo: 2017-04-01
     industry: "Travel & Tourism"
-    role: "Product Owner, Software Engineer (Fullstack), Software Architect, Modernisation Coach"
+    roles:
+        - Product Owner
+        - Software Engineer (Fullstack)
+        - Software Architect
+        - Modernisation Coach
     codebaseSize: 200k Lines
     teamSize: 2 teams / 16 people
     keyTechnologies:
@@ -300,7 +331,8 @@
     dateFrom: 2016-02-01
     dateTo: 2016-04-01
     industry: "Consumer Electronics"
-    role: "Auditor"
+    roles:
+        - Auditor
     codebaseSize: 200k Lines
     teamSize: 3 people
     keyMethods:
@@ -315,7 +347,8 @@
     dateFrom: 2015-12-01
     dateTo: 2016-02-01
     industry: "Healthcare"
-    role: "Platform Engineer"
+    roles:
+        - Platform Engineer
     codebaseSize: 200k Lines
     teamSize: 1 person
     keyTechnologies:
@@ -331,7 +364,8 @@
     dateFrom: 2015-03-01
     dateTo: 2015-11-01
     industry: "Automotive"
-    role: "Software Developer"
+    roles:
+        - Software Developer
     codebaseSize: 500k Lines
     teamSize: 8 people
     keyTechnologies:
@@ -353,7 +387,8 @@
     dateFrom: 2014-11-01
     dateTo: 2015-02-01
     industry: "Energy"
-    role: "Auditor"
+    roles:
+        - Auditor
     codebaseSize: 500k Lines
     teamSize: 3 people
     keyTechnologies:
@@ -367,7 +402,8 @@
     dateFrom: 2014-10-01
     dateTo: 2014-11-01
     industry: "Automotive"
-    role: "Auditor"
+    roles:
+        - Auditor
     codebaseSize: 200k Lines
     teamSize: 3 people
     keyTechnologies:
@@ -380,7 +416,8 @@
     dateFrom: 2014-06-01
     dateTo: 2014-10-01
     industry: "Automotive"
-    role: "Software Developer"
+    roles:
+        - Software Developer
     codebaseSize: 100k Lines
     teamSize: 4 people
     keyTechnologies:
@@ -394,7 +431,8 @@
     dateFrom: 2014-03-01
     dateTo: 2014-04-01
     industry: "Telecommunications"
-    role: "Software Developer"
+    roles:
+        - Software Developer
     codebaseSize: 200k Lines
     teamSize: 2 people
     keyTechnologies:
@@ -409,7 +447,8 @@
     dateFrom: 2014-02-01
     dateTo: 2014-03-01
     industry: "Travel & Tourism"
-    role: "Software Analyst"
+    roles:
+        - Software Analyst
     codebaseSize: 200k Lines
     teamSize: 3 people
     keyTechnologies:
@@ -422,7 +461,8 @@
     dateFrom: 2013-06-01
     dateTo: 2014-01-01
     industry: "Travel & Tourism"
-    role: "Software Developer"
+    roles:
+        - Software Developer
     codebaseSize: 50k Lines
     teamSize: 5 people
     keyTechnologies:

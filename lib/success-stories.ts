@@ -10,7 +10,7 @@ export interface SuccessStory {
   dateFrom: string;
   dateTo: string;
   industry: string;
-  role: string;
+  roles: string[];
   codebaseSize: string;
   teamSize: string;
   keyMethods: string[];
@@ -22,7 +22,7 @@ export interface SuccessStory {
 export type AssignmentKind = "modernization" | "modernisation" | "health-check" | "sw-health-check" | "sw-due-diligence" | "green-field" | "development";
 
 const assignmentKinds = new Set<AssignmentKind>(["modernization", "modernisation", "health-check", "sw-health-check", "sw-due-diligence", "green-field", "development"]);
-const successStoryFields = new Set(["id", "title", "assignmentKind", "published", "dateFrom", "dateTo", "industry", "role", "codebaseSize", "teamSize", "keyMethods", "keyArchitecture", "keyTechnologies", "accomplished"]);
+const successStoryFields = new Set(["id", "title", "assignmentKind", "published", "dateFrom", "dateTo", "industry", "roles", "codebaseSize", "teamSize", "keyMethods", "keyArchitecture", "keyTechnologies", "accomplished"]);
 
 export async function loadSuccessStories(sourcePath = "_data/success-stories.yaml"): Promise<SuccessStory[]> {
   const source = await readFile(sourcePath, "utf8");
@@ -52,7 +52,7 @@ function normalizeSuccessStory(entry: unknown, sourcePath: string, index: number
     dateFrom: requiredIsoDate(object.dateFrom, `${location}.dateFrom`),
     dateTo: requiredIsoDate(object.dateTo, `${location}.dateTo`),
     industry: requiredString(object.industry, `${location}.industry`),
-    role: requiredString(object.role, `${location}.role`),
+    roles: requiredStringList(object.roles, `${location}.roles`),
     codebaseSize: requiredString(object.codebaseSize, `${location}.codebaseSize`),
     teamSize: requiredString(object.teamSize, `${location}.teamSize`),
     keyMethods: optionalStringList(object.keyMethods, `${location}.keyMethods`),

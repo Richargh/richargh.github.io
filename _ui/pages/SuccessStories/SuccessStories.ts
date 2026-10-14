@@ -36,7 +36,7 @@ ${renderExampleCard({
   meta: [
     { label: "Assignment", value: assignmentKindLabel(story.assignmentKind) },
     { label: "Industry", value: story.industry },
-    { label: "My role", value: story.role },
+    { label: "My roles", value: story.roles.join(", ") },
     { label: "Codebase", value: story.codebaseSize },
     { label: "Team", value: story.teamSize },
   ],
