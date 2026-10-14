@@ -3,10 +3,16 @@ import { escapeHtml } from "../../../lib/html.ts";
 import { renderCalloutLink } from "../CalloutLink/CalloutLink.ts";
 import { renderNavItem } from "../NavItem/NavItem.ts";
 
-export function renderHeader({ showBackToHome = false }: { showBackToHome?: boolean } = {}): string {
+export interface HeaderOptions {
+  showBackToHome?: boolean;
+  toolsHtml?: string;
+}
+
+export function renderHeader({ showBackToHome = false, toolsHtml = "" }: HeaderOptions = {}): string {
   return `<header>
     <div class="dashboard">
         <div class="site-heading profile-board-col">
+           ${toolsHtml}
            <h4 class="medium">${renderCalloutLink({ href: "/hire/", label: "Let's work together", utilities: ["button-compact", "button-cross-link"] })}</h4>
         </div>
 

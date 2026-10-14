@@ -17,6 +17,7 @@ import { render as renderArticles } from "../routes/articles/index.server.ts";
 import { render as renderInterviews } from "../routes/interviews/index.server.ts";
 import { render as renderModernWebFeatures } from "../routes/modern-web-features/index.server.ts";
 import { render as renderSuccessStories } from "../routes/success-stories/index.server.ts";
+import { render as renderStyles } from "../routes/styles/index.server.ts";
 import { renderAutocompleteText, renderSearchJson } from "../lib/search.ts";
 import { outputPathForUrlPath } from "../lib/output-compat.ts";
 import { assertGeneratedLinksResolve } from "../lib/generated-link-check.ts";
@@ -70,6 +71,8 @@ await mkdir(join(outputDir, "modern-web-features"), { recursive: true });
 await writeFile(join(outputDir, "modern-web-features", "index.html"), `${renderModernWebFeatures()}\n`, "utf8");
 await mkdir(join(outputDir, "success-stories"), { recursive: true });
 await writeFile(join(outputDir, "success-stories", "index.html"), `${await renderSuccessStories()}\n`, "utf8");
+await mkdir(join(outputDir, "styles"), { recursive: true });
+await writeFile(join(outputDir, "styles", "index.html"), `${renderStyles()}\n`, "utf8");
 
 await assertGeneratedLinksResolve(outputDir);
 
@@ -82,6 +85,7 @@ console.log(`Generated generated articles page from _data/articles.yaml`);
 console.log(`Generated generated interviews page from _data/interviews.yaml`);
 console.log(`Generated generated modern web features page from _data/modern-web-features.yaml`);
 console.log(`Generated generated success stories page from _data/success-stories.yaml`);
+console.log(`Generated ${join(outputDir, "styles", "index.html")}`);
 console.log(`Generated ${join(outputDir, "tags", "index.html")}`);
 console.log(`Generated ${join(outputDir, "dates", "index.html")}`);
 console.log(`Generated ${join(outputDir, "schedule", "index.html")}`);

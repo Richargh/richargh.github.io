@@ -1,0 +1,153 @@
+@layer argh.pages {
+    .styles-page > p {
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-5xl);
+    }
+
+    .styles-sidebar {
+        background: var(--color-background-muted);
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-card);
+        padding: var(--space-l);
+    }
+
+    .styles-sidebar-wide {
+        inline-size: calc(min(20vw, 220px) - 50px);
+        inset-block-start: var(--space-content);
+        inset-inline-start: max(var(--space-content-narrow), calc((100vw - var(--max-width-site)) / 2 + var(--space-content-narrow)));
+        max-block-size: calc(100vh - 2 * var(--space-content));
+        overflow: auto;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .styles-menu-trigger {
+        display: none;
+    }
+
+    .styles-sidebar-popover:not(:popover-open) {
+        display: none;
+    }
+
+    .styles-sidebar-popover {
+        box-shadow: var(--shadow-popover);
+        inline-size: min(18rem, calc(100vw - 2 * var(--space-content)));
+        max-block-size: calc(100vh - 2 * var(--space-content));
+        overflow: auto;
+    }
+
+    .styles-sidebar-popover::backdrop {
+        background: var(--color-backdrop);
+    }
+
+    .styles-previews {
+        margin-bottom: var(--space-6xl);
+    }
+
+    .styles-sidebar summary {
+        color: var(--color-text);
+        cursor: pointer;
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        padding: var(--space-s);
+    }
+
+    .styles-sidebar summary:focus-visible,
+    .styles-sidebar a:focus-visible {
+        outline: var(--border-width-strong) solid var(--color-focus-ring);
+        outline-offset: var(--space-2xs);
+    }
+
+    .styles-sidebar ul {
+        list-style: none;
+        margin: var(--space-xs) 0 0;
+        padding: 0 0 0 var(--space-2xl);
+    }
+
+    .styles-sidebar a {
+        border-radius: var(--radius-inline);
+        color: var(--color-text);
+        display: block;
+        font-size: var(--font-size-xl);
+        padding: var(--space-s) var(--space-l);
+        text-decoration: none;
+    }
+
+    .styles-sidebar a:hover {
+        background: var(--color-background-hover);
+    }
+
+    .styles-sidebar a[aria-current="page"] {
+        background: var(--color-primary-background);
+        color: var(--color-link);
+        font-weight: 600;
+    }
+
+    .styles-preview {
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-card-large);
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .styles-preview[hidden] {
+        display: none;
+    }
+
+    .styles-preview h2 {
+        background: var(--color-background-muted);
+        border-bottom: var(--border-width) solid var(--color-border-strong);
+        font-size: var(--font-size-base);
+        margin: 0;
+        padding: var(--space-2xl) var(--space-card);
+    }
+
+    .styles-preview h2 span {
+        color: var(--color-text-muted);
+        font-size: inherit;
+        font-weight: 400;
+    }
+
+    .styles-preview h2 span::before {
+        content: " / ";
+    }
+
+    .styles-preview-canvas {
+        align-items: center;
+        background: var(--color-background);
+        display: flex;
+        min-block-size: 10rem;
+        padding: var(--space-content);
+    }
+
+    @media (max-width: 900px) {
+        .styles-sidebar-wide {
+            display: none;
+        }
+
+        .styles-menu-trigger {
+            align-items: center;
+            background: var(--color-primary-background);
+            border: var(--border-width) solid var(--color-border-strong);
+            border-radius: var(--radius-round);
+            color: var(--color-link);
+            cursor: pointer;
+            display: inline-flex;
+            float: left;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            block-size: 2rem;
+            inline-size: 2rem;
+            justify-content: center;
+            margin-block-start: var(--space-5xl);
+            margin-inline-start: calc(var(--avatar-size) + var(--space-5xl));
+        }
+
+        .styles-menu-trigger:focus-visible {
+            outline: var(--border-width-strong) solid var(--color-focus-ring);
+            outline-offset: var(--space-2xs);
+        }
+    }
+}

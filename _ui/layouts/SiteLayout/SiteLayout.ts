@@ -11,6 +11,8 @@ export interface LayoutOptions {
   description?: string;
   type?: "website" | "article";
   showBackToHome?: boolean;
+  headerToolsHtml?: string;
+  sideNavigation?: string;
   content: string;
 }
 
@@ -50,9 +52,10 @@ export function renderLayout(options: LayoutOptions): string {
 </head>
 
 <body data-syntax-theme="github">
+    ${options.sideNavigation ?? ""}
     <div class="container">
         <div class="box">
-            ${renderHeader({ showBackToHome: options.showBackToHome })}
+            ${renderHeader({ showBackToHome: options.showBackToHome, toolsHtml: options.headerToolsHtml })}
             ${options.content}
             ${renderFooter()}
         </div>
