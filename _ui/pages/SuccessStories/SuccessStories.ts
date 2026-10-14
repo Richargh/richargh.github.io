@@ -19,9 +19,9 @@ export function renderSuccessStoriesPageDocument(stories: SuccessStory[]): strin
                   <h1>${escapeHtml(successStoriesTitle)}</h1>
                   <div class="content">
                     <p>${escapeHtml(successStoriesDescription)}</p>
-                    <div class="success-stories-list">
+                    <randomize-elements class="success-stories-list">
                       ${stories.map(renderSuccessStory).join("\n")}
-                    </div>
+                    </randomize-elements>
                   </div>
                 </article>
             </main>`,

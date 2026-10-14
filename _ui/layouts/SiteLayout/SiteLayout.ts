@@ -43,6 +43,7 @@ export function renderLayout(options: LayoutOptions): string {
     <script type="module">
       import "microlighter";
       import "scroll-to-top-element";
+      import "randomizer-element";
       import "#secret-email-button-element";
     </script>
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">
