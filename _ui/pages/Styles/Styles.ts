@@ -1,5 +1,7 @@
+import * as articleCardStories from "../../blocks/ArticleCard/ArticleCard.stories.ts";
 import * as buttonStories from "../../blocks/Button/Button.stories.ts";
 import * as calloutLinkStories from "../../blocks/CalloutLink/CalloutLink.stories.ts";
+import * as exampleCardStories from "../../blocks/ExampleCard/ExampleCard.stories.ts";
 import { styleBlock, type StyleBlock } from "../../StyleStory.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import { escapeHtml } from "../../../lib/html.ts";
@@ -8,7 +10,12 @@ export const stylesTitle = "Styles";
 export const stylesUrlPath = "/styles/";
 export const stylesDescription = "An interactive catalog of the site's reusable blocks and their variants.";
 
-const blocks = [styleBlock(buttonStories), styleBlock(calloutLinkStories)] satisfies StyleBlock[];
+const blocks = [
+  styleBlock(articleCardStories),
+  styleBlock(buttonStories),
+  styleBlock(calloutLinkStories),
+  styleBlock(exampleCardStories),
+] satisfies StyleBlock[];
 
 export function renderStylesPageDocument(): string {
   const initialBlock = blocks[0];
