@@ -44,6 +44,11 @@
         margin-bottom: var(--space-6xl);
     }
 
+    .styles-block-previews {
+        display: grid;
+        gap: var(--space-6xl);
+    }
+
     .styles-sidebar summary {
         color: var(--color-text);
         cursor: pointer;
@@ -51,6 +56,16 @@
         font-size: var(--font-size-xl);
         font-weight: 600;
         padding: var(--space-s);
+    }
+
+    .styles-sidebar summary > a {
+        display: inline;
+        padding: 0;
+    }
+
+    .styles-sidebar summary > a:hover {
+        background: transparent;
+        text-decoration: underline;
     }
 
     .styles-sidebar summary:focus-visible,
@@ -85,10 +100,7 @@
     }
 
     .styles-preview {
-        border: var(--border-width) solid var(--color-border-strong);
-        border-radius: var(--radius-card-large);
         min-width: 0;
-        overflow: hidden;
     }
 
     .styles-preview[hidden] {
@@ -96,11 +108,10 @@
     }
 
     .styles-preview h2 {
-        background: var(--color-background-muted);
         border-bottom: var(--border-width) solid var(--color-border-strong);
         font-size: var(--font-size-base);
         margin: 0;
-        padding: var(--space-2xl) var(--space-card);
+        padding-bottom: var(--space-l);
     }
 
     .styles-preview h2 span {
@@ -115,10 +126,9 @@
 
     .styles-preview-canvas {
         align-items: center;
-        background: var(--color-background);
         display: flex;
-        min-block-size: 10rem;
-        padding: var(--space-content);
+        min-block-size: 6rem;
+        padding-block: var(--space-content);
     }
 
     @media (max-width: 900px) {

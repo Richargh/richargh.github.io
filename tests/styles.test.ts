@@ -45,10 +45,10 @@ test("styles page uses SiteLayout and provides an expandable variant sidebar", (
   assert.match(html, /<nav class="styles-sidebar styles-sidebar-popover"[^>]+id="styles-menu" popover/);
   assert.ok(html.indexOf('<nav class="styles-sidebar styles-sidebar-wide"') < html.indexOf('<div class="container">'));
   assert.match(html, /<details open>/);
-  assert.match(html, /<summary>ArticleCard<\/summary>/);
-  assert.match(html, /<summary>Button<\/summary>/);
-  assert.match(html, /<summary>CalloutLink<\/summary>/);
-  assert.match(html, /<summary>ExampleCard<\/summary>/);
+  assert.match(html, /<summary><a href="#block-article-card"[^>]+>ArticleCard<\/a><\/summary>/);
+  assert.match(html, /<summary><a href="#block-button"[^>]+>Button<\/a><\/summary>/);
+  assert.match(html, /<summary><a href="#block-callout-link"[^>]+>CalloutLink<\/a><\/summary>/);
+  assert.match(html, /<summary><a href="#block-example-card"[^>]+>ExampleCard<\/a><\/summary>/);
   assert.match(html, /href="#button-primary" data-style-link/);
   assert.match(html, /data-style-preview/);
   assert.match(html, /Primary button/);

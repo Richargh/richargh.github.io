@@ -40,29 +40,49 @@ export function renderStylesPageDocument(): string {
         </div>
       </article>
       <script type="module">
-        const links = [...document.querySelectorAll("[data-style-link]")];
+        const variantLinks = [...document.querySelectorAll("[data-style-link]")];
+        const blockLinks = [...document.querySelectorAll("[data-style-block-link]")];
+        const links = [...variantLinks, ...blockLinks];
         const previews = [...document.querySelectorAll("[data-style-preview]")];
 
-        function showVariant(id, updateUrl = true) {
-          if (!previews.some((preview) => preview.id === id)) return;
-          for (const preview of previews) preview.hidden = preview.id !== id;
+        function finishSelection(hash, updateUrl) {
           for (const link of links) {
-            if (link.getAttribute("href") === "#" + id) link.setAttribute("aria-current", "page");
+            if (link.hash === hash) link.setAttribute("aria-current", "page");
             else link.removeAttribute("aria-current");
           }
-          if (updateUrl) history.replaceState(null, "", "#" + id);
+          if (updateUrl) history.replaceState(null, "", hash);
           const menu = document.querySelector("#styles-menu");
           if (menu?.matches(":popover-open")) menu.hidePopover();
         }
 
-        for (const link of links) {
+        function showVariant(id, updateUrl = true) {
+          if (!previews.some((preview) => preview.id === id)) return;
+          for (const preview of previews) preview.hidden = preview.id !== id;
+          finishSelection("#" + id, updateUrl);
+        }
+
+        function showBlock(blockId, updateUrl = true) {
+          if (!previews.some((preview) => preview.dataset.block === blockId)) return;
+          for (const preview of previews) preview.hidden = preview.dataset.block !== blockId;
+          finishSelection("#block-" + blockId, updateUrl);
+        }
+
+        for (const link of variantLinks) {
           link.addEventListener("click", (event) => {
             event.preventDefault();
             showVariant(link.hash.slice(1));
           });
         }
+        for (const link of blockLinks) {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            showBlock(link.dataset.block);
+          });
+        }
 
-        if (location.hash) showVariant(location.hash.slice(1), false);
+        if (location.hash.startsWith("#block-")) showBlock(location.hash.slice(7), false);
+        else if (location.hash) showVariant(location.hash.slice(1), false);
       </script>
     </main>
     ${renderSidebarNavigation("styles-sidebar-popover", initialVariant.id, 'id="styles-menu" popover')}`,
@@ -77,7 +97,7 @@ function renderSidebarNavigation(placementClass: string, initialVariantId: strin
 
 function renderSidebar(initialVariantId: string): string {
   return blocks.map((block) => `<details open>
-              <summary>${escapeHtml(block.name)}</summary>
+              <summary><a href="#block-${escapeHtml(block.id)}" data-style-block-link data-block="${escapeHtml(block.id)}">${escapeHtml(block.name)}</a></summary>
               <ul>
                 ${block.variants.map((variant) => `<li><a href="#${escapeHtml(variant.id)}" data-style-link${variant.id === initialVariantId ? ' aria-current="page"' : ""}>${escapeHtml(variant.name)}</a></li>`).join("\n")}
               </ul>
@@ -85,7 +105,8 @@ function renderSidebar(initialVariantId: string): string {
 }
 
 function renderPreviews(initialVariantId: string): string {
-  return blocks.flatMap((block) => block.variants.map((variant) => `<section
+  return blocks.map((block) => `<div class="styles-block-previews" id="block-${escapeHtml(block.id)}">
+    ${block.variants.map((variant) => `<section
               class="styles-preview"
               id="${escapeHtml(variant.id)}"
               data-style-preview
@@ -93,5 +114,6 @@ function renderPreviews(initialVariantId: string): string {
               data-variant-name="${escapeHtml(variant.name)}"${variant.id === initialVariantId ? "" : " hidden"}>
               <h2>${escapeHtml(block.name)} <span>${escapeHtml(variant.name)}</span></h2>
               <div class="styles-preview-canvas">${variant.html}</div>
-            </section>`)).join("\n");
+            </section>`).join("\n")}
+  </div>`).join("\n");
 }
