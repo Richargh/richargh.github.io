@@ -35,6 +35,7 @@ test("Header block renders navigation and optional back link without collection 
 
 test("simple blocks render their expected root markup", () => {
   assert.match(renderFooter(), /id="copyright"/);
+  assert.match(renderFooter(), /href="\/styles\/">see site styles<\/a>/);
   assert.equal(renderScrollToTop(), "<scroll-to-top></scroll-to-top>");
   assert.match(renderNavItem({ className: "blog", href: "/posts", label: "Blog", iconHtml: "<svg></svg>", labelClassName: "blog-p", counter: 5 }), /class="blog nav-item"/);
   assert.match(renderButton({ label: "Email" }), /<button class="button button-compact button-muted" type="button">Email<\/button>/);

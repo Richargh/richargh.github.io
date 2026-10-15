@@ -1,6 +1,6 @@
 @layer argh.blocks {
     #copyright {
-        margin-left: var(--space-content);
+        margin-inline: var(--space-content-narrow);
     }
 
     #copyright-notice {
