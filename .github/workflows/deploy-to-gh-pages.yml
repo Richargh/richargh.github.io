@@ -51,7 +51,7 @@ jobs:
         run: mise run generate
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5.0.0
+        uses: actions/configure-pages@v6.0.0
 
       - name: Upload generated site artifact
         uses: actions/upload-pages-artifact@v3.0.1
