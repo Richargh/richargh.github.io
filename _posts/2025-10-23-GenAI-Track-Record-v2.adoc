@@ -906,6 +906,39 @@ ____
 There's a new kind of coding I call "vibe coding", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like "decrease the padding on the sidebar by half" because I'm too lazy to find it. I "Accept All" always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works.
 ____
 
+== 2025-01-27 link:https://www.avisenlegal.com/how-long-does-it-take-to-develop-a-data-center-a-step-by-step-timeline/?ref=wheresyoured.at[How Long Does It Take to Develop a Data Center? A Step-by-Step Timeline]
+
+1. Data Center Site Selection Timeline (6–12 Months)
+** Key Considerations
+*** Energy Availability: Proximity to renewable energy sources and a stable power grid.
+*** Connectivity: Access to robust fiber optic networks for high-speed data transfer.
+*** Geographic Stability: Avoiding areas prone to natural disasters like earthquakes, floods, or hurricanes.
+*** Regulatory Environment: Favorable local zoning laws and tax incentives.
+2. Data Center Permitting and Approvals Timeline (6–18 Months)
+** Key Permits and Approvals:
+*** Environmental Permits: Compliance with environmental regulations and impact assessments.
+*** Zoning Approvals: Ensuring the site is zoned appropriately for data center development.
+*** Building Permits: Securing permissions for construction and infrastructure work.
+*** Energy Permits: Coordination with utility providers to approve energy infrastructure.
+3. Data Center Design and Development Timeline (9–18 Months)
+** Key Activities:
+*** Architectural Design: Creating blueprints that optimize space, energy efficiency, and cooling systems.
+*** Infrastructure Preparation: Installing water, power lines, and fiber optics.
+*** Sustainability Integration: Designing for renewable energy compatibility, energy efficiency, and waste heat reuse.
+4. Data Center Construction Timeline (12–36 Months)
+** Key Steps:
+*** Foundation and Shell Construction: Building the exterior structure and interior framework.
+*** Cooling System Installation: Implementing advanced HVAC systems to regulate server temperatures.
+*** Power Systems: Setting up power distribution units, generators, and backup systems.
+*** Server Deployment: Installing racks, servers, and storage units.
+*** Testing and Commissioning: Ensuring all systems are operational and meet performance standards.
+5. Data Center Energy Procurement Timeline (6–12 Months)
+** Key Considerations:
+*** Renewable Energy Integration: Aligning with sustainability goals by sourcing wind, Solar, or hydropower energy.
+*** Energy Redundancy: Establishing backup systems to prevent downtime.
+*** Grid Interconnection: Securing agreements with grid operators to ensure uninterrupted power supply.
+6. Total Data Center Development Timeline: *3-6 Years*
+
 [#junie-eap]
 == 2025-01-23 link:https://blog.jetbrains.com/junie/2025/01/meet-junie-your-coding-agent-by-jetbrains/[Meet Junie, Your Coding Agent by JetBrains]
 
