@@ -633,6 +633,33 @@ Company: Perplexity
 * Tech companies don't need these ventures [metaverse, cryptocurrency, AI] to be successful – they just need them to seem to be plausibly successful for long enough to keep the share price high until the next growth story heaves over the horizon.
 * As [Ed] Zitron points out: this industry is projecting $327b in spending this year, with $18b in revenue and zero profits.
 
+== 2025-06-27 link:https://www.ashisharora.ai/post/the-hidden-science-behind-llm-token-limits-and-how-million-token-models-actually-work[The Hidden Science Behind LLM Token Limits (And How Million-Token Models Actually Work)]
+
+* "Why can't I just paste my entire company's documentation into ChatGPT?"
+* Quadratic Complexity and the Attention Mechanism
+** Large Language Models use something called "self-attention" to understand context. Unlike humans who read linearly, LLMs must consider how every token relates to every other token simultaneously.
+** standard self-attention has O(n²) time and memory complexity
+* Quality Degradation: <<lost-in-the-middle, "Lost in the Middle" Problem>>
+** Position in Context vs. Retrieval Accuracy [Lost-in-the-middle paper says retrieval accuracy drops in the middle]
+** Why This Happens?
+... Training Data Bias: Most training data consists of short texts - web pages (~3K tokens), news articles (~1K tokens), and social media posts.
+... Positional Encoding Limitations: Positional encodings help transformers understand word order, but they degrade over distance. At position 75,000, the model can't reliably distinguish if a token is at position 75,000 or 74,500.
+... Attention Dilution: Attention weights must sum to 1.0, creating a fundamental constraint:
+**** 1K context: Each token gets ~0.1% average attention
+**** 1M context: Each token gets ~0.0001% average attention
+* How Million-Token Models Actually Work: The Architecture Revolution
+** But wait .. OpenAI's GPT-4.1, Google's Gemini family, and Meta's Llama 4 all claim to handle 1 million tokens or more.
+*** Meta's Llama 4: Rethinking the Fundamentals
+**** Meta's crown jewel is Interleaved Rotary Positional Encoding (iRoPE). By not reinforcing absolute position at every step, the model can generalize far beyond its training length.
+*** Google's Gemini: Distributed Computing Meets Smart Routing
+**** Ring Attention: Creates a circular pipeline across multiple GPUs. Each GPU stores keys/values for only a portion of the sequence. No single GPU ever holds the entire matrix.
+**** Mixture of Depths: Recognizes that some tokens need less processing. A lightweight router decides which tokens get full computational treatment versus coasting on residual connections. Can reduce computation by 40-60%.
+** The iron law remains: long context, high quality, or low cost - pick two.
+* Hidden Trade-offs
+.. The "Lost in the Middle" Problem Persists
+.. Inconsistent Performance Across Content Types
+.. Unpredictable Latency and New Failure Modes
+
 == 2025-06-21 link:https://www.anthropic.com/research/agentic-misalignment[Agentic Misalignment: How LLMs could be insider threats]
 
 Author: Anthropic
@@ -1206,6 +1233,7 @@ Headquarters: San Francisco, California, U.S.
 == 2023-09 link:https://en.wikipedia.org/wiki/DALL-E[DALL-E 3 revealed]
 * capable of understanding "significantly more nuance and detail" than previous iterations.
 
+[#lost-in-the-middle]
 == 2023-07-06 link:https://arxiv.org/abs/2307.03172[Lost in the Middle: How Language Models Use Long Contexts]
 
 * While recent language models have the ability to take long contexts as input, relatively little is known about how well they *use* longer context.
