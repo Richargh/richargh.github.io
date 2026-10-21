@@ -58,6 +58,12 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2026-09-30 link:https://www.courthousenews.com/ai-training-of-copyrighted-material-not-fair-use-third-circuit/[AI training of copyrighted material not fair use: Third Circuit]
+
+* The Third Circuit rejected an artificial intelligence company’s fair use defense after it trained its AI on a competitor’s product, finding the training constituted copyright infringement — and potentially setting a landmark precedent for artificial intelligence.
+* Thomson Reuters sued now-defunct AI startup ROSS Intelligence in 2020, claiming ROSS took headnotes — short descriptions of important legal issues that appear before judicial opinions — from its Westlaw database, using a third party called LegalEase Solutions to gain access after Westlaw refused ROSS access.
+* Thomson Reuters sued now-defunct AI startup ROSS Intelligence in 2020, claiming ROSS took headnotes — short descriptions of important legal issues that appear before judicial opinions — from its Westlaw database, using a third party called LegalEase Solutions to gain access after Westlaw refused ROSS access.
+
 == 2026-09-19 link:https://nypost.com/2026/09/19/us-news/openai-anthropic-oversold-security-breaches-to-pressure-feds-into-protecting-turf-insiders/[OpenAI and Anthropic oversold AI security breaches to pressure feds into protecting turf: insiders]
 
 * OpenAI and Anthropic oversold “rogue AI” hacks to pressure the feds into regulating the industry which would effectively lock out future competition, tech insiders told The Post.
