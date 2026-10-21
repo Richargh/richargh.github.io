@@ -85,6 +85,20 @@ status: ongoing
 ** and the friction and empathic effort of bridging disparate experiences.
 * When feeling understood becomes the default of every interaction, the human relationships that still require the work may, over time, come to feel like *insufficient versions of what AI systems readily provide*.
 
+[#mythos-launch-curl]
+== 2026-05-11 link:https://daniel.haxx.se/blog/2026/05/11/mythos-finds-a-curl-vulnerability/[Mythos finds a curl vulnerability]
+
+Author: Daniel Stenberg (cURL Maintainer)
+
+* yes, as in singular _one_.
+* Before this first Mythos report, we had already scanned curl with several different very capable AI powered tools (I mean in addition to running a number of “normal” static code analyzers all the time, using the pickiest compiler options and doing fuzzing on it for years etc). Primarily AISLE, Zeropath and OpenAI’s Codex Security have been used to scrutinize the code with AI.
+* These tools and the analyses they have done have triggered somewhere between two and three hundred bugfixes merged in curl through-out the *recent 8-10 months* or so.
+* The report concluded it found five “Confirmed security vulnerabilities”.
+** four were three false positives (they highlighted shortcomings that are documented in API documentation)
+** the fourth we deemed “just a bug”
+* The single confirmed vulnerability is going to end up a severity low CVE
+* But allow me to highlight and reiterate what I have said before: AI powered code analyzers are significantly better at finding security flaws and mistakes in source code than any traditional code analyzers did in the past.
+
 == 2026-04 link:https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/[How We Broke Top AI Agent Benchmarks: And What Comes Next]
 
 * We built an automated scanning agent that systematically audited eight among the most prominent AI agent benchmarks — SWE-bench, WebArena, OSWorld, GAIA, Terminal-Bench, FieldWorkArena, and CAR-bench — and discovered that every single one can be exploited to achieve *near-perfect scores without solving a single task*. No reasoning. No capability. Just exploitation of how the score is computed.
