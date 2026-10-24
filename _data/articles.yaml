@@ -65,7 +65,7 @@
         - publisher: JavaPro.io
           date: '2026-10-20'
           language: en
-          upcomingSince: 2026-10-12
+          url: 'https://javapro.io/2026/10/20/kotlin-kontra-java-part-4-language-for-safety/'
     - part: 5/5
       subtitle: Domain Modelling
       publications:
