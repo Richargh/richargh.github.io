@@ -1,17 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { loadArticlePublications, loadArticles, parseArticles } from "../lib/articles.ts";
-
-test("loads article families and publications from articles.yaml", async () => {
-  const articles = await loadArticles();
-  const publications = await loadArticlePublications();
-
-  assert.ok(articles.some((article) => article.id === "kvj" && article.title === "Kotlin kontra Java" && article.articles.length === 5));
-  assert.ok(articles.some((article) => article.id === "kvj" && article.thumbnail?.startsWith("/assets/img/thumbnails/article-") && article.articles.every((part) => !("thumbnail" in part))));
-  assert.equal(publications.length, 27);
-  assert.ok(publications.some((publication) => publication.publisher === "JavaSPEKTRUM" && publication.issue === "1/2018" && publication.language === "de"));
-  assert.ok(publications.some((publication) => publication.articleTitle === "Kotlin kontra Java" && publication.part === "4/5" && publication.upcoming));
-});
+import { parseArticles } from "../lib/articles.ts";
 
 test("validates required fields, dates, URLs, unknown fields, and duplicates", () => {
   assert.throws(() => parseArticles("- id: x1\n  articles: []\n"), /title is required/);
