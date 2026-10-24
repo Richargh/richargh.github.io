@@ -1,5 +1,6 @@
 import { isStandalonePage, type Page, type Post } from "./content.ts";
 import {outputKeyForUrlPath} from "./output-compat.ts";
+import { talkAppearanceUrl, type Talk } from "./talks.ts";
 
 export interface RouteManifestEntry {
     urlPath: string;
@@ -9,7 +10,7 @@ export interface RouteManifestEntry {
     updated?: string;
 }
 
-export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestEntry[] {
+export function buildRouteManifest(posts: Post[], pages: Page[], talks: Talk[] = []): RouteManifestEntry[] {
     const entries: RouteManifestEntry[] = [
         {
             urlPath: "/",
@@ -63,6 +64,12 @@ export function buildRouteManifest(posts: Post[], pages: Page[]): RouteManifestE
             kind: "index" as const,
             title: "Talks"
         },
+        ...talks.flatMap((talk) => talk.appearances.map((appearance) => ({
+            urlPath: talkAppearanceUrl(appearance),
+            outputKey: outputKeyForUrlPath(talkAppearanceUrl(appearance)),
+            kind: "page" as const,
+            title: appearance.title
+        }))),
         {
             urlPath: "/articles/",
             outputKey: outputKeyForUrlPath("/articles/"),

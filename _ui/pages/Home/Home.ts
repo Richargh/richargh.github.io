@@ -84,7 +84,7 @@ function renderServiceCards(): string {
     },
   ];
 
-  return `<section class="home-services" aria-label="Services">
+  return `<section class="home-services example-card-grid" aria-label="Services">
 ${services.map(({ title, href, text, linkLabel }) => renderExampleCard({ title, description: text, href, linkLabel })).join("\n")}
 </section>`;
 }

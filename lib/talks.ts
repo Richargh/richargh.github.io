@@ -6,6 +6,10 @@ export interface TalkLink {
   url: string;
 }
 
+export interface TalkReference extends TalkLink {
+  comment?: string;
+}
+
 export interface Talk {
   sourcePath: string;
   id: string;
@@ -13,6 +17,8 @@ export interface Talk {
   tags: string[];
   thumbnail?: string;
   codeUrl?: string;
+  feedbackUrl?: string;
+  references?: TalkReference[];
   links: TalkLink[];
   abstract?: string;
   appearances: TalkAppearance[];
@@ -21,6 +27,8 @@ export interface Talk {
 export type TalkLocation = "in-person" | "remote" | "hybrid";
 
 export interface TalkAppearance {
+  id: string;
+  feedbackUrl?: string;
   sourcePath: string;
   talkId: string;
   talkTitle: string;
@@ -47,8 +55,10 @@ export interface TalkYearGroup {
   appearances: TalkAppearance[];
 }
 
-const talkFields = new Set(["id", "title", "tags", "thumbnail", "codeUrl", "links", "abstract", "appearances"]);
+const talkFields = new Set(["id", "title", "tags", "thumbnail", "codeUrl", "feedbackUrl", "references", "links", "abstract", "appearances"]);
 const appearanceFields = new Set([
+  "id",
+  "feedbackUrl",
   "title",
   "conference",
   "location",
@@ -134,9 +144,17 @@ function normalizeTalk(entry: unknown, sourcePath: string, index: number): Talk 
   const talk: Talk = { sourcePath, id, title, tags, links, appearances: [] };
   if (thumbnail !== undefined) talk.thumbnail = thumbnail;
   if (codeUrl !== undefined) talk.codeUrl = codeUrl;
+  const feedbackUrl = optionalUrl(object.feedbackUrl, `${location}.feedbackUrl`);
+  if (feedbackUrl !== undefined) talk.feedbackUrl = feedbackUrl;
   if (abstract !== undefined) talk.abstract = abstract;
+  if (object.references !== undefined) talk.references = normalizeReferences(object.references, `${location}.references`);
   talk.appearances = object.appearances.map((appearance, appearanceIndex) => normalizeAppearance(appearance, sourcePath, `${location}.appearances[${appearanceIndex}]`, talk));
+  assertUnique(talk.appearances, (appearance) => appearance.id, `duplicate appearance id for ${talk.id}`);
   return talk;
+}
+
+export function talkAppearanceUrl(appearance: Pick<TalkAppearance, "talkId" | "id">): string {
+  return `/t/${appearance.talkId}/${appearance.id}/`;
 }
 
 function normalizeAppearance(entry: unknown, sourcePath: string, location: string, talk: Pick<Talk, "id" | "title">): TalkAppearance {
@@ -151,7 +169,10 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   validateCityCountry(appearanceLocation, city, country, location);
   const date = requiredIsoDate(object.date, `${location}.date`);
 
+  const id = optionalString(object.id, `${location}.id`) ?? date;
+  if (!/^[a-z0-9][a-z0-9-]{0,63}$/.test(id)) throw new Error(`${location}.id must be a short lowercase ASCII id`);
   const appearance: TalkAppearance = {
+    id,
     sourcePath,
     talkId: talk.id,
     talkTitle: talk.title,
@@ -171,6 +192,7 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalBoolean(appearance, "upcoming", object.upcoming, `${location}.upcoming`);
   assignOptionalIsoDate(appearance, "upcomingSince", object.upcomingSince, `${location}.upcomingSince`);
   if (appearance.upcomingSince !== undefined) appearance.upcoming = true;
+  assignOptionalUrl(appearance, "feedbackUrl", object.feedbackUrl, `${location}.feedbackUrl`);
   assignOptionalUrl(appearance, "eventUrl", object.eventUrl, `${location}.eventUrl`);
   assignOptionalUrl(appearance, "slideUrl", object.slideUrl, `${location}.slideUrl`);
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
@@ -188,6 +210,22 @@ function normalizeLinks(value: unknown, location: string): TalkLink[] {
       label: requiredString(object.label, `${linkLocation}.label`),
       url: requiredUrl(object.url, `${linkLocation}.url`),
     };
+  });
+}
+
+function normalizeReferences(value: unknown, location: string): TalkReference[] {
+  if (!Array.isArray(value)) throw new Error(`${location} must be a sequence`);
+  return value.map((entry, index) => {
+    const referenceLocation = `${location}[${index}]`;
+    const object = requireObject(entry, referenceLocation);
+    assertKnownFields(object, new Set(["label", "url", "comment"]), referenceLocation);
+    const reference: TalkReference = {
+      label: requiredString(object.label, `${referenceLocation}.label`),
+      url: requiredUrl(object.url, `${referenceLocation}.url`),
+    };
+    const comment = optionalString(object.comment, `${referenceLocation}.comment`);
+    if (comment !== undefined) reference.comment = comment;
+    return reference;
   });
 }
 
@@ -318,7 +356,7 @@ function isValidIsoDate(value: string): boolean {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 
-function assignOptionalUrl<T extends keyof Pick<TalkAppearance, "eventUrl" | "slideUrl" | "videoUrl">>(
+function assignOptionalUrl<T extends keyof Pick<TalkAppearance, "eventUrl" | "slideUrl" | "videoUrl" | "feedbackUrl">>(
   appearance: TalkAppearance,
   field: T,
   value: unknown,

@@ -190,12 +190,23 @@
     .back-icon {
         fill: currentColor;
         color: var(--color-text);
-        margin-top: var(--space-button-block);
         padding-left: var(--space-button-block);
         cursor: pointer;
     }
 
-    .back-icon,
+    #scroll-head {
+        display: flex;
+        align-items: center;
+        gap: var(--space-s);
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .back-icon {
+        display: flex;
+        align-items: center;
+    }
+
     .back-p {
         vertical-align: middle;
         display: inline-block;

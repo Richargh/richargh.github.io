@@ -1,0 +1,19 @@
+@layer argh.blocks {
+    .dialog {
+        color: var(--color-text);
+        background: var(--color-background-raised);
+        border: var(--border-width) solid var(--color-border-strong);
+        border-radius: var(--radius-card-large);
+        padding: var(--space-2xl);
+        max-inline-size: min(32rem, calc(100% - var(--space-2xl)));
+        box-sizing: border-box;
+    }
+
+    .dialog::backdrop {
+        background: rgb(0 0 0 / 50%);
+    }
+
+    .dialog h2 {
+        margin-block-start: 0;
+    }
+}

@@ -5,10 +5,11 @@ import { renderNavItem } from "../NavItem/NavItem.ts";
 
 export interface HeaderOptions {
   showBackToHome?: boolean;
+  backLink?: { href: string; label: string };
   toolsHtml?: string;
 }
 
-export function renderHeader({ showBackToHome = false, toolsHtml = "" }: HeaderOptions = {}): string {
+export function renderHeader({ showBackToHome = false, backLink, toolsHtml = "" }: HeaderOptions = {}): string {
   return `<header>
     <div class="dashboard">
         <div class="site-heading profile-board-col">
@@ -72,7 +73,7 @@ export function renderHeader({ showBackToHome = false, toolsHtml = "" }: HeaderO
                     limit: 4
                     })
     </script>
-    ${showBackToHome ? renderBackToHome() : ""}
+    ${backLink ? renderBackLink(backLink) : showBackToHome ? renderBackLink({ href: "/", label: "Home" }) : ""}
 </header>`;
 }
 
@@ -145,14 +146,14 @@ function rssIcon(): string {
                 </svg>`;
 }
 
-function renderBackToHome(): string {
-  return `<div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+function renderBackLink({ href, label }: { href: string; label: string }): string {
+  return `<a class="main-site-subheader disable-select" id="scroll-head" href="${escapeHtml(href)}">
         <div class="back-icon">
             <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
             </svg>
         </div>
-        <p class="back-p">Home</p>
-    </div>`;
+        <p class="back-p">${escapeHtml(label)}</p>
+    </a>`;
 }

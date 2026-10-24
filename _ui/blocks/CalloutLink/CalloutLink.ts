@@ -6,8 +6,9 @@ export interface CalloutLinkOptions {
   label: string;
   utilities?: ButtonUtility[];
   className?: string;
+  newTab?: boolean;
 }
 
-export function renderCalloutLink({ href, label, utilities = ["button-compact", "button-muted"], className = "" }: CalloutLinkOptions): string {
-  return `<a class="${buttonClassName("callout-link", utilities, className)}" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+export function renderCalloutLink({ href, label, utilities = ["button-compact", "button-muted"], className = "", newTab = false }: CalloutLinkOptions): string {
+  return `<a class="${buttonClassName("callout-link", utilities, className)}" href="${escapeHtml(href)}"${newTab ? ' target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(label)}</a>`;
 }

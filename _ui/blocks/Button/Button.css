@@ -1,4 +1,12 @@
 @layer argh.blocks {
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-s);
+        margin-block-start: var(--space-s);
+    }
+
     .button {
         display: inline-flex;
         align-items: center;

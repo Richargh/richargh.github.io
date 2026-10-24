@@ -4,8 +4,16 @@
     - ai
     - automation
     - safety
+  references:
+    - label: ironies-of-automation-wiki
+      url: https://en.wikipedia.org/wiki/Ironies_of_Automation
+      comment: "Ironies of Automation"
+    - label: how-complex-systems-fail
+      url: https://how.complexsystems.fail/
+      comment: "How Complex Systems Fail Treatise"
   appearances:
-    - conference: Build Stuff
+    - id: 2026-12-02
+      conference: Build Stuff
       location: in-person
       city: Vilnius
       country: Lithuania
@@ -20,8 +28,13 @@
     - ai
     - legacy-code
     - modernisation
+  references:
+      - label: software-modernisation-service
+        url: https://www.maibornwolff.de/en/software-modernization/
+        comment: "Systems Modernisation Service from MaibornWolff"
   appearances:
-    - title: KI-gestützte Legacy-Modernisierung
+    - id: 2026-10-06
+      title: KI-gestützte Legacy-Modernisierung
       conference: betterCode(Agentic Ai)
       location: remote
       date: 2026-10-06
@@ -36,6 +49,10 @@
   tags:
     - architecture
     - testing
+  references:
+      - label: systemsthinking.dev
+        url: https://systemsthinking.dev
+        comment: "Systems Modelling Notation from"
   abstract: >
       Our team has decoupled multiple large legacy code bases without being slown down by structure-sensitive tests. In fact we were able to painlessly grow our suite of business critical tests while we were completely reimagining our internal structure and without our users being impacted.
       
@@ -43,7 +60,8 @@
       
       This talk explores the isolation mechanisms in the beehive that support decoupling even large applications and the refactoring-friendly test patterns that are possible due to the structure.
   appearances:
-    - title: Bienenstock Architektur
+    - id: 2023-09-29
+      title: Bienenstock Architektur
       conference: JUG Saxony Day
       location: in-person
       city: Radebeul
@@ -63,6 +81,10 @@
     - frontend
     - web
     - htmx
+  references:
+    - label: mother-of-all-htmx-talks
+      url: https://www.youtube.com/watch?v=3GObi93tjZI
+      comment: "Talk: From React to htmx on a real-world SaaS product: we did it, and it's awesome!"
   abstract: >
       The complexity of single-page application (SPA) frameworks is increasing every year. Developers are not only faced with a steep learning curve, but a never-ending one. Every year, existing concepts are replaced by new ones, some of which radically change how we build applications. 
       
@@ -70,7 +92,8 @@
       
       In this talk we will look at a modern approach with Htmx and WebComponents that is much simpler and can deliver at least the same user experience as a SPA. Teams don't have to learn two separate stacks for backend and frontend. This gives us full-stack teams that can be productive together. They can focus on the business logic again and less on the technical aspects.
   appearances:
-    - conference: NDC Oslo
+    - id: 2025-05-21
+      conference: NDC Oslo
       location: in-person
       city: Oslo
       country: Norway
@@ -86,6 +109,10 @@
   tags:
     - continuous-delivery
     - legacy-code
+  references:
+   - label: codecharta
+     url: https://codecharta.com/
+     comment: "CodeCharta"
   abstract: >
     This is based on a true story.
 
@@ -95,7 +122,8 @@
     
     Together we will explore what to do when you inherit such a thing: how to identify hotspots, find hidden coupling, explore how connascence can help you, ways to test as well as refactor and how to achieve a regular deployment schedule.
   appearances:
-    - conference: Lean-Agile Scotland
+    - id: 2024-09-25
+      conference: Lean-Agile Scotland
       location: in-person
       city: Edinburgh
       country: United Kingdom
@@ -104,7 +132,8 @@
       language: en
       eventUrl: https://leanagile.scot/programme/continuous-delivery-legacy-code
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-v3-dot-1-at-leanagile-scotland-2024
-    - conference: NDC London
+    - id: 2024-02-01
+      conference: NDC London
       location: in-person
       city: London
       country: United Kingdom
@@ -114,7 +143,8 @@
       eventUrl: https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-ndc-london
       videoUrl: https://www.youtube.com/watch?v=djl2hJkzmGQ
-    - conference: DevOpsCon
+    - id: 2022-12-06
+      conference: DevOpsCon
       location: in-person
       city: Munich
       country: Germany
@@ -123,7 +153,8 @@
       language: en
       eventUrl: https://devopscon.io/microservices-software-architecture/continuous-delivery-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-devopscon-winter-2022
-    - conference: Build Stuff
+    - id: 2019-11-13
+      conference: Build Stuff
       location: in-person
       city: Vilnius
       country: Lithuania
@@ -133,7 +164,8 @@
       eventUrl: https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code
       videoUrl: https://www.youtube.com/watch?v=AaexmSPQVpU
-    - conference: Software Architecture Gathering
+    - id: 2019-10-16
+      conference: Software Architecture Gathering
       location: in-person
       city: Munich
       country: Germany
@@ -142,7 +174,8 @@
       language: en
       eventUrl: https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/cd-for-legacy-code
-    - conference: Entwicklertag Frankfurt
+    - id: 2019-02-21
+      conference: Entwicklertag Frankfurt
       location: in-person
       city: Frankfurt
       country: Germany
@@ -151,7 +184,8 @@
       language: de
       eventUrl: https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218
-    - conference: Xp Days
+    - id: 2018-11-09
+      conference: Xp Days
       location: in-person
       city: Karlsruhe
       country: Germany
@@ -169,6 +203,10 @@
     - java
     - destructoring
     - encapsulation
+  references:
+    - label: jep-500
+      url: https://openjdk.org/jeps/500
+      comment: "JEP 500: Prepare to Make Final Mean Final"
   abstract: >
       Destructoring—the breakdown of an object into its constituent parts—is key to Java's ability to reliably maintain encapsulation and invariants. We resolve this apparent paradox in the presentation by looking at past and future language and platform features in the JDK.
 
@@ -178,7 +216,8 @@
 
       Given these circumstances, it is worth taking a closer look: What is already there, what comes next – and what does this mean for our daily Java practice?
   appearances:
-    - title: Destructoring ist die Zukunft von Javas Encapsulation
+    - id: 2026-12-08
+      title: Destructoring ist die Zukunft von Javas Encapsulation
       conference: IT Tage
       location: in-person
       city: Frankfurt
@@ -187,7 +226,8 @@
       upcomingSince: 2026-10-12
       language: de
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2026/destructoring-ist-die-zukunft-von-javas-encapsulation.html
-    - conference: Devoxx Belgium
+    - id: 2026-10-05
+      conference: Devoxx Belgium
       location: in-person
       city: Antwerp
       country: Belgium
@@ -196,7 +236,8 @@
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7012/destructoring-is-the-future-of-javas-encapsulation
       slideUrl: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
       videoUrl: https://www.youtube.com/watch?v=wcghmWdu-HY
-    - conference: ObjektForum Frankfurt
+    - id: 2026-04-22
+      conference: ObjektForum Frankfurt
       location: in-person
       city: Frankfurt
       country: Germany
@@ -204,7 +245,8 @@
       title: Destructuring ist die Zukunft von Javas Encapsulation
       language: de
       eventUrl: https://www.andrena.de/event/of-ffm-apr-2026
-    - conference: JavaLand
+    - id: 2026-03-10
+      conference: JavaLand
       location: in-person
       city: Rust
       country: Germany
@@ -213,7 +255,8 @@
       language: de
       eventUrl: https://meine.doag.org/events/javaland/2026/agenda/#agendaId.6841
       slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-javaland-2026
-    - conference: JUG Darmstadt
+    - id: 2026-01-22
+      conference: JUG Darmstadt
       location: in-person
       city: Darmstadt
       country: Germany
@@ -232,6 +275,10 @@
     - legacy-code
     - architecture
     - domain-discovery
+  references:
+    - label: codecharta
+      url: https://codecharta.com/
+      comment: "CodeCharta"
   abstract: >
       Legacy code projects struggle before coding even begins. Which features are implemented, where they are located, and at what maturity level, is often unclear. In short, a gap exists between the business domain and what is implemented in code. 
 
@@ -239,7 +286,8 @@
 
       In this talk we'll explore the core patterns to rediscover the domain. These patterns go beyond merely deciphering the code's functionality. They provide strategies to comprehend the underlying concepts, behaviors, and relationships in the domain.
   appearances:
-    - conference: TechCamp Hamburg
+    - id: 2026-08-25
+      conference: TechCamp Hamburg
       location: in-person
       city: Hamburg
       country: Germany
@@ -248,7 +296,8 @@
       language: en
       eventUrl: https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-4-at-techcamp-hamburg-2026
-    - conference: DWX
+    - id: 2026-07-01
+      conference: DWX
       location: in-person
       city: Nuremberg
       country: Germany
@@ -257,7 +306,8 @@
       language: en
       eventUrl: https://www.developer-world.de/dwx/dwx-programm
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-3-at-dwx-2026
-    - conference: OOP
+    - id: 2026-02-13
+      conference: OOP
       location: in-person
       city: Munich
       country: Germany
@@ -266,7 +316,8 @@
       language: en
       eventUrl: https://www.oop-konferenz.de/de/ueber-die-konferenz/konferenzprogramm/details/fr-71
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-2-at-oop-2026
-    - conference: JUG Darmstadt
+    - id: 2026-01-22
+      conference: JUG Darmstadt
       location: in-person
       city: Darmstadt
       country: Germany
@@ -274,7 +325,8 @@
       talkVersion: 3.1
       language: en
       eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
-    - conference: Java Forum Nord
+    - id: 2025-09-16
+      conference: Java Forum Nord
       location: in-person
       city: Hanover
       country: Germany
@@ -283,7 +335,8 @@
       language: en
       eventUrl: https://javaforumnord.de/2025/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-1-at-javaforumnord-2025
-    - conference: Build Stuff
+    - id: 2024-11-15
+      conference: Build Stuff
       location: in-person
       city: Vilnius
       country: Lithuania
@@ -293,14 +346,16 @@
       eventUrl: https://www.buildstuff.events/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-at-buildstuff-2024
       videoUrl: https://www.youtube.com/watch?v=SoMI-KEADiM
-    - conference: Software Architecture Alliance
+    - id: 2024-10-22
+      conference: Software Architecture Alliance
       location: remote
       date: 2024-10-22
       talkVersion: 2
       language: en
       eventUrl: https://www.software-architecture-alliance.de/2024/programm/konferenzprogramm#item-7971
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v2-at-software-architecture-alliance-2024
-    - conference: DDD Europe
+    - id: 2024-05-31
+      conference: DDD Europe
       location: in-person
       city: Amsterdam
       country: Netherlands
@@ -319,12 +374,17 @@
     - java
     - csharp
     - nullability
+  references:
+    - label: tony-hoare-billion-dollar-mistake
+      url: https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
+      comment: "Tony Hoare on Null References: The Billion Dollar Mistake"
   abstract: >
       Sir Anthony Hoare calls the null reference his billion dollar mistake because it has led to "innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years." Whether the order of magnitude is true remains to be proven by the scientific community but I think it's fair to say that null references are one of the leading causes of sleep deprivation for developers about to release. Thankfully most programming languages have been extended with alternate ways to handle "the absence of value" that lead to more expressive code, less room for errors and better sleep.
 
       In this talk we will explore the Nullability possibilities that Java provide, the alternate ways that other languages like Python, Kotlin or C# have picked and techniques such as Railway-Oriented Programming or the Null-Object-Pattern that can help if the language of choice does not provide an option. Finally we'll look at migration options for older code bases.
   appearances:
-    - conference: JavaLand
+    - id: 2023-03-22
+      conference: JavaLand
       location: in-person
       city: Brühl
       country: Germany
@@ -334,7 +394,8 @@
       variant: Java spotlight
       eventUrl: https://meine.doag.org/events/javaland/2023/agenda/#agendaId.2006
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland
-    - conference: Build Stuff
+    - id: 2021-11-19
+      conference: Build Stuff
       location: in-person
       city: Vilnius
       country: Lithuania
@@ -351,6 +412,10 @@
   tags:
     - continuous-delivery
     - pipeline
+  references:
+      - label: aws-dpra
+        url: https://aws-samples.github.io/aws-deployment-pipeline-reference-architecture/
+        comment: "AWS Deployment Pipeline Reference Architecture (DPRA)"
   abstract: >
       The Heart of any well-performing team is it‘s own hand-crafted Engineering process. But a heart would be useless without veins that pass along the blood and can take the pressure that the heart builds. In a similar manner a team needs it’s own hand-crafted pipeline. Most teams today have one but only few teams have a pipeline that can take the pressure and not collapse. This talk is how to build this Greatest and Best Pipeline in the world. 
 
@@ -360,7 +425,8 @@
 
       The examples will cover building, bundling, testing and securing your deployment artifact. They'll be written in Gitlab-Ci format and deploy to Kubernetes, but you can apply the same principles and patterns to any other pipeline and any other environment.
   appearances:
-    - conference: JAX
+    - id: 2023-05-10
+      conference: JAX
       location: in-person
       city: Mainz
       country: Germany
@@ -375,6 +441,10 @@
   tags:
     - kotlin
     - java
+  references:
+      - label: redmonk-lang-rankings
+        url: https://redmonk.com/sogrady/2026/04/14/language-rankings-1-26/
+        comment: "The RedMonk Programming Language Rankings: January 2026"
   abstract: >
       Java has introduced many attractive language features in recent years - records, pattern matching and virtual threads - and thus a large part of what was previously exclusive to Kotlin. But has Java really covered everything attractive about Kotlin? Is Kotlin still relevant in 2026?
 
@@ -382,7 +452,8 @@
 
       The talk aims to help current and future developers choose the right programming language for their needs by providing a complete, unbiased picture of the strengths and limitations of both languages.
   appearances:
-    - conference: Java Forum Stuttgart
+    - id: 2026-07-09
+      conference: Java Forum Stuttgart
       location: in-person
       city: Stuttgart
       country: Germany
@@ -390,7 +461,8 @@
       language: de
       eventUrl: https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2026-uberhaupt-noch-kotlin-v1-dot-2-at-java-forum-stuttgart-2026
-    - conference: IT Tage
+    - id: 2025-12-11
+      conference: IT Tage
       location: in-person
       city: Frankfurt
       country: Germany
@@ -398,7 +470,8 @@
       language: de
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025
-    - conference: JavaLand
+    - id: 2025-04-01
+      conference: JavaLand
       location: in-person
       city: Nürburg
       country: Germany
@@ -415,8 +488,13 @@
   tags:
     - llm
     - ai
+  references:
+      - label: pivot-to-ai-openai-alleged-hack
+        url: https://pivot-to-ai.com/2026/07/22/openai-hacks-huggingface-with-an-ai-allegedly/
+        comment: "OpenAI hacks HuggingFace with an AI — allegedly"
   appearances:
-    - conference: JUG Darmstadt
+    - id: 2026-09-09
+      conference: JUG Darmstadt
       location: in-person
       city: Darmstadt
       country: Germany
@@ -434,6 +512,10 @@
   tags:
     - frontend
     - software-forensics
+  references:
+      - label: codecharta
+        url: https://codecharta.com/
+        comment: "CodeCharta"
   abstract: >
       In projects with hundreds of thousands of lines, it is easy to lose track of code, architecture and quality. Are we still on the right track, are we blocking ourselves with internal dependencies, or are we already stuck? Software is immaterial, we cannot see how it is doing. 
 
@@ -441,7 +523,8 @@
 
       Some of the techniques we will look at in-depth are Quality Views and feature injection. The forensic tools include the open-source tool CodeCharta and CodeGraph.
   appearances:
-    - conference: JSHeroes
+    - id: 2026-05-15
+      conference: JSHeroes
       location: in-person
       city: Cluj-Napoca
       country: Romania
@@ -451,7 +534,8 @@
       eventUrl: https://jsheroes.io/#:~:text=Forensic
       slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026
       videoUrl: https://www.youtube.com/watch?v=P7d9rtJa4VU
-    - conference: c't <webdev>
+    - id: 2025-11-19
+      conference: c't <webdev>
       location: in-person
       city: Cologne
       country: Germany
@@ -467,10 +551,18 @@
     - architecture
     - legacy-code
     - modernisation
+  references:
+      - label: codecharta
+        url: https://codecharta.com/
+        comment: "CodeCharta"
+      - label: wardley-maps-official
+        url: https://www.swardleymaps.com/
+        comment: "Wardley Map Site from Simon Wardley"
   abstract: >
       There are many ways to modernize software – but which strategy makes sense when? “Refactor, rearchitect, rebuild” and their relatives are buzzwords, but behind each approach are different prerequisites and goals. In this presentation, we will highlight how to recognize the right time for renewal and which methods can be used to accurately assess the current state of the system. Only on this basis can we assess which modernization strategy – from targeted refactoring to complete rebuild – best suits the individual system and future requirements.
   appearances:
-    - conference: DevLand
+    - id: 2026-03-13
+      conference: DevLand
       location: in-person
       city: Brühl
       country: Germany
@@ -480,7 +572,8 @@
       durationMinutes: 45
       eventUrl: https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049
       slideUrl: https://speakerdeck.com/richargh/refactor-rearchitect-rebuild-was-macht-man-wann-v1-at-devland-2026
-    - conference: Bitkom AK Software Engineering und Software Architektur
+    - id: 2025-09-15
+      conference: Bitkom AK Software Engineering und Software Architektur
       location: remote
       date: 2025-09-15
       title: Refactor, Rearchitect, Rebuild - Was macht man wann?
@@ -493,12 +586,17 @@
   tags:
     - trunk-based-development
     - remote-work
+  references:
+      - label: chaos-report-2015
+        url: https://cdn1-public.infotech.com/agile/CHAOSReport2015-Final.pdf
+        comment: "Chaos Report 2015"
   abstract: >
       How to coordinate teams of 40+ developers and get consistent quality in a remote setting? Plenty scaling methods have been proposed but they leave out the technical practices needed to achieve quality at scale and big-bang migrate teams.
 
       In this talk we‘ll explore how my project grew from a local 6 person scrum team to a remote 20 person continuous flow team and beyond. We‘ll take a look at the iterations needed to achieve our flow, how we used Xp practices like trunk-based development and what practices we adopted in our all-remote setting.
   appearances:
-    - conference: Build Stuff
+    - id: 2022-11-09
+      conference: Build Stuff
       location: hybrid
       city: Vilnius
       country: Lithuania
@@ -507,7 +605,8 @@
       eventUrl: https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference
       slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff
       videoUrl: https://www.youtube.com/watch?v=NBjZ3wRXkxY
-    - conference: IPC
+    - id: 2022-10-25
+      conference: IPC
       location: in-person
       city: Munich
       country: Germany
@@ -523,6 +622,10 @@
     - ai
     - security
     - coding-agents
+  references:
+      - label: docker-sandboxes
+        url: https://docs.docker.com/ai/sandboxes/
+        comment: "Docker Sandboxes"
   abstract: >
       Coding agents are unsafe, just like a campfire in a drought. OpenAi's agent hacking Hugging Face shows what these agents are trained to do. And even a safety-tuned agent can be hijacked by any external content (pull request, external library, or website), which can inject prompts and lead to persisted compromise. Safety training and prompt-injection classifiers can lower the odds, but as Simon Willison puts it: "In application security, 99% is a failing grade."
 
@@ -531,7 +634,8 @@
     - label: Clamp Sandbox
       url: https://github.com/Richargh/clamp
   appearances:
-    - conference: Code.talks
+    - id: 2026-11-04
+      conference: Code.talks
       location: in-person
       city: Hamburg
       country: Germany
@@ -540,7 +644,8 @@
       upcomingSince: 2026-10-05
       language: en
       eventUrl: https://codetalks.com/speaker#:~:text=Richard%20Gross
-    - conference: Devoxx Belgium
+    - id: 2026-10-05
+      conference: Devoxx Belgium
       location: in-person
       city: Antwerp
       country: Belgium
@@ -550,7 +655,8 @@
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=GLJGhkxMdgU
-    - conference: Container Days Hamburg
+    - id: 2026-09-03
+      conference: Container Days Hamburg
       location: in-person
       city: Hamburg
       country: Germany
@@ -566,8 +672,13 @@
   tags:
     - spring-boot
     - kotlin
+  references:
+      - label: spring-fu
+        url: https://github.com/spring-attic/spring-fu
+        comment: "Spring Fu"
   appearances:
-    - conference: Entwicklertag Frankfurt
+    - id: 2020-02-20
+      conference: Entwicklertag Frankfurt
       location: in-person
       city: Frankfurt
       country: Germany
@@ -582,6 +693,10 @@
   tags:
     - legacy-code
     - modernisation
+  references:
+      - label: codecharta
+        url: https://codecharta.com/
+        comment: "CodeCharta"
   abstract: >
       Code and buildings have nothing in common. One is a malleable construct of our minds, while the other is an observable object, constructed of brick and mortar, amongst other things. Given that code and buildings have no similarities it is clear that we cannot apply metaphors from constructing a building to "constructing" a code base. Or so I thought.  
 
@@ -589,7 +704,8 @@
 
       In this experience report I'll show lots of pictures from our house renovation - full of torn down walls, replaced floors and the like - and draw analogies to our legacy code renovation. I'll share helpful tips for code renovation that can be understood by anyone due to the building analogies and hopefully entertain you along the way. By the end I hope to have convinced you that renovating a legacy code base is a much nicer task than renovating a house, where each torn down wall can lead to brick and mortar raining down on your malleable head.
   appearances:
-    - conference: CTO Craft Con Berlin
+    - id: 2025-09-23
+      conference: CTO Craft Con Berlin
       location: in-person
       city: Berlin
       country: Germany
@@ -603,8 +719,13 @@
   title: What is Software Quality
   tags:
     - software-quality
+  references:
+      - label: codecharta
+        url: https://codecharta.com/
+        comment: "CodeCharta"
   appearances:
-    - conference: IT Day Frankfurt
+    - id: 2018-10-26
+      conference: IT Day Frankfurt
       location: in-person
       city: Frankfurt
       country: Germany

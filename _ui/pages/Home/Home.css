@@ -89,27 +89,9 @@
         margin-block-start: var(--space-xs);
     }
 
-    .home-services {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--space-l);
-    }
-
-    .home-services .example-card {
-        background: var(--color-background-raised);
-    }
-
-    .home-services .example-card h2,
     .home-collections h2 {
         margin-top: 0;
         text-wrap: balance;
-    }
-
-    .home-services .example-card p {
-        max-width: 24ch;
-        margin-bottom: 0;
-        font-size: var(--font-size-m);
-        text-wrap: pretty;
     }
 
     .home-collections {
@@ -126,7 +108,6 @@
     }
 
     @container style(--viewport: narrow) {
-        .home-services,
         .home-collections {
             grid-template-columns: 1fr;
         }

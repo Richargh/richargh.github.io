@@ -11,6 +11,7 @@ export interface LayoutOptions {
   description?: string;
   type?: "website" | "article";
   showBackToHome?: boolean;
+  backLink?: { href: string; label: string };
   headerToolsHtml?: string;
   sideNavigation?: string;
   content: string;
@@ -47,6 +48,8 @@ export function renderLayout(options: LayoutOptions): string {
       import "scroll-to-top-element";
       import "randomizer-element";
       import "#secret-email-button-element";
+      import "dialog-element";
+      import "federated-post-picker-element";
     </script>
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">
 </head>
@@ -55,7 +58,7 @@ export function renderLayout(options: LayoutOptions): string {
     ${options.sideNavigation ?? ""}
     <div class="container">
         <div class="box">
-            ${renderHeader({ showBackToHome: options.showBackToHome, toolsHtml: options.headerToolsHtml })}
+            ${renderHeader({ showBackToHome: options.showBackToHome, backLink: options.backLink, toolsHtml: options.headerToolsHtml })}
             ${options.content}
             ${renderFooter()}
         </div>

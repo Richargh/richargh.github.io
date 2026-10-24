@@ -1,4 +1,8 @@
 @layer argh.utilities {
+    .space-before {
+        margin-block-start: var(--space-2xl);
+    }
+
     .serif {
         font-family: var(--font-serif) !important;
     }

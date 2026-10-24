@@ -1,0 +1,17 @@
+@layer argh.blocks {
+    .autocomplete-input {
+        display: grid;
+        gap: var(--space-s);
+    }
+
+    .autocomplete-input input {
+        box-sizing: border-box;
+        inline-size: 100%;
+        min-inline-size: 0;
+        padding: var(--space-s);
+        color: var(--color-text);
+        background: var(--color-background);
+        border: var(--border-width) solid var(--color-border-strong);
+        font: inherit;
+    }
+}

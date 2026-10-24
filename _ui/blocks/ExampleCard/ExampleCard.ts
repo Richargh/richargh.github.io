@@ -12,6 +12,7 @@ export interface ExampleCardOptions {
   code?: string;
   href?: string;
   linkLabel?: string;
+  actionsHtml?: string;
   meta?: ExampleCardMetaItem[];
   tags?: string[];
 }
@@ -30,6 +31,7 @@ export function renderExampleCard(options: ExampleCardOptions): string {
     ${tagsHtml}
     ${codeHtml}
     ${linkHtml}
+    ${options.actionsHtml ? `<div class="example-card-actions">${options.actionsHtml}</div>` : ""}
   </section>`;
 }
 

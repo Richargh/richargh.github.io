@@ -8,7 +8,7 @@ import type { Article } from "../../../lib/articles.ts";
 import { assertRelatedReferencesExist, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../../lib/cross-links.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 import type { InterviewAppearance } from "../../../lib/interviews.ts";
-import type { Talk, TalkAppearance, TalkLink } from "../../../lib/talks.ts";
+import { talkAppearanceUrl, type Talk, type TalkAppearance, type TalkLink } from "../../../lib/talks.ts";
 
 export function renderTalksDocument(talks: Talk[], articles: Article[] = [], interviews: InterviewAppearance[] = [], relatedGroups: RelatedGroup[] = []): string {
   const sortedTalks = talks.toSorted((left, right) => left.title.localeCompare(right.title));
@@ -32,11 +32,11 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
   });
 }
 
-function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[]): string {
+export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], title = talk.title, showResourceLinks = true): string {
   const video = newestVersionVideo(talk.appearances);
   return renderArticleCard({
     id: talk.id,
-    title: talk.title,
+    title,
     banner: {
       thumbnail: talk.thumbnail,
       tags: talk.tags,
@@ -46,7 +46,7 @@ function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[]): string {
     actionsHtml: renderTalkActions(talk, relatedGroups),
     childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}
 <ul class="article-card-appearances-list">
-${talk.appearances.toSorted(compareAppearancesDescending).map(renderAppearanceLine).join("\n")}
+${talk.appearances.toSorted(compareAppearancesDescending).map((appearance) => renderAppearanceLine(appearance, showResourceLinks)).join("\n")}
 </ul>`,
   });
 }
@@ -93,10 +93,10 @@ function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | und
     .toSorted((left, right) => (right.talkVersion ?? -1) - (left.talkVersion ?? -1) || right.date.localeCompare(left.date))[0];
 }
 
-function renderAppearanceLine(appearance: TalkAppearance): string {
+function renderAppearanceLine(appearance: TalkAppearance, showResourceLink: boolean): string {
   return `<li class="article-card-appearance-line${appearance.videoUrl ? " has-video" : ""}">
 <span class="article-card-line-main">${renderVersion(appearance)}${renderEventLink(appearance)}${renderUpcoming(appearance)}${renderVariant(appearance)} ${renderLanguageFlag(appearance.language)}${renderDuration(appearance)}</span>
-<span class="article-card-line-links">${renderResourceLinks(appearance)}</span>
+<span class="article-card-line-links">${renderResourceLinks(appearance)}${showResourceLink ? ` ${renderCalloutLink({ label: "Resources", href: talkAppearanceUrl(appearance) })}` : ""}</span>
 </li>`;
 }
 
