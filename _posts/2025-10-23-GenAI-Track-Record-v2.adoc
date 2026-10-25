@@ -58,6 +58,16 @@ status: ongoing
 // McDonalds order errors
 // NY legal errors
 
+== 2026-10-24 link:https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector[No Signs of AI Payoff Outside the Tech Sector]
+
+* Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.
+** Revenue per worker is rising for the Mag 7 but is flat for the S&P 493
+** Profit margins are rising for the Mag 7 but are flat for the S&P 493
+** No Signs of AI boosting productivity growth
+** AI spending is extremely concentrated in a small number of firms
+** Circularity in AI shows up in token spending too
+* The bottom line is that the AI story will be decided in the S&P 493, not the Mag 7, and so far, there is no evidence that revenue growth or margins are improving outside the tech sector.
+
 == 2026-09-30 link:https://www.courthousenews.com/ai-training-of-copyrighted-material-not-fair-use-third-circuit/[AI training of copyrighted material not fair use: Third Circuit]
 
 * The Third Circuit rejected an artificial intelligence company’s fair use defense after it trained its AI on a competitor’s product, finding the training constituted copyright infringement — and potentially setting a landmark precedent for artificial intelligence.
