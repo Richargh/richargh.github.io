@@ -1,0 +1,12 @@
+---
+title: "Achievement unlocked: Made it onto the Ubiquitous Speakers 2026 List"
+tags: java encapsulation destructoring
+comments: false
+---
+
+Javaspecialists.eu made link:https://javaspecialists.eu/talks/ubiquitous/2026/[a list of all the Java speakers].
+Medals are handed out if you made it to more than 2 Java conferences.
+Guess who made the list? :)
+
+This year has been my busiest year yet with 14 conference appearances, so it's nice to feel recognized.
+Only 3 of these were at Java conferences though :D
