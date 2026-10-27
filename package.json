@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@mastrojs/mastro": "npm:@jsr/mastrojs__mastro@0.8.10",
-    "@playwright/test": "1.63.0",
+    "@playwright/test": "1.64.1",
     "@std/yaml": "npm:@jsr/std__yaml@1.1.1",
     "@types/node": "24.19.2",
     "asciidoctor": "3.0.4",
