@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "@mastrojs/feed": "npm:@jsr/mastrojs__feed@0.0.1",
-    "microlighter": "2.0.0"
+    "microlighter": "2.2.0"
   }
 }
