@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import type { Post } from "../lib/content.ts";
 import { loadPost } from "../lib/content.ts";
 import { renderPostDocument } from "../routes/posts/AI-Waste.server.ts";
@@ -23,8 +26,12 @@ test("metadata is escaped by the route instead of inserted as raw HTML", () => {
   assert.doesNotMatch(html, /<script>alert/);
 });
 
-test("explicit post permalinks are used for canonical URLs", async () => {
-  const post = await loadPost("_posts/2025-10-23-GenAI-Track-Record-v2.adoc");
-  assert.equal(post.urlPath, "/posts/gen-ai-track-record/");
-  assert.match(renderPostDocument(post), /<link rel="canonical" href="https:\/\/richargh\.de\/posts\/gen-ai-track-record\/"\/>/);
+test("explicit post permalinks are used for canonical URLs", async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), "post-route-"));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const path = join(directory, "2025-01-01-example.adoc");
+  await writeFile(path, "---\ntitle: Example\npermalink: /posts/custom/\n---\nBody");
+  const post = await loadPost(path);
+  assert.equal(post.urlPath, "/posts/custom/");
+  assert.match(renderPostDocument(post), /<link rel="canonical" href="https:\/\/richargh\.de\/posts\/custom\/"\/>/);
 });

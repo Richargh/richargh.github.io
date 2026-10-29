@@ -5,9 +5,11 @@ import { loadInterviews, parseInterviews } from "../lib/interviews.ts";
 test("loads interviews with visible show names", async () => {
   const interviews = await loadInterviews();
 
-  assert.equal(interviews.length, 4);
-  assert.ok(interviews.some((item) => item.show === ".NET Rocks!" && item.episode === "1927" && item.tags.includes("software-quality") && item.title === "Grasping Code Quality with Richard Gross" && item.thumbnail === "/assets/img/thumbnails/interview-dotnet-rocks.jpg"));
-  assert.ok(interviews.some((item) => item.id === "swaist-cc" && item.episode === "248" && item.show === "Software Architektur im Stream" && item.type === "stream" && item.thumbnail === "/assets/img/thumbnails/ccstream-2025-01-24-rDHtNNBoP6Y.jpg"));
+  for (const interview of interviews) {
+    assert.ok(interview.title.trim());
+    assert.ok(interview.show.trim());
+    assert.match(interview.url, /^https?:\/\//);
+  }
 });
 
 test("validates interviews", () => {

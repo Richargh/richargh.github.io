@@ -1,7 +1,19 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+import { renderPostDocument } from "../routes/posts/AI-Waste.server.ts";
+import { convertAsciiDocFragment } from "../lib/asciidoc.ts";
+
+async function openCodeFixture(page: Page): Promise<void> {
+  const html = renderPostDocument({
+    sourcePath: "fixture.adoc", title: "Code fixture", date: "2025-01-01",
+    slug: "fixture", urlPath: "/posts/test-code", tags: [], comments: false, excerpt: "Code",
+    html: convertAsciiDocFragment('[source,kotlin]\n----\nval greeting = "hello" // <1>\n----\n<1> Explanation'),
+  });
+  await page.route("**/posts/test-code", (route) => route.fulfill({ contentType: "text/html", body: html }));
+  await page.goto("/posts/test-code");
+}
 
 test("MicroLighter highlights AsciiDoc callout code without token span markup", async ({ page }) => {
-  await page.goto("/posts/Contract-Tests-in-Kotlin");
+  await openCodeFixture(page);
   const code = page.locator("pre > code.language-kotlin").first();
   await expect(code).toBeVisible();
   await expect.poll(() => page.evaluate(() => CSS.highlights.size)).toBeGreaterThan(0);
@@ -24,7 +36,7 @@ test("MicroLighter highlights AsciiDoc callout code without token span markup", 
 
 test("MicroLighter code blocks follow dark color scheme and fill the pre", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
-  await page.goto("/posts/java-version-history/");
+  await openCodeFixture(page);
   const code = page.locator("pre > code[class*='language-']").first();
   await expect(code).toBeVisible();
 

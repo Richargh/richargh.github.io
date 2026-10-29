@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { openTalkFixture } from "./browser-fixtures.ts";
 
 test("Mastodon picker supports custom domains, a new-tab composer, and remembers the choice", async ({ page, context }) => {
-  await page.goto("/t/bee-arc/2023-09-29/");
+  await openTalkFixture(page);
   await page.getByRole("button", { name: "Mastodon", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Post on Mastodon" });
   await expect(dialog).toBeVisible();
@@ -19,7 +20,7 @@ test("Mastodon picker supports custom domains, a new-tab composer, and remembers
   await popup.waitForLoadState();
   const destination = new URL(popup.url());
   expect(destination.origin + destination.pathname).toBe("https://custom.example/share");
-  expect(destination.searchParams.get("text")).toContain("https://richargh.de/t/bee-arc/2023-09-29/");
+  expect(destination.searchParams.get("text")).toContain("https://richargh.de/t/demo/example-conf/");
   expect(destination.searchParams.has("instance")).toBe(false);
   await popup.close();
   await page.reload();
@@ -28,7 +29,7 @@ test("Mastodon picker supports custom domains, a new-tab composer, and remembers
 });
 
 test("picker supports cancel, Escape, and native light dismiss", async ({ page }) => {
-  await page.goto("/t/bee-arc/2023-09-29/");
+  await openTalkFixture(page);
   const open = page.getByRole("button", { name: "Mastodon", exact: true });
   const dialog = page.getByRole("dialog");
   await open.click();

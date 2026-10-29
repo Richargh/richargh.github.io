@@ -105,12 +105,11 @@ test("appearance feedback URL takes precedence over talk fallback and is validat
   assert.throws(() => parseTalks(source.replace("      conference: New", "      feedbackUrl: javascript:alert(1)\n      conference: New")), /absolute http\(s\) URL/);
 });
 
-test("talk references are annotated, escaped, validated, and below coffee", async () => {
-  const talk = (await loadTalks()).find((talk) => talk.id === "bee-arc")!;
-  assert.deepEqual(talk.references, [{ label: "systemsthinking.dev", url: "https://systemsthinking.dev", comment: "Systems Modelling Notation from" }]);
+test("talk references are annotated, escaped, validated, and below coffee", () => {
+  const talk = parseTalks(source.replace("  abstract:", "  references:\n    - label: Example\n      url: https://example.com/reference\n      comment: Further reading from\n  abstract:"))[0];
   const html = renderTalkDocument(talk, talk.appearances[0]);
   assert.ok(html.indexOf("<h2>Grab a coffee</h2>") < html.indexOf('id="references"'));
-  assert.match(html, /Systems Modelling Notation from <a href="https:\/\/systemsthinking.dev">systemsthinking.dev<\/a>/);
+  assert.match(html, /Further reading from <a href="https:\/\/example.com\/reference">Example<\/a>/);
   const withReference = (fields: string) => source.replace("  abstract:", `  references:\n    - ${fields}\n  abstract:`);
   assert.throws(() => parseTalks(withReference("label: Link\n      url: javascript:alert(1)")), /absolute http\(s\) URL/);
   assert.throws(() => parseTalks(withReference("label: Link\n      url: https://example.com\n      comment: 123")), /comment must be a non-empty string/);
@@ -126,10 +125,14 @@ test("appearance IDs are stable, unique within a talk, and URL-safe", () => {
 });
 
 test("route resolves appearance IDs, rejects unknown IDs, and manifest covers each appearance", async () => {
-  assert.match(await render("bee-arc", "2023-09-29"), /<h1>2023-09-29 - JUG Saxony Day<\/h1>/);
-  await assert.rejects(render("unknown-talk", "2023-09-29"), /Unknown talk id/);
-  await assert.rejects(render("bee-arc", "unknown-appearance"), /Unknown appearance id/);
   const talks = await loadTalks();
+  await assert.rejects(render("nonexistent-test-talk", "unknown-appearance"), /Unknown talk id/);
+  for (const talk of talks) {
+    await assert.rejects(render(talk.id, "nonexistent-test-appearance"), /Unknown appearance id/);
+    for (const appearance of talk.appearances) {
+      assert.match(await render(talk.id, appearance.id), /<h1>[^<]+<\/h1>/);
+    }
+  }
   const manifest = buildRouteManifest([], [], talks);
   for (const talk of talks) {
     assert.ok(!manifest.some((entry) => entry.urlPath === `/t/${talk.id}/`));
