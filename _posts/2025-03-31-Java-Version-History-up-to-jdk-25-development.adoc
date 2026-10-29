@@ -49,14 +49,62 @@ It is however rather known where the road is heading. At some point in the futur
 | LTS until | ? (Oracle) +
 ? (Temurin) +
 ? (Corretto)
-| Expected | September 2025
+| released | September 2025
 | Stable JEPs | ?
-| Total JEPs | ?
+| Total JEPs | 18
 |===
 
-INFO:: _Preliminary_, since JDK is in rampdown and not released yet.
 
-⚠ link:https://openjdk.org/jeps/503[Remove the 32-bit x86 Port]:: Remove the source code and build support for the 32-bit x86 port. Port was deprecated since <<jdk-24, JDK 24>>.
+⚠ link:https://openjdk.org/jeps/503[Remove the 32-bit x86 Port]::
+Remove the source code and build support for the 32-bit x86 port. Port was deprecated since <<jdk-24, JDK 24>>.
+
+➕ link:https://openjdk.org/jeps/506[Scoped Values] 📘::
+Introduce Scoped Values, a method to share immutable data both with its callees within a (virtual) thread, and with child (virtual) threads.
+They are a modern replacement for the previous ThreadLocal API when you want one-way transmission of unchanging data.
+ThreadLocal suffered from free design flaws (unconstrained mutability, unbounded lifetime, and expensive inheritance) that were problematic explicitly with the new virtual threads.
+[source,java]
+----
+private static final ScopedValue<String> X = ScopedValue.newInstance();
+
+void foo() {
+    where(X, "hello").run(() -> bar());
+}
+
+void bar() {
+    System.out.println(X.get()); // prints hello
+    where(X, "goodbye").run(() -> baz());
+    System.out.println(X.get()); // prints hello
+}
+
+void baz() {
+    System.out.println(X.get()); // prints goodbye
+}
+----
+
+➕ link:https://openjdk.org/jeps/510[Key Derivation Function API]🔒📘::
+The API for Key Derivation Function (KDFs) provides the ability to derive additional keys from a secret key and other data.
+[source,java]
+----
+// Create a KDF object for the specified algorithm
+KDF hkdf = KDF.getInstance("HKDF-SHA256");
+
+// Create an ExtractExpand parameter specification
+AlgorithmParameterSpec params = HKDFParameterSpec
+    .ofExtract()
+    .addIKM(initialKeyMaterial)
+    .addSalt(salt)
+    .thenExpand(info, 32);
+
+// Derive a 32-byte AES key
+SecretKey key = hkdf.deriveKey("AES", params);
+----
+
+➕ link:https://openjdk.org/jeps/511[Module Import Declarations]🔒📘::
+The API for Key Derivation Function (KDFs) provides the ability to derive additional keys from a secret key and other data.
+[source,java]
+----
+
+----
 
 [#jdk-24]
 == link:https://openjdk.org/projects/jdk/24/[24]
