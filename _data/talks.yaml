@@ -270,7 +270,7 @@
 
 - id: drp4lc
   title: Domain Re-discovery Patterns for Legacy Code
-  thumbnail: /assets/img/thumbnails/drp4lc-2024-11-15-SoMI-KEADiM.jpg
+  thumbnail: /assets/img/thumbnails/drp4lc-2026-08-25-DitU4Igcvmk.jpg
   tags:
     - legacy-code
     - architecture
@@ -296,6 +296,7 @@
       language: en
       eventUrl: https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-4-at-techcamp-hamburg-2026
+      videoUrl: https://www.youtube.com/watch?v=DitU4Igcvmk
     - id: 2026-07-01
       conference: DWX
       location: in-person
