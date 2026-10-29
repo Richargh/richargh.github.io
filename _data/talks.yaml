@@ -471,6 +471,16 @@
       language: de
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025
+    - id: 2025-04-02
+      conference: JavaLand
+      location: in-person
+      city: Nürburg
+      country: Germany
+      date: 2025-04-02
+      language: de
+      variant: deep dive
+      durationMinutes: 90
+      eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080
     - id: 2025-04-01
       conference: JavaLand
       location: in-person
@@ -480,10 +490,6 @@
       language: de
       eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025
-      links:
-        - label: Deep dive, also at JavaLand 2025
-          url: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080
-
 - id: llmnet
   title: LLMs are not Skynet
   tags:
