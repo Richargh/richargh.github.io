@@ -1,3 +1,10 @@
+- id: bee-arc
+  items:
+    - kind: talk
+      id: bee-arc
+    - kind: article
+      id: sc-tests
+
 - id: java-dest-enc
   items:
     - kind: talk
