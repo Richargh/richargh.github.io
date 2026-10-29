@@ -7,6 +7,9 @@ status: ongoing
 ---
 
 // TODO
+// Welcome to the Vibe Graveyard https://vibegraveyard.ai/
+// IsAi profitable yet https://isaiprofitable.com/
+
 //https://poloclub.github.io/transformer-explainer/
 // == 2025-04-22 link:https://arxiv.org/abs/2504.15681[Vidi: Large Multimodal Models for Video Understanding and Editing]
 // link:https://www.researchgate.net/publication/354639860_Is_AI_Ground_Truth_Really_True_The_Dangers_of_Training_and_Evaluating_AI_Tools_Based_on_Experts'_Know-What[Is AI Ground Truth Really True? The Dangers of Training and Evaluating AI Tools Based on Experts’ Know-What]
@@ -47,6 +50,83 @@ status: ongoing
 // How AI Impacts Skill Formation Feb 2026 https://arxiv.org/abs/2601.20245
 
 // System Over Model: Zero-Day Discovery at the Jagged Frontier Apr 2026 https://aisle.com/blog/system-over-model-zero-day-discovery-at-the-jagged-frontier
+
+// The LLMentalist Effect: how chat-based Large Language Models replicate the mechanisms of a psychic’s con https://softwarecrisis.dev/letters/llmentalist/
+
+// SUPER-INTELLIGENCE OR SUPERSTITION? EXPLORING
+// PSYCHOLOGICAL FACTORS INFLUENCING BELIEF IN AI
+// PREDICTIONS ABOUT PERSONAL BEHAVIOR https://arxiv.org/pdf/2408.06602v3
+
+// The Ecological Cost of AI Is Much Higher Than You Think https://www.truthdig.com/articles/the-ecological-cost-of-ai-is-much-higher-than-you-think/
+
+// AI is Destroying the University and Learning Itself https://www.currentaffairs.org/news/ai-is-destroying-the-university-and-learning-itself
+
+// Context Rot: How Increasing Input Tokens Impacts LLM Performance https://www.trychroma.com/research/context-rot
+
+// State of AI An Empirical 100 Trillion Token Study with OpenRouter https://openrouter.ai/state-of-ai
+
+//  Wie funktioniert ChatGPT ganz genau?  https://media.ccc.de/v/froscon2024-3054-wie_funktioniert_chatgpt_ganz_genau
+
+// Speed at the Cost of Quality: How Cursor AI Increases Short-Term Velocity and Long-Term Complexity in Open-Source Projects https://arxiv.org/abs/2511.04427
+
+// Cursor's latest "browser experiment" implied success without evidence  https://emsh.cat/en/cursor-implied-success-without-evidence/
+
+// How AI Destroys Institutions https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5870623
+
+// How AI assistance impacts the formation of coding skills https://www.anthropic.com/research/AI-assistance-coding-skills
+
+// The End of Thinking https://www.derekthompson.org/p/the-end-of-thinking
+
+// AI startup Anthropic agrees to pay $1.5bn to settle book piracy lawsuit https://www.theguardian.com/technology/2025/sep/05/anthropic-settlement-ai-book-lawsuit
+
+// o whats the next word, then? https://matthias-kainer.de/blog/posts/so-whats-the-next-word-then-/
+
+// Ai doesn't reduce work, It Intensifies It ttps://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it
+
+// Firm Data on AI  https://www.nber.org/papers/w34836
+
+// How AI Impacts Skill Formation https://arxiv.org/abs/2601.20245
+
+// How did we end up threatening our kids’ lives with AI? https://www.anildash.com/2026/02/18/threatening-kids-with-ai/
+
+// Generative AI When Using AI Leads to “Brain Fry” https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry
+
+// AI is exhausting workers so much, researchers have dubbed the condition ‘AI brain fry’  https://edition.cnn.com/2026/03/13/business/ai-brain-fry-nightcap
+
+// From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI https://arxiv.org/abs/2603.22106?trk=public_post_comment-text
+
+// Alignment Whack-a-Mole : Finetuning Activates Verbatim Recall of Copyrighted Books in Large Language Models https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6449179
+
+// “Cognitive surrender” leads AI users to abandon logical thinking, research finds https://arstechnica.com/ai/2026/04/research-finds-ai-users-scarily-willing-to-surrender-their-cognition-to-llms/
+
+// SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks https://arxiv.org/html/2603.24755v1
+
+// AI Writing Is Not a Threat to the Arts. It's an Insult. https://beyondwriting.co/ai-writing-is-not-a-threat-to-the-arts-its-an-insult-copy
+
+// Quantifying Frontier LLM Capabilities for Container Sandbox Escape https://arxiv.org/abs/2603.02277
+
+// Scientists invented a fake disease. AI told people it was real https://www.nature.com/articles/d41586-026-01100-y
+
+//  Against the Commodification of Education — if harms then not AI  https://ojs.uni-oldenburg.de/ojs02/jodde/article/view/47
+
+// Degenerative AI in education https://codeactsineducation.wordpress.com/2023/06/30/degenerative-ai-in-education/
+
+// Is a random human peer better than a highly supportive chatbot in reducing loneliness over time? https://www.sciencedirect.com/science/article/pii/S0022103126000417
+
+// LLMs Corrupt Your Documents When You Delegate https://arxiv.org/abs/2604.15597
+
+// Ten takeaways from the AI Engineering Report 2026: The Acceleration Whiplash https://www.faros.ai/blog/ai-acceleration-whiplash-takeaways
+
+// Klinik haftet für Falschaussagen von KI-Chatbot https://www.golem.de/news/urteil-klinik-haftet-fuer-falschaussagen-von-ki-chatbot-2605-208728.html
+
+// Thinking—Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6097646&__cf_chl_tk=L30stdWKmp2XH5TJuY15cNktl5mQZglfHL1uJfLEBF0-1778957316-1.0.1.1-lv2HFEN0lfCXaWGhslGL2o_K8_7K24JbLd3L7rfgxUo
+
+// Situating Search [Emily Bender] https://dl.acm.org/doi/10.1145/3498366.3505816
+// Envisioning Information Access Systems: What Makes for Good Tools and a Healthy Web? [Emily Bender] https://dl.acm.org/doi/10.1145/3649468
+
+// Twelve Ways to Be Wrong About AI-Assisted Coding https://third-bit.com/2026/05/20/twelve-ways-to-be-wrong/
+
+// If LLMs Have Human-Like Attributes, Then So Does Age of Empires II https://arxiv.org/abs/2605.31514
 
 == General LLM comparisons
 
