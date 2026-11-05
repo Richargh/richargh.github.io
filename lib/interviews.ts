@@ -17,6 +17,7 @@ export interface InterviewAppearance {
   tags: string[];
   episode?: string;
   date: string;
+  upcomingSince?: string;
   language?: string;
   note?: string;
   thumbnail?: string;
@@ -24,7 +25,7 @@ export interface InterviewAppearance {
   links: InterviewLink[];
 }
 
-const interviewFields = new Set(["id", "show", "title", "type", "tags", "episode", "date", "language", "note", "thumbnail", "url", "links"]);
+const interviewFields = new Set(["id", "show", "title", "type", "tags", "episode", "date", "upcomingSince", "language", "note", "thumbnail", "url", "links"]);
 const linkFields = new Set(["label", "url"]);
 
 export async function loadInterviews(sourcePath = "_data/interviews.yaml"): Promise<InterviewAppearance[]> {
@@ -55,6 +56,7 @@ function normalizeInterview(entry: unknown, sourcePath: string, index: number): 
     url: requiredUrl(object.url, `${location}.url`),
     links: normalizeLinks(object.links, `${location}.links`),
   };
+  if (object.upcomingSince !== undefined) interview.upcomingSince = requiredIsoDate(object.upcomingSince, `${location}.upcomingSince`);
   assignOptionalString(interview, "episode", object.episode, `${location}.episode`);
   assignOptionalString(interview, "language", object.language, `${location}.language`);
   assignOptionalString(interview, "note", object.note, `${location}.note`);
@@ -132,7 +134,7 @@ function requiredType(value: unknown, location: string): InterviewType {
 
 function requiredIsoDate(value: unknown, location: string): string {
   const date = typeof value === "string" ? value : value instanceof Date && !Number.isNaN(value.valueOf()) ? value.toISOString().slice(0, 10) : undefined;
-  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`${location} is required and must be an ISO date (YYYY-MM-DD)`);
+  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`)) || new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date) throw new Error(`${location} is required and must be an ISO date (YYYY-MM-DD)`);
   return date;
 }
 

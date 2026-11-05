@@ -65,7 +65,7 @@ function upcomingArticles(articles: Article[]): ArticlePublication[] {
 
 function upcomingInterviews(interviews: InterviewAppearance[]): InterviewAppearance[] {
   const today = new Date().toISOString().slice(0, 10);
-  return interviews.filter((interview) => interview.date >= today);
+  return interviews.filter((interview) => interview.upcomingSince !== undefined || interview.date >= today);
 }
 
 function renderUpcomingTalk(appearance: TalkAppearance): string {
@@ -98,6 +98,7 @@ function renderUpcomingInterview(interview: InterviewAppearance): string {
     meta: `${interview.show} · ${interview.date}${renderLanguageFlag(interview.language)}`,
     detail: interview.type,
     url: interview.url,
+    isNew: isNew(interview.upcomingSince),
   });
 }
 

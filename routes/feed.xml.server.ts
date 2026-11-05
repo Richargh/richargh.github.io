@@ -1,14 +1,15 @@
 import { loadArticles } from "../lib/articles.ts";
 import { loadAllPosts } from "../lib/content.ts";
+import { loadInterviews } from "../lib/interviews.ts";
 import { publishedArticleFeedEntries } from "../lib/published-article-feed.ts";
 import { renderAtomFeed } from "../lib/site-resources.ts";
 import { loadTalks } from "../lib/talks.ts";
 import { upcomingFeedEntries } from "../lib/upcoming-feed.ts";
 
 export async function render(): Promise<string> {
-  const [posts, talks, articles] = await Promise.all([loadAllPosts({ buildDate: process.env.MASTRO_BUILD_DATE }), loadTalks(), loadArticles()]);
+  const [posts, talks, articles, interviews] = await Promise.all([loadAllPosts({ buildDate: process.env.MASTRO_BUILD_DATE }), loadTalks(), loadArticles(), loadInterviews()]);
   return renderAtomFeed(posts, [
-    ...upcomingFeedEntries(talks, articles),
+    ...upcomingFeedEntries(talks, articles, interviews),
     ...publishedArticleFeedEntries(articles, process.env.MASTRO_BUILD_DATE),
   ]);
 }

@@ -1,11 +1,13 @@
 import { flattenArticlePublications, type Article, type ArticlePublication } from "./articles.ts";
+import type { InterviewAppearance } from "./interviews.ts";
 import type { FeedEntry } from "./site-resources.ts";
 import { flattenTalkAppearances, type Talk, type TalkAppearance } from "./talks.ts";
 
-export function upcomingFeedEntries(talks: Talk[], articles: Article[]): FeedEntry[] {
+export function upcomingFeedEntries(talks: Talk[], articles: Article[], interviews: InterviewAppearance[] = []): FeedEntry[] {
   return [
     ...flattenTalkAppearances(talks).filter(hasUpcomingSince).map(talkUpcomingFeedEntry),
     ...flattenArticlePublications(articles).filter(hasUpcomingSince).map(articleUpcomingFeedEntry),
+    ...interviews.filter(hasUpcomingSince).map(interviewUpcomingFeedEntry),
   ];
 }
 
@@ -26,6 +28,16 @@ function articleUpcomingFeedEntry(publication: ArticlePublication & { upcomingSi
     linkPath: "/articles/#upcoming",
     date: publication.upcomingSince,
     summary: `New upcoming article: ${publication.articleTitle} at ${publication.publisher} on ${publication.date}${formatLanguage(publication.language)}.`,
+  };
+}
+
+function interviewUpcomingFeedEntry(interview: InterviewAppearance & { upcomingSince: string }): FeedEntry {
+  return {
+    title: `Upcoming interview: ${interview.title}`,
+    idPath: `/interviews/#upcoming-${interview.id}`,
+    linkPath: `/interviews/#${interview.id}`,
+    date: interview.upcomingSince,
+    summary: `New upcoming interview: ${interview.title} on ${interview.show} on ${interview.date}${formatLanguage(interview.language)}.`,
   };
 }
 
