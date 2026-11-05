@@ -35,11 +35,11 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
   });
 }
 
-export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], title = talk.title, showResourceLinks = true): string {
+export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], title = talk.title, showResourceLinks = true, bannerHtml = renderTalkBanner(talk)): string {
   return renderArticleCard({
     id: talk.id,
     title,
-    bannerHtml: renderTalkBanner(talk),
+    bannerHtml,
     actionsHtml: renderTalkActions(talk, relatedGroups),
     childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}
 <ul class="article-card-appearances-list">
@@ -59,13 +59,14 @@ function renderTalkBanner(talk: Talk): string {
       label: `Watch ${talk.title} at ${appearance.conference} ${appearance.date.slice(0, 4)}${version ? ` (${version})` : ""}`,
     });
   });
-  const supporting = conferenceAppearances(talk.appearances)
-    .filter((appearance) => !appearance.videoUrl)
-    .map((appearance) => renderLogoWithTitle({
-      src: appearance.logoUrl,
-      alt: appearance.conference,
-      title: appearance.date.slice(0, 4),
-    }));
+  const supportingAppearances = conferenceAppearances(talk.appearances)
+    .filter((appearance) => !appearance.videoUrl);
+  const supporting = supportingAppearances.map((appearance) => renderLogoWithTitle({
+    src: appearance.logoUrl,
+    alt: appearance.conference,
+    title: appearance.date.slice(0, 4),
+    compact: media.length === 0 && supportingAppearances.length === 1,
+  }));
   if (media.length + supporting.length === 1) return media[0] ?? supporting[0];
   return renderBento({ media, supporting });
 }

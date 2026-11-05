@@ -15,6 +15,17 @@
         text-decoration: none;
     }
 
+    .logo-with-title-compact {
+        height: 210px;
+        aspect-ratio: auto;
+    }
+
+    @media (max-width: 620px) {
+        .logo-with-title-compact {
+            height: 80px;
+        }
+    }
+
     .logo-with-title-image {
         width: auto;
         height: auto;

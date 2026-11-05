@@ -8,6 +8,7 @@ export default {
 } satisfies StyleMeta<LogoWithTitleOptions>;
 
 export const Logo = {} satisfies StyleStory<LogoWithTitleOptions>;
+export const Compact = { args: { compact: true } } satisfies StyleStory<LogoWithTitleOptions>;
 export const TextFallback = {
   args: { src: undefined, alt: "Local meetup", title: "2025" },
 } satisfies StyleStory<LogoWithTitleOptions>;

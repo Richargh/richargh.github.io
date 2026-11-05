@@ -72,6 +72,24 @@ test("individual appearances retain the talk family's Article and Interview link
   }
 });
 
+test("a static appearance thumbnail is used only on its resource page, without a play button", () => {
+  const talk = parseTalks(source)[0];
+  const appearance = talk.appearances[0];
+  appearance.thumbnail = "/assets/img/thumbnails/custom-cover.jpg";
+  appearance.logoUrl = "/assets/img/conferences/custom-logo.svg";
+  const resourceBanner = renderTalkDocument(talk, appearance).split('<div class="article-card-body">')[0];
+  assert.match(resourceBanner, /src="\/assets\/img\/thumbnails\/custom-cover.jpg"/);
+  assert.doesNotMatch(resourceBanner, /custom-logo.svg|thumbnail-play/);
+  const listingBanner = renderTalkCard(talk).split('<div class="article-card-body">')[0];
+  assert.match(listingBanner, /src="\/assets\/img\/conferences\/custom-logo.svg"/);
+  assert.doesNotMatch(listingBanner, /custom-cover.jpg/);
+
+  appearance.videoUrl = "https://example.com/recording";
+  const playableBanner = renderTalkDocument(talk, appearance).split('<div class="article-card-body">')[0];
+  assert.match(playableBanner, /href="https:\/\/example.com\/recording"/);
+  assert.match(playableBanner, /thumbnail-play/);
+});
+
 test("listing links each appearance to its own doorway", () => {
   const talks = parseTalks(source);
   const html = renderTalksDocument(talks);

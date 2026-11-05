@@ -72,6 +72,7 @@ test("a single resource appearance uses LogoWithTitle directly, with a name fall
   const talk = parseTalks(source)[0];
   talk.appearances = [talk.appearances[3]];
   const html = banner(talk);
+  assert.match(html, /class="logo-with-title logo-with-title-compact"/);
   assert.match(html, /class="logo-with-title-fallback">No video/);
   assert.match(html, /class="logo-with-title-caption">2025/);
   assert.doesNotMatch(html, /class="bento|thumbnail|<img/);

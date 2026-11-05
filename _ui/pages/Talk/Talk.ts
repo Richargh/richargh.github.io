@@ -4,6 +4,7 @@ import { renderFederatedPostPicker } from "../../blocks/FederatedPostPicker/Fede
 import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderExampleCard } from "../../blocks/ExampleCard/ExampleCard.ts";
 import { renderSecretEmailButton } from "../../blocks/SecretEmailButton/SecretEmailButton.ts";
+import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import { renderTalkCard } from "../Talks/Talks.ts";
 import { absoluteUrl, site } from "../../../lib/config.ts";
@@ -14,6 +15,9 @@ import { talkAppearanceUrl, type Talk, type TalkAppearance } from "../../../lib/
 
 export function renderTalkDocument(talk: Talk, appearance: TalkAppearance, relatedGroups: RelatedGroup[] = []): string {
   const references = talk.references ?? [];
+  const bannerHtml = appearance.thumbnail && !appearance.videoUrl
+    ? renderThumbnail({ src: appearance.thumbnail, alt: appearance.title })
+    : undefined;
   const title = `${appearance.date} - ${appearance.conference}`;
   const feedbackUrl = appearance.feedbackUrl ?? talk.feedbackUrl;
   const url = absoluteUrl(talkAppearanceUrl(appearance));
@@ -30,7 +34,7 @@ export function renderTalkDocument(talk: Talk, appearance: TalkAppearance, relat
 <article data-source="${escapeHtml(talk.sourcePath)}">
 <h1>${escapeHtml(title)}</h1>
 <div class="content article-cards">
-${renderTalkCard({ ...talk, appearances: [appearance] }, relatedGroups, appearance.title, false)}
+${renderTalkCard({ ...talk, appearances: [appearance] }, relatedGroups, appearance.title, false, bannerHtml)}
 </div>
 <section class="example-card-grid example-card-grid-pair space-before" aria-label="Feedback and coffee">
 ${renderExampleCard({
