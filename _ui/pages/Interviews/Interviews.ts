@@ -1,4 +1,6 @@
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
+import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
+import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
 import type { ButtonUtility } from "../../blocks/Button/Button.ts";
 import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderInterviewStats } from "../../blocks/CollectionStats/CollectionStats.ts";
@@ -37,12 +39,16 @@ function renderInterviewCard(interview: InterviewAppearance, relatedGroups: Rela
   return renderArticleCard({
     id: interview.id,
     title: interview.title,
-    banner: {
-      thumbnail: interview.thumbnail,
-      tags: interview.tags,
-      linkUrl: video?.url,
-      linkLabel: `Open video for ${interview.title}`,
-    },
+    bannerHtml: interview.thumbnail || video
+      ? renderThumbnail({
+        src: interview.thumbnail,
+        alt: interview.title,
+        href: video?.url,
+        playable: Boolean(video),
+        label: `Open video for ${interview.title}`,
+        tags: interview.tags,
+      })
+      : renderLogoWithTitle({ alt: interview.title, tags: interview.tags.length ? interview.tags : [interview.title] }),
     actionsHtml: renderCrossLinks(relatedContentLinks({ id: interview.id, kind: "interview" }, relatedGroups)),
     childrenHtml: `<ul class="article-card-appearances-list">
 <li class="article-card-appearance-line"><span class="article-card-line-main">${renderMainLink(interview)} <span class="article-card-duration">${escapeHtml(interview.date)}</span> ${renderLanguageFlag(interview.language)} <span class="article-card-duration">${escapeHtml(interview.type)}</span></span><span class="article-card-line-links">${renderLinks(interview.links)}</span></li>

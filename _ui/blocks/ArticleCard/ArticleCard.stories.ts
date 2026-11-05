@@ -1,8 +1,11 @@
 import { renderArticleCard, type ArticleCardOptions } from "./ArticleCard.ts";
+import { renderBento } from "../Bento/Bento.ts";
+import { renderLogoWithTitle } from "../LogoWithTitle/LogoWithTitle.ts";
+import { renderThumbnail } from "../Thumbnail/Thumbnail.ts";
 import { renderCalloutLink } from "../CalloutLink/CalloutLink.ts";
 import type { StyleMeta, StyleStory } from "../../StyleStory.ts";
 
-const meta = {
+export default {
   title: "Blocks/ArticleCard",
   render: renderArticleCard,
   args: {
@@ -12,49 +15,41 @@ const meta = {
   },
 } satisfies StyleMeta<ArticleCardOptions>;
 
-export default meta;
-
 export const Default = {} satisfies StyleStory<ArticleCardOptions>;
-
 export const TaggedBanner = {
-  name: "Tagged banner",
   args: {
     id: "preview-article-card-tagged",
-    title: "Card with tags",
-    banner: { tags: ["architecture", "modernisation", "delivery"] },
+    bannerHtml: renderLogoWithTitle({ alt: "Card with tags", tags: ["architecture", "modernisation", "delivery"] }),
   },
 } satisfies StyleStory<ArticleCardOptions>;
-
 export const Thumbnail = {
   args: {
     id: "preview-article-card-thumbnail",
-    title: "Card with thumbnail",
-    banner: {
-      thumbnail: "/assets/img/thumbnails/article-kvj.png",
-      tags: ["java", "kotlin"],
-    },
+    bannerHtml: renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.png", alt: "Java and Kotlin", tags: ["java", "kotlin"] }),
   },
 } satisfies StyleStory<ArticleCardOptions>;
-
+export const BentoBanner = {
+  args: {
+    id: "preview-article-card-bento",
+    bannerHtml: renderBento({
+      media: [renderThumbnail({ href: "https://example.com/recording", label: "Watch recording", playable: true, playLabel: "v2" })],
+      supporting: [
+        renderLogoWithTitle({ src: "/assets/img/conferences/javaland-26.png", alt: "JavaLand", title: "2026" }),
+        renderLogoWithTitle({ alt: "Local meetup", title: "2024" }),
+      ],
+    }),
+  },
+} satisfies StyleStory<ArticleCardOptions>;
 export const LinkedBanner = {
-  name: "Linked banner",
   args: {
     id: "preview-article-card-linked-banner",
-    title: "Card with linked banner",
-    banner: {
-      linkUrl: "/articles/",
-      linkLabel: "Read articles",
-      tags: ["articles", "publications"],
-    },
+    bannerHtml: renderLogoWithTitle({ alt: "Read articles", href: "/articles/", tags: ["articles", "publications"] }),
   },
 } satisfies StyleStory<ArticleCardOptions>;
-
 export const WithActions = {
   name: "With actions",
   args: {
     id: "preview-article-card-actions",
-    title: "Card with actions",
     actionsHtml: renderCalloutLink({ href: "/hire/", label: "Learn more", utilities: ["button-compact", "button-primary"] }),
-    childrenHtml: "<p>The action area composes other blocks without changing the card renderer.</p>",
   },
 } satisfies StyleStory<ArticleCardOptions>;

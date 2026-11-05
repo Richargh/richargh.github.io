@@ -5,6 +5,8 @@ test("talk doorway offers audience actions without a Resource self-link", async 
   await openTalkFixture(page);
   const card = page.locator(".article-card");
   await expect(card).toHaveCount(1);
+  await expect(card.locator(".article-card-banner")).toHaveCSS("border-bottom-style", "solid");
+  await expect(card.locator(".article-card-banner")).toHaveCSS("border-bottom-width", "1px");
   await expect(card.getByRole("link", { name: "Resources", exact: true })).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(/\S/);
   await expect(card.getByRole("heading", { level: 2 })).toHaveText(/\S/);

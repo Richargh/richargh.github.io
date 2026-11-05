@@ -47,6 +47,7 @@ export interface TalkAppearance {
   slideUrl?: string;
   videoUrl?: string;
   thumbnail?: string;
+  logoUrl?: string;
   links: TalkLink[];
 }
 
@@ -75,6 +76,7 @@ const appearanceFields = new Set([
   "slideUrl",
   "videoUrl",
   "thumbnail",
+  "logoUrl",
   "links",
 ]);
 const linkFields = new Set(["label", "url"]);
@@ -197,6 +199,8 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
   const thumbnail = optionalThumbnail(object.thumbnail, `${location}.thumbnail`);
   if (thumbnail !== undefined) appearance.thumbnail = thumbnail;
+  const logoUrl = optionalLogoUrl(object.logoUrl, `${location}.logoUrl`);
+  if (logoUrl !== undefined) appearance.logoUrl = logoUrl;
   return appearance;
 }
 
@@ -246,6 +250,15 @@ function optionalThumbnail(value: unknown, location: string): string | undefined
     throw new Error(`${location} must be an /assets/img/thumbnails/ path ending in jpg, jpeg, png, webp, or avif`);
   }
   return thumbnail;
+}
+
+function optionalLogoUrl(value: unknown, location: string): string | undefined {
+  const logoUrl = optionalString(value, location);
+  if (logoUrl === undefined) return undefined;
+  if (!/^\/assets\/img\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_.-]+\.(?:svg|png|jpg|jpeg|webp|avif|ico)$/.test(logoUrl)) {
+    throw new Error(`${location} must be a local /assets/img/ image path ending in svg, png, jpg, jpeg, webp, avif, or ico`);
+  }
+  return logoUrl;
 }
 
 function compareTalksDescending(left: TalkAppearance, right: TalkAppearance): number {

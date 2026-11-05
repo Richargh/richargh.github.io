@@ -1,0 +1,79 @@
+@layer argh.blocks {
+    .logo-with-title {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-s);
+        min-width: 0;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        color: var(--color-text);
+        background: var(--color-background);
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .logo-with-title-image {
+        width: auto;
+        height: auto;
+        max-width: min(80%, 176px);
+        max-height: min(128px, calc(100% - 24px));
+        min-height: 0;
+        object-fit: contain;
+        filter: drop-shadow(0 0 3px light-dark(rgb(0 0 0 / 45%), rgb(255 255 255 / 65%)));
+    }
+
+    .logo-with-title-fallback {
+        max-width: 100%;
+        padding-inline: var(--space-l);
+        overflow-wrap: anywhere;
+        font-family: var(--font-heading);
+        font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+        line-height: 1.2;
+    }
+
+    .logo-with-title-caption {
+        flex-shrink: 0;
+        color: var(--color-text);
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+    }
+
+    .logo-with-title:focus-visible {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: -3px;
+    }
+
+    .logo-with-title-tagged {
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: var(--space-4xl);
+        background: var(--gradient-article-card-banner);
+    }
+
+    .logo-with-title-tagged .logo-with-title-fallback {
+        padding: var(--space-m) var(--space-2xl);
+        background: var(--color-overlay-strong);
+        color: var(--color-on-accent);
+        font-size: clamp(var(--font-size-article-card-title-min), var(--fluid-article-card-title-rate), var(--font-size-article-card-title-max));
+        font-weight: 700;
+    }
+
+    .logo-with-title-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-s);
+    }
+
+    .logo-with-title-tags span {
+        padding: var(--space-xs) var(--space-content-narrow);
+        background: var(--color-overlay-medium);
+        color: var(--color-on-accent);
+        font-family: var(--font-heading);
+        font-size: var(--font-size-4xl);
+    }
+}

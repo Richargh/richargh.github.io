@@ -1,4 +1,6 @@
 import { renderArticleCard as renderSharedArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
+import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
+import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
 import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderArticleStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingArticles } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
@@ -35,10 +37,9 @@ function renderArticleCard(article: Article, relatedGroups: RelatedGroup[]): str
   return renderSharedArticleCard({
     id: article.id,
     title: article.title,
-    banner: {
-      thumbnail: article.thumbnail,
-      tags: article.tags,
-    },
+    bannerHtml: article.thumbnail
+      ? renderThumbnail({ src: article.thumbnail, alt: article.title, tags: article.tags })
+      : renderLogoWithTitle({ alt: article.title, tags: article.tags.length ? article.tags : [article.title] }),
     actionsHtml: renderCrossLinks(relatedContentLinks({ id: article.id, kind: "article" }, relatedGroups)),
     childrenHtml: article.articles.toSorted(comparePartsAscending).map(renderArticlePart).join("\n"),
   });

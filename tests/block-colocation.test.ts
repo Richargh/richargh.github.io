@@ -62,7 +62,7 @@ test("collection blocks render summaries", () => {
 });
 
 test("ArticleCard block renders banner, actions, and children", () => {
-  const html = renderArticleCard({ id: "card", title: "Title", banner: { tags: ["one"], linkUrl: "/watch", linkLabel: "Watch" }, actionsHtml: "<a>Action</a>", childrenHtml: "<p>Body</p>" });
+  const html = renderArticleCard({ id: "card", title: "Title", bannerHtml: '<a href="/watch">Watch</a>', actionsHtml: "<a>Action</a>", childrenHtml: "<p>Body</p>" });
 
   assert.match(html, /<section class="article-card" id="card">/);
   assert.match(html, /class="article-card-actions"/);

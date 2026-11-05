@@ -20,6 +20,7 @@
       date: 2026-12-02
       language: en
       upcomingSince: 2026-10-12
+      logoUrl: /assets/img/conferences/build-stuff-26.png
       eventUrl: https://buildstuff.events/pages/agenda#aoa-day-1:~:text=Richard%20Gro%C3%9F
 
 - id: ai-mod
@@ -39,6 +40,7 @@
       location: remote
       date: 2026-10-06
       language: de
+      logoUrl: /assets/img/conferences/bettercode-agenticai.svg
       eventUrl: https://agenticai.bettercode.eu/veranstaltung-89613-se-0-ki-gestuetzte-legacy-modernisierung-von-systemverstaendnis-zu-kontrollierter-veraenderung.html
       slideUrl: https://speakerdeck.com/richargh/ki-gestutzte-legacy-modernisierung-v1-at-bettercode-agentic-ai-2026
 
@@ -67,6 +69,7 @@
       country: Germany
       date: 2023-09-29
       language: de
+      logoUrl: /assets/img/conferences/jug-saxony.svg
       eventUrl: https://jugsaxony.org/day/programm/details/130
       slideUrl: https://speakerdeck.com/richargh/bienenstock-architektur
       videoUrl: https://vimeo.com/875223690
@@ -129,6 +132,7 @@
       date: 2024-09-25
       talkVersion: 3.1
       language: en
+      logoUrl: /assets/img/conferences/lean-agile-scot.svg
       eventUrl: https://leanagile.scot/programme/continuous-delivery-legacy-code
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-v3-dot-1-at-leanagile-scotland-2024
     - id: 2024-02-01
@@ -151,6 +155,7 @@
       date: 2022-12-06
       talkVersion: 3
       language: en
+      logoUrl: /assets/img/conferences/devops-con.svg
       eventUrl: https://devopscon.io/microservices-software-architecture/continuous-delivery-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-devopscon-winter-2022
     - id: 2019-11-13
@@ -161,6 +166,7 @@
       date: 2019-11-13
       talkVersion: 2
       language: en
+      logoUrl: /assets/img/conferences/build-stuff-26.png
       eventUrl: https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code
       videoUrl: https://www.youtube.com/watch?v=AaexmSPQVpU
@@ -173,6 +179,7 @@
       date: 2019-10-16
       talkVersion: 2
       language: en
+      logoUrl: /assets/img/conferences/sag.png
       eventUrl: https://www.the-architecture-gathering.de/programm/programm-details/1394/cd-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/cd-for-legacy-code
     - id: 2019-02-21
@@ -183,6 +190,7 @@
       date: 2019-02-21
       talkVersion: 1
       language: de
+      logoUrl: /assets/img/conferences/entwicklertag-ffm.jpg
       eventUrl: https://entwicklertag.de/frankfurt/2019/continuous-delivery-für-legacy-systeme
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme-b1e871da-0151-45e1-9398-29604fca0218
     - id: 2018-11-09
@@ -193,6 +201,7 @@
       date: 2018-11-09
       talkVersion: 1
       language: de
+      logoUrl: /assets/img/conferences/xp-days-de.svg
       eventUrl: https://www.xpdays.de/2018/sessions/142-continuous-delivery-fuer-legacy-systeme.html
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-fur-legacy-systeme
 
@@ -225,6 +234,7 @@
       date: 2026-12-08
       upcomingSince: 2026-10-12
       language: de
+      logoUrl: /assets/img/conferences/it-tage-26.svg
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2026/destructoring-ist-die-zukunft-von-javas-encapsulation.html
     - id: 2026-10-05
       conference: Devoxx Belgium
@@ -233,6 +243,7 @@
       country: Belgium
       date: 2026-10-05
       language: en
+      logoUrl: /assets/img/conferences/devoxx-be.png
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7012/destructoring-is-the-future-of-javas-encapsulation
       slideUrl: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
       videoUrl: https://www.youtube.com/watch?v=wcghmWdu-HY
@@ -245,6 +256,7 @@
       date: 2026-04-22
       title: Destructuring ist die Zukunft von Javas Encapsulation
       language: de
+      logoUrl: /assets/img/conferences/objektforum-ffm.svg
       eventUrl: https://www.andrena.de/event/of-ffm-apr-2026
     - id: 2026-03-10
       conference: JavaLand
@@ -254,6 +266,7 @@
       date: 2026-03-10
       title: Destructuring ist die Zukunft von Javas Encapsulation
       language: de
+      logoUrl: /assets/img/conferences/javaland-26.png
       eventUrl: https://meine.doag.org/events/javaland/2026/agenda/#agendaId.6841
       slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-javaland-2026
     - id: 2026-01-22
@@ -266,6 +279,7 @@
       language: de
       variant: Lightning Talk
       durationMinutes: 15
+      logoUrl: /assets/img/conferences/jug-da.png
       eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
       slideUrl: https://speakerdeck.com/richargh/destructoring-ist-die-zukunft-von-javas-encapsulation-v1-at-jug-darmstadt-2026
 
@@ -294,6 +308,7 @@
       date: 2026-08-25
       talkVersion: 3.4
       language: en
+      logoUrl: /assets/img/conferences/techcamp-hamburg.svg
       eventUrl: https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-4-at-techcamp-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=DitU4Igcvmk
@@ -306,6 +321,7 @@
       date: 2026-07-01
       talkVersion: 3.3
       language: en
+      logoUrl: /assets/img/conferences/dwx.png
       eventUrl: https://www.developer-world.de/dwx/dwx-programm
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-3-at-dwx-2026
     - id: 2026-02-13
@@ -316,6 +332,7 @@
       date: 2026-02-13
       talkVersion: 3.2
       language: en
+      logoUrl: /assets/img/conferences/oop.svg
       eventUrl: https://www.oop-konferenz.de/de/ueber-die-konferenz/konferenzprogramm/details/fr-71
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-2-at-oop-2026
     - id: 2026-01-22
@@ -326,6 +343,7 @@
       date: 2026-01-22
       talkVersion: 3.1
       language: en
+      logoUrl: /assets/img/conferences/jug-da.png
       eventUrl: https://www.jug-da.de/2026/01/Domain-Rediscovery/
     - id: 2025-09-16
       conference: Java Forum Nord
@@ -335,6 +353,7 @@
       date: 2025-09-16
       talkVersion: 3.1
       language: en
+      logoUrl: /assets/img/conferences/java-forum-nord.png
       eventUrl: https://javaforumnord.de/2025/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-1-at-javaforumnord-2025
     - id: 2024-11-15
@@ -345,6 +364,7 @@
       date: 2024-11-15
       talkVersion: 3
       language: en
+      logoUrl: /assets/img/conferences/build-stuff-26.png
       eventUrl: https://www.buildstuff.events/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-at-buildstuff-2024
       videoUrl: https://www.youtube.com/watch?v=SoMI-KEADiM
@@ -355,6 +375,7 @@
       date: 2024-10-22
       talkVersion: 2
       language: en
+      logoUrl: /assets/img/conferences/saa.png
       eventUrl: https://www.software-architecture-alliance.de/2024/programm/konferenzprogramm#item-7971
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v2-at-software-architecture-alliance-2024
     - id: 2024-05-31
@@ -365,6 +386,7 @@
       date: 2024-05-31
       talkVersion: 1
       language: en
+      logoUrl: /assets/img/conferences/ddd-eu.svg
       eventUrl: https://2024.dddeurope.com/program/domain-re-discovery-patterns-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-at-ddd-eu-2024
       videoUrl: https://www.youtube.com/watch?v=_TKqc784PH8
@@ -395,6 +417,7 @@
       title: Fixing the Billion-Dollar Mistake in Java
       language: en
       variant: Java spotlight
+      logoUrl: /assets/img/conferences/javaland-26.png
       eventUrl: https://meine.doag.org/events/javaland/2023/agenda/#agendaId.2006
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-javaland
     - id: 2021-11-19
@@ -406,6 +429,7 @@
       title: Fixing the Billion-Dollar Mistake in C#
       language: en
       variant: C# spotlight
+      logoUrl: /assets/img/conferences/build-stuff-26.png
       eventUrl: https://events.pinetool.ai/2275/#sessions/83071
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number
       videoUrl: https://www.youtube.com/watch?v=lCqdy6Qf-nM
@@ -436,6 +460,7 @@
       country: Germany
       date: 2023-05-10
       language: en
+      logoUrl: /assets/img/conferences/jax24.svg
       eventUrl: https://jax.de/devops-continuous-delivery/building-pipelines
       slideUrl: https://speakerdeck.com/richargh/how-to-build-the-greatest-and-best-pipeline-in-the-world-jax-2023
 
@@ -463,6 +488,7 @@
       country: Germany
       date: 2026-07-09
       language: de
+      logoUrl: /assets/img/conferences/java-forum-stuttgart.svg
       eventUrl: https://www.java-forum-stuttgart.de/vortraege/kotlin-kontra-java-braucht-man-2026-ueberhaupt-noch-kotlin/
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2026-uberhaupt-noch-kotlin-v1-dot-2-at-java-forum-stuttgart-2026
     - id: 2025-12-11
@@ -472,6 +498,7 @@
       country: Germany
       date: 2025-12-11
       language: de
+      logoUrl: /assets/img/conferences/it-tage-25.svg
       eventUrl: https://www.ittage.informatik-aktuell.de/programm/2025/kotlin-vs-java-braucht-man-2025-ueberhaupt-noch-kotlin.html
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-dot-1-at-it-tage-2025
     - id: 2025-04-02
@@ -483,6 +510,7 @@
       language: de
       variant: deep dive
       durationMinutes: 90
+      logoUrl: /assets/img/conferences/javaland-26.png
       eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.6080
     - id: 2025-04-01
       conference: JavaLand
@@ -491,6 +519,7 @@
       country: Germany
       date: 2025-04-01
       language: de
+      logoUrl: /assets/img/conferences/javaland-26.png
       eventUrl: https://meine.doag.org/events/javaland/2025/agenda/#agendaId.5196
       slideUrl: https://speakerdeck.com/richargh/kotlin-kontra-java-braucht-man-2025-uberhaupt-noch-kotlin-v1-at-javaland-2025
 - id: llmnet
@@ -513,6 +542,7 @@
       language: de
       variant: lightning talk
       durationMinutes: 15
+      logoUrl: /assets/img/conferences/jug-da.png
       eventUrl: https://www.jug-da.de/2026/09/Quarkus-LLMs/
       slideUrl: https://speakerdeck.com/richargh/llms-sind-nicht-skynet-v1-at-jug-darmstadt-september-2026
 
@@ -540,6 +570,7 @@
       date: 2026-05-15
       durationMinutes: 25
       language: en
+      logoUrl: /assets/img/conferences/js-heroes.svg
       eventUrl: https://jsheroes.io/#:~:text=Forensic
       slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026
       videoUrl: https://www.youtube.com/watch?v=P7d9rtJa4VU
@@ -552,8 +583,10 @@
       date: 2025-11-19
       durationMinutes: 45
       language: en
+      logoUrl: /assets/img/conferences/ct-webdev.jpg
       eventUrl: https://ct-webdev.com/agenda-2025/
       slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-at-ct-webdev-2025
+      thumbnail: /assets/img/thumbnails/ct-webdev-25.jpg
 
 - id: rrr
   title: Refactor, Rearchitect, Rebuild - What to do when?
@@ -580,6 +613,7 @@
       title: Refactor, Rearchitect, Rebuild - Was macht man wann?
       language: de
       durationMinutes: 45
+      logoUrl: /assets/img/conferences/devland.png
       eventUrl: https://meine.doag.org/events/devland/2026/agenda/#agendaId.7049
       slideUrl: https://speakerdeck.com/richargh/refactor-rearchitect-rebuild-was-macht-man-wann-v1-at-devland-2026
     - id: 2025-09-15
@@ -589,6 +623,7 @@
       title: Refactor, Rearchitect, Rebuild - Was macht man wann?
       language: de
       durationMinutes: 25
+      logoUrl: /assets/img/conferences/bitkom.svg
 
 - id: rstbd
   title: Remote Scaled Trunk-Based Development
@@ -611,6 +646,7 @@
       country: Lithuania
       date: 2022-11-09
       language: en
+      logoUrl: /assets/img/conferences/build-stuff-26.png
       eventUrl: https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference
       slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff
       videoUrl: https://www.youtube.com/watch?v=NBjZ3wRXkxY
@@ -622,6 +658,7 @@
       country: Germany
       date: 2022-10-25
       language: en
+      logoUrl: /assets/img/conferences/ipc-24.svg
       eventUrl: https://phpconference.com/mixed/from-the-trenches-remote-scaled-trunk-based-development/
       slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development
 
@@ -651,6 +688,7 @@
       date: 2026-11-04
       talkVersion: 1.5
       language: en
+      logoUrl: /assets/img/conferences/code-talks.png
       eventUrl: https://codetalks.com/speaker#:~:text=Richard%20Gross
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-2026-11-code-dot-talks-en
     - id: 2026-10-05
@@ -661,6 +699,7 @@
       date: 2026-10-05
       talkVersion: 1.1
       language: en
+      logoUrl: /assets/img/conferences/devoxx-be.png
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=GLJGhkxMdgU
@@ -673,6 +712,7 @@
       date: 2026-09-03
       talkVersion: 1
       language: en
+      logoUrl: /assets/img/conferences/container-days-hamburg.svg
       eventUrl: https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=3U4YDNbLOiI
@@ -695,6 +735,7 @@
       country: Germany
       date: 2020-02-20
       language: de
+      logoUrl: /assets/img/conferences/entwicklertag-ffm.jpg
       eventUrl: https://entwicklertag.de/frankfurt/2020/spring-boot-%E2%80%93-good-parts-kotlin-level-beginner
       slideUrl: https://speakerdeck.com/richargh/spring-boot-the-good-parts-de-entwicklertag-2020
 
@@ -721,6 +762,7 @@
       country: Germany
       date: 2025-09-23
       language: en
+      logoUrl: /assets/img/conferences/cto-craft-con-europe.png
       eventUrl: https://conference.ctocraft.com/berlin-2025/agenda/
       slideUrl: https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025
       videoUrl: https://www.youtube.com/watch?v=xsd4PS-gfJk

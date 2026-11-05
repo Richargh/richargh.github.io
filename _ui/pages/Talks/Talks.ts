@@ -1,4 +1,7 @@
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
+import { renderBento } from "../../blocks/Bento/Bento.ts";
+import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
+import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
 import type { ButtonUtility } from "../../blocks/Button/Button.ts";
 import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderTalkStats } from "../../blocks/CollectionStats/CollectionStats.ts";
@@ -33,22 +36,49 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
 }
 
 export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], title = talk.title, showResourceLinks = true): string {
-  const video = newestVersionVideo(talk.appearances);
   return renderArticleCard({
     id: talk.id,
     title,
-    banner: {
-      thumbnail: video?.thumbnail,
-      tags: talk.tags,
-      linkUrl: video?.videoUrl,
-      linkLabel: `Open newest video for ${talk.title}`,
-    },
+    bannerHtml: renderTalkBanner(talk),
     actionsHtml: renderTalkActions(talk, relatedGroups),
     childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}
 <ul class="article-card-appearances-list">
 ${talk.appearances.toSorted(compareAppearancesDescending).map((appearance) => renderAppearanceLine(appearance, showResourceLinks)).join("\n")}
 </ul>`,
   });
+}
+
+function renderTalkBanner(talk: Talk): string {
+  const media = versionOrderedVideos(talk.appearances).map((appearance) => {
+    const version = appearance.talkVersion === undefined ? undefined : `v${appearance.talkVersion}`;
+    return renderThumbnail({
+      src: appearance.thumbnail,
+      href: appearance.videoUrl,
+      playable: true,
+      playLabel: version,
+      label: `Watch ${talk.title} at ${appearance.conference} ${appearance.date.slice(0, 4)}${version ? ` (${version})` : ""}`,
+    });
+  });
+  const supporting = conferenceAppearances(talk.appearances)
+    .filter((appearance) => !appearance.videoUrl)
+    .map((appearance) => renderLogoWithTitle({
+      src: appearance.logoUrl,
+      alt: appearance.conference,
+      title: appearance.date.slice(0, 4),
+    }));
+  if (media.length + supporting.length === 1) return media[0] ?? supporting[0];
+  return renderBento({ media, supporting });
+}
+
+// Keep one tile per conference/year, preferring a recording when available.
+function conferenceAppearances(appearances: TalkAppearance[]): TalkAppearance[] {
+  const groups = new Map<string, TalkAppearance>();
+  for (const appearance of appearances.toSorted(compareAppearancesDescending)) {
+    const key = JSON.stringify([appearance.conference, appearance.date.slice(0, 4)]);
+    const existing = groups.get(key);
+    if (!existing || (!existing.videoUrl && appearance.videoUrl)) groups.set(key, appearance);
+  }
+  return [...groups.values()];
 }
 
 function relatedItems(talks: Talk[], articles: Article[], interviews: InterviewAppearance[]): CrossLinkItem[] {
@@ -87,10 +117,10 @@ function renderTalkActions(talk: Talk, relatedGroups: RelatedGroup[]): string {
   return links.map((link) => renderArticleCardLink(link, link.url.startsWith("/") ? ["button-compact", "button-cross-link"] : ["button-compact", "button-muted"], `article-card-code${link.url.startsWith("/") ? " article-card-cross-link-button" : ""}`)).join(" ");
 }
 
-function newestVersionVideo(appearances: TalkAppearance[]): TalkAppearance | undefined {
+function versionOrderedVideos(appearances: TalkAppearance[]): TalkAppearance[] {
   return appearances
     .filter((appearance) => appearance.videoUrl)
-    .toSorted((left, right) => (right.talkVersion ?? -1) - (left.talkVersion ?? -1) || right.date.localeCompare(left.date))[0];
+    .toSorted((left, right) => (right.talkVersion ?? -1) - (left.talkVersion ?? -1) || right.date.localeCompare(left.date));
 }
 
 function renderAppearanceLine(appearance: TalkAppearance, showResourceLink: boolean): string {
