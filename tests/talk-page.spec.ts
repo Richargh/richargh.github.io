@@ -8,6 +8,8 @@ test("talk doorway offers audience actions without a Resource self-link", async 
   await expect(card.locator(".article-card-banner")).toHaveCSS("border-bottom-style", "solid");
   await expect(card.locator(".article-card-banner")).toHaveCSS("border-bottom-width", "1px");
   await expect(card.getByRole("link", { name: "Resources", exact: true })).toHaveCount(0);
+  await expect(card.getByRole("link", { name: "Article", exact: true })).toHaveAttribute("href", "/articles/#demo-article");
+  await expect(card.getByRole("link", { name: "Interview", exact: true })).toHaveAttribute("href", "/interviews/#demo-interview");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(/\S/);
   await expect(card.getByRole("heading", { level: 2 })).toHaveText(/\S/);
   await expect(page.getByPlaceholder("Search the Blog...")).toBeVisible();

@@ -7,11 +7,12 @@ import { renderSecretEmailButton } from "../../blocks/SecretEmailButton/SecretEm
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import { renderTalkCard } from "../Talks/Talks.ts";
 import { absoluteUrl, site } from "../../../lib/config.ts";
+import type { RelatedGroup } from "../../../lib/cross-links.ts";
 import { socialShareUrls } from "../../../lib/social-sharing.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 import { talkAppearanceUrl, type Talk, type TalkAppearance } from "../../../lib/talks.ts";
 
-export function renderTalkDocument(talk: Talk, appearance: TalkAppearance): string {
+export function renderTalkDocument(talk: Talk, appearance: TalkAppearance, relatedGroups: RelatedGroup[] = []): string {
   const references = talk.references ?? [];
   const title = `${appearance.date} - ${appearance.conference}`;
   const feedbackUrl = appearance.feedbackUrl ?? talk.feedbackUrl;
@@ -29,7 +30,7 @@ export function renderTalkDocument(talk: Talk, appearance: TalkAppearance): stri
 <article data-source="${escapeHtml(talk.sourcePath)}">
 <h1>${escapeHtml(title)}</h1>
 <div class="content article-cards">
-${renderTalkCard({ ...talk, appearances: [appearance] }, [], appearance.title, false)}
+${renderTalkCard({ ...talk, appearances: [appearance] }, relatedGroups, appearance.title, false)}
 </div>
 <section class="example-card-grid example-card-grid-pair space-before" aria-label="Feedback and coffee">
 ${renderExampleCard({

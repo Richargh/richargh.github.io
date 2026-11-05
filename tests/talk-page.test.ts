@@ -6,6 +6,7 @@ import { renderTalkDocument } from "../_ui/pages/Talk/Talk.ts";
 import { render } from "../routes/t/[talkId]/[appearanceId].server.ts";
 import { buildRouteManifest } from "../lib/route-manifest.ts";
 import { site } from "../lib/config.ts";
+import { loadRelatedGroups, parseRelatedGroups, relatedContentLinks } from "../lib/cross-links.ts";
 import { escapeHtml } from "../lib/html.ts";
 import { loadTalks, parseTalks, talkAppearanceUrl } from "../lib/talks.ts";
 
@@ -49,6 +50,26 @@ test("doorway renders only the selected appearance with no Resource self-link", 
   assert.doesNotMatch(html, /new-slides|New conference|>Resources<|Talk resources/);
   assert.match(html, /subject="Talk feedback: Original talk at Old conference \(2025-01-01\)"/);
   assert.match(html, /Search the Blog/);
+});
+
+test("individual appearances retain the talk family's Article and Interview links", () => {
+  const talk = parseTalks(source)[0];
+  const groups = parseRelatedGroups(`- id: demo-related
+  items:
+    - kind: talk
+      id: demo
+    - kind: article
+      id: related-article
+    - kind: interview
+      id: related-interview
+`);
+  for (const appearance of talk.appearances) {
+    const html = renderTalkDocument(talk, appearance, groups);
+    assert.ok(html.includes(renderTalkCard({ ...talk, appearances: [appearance] }, groups, appearance.title, false)));
+    assert.match(html, /href="\/articles\/#related-article"[^>]*>Article<\/a>/);
+    assert.match(html, /href="\/interviews\/#related-interview"[^>]*>Interview<\/a>/);
+    assert.doesNotMatch(html, />Resources</);
+  }
 });
 
 test("listing links each appearance to its own doorway", () => {
@@ -125,12 +146,16 @@ test("appearance IDs are stable, unique within a talk, and URL-safe", () => {
 });
 
 test("route resolves appearance IDs, rejects unknown IDs, and manifest covers each appearance", async () => {
-  const talks = await loadTalks();
+  const [talks, groups] = await Promise.all([loadTalks(), loadRelatedGroups()]);
   await assert.rejects(render("nonexistent-test-talk", "unknown-appearance"), /Unknown talk id/);
   for (const talk of talks) {
     await assert.rejects(render(talk.id, "nonexistent-test-appearance"), /Unknown appearance id/);
     for (const appearance of talk.appearances) {
-      assert.match(await render(talk.id, appearance.id), /<h1>[^<]+<\/h1>/);
+      const html = await render(talk.id, appearance.id);
+      assert.match(html, /<h1>[^<]+<\/h1>/);
+      for (const link of relatedContentLinks({ id: talk.id, kind: "talk" }, groups)) {
+        assert.ok(html.includes(`href="${link.url}"`), `Missing ${link.label} link on ${talkAppearanceUrl(appearance)}`);
+      }
     }
   }
   const manifest = buildRouteManifest([], [], talks);

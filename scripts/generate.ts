@@ -15,6 +15,7 @@ import { render as renderSchedule } from "../routes/schedule/index.server.ts";
 import { render as renderTalks } from "../routes/talks/index.server.ts";
 import { renderTalkDocument } from "../_ui/pages/Talk/Talk.ts";
 import { loadTalks, talkAppearanceUrl } from "../lib/talks.ts";
+import { loadRelatedGroups } from "../lib/cross-links.ts";
 import { render as renderArticles } from "../routes/articles/index.server.ts";
 import { render as renderInterviews } from "../routes/interviews/index.server.ts";
 import { render as renderModernWebFeatures } from "../routes/modern-web-features/index.server.ts";
@@ -63,11 +64,12 @@ for (const page of pages) {
   await mkdir(join(outputDir, ...outputPath.slice(0, -1)), { recursive: true });
   await writeFile(join(outputDir, ...outputPath), `${renderPageDocument(page)}\n`, "utf8");
 }
-for (const talk of await loadTalks()) {
+const [talks, relatedGroups] = await Promise.all([loadTalks(), loadRelatedGroups()]);
+for (const talk of talks) {
   for (const appearance of talk.appearances) {
     const outputPath = outputPathForUrlPath(talkAppearanceUrl(appearance));
     await mkdir(join(outputDir, ...outputPath.slice(0, -1)), { recursive: true });
-    await writeFile(join(outputDir, ...outputPath), `${renderTalkDocument(talk, appearance)}\n`, "utf8");
+    await writeFile(join(outputDir, ...outputPath), `${renderTalkDocument(talk, appearance, relatedGroups)}\n`, "utf8");
   }
 }
 await mkdir(join(outputDir, "talks"), { recursive: true });
