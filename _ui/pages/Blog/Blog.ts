@@ -7,6 +7,10 @@ export function renderBlogPageDocument(posts: Post[]): string {
     title: "Blog",
     urlPath: "/posts/",
     type: "website",
-    content: renderFeedList(posts),
+    showBackToHome: true,
+    content: `<main>
+      <h1>Blog</h1>
+      ${renderFeedList(posts)}
+    </main>`,
   });
 }
