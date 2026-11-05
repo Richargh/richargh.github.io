@@ -3,7 +3,7 @@ import { renderCalloutLink } from "../../blocks/CalloutLink/CalloutLink.ts";
 import { renderArticleStats } from "../../blocks/CollectionStats/CollectionStats.ts";
 import { renderUpcomingArticles } from "../../blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
-import type { Article, ArticlePart, ArticlePublication } from "../../../lib/articles.ts";
+import { articlePartAnchor, type Article, type ArticlePart, type ArticlePublication } from "../../../lib/articles.ts";
 import { assertRelatedReferencesExist, type CrossLink, type CrossLinkItem, type RelatedGroup, relatedContentLinks } from "../../../lib/cross-links.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 import type { InterviewAppearance } from "../../../lib/interviews.ts";
@@ -59,7 +59,7 @@ function renderCrossLinks(links: CrossLink[]): string {
 function renderArticlePart(part: ArticlePart): string {
   const heading = [part.part ? `Part ${part.part}` : undefined, part.subtitle].filter(Boolean).join(" - ");
   return `<div class="article-part">
-${heading ? `<h3>${escapeHtml(heading)}</h3>` : ""}
+${heading ? `<h3 id="${escapeHtml(articlePartAnchor(part))}"><a href="#${escapeHtml(articlePartAnchor(part))}">${escapeHtml(heading)}</a></h3>` : ""}
 <ul class="article-card-appearances-list">
 ${part.publications.toSorted(comparePublicationsDescending).map(renderPublicationLine).join("\n")}
 </ul>

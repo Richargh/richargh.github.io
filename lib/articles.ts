@@ -58,6 +58,11 @@ export function parseArticles(source: string, sourcePath = "_data/articles.yaml"
   return articles;
 }
 
+export function articlePartAnchor(part: Pick<ArticlePart, "articleId" | "part" | "subtitle">): string {
+  const suffix = part.part ? `part-${part.part}` : part.subtitle;
+  return suffix ? `${part.articleId}-${suffix.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replaceAll(/^-|-$/g, "")}` : part.articleId;
+}
+
 export function flattenArticlePublications(articles: Article[]): ArticlePublication[] {
   return articles.flatMap((article) => article.articles.flatMap((part) => part.publications));
 }
