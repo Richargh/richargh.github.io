@@ -76,7 +76,7 @@
         - publisher: JavaPro.io
           date: '2026-10-28'
           language: en
-          upcomingSince: 2026-10-12
+          url: 'https://javapro.io/2026/10/28/kotlin-kontra-java-part-5-domain-modelling/'
 - id: map-y-code
   title: Map your Code - Master your Architecture
   tags:
