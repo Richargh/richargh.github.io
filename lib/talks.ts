@@ -15,7 +15,6 @@ export interface Talk {
   id: string;
   title: string;
   tags: string[];
-  thumbnail?: string;
   codeUrl?: string;
   feedbackUrl?: string;
   references?: TalkReference[];
@@ -47,6 +46,7 @@ export interface TalkAppearance {
   eventUrl?: string;
   slideUrl?: string;
   videoUrl?: string;
+  thumbnail?: string;
   links: TalkLink[];
 }
 
@@ -55,7 +55,7 @@ export interface TalkYearGroup {
   appearances: TalkAppearance[];
 }
 
-const talkFields = new Set(["id", "title", "tags", "thumbnail", "codeUrl", "feedbackUrl", "references", "links", "abstract", "appearances"]);
+const talkFields = new Set(["id", "title", "tags", "codeUrl", "feedbackUrl", "references", "links", "abstract", "appearances"]);
 const appearanceFields = new Set([
   "id",
   "feedbackUrl",
@@ -74,6 +74,7 @@ const appearanceFields = new Set([
   "eventUrl",
   "slideUrl",
   "videoUrl",
+  "thumbnail",
   "links",
 ]);
 const linkFields = new Set(["label", "url"]);
@@ -135,14 +136,12 @@ function normalizeTalk(entry: unknown, sourcePath: string, index: number): Talk 
   if (!/^[a-z0-9][a-z0-9-]{1,31}$/.test(id)) throw new Error(`${location}.id must be a short lowercase ASCII id`);
   const title = requiredString(object.title, `${location}.title`);
   const tags = normalizeTags(object.tags, `${location}.tags`);
-  const thumbnail = optionalThumbnail(object.thumbnail, `${location}.thumbnail`);
   const codeUrl = optionalUrl(object.codeUrl, `${location}.codeUrl`);
   const links = normalizeLinks(object.links, `${location}.links`);
   const abstract = optionalString(object.abstract, `${location}.abstract`);
   if (!Array.isArray(object.appearances) || object.appearances.length === 0) throw new Error(`${location}.appearances must be a non-empty sequence`);
 
   const talk: Talk = { sourcePath, id, title, tags, links, appearances: [] };
-  if (thumbnail !== undefined) talk.thumbnail = thumbnail;
   if (codeUrl !== undefined) talk.codeUrl = codeUrl;
   const feedbackUrl = optionalUrl(object.feedbackUrl, `${location}.feedbackUrl`);
   if (feedbackUrl !== undefined) talk.feedbackUrl = feedbackUrl;
@@ -196,6 +195,8 @@ function normalizeAppearance(entry: unknown, sourcePath: string, location: strin
   assignOptionalUrl(appearance, "eventUrl", object.eventUrl, `${location}.eventUrl`);
   assignOptionalUrl(appearance, "slideUrl", object.slideUrl, `${location}.slideUrl`);
   assignOptionalUrl(appearance, "videoUrl", object.videoUrl, `${location}.videoUrl`);
+  const thumbnail = optionalThumbnail(object.thumbnail, `${location}.thumbnail`);
+  if (thumbnail !== undefined) appearance.thumbnail = thumbnail;
   return appearance;
 }
 

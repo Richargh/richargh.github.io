@@ -38,7 +38,7 @@ export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], t
     id: talk.id,
     title,
     banner: {
-      thumbnail: talk.thumbnail,
+      thumbnail: video?.thumbnail,
       tags: talk.tags,
       linkUrl: video?.videoUrl,
       linkLabel: `Open newest video for ${talk.title}`,

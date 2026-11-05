@@ -45,7 +45,6 @@
 - id: bee-arc
   title: Beehive Architecture
   codeUrl: https://github.com/Richargh/testdsl
-  thumbnail: /assets/img/thumbnails/bee-arc-2023-09-29-875223690.avif
   tags:
     - architecture
     - testing
@@ -71,11 +70,11 @@
       eventUrl: https://jugsaxony.org/day/programm/details/130
       slideUrl: https://speakerdeck.com/richargh/bienenstock-architektur
       videoUrl: https://vimeo.com/875223690
+      thumbnail: /assets/img/thumbnails/bee-arc-2023-09-29-875223690.avif
 
 - id: dyn-web-htmx
   title: Building dynamic web apps with Kotlin, WebComponents and Htmx
   codeUrl: https://github.com/Richargh/dynamic-websites-htmx-webcomponents-kotlinx-html
-  thumbnail: /assets/img/thumbnails/dyn-web-htmx-2025-05-21-rEEACXNq-WA.jpg
   tags:
     - kotlin
     - frontend
@@ -102,10 +101,10 @@
       eventUrl: https://ndcoslo.com/agenda/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-0t8v/0anj1l2z5cy
       slideUrl: https://speakerdeck.com/richargh/building-dynamic-web-apps-with-kotlin-webcomponents-and-htmx-v1-at-ndc-oslo-2025
       videoUrl: https://www.youtube.com/watch?v=rEEACXNq-WA
+      thumbnail: /assets/img/thumbnails/dyn-web-htmx-2025-05-21-rEEACXNq-WA.jpg
 
 - id: cd4lc
   title: Continuous Delivery for Legacy Code
-  thumbnail: /assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.jpg
   tags:
     - continuous-delivery
     - legacy-code
@@ -143,6 +142,7 @@
       eventUrl: https://ndclondon.com/agenda/continuous-delivery-for-legacy-code-0u91/0dwbfexjawf
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code-ndc-london
       videoUrl: https://www.youtube.com/watch?v=djl2hJkzmGQ
+      thumbnail: /assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.jpg
     - id: 2022-12-06
       conference: DevOpsCon
       location: in-person
@@ -164,6 +164,7 @@
       eventUrl: https://buildstuff2019.sched.com/event/UzgO/richard-gross-continuous-delivery-for-legacy-code
       slideUrl: https://speakerdeck.com/richargh/continuous-delivery-for-legacy-code
       videoUrl: https://www.youtube.com/watch?v=AaexmSPQVpU
+      thumbnail: /assets/img/thumbnails/cd4lc-2019-11-13-AaexmSPQVpU.jpg
     - id: 2019-10-16
       conference: Software Architecture Gathering
       location: in-person
@@ -198,7 +199,6 @@
 - id: java-dest-enc
   title: Destructoring is the future of Javas Encapsulation
   codeUrl: https://github.com/Richargh/encapsulation-java-mvn-sandbox
-  thumbnail: /assets/img/thumbnails/java-dest-enc-2026-10-05-wcghmWdu-HY.jpg
   tags:
     - java
     - destructoring
@@ -236,6 +236,7 @@
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7012/destructoring-is-the-future-of-javas-encapsulation
       slideUrl: https://speakerdeck.com/richargh/destructoring-is-the-future-of-javas-encapsulation-v1-at-devoxx-be-2026
       videoUrl: https://www.youtube.com/watch?v=wcghmWdu-HY
+      thumbnail: /assets/img/thumbnails/java-dest-enc-2026-10-05-wcghmWdu-HY.jpg
     - id: 2026-04-22
       conference: ObjektForum Frankfurt
       location: in-person
@@ -270,7 +271,6 @@
 
 - id: drp4lc
   title: Domain Re-discovery Patterns for Legacy Code
-  thumbnail: /assets/img/thumbnails/drp4lc-2026-08-25-DitU4Igcvmk.jpg
   tags:
     - legacy-code
     - architecture
@@ -297,6 +297,7 @@
       eventUrl: https://techcamp.hamburg/programm-2026/#sz-tab-46260:~:text=Domain%20Re-discovery
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-dot-4-at-techcamp-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=DitU4Igcvmk
+      thumbnail: /assets/img/thumbnails/drp4lc-2026-08-25-DitU4Igcvmk.jpg
     - id: 2026-07-01
       conference: DWX
       location: in-person
@@ -347,6 +348,7 @@
       eventUrl: https://www.buildstuff.events/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-v3-at-buildstuff-2024
       videoUrl: https://www.youtube.com/watch?v=SoMI-KEADiM
+      thumbnail: /assets/img/thumbnails/drp4lc-2024-11-15-SoMI-KEADiM.jpg
     - id: 2024-10-22
       conference: Software Architecture Alliance
       location: remote
@@ -366,11 +368,11 @@
       eventUrl: https://2024.dddeurope.com/program/domain-re-discovery-patterns-for-legacy-code/
       slideUrl: https://speakerdeck.com/richargh/domain-re-discovery-patterns-for-legacy-code-at-ddd-eu-2024
       videoUrl: https://www.youtube.com/watch?v=_TKqc784PH8
+      thumbnail: /assets/img/thumbnails/drp4lc-2024-05-31-_TKqc784PH8.jpg
 
 - id: ftbdm
   title: Fixing the Billion-Dollar Mistake
   codeUrl: https://github.com/Richargh/fixing-the-billion-dollar-mistake
-  thumbnail: /assets/img/thumbnails/ftbdm-2021-11-19-lCqdy6Qf-nM.jpg
   tags:
     - java
     - csharp
@@ -407,6 +409,7 @@
       eventUrl: https://events.pinetool.ai/2275/#sessions/83071
       slideUrl: https://speakerdeck.com/richargh/fixing-the-billion-dollar-mistake-in-c-number
       videoUrl: https://www.youtube.com/watch?v=lCqdy6Qf-nM
+      thumbnail: /assets/img/thumbnails/ftbdm-2021-11-19-lCqdy6Qf-nM.jpg
 
 - id: tenacious-pipe
   title: How to build the greatest and best Pipeline in the World
@@ -515,7 +518,6 @@
 
 - id: forend
   title: Making sense of frontend code with forensic techniques
-  thumbnail: /assets/img/thumbnails/forend-2026-05-15-P7d9rtJa4VU.jpg
   tags:
     - frontend
     - software-forensics
@@ -541,6 +543,7 @@
       eventUrl: https://jsheroes.io/#:~:text=Forensic
       slideUrl: https://speakerdeck.com/richargh/making-sense-of-frontend-code-with-forensic-techniques-v1-s-at-jsheroes-2026
       videoUrl: https://www.youtube.com/watch?v=P7d9rtJa4VU
+      thumbnail: /assets/img/thumbnails/forend-2026-05-15-P7d9rtJa4VU.jpg
     - id: 2025-11-19
       conference: c't <webdev>
       location: in-person
@@ -589,7 +592,6 @@
 
 - id: rstbd
   title: Remote Scaled Trunk-Based Development
-  thumbnail: /assets/img/thumbnails/rstbd-2022-11-09-NBjZ3wRXkxY.jpg
   tags:
     - trunk-based-development
     - remote-work
@@ -612,6 +614,7 @@
       eventUrl: https://www.buildstuff.events/events/build-stuff-2022-hybrid-conference
       slideUrl: https://speakerdeck.com/richargh/remote-scaled-trunk-based-development-build-stuff
       videoUrl: https://www.youtube.com/watch?v=NBjZ3wRXkxY
+      thumbnail: /assets/img/thumbnails/rstbd-2022-11-09-NBjZ3wRXkxY.jpg
     - id: 2022-10-25
       conference: IPC
       location: in-person
@@ -624,7 +627,6 @@
 
 - id: agentsec
   title: Secure Your Coding Agent Like It’s Malware
-  thumbnail: /assets/img/thumbnails/agentsec-2026-10-05-GLJGhkxMdgU.jpg
   tags:
     - ai
     - security
@@ -662,6 +664,7 @@
       eventUrl: https://m.devoxx.com/events/dvbe26/talks/7011/secure-your-coding-agent-like-it-s-malware
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1b-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=GLJGhkxMdgU
+      thumbnail: /assets/img/thumbnails/agentsec-2026-10-05-GLJGhkxMdgU.jpg
     - id: 2026-09-03
       conference: Container Days Hamburg
       location: in-person
@@ -673,6 +676,7 @@
       eventUrl: https://www.containerdays.io/containerdays-hamburg-2026/agenda/#sz-tab-46268:~:text=Richard%20Gro%C3%9F
       slideUrl: https://speakerdeck.com/richargh/secure-your-coding-agent-like-its-malware-v1-at-container-days-hamburg-2026
       videoUrl: https://www.youtube.com/watch?v=3U4YDNbLOiI
+      thumbnail: /assets/img/thumbnails/agentsec-2026-09-03-3U4YDNbLOiI.jpg
 
 - id: bootgp
   title: "Spring Boot: The Good Parts"
@@ -696,7 +700,6 @@
 
 - id: supreno
   title: The Surprising Similarities Between Renovating your House and your Code Base
-  thumbnail: /assets/img/thumbnails/supreno-2025-09-23-xsd4PS-gfJk.jpg
   tags:
     - legacy-code
     - modernisation
@@ -721,6 +724,7 @@
       eventUrl: https://conference.ctocraft.com/berlin-2025/agenda/
       slideUrl: https://speakerdeck.com/richargh/the-surprising-similarities-between-renovating-your-house-and-your-code-base-v1-dot-5-at-cto-craft-con-berlin-2025
       videoUrl: https://www.youtube.com/watch?v=xsd4PS-gfJk
+      thumbnail: /assets/img/thumbnails/supreno-2025-09-23-xsd4PS-gfJk.jpg
 
 - id: wtsq
   title: What is Software Quality
