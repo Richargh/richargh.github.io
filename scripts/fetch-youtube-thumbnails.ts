@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
