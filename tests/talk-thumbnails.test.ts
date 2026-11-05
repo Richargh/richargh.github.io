@@ -138,15 +138,21 @@ test("thumbnail validation applies to appearances, not talk families", () => {
   assert.throws(() => parseTalks(source.replace("/assets/img/thumbnails/older.jpg", "https://example.com/image.jpg")), /must be an \/assets\/img\/thumbnails\//);
 });
 
-test("configured recording thumbnails exist and match their appearance's video", async () => {
+test("appearance thumbnails do not require a recording or a video ID in their filename", () => {
+  const talk = parseTalks(source
+    .replace("      videoUrl: https://example.com/older\n", "")
+    .replace("/assets/img/thumbnails/selected.jpg", "/assets/img/thumbnails/custom-cover.jpg"))[0];
+  assert.equal(talk.appearances[0].videoUrl, undefined);
+  assert.equal(talk.appearances[0].thumbnail, "/assets/img/thumbnails/older.jpg");
+  assert.equal(talk.appearances[1].videoUrl, "https://example.com/selected");
+  assert.equal(talk.appearances[1].thumbnail, "/assets/img/thumbnails/custom-cover.jpg");
+});
+
+test("configured appearance thumbnails exist, with or without a recording", async () => {
   for (const talk of await loadTalks()) {
     for (const appearance of talk.appearances) {
       if (!appearance.thumbnail) continue;
       await access(appearance.thumbnail.slice(1));
-      assert.ok(appearance.videoUrl);
-      const url = new URL(appearance.videoUrl);
-      const videoId = url.searchParams.get("v") ?? url.pathname.split("/").at(-1);
-      assert.ok(videoId && appearance.thumbnail.includes(videoId), appearance.thumbnail);
     }
   }
 });
