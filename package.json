@@ -30,7 +30,7 @@
     "@types/node": "26.6.6",
     "asciidoctor": "3.0.4",
     "html-validate": "10.4.0",
-    "oxlint": "1.87.0",
+    "oxlint": "1.90.0",
     "typescript": "5.9.3"
   },
   "dependencies": {
