@@ -40,7 +40,7 @@
     }
 
     .title-sans {
-        font-family: Inter, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        font-family: var(--font-heading) !important;
     }
 
     .button-compact {
