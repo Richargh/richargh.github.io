@@ -301,6 +301,46 @@
         :root {
           color-scheme: light dark;
         }
+- name: '@supports'
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/supports/'
+  baselineSince: '2015-09-30'
+  fallback:
+      category: progressive-enhancement
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@supports'
+      explanation: Unsupported browsers ignore the entire block, so essential fallback styles must be declared outside it.
+  examples:
+    - description: >-
+        Feature queries allow a basic warning style to work independently of newer CSS, with enhancements
+        applied only when their property and value are supported.
+      language: css
+      code: |
+        .browser-support-warning {
+          background: #fff3cd;
+          color: #332701;
+        }
+
+        @supports (color: light-dark(black, white)) {
+          .browser-support-warning {
+            background: light-dark(#fff3cd, #332701);
+            color: light-dark(#332701, #fff3cd);
+          }
+        }
+- name: '@supports selector()'
+  url: 'https://github.com/web-platform-dx/web-features/blob/main/features/supports.yml.dist#L43C1-L43C35'
+  baselineSince: '2021-04-26'
+  fallback:
+      category: progressive-enhancement
+      explanation: Browsers without selector feature queries skip the conditional styles; base styles remain in effect.
+  examples:
+    - description: >-
+        The selector() condition tests support for selector syntax, such as :has(), rather than a CSS property and value.
+      language: css
+      code: |
+        @supports selector(:has(*)) {
+          pre:has(> code[class*="language-"]) {
+            background-color: var(--color-code-background);
+          }
+        }
 - name: Autonomous custom elements
   url: 'https://web-platform-dx.github.io/web-features-explorer/features/autonomous-custom-elements/'
   baselineSince: '2020-01-15'
