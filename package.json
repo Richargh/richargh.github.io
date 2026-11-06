@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Mastro static site source for richargh.de.",
   "imports": {
+    "#custom-commands": "./assets/js/CustomCommands.mjs",
     "#secret-email-button-element": "./_ui/blocks/SecretEmailButton/SecretEmailButtonElement.mjs",
     "#secret-email-cipher": "./assets/js/SecretEmailCipher.mjs"
   },

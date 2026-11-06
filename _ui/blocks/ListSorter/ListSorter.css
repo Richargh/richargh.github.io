@@ -1,0 +1,23 @@
+@layer argh.blocks {
+    list-sorter {
+        display: block;
+    }
+
+    .list-sorter-control {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--space-s);
+        margin-block: var(--space-4xl);
+    }
+
+    .list-sorter-control[hidden] {
+        display: none;
+    }
+
+    .list-sorter-caption {
+        margin-inline-end: var(--space-xs);
+        font-size: var(--font-size-2xl);
+    }
+}

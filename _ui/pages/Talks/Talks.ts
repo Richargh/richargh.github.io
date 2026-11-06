@@ -1,3 +1,4 @@
+import { renderListSorter } from "../../blocks/ListSorter/ListSorter.ts";
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
 import { renderBento } from "../../blocks/Bento/Bento.ts";
 import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
@@ -27,18 +28,32 @@ export function renderTalksDocument(talks: Talk[], articles: Article[] = [], int
                   <h1>Talks</h1>
                   ${renderTalkStats(talks)}
                   ${renderUpcomingTalks(talks)}
-                  <div class="content article-cards">
-                    ${sortedTalks.map((talk) => renderTalkCard(talk, relatedGroups)).join("\n")}
-                  </div>
+                  ${renderListSorter({
+                    id: "talks-sorter",
+                    sort: "date",
+                    order: "desc",
+                    items: ".article-cards > .article-card",
+                    nameSelector: "h2",
+                    childrenHtml: `<div class="content article-cards">
+                      ${sortedTalks.map((talk) => renderTalkCard(talk, relatedGroups)).join("\n")}
+                    </div>`,
+                  })}
                 </article>
             </main>`,
   });
 }
 
 export function renderTalkCard(talk: Talk, relatedGroups: RelatedGroup[] = [], title = talk.title, showResourceLinks = true, bannerHtml = renderTalkBanner(talk)): string {
+  const dates = talk.appearances
+    .filter((appearance) => !appearance.upcoming && !appearance.upcomingSince)
+    .map((appearance) => appearance.date).sort();
   return renderArticleCard({
     id: talk.id,
     title,
+    dataAttributes: {
+      "date-first": dates[0] ?? "",
+      "date-last": dates.at(-1) ?? "",
+    },
     bannerHtml,
     actionsHtml: renderTalkActions(talk, relatedGroups),
     childrenHtml: `${talk.abstract ? renderAbstract(talk.abstract) : ""}

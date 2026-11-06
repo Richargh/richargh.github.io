@@ -49,6 +49,7 @@ export function renderLayout(options: LayoutOptions): string {
       import "randomizer-element";
       import "#secret-email-button-element";
       import "dialog-element";
+      import "list-sorter-element";
       import "federated-post-picker-element";
     </script>
     <link rel="alternate" type="application/rss+xml" href="${site.feedUrl}">

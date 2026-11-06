@@ -1,9 +1,11 @@
 export function renderJavaScriptImportMap(): string {
   const imports = {
+    "#custom-commands": "/assets/js/CustomCommands.mjs",
     "microlighter": "/assets/vendor/microlighter/microlighter.js",
     "scroll-to-top-element": "/assets/elements/ScrollToTopElement.mjs",
     "randomizer-element": "/assets/elements/RandomizerElement.mjs",
     "dialog-element": "/assets/elements/DialogElement.mjs",
+    "list-sorter-element": "/assets/elements/ListSorterElement.mjs",
     "federated-post-picker-element": "/assets/elements/FederatedPostPickerElement.mjs",
     "#secret-email-button-element": "/assets/elements/SecretEmailButtonElement.mjs",
     "#secret-email-cipher": "/assets/js/SecretEmailCipher.mjs",
