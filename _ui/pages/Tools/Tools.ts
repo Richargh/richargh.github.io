@@ -2,7 +2,7 @@ import { renderLayout } from "../../layouts/SiteLayout/SiteLayout.ts";
 import type { Page } from "../../../lib/content.ts";
 import { escapeHtml, unsafeAsciiDocHtml } from "../../../lib/html.ts";
 
-export function renderBuiltPageDocument(page: Page): string {
+export function renderToolsPageDocument(page: Page): string {
   return renderLayout({
     title: page.title,
     urlPath: page.urlPath,

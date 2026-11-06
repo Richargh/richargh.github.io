@@ -13,7 +13,7 @@ import { renderNavItem } from "../_ui/blocks/NavItem/NavItem.ts";
 import { renderUpcomingCollection } from "../_ui/blocks/UpcomingCollection/UpcomingCollection.ts";
 import { renderScrollToTop } from "../_ui/blocks/ScrollToTop/ScrollToTop.ts";
 import { renderLayout as renderSiteLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
-import { renderBuiltPageDocument } from "../_ui/pages/Built/Built.ts";
+import { renderToolsPageDocument } from "../_ui/pages/Tools/Tools.ts";
 import { renderCredentialsPageDocument } from "../_ui/pages/Credentials/Credentials.ts";
 import { renderHirePageDocument } from "../_ui/pages/Hire/Hire.ts";
 import { renderHomePageDocument } from "../_ui/pages/Home/Home.ts";
@@ -29,6 +29,9 @@ test("Header block renders navigation and optional back link without collection 
 
   assert.match(html, /<header>/);
   assert.match(html, /class="dashboard"/);
+  assert.match(html, /href="\/tools"/);
+  assert.match(html, />Tools<\/p>/);
+  assert.doesNotMatch(html, /href="\/built"/);
   assert.doesNotMatch(html, /class="app-counter"/);
   assert.match(html, /class="back-p">Home<\/p>/);
 });
@@ -97,7 +100,7 @@ test("page renderers own page presentation markup", () => {
   assert.match(homeHtml, /data-source="_pages\/about.adoc"/);
   assert.match(homeHtml, /aria-label="Content collections"/);
   assert.match(renderPublishedPageDocument(page("published", "Published")), /data-source="_pages\/published.adoc"/);
-  assert.match(renderBuiltPageDocument(page("built", "Built")), /data-source="_pages\/built.adoc"/);
+  assert.match(renderToolsPageDocument(page("tools", "Tools")), /data-source="_pages\/tools.adoc"/);
   assert.match(renderCredentialsPageDocument(page("credentials", "Credentials")), /data-source="_pages\/credentials.adoc"/);
   assert.match(renderHirePageDocument(page("hire", "Hire")), /data-source="_pages\/hire.adoc"/);
 });

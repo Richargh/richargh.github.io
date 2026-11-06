@@ -90,7 +90,7 @@ function renderMainNav(): string {
     renderNavItem({ className: "talks", href: "/talks", label: "Talks", iconHtml: talksIcon(), labelClassName: "home-p" }),
     renderNavItem({ className: "published", href: "/articles", label: "Articles", iconHtml: articleIcon(), labelClassName: "published-p" }),
     renderNavItem({ className: "interviews", href: "/interviews", label: "Interviews", iconHtml: interviewIcon(), labelClassName: "published-p" }),
-    renderNavItem({ className: "built", href: "/built", label: "Built", iconHtml: builtIcon(), labelClassName: "built-p" }),
+    renderNavItem({ className: "tools", href: "/tools", label: "Tools", iconHtml: toolsIcon(), labelClassName: "tools-p" }),
   ].join("\n");
 }
 
@@ -131,8 +131,8 @@ function interviewIcon(): string {
                 </svg>`;
 }
 
-function builtIcon(): string {
-  return `<svg class="icon-built" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+function toolsIcon(): string {
+  return `<svg class="icon-tools" width="18" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.4 3.3V7C8.4 9 10 10.6 12 10.6C14 10.6 15.6 9 15.6 7V3.3C17.3 4.5 18.4 6.4 18.4 8.7C18.4 11.4 16.7 13.7 14.4 14.6V21H9.6V14.6C7.3 13.7 5.6 11.4 5.6 8.7C5.6 6.4 6.7 4.5 8.4 3.3Z" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M10 18.1H14" stroke-width="2.3" stroke-linecap="round"/>
                 </svg>`;

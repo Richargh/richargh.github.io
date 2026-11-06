@@ -1,21 +1,28 @@
 ---
 layout: post
-title: Built
-permalink: /built/
+title: Tools
+permalink: /tools/
 content-type: eg
 ---
 
-== Things I helped build
+== Tools I build
 
-=== Closed Source
+Open-source tools for working with code, tasks, and software development flow.
 
-Various Customer projects. It's been 10+ years after all :)
+* link:https://github.com/Richargh/clamp/[clamp] — Run Claude Code in a Docker container with basic isolation.
+* link:https://github.com/Richargh/workdown[workdown] — Sync issue tracker work to a local environment from the command line.
+* link:https://github.com/Richargh/flowminer[flowminer] — Analyze and visualize software development flow.
+* link:https://github.com/Richargh/swan-hourglass[swan-hourglass] — A model of the software delivery life cycle.
 
-=== Open Source
+== Tools I helped build
 
-* link:https://maibornwolff.github.io/codecharta/[CodeCharta] Communicate software quality with the city visualization
+* link:https://maibornwolff.github.io/codecharta/[CodeCharta] — MaibornWolff's open-source tool for communicating software quality through city visualizations. I helped build it as part of the team.
 
 ''''
+
+== Collections & references
+
+* link:https://github.com/Richargh/web-native[web-native] — A collection of web-native HTML, CSS, and JavaScript features and resources.
 
 == Sandboxes
 

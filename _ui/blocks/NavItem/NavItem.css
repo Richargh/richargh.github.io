@@ -4,7 +4,7 @@
     .talks,
     .published,
     .interviews,
-    .built,
+    .tools,
     .categories,
     .rss,
     .projects {
@@ -47,7 +47,7 @@
     .blog-p,
     .talks-p,
     .published-p,
-    .built-p,
+    .tools-p,
     .categories-p,
     .rss-p,
     .projects-p {
@@ -64,7 +64,7 @@
     .icon-blog,
     .icon-talks,
     .icon-published,
-    .icon-built,
+    .icon-tools,
     .icon-category,
     .icon-projects,
     .icon-rss {

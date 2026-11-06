@@ -108,7 +108,7 @@ test("reusable block CSS includes phase 2 block selectors", async () => {
 test("page CSS is bundled after block CSS", async () => {
   const bundle = await buildCssBundle([
     "_ui/blocks/ArticleCard/ArticleCard.css",
-    "_ui/pages/Built/Built.css",
+    "_ui/pages/Tools/Tools.css",
     "_ui/pages/Credentials/Credentials.css",
     "_ui/pages/Home/Home.css",
     "_ui/pages/Published/Published.css",
@@ -117,7 +117,7 @@ test("page CSS is bundled after block CSS", async () => {
   for (const selector of [
     'article[data-source="_pages/about.adoc"] .content',
     'article[data-source="_pages/published.adoc"] table',
-    'article[data-source="_pages/built.adoc"] .content',
+    'article[data-source="_pages/tools.adoc"] .content',
     'article[data-source="_pages/credentials.adoc"] table',
   ] as const) {
     assert.ok(bundle.includes(`${selector} {`), `missing ${selector} selector`);

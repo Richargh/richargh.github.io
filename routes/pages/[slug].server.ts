@@ -1,4 +1,4 @@
-import { renderBuiltPageDocument } from "../../_ui/pages/Built/Built.ts";
+import { renderToolsPageDocument } from "../../_ui/pages/Tools/Tools.ts";
 import { renderCredentialsPageDocument } from "../../_ui/pages/Credentials/Credentials.ts";
 import { renderHirePageDocument } from "../../_ui/pages/Hire/Hire.ts";
 import { renderPublishedPageDocument } from "../../_ui/pages/Published/Published.ts";
@@ -12,7 +12,7 @@ export async function render(slug: string): Promise<string> {
 }
 
 export function renderPageDocument(page: Page): string {
-  if (page.slug === "built") return renderBuiltPageDocument(page);
+  if (page.slug === "tools") return renderToolsPageDocument(page);
   if (page.slug === "credentials") return renderCredentialsPageDocument(page);
   if (page.slug === "hire") return renderHirePageDocument(page);
   if (page.slug === "published") return renderPublishedPageDocument(page);
