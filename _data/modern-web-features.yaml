@@ -42,6 +42,44 @@
         ::highlight(string) {
           color: var(--color-syntax-highlighting-string);
         }
+- name: Invoker commands
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/invoker-commands/'
+  baselineSince: '2025-12-12'
+  fallback:
+      category: polyfillable
+      url: 'https://github.com/keithamus/invokers-polyfill'
+      explanation: >-
+          Unsupported browsers ignore command and commandfor. The invokers polyfill adds support for command
+          attributes and command events; the site's dialog component also supplies a fallback for its native dialog commands.
+  examples:
+    - description: >-
+        Dialog cancel buttons use command and commandfor to close their target dialog declaratively,
+        without a dedicated click handler in supporting browsers.
+      language: html
+      code: |
+        <button type="button" command="close" commandfor="example-dialog">Cancel</button>
+        <dialog id="example-dialog">
+          <p>Dialog content</p>
+        </dialog>
+    - description: >-
+        List-sorter buttons dispatch a custom command to their target component. Data attributes on the button
+        supply application-specific parameters, accessible through the command event's source element.
+      language: html
+      code: |
+        <button type="button" command="--sort" commandfor="example-sorter"
+                data-sort="name" data-order="asc">Title</button>
+        <list-sorter id="example-sorter"></list-sorter>
+    - description: >-
+        The command event identifies the invoking button through event.source. Its data attributes carry
+        the parameters; they are not copied into an event.detail payload.
+      language: javascript
+      code: |
+        const sorter = document.querySelector("#example-sorter");
+        sorter.addEventListener("command", (event) => {
+          if (event.command !== "--sort") return;
+          const { sort, order } = event.source.dataset;
+          console.log(sort, order); // "name", "asc"
+        });
 - name: Popover
   url: 'https://web-platform-dx.github.io/web-features-explorer/features/popover/'
   baselineSince: '2025-01-27'
