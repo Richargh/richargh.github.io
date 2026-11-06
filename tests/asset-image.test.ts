@@ -3,12 +3,12 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import test from "node:test";
 import { renderAssetImage } from "../_ui/blocks/AssetImage/AssetImage.ts";
 
-test("AssetImage derives AVIF, SVG, PNG, and JPEG dimensions", () => {
+test("AssetImage derives AVIF, SVG, and PNG dimensions", () => {
   for (const [src, width, height] of [
     ["/assets/img/profile.avif", 160, 160],
     ["/assets/img/conferences/it-tage-25.svg", 2330, 1021],
     ["/assets/img/backlinks.png", 1260, 636],
-    ["/assets/img/thumbnails/agentsec-2026-09-03-3U4YDNbLOiI.jpg", 1280, 720],
+    ["/assets/img/thumbnails/agentsec-2026-09-03-3U4YDNbLOiI.avif", 1280, 720],
   ] as const) {
     const html = renderAssetImage({ src, alt: "Image" });
     assert.ok(html.includes(`width="${width}" height="${height}"`));

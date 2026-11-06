@@ -75,14 +75,14 @@ test("individual appearances retain the talk family's Article and Interview link
 test("a static appearance thumbnail is used only on its resource page, without a play button", () => {
   const talk = parseTalks(source)[0];
   const appearance = talk.appearances[0];
-  appearance.thumbnail = "/assets/img/thumbnails/custom-cover.jpg";
+  appearance.thumbnail = "/assets/img/thumbnails/article-kvj.avif";
   appearance.logoUrl = "/assets/img/conferences/it-tage-25.svg";
   const resourceBanner = renderTalkDocument(talk, appearance).split('<div class="article-card-body">')[0];
-  assert.match(resourceBanner, /src="\/assets\/img\/thumbnails\/custom-cover.jpg"/);
+  assert.match(resourceBanner, /src="\/assets\/img\/thumbnails\/article-kvj.avif"/);
   assert.doesNotMatch(resourceBanner, /it-tage-25.svg|thumbnail-play/);
   const listingBanner = renderTalkCard(talk).split('<div class="article-card-body">')[0];
   assert.match(listingBanner, /src="\/assets\/img\/conferences\/it-tage-25.svg"/);
-  assert.doesNotMatch(listingBanner, /custom-cover.jpg/);
+  assert.doesNotMatch(listingBanner, /article-kvj.avif/);
 
   appearance.videoUrl = "https://example.com/recording";
   const playableBanner = renderTalkDocument(talk, appearance).split('<div class="article-card-body">')[0];

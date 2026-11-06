@@ -7,7 +7,7 @@ import { renderLayout } from "../_ui/layouts/SiteLayout/SiteLayout.ts";
 const fixturePath = "/bento-fixture/";
 
 test.beforeEach(async ({ page }) => {
-  await page.route("**/assets/img/conferences/test.svg", (route) => route.fulfill({
+  await page.route("**/assets/img/conferences/it-tage-25.svg", (route) => route.fulfill({
     contentType: "image/svg+xml",
     body: '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#4183c4"/></svg>',
   }));
@@ -21,11 +21,11 @@ test.beforeEach(async ({ page }) => {
         content: renderBento({
           supporting: Array.from({ length: count }, (_, index) => renderLogoWithTitle({
             alt: index === 0 ? "Local meetup" : `Conference ${index}`, title: "2026",
-            src: index === 0 ? undefined : "/assets/img/conferences/test.svg",
+            src: index === 0 ? undefined : "/assets/img/conferences/it-tage-25.svg",
           })),
           media: url.searchParams.has("noVideo") ? [] : Array.from({ length: Number(url.searchParams.get("videos") ?? 1) }, (_, index) => renderThumbnail({
             href: `https://example.com/recording-${index}`, label: `Watch recording ${index}`,
-            src: "/assets/img/conferences/test.svg", playable: true, playLabel: index === 0 ? "v2" : undefined,
+            src: "/assets/img/conferences/it-tage-25.svg", playable: true, playLabel: index === 0 ? "v2" : undefined,
           })),
         }),
       }),

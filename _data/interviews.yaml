@@ -8,7 +8,7 @@
   episode: "1927"
   date: 2024-12-03
   language: en
-  thumbnail: /assets/img/thumbnails/interview-dotnet-rocks.jpg
+  thumbnail: /assets/img/thumbnails/interview-dotnet-rocks.avif
   url: https://www.dotnetrocks.com/details/1927
   links:
     - label: Apple Podcasts
@@ -28,7 +28,7 @@
   episode: "248"
   date: 2025-01-24
   language: de
-  thumbnail: /assets/img/thumbnails/ccstream-2025-01-24-rDHtNNBoP6Y.jpg
+  thumbnail: /assets/img/thumbnails/ccstream-2025-01-24-rDHtNNBoP6Y.avif
   url: https://software-architektur.tv/2025/01/24/folge248.html
   links:
     - label: Video
@@ -43,7 +43,7 @@
     - remote-work
   date: 2022-11-09
   language: en
-  thumbnail: /assets/img/thumbnails/interview-chinchilla-squeaks.jpg
+  thumbnail: /assets/img/thumbnails/interview-chinchilla-squeaks.avif
   note: Interview about "Remote Scaled Trunk-Based Development" at Build Stuff 2022, around 19m17s.
   url: https://chinchillasqueaks.substack.com/p/raytracing-llamas-in-the-metaverse-04c
 
@@ -56,5 +56,5 @@
     - metrics
   date: 2018-10-16
   language: de
-  thumbnail: /assets/img/thumbnails/interview-code-coroner.jpg
+  thumbnail: /assets/img/thumbnails/interview-code-coroner.avif
   url: https://podbay.fm/p/die-code-coroner-tech-podcast-fur-softwarequalitat/e/1539717389

@@ -25,7 +25,7 @@ export const TaggedBanner = {
 export const Thumbnail = {
   args: {
     id: "preview-article-card-thumbnail",
-    bannerHtml: renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.png", alt: "Java and Kotlin", tags: ["java", "kotlin"] }),
+    bannerHtml: renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.avif", alt: "Java and Kotlin", tags: ["java", "kotlin"] }),
   },
 } satisfies StyleStory<ArticleCardOptions>;
 export const BentoBanner = {

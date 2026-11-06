@@ -4,6 +4,12 @@ import test from "node:test";
 import { loadTalks, parseTalks, type Talk } from "../lib/talks.ts";
 import { renderTalkCard } from "../_ui/pages/Talks/Talks.ts";
 
+const thumbnailPaths: Record<string, string> = {
+  older: "/assets/img/thumbnails/cd4lc-2019-11-13-AaexmSPQVpU.avif",
+  selected: "/assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.avif",
+  newer: "/assets/img/thumbnails/article-kvj.avif",
+};
+
 const source = `- id: example
   title: Talk
   appearances:
@@ -12,19 +18,19 @@ const source = `- id: example
       location: remote
       talkVersion: 2
       videoUrl: https://example.com/older
-      thumbnail: /assets/img/thumbnails/older.jpg
+      thumbnail: ${thumbnailPaths.older}
     - date: '2025-02-01'
       conference: Selected
       location: remote
       talkVersion: 2
       videoUrl: https://example.com/selected
-      thumbnail: /assets/img/thumbnails/selected.jpg
+      thumbnail: ${thumbnailPaths.selected}
     - date: '2025-03-01'
       conference: Newer date but older version
       location: remote
       talkVersion: 1
       videoUrl: https://example.com/newer
-      thumbnail: /assets/img/thumbnails/newer.jpg
+      thumbnail: ${thumbnailPaths.newer}
     - date: '2025-04-01'
       conference: No video
       location: remote
@@ -41,7 +47,7 @@ test("talk page composes all recordings into bento, ordered by version then date
   assert.match(html, /bento-multiple-media/);
   for (const name of ["selected", "older", "newer"]) {
     assert.match(html, new RegExp(`href="https://example.com/${name}"`));
-    assert.match(html, new RegExp(`src="/assets/img/thumbnails/${name}.jpg"`));
+    assert.ok(html.includes(`src="${thumbnailPaths[name]}"`));
   }
   assert.ok(html.indexOf('href="https://example.com/selected"') < html.indexOf('href="https://example.com/older"'));
   delete talk.appearances[1].thumbnail;
@@ -136,17 +142,17 @@ test("logoUrl validation accepts local artwork only and belongs to appearances",
 
 test("thumbnail validation applies to appearances, not talk families", () => {
   assert.throws(() => parseTalks(source.replace("  title: Talk", "  title: Talk\n  thumbnail: /assets/img/thumbnails/old.jpg")), /unknown field: thumbnail/);
-  assert.throws(() => parseTalks(source.replace("/assets/img/thumbnails/older.jpg", "https://example.com/image.jpg")), /must be an \/assets\/img\/thumbnails\//);
+  assert.throws(() => parseTalks(source.replace(thumbnailPaths.older, "https://example.com/image.jpg")), /must be an \/assets\/img\/thumbnails\//);
 });
 
 test("appearance thumbnails do not require a recording or a video ID in their filename", () => {
   const talk = parseTalks(source
     .replace("      videoUrl: https://example.com/older\n", "")
-    .replace("/assets/img/thumbnails/selected.jpg", "/assets/img/thumbnails/custom-cover.jpg"))[0];
+    .replace(thumbnailPaths.selected, "/assets/img/thumbnails/custom-cover.avif"))[0];
   assert.equal(talk.appearances[0].videoUrl, undefined);
-  assert.equal(talk.appearances[0].thumbnail, "/assets/img/thumbnails/older.jpg");
+  assert.equal(talk.appearances[0].thumbnail, thumbnailPaths.older);
   assert.equal(talk.appearances[1].videoUrl, "https://example.com/selected");
-  assert.equal(talk.appearances[1].thumbnail, "/assets/img/thumbnails/custom-cover.jpg");
+  assert.equal(talk.appearances[1].thumbnail, "/assets/img/thumbnails/custom-cover.avif");
 });
 
 test("configured appearance thumbnails exist, with or without a recording", async () => {

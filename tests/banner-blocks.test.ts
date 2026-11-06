@@ -15,11 +15,11 @@ test("ArticleCard accepts opaque banner HTML without choosing a content renderer
 });
 
 test("Thumbnail can be static, linked, or playable, independently of ArticleCard and Bento", () => {
-  const staticImage = renderThumbnail({ src: "/image.png", alt: "A < B", tags: ["<tag>"] });
+  const staticImage = renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.avif", alt: "A < B", tags: ["<tag>"] });
   assert.match(staticImage, /alt="A &lt; B"/);
   assert.match(staticImage, /&lt;tag&gt;/);
   assert.doesNotMatch(staticImage, /thumbnail-play|<a/);
-  const link = renderThumbnail({ src: "/image.png", href: "/read", label: "Read" });
+  const link = renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.avif", href: "/read", label: "Read" });
   assert.match(link, /href="\/read"/);
   assert.doesNotMatch(link, /thumbnail-play/);
   const video = renderThumbnail({ href: "/watch", label: "Watch version 2", playable: true, playLabel: "v2" });
@@ -54,7 +54,7 @@ test("Bento arranges opaque child HTML, not conference or video data", () => {
 });
 
 test("the same child blocks render directly in a banner or inside Bento", () => {
-  for (const child of [renderThumbnail({ src: "/img.png", alt: "Image" }), renderLogoWithTitle({ alt: "Logo", title: "Caption" })]) {
+  for (const child of [renderThumbnail({ src: "/assets/img/thumbnails/article-kvj.avif", alt: "Image" }), renderLogoWithTitle({ alt: "Logo", title: "Caption" })]) {
     assert.ok(renderArticleCard({ id: "direct", title: "Direct", bannerHtml: child, childrenHtml: "" }).includes(child));
     assert.ok(renderArticleCard({ id: "nested", title: "Nested", bannerHtml: renderBento({ supporting: [child] }), childrenHtml: "" }).includes(child));
   }

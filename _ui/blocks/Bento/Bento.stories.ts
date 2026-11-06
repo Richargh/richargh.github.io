@@ -11,8 +11,8 @@ const supporting = [
   { src: "/assets/img/conferences/build-stuff-26.avif", alt: "Build Stuff", title: "2024" },
 ].map(renderLogoWithTitle);
 const media = [
-  "/assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.jpg",
-  "/assets/img/thumbnails/cd4lc-2019-11-13-AaexmSPQVpU.jpg",
+  "/assets/img/thumbnails/cd4lc-2024-02-01-djl2hJkzmGQ.avif",
+  "/assets/img/thumbnails/cd4lc-2019-11-13-AaexmSPQVpU.avif",
   "/assets/img/thumbnails/bee-arc-2023-09-29-875223690.avif",
 ].map((src, index) => renderThumbnail({ src, href: `https://example.com/recording-${index}`, label: `Watch recording ${index}`, playable: true, playLabel: `v${index + 1}` }));
 

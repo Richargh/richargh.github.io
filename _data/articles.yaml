@@ -4,7 +4,7 @@
     - java
     - destructoring
     - encapsulation
-  thumbnail: /assets/img/thumbnails/article-java-dest-enc.png
+  thumbnail: /assets/img/thumbnails/article-java-dest-enc.avif
   articles:
     - publications:
         - publisher: JavaPro.io
@@ -20,7 +20,7 @@
   tags:
     - kotlin
     - java
-  thumbnail: /assets/img/thumbnails/article-kvj.png
+  thumbnail: /assets/img/thumbnails/article-kvj.avif
   articles:
     - part: 1/5
       subtitle: Ecosystem
@@ -83,7 +83,7 @@
     - architecture
     - code-analysis
     - visualisation
-  thumbnail: /assets/img/thumbnails/article-map-y-code.png
+  thumbnail: /assets/img/thumbnails/article-map-y-code.avif
   articles:
     - publications:
         - publisher: JavaPro.io
@@ -99,7 +99,7 @@
   tags:
     - nullability
     - java
-  thumbnail: /assets/img/thumbnails/article-ftbdm.png
+  thumbnail: /assets/img/thumbnails/article-ftbdm.avif
   articles:
     - publications:
         - publisher: JavaPro.io
@@ -121,7 +121,7 @@
     - java
     - jdk
     - history
-  thumbnail: /assets/img/thumbnails/article-jdk-chron.png
+  thumbnail: /assets/img/thumbnails/article-jdk-chron.avif
   articles:
     - publications:
         - publisher: JavaPro.io

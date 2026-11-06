@@ -29,7 +29,7 @@ test("card stories cover their optional content", () => {
   const exampleCard = styleBlock(exampleCardStories);
 
   assert.equal(articleCard.name, "ArticleCard");
-  assert.match(articleCard.variants.find((variant) => variant.name === "Thumbnail")?.html ?? "", /article-kvj\.png/);
+  assert.match(articleCard.variants.find((variant) => variant.name === "Thumbnail")?.html ?? "", /article-kvj\.avif/);
   assert.match(articleCard.variants.find((variant) => variant.name === "With actions")?.html ?? "", /article-card-actions/);
   assert.equal(exampleCard.name, "ExampleCard");
   assert.match(exampleCard.variants.find((variant) => variant.name === "With code")?.html ?? "", /language-javascript/);
