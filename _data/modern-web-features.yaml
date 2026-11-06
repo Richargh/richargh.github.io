@@ -110,6 +110,21 @@
           padding-block: var(--space-2xl);
           border-block: var(--border-width) solid var(--color-border);
         }
+- name: AVIF
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/avif/'
+  baselineSince: '2024-01-25'
+  fallback:
+      category: author-provided
+      url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture'
+      explanation: >-
+          Browsers without AVIF support need an alternative image format supplied with a picture element.
+          The site serves the profile image directly as AVIF, so unsupported browsers display its alt text instead.
+  examples:
+    - description: >-
+        The header uses an AVIF profile image to reduce the image download size.
+      language: html
+      code: |
+        <img src="/assets/img/profile.avif" class="avatar-img" alt="avatar">
 - name: ':has()'
   url: 'https://web-platform-dx.github.io/web-features-explorer/features/has/'
   baselineSince: '2023-12-19'

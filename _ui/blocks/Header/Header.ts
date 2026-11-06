@@ -32,7 +32,7 @@ export function renderHeader({ showBackToHome = false, backLink, toolsHtml = "" 
     </div>
     <div class="avatar disable-select">
         <a class="avatar-link" href="/">
-            <img src="/assets/img/profile.jpg" class="avatar-img" alt="avatar"/>
+            <img src="/assets/img/profile.avif" class="avatar-img" alt="avatar"/>
         </a>
     </div>
 
