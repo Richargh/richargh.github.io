@@ -1,3 +1,4 @@
+import { renderListSorter } from "../../blocks/ListSorter/ListSorter.ts";
 import { renderArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
 import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
 import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
@@ -25,10 +26,17 @@ export function renderInterviewsDocument(interviews: InterviewAppearance[], talk
                   <h1>Interviews</h1>
                   ${renderInterviewStats(interviews)}
                   ${renderUpcomingInterviews(interviews)}
-                  <div class="content article-cards">
-                    <p>Podcasts, interviews, and streams.</p>
-                    ${interviews.toSorted(compareInterviewsDescending).map((interview) => renderInterviewCard(interview, relatedGroups)).join("\n")}
-                  </div>
+                  ${renderListSorter({
+                    id: "interviews-sorter",
+                    sort: "date",
+                    order: "desc",
+                    items: ".article-cards > .article-card",
+                    nameSelector: "h2",
+                    childrenHtml: `<div class="content article-cards">
+                      <p>Podcasts, interviews, and streams.</p>
+                      ${interviews.toSorted(compareInterviewsDescending).map((interview) => renderInterviewCard(interview, relatedGroups)).join("\n")}
+                    </div>`,
+                  })}
                 </article>
             </main>`,
   });
@@ -39,6 +47,7 @@ function renderInterviewCard(interview: InterviewAppearance, relatedGroups: Rela
   return renderArticleCard({
     id: interview.id,
     title: interview.title,
+    dataAttributes: { date: interview.upcomingSince ? "" : interview.date },
     bannerHtml: interview.thumbnail || video
       ? renderThumbnail({
         src: interview.thumbnail,

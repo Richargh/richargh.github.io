@@ -1,3 +1,4 @@
+import { renderListSorter } from "../../blocks/ListSorter/ListSorter.ts";
 import { renderArticleCard as renderSharedArticleCard } from "../../blocks/ArticleCard/ArticleCard.ts";
 import { renderThumbnail } from "../../blocks/Thumbnail/Thumbnail.ts";
 import { renderLogoWithTitle } from "../../blocks/LogoWithTitle/LogoWithTitle.ts";
@@ -25,18 +26,31 @@ export function renderArticlesDocument(articles: Article[], talks: Talk[] = [], 
                   <h1>Articles</h1>
                   ${renderArticleStats(articles)}
                   ${renderUpcomingArticles(articles)}
-                  <div class="content article-cards">
-                    ${sortedArticles.map((article) => renderArticleCard(article, relatedGroups)).join("\n")}
-                  </div>
+                  ${renderListSorter({
+                    id: "articles-sorter",
+                    sort: "date",
+                    order: "desc",
+                    items: ".article-cards > .article-card",
+                    nameSelector: "h2",
+                    childrenHtml: `<div class="content article-cards">
+                      ${sortedArticles.map((article) => renderArticleCard(article, relatedGroups)).join("\n")}
+                    </div>`,
+                  })}
                 </article>
             </main>`,
   });
 }
 
 function renderArticleCard(article: Article, relatedGroups: RelatedGroup[]): string {
+  const dates = article.articles
+    .filter((part) => !part.upcoming)
+    .flatMap((part) => part.publications)
+    .filter((publication) => !publication.upcoming && !publication.upcomingSince)
+    .map((publication) => publication.date).sort();
   return renderSharedArticleCard({
     id: article.id,
     title: article.title,
+    dataAttributes: { "date-first": dates[0] ?? "", "date-last": dates.at(-1) ?? "" },
     bannerHtml: article.thumbnail
       ? renderThumbnail({ src: article.thumbnail, alt: article.title, tags: article.tags })
       : renderLogoWithTitle({ alt: article.title, tags: article.tags.length ? article.tags : [article.title] }),
