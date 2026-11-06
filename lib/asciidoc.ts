@@ -1,9 +1,4 @@
-import { createRequire } from "node:module";
-import type { Asciidoctor } from "asciidoctor";
-
-const require = createRequire(import.meta.url);
-const asciidoctorFactory = require("asciidoctor") as () => Asciidoctor;
-const asciidoctor = asciidoctorFactory();
+import { convert } from "@asciidoctor/core";
 
 export interface AsciiDocOptions {
   safeMode: "safe" | "server" | "secure";
@@ -21,8 +16,8 @@ export const defaultAsciiDocOptions: AsciiDocOptions = {
   attributes: { icons: true, sectlinks: true, sectanchors: true },
 };
 
-export function convertTaggedAsciiDocFragment(sourcePath: string, tag: string, options: AsciiDocOptions = defaultAsciiDocOptions): string {
-  const html = convertAsciiDocFragment(`include::${sourcePath}[tag=${tag}]`, {
+export async function convertTaggedAsciiDocFragment(sourcePath: string, tag: string, options: AsciiDocOptions = defaultAsciiDocOptions): Promise<string> {
+  const html = await convertAsciiDocFragment(`include::${sourcePath}[tag=${tag}]`, {
     ...options,
     allowIncludesFrom: [...options.allowIncludesFrom, sourcePath],
   });
@@ -30,13 +25,13 @@ export function convertTaggedAsciiDocFragment(sourcePath: string, tag: string, o
   return html;
 }
 
-export function convertAsciiDocFragment(source: string, options: AsciiDocOptions = defaultAsciiDocOptions): string {
+export async function convertAsciiDocFragment(source: string, options: AsciiDocOptions = defaultAsciiDocOptions): Promise<string> {
   if (options.safeMode !== "safe" && options.safeMode !== "secure") {
     throw new Error("AsciiDoc conversion must run in a constrained safe mode");
   }
   assertIncludesAreAllowed(source, options.allowIncludesFrom);
 
-  const html = String(asciidoctor.convert(source, {
+  const html = String(await convert(source, {
     backend: "html5",
     safe: options.safeMode,
     standalone: false,

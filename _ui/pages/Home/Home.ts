@@ -19,9 +19,9 @@ export interface HomePageData {
   interviews: InterviewAppearance[];
 }
 
-export function renderHomePageDocument({ page, talks, articles, interviews }: HomePageData): string {
-  const blurbHtml = convertTaggedAsciiDocFragment(page.sourcePath, "blurb");
-  const languagesHtml = convertTaggedAsciiDocFragment(page.sourcePath, "languages");
+export async function renderHomePageDocument({ page, talks, articles, interviews }: HomePageData): Promise<string> {
+  const blurbHtml = await convertTaggedAsciiDocFragment(page.sourcePath, "blurb");
+  const languagesHtml = await convertTaggedAsciiDocFragment(page.sourcePath, "languages");
 
   return renderLayout({
     title: page.title,

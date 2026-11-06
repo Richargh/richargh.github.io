@@ -6,7 +6,7 @@ async function openCodeFixture(page: Page): Promise<void> {
   const html = renderPostDocument({
     sourcePath: "fixture.adoc", title: "Code fixture", date: "2025-01-01",
     slug: "fixture", urlPath: "/posts/test-code", tags: [], comments: false, excerpt: "Code",
-    html: convertAsciiDocFragment('[source,kotlin]\n----\nval greeting = "hello" // <1>\n----\n<1> Explanation'),
+    html: await convertAsciiDocFragment('[source,kotlin]\n----\nval greeting = "hello" // <1>\n----\n<1> Explanation'),
   });
   await page.route("**/posts/test-code", (route) => route.fulfill({ contentType: "text/html", body: html }));
   await page.goto("/posts/test-code");

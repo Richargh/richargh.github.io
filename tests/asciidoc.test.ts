@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { convertAsciiDocFragment } from "../lib/asciidoc.ts";
 
-test("AsciiDoc conversion renders links, images, admonitions, Unicode, and paragraphs", () => {
-  const html = convertAsciiDocFragment(`A paragraph with Größe ⚠ and https://example.com[Example].
+test("AsciiDoc conversion renders links, images, admonitions, Unicode, and paragraphs", async () => {
+  const html = await convertAsciiDocFragment(`A paragraph with Größe ⚠ and https://example.com[Example].
 
 image::/example.png[Example image]
 
@@ -16,12 +16,12 @@ TIP: Helpful advice.
   assert.match(html, /<div class="admonitionblock tip">/);
 });
 
-test("AsciiDoc include directives are rejected", () => {
-  assert.throws(() => convertAsciiDocFragment("include::/etc/passwd[]"), /include directives are disabled/);
+test("AsciiDoc include directives are rejected", async () => {
+  await assert.rejects(() => convertAsciiDocFragment("include::/etc/passwd[]"), /include directives are disabled/);
 });
 
-test("AsciiDoc renders code callouts as text for highlighting, tables, anchors, and passthrough", () => {
-  const html = convertAsciiDocFragment(`[[example-anchor]]
+test("AsciiDoc renders code callouts as text for highlighting, tables, anchors, and passthrough", async () => {
+  const html = await convertAsciiDocFragment(`[[example-anchor]]
 == Example
 
 See <<example-anchor>>.

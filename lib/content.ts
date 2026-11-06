@@ -93,7 +93,7 @@ export async function loadPage(sourcePath: string): Promise<Page> {
   const slug = basename(sourcePath, ".adoc");
   const title = stringAttribute(attributes.title) ?? titleFromSlug(slug);
   const permalink = stringAttribute(attributes.permalink);
-  const html = convertAsciiDocFragment(body);
+  const html = await convertAsciiDocFragment(body);
 
   return {
     sourcePath,
@@ -152,7 +152,7 @@ export async function loadPost(sourcePath: string): Promise<Post> {
   const title = stringAttribute(attributes.title) ?? inferred.title;
   const slug = inferred.title;
   const permalink = stringAttribute(attributes.permalink);
-  const html = convertAsciiDocFragment(body);
+  const html = await convertAsciiDocFragment(body);
 
   return {
     sourcePath,

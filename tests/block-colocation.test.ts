@@ -84,7 +84,7 @@ test("SiteLayout renders the site shell", () => {
   assert.match(html, /"#secret-email-cipher": "\/assets\/js\/SecretEmailCipher\.mjs"/);
 });
 
-test("page renderers own page presentation markup", () => {
+test("page renderers own page presentation markup", async () => {
   const page = (slug: string, title: string): Page => ({
     sourcePath: `_pages/${slug}.adoc`,
     title,
@@ -96,7 +96,7 @@ test("page renderers own page presentation markup", () => {
     excerpt: "Body",
   });
 
-  const homeHtml = renderHomePageDocument({ page: page("about", "About"), talks: [], articles: [], interviews: [] });
+  const homeHtml = await renderHomePageDocument({ page: page("about", "About"), talks: [], articles: [], interviews: [] });
   assert.match(homeHtml, /data-source="_pages\/about.adoc"/);
   assert.match(homeHtml, /aria-label="Content collections"/);
   assert.match(renderPublishedPageDocument(page("published", "Published")), /data-source="_pages\/published.adoc"/);
