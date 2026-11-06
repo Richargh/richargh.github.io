@@ -32,7 +32,7 @@
     "html-validate": "10.17.0",
     "image-size": "2.0.4",
     "oxlint": "1.90.0",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "dependencies": {
     "@mastrojs/feed": "npm:@jsr/mastrojs__feed@0.0.1",
