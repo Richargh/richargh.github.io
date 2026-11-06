@@ -4,7 +4,7 @@ import type { StyleMeta, StyleStory } from "../../StyleStory.ts";
 export default {
   title: "Blocks/LogoWithTitle",
   render: renderLogoWithTitle,
-  args: { src: "/assets/img/conferences/javaland-26.png", alt: "JavaLand", title: "2026" },
+  args: { src: "/assets/img/conferences/javaland-26.avif", alt: "JavaLand", title: "2026" },
 } satisfies StyleMeta<LogoWithTitleOptions>;
 
 export const Logo = {} satisfies StyleStory<LogoWithTitleOptions>;

@@ -93,10 +93,10 @@ test("every video replaces its logo while non-video appearance logos remain", ()
   const talk = parseTalks(source)[0];
   talk.appearances[1].logoUrl = "/assets/img/conferences/selected.svg";
   talk.appearances[0].logoUrl = "/assets/img/conferences/older.svg";
-  talk.appearances[3].logoUrl = "/assets/img/conferences/no-video.svg";
+  talk.appearances[3].logoUrl = "/assets/img/conferences/it-tage-25.svg";
   const html = banner(talk);
   assert.equal((html.match(/class="thumbnail-play"/g) ?? []).length, 3);
-  assert.match(html, /src="\/assets\/img\/conferences\/no-video.svg"/);
+  assert.match(html, /src="\/assets\/img\/conferences\/it-tage-25.svg"/);
   assert.doesNotMatch(html, /src="\/assets\/img\/conferences\/(?:selected|older).svg"/);
 });
 
@@ -112,14 +112,14 @@ test("a recording suppresses duplicate conference/year logos", () => {
 
 test("appearance logoUrl is parsed and used directly, including year-specific artwork", () => {
   const talk = parseTalks(source
-    .replace("conference: Older", "conference: Same conference\n      logoUrl: /assets/img/conferences/2024.svg")
+    .replace("conference: Older", "conference: Same conference\n      logoUrl: /assets/img/conferences/it-tage-25.svg")
     .replace("'2025-01-01'", "'2024-01-01'")
-    .replace("conference: Selected", "conference: Same conference\n      logoUrl: /assets/img/conferences/2025.png"))[0];
-  assert.equal(talk.appearances[0].logoUrl, "/assets/img/conferences/2024.svg");
+    .replace("conference: Selected", "conference: Same conference\n      logoUrl: /assets/img/conferences/build-stuff-26.avif"))[0];
+  assert.equal(talk.appearances[0].logoUrl, "/assets/img/conferences/it-tage-25.svg");
   for (const appearance of talk.appearances) delete appearance.videoUrl;
   const html = banner(talk);
-  assert.match(html, /src="\/assets\/img\/conferences\/2024.svg"/);
-  assert.match(html, /src="\/assets\/img\/conferences\/2025.png"/);
+  assert.match(html, /src="\/assets\/img\/conferences\/it-tage-25.svg"/);
+  assert.match(html, /src="\/assets\/img\/conferences\/build-stuff-26.avif"/);
   assert.doesNotMatch(html, /src="https?:/);
 });
 

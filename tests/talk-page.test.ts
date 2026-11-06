@@ -76,12 +76,12 @@ test("a static appearance thumbnail is used only on its resource page, without a
   const talk = parseTalks(source)[0];
   const appearance = talk.appearances[0];
   appearance.thumbnail = "/assets/img/thumbnails/custom-cover.jpg";
-  appearance.logoUrl = "/assets/img/conferences/custom-logo.svg";
+  appearance.logoUrl = "/assets/img/conferences/it-tage-25.svg";
   const resourceBanner = renderTalkDocument(talk, appearance).split('<div class="article-card-body">')[0];
   assert.match(resourceBanner, /src="\/assets\/img\/thumbnails\/custom-cover.jpg"/);
-  assert.doesNotMatch(resourceBanner, /custom-logo.svg|thumbnail-play/);
+  assert.doesNotMatch(resourceBanner, /it-tage-25.svg|thumbnail-play/);
   const listingBanner = renderTalkCard(talk).split('<div class="article-card-body">')[0];
-  assert.match(listingBanner, /src="\/assets\/img\/conferences\/custom-logo.svg"/);
+  assert.match(listingBanner, /src="\/assets\/img\/conferences\/it-tage-25.svg"/);
   assert.doesNotMatch(listingBanner, /custom-cover.jpg/);
 
   appearance.videoUrl = "https://example.com/recording";

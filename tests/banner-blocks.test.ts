@@ -32,7 +32,7 @@ test("Thumbnail can be static, linked, or playable, independently of ArticleCard
 });
 
 test("LogoWithTitle renders only an image and caption when a logo exists, otherwise a text fallback", () => {
-  const logo = renderLogoWithTitle({ src: "/logo.svg", alt: "Conference <Name>", title: "2026" });
+  const logo = renderLogoWithTitle({ src: "/assets/img/conferences/jug-saxony.svg", alt: "Conference <Name>", title: "2026" });
   assert.match(logo, /alt="Conference &lt;Name&gt;"/);
   assert.match(logo, /class="logo-with-title-caption">2026/);
   assert.doesNotMatch(logo, /logo-with-title-fallback/);

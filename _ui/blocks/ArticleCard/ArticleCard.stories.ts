@@ -34,7 +34,7 @@ export const BentoBanner = {
     bannerHtml: renderBento({
       media: [renderThumbnail({ href: "https://example.com/recording", label: "Watch recording", playable: true, playLabel: "v2" })],
       supporting: [
-        renderLogoWithTitle({ src: "/assets/img/conferences/javaland-26.png", alt: "JavaLand", title: "2026" }),
+        renderLogoWithTitle({ src: "/assets/img/conferences/javaland-26.avif", alt: "JavaLand", title: "2026" }),
         renderLogoWithTitle({ alt: "Local meetup", title: "2024" }),
       ],
     }),

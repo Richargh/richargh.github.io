@@ -1,4 +1,5 @@
 import { escapeHtml } from "../../../lib/html.ts";
+import { renderAssetImage } from "../AssetImage/AssetImage.ts";
 
 export interface LogoWithTitleOptions {
   src?: string;
@@ -12,7 +13,7 @@ export interface LogoWithTitleOptions {
 }
 
 export function renderLogoWithTitle({ src, alt, title, fallback = alt, href, label, tags = [], compact = false }: LogoWithTitleOptions): string {
-  const content = `${src ? `<img class="logo-with-title-image" src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy">` : `<span class="logo-with-title-fallback">${escapeHtml(fallback)}</span>`}
+  const content = `${src ? renderAssetImage({ src, alt, className: "logo-with-title-image", lazy: true }) : `<span class="logo-with-title-fallback">${escapeHtml(fallback)}</span>`}
 ${title ? `<span class="logo-with-title-caption">${escapeHtml(title)}</span>` : ""}
 ${tags.length ? `<div class="logo-with-title-tags">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>` : ""}`;
   const className = `logo-with-title${tags.length ? " logo-with-title-tagged" : ""}${compact ? " logo-with-title-compact" : ""}`;

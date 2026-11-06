@@ -2,6 +2,7 @@ import { site } from "../../../lib/config.ts";
 import { escapeHtml } from "../../../lib/html.ts";
 import { renderCalloutLink } from "../CalloutLink/CalloutLink.ts";
 import { renderNavItem } from "../NavItem/NavItem.ts";
+import { renderAssetImage } from "../AssetImage/AssetImage.ts";
 
 export interface HeaderOptions {
   showBackToHome?: boolean;
@@ -32,7 +33,7 @@ export function renderHeader({ showBackToHome = false, backLink, toolsHtml = "" 
     </div>
     <div class="avatar disable-select">
         <a class="avatar-link" href="/">
-            <img src="/assets/img/profile.avif" class="avatar-img" alt="avatar" width="160" height="160" loading="lazy"/>
+            ${renderAssetImage({ src: site.profilePic, alt: "avatar", className: "avatar-img", lazy: true })}
         </a>
     </div>
 
