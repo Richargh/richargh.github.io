@@ -110,6 +110,23 @@
           padding-block: var(--space-2xl);
           border-block: var(--border-width) solid var(--color-border);
         }
+- name: Lazy-loading images and iframes
+  url: 'https://web-platform-dx.github.io/web-features-explorer/features/loading-lazy/'
+  baselineSince: '2023-12-19'
+  fallback:
+      category: progressive-enhancement
+      url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#loading'
+      explanation: Unsupported browsers ignore the loading attribute and load images eagerly instead.
+  examples:
+    - description: >-
+        Profile and conference logo images use native lazy loading. Specify width and height to reserve space
+        before images load, preventing layout shifts and helping the browser determine when to load them.
+        Without dimensions or equivalent CSS sizing, unloaded images can occupy no space and may not load
+        as expected. These attributes are not required by HTML, but are important for reliable lazy loading.
+      language: html
+      code: |
+        <img src="/assets/img/conferences/build-stuff-26.avif"
+             alt="Build Stuff" loading="lazy" width="352" height="187">
 - name: AVIF
   url: 'https://web-platform-dx.github.io/web-features-explorer/features/avif/'
   baselineSince: '2024-01-25'
