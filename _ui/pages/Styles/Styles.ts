@@ -29,7 +29,7 @@ export function renderStylesPageDocument(): string {
     description: stylesDescription,
     type: "website",
     showBackToHome: true,
-    headerToolsHtml: `<button class="styles-menu-trigger" type="button" popovertarget="styles-menu" aria-label="Browse blocks and variants">B</button>`,
+    headerToolsHtml: `<button class="styles-menu-trigger" type="button" command="toggle-popover" commandfor="styles-menu" aria-label="Browse blocks and variants">B</button>`,
     sideNavigation: renderSidebarNavigation("styles-sidebar-wide", initialVariant.id),
     content: `<main>
       <article class="styles-page">

@@ -41,7 +41,7 @@ test("styles page uses SiteLayout and provides an expandable variant sidebar", (
 
   assert.match(html, /<header>/);
   assert.match(html, /<nav class="styles-sidebar styles-sidebar-wide"/);
-  assert.match(html, /class="styles-menu-trigger"[^>]+popovertarget="styles-menu"/);
+  assert.match(html, /class="styles-menu-trigger"[^>]+command="toggle-popover" commandfor="styles-menu"/);
   assert.match(html, /<nav class="styles-sidebar styles-sidebar-popover"[^>]+id="styles-menu" popover/);
   assert.ok(html.indexOf('<nav class="styles-sidebar styles-sidebar-wide"') < html.indexOf('<div class="container">'));
   assert.match(html, /<details open>/);

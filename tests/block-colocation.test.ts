@@ -60,7 +60,11 @@ test("collection blocks render summaries", () => {
   assert.match(renderSummaryStats(empty), /href="\/talks\/"/);
   assert.match(renderSummaryStats(empty), /href="\/articles\/"/);
   assert.match(renderSummaryStats(empty), /href="\/interviews\/"/);
-  assert.match(renderArticleStats([]), /class="collection-stats"/);
+  const articleStats = renderArticleStats([]);
+  assert.match(articleStats, /class="collection-stats"/);
+  assert.match(articleStats, /command="toggle-popover" commandfor="collection-stats-/);
+  assert.match(articleStats, /id="collection-stats-[^"]+" popover/);
+  assert.doesNotMatch(articleStats, /popovertarget/);
   assert.equal(renderUpcomingCollection(empty), "");
 });
 

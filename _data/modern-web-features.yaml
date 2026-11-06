@@ -94,6 +94,9 @@
         Collection counters expose their detail panel as a native popover so it can enter the top layer and light-dismiss.
       language: html
       code: |
+        <button type="button" command="toggle-popover" commandfor="collection-stats-talks">
+          Show counted talks
+        </button>
         <div id="collection-stats-talks" popover>
           <h2>Talks</h2>
           <p>42 counted talks.</p>

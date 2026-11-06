@@ -105,7 +105,7 @@ ${items.map((item) => renderMetric(scope, item)).join("\n")}
 function renderMetric(scope: string, item: StatItem): string {
   const popoverId = `collection-stats-${scope}-${item.id}`;
   return `<span class="collection-stats-item">
-<button class="collection-stat" type="button" popovertarget="${escapeHtml(popoverId)}" aria-label="Show counted ${escapeHtml(item.label)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</button>
+<button class="collection-stat" type="button" command="toggle-popover" commandfor="${escapeHtml(popoverId)}" aria-label="Show counted ${escapeHtml(item.label)}"><strong>${escapeHtml(item.value.toLocaleString("en"))}</strong> ${escapeHtml(item.label)}</button>
 <div class="collection-stats-popover" id="${escapeHtml(popoverId)}" popover>
 <h2>${escapeHtml(item.value.toLocaleString("en"))} ${escapeHtml(item.label)}</h2>
 <ol>
