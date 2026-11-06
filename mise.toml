@@ -5,7 +5,9 @@ node = "26.13.0"
 description = "Run linting and tests"
 run = [
     "npm run lint",
-    "npm test"
+    "npm run generate",
+    "npm run validate:generated",
+    "npm test",
 ]
 
 [tasks.generate]
