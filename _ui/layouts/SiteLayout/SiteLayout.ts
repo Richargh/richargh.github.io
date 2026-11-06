@@ -27,6 +27,7 @@ export function renderLayout(options: LayoutOptions): string {
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="utf-8">
+    <link href="/assets/css/style.css" rel="stylesheet" fetchpriority="high" media="all" class="default"/>
     <meta name="color-scheme" content="light dark">
     <meta property="og:site_name" content="Knowledge Continuum"/>
     <meta property="og:description" content="${escapeHtml(description)}">
@@ -40,7 +41,6 @@ export function renderLayout(options: LayoutOptions): string {
     <link rel="canonical" href="${canonical}"/>
     <link rel="apple-touch-icon" href="${site.profilePic}">
     <link rel="icon" href="${site.favicon}" type="image/png" sizes="16x16"/>
-    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
     <link href="/assets/css/microlighter.css" rel="stylesheet" media="all"/>
     ${renderJavaScriptImportMap()}
     <script type="module">
