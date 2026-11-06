@@ -7,6 +7,7 @@
     }
 
     .article-card {
+        scroll-margin-block-start: var(--space-l);
         border: var(--border-width) solid var(--color-border-strong);
         overflow: hidden;
         background: var(--color-background-raised);
