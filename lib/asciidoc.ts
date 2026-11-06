@@ -44,7 +44,12 @@ export async function convertAsciiDocFragment(source: string, options: AsciiDocO
     },
   }));
 
-  return normalizeCodeCalloutsForMicroLighter(html);
+  return normalizeCodeCalloutsForMicroLighter(normalizeTableColumnWidths(html));
+}
+
+function normalizeTableColumnWidths(html: string): string {
+  // Asciidoctor 4 emits obsolete col width attributes; preserve sizing with CSS.
+  return html.replaceAll(/<col width="(\d+(?:\.\d+)?%)"(\s*\/?)>/g, '<col style="width: $1;"$2>');
 }
 
 function normalizeCodeCalloutsForMicroLighter(html: string): string {

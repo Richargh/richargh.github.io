@@ -16,6 +16,17 @@ TIP: Helpful advice.
   assert.match(html, /<div class="admonitionblock tip">/);
 });
 
+test("AsciiDoc table column widths use CSS instead of deprecated attributes", async () => {
+  const html = await convertAsciiDocFragment(`[cols="1,3"]
+|===
+|Narrow |Wide
+|===
+`);
+  assert.match(html, /<col style="width: 25%;">/);
+  assert.match(html, /<col style="width: 75%;">/);
+  assert.doesNotMatch(html, /<col\b[^>]*\swidth=/);
+});
+
 test("AsciiDoc include directives are rejected", async () => {
   await assert.rejects(() => convertAsciiDocFragment("include::/etc/passwd[]"), /include directives are disabled/);
 });
