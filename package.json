@@ -31,7 +31,7 @@
     "@types/node": "26.6.6",
     "html-validate": "11.18.0",
     "image-size": "2.0.4",
-    "oxlint": "1.90.0",
+    "oxlint": "1.92.0",
     "typescript": "7.0.2"
   },
   "dependencies": {
