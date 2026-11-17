@@ -1,5 +1,5 @@
 [tools]
-node = "26.13.0"
+node = "26.13.1"
 
 [tasks.check]
 description = "Run linting and tests"
